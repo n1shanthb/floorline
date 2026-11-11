@@ -1,0 +1,752 @@
+{
+  "label": "Verified historical testnet evidence · not live",
+  "network": "testnet",
+  "contract": "floor.floorline-g3-20261111-6702ea.testnet",
+  "dao": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+  "recordedAt": "2026-11-11T08:14:04.388Z",
+  "events": [
+    {
+      "id": "issue-alice",
+      "title": "Alice issued 2.00 FLOOR",
+      "kind": "issuance",
+      "amount": "2.00 FLOOR",
+      "tx": "6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy",
+      "sourceTitle": "Alice issued 2.00 FLOOR",
+      "signer": "alice.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "method": "issue",
+      "deposit": "2000000000000000000000000",
+      "recordedAt": "2026-11-11T07:37:12.881Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "7PgdeKeJHZA1hX5kTNvwmaTT9J9aG4NrEJhu3uUqe1TU",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": "IjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_mint\",\"data\":[{\"owner_id\":\"alice.floorline-g3-20261111-6702ea.testnet\",\"amount\":\"2000000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "5qEkmVcmRxKvunV6N8YBM8RJ6ciyeEZCtJg3wzcAFSGR",
+          "executor": "alice.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "0",
+        "T": "0",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000000",
+        "inflight": "0",
+        "local_required": "4828910000000000000000000",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "6250000000000000000000000",
+        "storage_usage": 445065,
+        "storage_stake": "4450650000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "2000000000000000000000000",
+        "T": "2000000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000000",
+        "inflight": "0",
+        "local_required": "6828910000000000000000000",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8250000000000000000000000",
+        "storage_usage": 445065,
+        "storage_stake": "4450650000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "redeem-bob",
+      "title": "Bob redeemed 0.10 FLOOR",
+      "kind": "redemption",
+      "amount": "0.10 FLOOR",
+      "tx": "2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ",
+      "payoutNear": "0.081",
+      "payoutTx": "8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t",
+      "sourceTitle": "Bob redeemed 0.10 FLOOR",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "method": "redeem",
+      "deposit": "0",
+      "recordedAt": "2026-11-11T07:37:31.482Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "J4vTw9BuRaN89ZRYdrX4KjkUwwXACbrxMeMnYAP4Pumm",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_burn\",\"data\":[{\"owner_id\":\"bob.floorline-g3-20261111-6702ea.testnet\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "FuKSanNdHMmE6KbDHcqhKHAxm2mxUZqVDMqKEXg3RqdK",
+          "executor": "bob.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "2000000000000000000000000",
+        "T": "2000000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000002",
+        "inflight": "0",
+        "local_required": "6828910000000000000000002",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8250000000000000000000002",
+        "storage_usage": 445065,
+        "storage_stake": "4450650000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "81000000000000000000000",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000002",
+        "inflight": "0",
+        "local_required": "6828910000000000000000002",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8250000000000000000000002",
+        "storage_usage": 445244,
+        "storage_stake": "4452440000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "nft-transfer",
+      "title": "Carol transferred loan NFT to Dave",
+      "kind": "nft_transfer",
+      "tx": "6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV",
+      "sourceTitle": "Carol transferred loan NFT to Dave",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "method": "nft_transfer",
+      "deposit": "1",
+      "recordedAt": "2026-11-11T07:38:19.270Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "HQ1uAWnyz7hARD66bsbgDFzba7YKKw673SVKxrPkukDy",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_transfer\",\"data\":[{\"old_owner_id\":\"carol.floorline-g3-20261111-6702ea.testnet\",\"new_owner_id\":\"dave.floorline-g3-20261111-6702ea.testnet\",\"token_ids\":[\"2\"]}]}"
+          ]
+        },
+        {
+          "id": "Gy4utg3LjoEsThbsadkYwhQGSNCs2kwxapbY7viftEWF",
+          "executor": "carol.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "200000000000000000000000",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000002",
+        "inflight": "0",
+        "local_required": "6747910000000000000000002",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000002",
+        "storage_usage": 445700,
+        "storage_stake": "4457000000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "200000000000000000000000",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 445699,
+        "storage_stake": "4456990000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "loan-repaid",
+      "title": "Dave repaid 0.11 NEAR; loan NFT burned",
+      "kind": "loan_repayment",
+      "tx": "5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M",
+      "sourceTitle": "Dave repaid 0.11 NEAR; loan NFT burned",
+      "signer": "dave.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "method": "repay",
+      "deposit": "110000000000000000000000",
+      "recordedAt": "2026-11-11T07:38:31.975Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "2T8EZkqipduHWyHzTWhFeW5GkXXbpiRLaNYJbiNqte7V",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": "IjUi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"floor.floorline-g3-20261111-6702ea.testnet\",\"new_owner_id\":\"dave.floorline-g3-20261111-6702ea.testnet\",\"amount\":\"200000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_burn\",\"data\":[{\"owner_id\":\"dave.floorline-g3-20261111-6702ea.testnet\",\"token_ids\":[\"2\"]}]}"
+          ]
+        },
+        {
+          "id": "7GUAQ74SEuCkkKDFhLjHnUSMQvxKcV2px5PBsTUjUvRX",
+          "executor": "dave.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "200000000000000000000000",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 445699,
+        "storage_stake": "4456990000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "110000000000000000000000",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6857910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8279000000000000000000003",
+        "storage_usage": 445882,
+        "storage_stake": "4458820000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "loan-default",
+      "title": "Loan #7 default settled; NFT burned",
+      "kind": "loan_default",
+      "tx": "5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD",
+      "sourceTitle": "Loan #2 default settled; NFT burned",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "method": "default_loan",
+      "deposit": "0",
+      "recordedAt": "2026-11-11T07:40:09.380Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "2kYtrhEr4vrLLjCmpSCcrLqnnNXb5Y3AZUZDD4HH1rrv",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"floor.floorline-g3-20261111-6702ea.testnet\",\"new_owner_id\":\"lender.floorline-g3-20261111-6702ea.testnet\",\"amount\":\"100000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_burn\",\"data\":[{\"owner_id\":\"carol.floorline-g3-20261111-6702ea.testnet\",\"token_ids\":[\"7\"]}]}"
+          ]
+        },
+        {
+          "id": "2sjAGVAwPCMuW41JPamszLxoWwCnEnatGg9j5YVgAQrf",
+          "executor": "bob.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "100000000000000000000000",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "dao-vote-b",
+      "title": "Council B approved proposal #0; still in progress",
+      "kind": "dao_vote",
+      "tx": "EMbAnPE9AmweA8NvN2hn5pYS5kFuTE1RcxMPVwBb4Nmz",
+      "sourceTitle": "Council B approved proposal #0; still in progress",
+      "signer": "b.floorline-council-a-20261111.testnet",
+      "receiver": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+      "method": "act_proposal",
+      "deposit": "0",
+      "recordedAt": "2026-11-11T08:13:54.795Z",
+      "receiptCount": 2,
+      "receipts": [
+        {
+          "id": "6sTFio8qKojdZFoMT2YavuoHMX1dEJyZKFhpqc2kvohN",
+          "executor": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "F8GCYakGYk81JH7UZyfWvsTQR7d7iFa5dNDEwJZCStyy",
+          "executor": "b.floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "id": "dao-vote-c",
+      "title": "Council C approved proposal #0; execution threshold met",
+      "kind": "dao_vote",
+      "tx": "hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg",
+      "functionCallReceipt": "4aMh8cSjwbvjCz8r3gfpw9jZmVzNDuJu7wLpvjNYKFiw",
+      "contributionNear": "0.10",
+      "sourceTitle": "Council C approved proposal #0; execution threshold met",
+      "signer": "c.floorline-council-a-20261111.testnet",
+      "receiver": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+      "method": "act_proposal",
+      "deposit": "0",
+      "recordedAt": "2026-11-11T08:14:02.662Z",
+      "receiptCount": 8,
+      "receipts": [
+        {
+          "id": "AeistjR8MiopZeBpmVMjUJGNPJEWbEvyEA1WMdLsBmWY",
+          "executor": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "4aMh8cSjwbvjCz8r3gfpw9jZmVzNDuJu7wLpvjNYKFiw",
+          "executor": "floor.floorline-g3-20261111-6702ea.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"floorline\",\"version\":\"1.0.0\",\"event\":\"contribute\",\"data\":[{\"donor\":\"floorline-g3-20261111-6702ea.sputnikv2.testnet\",\"amount\":\"100000000000000000000000\",\"L\":\"2019000000000000000000000\",\"T\":\"1900000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "GgxD4wuH8KPqrvKRQ8aJzQN47NvDFVMxFuQAXqerz9JF",
+          "executor": "c.floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "6TfQYexNY8ppnhEuXj5kKFrhwydXcec7Jem7gfcHHmH6",
+          "executor": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+          "status": {
+            "SuccessReceiptId": "79iHBpFdYHNFgSd9bdT9JRStXTK3yG5YnE3RUVdskFw8"
+          },
+          "logs": []
+        },
+        {
+          "id": "79iHBpFdYHNFgSd9bdT9JRStXTK3yG5YnE3RUVdskFw8",
+          "executor": "floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "68GG57BvTpmm3JahBToKzobXQKRjEzm3jxMp5pxTMM2N",
+          "executor": "c.floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "Fw6w8TBY7dmyPfeE9WvuvfokXqpjRwr5brqqWFxfPS1Q",
+          "executor": "c.floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "GQgNXo373NaTt2q8v5T8vhGodLtxzw4SgVwAd41aGJ11",
+          "executor": "c.floorline-council-a-20261111.testnet",
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "L": "1919000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6747910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8169000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      },
+      "after": {
+        "L": "2019000000000000000000000",
+        "T": "1900000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "250000000000000000000000",
+        "operational": "4578910000000000000000003",
+        "inflight": "0",
+        "local_required": "6847910000000000000000003",
+        "operational_base": "4478910000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "1421090000000000000000000",
+        "account_balance": "8269000000000000000000003",
+        "storage_usage": 446338,
+        "storage_stake": "4463380000000000000000000",
+        "tax_bps": 2000
+      }
+    }
+  ],
+  "history": [
+    {
+      "label": "Initial issuance",
+      "L": "2000000000000000000000000",
+      "T": "2000000000000000000000000",
+      "hash": "6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy"
+    },
+    {
+      "label": "After redemption",
+      "L": "1919000000000000000000000",
+      "T": "1900000000000000000000000",
+      "hash": "2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ"
+    },
+    {
+      "label": "DAO contribution",
+      "L": "2019000000000000000000000",
+      "T": "1900000000000000000000000",
+      "hash": "hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg"
+    }
+  ],
+  "snapshot": {
+    "account": {
+      "amount": "8269000000000000000000003",
+      "block_hash": "7aX9gG4t9mu3up3xAu2EZ9d7FmWTotfT5NzUt9VhXUPL",
+      "block_height": 277189059,
+      "code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 446338
+    },
+    "ledger": {
+      "L": "2019000000000000000000000",
+      "T": "1900000000000000000000000",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "250000000000000000000000",
+      "operational": "4578910000000000000000003",
+      "inflight": "0",
+      "local_required": "6847910000000000000000003",
+      "operational_base": "4478910000000000000000000",
+      "refund_storage": "0",
+      "unallocated_or_inflight": "1421090000000000000000000",
+      "account_balance": "8269000000000000000000003",
+      "storage_usage": 446338,
+      "storage_stake": "4463380000000000000000000",
+      "tax_bps": 2000
+    }
+  },
+  "council": [
+    "floorline-council-a-20261111.testnet",
+    "b.floorline-council-a-20261111.testnet",
+    "c.floorline-council-a-20261111.testnet"
+  ],
+  "policy": {
+    "roles": [
+      {
+        "name": "all",
+        "kind": "Everyone",
+        "permissions": ["*:AddProposal"],
+        "vote_policy": {}
+      },
+      {
+        "name": "council",
+        "kind": {
+          "Group": [
+            "b.floorline-council-a-20261111.testnet",
+            "c.floorline-council-a-20261111.testnet",
+            "floorline-council-a-20261111.testnet"
+          ]
+        },
+        "permissions": [
+          "*:Finalize",
+          "*:AddProposal",
+          "*:VoteApprove",
+          "*:VoteReject",
+          "*:VoteRemove"
+        ],
+        "vote_policy": {}
+      }
+    ],
+    "default_vote_policy": {
+      "weight_kind": "RoleWeight",
+      "quorum": "0",
+      "threshold": [1, 2]
+    },
+    "proposal_bond": "1000000000000000000000000",
+    "proposal_period": "604800000000000",
+    "bounty_bond": "1000000000000000000000000",
+    "bounty_forgiveness_period": "86400000000000"
+  },
+  "proposal": {
+    "id": 0,
+    "proposer": "floorline-council-a-20261111.testnet",
+    "description": "Floorline: 0.1 NEAR treasury contribution. Operator-controlled simulated council; three accounts do not prove independent human control.",
+    "kind": {
+      "FunctionCall": {
+        "receiver_id": "floor.floorline-g3-20261111-6702ea.testnet",
+        "actions": [
+          {
+            "method_name": "contribute",
+            "args": "e30=",
+            "deposit": "100000000000000000000000",
+            "gas": "30000000000000"
+          }
+        ]
+      }
+    },
+    "status": "Approved",
+    "vote_counts": {
+      "council": [2, 0, 0]
+    },
+    "votes": {
+      "c.floorline-council-a-20261111.testnet": "Approve",
+      "b.floorline-council-a-20261111.testnet": "Approve"
+    },
+    "submission_time": "1794384825575155547"
+  },
+  "loanIds": ["2", "7"],
+  "claimIds": ["0", "3", "5", "8"],
+  "loans": {
+    "repaid": {
+      "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+      "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+      "owner": "dave.floorline-g3-20261111-6702ea.testnet",
+      "principal": "100000000000000000000000",
+      "repayment": "110000000000000000000000",
+      "collateral": "200000000000000000000000",
+      "expiry": "1794386282885269792",
+      "state": 2,
+      "pending": 0,
+      "storage_cost": "3380000000000000000000"
+    },
+    "defaulted": {
+      "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+      "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+      "owner": "carol.floorline-g3-20261111-6702ea.testnet",
+      "principal": "50000000000000000000000",
+      "repayment": "55000000000000000000000",
+      "collateral": "100000000000000000000000",
+      "expiry": "1794382801721656525",
+      "state": 3,
+      "pending": 0,
+      "storage_cost": "3380000000000000000000"
+    }
+  }
+}
