@@ -1,0 +1,169 @@
+{
+  "scope": "Live read-only frontend integration verification; no keys loaded or transactions submitted",
+  "checked_at": "2026-11-11T13:13:57.660Z",
+  "endpoint": "https://test.rpc.fastnear.com",
+  "chain_id": "testnet",
+  "block": {
+    "hash": "7c8JbLKLMUo7nrqJU4fTU6z2bQ69HGaNeDmdxwAiLbwJ",
+    "height": 277220143,
+    "timestamp_ns": "1794402834595251574"
+  },
+  "account": {
+    "amount": "8269000000000000000000003",
+    "block_hash": "7c8JbLKLMUo7nrqJU4fTU6z2bQ69HGaNeDmdxwAiLbwJ",
+    "block_height": 277220143,
+    "code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+    "locked": "0",
+    "storage_paid_at": 0,
+    "storage_usage": 446338
+  },
+  "ledger": {
+    "L": "2019000000000000000000000",
+    "T": "1900000000000000000000000",
+    "locked": "0",
+    "unused_lender": "0",
+    "borrower_claims": "0",
+    "lender_claims": "0",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "250000000000000000000000",
+    "operational": "4578910000000000000000003",
+    "inflight": "0",
+    "local_required": "6847910000000000000000003",
+    "operational_base": "4478910000000000000000000",
+    "refund_storage": "0",
+    "unallocated_or_inflight": "1421090000000000000000000",
+    "account_balance": "8269000000000000000000003",
+    "storage_usage": 446338,
+    "storage_stake": "4463380000000000000000000",
+    "tax_bps": 2000
+  },
+  "metadata": {
+    "spec": "ft-1.0.0",
+    "name": "Floorline",
+    "symbol": "FLOOR",
+    "decimals": 24,
+    "icon": null,
+    "reference": null,
+    "reference_hash": null
+  },
+  "redemption": {
+    "amount": "100000000000000000000000",
+    "local_quote": "86129085872576177285318",
+    "contract_quote": "86129085872576177285318",
+    "match": true
+  },
+  "solvency_surplus": "1421090000000000000000000",
+  "dao": {
+    "policy": {
+      "roles": [
+        {
+          "name": "all",
+          "kind": "Everyone",
+          "permissions": [
+            "*:AddProposal"
+          ],
+          "vote_policy": {}
+        },
+        {
+          "name": "council",
+          "kind": {
+            "Group": [
+              "b.floorline-council-a-20261111.testnet",
+              "c.floorline-council-a-20261111.testnet",
+              "floorline-council-a-20261111.testnet"
+            ]
+          },
+          "permissions": [
+            "*:Finalize",
+            "*:AddProposal",
+            "*:VoteApprove",
+            "*:VoteReject",
+            "*:VoteRemove"
+          ],
+          "vote_policy": {}
+        }
+      ],
+      "default_vote_policy": {
+        "weight_kind": "RoleWeight",
+        "quorum": "0",
+        "threshold": [
+          1,
+          2
+        ]
+      },
+      "proposal_bond": "1000000000000000000000000",
+      "proposal_period": "604800000000000",
+      "bounty_bond": "1000000000000000000000000",
+      "bounty_forgiveness_period": "86400000000000"
+    },
+    "proposal": {
+      "id": 0,
+      "proposer": "floorline-council-a-20261111.testnet",
+      "description": "Floorline: 0.1 NEAR treasury contribution. Operator-controlled simulated council; three accounts do not prove independent human control.",
+      "kind": {
+        "FunctionCall": {
+          "receiver_id": "floor.floorline-g3-20261111-6702ea.testnet",
+          "actions": [
+            {
+              "method_name": "contribute",
+              "args": "e30=",
+              "deposit": "100000000000000000000000",
+              "gas": "30000000000000"
+            }
+          ]
+        }
+      },
+      "status": "Approved",
+      "vote_counts": {
+        "council": [
+          2,
+          0,
+          0
+        ]
+      },
+      "votes": {
+        "c.floorline-council-a-20261111.testnet": "Approve",
+        "b.floorline-council-a-20261111.testnet": "Approve"
+      },
+      "submission_time": "1794384825575155547"
+    }
+  },
+  "loans": {
+    "2": {
+      "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+      "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+      "owner": "dave.floorline-g3-20261111-6702ea.testnet",
+      "principal": "100000000000000000000000",
+      "repayment": "110000000000000000000000",
+      "collateral": "200000000000000000000000",
+      "expiry": "1794386282885269792",
+      "state": 2,
+      "pending": 0,
+      "storage_cost": "3380000000000000000000"
+    },
+    "7": {
+      "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+      "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+      "owner": "carol.floorline-g3-20261111-6702ea.testnet",
+      "principal": "50000000000000000000000",
+      "repayment": "55000000000000000000000",
+      "collateral": "100000000000000000000000",
+      "expiry": "1794382801721656525",
+      "state": 3,
+      "pending": 0,
+      "storage_cost": "3380000000000000000000"
+    }
+  },
+  "nfts": {
+    "2": null,
+    "7": null
+  },
+  "historical_dao_execution_recheck": {
+    "hash": "hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg",
+    "final_execution_status": "FINAL",
+    "all_receipts_successful": true
+  },
+  "contract_unchanged": true
+}

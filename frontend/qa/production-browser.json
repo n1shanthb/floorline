@@ -1,0 +1,43 @@
+{
+  "kind": "Production build browser smoke; read-only, no authentication or signing",
+  "routes": [
+    {
+      "path": "/",
+      "heading": "Money with\nmechanics.",
+      "overflow": false
+    },
+    {
+      "path": "/app",
+      "heading": "Your financial playground.",
+      "overflow": false
+    },
+    {
+      "path": "/app/treasury",
+      "heading": "The treasury.",
+      "overflow": false
+    },
+    {
+      "path": "/app/loans",
+      "heading": "Loans with a twist.",
+      "overflow": false
+    },
+    {
+      "path": "/app/governance",
+      "heading": "Decisions that move value.",
+      "overflow": false
+    },
+    {
+      "path": "/app/activity",
+      "heading": "Receipts, not promises.",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "walletAssetsBeforeConnect": [],
+  "walletHandoff": {
+    "origin": "https://testnet.mynearwallet.com",
+    "path": "/login/",
+    "requestsContractKey": false
+  },
+  "transactionsSubmitted": 0
+}

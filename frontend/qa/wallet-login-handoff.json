@@ -1,0 +1,7 @@
+{
+  "kind": "Real wallet login handoff only; no authentication, no signing, no transaction",
+  "origin": "https://testnet.mynearwallet.com",
+  "path": "/login/",
+  "requests_contract_key": false,
+  "signed": false
+}
