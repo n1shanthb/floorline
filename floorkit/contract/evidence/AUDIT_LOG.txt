@@ -1,0 +1,39 @@
+{
+  "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "near_sdk": "5.30.1",
+  "uint": "0.9.5",
+  "borsh": "1.8.1",
+  "protected_preexisting_files": 215,
+  "protected_phase0_files": 22,
+  "protected_files_unchanged": true,
+  "changes": [],
+  "immutable": "NOT PROVEN: local disposable full-access keys retained; no public deployment",
+  "initial_import_absence_assertion": "FAILED: promise_batch_action_deploy_contract is retained by SDK generic Promise dispatch; absence is NOT established",
+  "privileged_imports_present": [
+    "promise_batch_action_deploy_contract",
+    "promise_batch_action_add_key_with_full_access",
+    "promise_batch_action_add_key_with_function_call",
+    "promise_batch_action_delete_account",
+    "promise_batch_action_use_global_contract",
+    "promise_batch_action_deploy_global_contract"
+  ],
+  "bytecode_action_reachability": "BLOCKED: import list is not a formal reachability proof. Source constructs only native transfer and bounded function-call actions; independent review still required",
+  "review_scope": "Source action sites plus generated import/export inspection; not independent audit or formal compiler verification"
+}
+{
+  "floorkit.wasm": {
+    "sha256": "a6f8f0c47f73a3eb7e5c85cc10b2a3b8773af4023ddf598d9d6fc15d91a19f13",
+    "near_code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+    "bytes": 384646
+  },
+  "floorkit-fault.wasm": {
+    "sha256": "7f85949eb42def9792bfeaac26ecdb56e64474ebcff206910f941fc9c18650c1",
+    "near_code_hash": "9anvBYiHyMb8hi9ChBPp7uLdpHFooZx3Dp2A4GW9RB8c",
+    "bytes": 384644
+  },
+  "receiver.wasm": {
+    "sha256": "d56561ca8674f96956eeceee6a610eb2cdd815103945bc15d77d09495d55088b",
+    "near_code_hash": "FN1W8zMkLxTP2Jf6pnJ6ZPf3UxaVbuFJkZxCQxc32EBC",
+    "bytes": 187540
+  }
+}

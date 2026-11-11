@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "protected_preexisting_count": 215,
+  "mismatches": [],
+  "phase0_sha256": {
+    "floorkit\\research\\CONTRACT_ARCHITECTURE.md": "2747e7e19c21563739f72a19ba68debd7c72f3022937617b84cc4ba0507e93f5",
+    "floorkit\\research\\ECONOMIC_SPEC.md": "721ddb4d49fb6000631b7246a80c1d3d2def9fc34e3fdc1ed8447b0ad2300759",
+    "floorkit\\research\\EXTRA_CHECKS.json": "72b611bd22c7b8f3a9242ebb2ed9d53846b14503632443f51b9a304335afdea7",
+    "floorkit\\research\\GO_NO_GO.md": "f896e39436d709d4918723cab9ad35fdc0edf2b7615bef99ecc789a280a23217",
+    "floorkit\\research\\HOSTING_STATUS.json": "6a7505fa0771c5214d47be84df5d17be7966b0b6fcc078bf6d4936f01828680c",
+    "floorkit\\research\\IMPLEMENTATION_PLAN.md": "236047c4646fe0ed7a159f863f5deaa8f7659d2566eacc58f12ab82f7c2c7f72",
+    "floorkit\\research\\INVARIANTS.md": "4f7c12c431dda57b4a56888eee8da266135e72db895b74b23e200c5215dfac49",
+    "floorkit\\research\\model.py": "6724091faaf0936b67cc457a5ff33a42933b903a120d9bc0d18ae26852a1b738",
+    "floorkit\\research\\README.md": "255e62d665a5d90779bba262306d9740a126674289a0cb4e007f01a8572a47c3",
+    "floorkit\\research\\REJECTED_DESIGNS.json": "fc116527f30094149152ba6200029b6ecf1c3ff2d117e0de9ffdf2338d62e029",
+    "floorkit\\research\\rejected_designs.py": "3f48342f05a023ff29bda6a048dee009ce3f47cdc1b3af8912da3823d9895af4",
+    "floorkit\\research\\REPLAY_CHECK.json": "802789d88d23112cc807aa28efdd82ead8ee1e292696654d9845fe7c1d106364",
+    "floorkit\\research\\REPLAY_SEED_42.json": "9d7005d60f0c125425722a0f96dd08e5f376cd5a1c35a766fd8de528b7cb7a2a",
+    "floorkit\\research\\REPOSITORY_SAFETY.json": "b372371f4811719c6f432f4a231ecfb706af3c0bfdd493519e9cdf48454e13a6",
+    "floorkit\\research\\run-tests.ps1": "e610edcba660f10ee658d9380e1755cd848f562e2330b9eb0b46de57d77743fb",
+    "floorkit\\research\\run_tests.py": "b2e0e3f518174f8735cca4f4701900055c32b69c025acb6c04021d37a3ceba27",
+    "floorkit\\research\\test_model.py": "855dfebdd93c90ca44f13ca0b667a3bd64463d4fd5f59ed3f6d3c2375ff9a39c",
+    "floorkit\\research\\TEST_RESULTS.json": "621343e3165b6ed83c21109d7721d142537afa1680a094e65c2ea96edb802004",
+    "floorkit\\research\\TEST_RESULTS.md": "19145ec9b4a799ea36ab8e54262f3e841b7aaae52465842be5149a0c5fd2fc48",
+    "floorkit\\research\\THREAT_MODEL.md": "8854c40b5fb5572c772a4d1af4ca81306d166b333e62e9899dfb2311ec1b9eed",
+    "floorkit\\research\\UNIT_TEST_RESULTS.txt": "d70d0bdee12b730ce0bf2703f60758033eeffc0699caf189ba664bce2de18e5f",
+    "floorkit\\research\\verify_extras.py": "5a3f024df172e681bf5344f88aff9ff2624b2397b709d0bab563f90981bd34ab"
+  }
+}

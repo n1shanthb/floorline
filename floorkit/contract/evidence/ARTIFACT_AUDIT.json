@@ -1,0 +1,828 @@
+{
+  "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "near_sdk": "5.30.1",
+  "uint": "0.9.5",
+  "borsh": "1.8.1",
+  "artifacts": {
+    "floorkit.wasm": {
+      "sha256": "a6f8f0c47f73a3eb7e5c85cc10b2a3b8773af4023ddf598d9d6fc15d91a19f13",
+      "near_code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+      "bytes": 384646,
+      "exports": [
+        {
+          "name": "memory",
+          "kind": 2,
+          "index": 0
+        },
+        {
+          "name": "accounting",
+          "kind": 0,
+          "index": 190
+        },
+        {
+          "name": "claim_creator_fees",
+          "kind": 0,
+          "index": 191
+        },
+        {
+          "name": "cleanup_claim",
+          "kind": 0,
+          "index": 192
+        },
+        {
+          "name": "contract_source_metadata",
+          "kind": 0,
+          "index": 193
+        },
+        {
+          "name": "contribute",
+          "kind": 0,
+          "index": 194
+        },
+        {
+          "name": "ft_balance_of",
+          "kind": 0,
+          "index": 195
+        },
+        {
+          "name": "ft_metadata",
+          "kind": 0,
+          "index": 196
+        },
+        {
+          "name": "ft_resolve_transfer",
+          "kind": 0,
+          "index": 197
+        },
+        {
+          "name": "ft_total_supply",
+          "kind": 0,
+          "index": 198
+        },
+        {
+          "name": "ft_transfer",
+          "kind": 0,
+          "index": 199
+        },
+        {
+          "name": "ft_transfer_call",
+          "kind": 0,
+          "index": 200
+        },
+        {
+          "name": "get_claim",
+          "kind": 0,
+          "index": 201
+        },
+        {
+          "name": "get_config",
+          "kind": 0,
+          "index": 202
+        },
+        {
+          "name": "get_pending_ft_call",
+          "kind": 0,
+          "index": 203
+        },
+        {
+          "name": "mint",
+          "kind": 0,
+          "index": 204
+        },
+        {
+          "name": "new",
+          "kind": 0,
+          "index": 205
+        },
+        {
+          "name": "on_native_result",
+          "kind": 0,
+          "index": 206
+        },
+        {
+          "name": "quote_mint",
+          "kind": 0,
+          "index": 207
+        },
+        {
+          "name": "quote_redeem",
+          "kind": 0,
+          "index": 208
+        },
+        {
+          "name": "redeem",
+          "kind": 0,
+          "index": 209
+        },
+        {
+          "name": "retry_failed_claim",
+          "kind": 0,
+          "index": 210
+        },
+        {
+          "name": "storage_balance_bounds",
+          "kind": 0,
+          "index": 211
+        },
+        {
+          "name": "storage_balance_of",
+          "kind": 0,
+          "index": 212
+        },
+        {
+          "name": "storage_deposit",
+          "kind": 0,
+          "index": 213
+        },
+        {
+          "name": "storage_unregister",
+          "kind": 0,
+          "index": 214
+        },
+        {
+          "name": "storage_withdraw",
+          "kind": 0,
+          "index": 215
+        },
+        {
+          "name": "withdraw_claim",
+          "kind": 0,
+          "index": 216
+        }
+      ],
+      "imports": [
+        {
+          "module": "env",
+          "name": "value_return"
+        },
+        {
+          "module": "env",
+          "name": "register_len"
+        },
+        {
+          "module": "env",
+          "name": "read_register"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_create"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_then"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_create_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call_weight"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_stake"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer_to_gas_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_return"
+        },
+        {
+          "module": "env",
+          "name": "promise_result"
+        },
+        {
+          "module": "env",
+          "name": "promise_and"
+        },
+        {
+          "module": "env",
+          "name": "storage_has_key"
+        },
+        {
+          "module": "env",
+          "name": "storage_read"
+        },
+        {
+          "module": "env",
+          "name": "storage_usage"
+        },
+        {
+          "module": "env",
+          "name": "storage_write"
+        },
+        {
+          "module": "env",
+          "name": "storage_remove"
+        },
+        {
+          "module": "env",
+          "name": "account_balance"
+        },
+        {
+          "module": "env",
+          "name": "account_locked_balance"
+        },
+        {
+          "module": "env",
+          "name": "log_utf8"
+        },
+        {
+          "module": "env",
+          "name": "input"
+        },
+        {
+          "module": "env",
+          "name": "panic_utf8"
+        },
+        {
+          "module": "env",
+          "name": "prepaid_gas"
+        },
+        {
+          "module": "env",
+          "name": "block_timestamp"
+        },
+        {
+          "module": "env",
+          "name": "attached_deposit"
+        },
+        {
+          "module": "env",
+          "name": "current_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_results_count"
+        },
+        {
+          "module": "env",
+          "name": "predecessor_account_id"
+        }
+      ]
+    },
+    "floorkit-fault.wasm": {
+      "sha256": "7f85949eb42def9792bfeaac26ecdb56e64474ebcff206910f941fc9c18650c1",
+      "near_code_hash": "9anvBYiHyMb8hi9ChBPp7uLdpHFooZx3Dp2A4GW9RB8c",
+      "bytes": 384644,
+      "exports": [
+        {
+          "name": "memory",
+          "kind": 2,
+          "index": 0
+        },
+        {
+          "name": "accounting",
+          "kind": 0,
+          "index": 190
+        },
+        {
+          "name": "claim_creator_fees",
+          "kind": 0,
+          "index": 191
+        },
+        {
+          "name": "cleanup_claim",
+          "kind": 0,
+          "index": 192
+        },
+        {
+          "name": "contract_source_metadata",
+          "kind": 0,
+          "index": 193
+        },
+        {
+          "name": "contribute",
+          "kind": 0,
+          "index": 194
+        },
+        {
+          "name": "ft_balance_of",
+          "kind": 0,
+          "index": 195
+        },
+        {
+          "name": "ft_metadata",
+          "kind": 0,
+          "index": 196
+        },
+        {
+          "name": "ft_resolve_transfer",
+          "kind": 0,
+          "index": 197
+        },
+        {
+          "name": "ft_total_supply",
+          "kind": 0,
+          "index": 198
+        },
+        {
+          "name": "ft_transfer",
+          "kind": 0,
+          "index": 199
+        },
+        {
+          "name": "ft_transfer_call",
+          "kind": 0,
+          "index": 200
+        },
+        {
+          "name": "get_claim",
+          "kind": 0,
+          "index": 201
+        },
+        {
+          "name": "get_config",
+          "kind": 0,
+          "index": 202
+        },
+        {
+          "name": "get_pending_ft_call",
+          "kind": 0,
+          "index": 203
+        },
+        {
+          "name": "mint",
+          "kind": 0,
+          "index": 204
+        },
+        {
+          "name": "new",
+          "kind": 0,
+          "index": 205
+        },
+        {
+          "name": "on_native_result",
+          "kind": 0,
+          "index": 206
+        },
+        {
+          "name": "quote_mint",
+          "kind": 0,
+          "index": 207
+        },
+        {
+          "name": "quote_redeem",
+          "kind": 0,
+          "index": 208
+        },
+        {
+          "name": "redeem",
+          "kind": 0,
+          "index": 209
+        },
+        {
+          "name": "retry_failed_claim",
+          "kind": 0,
+          "index": 210
+        },
+        {
+          "name": "storage_balance_bounds",
+          "kind": 0,
+          "index": 211
+        },
+        {
+          "name": "storage_balance_of",
+          "kind": 0,
+          "index": 212
+        },
+        {
+          "name": "storage_deposit",
+          "kind": 0,
+          "index": 213
+        },
+        {
+          "name": "storage_unregister",
+          "kind": 0,
+          "index": 214
+        },
+        {
+          "name": "storage_withdraw",
+          "kind": 0,
+          "index": 215
+        },
+        {
+          "name": "withdraw_claim",
+          "kind": 0,
+          "index": 216
+        }
+      ],
+      "imports": [
+        {
+          "module": "env",
+          "name": "value_return"
+        },
+        {
+          "module": "env",
+          "name": "register_len"
+        },
+        {
+          "module": "env",
+          "name": "read_register"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_create"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_then"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_create_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call_weight"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_stake"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer_to_gas_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_return"
+        },
+        {
+          "module": "env",
+          "name": "promise_result"
+        },
+        {
+          "module": "env",
+          "name": "promise_and"
+        },
+        {
+          "module": "env",
+          "name": "storage_has_key"
+        },
+        {
+          "module": "env",
+          "name": "storage_read"
+        },
+        {
+          "module": "env",
+          "name": "storage_usage"
+        },
+        {
+          "module": "env",
+          "name": "storage_write"
+        },
+        {
+          "module": "env",
+          "name": "storage_remove"
+        },
+        {
+          "module": "env",
+          "name": "account_balance"
+        },
+        {
+          "module": "env",
+          "name": "account_locked_balance"
+        },
+        {
+          "module": "env",
+          "name": "log_utf8"
+        },
+        {
+          "module": "env",
+          "name": "input"
+        },
+        {
+          "module": "env",
+          "name": "panic_utf8"
+        },
+        {
+          "module": "env",
+          "name": "prepaid_gas"
+        },
+        {
+          "module": "env",
+          "name": "block_timestamp"
+        },
+        {
+          "module": "env",
+          "name": "attached_deposit"
+        },
+        {
+          "module": "env",
+          "name": "current_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_results_count"
+        },
+        {
+          "module": "env",
+          "name": "predecessor_account_id"
+        }
+      ]
+    },
+    "receiver.wasm": {
+      "sha256": "d56561ca8674f96956eeceee6a610eb2cdd815103945bc15d77d09495d55088b",
+      "near_code_hash": "FN1W8zMkLxTP2Jf6pnJ6ZPf3UxaVbuFJkZxCQxc32EBC",
+      "bytes": 187540,
+      "exports": [
+        {
+          "name": "memory",
+          "kind": 2,
+          "index": 0
+        },
+        {
+          "name": "act",
+          "kind": 0,
+          "index": 130
+        },
+        {
+          "name": "contract_source_metadata",
+          "kind": 0,
+          "index": 139
+        },
+        {
+          "name": "delete_then_withdraw",
+          "kind": 0,
+          "index": 140
+        },
+        {
+          "name": "ft_on_transfer",
+          "kind": 0,
+          "index": 143
+        }
+      ],
+      "imports": [
+        {
+          "module": "env",
+          "name": "input"
+        },
+        {
+          "module": "env",
+          "name": "register_len"
+        },
+        {
+          "module": "env",
+          "name": "read_register"
+        },
+        {
+          "module": "env",
+          "name": "value_return"
+        },
+        {
+          "module": "env",
+          "name": "sha256"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_create"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_then"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_create_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_function_call_weight"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_stake"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_delete_account"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_transfer_to_gas_key"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_full_access"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_add_gas_key_with_function_call"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_deploy_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract"
+        },
+        {
+          "module": "env",
+          "name": "promise_batch_action_use_global_contract_by_account_id"
+        },
+        {
+          "module": "env",
+          "name": "promise_and"
+        },
+        {
+          "module": "env",
+          "name": "promise_return"
+        },
+        {
+          "module": "env",
+          "name": "current_account_id"
+        },
+        {
+          "module": "env",
+          "name": "predecessor_account_id"
+        },
+        {
+          "module": "env",
+          "name": "storage_read"
+        },
+        {
+          "module": "env",
+          "name": "panic_utf8"
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    ".gitattributes": "fb3d44029375a8a77db3373dcf919fafc6f169b338462806ca825e910d0edc01",
+    ".gitignore": "436e5cef457fe31a40bc86c8cbd55b89b32536c34f799706370842d36821ffb2",
+    "build.ps1": "91dc84b3fe2928277d7d271ac1acf1861f51f21f2ed4a8396731dc82a415f511",
+    "Cargo.lock": "8b08ba6f391584572b612c18c2265cf2129ae34fdb6c3fefee66ef9c5ef294e3",
+    "Cargo.toml": "d2bbe03f4c6439e49dff99005c4eb510cd234ba1e5692a44bb96a1d93c236be9",
+    "check.ps1": "f4362e56a7f4ce2ce01d5138f282bdabcacdf2644541fcda7c20dea833022800",
+    "examples\\parity.rs": "348d07b57c6851c9cbdf64c7233bbb1145b73cb04d5afc2e378c7d43f0ba11a4",
+    "receiver\\Cargo.lock": "c0d5b70c6559fa562330ab3f497bc57019c567c0c4e156568b997bca0888729c",
+    "receiver\\Cargo.toml": "69fdeceb4a594333d9cbb877537ae13c9ae514d554fdfb25d7fe30e845327eed",
+    "receiver\\src\\lib.rs": "5f25ddc8cc3837fce15ec63c31b215cab8389bf8c6cf2fed4b0d6c7905f65a87",
+    "src\\contract.rs": "2a4386ab61ca5527d033349cd4ad8661ca6078d18e5b64cf8a1227cd28de00f5",
+    "src\\lib.rs": "a9fadbe41da4db60eb10693e50bb49850947a96c61205b9026eb99d76e389a53",
+    "start-sandbox.sh": "6781fee087952bf49794a0d888a009ba1a7e708b6a181eb52edebcb584181f49",
+    "stop-sandbox.py": "6331f282ba3feaba62e06e14a7cf9dd38d84913c535d41879160370bc9b3f9e2",
+    "tests\\economics.rs": "7bea08848a5dd647d9526fb520fe2cccbfed51de5c702f5504ed5405804d80b3",
+    "tools\\audit_artifact.py": "b5181b794613467640446b02b77fce3204cae190ef5d10cda19c82637303259e",
+    "tools\\final_views.mjs": "999b6d9be32705f159f90ea4621e0f23371d0688140c36bc37521baffbd44acb",
+    "tools\\parity.py": "f23eece7bced4087202dbd9376cf490f130d714f779e3697a929a9b589d6ec93",
+    "tools\\report.py": "cdb50fa6e891e9e9e01b8ad4f4979fe0ef228567227247876e6610e698abf13f",
+    "tools\\runtime.mjs": "61fe5ce603d375faed10d89c943b0f37b47bd536257854b7ec52d24b8eb867d1",
+    "tools\\runtime_parity.py": "0bf331d5f0ccbdc3258c35d14ca4a335afc7daeedfc97c84fd387af117c0c496",
+    "tools\\supplemental.mjs": "06cf905b7e8965ad4d62be35b1dc64f496a0cccc1ee4749e1d74ea05d722be06"
+  },
+  "protected_preexisting_files": 215,
+  "protected_phase0_files": 22,
+  "protected_files_unchanged": true,
+  "changes": [],
+  "immutable": "NOT PROVEN: local disposable full-access keys retained; no public deployment",
+  "initial_import_absence_assertion": "FAILED: promise_batch_action_deploy_contract is retained by SDK generic Promise dispatch; absence is NOT established",
+  "privileged_imports_present": [
+    "promise_batch_action_deploy_contract",
+    "promise_batch_action_add_key_with_full_access",
+    "promise_batch_action_add_key_with_function_call",
+    "promise_batch_action_delete_account",
+    "promise_batch_action_use_global_contract",
+    "promise_batch_action_deploy_global_contract"
+  ],
+  "bytecode_action_reachability": "BLOCKED: import list is not a formal reachability proof. Source constructs only native transfer and bounded function-call actions; independent review still required",
+  "review_scope": "Source action sites plus generated import/export inspection; not independent audit or formal compiler verification"
+}
