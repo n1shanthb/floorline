@@ -1,0 +1,24 @@
+test_bootstrap_rounds_supply_down_and_separates_deposits (test_model.ModelTests.test_bootstrap_rounds_supply_down_and_separates_deposits) ... ok
+test_contribution_transfer_storage_and_direct_receipt (test_model.ModelTests.test_contribution_transfer_storage_and_direct_receipt) ... ok
+test_fee_extraction_only_consumes_earned_credit (test_model.ModelTests.test_fee_extraction_only_consumes_earned_credit) ... ok
+test_fee_is_excluded_before_minting (test_model.ModelTests.test_fee_is_excluded_before_minting) ... ok
+test_ft_callback_cannot_burn_or_recover_redeemed_tokens (test_model.ModelTests.test_ft_callback_cannot_burn_or_recover_redeemed_tokens) ... ok
+test_full_exit_during_ft_call_still_closes_forever (test_model.ModelTests.test_full_exit_during_ft_call_still_closes_forever) ... ok
+test_invalid_creator_parameters_and_bootstrap (test_model.ModelTests.test_invalid_creator_parameters_and_bootstrap) ... ok
+test_mint_redeem_cycles_no_external_cash_profit_even_for_creator (test_model.ModelTests.test_mint_redeem_cycles_no_external_cash_profit_even_for_creator) ... ok
+test_missing_callback_is_permanently_unknown_not_retryable (test_model.ModelTests.test_missing_callback_is_permanently_unknown_not_retryable) ... ok
+test_overlapping_dispatches_cannot_spend_backing (test_model.ModelTests.test_overlapping_dispatches_cannot_spend_backing) ... ok
+test_partial_and_full_redemption (test_model.ModelTests.test_partial_and_full_redemption) ... ok
+test_refund_before_callback_and_delayed_old_refund (test_model.ModelTests.test_refund_before_callback_and_delayed_old_refund) ... ok
+test_registration_only_refunds_sponsor_and_pool_is_bounded (test_model.ModelTests.test_registration_only_refunds_sponsor_and_pool_is_bounded) ... ok
+test_stale_quotes_and_backwards_time (test_model.ModelTests.test_stale_quotes_and_backwards_time) ... ok
+test_storage_exhaustion_is_atomic_and_cleanup_returns_credit (test_model.ModelTests.test_storage_exhaustion_is_atomic_and_cleanup_returns_credit) ... ok
+test_storage_withdraw_unregister_and_refund_slots (test_model.ModelTests.test_storage_withdraw_unregister_and_refund_slots) ... ok
+test_u128_wide_rounding_and_id_exhaustion (test_model.ModelTests.test_u128_wide_rounding_and_id_exhaustion) ... ok
+test_undebited_other_promise_cannot_mask_missing_refund (test_model.ModelTests.test_undebited_other_promise_cannot_mask_missing_refund) ... ok
+test_zero_output_and_slippage_do_not_burn (test_model.ModelTests.test_zero_output_and_slippage_do_not_burn) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.058s
+
+OK
