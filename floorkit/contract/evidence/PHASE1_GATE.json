@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED",
+  "deployment_recommendation": "NO-GO",
+  "reason": "Unresolved global unregister availability after eight unknown operational-refund callbacks; incomplete exhaustive async/bytecode review",
+  "native_rust_tests": 8,
+  "native_economic_sequences": 10000,
+  "native_economic_operations": 640000,
+  "full_width_quote_cases": 10000,
+  "sandbox_primary_scenarios": 26,
+  "sandbox_supplemental_scenarios": 2,
+  "wasm_randomized_operations": 64,
+  "backing_and_solvency_in_executed_cases": "PASS",
+  "full_transport_model_parity": "NOT CLAIMED",
+  "actual_immutable": false,
+  "wasm_sha256": "a6f8f0c47f73a3eb7e5c85cc10b2a3b8773af4023ddf598d9d6fc15d91a19f13",
+  "near_code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+  "protected_preexisting_files_unchanged": 215,
+  "protected_phase0_files_unchanged": 22,
+  "public_testnet_deployment": false,
+  "private_existing_credentials_accessed": false
+}

@@ -1,0 +1,521 @@
+{
+  "status": "PASS for recorded bounded cases only",
+  "scope": "Total gas includes transaction and receipts. Groups include rejected calls and explicitly labeled fault scenarios; not a universal gas bound.",
+  "gas_by_method": {
+    "new": {
+      "samples": 1,
+      "minimum_total_receipt_gas": 2210078759702,
+      "maximum_total_receipt_gas": 2210078759702,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "storage_deposit": {
+      "samples": 19,
+      "minimum_total_receipt_gas": 2108319018904,
+      "maximum_total_receipt_gas": 5791460224126,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "storage_unregister": {
+      "samples": 3,
+      "minimum_total_receipt_gas": 1932186298152,
+      "maximum_total_receipt_gas": 5627271867281,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "mint": {
+      "samples": 32,
+      "minimum_total_receipt_gas": 2180962264705,
+      "maximum_total_receipt_gas": 2393301531453,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "redeem": {
+      "samples": 86,
+      "minimum_total_receipt_gas": 2115145517546,
+      "maximum_total_receipt_gas": 2752025101971,
+      "prepaid_gas_values": [
+        "300000000000000",
+        "40000000000000"
+      ]
+    },
+    "withdraw_claim": {
+      "samples": 11,
+      "minimum_total_receipt_gas": 2308405916289,
+      "maximum_total_receipt_gas": 5509732802750,
+      "prepaid_gas_values": [
+        "150000000000000",
+        "300000000000000"
+      ]
+    },
+    "retry_failed_claim": {
+      "samples": 5,
+      "minimum_total_receipt_gas": 2129004515053,
+      "maximum_total_receipt_gas": 2279146368985,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "cleanup_claim": {
+      "samples": 5,
+      "minimum_total_receipt_gas": 2038408155321,
+      "maximum_total_receipt_gas": 2386717525432,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "claim_creator_fees": {
+      "samples": 2,
+      "minimum_total_receipt_gas": 2193964836040,
+      "maximum_total_receipt_gas": 2332063804112,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "contribute": {
+      "samples": 16,
+      "minimum_total_receipt_gas": 1928748116533,
+      "maximum_total_receipt_gas": 2167359879546,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "ft_transfer": {
+      "samples": 5,
+      "minimum_total_receipt_gas": 1737731437108,
+      "maximum_total_receipt_gas": 2384338286645,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "on_native_result": {
+      "samples": 1,
+      "minimum_total_receipt_gas": 1655779909628,
+      "maximum_total_receipt_gas": 1655779909628,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "ft_resolve_transfer": {
+      "samples": 1,
+      "minimum_total_receipt_gas": 1655921374109,
+      "maximum_total_receipt_gas": 1655921374109,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "ft_transfer_call": {
+      "samples": 9,
+      "minimum_total_receipt_gas": 8002366923272,
+      "maximum_total_receipt_gas": 57812336911786,
+      "prepaid_gas_values": [
+        "150000000000000"
+      ]
+    },
+    "storage_withdraw": {
+      "samples": 2,
+      "minimum_total_receipt_gas": 5872612496318,
+      "maximum_total_receipt_gas": 5877174210059,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "act": {
+      "samples": 2,
+      "minimum_total_receipt_gas": 4439604400441,
+      "maximum_total_receipt_gas": 4461144901265,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    },
+    "delete_then_withdraw": {
+      "samples": 2,
+      "minimum_total_receipt_gas": 8460921253844,
+      "maximum_total_receipt_gas": 8482194847976,
+      "prepaid_gas_values": [
+        "300000000000000"
+      ]
+    }
+  },
+  "normal_native_callback_receipts": [
+    {
+      "scenario": "withdraw",
+      "receipt_id": "4L1GebYYnMJ1asnLTFxYAziQUNCoPxViyAh3dNZzjkm8",
+      "gas_burnt": 1860154142707
+    },
+    {
+      "scenario": "creator_pay",
+      "receipt_id": "6hbqaBULheu5pdStcxWvptRRtJwXLn618bpAqJjexpiD",
+      "gas_burnt": 1860159079243
+    },
+    {
+      "scenario": "storage_partial",
+      "receipt_id": "ErUf4Sb58Xn8gtyHrdRbyMiFMuwKZtgui8fGGsgMVRUA",
+      "gas_burnt": 1864995768265
+    },
+    {
+      "scenario": "storage_all",
+      "receipt_id": "45o9RbpG9qwtxCeXh1xmiaHgKWDR8SbGJXzfXZ46Ftby",
+      "gas_burnt": 1864995768265
+    },
+    {
+      "scenario": "sponsor_excess",
+      "receipt_id": "BXfMkPRtVA3DGoPoTEZ19Y3R8aTa6gQnWDSAw7kjTEJ2",
+      "gas_burnt": 1865474706921
+    },
+    {
+      "scenario": "empty_unregister",
+      "receipt_id": "58G75DTdaaT7ZSr6PFfv7QaTUY6aoM4MipQ88kdFxpYt",
+      "gas_burnt": 1865474706921
+    },
+    {
+      "scenario": "overlapping_withdrawals",
+      "receipt_id": "2TX5P9z8wRtqDB45xQLQ1nhX9B5RmE2SsDgQ1WRmjYJm",
+      "gas_burnt": 1867754706921
+    },
+    {
+      "scenario": "overlapping_withdrawals",
+      "receipt_id": "GotyLdjsegPfcfmPK1TbwHa1CaDqFhPNuYindwkJJU2Y",
+      "gas_burnt": 1838114706921
+    },
+    {
+      "scenario": "max_name_payout",
+      "receipt_id": "4AaCBZnMwxnfnUMWg9u4yebZdGyM4JVL81sW1zSfuK7Y",
+      "gas_burnt": 1881176573317
+    },
+    {
+      "scenario": "delete_then_withdraw",
+      "receipt_id": "GSEM3o3Y21mFtAcnFQemUcBhNfxnbsQQKvuVvmGPsNTd",
+      "gas_burnt": 1862942408324
+    },
+    {
+      "scenario": "restored_pay",
+      "receipt_id": "Cq1VEKEksqjxDfSmdoBL4Rck3ves2mUpDAYvBszvT9i6",
+      "gas_burnt": 1868459080721
+    },
+    {
+      "scenario": "terminal_payment",
+      "receipt_id": "3ZvcjMS7CDzvEBx1of5nHhktHSkD9RPerL65L3Qazcor",
+      "gas_burnt": 1847477012014
+    },
+    {
+      "scenario": "guard_delete_then_withdraw",
+      "receipt_id": "BECHZp7CoCDYkHtaW2RBvDfxWji6H3R4UZ6tV1zSHNMY",
+      "gas_burnt": 1848262470797
+    },
+    {
+      "scenario": "guard_restored_paid_once",
+      "receipt_id": "5T2Pph5ktz3nMmpCkeaqJ3TS21x4xDFdwFrrVciAwERh",
+      "gas_burnt": 1853779143194
+    }
+  ],
+  "storage": {
+    "base_prepaid_yocto": "4090000000000000000000",
+    "maximum_claim_prepaid_yocto": "2280000000000000000000",
+    "maximum_ft_call_prepaid_yocto": "2170000000000000000000",
+    "initial_runtime_storage_bytes": 385443,
+    "operational_reserve_yocto": "5000000000000000000000000",
+    "observed_accepted_redemption_storage_deltas": [
+      148,
+      150,
+      228
+    ]
+  },
+  "history_profile": [
+    {
+      "name": "history_0",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 388847,
+      "allocated_claim_count": 23
+    },
+    {
+      "name": "history_1",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 388995,
+      "allocated_claim_count": 24
+    },
+    {
+      "name": "history_2",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389143,
+      "allocated_claim_count": 25
+    },
+    {
+      "name": "history_3",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389291,
+      "allocated_claim_count": 26
+    },
+    {
+      "name": "history_4",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389439,
+      "allocated_claim_count": 27
+    },
+    {
+      "name": "history_5",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389587,
+      "allocated_claim_count": 28
+    },
+    {
+      "name": "history_6",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389735,
+      "allocated_claim_count": 29
+    },
+    {
+      "name": "history_7",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 389883,
+      "allocated_claim_count": 30
+    },
+    {
+      "name": "history_8",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390031,
+      "allocated_claim_count": 31
+    },
+    {
+      "name": "history_9",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390179,
+      "allocated_claim_count": 32
+    },
+    {
+      "name": "history_10",
+      "gas_burnt": "2661674570941",
+      "storage_bytes": 390327,
+      "allocated_claim_count": 33
+    },
+    {
+      "name": "history_11",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390475,
+      "allocated_claim_count": 34
+    },
+    {
+      "name": "history_12",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390623,
+      "allocated_claim_count": 35
+    },
+    {
+      "name": "history_13",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390771,
+      "allocated_claim_count": 36
+    },
+    {
+      "name": "history_14",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 390919,
+      "allocated_claim_count": 37
+    },
+    {
+      "name": "history_15",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391067,
+      "allocated_claim_count": 38
+    },
+    {
+      "name": "history_16",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391215,
+      "allocated_claim_count": 39
+    },
+    {
+      "name": "history_17",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391363,
+      "allocated_claim_count": 40
+    },
+    {
+      "name": "history_18",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391511,
+      "allocated_claim_count": 41
+    },
+    {
+      "name": "history_19",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391659,
+      "allocated_claim_count": 42
+    },
+    {
+      "name": "history_20",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391807,
+      "allocated_claim_count": 43
+    },
+    {
+      "name": "history_21",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 391955,
+      "allocated_claim_count": 44
+    },
+    {
+      "name": "history_22",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392103,
+      "allocated_claim_count": 45
+    },
+    {
+      "name": "history_23",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392251,
+      "allocated_claim_count": 46
+    },
+    {
+      "name": "history_24",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392399,
+      "allocated_claim_count": 47
+    },
+    {
+      "name": "history_25",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392547,
+      "allocated_claim_count": 48
+    },
+    {
+      "name": "history_26",
+      "gas_burnt": "2661674570941",
+      "storage_bytes": 392695,
+      "allocated_claim_count": 49
+    },
+    {
+      "name": "history_27",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392843,
+      "allocated_claim_count": 50
+    },
+    {
+      "name": "history_28",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 392991,
+      "allocated_claim_count": 51
+    },
+    {
+      "name": "history_29",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393139,
+      "allocated_claim_count": 52
+    },
+    {
+      "name": "history_30",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393287,
+      "allocated_claim_count": 53
+    },
+    {
+      "name": "history_31",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393435,
+      "allocated_claim_count": 54
+    },
+    {
+      "name": "history_32",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393583,
+      "allocated_claim_count": 55
+    },
+    {
+      "name": "history_33",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393731,
+      "allocated_claim_count": 56
+    },
+    {
+      "name": "history_34",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 393879,
+      "allocated_claim_count": 57
+    },
+    {
+      "name": "history_35",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394027,
+      "allocated_claim_count": 58
+    },
+    {
+      "name": "history_36",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394175,
+      "allocated_claim_count": 59
+    },
+    {
+      "name": "history_37",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394323,
+      "allocated_claim_count": 60
+    },
+    {
+      "name": "history_38",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394471,
+      "allocated_claim_count": 61
+    },
+    {
+      "name": "history_39",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394619,
+      "allocated_claim_count": 62
+    },
+    {
+      "name": "history_40",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394767,
+      "allocated_claim_count": 63
+    },
+    {
+      "name": "history_41",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 394915,
+      "allocated_claim_count": 64
+    },
+    {
+      "name": "history_42",
+      "gas_burnt": "2661674570941",
+      "storage_bytes": 395063,
+      "allocated_claim_count": 65
+    },
+    {
+      "name": "history_43",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 395211,
+      "allocated_claim_count": 66
+    },
+    {
+      "name": "history_44",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 395359,
+      "allocated_claim_count": 67
+    },
+    {
+      "name": "history_45",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 395507,
+      "allocated_claim_count": 68
+    },
+    {
+      "name": "history_46",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 395655,
+      "allocated_claim_count": 69
+    },
+    {
+      "name": "history_47",
+      "gas_burnt": "2663954570941",
+      "storage_bytes": 395803,
+      "allocated_claim_count": 70
+    }
+  ],
+  "normal_callback_prepaid_gas": "30000000000000",
+  "fault_callback_prepaid_gas": "1000000000",
+  "history_first_last_gas_equal": true
+}
