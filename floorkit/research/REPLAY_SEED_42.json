@@ -1,0 +1,53 @@
+{
+  "status": "PASSED",
+  "model_only_not_runtime": true,
+  "python": "3.11.9",
+  "rng": "SplitMix64 explicit constants in run_tests.py",
+  "unit_tests": 19,
+  "random_sequences": 1,
+  "seed_range": [
+    42,
+    42
+  ],
+  "steps_per_sequence": 96,
+  "bootstrap_operations_per_sequence": 4,
+  "operations": 100,
+  "accepted_by_method": {
+    "advance_time": 2,
+    "contribute": 4,
+    "direct_transfer": 4,
+    "env_send": 2,
+    "mint": 6,
+    "redeem": 9,
+    "storage_deposit": 6,
+    "storage_withdraw": 1,
+    "withdraw": 3
+  },
+  "expected_rejections_by_method": {
+    "callback": 15,
+    "cleanup": 4,
+    "creator_claim": 3,
+    "env_refund": 6,
+    "env_send": 1,
+    "mint": 5,
+    "redeem": 8,
+    "resolve_ft": 5,
+    "retry_failed": 4,
+    "storage_unregister": 3,
+    "storage_withdraw": 2,
+    "transfer": 3,
+    "transfer_call": 1,
+    "withdraw": 3
+  },
+  "distinct_configs": 1,
+  "trace_sha256": "9bed8c85c036dd009c948e6098296abc86a4a44132cbb681421e990146767e56",
+  "elapsed_seconds": 0.125,
+  "failing_seeds": [],
+  "counterexamples": null,
+  "protected_files_unchanged": 215,
+  "source_sha256": {
+    "model.py": "6724091faaf0936b67cc457a5ff33a42933b903a120d9bc0d18ae26852a1b738",
+    "test_model.py": "855dfebdd93c90ca44f13ca0b667a3bd64463d4fd5f59ed3f6d3c2375ff9a39c",
+    "run_tests.py": "b2e0e3f518174f8735cca4f4701900055c32b69c025acb6c04021d37a3ceba27"
+  }
+}

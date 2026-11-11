@@ -1,0 +1,10 @@
+{
+  "status": "PASSED",
+  "model_only_not_runtime": true,
+  "fraction_cases": 10000,
+  "seed": 4043358231,
+  "expected_mint_overflow_or_dust_rejections": 2139,
+  "oracle_trace_sha256": "60ccf21350d5f54ce6cad597f913bc54a1bc3c0e20b0bc1398cb7ea0fc620924",
+  "two_manual_instance_state_isolation": "PASSED",
+  "protected_files_unchanged": 215
+}

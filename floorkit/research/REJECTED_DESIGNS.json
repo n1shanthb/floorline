@@ -1,0 +1,41 @@
+{
+  "admitted_model_invariant_failure": false,
+  "purpose": "Rejected-rule counterexamples and a specifically excluded stronger guarantee",
+  "gross_pricing_then_fee": {
+    "R": 100,
+    "T": 100,
+    "deposit": 100,
+    "minted": 100,
+    "fee": 5,
+    "after_R": 195,
+    "after_T": 200,
+    "before_B": "1",
+    "after_B_exact": "195/200",
+    "finding": "Positive bounded fee can dilute if mint priced from gross deposit"
+  },
+  "flat_tax_then_rebootstrap": {
+    "R": 100,
+    "T": 100,
+    "old_full_payout": 80,
+    "residual": 20,
+    "new_deposit": 1,
+    "new_supply": 1,
+    "new_payout": 16,
+    "finding": "New minter captures old forfeited reserve"
+  },
+  "accounting_B_not_fixed_size_quote": {
+    "before_R": 10000,
+    "before_T": 10000,
+    "mint_deposit": 10000,
+    "minted": 9900,
+    "markup_bps": 100,
+    "creator_fee_bps": 0,
+    "after_R": 20000,
+    "after_T": 19900,
+    "redemption_size": 1000,
+    "tax_bps": 2000,
+    "before_quote": 820,
+    "after_quote": 814,
+    "finding": "B strictly rises while fixed-size quote falls; stronger payout-floor claim rejected"
+  }
+}
