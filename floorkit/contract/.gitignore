@@ -1,0 +1,8 @@
+/target/
+/receiver/target/
+/artifacts/
+/.tmp/
+/sandbox-home/
+/node_modules/
+__pycache__/
+*.pyc
