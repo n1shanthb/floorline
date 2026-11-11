@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-11-11T13:20:07.271Z",
+  "scope": "Frontend only; no Rust rebuild and no chain writes",
+  "results": [
+    {
+      "task": "typecheck",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_ms": 6620
+    },
+    {
+      "task": "lint",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_ms": 5876
+    },
+    {
+      "task": "test",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_ms": 1630
+    },
+    {
+      "task": "build",
+      "exit_code": 0,
+      "passed": true,
+      "elapsed_ms": 7105
+    }
+  ]
+}
