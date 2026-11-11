@@ -1,0 +1,17 @@
+{
+  "network":"near-testnet",
+  "purpose":"Historical demo evidence pointers. Validate against repository TESTNET_EVIDENCE.json and real receipts before rendering as verified.",
+  "contract":"floor.floorline-g3-20261111-6702ea.testnet",
+  "dao":"floorline-g3-20261111-6702ea.sputnikv2.testnet",
+  "postDaoSnapshot":{"backingNear":"2.019","supplyFloor":"1.9","backingPerFloorApprox":"1.062631578947368421","nativeBalanceNear":"8.269000000000000000000003","requiredReservesNear":"6.847910000000000000000003","surplusNear":"1.42109","isLive":false},
+  "events":[
+    {"id":"issue-alice","title":"Alice issued 2.00 FLOOR","kind":"issuance","amount":"2.00 FLOOR","tx":"6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy"},
+    {"id":"redeem-bob","title":"Bob redeemed 0.10 FLOOR","kind":"redemption","amount":"0.10 FLOOR","tx":"2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ","payoutNear":"0.081","payoutTx":"8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t"},
+    {"id":"nft-transfer","title":"Carol transferred loan NFT to Dave","kind":"nft_transfer","tx":"6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV"},
+    {"id":"loan-repaid","title":"Dave repaid 0.11 NEAR; loan NFT burned","kind":"loan_repayment","tx":"5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M"},
+    {"id":"loan-default","title":"Loan #2 default settled; NFT burned","kind":"loan_default","tx":"5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD"},
+    {"id":"dao-vote-b","title":"Council B approved proposal #0; still in progress","kind":"dao_vote","tx":"EMbAnPE9AmweA8NvN2hn5pYS5kFuTE1RcxMPVwBb4Nmz"},
+    {"id":"dao-vote-c","title":"Council C approved proposal #0; execution threshold met","kind":"dao_vote","tx":"hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg","functionCallReceipt":"4aMh8cSjwbvjCz8r3gfpw9jZmVzNDuJu7wLpvjNYKFiw","contributionNear":"0.10"}
+  ],
+  "warnings":["Historical events, not a live feed","Council was operator-controlled simulated council","No guaranteed redemption price or NEAR lender recovery","NFTs were burned after repay/default","Contract upgrade keys retained"]
+}

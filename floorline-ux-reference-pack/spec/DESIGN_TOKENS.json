@@ -1,0 +1,11 @@
+{
+  "name":"Floorline / Soft Electric",
+  "reference_ux":"Revnet-inspired, single-project, action-first, not a clone",
+  "colors":{"canvas":"#F7F7F3","ink":"#17171B","primary":"#7659ED","primaryHover":"#6446D9","lilac":"#EAE5FF","lime":"#DFFFAB","border":"#E9E7E2","muted":"#787781","deepViolet":"#32245C","warning":"#FFF1D9","white":"#FFFFFF"},
+  "typography":{"display":"Space Grotesk","body":"Geist, Inter, system-ui","displayDesktopPx":94,"displayMobilePx":60,"appHeadingDesktopPx":46,"appHeadingMobilePx":35},
+  "radii":{"cardPx":24,"buttonPx":14,"pillPx":999},
+  "spacing":{"basePx":8,"desktopSidebarPx":248,"maxAppContentPx":1130,"maxLandingContentPx":1296},
+  "motionMs":{"buttonHover":160,"buttonPress":100,"tab":240,"drawer":280,"cardReveal":420,"headlineWordStagger":65,"numberUpdate":500,"chartReveal":650,"nftTransfer":700,"daoVoteStep":450,"toast":350,"heroFloatLoop":6000},
+  "motionEasing":"cubic-bezier(.2,.8,.2,1)",
+  "principles":["Light and expressive, not corporate-white","Action-first Revnet-style financial UX","Real receipts, no invented live activity","All financial values exact in integer base units","Reduced-motion and mobile-first fallbacks"]
+}

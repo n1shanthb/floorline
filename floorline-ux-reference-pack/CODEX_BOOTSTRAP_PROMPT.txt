@@ -1,0 +1,7 @@
+You are working in E:\near-2 on Floorline (NEAR testnet). I have added the folder design\floorline-ux-reference-pack. The frontend is NOW authorized: build it end to end.
+
+First read design\floorline-ux-reference-pack\CODEX_MASTER_PROMPT.md and all referenced specs, JSON files and screenshots. The visual direction is LOCKED: Revnet-inspired action-first UX, premium light Gen-Z “Soft Electric” aesthetic (warm off-white #F7F7F3, violet #7659ED, lilac #EAE5FF, lime #DFFFAB), responsive and motion-polished. Treat screenshots as visual references, not images to use as entire pages. Inspect the actual contract source and evidence before wiring NEAR methods; do not invent method names, transactions or live activity.
+
+Implement the landing plus Overview, Treasury, Loans & NFTs, Governance and Activity & Proof; real testnet RPC/wallet integration, safe exact BigInt quotes and tx review flows, verified historical replay, accessible motion and mobile nav. Keep honest states when an action is unsupported, especially issuance at the post-DAO backing ratio. Do not modify/redeploy smart contracts or DAO, do not touch keys, and work only under E:\near-2.
+
+Start with a repo/contract-method audit and plan, then implement in phases. Run lint/typecheck/tests/build, inspect desktop/mobile screenshots, and deliver FRONTEND_IMPLEMENTATION_REPORT.md with working routes, actual method mappings, known limitations and launch commands. Do not ask me to re-choose the design.
