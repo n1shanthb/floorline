@@ -1,0 +1,1392 @@
+[
+  {
+    "hash": "HnnBiq3SamMghfBVSUT2sU9MhLJipYPEa7FGkQQ6ZvK4",
+    "url": "https://testnet.nearblocks.io/txns/HnnBiq3SamMghfBVSUT2sU9MhLJipYPEa7FGkQQ6ZvK4",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/HnnBiq3SamMghfBVSUT2sU9MhLJipYPEa7FGkQQ6ZvK4",
+    "checked_at": "2026-11-11T07:48:58.284Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "storage_deposit",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "50000000000000000000000",
+            "args_json": {
+              "account_id": null,
+              "registration_only": false
+            },
+            "args_base64": null,
+            "method_name": "storage_deposit"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "50000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "9RLnB2uymnj8tnkDFvXQSpi51BxSVtpBGHmCuGfYw41W",
+        "block_height": "277185240",
+        "block_timestamp": "1794382610948160229"
+      },
+      "block_timestamp": "1794382610948160229",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2586668189050",
+        "transaction_fee": "236348562655000000000"
+      },
+      "receipt_conversion_gas_burnt": "310920522900",
+      "receipt_conversion_tokens_burnt": "31092052290000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "HnnBiq3SamMghfBVSUT2sU9MhLJipYPEa7FGkQQ6ZvK4"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "GBbKW7SJewZAXgBp6awJbWgPFVUcBQ5T66Kj3CfBmW9d",
+    "url": "https://testnet.nearblocks.io/txns/GBbKW7SJewZAXgBp6awJbWgPFVUcBQ5T66Kj3CfBmW9d",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/GBbKW7SJewZAXgBp6awJbWgPFVUcBQ5T66Kj3CfBmW9d",
+    "checked_at": "2026-11-11T07:49:06.439Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "storage_deposit",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "50000000000000000000000",
+            "args_json": {
+              "account_id": null,
+              "registration_only": false
+            },
+            "args_base64": null,
+            "method_name": "storage_deposit"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "50000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "7FYxsac3xSegcKMLqknTu1zsqUKWmPRxyyiEnCVYEXPJ",
+        "block_height": "277185250",
+        "block_timestamp": "1794382616926002851"
+      },
+      "block_timestamp": "1794382616926002851",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2584042345774",
+        "transaction_fee": "236085978327400000000"
+      },
+      "receipt_conversion_gas_burnt": "310920522900",
+      "receipt_conversion_tokens_burnt": "31092052290000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "dave.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "GBbKW7SJewZAXgBp6awJbWgPFVUcBQ5T66Kj3CfBmW9d"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "FVZLr6Cr5xbDFw3UgLNQhRZ4aLzbUZ5ujBEcCBhTAcZn",
+    "url": "https://testnet.nearblocks.io/txns/FVZLr6Cr5xbDFw3UgLNQhRZ4aLzbUZ5ujBEcCBhTAcZn",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/FVZLr6Cr5xbDFw3UgLNQhRZ4aLzbUZ5ujBEcCBhTAcZn",
+    "checked_at": "2026-11-11T07:49:15.768Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "storage_deposit",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "50000000000000000000000",
+            "args_json": {
+              "account_id": null,
+              "registration_only": false
+            },
+            "args_base64": null,
+            "method_name": "storage_deposit"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "50000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "GBmJQfcpNdHWrCQsTui34HCEhWG7sMz4tUG4e6bExvGB",
+        "block_height": "277185260",
+        "block_timestamp": "1794382623050875331"
+      },
+      "block_timestamp": "1794382623050875331",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2584674793894",
+        "transaction_fee": "236149223139400000000"
+      },
+      "receipt_conversion_gas_burnt": "310920522900",
+      "receipt_conversion_tokens_burnt": "31092052290000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 4,
+      "signer_account_id": "lender.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "FVZLr6Cr5xbDFw3UgLNQhRZ4aLzbUZ5ujBEcCBhTAcZn"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy",
+    "url": "https://testnet.nearblocks.io/txns/6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy",
+    "checked_at": "2026-11-11T07:49:24.123Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "issue",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "2000000000000000000000000",
+            "args_json": {
+              "min_tokens": "2000000000000000000000000"
+            },
+            "args_base64": null,
+            "method_name": "issue"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "2000000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "88YpuRHEHrxZbAijZkiW2bkziZp52jtby5WJb9exHNKC",
+        "block_height": "277185271",
+        "block_timestamp": "1794382629629839740"
+      },
+      "block_timestamp": "1794382629629839740",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2468122553592",
+        "transaction_fee": "224493999109200000000"
+      },
+      "receipt_conversion_gas_burnt": "310300634605",
+      "receipt_conversion_tokens_burnt": "31030063460500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 11,
+      "signer_account_id": "alice.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "6tavAhLdRrREjc7dBDTeWQsHaxuBQDw7hcQ9UX2Z8E4E",
+    "url": "https://testnet.nearblocks.io/txns/6tavAhLdRrREjc7dBDTeWQsHaxuBQDw7hcQ9UX2Z8E4E",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/6tavAhLdRrREjc7dBDTeWQsHaxuBQDw7hcQ9UX2Z8E4E",
+    "checked_at": "2026-11-11T07:49:31.995Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "ft_transfer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "1",
+            "args_json": {
+              "memo": null,
+              "amount": "400000000000000000000000",
+              "receiver_id": "bob.floorline-g3-20261111-6702ea.testnet"
+            },
+            "args_base64": null,
+            "method_name": "ft_transfer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "1",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "7Vbqkx1Xsv63gb4CQU5E2cjXyFafQ5BbYdM97oq4tqo2",
+        "block_height": "277185281",
+        "block_timestamp": "1794382634931336799"
+      },
+      "block_timestamp": "1794382634931336799",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2717773380103",
+        "transaction_fee": "249459081760300000000"
+      },
+      "receipt_conversion_gas_burnt": "313638494655",
+      "receipt_conversion_tokens_burnt": "31363849465500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 11,
+      "signer_account_id": "alice.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "6tavAhLdRrREjc7dBDTeWQsHaxuBQDw7hcQ9UX2Z8E4E"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "EC8oeL26KvTqKJvyLhyp7PyvfEVZyPnKxVsRiFaHqAK4",
+    "url": "https://testnet.nearblocks.io/txns/EC8oeL26KvTqKJvyLhyp7PyvfEVZyPnKxVsRiFaHqAK4",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/EC8oeL26KvTqKJvyLhyp7PyvfEVZyPnKxVsRiFaHqAK4",
+    "checked_at": "2026-11-11T07:49:39.749Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "ft_transfer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "1",
+            "args_json": {
+              "memo": null,
+              "amount": "500000000000000000000000",
+              "receiver_id": "carol.floorline-g3-20261111-6702ea.testnet"
+            },
+            "args_base64": null,
+            "method_name": "ft_transfer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "1",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "CBaM5AKPCz3PzTzGPxWrZKqEs2TnwKXZmoTPm8c6ZAY2",
+        "block_height": "277185292",
+        "block_timestamp": "1794382641306061292"
+      },
+      "block_timestamp": "1794382641306061292",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2723533269547",
+        "transaction_fee": "250035070704700000000"
+      },
+      "receipt_conversion_gas_burnt": "313733862085",
+      "receipt_conversion_tokens_burnt": "31373386208500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 11,
+      "signer_account_id": "alice.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "EC8oeL26KvTqKJvyLhyp7PyvfEVZyPnKxVsRiFaHqAK4"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ",
+    "url": "https://testnet.nearblocks.io/txns/2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ",
+    "checked_at": "2026-11-11T07:49:47.603Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "redeem",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "amount": "100000000000000000000000",
+              "min_out": "1"
+            },
+            "args_base64": null,
+            "method_name": "redeem"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "CcBYjN4b1W3LBdYcmw4BT4vPR3D3cHU63EsT24LvhoeH",
+        "block_height": "277185302",
+        "block_timestamp": "1794382647314830143"
+      },
+      "block_timestamp": "1794382647314830143",
+      "index_in_chunk": 1,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3086375326071",
+        "transaction_fee": "286319276357100000000"
+      },
+      "receipt_conversion_gas_burnt": "310777471755",
+      "receipt_conversion_tokens_burnt": "31077747175500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t",
+    "url": "https://testnet.nearblocks.io/txns/8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t",
+    "checked_at": "2026-11-11T07:49:56.243Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "withdraw_claim",
+          "args": {
+            "gas": 110000000000000,
+            "deposit": "0",
+            "args_json": {
+              "claim_id": "0"
+            },
+            "args_base64": null,
+            "method_name": "withdraw_claim"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "110000000000000"
+      },
+      "block": {
+        "block_hash": "i5wcqP3buzGAzL8J8Vbm68SQGazqTvnDf7YuoGADD6x",
+        "block_height": "277185314",
+        "block_timestamp": "1794382653916563479"
+      },
+      "block_timestamp": "1794382653916563479",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_RECEIPT_ID"
+      },
+      "outcomes_agg": {
+        "gas_used": "5565549970722",
+        "transaction_fee": "489600228322200000000"
+      },
+      "receipt_conversion_gas_burnt": "309490011450",
+      "receipt_conversion_tokens_burnt": "30949001145000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "8MrXrQCVhyhv4dJcAyRoUM8BsMjSky9x6ooRpFmch23t"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "78Xy9ZQiD4TNwRYbiHoVpVvxKetmV8WjauEPSh7Wyqq",
+    "url": "https://testnet.nearblocks.io/txns/78Xy9ZQiD4TNwRYbiHoVpVvxKetmV8WjauEPSh7Wyqq",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/78Xy9ZQiD4TNwRYbiHoVpVvxKetmV8WjauEPSh7Wyqq",
+    "checked_at": "2026-11-11T07:50:04.345Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "withdraw_claim",
+          "args": {
+            "gas": 110000000000000,
+            "deposit": "0",
+            "args_json": {
+              "claim_id": "0"
+            },
+            "args_base64": null,
+            "method_name": "withdraw_claim"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "110000000000000"
+      },
+      "block": {
+        "block_hash": "81o2zVbkYVf2QZjTMd6zLwki1y4we5nkKLvpJrQgsDso",
+        "block_height": "277185328",
+        "block_timestamp": "1794382661602988332"
+      },
+      "block_timestamp": "1794382661602988332",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2126523594291",
+        "transaction_fee": "190334103179100000000"
+      },
+      "receipt_conversion_gas_burnt": "309490011450",
+      "receipt_conversion_tokens_burnt": "30949001145000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "78Xy9ZQiD4TNwRYbiHoVpVvxKetmV8WjauEPSh7Wyqq"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "DWXrQ9NwTxhKZ3aPdUc1aanAmnveS5rXNVDzFARZzhyn",
+    "url": "https://testnet.nearblocks.io/txns/DWXrQ9NwTxhKZ3aPdUc1aanAmnveS5rXNVDzFARZzhyn",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/DWXrQ9NwTxhKZ3aPdUc1aanAmnveS5rXNVDzFARZzhyn",
+    "checked_at": "2026-11-11T07:50:11.969Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "issue",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "50000000000000000000000",
+            "args_json": {
+              "min_tokens": "0"
+            },
+            "args_base64": null,
+            "method_name": "issue"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "50000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "CtAoYyf1CnmBehnSPMYQrWbu2DPjv34rKzwnEo2Xhhwi",
+        "block_height": "277185339",
+        "block_timestamp": "1794382668383945481"
+      },
+      "block_timestamp": "1794382668383945481",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2260463470064",
+        "transaction_fee": "181409834506400000000"
+      },
+      "receipt_conversion_gas_burnt": "309156225445",
+      "receipt_conversion_tokens_burnt": "30915622544500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 11,
+      "signer_account_id": "alice.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "DWXrQ9NwTxhKZ3aPdUc1aanAmnveS5rXNVDzFARZzhyn"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "5uXjXAQyaXxtsK5jPFQsN6zcznFSLDQXK2oQz83AJi5V",
+    "url": "https://testnet.nearblocks.io/txns/5uXjXAQyaXxtsK5jPFQsN6zcznFSLDQXK2oQz83AJi5V",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/5uXjXAQyaXxtsK5jPFQsN6zcznFSLDQXK2oQz83AJi5V",
+    "checked_at": "2026-11-11T07:50:20.160Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "fund_offer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "100000000000000000000000",
+            "args_json": {
+              "repayment": "110000000000000000000000",
+              "collateral": "200000000000000000000000",
+              "duration_ns": "3600000000000"
+            },
+            "args_base64": null,
+            "method_name": "fund_offer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "100000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "6Jv1RATxxjz33VuNEEf3o9kio55pWQPcuTtpsMzTkEMQ",
+        "block_height": "277185350",
+        "block_timestamp": "1794382674607916511"
+      },
+      "block_timestamp": "1794382674607916511",
+      "index_in_chunk": 1,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2789295797287",
+        "transaction_fee": "256611323478700000000"
+      },
+      "receipt_conversion_gas_burnt": "313781545800",
+      "receipt_conversion_tokens_burnt": "31378154580000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 4,
+      "signer_account_id": "lender.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "5uXjXAQyaXxtsK5jPFQsN6zcznFSLDQXK2oQz83AJi5V"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "fruyp8VSg3XmY5Nfwpqn2uBbPTGNZUgALxSfmPETW5e",
+    "url": "https://testnet.nearblocks.io/txns/fruyp8VSg3XmY5Nfwpqn2uBbPTGNZUgALxSfmPETW5e",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/fruyp8VSg3XmY5Nfwpqn2uBbPTGNZUgALxSfmPETW5e",
+    "checked_at": "2026-11-11T07:50:28.399Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "accept_offer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "loan_id": "2"
+            },
+            "args_base64": null,
+            "method_name": "accept_offer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "H93orR8brn33A4BZ62iN3fHLhipEWYTjCCoc856GTq8Z",
+        "block_height": "277185363",
+        "block_timestamp": "1794382682339712962"
+      },
+      "block_timestamp": "1794382682339712962",
+      "index_in_chunk": 1,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3602206477781",
+        "transaction_fee": "337902391528100000000"
+      },
+      "receipt_conversion_gas_burnt": "309346960305",
+      "receipt_conversion_tokens_burnt": "30934696030500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "fruyp8VSg3XmY5Nfwpqn2uBbPTGNZUgALxSfmPETW5e"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "FiNDnRrTNULPCgn2GPSR3q7cRMhnmK3FPJ98PubgA4Cy",
+    "url": "https://testnet.nearblocks.io/txns/FiNDnRrTNULPCgn2GPSR3q7cRMhnmK3FPJ98PubgA4Cy",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/FiNDnRrTNULPCgn2GPSR3q7cRMhnmK3FPJ98PubgA4Cy",
+    "checked_at": "2026-11-11T07:50:36.554Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "withdraw_claim",
+          "args": {
+            "gas": 110000000000000,
+            "deposit": "0",
+            "args_json": {
+              "claim_id": "3"
+            },
+            "args_base64": null,
+            "method_name": "withdraw_claim"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "110000000000000"
+      },
+      "block": {
+        "block_hash": "7WA6Y29fFokqEJPPrRMDkpdRZXa9arbhKLuHeN4XZa2u",
+        "block_height": "277185374",
+        "block_timestamp": "1794382688671031472"
+      },
+      "block_timestamp": "1794382688671031472",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_RECEIPT_ID"
+      },
+      "outcomes_agg": {
+        "gas_used": "5581407280942",
+        "transaction_fee": "491185959344200000000"
+      },
+      "receipt_conversion_gas_burnt": "309490011450",
+      "receipt_conversion_tokens_burnt": "30949001145000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "FiNDnRrTNULPCgn2GPSR3q7cRMhnmK3FPJ98PubgA4Cy"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV",
+    "url": "https://testnet.nearblocks.io/txns/6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV",
+    "checked_at": "2026-11-11T07:50:45.457Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "nft_transfer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "1",
+            "args_json": {
+              "memo": null,
+              "token_id": "2",
+              "approval_id": null,
+              "receiver_id": "dave.floorline-g3-20261111-6702ea.testnet"
+            },
+            "args_base64": null,
+            "method_name": "nft_transfer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "1",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "BLqFiZvvoAPoZV5GkSUiLjLhUbj9vLLuYYzGBCB6nNSJ",
+        "block_height": "277185386",
+        "block_timestamp": "1794382695288579347"
+      },
+      "block_timestamp": "1794382695288579347",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3005678921897",
+        "transaction_fee": "278249635939700000000"
+      },
+      "receipt_conversion_gas_burnt": "313638494655",
+      "receipt_conversion_tokens_burnt": "31363849465500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "6KxDjoqFuhbskibH7iZzbdKRrHEYDFJxr8ne4i95FJ5N",
+    "url": "https://testnet.nearblocks.io/txns/6KxDjoqFuhbskibH7iZzbdKRrHEYDFJxr8ne4i95FJ5N",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/6KxDjoqFuhbskibH7iZzbdKRrHEYDFJxr8ne4i95FJ5N",
+    "checked_at": "2026-11-11T07:50:53.248Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "repay",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "110000000000000000000000",
+            "args_json": {
+              "loan_id": "2"
+            },
+            "args_base64": null,
+            "method_name": "repay"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "110000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "EPmVWK6QRmAYjtpi1dutqjWcPAAMRZDAURrkhQBXA3wb",
+        "block_height": "277185397",
+        "block_timestamp": "1794382702346852341"
+      },
+      "block_timestamp": "1794382702346852341",
+      "index_in_chunk": 1,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2381771456394",
+        "transaction_fee": "193540633139400000000"
+      },
+      "receipt_conversion_gas_burnt": "309013174300",
+      "receipt_conversion_tokens_burnt": "30901317430000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "6KxDjoqFuhbskibH7iZzbdKRrHEYDFJxr8ne4i95FJ5N"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M",
+    "url": "https://testnet.nearblocks.io/txns/5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M",
+    "checked_at": "2026-11-11T07:51:01.670Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "repay",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "110000000000000000000000",
+            "args_json": {
+              "loan_id": "2"
+            },
+            "args_base64": null,
+            "method_name": "repay"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "110000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "BzMn2mQ8HRbuWGVxq6iZKmuhyi66yGPwSdFLbsYFsmp6",
+        "block_height": "277185407",
+        "block_timestamp": "1794382708083148204"
+      },
+      "block_timestamp": "1794382708083148204",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3807198021969",
+        "transaction_fee": "358401545946900000000"
+      },
+      "receipt_conversion_gas_burnt": "309013174300",
+      "receipt_conversion_tokens_burnt": "30901317430000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "dave.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "DR3mWu3j4TLdzJxjZ7V7rLKqfijphHYcKs4bsuCWYgYA",
+    "url": "https://testnet.nearblocks.io/txns/DR3mWu3j4TLdzJxjZ7V7rLKqfijphHYcKs4bsuCWYgYA",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/DR3mWu3j4TLdzJxjZ7V7rLKqfijphHYcKs4bsuCWYgYA",
+    "checked_at": "2026-11-11T07:51:09.244Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "withdraw_claim",
+          "args": {
+            "gas": 110000000000000,
+            "deposit": "0",
+            "args_json": {
+              "claim_id": "5"
+            },
+            "args_base64": null,
+            "method_name": "withdraw_claim"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "110000000000000"
+      },
+      "block": {
+        "block_hash": "9H9x9zjK4m9DtHrQ9RbjfUrwVo3qVBnkYvQSSqMKAEUk",
+        "block_height": "277185417",
+        "block_timestamp": "1794382714111892722"
+      },
+      "block_timestamp": "1794382714111892722",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_RECEIPT_ID"
+      },
+      "outcomes_agg": {
+        "gas_used": "5581777575400",
+        "transaction_fee": "491222988790000000000"
+      },
+      "receipt_conversion_gas_burnt": "309490011450",
+      "receipt_conversion_tokens_burnt": "30949001145000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 4,
+      "signer_account_id": "lender.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "DR3mWu3j4TLdzJxjZ7V7rLKqfijphHYcKs4bsuCWYgYA"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "4tFquZUF5pGnJmozFpuVuVTVsse3VntqcPr5F6QekGQT",
+    "url": "https://testnet.nearblocks.io/txns/4tFquZUF5pGnJmozFpuVuVTVsse3VntqcPr5F6QekGQT",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/4tFquZUF5pGnJmozFpuVuVTVsse3VntqcPr5F6QekGQT",
+    "checked_at": "2026-11-11T07:51:16.932Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "repay",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "110000000000000000000000",
+            "args_json": {
+              "loan_id": "2"
+            },
+            "args_base64": null,
+            "method_name": "repay"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "110000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "8jnhWL79uYWion7y7CgNF9WjP4CbR7ey4vLvbSjE4wMx",
+        "block_height": "277185429",
+        "block_timestamp": "1794382721764354069"
+      },
+      "block_timestamp": "1794382721764354069",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2335981619328",
+        "transaction_fee": "188961649432800000000"
+      },
+      "receipt_conversion_gas_burnt": "309013174300",
+      "receipt_conversion_tokens_burnt": "30901317430000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "dave.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "4tFquZUF5pGnJmozFpuVuVTVsse3VntqcPr5F6QekGQT"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "2W2QcZGvdnX1httBPycHrPm1U2o1EJZoVrHSkrj8YhjK",
+    "url": "https://testnet.nearblocks.io/txns/2W2QcZGvdnX1httBPycHrPm1U2o1EJZoVrHSkrj8YhjK",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/2W2QcZGvdnX1httBPycHrPm1U2o1EJZoVrHSkrj8YhjK",
+    "checked_at": "2026-11-11T07:51:24.743Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "default_loan",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "loan_id": "2"
+            },
+            "args_base64": null,
+            "method_name": "default_loan"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "88VZKFiTvBrwrz6hoMrPR7i6ZWjnLeBZkEtgHDDKZMRb",
+        "block_height": "277185439",
+        "block_timestamp": "1794382727879293162"
+      },
+      "block_timestamp": "1794382727879293162",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2116056594207",
+        "transaction_fee": "189287403170700000000"
+      },
+      "receipt_conversion_gas_burnt": "309346960305",
+      "receipt_conversion_tokens_burnt": "30934696030500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "2W2QcZGvdnX1httBPycHrPm1U2o1EJZoVrHSkrj8YhjK"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "27QnSpn4z5YpgmVQFvFnZesBL8QWg84q71fsDZR9g5rx",
+    "url": "https://testnet.nearblocks.io/txns/27QnSpn4z5YpgmVQFvFnZesBL8QWg84q71fsDZR9g5rx",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/27QnSpn4z5YpgmVQFvFnZesBL8QWg84q71fsDZR9g5rx",
+    "checked_at": "2026-11-11T07:51:32.523Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "fund_offer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "50000000000000000000000",
+            "args_json": {
+              "repayment": "55000000000000000000000",
+              "collateral": "100000000000000000000000",
+              "duration_ns": "60000000000"
+            },
+            "args_base64": null,
+            "method_name": "fund_offer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "50000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "57oFT2mhRvSZf4NLmhR1TKXgGf38TxH88qiGGutEJSCi",
+        "block_height": "277185449",
+        "block_timestamp": "1794382733831599434"
+      },
+      "block_timestamp": "1794382733831599434",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2791076950354",
+        "transaction_fee": "256789438785400000000"
+      },
+      "receipt_conversion_gas_burnt": "313638494655",
+      "receipt_conversion_tokens_burnt": "31363849465500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 4,
+      "signer_account_id": "lender.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "27QnSpn4z5YpgmVQFvFnZesBL8QWg84q71fsDZR9g5rx"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "EnfjYemrG2FizgYbAAbXLSSCFTq8ZWGEkzAQRnWnddgt",
+    "url": "https://testnet.nearblocks.io/txns/EnfjYemrG2FizgYbAAbXLSSCFTq8ZWGEkzAQRnWnddgt",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/EnfjYemrG2FizgYbAAbXLSSCFTq8ZWGEkzAQRnWnddgt",
+    "checked_at": "2026-11-11T07:51:39.892Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "accept_offer",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "loan_id": "7"
+            },
+            "args_base64": null,
+            "method_name": "accept_offer"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "9Wvyb6e3JUe1p1Ghyv8B4ioVeJh3AqeMGo1hiBFN2PLc",
+        "block_height": "277185461",
+        "block_timestamp": "1794382741119606025"
+      },
+      "block_timestamp": "1794382741119606025",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3609046477781",
+        "transaction_fee": "338586391528100000000"
+      },
+      "receipt_conversion_gas_burnt": "309346960305",
+      "receipt_conversion_tokens_burnt": "30934696030500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "EnfjYemrG2FizgYbAAbXLSSCFTq8ZWGEkzAQRnWnddgt"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "9p2okoWjaHw2KwWsXxjsLX4tRpy8NDNNpEBJ157nLvxa",
+    "url": "https://testnet.nearblocks.io/txns/9p2okoWjaHw2KwWsXxjsLX4tRpy8NDNNpEBJ157nLvxa",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/9p2okoWjaHw2KwWsXxjsLX4tRpy8NDNNpEBJ157nLvxa",
+    "checked_at": "2026-11-11T07:51:47.291Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "withdraw_claim",
+          "args": {
+            "gas": 110000000000000,
+            "deposit": "0",
+            "args_json": {
+              "claim_id": "8"
+            },
+            "args_base64": null,
+            "method_name": "withdraw_claim"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "110000000000000"
+      },
+      "block": {
+        "block_hash": "7w6svrdKYRgemczfE1didVxpWPunyWfsFbAmqDtUoB2J",
+        "block_height": "277185472",
+        "block_timestamp": "1794382747747932854"
+      },
+      "block_timestamp": "1794382747747932854",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_RECEIPT_ID"
+      },
+      "outcomes_agg": {
+        "gas_used": "5581407280942",
+        "transaction_fee": "491185959344200000000"
+      },
+      "receipt_conversion_gas_burnt": "309490011450",
+      "receipt_conversion_tokens_burnt": "30949001145000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "9p2okoWjaHw2KwWsXxjsLX4tRpy8NDNNpEBJ157nLvxa"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD",
+    "url": "https://testnet.nearblocks.io/txns/5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD",
+    "checked_at": "2026-11-11T07:51:54.874Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "default_loan",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "loan_id": "7"
+            },
+            "args_base64": null,
+            "method_name": "default_loan"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "3eY5YcznbZFwacNKdVNZ8oFqmXtyCmiogng3cDMLgt3y",
+        "block_height": "277185568",
+        "block_timestamp": "1794382805413794590"
+      },
+      "block_timestamp": "1794382805413794590",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": true,
+        "status_key": "SUCCESS_VALUE"
+      },
+      "outcomes_agg": {
+        "gas_used": "3181913875574",
+        "transaction_fee": "295873131307400000000"
+      },
+      "receipt_conversion_gas_burnt": "309346960305",
+      "receipt_conversion_tokens_burnt": "30934696030500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "9G8T7X7ZxVQKi7nxReDVMsUXpNVZGeAqDVtFZog9N3iv",
+    "url": "https://testnet.nearblocks.io/txns/9G8T7X7ZxVQKi7nxReDVMsUXpNVZGeAqDVtFZog9N3iv",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/9G8T7X7ZxVQKi7nxReDVMsUXpNVZGeAqDVtFZog9N3iv",
+    "checked_at": "2026-11-11T07:52:03.558Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "repay",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "55000000000000000000000",
+            "args_json": {
+              "loan_id": "7"
+            },
+            "args_base64": null,
+            "method_name": "repay"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "55000000000000000000000",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "28qeJWi1p2sjmPuGCYQNuJ3PjPhvoMf3Ucq1ePzKw2hV",
+        "block_height": "277185579",
+        "block_timestamp": "1794382812255874145"
+      },
+      "block_timestamp": "1794382812255874145",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2336041574078",
+        "transaction_fee": "188967644907800000000"
+      },
+      "receipt_conversion_gas_burnt": "309013174300",
+      "receipt_conversion_tokens_burnt": "30901317430000000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "carol.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "9G8T7X7ZxVQKi7nxReDVMsUXpNVZGeAqDVtFZog9N3iv"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  },
+  {
+    "hash": "3suYn4ARGwne5LcMAhoV7359JhuBUkJhFcaLhAGhEnps",
+    "url": "https://testnet.nearblocks.io/txns/3suYn4ARGwne5LcMAhoV7359JhuBUkJhFcaLhAGhEnps",
+    "api_url": "https://api-testnet.nearblocks.io/v3/txns/3suYn4ARGwne5LcMAhoV7359JhuBUkJhFcaLhAGhEnps",
+    "checked_at": "2026-11-11T07:52:10.885Z",
+    "api_http_status": 200,
+    "retry_after": null,
+    "indexer_hash_confirmed": true,
+    "indexer_transaction": {
+      "actions": [
+        {
+          "action": "FUNCTION_CALL",
+          "method": "default_loan",
+          "args": {
+            "gas": 25000000000000,
+            "deposit": "0",
+            "args_json": {
+              "loan_id": "7"
+            },
+            "args_base64": null,
+            "method_name": "default_loan"
+          },
+          "rlp_hash": null
+        }
+      ],
+      "actions_agg": {
+        "deposit": "0",
+        "gas_attached": "25000000000000"
+      },
+      "block": {
+        "block_hash": "9Siqfh4BVfi7fNnXcCFiVowAherD42Fh53vypQV4JYeM",
+        "block_height": "277185590",
+        "block_timestamp": "1794382818852239174"
+      },
+      "block_timestamp": "1794382818852239174",
+      "index_in_chunk": 0,
+      "outcomes": {
+        "status": false,
+        "status_key": "FAILURE"
+      },
+      "outcomes_agg": {
+        "gas_used": "2116116548957",
+        "transaction_fee": "189293398645700000000"
+      },
+      "receipt_conversion_gas_burnt": "309346960305",
+      "receipt_conversion_tokens_burnt": "30934696030500000000",
+      "receiver_account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+      "shard_id": 12,
+      "signer_account_id": "bob.floorline-g3-20261111-6702ea.testnet",
+      "transaction_hash": "3suYn4ARGwne5LcMAhoV7359JhuBUkJhFcaLhAGhEnps"
+    },
+    "page_verification": "Canonical NearBlocks HTML route retained; earlier domain fetch returned HTTP 403. No claim that the HTML page rendered.",
+    "verified": false,
+    "index_verified": true
+  }
+]

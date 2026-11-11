@@ -1,0 +1,3 @@
+PASS create_floor 6mFfa348aj5E6TcZQSRyK2VmTcJeNtikxKaPsaE4agBJ
+PASS create_alice J2DfP3UDQiK4U95QBkStAuJXEhczY7kLaf8p3oP1VZAM
+{"jsonrpc": "2.0", "error": {"code": -429, "message": "WARNING! THIS ENDPOINT IS DEPRECATED! STOP USING IT NOW! Switch to https://fastnear.com or alternative RPC providers at https://docs.near.org/api/rpc/providers"}, "id": "1"}

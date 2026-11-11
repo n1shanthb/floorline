@@ -1,0 +1,450 @@
+{
+  "network": "testnet",
+  "status": "CORE_TESTNET_PASSED_DAO_PAUSED",
+  "transactions": 35,
+  "executed_successes": 28,
+  "expected_contract_rejections": 7,
+  "validation_rejections": [
+    {
+      "hash": "28YJc6GK5tvBWyGLTE1CEKuPKJeFbLXTwNnvyujKUNC2",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "receiver": "floor.floorline-g3-20261111-6702ea.testnet",
+      "status": "SIGNED_BEFORE_BROADCAST",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "50000000000000000000000",
+      "allocation": null,
+      "transport_error": {
+        "name": "Error",
+        "type": "NotEnoughBalance",
+        "message": "Sender bob.floorline-g3-20261111-6702ea.testnet does not have enough balance 0.15 for operation costing 0.20091928570833"
+      },
+      "reason": "DEFINITIVE_PRE_EXECUTION_VALIDATION_REJECTION_NOT_AN_EXECUTED_TRANSACTION"
+    }
+  ],
+  "explorer_index_verified": 35,
+  "html_explorer_pages_verified": 0,
+  "artifact_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "deployment": {
+    "account_id": "floor.floorline-g3-20261111-6702ea.testnet",
+    "deployment_transaction": "6mFfa348aj5E6TcZQSRyK2VmTcJeNtikxKaPsaE4agBJ",
+    "initialization_transaction": "6mFfa348aj5E6TcZQSRyK2VmTcJeNtikxKaPsaE4agBJ",
+    "atomic_deploy_and_initialize": true,
+    "artifact_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+    "code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9"
+  },
+  "budget": {
+    "network": "testnet",
+    "native_unit": "NEAR",
+    "status": "VERIFIED_CORE_DEMO_BUDGET_DAO_PAUSED",
+    "live_storage_byte_cost_yocto": "10000000000000000000",
+    "normal_wasm_bytes": 443613,
+    "contract_storage_and_operational_floor_NEAR": "4.57891",
+    "role_allocations_NEAR": {
+      "floor": "6",
+      "alice": "2.2",
+      "bob": "0.15",
+      "carol": "0.15",
+      "dave": "0.4",
+      "lender": "0.4"
+    },
+    "gas_liquidity_topups_NEAR": {
+      "bob": "0.05",
+      "carol": "0.05"
+    },
+    "total_role_allocation_NEAR": "9.4",
+    "operator_gas_budget_NEAR": "0.1",
+    "core_total_cap_NEAR": "9.5",
+    "contract_allocation_authorization_cap_NEAR": "8",
+    "dao_creation_authorization_cap_NEAR": "10",
+    "dao_spend_authorized_now": false,
+    "note": "Live validation showed an upfront 150-Tgas reservation that exceeded a 0.15-NEAR starter balance. Ordinary methods now use 25 Tgas; withdrawal methods use 110 Tgas. Bob/Carol receive 0.05 each for callback liquidity. Total remains inside 9.5 NEAR; no additional faucet grant. Role funds include principal/debt/storage and gas; do not count deposits again as additional allocations.",
+    "actual_controller_net_outflow_yocto": "9447981617938315100000000",
+    "remaining_controller_balance_yocto": "552018382061684900000000"
+  },
+  "final": {
+    "checked_at": "2026-11-11T07:42:41.048Z",
+    "rpc": "https://test.rpc.fastnear.com",
+    "account": {
+      "amount": "8169000000000000000000003",
+      "block_hash": "5Z5zpgGCxC5kU4oboyD92VoVEfvMuw7KQrk7Qnx19Ytx",
+      "block_height": 277185818,
+      "code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 446338
+    },
+    "ledger": {
+      "L": "1919000000000000000000000",
+      "T": "1900000000000000000000000",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "250000000000000000000000",
+      "operational": "4578910000000000000000003",
+      "inflight": "0",
+      "local_required": "6747910000000000000000003",
+      "operational_base": "4478910000000000000000000",
+      "refund_storage": "0",
+      "unallocated_or_inflight": "1421090000000000000000000",
+      "account_balance": "8169000000000000000000003",
+      "storage_usage": 446338,
+      "storage_stake": "4463380000000000000000000",
+      "tax_bps": 2000
+    },
+    "deployed_wasm_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+    "balances": {
+      "controller": "0",
+      "floor": "0",
+      "alice": "1100000000000000000000000",
+      "bob": "300000000000000000000000",
+      "carol": "200000000000000000000000",
+      "dave": "200000000000000000000000",
+      "lender": "100000000000000000000000"
+    },
+    "loans": {
+      "repaid": {
+        "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+        "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+        "owner": "dave.floorline-g3-20261111-6702ea.testnet",
+        "principal": "100000000000000000000000",
+        "repayment": "110000000000000000000000",
+        "collateral": "200000000000000000000000",
+        "expiry": "1794386282885269792",
+        "state": 2,
+        "pending": 0,
+        "storage_cost": "3380000000000000000000"
+      },
+      "defaulted": {
+        "lender": "lender.floorline-g3-20261111-6702ea.testnet",
+        "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+        "owner": "carol.floorline-g3-20261111-6702ea.testnet",
+        "principal": "50000000000000000000000",
+        "repayment": "55000000000000000000000",
+        "collateral": "100000000000000000000000",
+        "expiry": "1794382801721656525",
+        "state": 3,
+        "pending": 0,
+        "storage_cost": "3380000000000000000000"
+      }
+    },
+    "nfts": {
+      "repaid": null,
+      "defaulted": null
+    },
+    "claims": {
+      "bob_redeem": {
+        "owner": "bob.floorline-g3-20261111-6702ea.testnet",
+        "amount": "81000000000000000000000",
+        "kind": 2,
+        "state": 3,
+        "attempt": "1",
+        "storage_cost": "1790000000000000000000"
+      },
+      "carol_accept": {
+        "owner": "carol.floorline-g3-20261111-6702ea.testnet",
+        "amount": "100000000000000000000000",
+        "kind": 0,
+        "state": 3,
+        "attempt": "4",
+        "storage_cost": "1830000000000000000000"
+      },
+      "dave_repay": {
+        "owner": "lender.floorline-g3-20261111-6702ea.testnet",
+        "amount": "110000000000000000000000",
+        "kind": 1,
+        "state": 3,
+        "attempt": "6",
+        "storage_cost": "1830000000000000000000"
+      },
+      "default_accept": {
+        "owner": "carol.floorline-g3-20261111-6702ea.testnet",
+        "amount": "50000000000000000000000",
+        "kind": 0,
+        "state": 3,
+        "attempt": "9",
+        "storage_cost": "1830000000000000000000"
+      }
+    },
+    "timestamps": {
+      "dave_repay": {
+        "execution_timestamp_ns": "1794382708656435051",
+        "expiry_ns": "1794386282885269792",
+        "block_hash": "EVZ9aazNvBSuUVqtf4o56vPe2KnABYUhGXJEubdepD2u"
+      },
+      "permissionless_default": {
+        "execution_timestamp_ns": "1794382806039667047",
+        "expiry_ns": "1794382801721656525",
+        "block_hash": "FRy1Xnn3GvFFRvs3ydpCae2U73Mhb2r4uYzKVTGKwqBL"
+      }
+    },
+    "metadata": {
+      "ft": {
+        "spec": "ft-1.0.0",
+        "name": "Floorline",
+        "symbol": "FLOOR",
+        "decimals": 24,
+        "icon": null,
+        "reference": null,
+        "reference_hash": null
+      },
+      "nft": {
+        "spec": "nft-1.0.0",
+        "name": "Floorline Loan Rights",
+        "symbol": "FLLOAN",
+        "icon": null,
+        "base_uri": null,
+        "reference": null,
+        "reference_hash": null
+      }
+    },
+    "solvency": "PASSED",
+    "supply_and_collateral": "PASSED",
+    "dao": "NOT_EXECUTED_AWAITING_INDEPENDENT_SIGNERS"
+  },
+  "measurements": {
+    "CreateAccount+DeployContract+new": [
+      {
+        "name": "create_floor",
+        "gas_tgas": 60.597154820651,
+        "storage_delta": 443965,
+        "failed": false
+      }
+    ],
+    "CreateAccount": [
+      {
+        "name": "create_alice",
+        "gas_tgas": 8.5730779375,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "create_bob",
+        "gas_tgas": 8.5730779375,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "create_carol",
+        "gas_tgas": 8.5730779375,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "create_dave",
+        "gas_tgas": 8.5730779375,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "create_lender",
+        "gas_tgas": 8.5730779375,
+        "storage_delta": 0,
+        "failed": false
+      }
+    ],
+    "storage_deposit": [
+      {
+        "name": "register_alice",
+        "gas_tgas": 2.57298818905,
+        "storage_delta": 184,
+        "failed": false
+      },
+      {
+        "name": "register_bob",
+        "gas_tgas": 2.581448589982,
+        "storage_delta": 182,
+        "failed": false
+      },
+      {
+        "name": "register_carol",
+        "gas_tgas": 2.58666818905,
+        "storage_delta": 184,
+        "failed": false
+      },
+      {
+        "name": "register_dave",
+        "gas_tgas": 2.584042345774,
+        "storage_delta": 183,
+        "failed": false
+      },
+      {
+        "name": "register_lender",
+        "gas_tgas": 2.584674793894,
+        "storage_delta": 185,
+        "failed": false
+      }
+    ],
+    "Transfer": [
+      {
+        "name": "gas_liquidity_topup_bob",
+        "gas_tgas": 0.6695476875,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "gas_liquidity_topup_carol",
+        "gas_tgas": 0.6695476875,
+        "storage_delta": 0,
+        "failed": false
+      }
+    ],
+    "issue": [
+      {
+        "name": "alice_issue",
+        "gas_tgas": 2.468122553592,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "reject_dilutive_issuance",
+        "gas_tgas": 2.260463470064,
+        "storage_delta": 0,
+        "failed": true
+      }
+    ],
+    "ft_transfer": [
+      {
+        "name": "alice_to_bob",
+        "gas_tgas": 2.717773380103,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "alice_to_carol",
+        "gas_tgas": 2.723533269547,
+        "storage_delta": 0,
+        "failed": false
+      }
+    ],
+    "redeem": [
+      {
+        "name": "bob_redeem",
+        "gas_tgas": 3.086375326071,
+        "storage_delta": 179,
+        "failed": false
+      }
+    ],
+    "withdraw_claim": [
+      {
+        "name": "bob_withdraw",
+        "gas_tgas": 5.565549970722,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "bob_duplicate_withdraw",
+        "gas_tgas": 2.126523594291,
+        "storage_delta": 0,
+        "failed": true
+      },
+      {
+        "name": "carol_principal_withdraw",
+        "gas_tgas": 5.581407280942,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "lender_withdraw",
+        "gas_tgas": 5.5817775754,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "default_principal_withdraw",
+        "gas_tgas": 5.581407280942,
+        "storage_delta": 0,
+        "failed": false
+      }
+    ],
+    "fund_offer": [
+      {
+        "name": "lender_offer",
+        "gas_tgas": 2.789295797287,
+        "storage_delta": 317,
+        "failed": false
+      },
+      {
+        "name": "default_offer",
+        "gas_tgas": 2.791076950354,
+        "storage_delta": 317,
+        "failed": false
+      }
+    ],
+    "accept_offer": [
+      {
+        "name": "carol_accept",
+        "gas_tgas": 3.602206477781,
+        "storage_delta": 139,
+        "failed": false
+      },
+      {
+        "name": "default_accept",
+        "gas_tgas": 3.609046477781,
+        "storage_delta": 139,
+        "failed": false
+      }
+    ],
+    "nft_transfer": [
+      {
+        "name": "carol_to_dave_nft",
+        "gas_tgas": 3.005678921897,
+        "storage_delta": -1,
+        "failed": false
+      }
+    ],
+    "repay": [
+      {
+        "name": "reject_old_owner_repay",
+        "gas_tgas": 2.381771456394,
+        "storage_delta": 0,
+        "failed": true
+      },
+      {
+        "name": "dave_repay",
+        "gas_tgas": 3.807198021969,
+        "storage_delta": 183,
+        "failed": false
+      },
+      {
+        "name": "reject_double_repay",
+        "gas_tgas": 2.335981619328,
+        "storage_delta": 0,
+        "failed": true
+      },
+      {
+        "name": "reject_repay_after_default",
+        "gas_tgas": 2.336041574078,
+        "storage_delta": 0,
+        "failed": true
+      }
+    ],
+    "default_loan": [
+      {
+        "name": "reject_default_after_repay",
+        "gas_tgas": 2.116056594207,
+        "storage_delta": 0,
+        "failed": true
+      },
+      {
+        "name": "permissionless_default",
+        "gas_tgas": 3.181913875574,
+        "storage_delta": 0,
+        "failed": false
+      },
+      {
+        "name": "reject_double_default",
+        "gas_tgas": 2.116116548957,
+        "storage_delta": 0,
+        "failed": true
+      }
+    ]
+  }
+}

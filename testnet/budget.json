@@ -1,0 +1,36 @@
+{
+  "network": "testnet",
+  "native_unit": "NEAR",
+  "status": "CORE_AND_DAO_TECHNICAL_DEMO_COMPLETE",
+  "live_storage_byte_cost_yocto": "10000000000000000000",
+  "normal_wasm_bytes": 443613,
+  "contract_storage_and_operational_floor_NEAR": "4.57891",
+  "role_allocations_NEAR": {
+    "floor": "6",
+    "alice": "2.2",
+    "bob": "0.15",
+    "carol": "0.15",
+    "dave": "0.4",
+    "lender": "0.4"
+  },
+  "gas_liquidity_topups_NEAR": {
+    "bob": "0.05",
+    "carol": "0.05"
+  },
+  "total_role_allocation_NEAR": "9.4",
+  "operator_gas_budget_NEAR": "0.1",
+  "core_total_cap_NEAR": "9.5",
+  "contract_allocation_authorization_cap_NEAR": "8",
+  "dao_creation_authorization_cap_NEAR": "10",
+  "dao_spend_authorized_now": true,
+  "note": "Live validation showed an upfront 150-Tgas reservation that exceeded a 0.15-NEAR starter balance. Ordinary methods now use 25 Tgas; withdrawal methods use 110 Tgas. Bob/Carol receive 0.05 each for callback liquidity. Total remains inside 9.5 NEAR; no additional faucet grant. Role funds include principal/debt/storage and gas; do not count deposits again as additional allocations. DAO scope subsequently authorized: one separate 10-NEAR grant to Council A, B/C funded from A; full conservation in dao_simulated_council_actual. DAO scope subsequently authorized: one separate 10-NEAR grant to Council A, B/C funded from A; full conservation in dao_simulated_council_actual.",
+  "dao_simulated_council_actual": {
+    "ceiling_yocto": "10000000000000000000000000",
+    "funding_yocto": "10000000000000000000000000",
+    "remaining_council_and_dao_yocto": "9869381109058408000000000",
+    "contribution_yocto": "100000000000000000000000",
+    "fees_and_other_net_cost_yocto": "30618890941592000000000",
+    "council_A_net_outflow_yocto": "7029569000064280300000000",
+    "within_cap": true
+  }
+}

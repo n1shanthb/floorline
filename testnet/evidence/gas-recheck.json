@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://test.rpc.fastnear.com",
+    "response": {
+      "jsonrpc": "2.0",
+      "result": {
+        "gas_price": "100000000"
+      },
+      "id": 1
+    }
+  },
+  {
+    "url": "https://rpc.testnet.near.org",
+    "response": {
+      "jsonrpc": "2.0",
+      "result": {
+        "gas_price": "100000000"
+      },
+      "id": 1
+    }
+  }
+]

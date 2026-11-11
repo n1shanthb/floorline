@@ -1,0 +1,49 @@
+{
+  "network": "testnet",
+  "controller": "floorline-g3-20261111-6702ea.testnet",
+  "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ",
+  "attempted_at": "2026-11-11T07:19:50.161Z",
+  "before": {
+    "jsonrpc": "2.0",
+    "error": {
+      "name": "HANDLER_ERROR",
+      "cause": {
+        "info": {
+          "block_hash": "EyrsRNqD6mNdCseVAyP7Yv4qzFFxjJS8Bw9CbygC6Mks",
+          "block_height": 277183513,
+          "requested_account_id": "floorline-g3-20261111-6702ea.testnet"
+        },
+        "name": "UNKNOWN_ACCOUNT"
+      },
+      "code": -32000,
+      "message": "Server error",
+      "data": "account floorline-g3-20261111-6702ea.testnet does not exist while viewing"
+    },
+    "id": 1
+  },
+  "faucet_http_status": 200,
+  "faucet_response": "{\"final_execution_status\":\"EXECUTED_OPTIMISTIC\",\"receipts_outcome\":[{\"block_hash\":\"29hWfMEpXQzJTn94wxnYLn8NoBbomtbgogzUYxZqpbtf\",\"id\":\"5tj6XNFigMLayYoaVgYmUdETrj7ogzPEskzoJb8vtjDj\",\"outcome\":{\"executor_id\":\"floorline-g3-20261111-6702ea.testnet\",\"gas_burnt\":7524947687500,\"logs\":[],\"metadata\":{\"contracts\":[null,null,null],\"gas_profile\":[],\"version\":4},\"receipt_ids\":[\"7Jpn6W4hhywZqdR8i6FAXe5gZ9TKCJH9yjQUwkgt42rZ\"],\"status\":{\"SuccessValue\":\"\"},\"tokens_burnt\":\"7032494768750000000000\"},\"proof\":[]}],\"status\":{\"SuccessValue\":\"\"},\"transaction\":{\"actions\":[\"CreateAccount\",{\"Transfer\":{\"deposit\":\"10000000000000000000000000\"}},{\"AddKey\":{\"access_key\":{\"nonce\":0,\"permission\":\"FullAccess\"},\"public_key\":\"ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ\"}}],\"hash\":\"E9Drr6N9w7y6W3kzyCaxjSpiQGWRmR8cVsoETQGUq8Np\",\"nonce\":51918819664571,\"priority_fee\":0,\"public_key\":\"ed25519:CaxCYzxj44Z1i8MufFA8Lm7KuMhESQ34VJTcbTckZsTn\",\"receiver_id\":\"floorline-g3-20261111-6702ea.testnet\",\"signature\":\"ed25519:2JH2KfnRSG4CPF62ggAida2B7VQvRNsoEuft95eUfczQQhHNoftMKqDTVW3DzX4GWMqFBpgrbvzdP9pQC3xq4aj4\",\"signer_id\":\"testnet\"},\"transaction_outcome\":{\"block_hash\":\"ASK7y2WGQ4JvZmhqcsiTeocj4ZizbcUdDMJkYHjQojWK\",\"id\":\"E9Drr6N9w7y6W3kzyCaxjSpiQGWRmR8cVsoETQGUq8Np\",\"outcome\":{\"executor_id\":\"testnet\",\"gas_burnt\":824947687500,\"logs\":[],\"metadata\":{\"gas_profile\":null,\"version\":1},\"receipt_ids\":[\"5tj6XNFigMLayYoaVgYmUdETrj7ogzPEskzoJb8vtjDj\"],\"status\":{\"SuccessReceiptId\":\"5tj6XNFigMLayYoaVgYmUdETrj7ogzPEskzoJb8vtjDj\"},\"tokens_burnt\":\"82494768750000000000\"},\"proof\":[{\"direction\":\"Right\",\"hash\":\"BFDYfWEKb427Dhx8gZmxLkHGLbccRMym8QZSTkMrugXL\"},{\"direction\":\"Right\",\"hash\":\"6M1GWkpw2vpsA1xW3g6QJb7a42majP8H8CcbzD4YzFVj\"},{\"direction\":\"Right\",\"hash\":\"ADKjJETnD4m9c7Az5KSoktJroMUoois5tz95QNhRb95h\"}]}}",
+  "after": {
+    "jsonrpc": "2.0",
+    "result": {
+      "amount": "10000000000000000000000000",
+      "block_hash": "FbKPNsNhjfMPUXuuC8hVMNUhGZHxzxyLDyaPWVVNgvas",
+      "block_height": 277183535,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "id": 1
+  },
+  "access_key": {
+    "jsonrpc": "2.0",
+    "result": {
+      "block_hash": "7a7NztBEvsoVE8oUL3rbnWz9qQxcJhmMsNYtffWX5SrN",
+      "block_height": 277183541,
+      "nonce": 277183522000000,
+      "permission": "FullAccess"
+    },
+    "id": 1
+  }
+}

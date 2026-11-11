@@ -1,0 +1,20 @@
+{
+  "status": "PUBLIC_TESTNET_TECHNICAL_COMPLETE",
+  "controller": "floorline-g3-20261111-6702ea.testnet",
+  "roles": {
+    "floor": "floor.floorline-g3-20261111-6702ea.testnet",
+    "alice": "alice.floorline-g3-20261111-6702ea.testnet",
+    "bob": "bob.floorline-g3-20261111-6702ea.testnet",
+    "carol": "carol.floorline-g3-20261111-6702ea.testnet",
+    "dave": "dave.floorline-g3-20261111-6702ea.testnet",
+    "lender": "lender.floorline-g3-20261111-6702ea.testnet"
+  },
+  "dao_candidate": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+  "council": [
+    "floorline-council-a-20261111.testnet",
+    "b.floorline-council-a-20261111.testnet",
+    "c.floorline-council-a-20261111.testnet"
+  ],
+  "actual_dao": "floorline-g3-20261111-6702ea.sputnikv2.testnet",
+  "council_label": "operator-controlled simulated council"
+}

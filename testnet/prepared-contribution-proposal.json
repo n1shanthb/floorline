@@ -1,0 +1,11 @@
+{
+  "proposal": {
+    "description": "Allocate 0.1 testnet NEAR of project DAO funds to Floorline backing without minting FLOOR",
+    "kind": {
+      "FunctionCall": {
+        "receiver_id": "floor.floorline-g3-20261111-6702ea.testnet",
+        "actions": [{"method_name":"contribute","args":"e30=","deposit":"100000000000000000000000","gas":"30000000000000"}]
+      }
+    }
+  }
+}

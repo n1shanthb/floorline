@@ -1,0 +1,13 @@
+{
+  "network": "testnet",
+  "status": "KEYS_GENERATED_ACCOUNTS_NOT_CREATED",
+  "public_keys": {
+    "floorline-g3-20261111-6702ea.testnet": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ",
+    "floor.floorline-g3-20261111-6702ea.testnet": "ed25519:8WvQDfGhQHuhgcPC54D57wLxMREaiogiVvprMy2FoCro",
+    "alice.floorline-g3-20261111-6702ea.testnet": "ed25519:GtyU6hQZ6iZRm4HS57Hmhd1TyAYvbZRuMBru7s2ZYWHz",
+    "bob.floorline-g3-20261111-6702ea.testnet": "ed25519:ESdAmKTBZJtqfpUBGeLwJnHWFae9KZV7oM5SpsPBGYdM",
+    "carol.floorline-g3-20261111-6702ea.testnet": "ed25519:4nik1MeQiwgiBQyTR37GWhe5T5rAtEwEFtLhF4pygrMs",
+    "dave.floorline-g3-20261111-6702ea.testnet": "ed25519:7Reat8hHe4hacwEECSBR1pGZmqsHvbrkGm847EnkENju",
+    "lender.floorline-g3-20261111-6702ea.testnet": "ed25519:7wrhmWQBiZsMeTQetFAxcrwmkCRW9C4ztNTY39cu7dNA"
+  }
+}
