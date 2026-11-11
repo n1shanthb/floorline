@@ -1,0 +1,3556 @@
+{
+  "network": "LOCAL_SANDBOX_ONLY",
+  "sandbox": "2.14.0",
+  "runTag": "mwbnxwxd",
+  "tests": 13,
+  "failed": [
+    {
+      "name": "J: FT receiver forward",
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 0n\n- 100000000000000000000000n\n\n    at file:///E:/near-2/runtime/receipts.mjs:18:14\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async test (file:///E:/near-2/runtime/test.mjs:27:34)\n    at async Module.run (file:///E:/near-2/runtime/receipts.mjs:15:69)\n    at async file:///E:/near-2/runtime/test.mjs:49:1"
+    }
+  ],
+  "accounts": [
+    "alicemwbnxwxd.test.near",
+    "bobmwbnxwxd.test.near",
+    "carolmwbnxwxd.test.near",
+    "davemwbnxwxd.test.near",
+    "lendermwbnxwxd.test.near",
+    "daomwbnxwxd.test.near",
+    "floormwbnxwxd.test.near",
+    "receivermwbnxwxd.test.near"
+  ],
+  "evidence": [
+    {
+      "name": "register_alicemwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "6yvdYa3GmhFngjcXCi6SYXP8moWW3W6CZrmFuyrWv2wb",
+      "receipt_failures": [],
+      "gas_total": "2276837072047",
+      "receipts": [
+        {
+          "id": "6ZdGTLGL72bgVRW3JXUvCbz1zuPVo6AUKsX93b1Dii5i",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1965916549147,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "19996791880006245700000000",
+          "block_hash": "4k3YhN5teVghnuj9yJjCYdTSPUYzUg6BcuJNxyCrod1w",
+          "block_height": 198,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 441735
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "0",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "19996791880006245700000000",
+          "account_balance": "19996791880006245700000000",
+          "storage_usage": 441735,
+          "storage_stake": "4417350000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "20996791880006245700000000",
+          "block_hash": "7uoA5cUvsbD3BD9gUAbw2TS4xjBFz2VDngfWZ7vnqzJM",
+          "block_height": 201,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 441900
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "1000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "20996791880006245700000000",
+          "account_balance": "20996791880006245700000000",
+          "storage_usage": 441900,
+          "storage_stake": "4419000000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 165
+    },
+    {
+      "name": "register_bobmwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "BHbYPuMRaTZHbQfK8eCzK35FAT18J5GwzJVumgxVuyGE",
+      "receipt_failures": [],
+      "gas_total": "2285295004711",
+      "receipts": [
+        {
+          "id": "CjfdjP45pFN4cCngQP4xgCvyQz7cq1h1HRqnPYvff77c",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1974374481811,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "20996791880006245700000000",
+          "block_hash": "7uoA5cUvsbD3BD9gUAbw2TS4xjBFz2VDngfWZ7vnqzJM",
+          "block_height": 201,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 441900
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "1000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "20996791880006245700000000",
+          "account_balance": "20996791880006245700000000",
+          "storage_usage": 441900,
+          "storage_stake": "4419000000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "21996791880006245700000000",
+          "block_hash": "4kuqNcgb1TRwp93dziSL4aj12XQUTfuyRa4RbLRY764D",
+          "block_height": 204,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442063
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "2000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "21996791880006245700000000",
+          "account_balance": "21996791880006245700000000",
+          "storage_usage": 442063,
+          "storage_stake": "4420630000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 163
+    },
+    {
+      "name": "register_carolmwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "7ySJ5d6UmDDM4TwiemkezDEVyRcUnpSTNrr2iBCTGLA2",
+      "receipt_failures": [],
+      "gas_total": "2290517072047",
+      "receipts": [
+        {
+          "id": "4LqdRcGVk5XZA6RDL5C3VNS8No327VK7iKPKh2rLo7xV",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1979596549147,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "21996791880006245700000000",
+          "block_hash": "4kuqNcgb1TRwp93dziSL4aj12XQUTfuyRa4RbLRY764D",
+          "block_height": 204,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442063
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "2000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "21996791880006245700000000",
+          "account_balance": "21996791880006245700000000",
+          "storage_usage": 442063,
+          "storage_stake": "4420630000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "22996791880006245700000000",
+          "block_hash": "AcuZqVZ8uU5DebQPksoBmGR5iFdra1pjxCCnej1o6eMf",
+          "block_height": 207,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442228
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "3000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "22996791880006245700000000",
+          "account_balance": "22996791880006245700000000",
+          "storage_usage": 442228,
+          "storage_stake": "4422280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 165
+    },
+    {
+      "name": "register_davemwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "Gs944KJNpWSYKnDSfubyeWBTjxxnQBYW474ybngsGHDD",
+      "receipt_failures": [],
+      "gas_total": "2287891228771",
+      "receipts": [
+        {
+          "id": "FVmmZmoVRvxtQmj1nEhvHGfy8H1BTgewEv6QPHCP9BB4",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1976970705871,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "22996791880006245700000000",
+          "block_hash": "AcuZqVZ8uU5DebQPksoBmGR5iFdra1pjxCCnej1o6eMf",
+          "block_height": 207,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442228
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "3000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "22996791880006245700000000",
+          "account_balance": "22996791880006245700000000",
+          "storage_usage": 442228,
+          "storage_stake": "4422280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "23996791880006245700000000",
+          "block_hash": "4rcC8wcfNYH125LSCbp4rAge9eTDMPPUQnGptANCizvz",
+          "block_height": 210,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442392
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "4000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "23996791880006245700000000",
+          "account_balance": "23996791880006245700000000",
+          "storage_usage": 442392,
+          "storage_stake": "4423920000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 164
+    },
+    {
+      "name": "register_lendermwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "8Bw36e3bjTXkLwHg4q3Gaoq1FpDChpjkM1ZBDk53UbnN",
+      "receipt_failures": [],
+      "gas_total": "2288444692315",
+      "receipts": [
+        {
+          "id": "FpkRE8k4QoFqRHZ8YzEAF794CvNTvu1EwxRwDZt5oVpt",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1977524169415,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNDAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "23996791880006245700000000",
+          "block_hash": "4rcC8wcfNYH125LSCbp4rAge9eTDMPPUQnGptANCizvz",
+          "block_height": 210,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442392
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "4000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "23996791880006245700000000",
+          "account_balance": "23996791880006245700000000",
+          "storage_usage": 442392,
+          "storage_stake": "4423920000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "24996791880006245700000000",
+          "block_hash": "9CQjS6zGtGscYyQPyS5HLzJxMjAXSUkmgqgixkCWpyfe",
+          "block_height": 213,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442558
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "5000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "24996791880006245700000000",
+          "account_balance": "24996791880006245700000000",
+          "storage_usage": 442558,
+          "storage_stake": "4425580000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 166
+    },
+    {
+      "name": "register_daomwbnxwxd.test.near",
+      "method": "storage_deposit",
+      "transaction_hash": "DPxNw2qYPr28cZoftd6dFzkFRy6ryp2gQs5BCHw4RjUt",
+      "receipt_failures": [],
+      "gas_total": "2289855004711",
+      "receipts": [
+        {
+          "id": "8MuDJi7hx1bkgYRYAn1bsN1U4tMBfXEUifd1u61J6rZj",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1978934481811,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "24996791880006245700000000",
+          "block_hash": "9CQjS6zGtGscYyQPyS5HLzJxMjAXSUkmgqgixkCWpyfe",
+          "block_height": 213,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442558
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "5000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "24996791880006245700000000",
+          "account_balance": "24996791880006245700000000",
+          "storage_usage": 442558,
+          "storage_stake": "4425580000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "25996791880006245700000000",
+          "block_hash": "FSTXUmLDnSb25EET8cuqR4iyqxm8BDp3TubmUYq2HDkx",
+          "block_height": 216,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "25996791880006245700000000",
+          "account_balance": "25996791880006245700000000",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 163
+    },
+    {
+      "name": "issue",
+      "method": "issue",
+      "transaction_hash": "2gY7CPcL6zkXHUxG3DdKhXdxdobcu3JDbExnmpQSeSaX",
+      "receipt_failures": [],
+      "gas_total": "2166243804087",
+      "receipts": [
+        {
+          "id": "BAHmxLdp8GXQYqZRQ6Ph45ashshwja8uoRFdPsyKBNGz",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1857087578642,
+          "status": {
+            "SuccessValue": "IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCI="
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_mint\",\"data\":[{\"owner_id\":\"alicemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000000\"}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "25996791880006245700000000",
+          "block_hash": "FSTXUmLDnSb25EET8cuqR4iyqxm8BDp3TubmUYq2HDkx",
+          "block_height": 216,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "0",
+          "T": "0",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "25996791880006245700000000",
+          "account_balance": "25996791880006245700000000",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125996791880006245700000000",
+          "block_hash": "Dpy6hpCkyWdWjDWkWaBPh6BgwvuLsXtDtGPBrDQDcjRp",
+          "block_height": 222,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "125996791880006245700000000",
+          "account_balance": "125996791880006245700000000",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_carol",
+      "method": "ft_transfer",
+      "transaction_hash": "AgSZNC5h6PbLtUc8cDHVNNfyXZA1zYTr8hMv6QifPaAk",
+      "receipt_failures": [],
+      "gas_total": "2382927369988",
+      "receipts": [
+        {
+          "id": "DZUPndBjvDF16eaUXKuWVbC1Xgno4x3QxqKEr8vuokSK",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2070004131058,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"carolmwbnxwxd.test.near\",\"amount\":\"10000000000000000000000000\"}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125996791880006245700000000",
+          "block_hash": "Dpy6hpCkyWdWjDWkWaBPh6BgwvuLsXtDtGPBrDQDcjRp",
+          "block_height": 222,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000000",
+          "inflight": "0",
+          "local_required": "125996791880006245700000000",
+          "account_balance": "125996791880006245700000000",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125996791880006245700000001",
+          "block_hash": "7diWdAMLWxsW8Kazi3gWzLQ3aeaYSccatk7gFWywyvUC",
+          "block_height": 228,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000001",
+          "inflight": "0",
+          "local_required": "125996791880006245700000001",
+          "account_balance": "125996791880006245700000001",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_bob",
+      "method": "ft_transfer",
+      "transaction_hash": "9Ugkz5NhFk7spUvejYaf4RkFUzEmFJtUAQm8gqCWUQCQ",
+      "receipt_failures": [],
+      "gas_total": "2381889563476",
+      "receipts": [
+        {
+          "id": "88EMDi1ikbKfQRN6WtiwsLXsQN1mgHgdjrvQet16PqrD",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2069061691976,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"bobmwbnxwxd.test.near\",\"amount\":\"10000000000000000000000000\"}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125996791880006245700000001",
+          "block_hash": "7diWdAMLWxsW8Kazi3gWzLQ3aeaYSccatk7gFWywyvUC",
+          "block_height": 228,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000001",
+          "inflight": "0",
+          "local_required": "125996791880006245700000001",
+          "account_balance": "125996791880006245700000001",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125996791880006245700000002",
+          "block_hash": "HUNSAhUNVTmoGZdXdMBaDnA1HMMCJh1Ehc4tyb2UZFdy",
+          "block_height": 234,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125996791880006245700000002",
+          "account_balance": "125996791880006245700000002",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "redeem",
+      "method": "redeem",
+      "transaction_hash": "3kPrJGRqVeQMB1Jk4R1fyzhNJ4Gb3VmjiB6jhY7DGiE6",
+      "receipt_failures": [],
+      "gas_total": "2751346812132",
+      "receipts": [
+        {
+          "id": "7wyR9QpcmpRKRw6GBWkMxxSF7Rr7NBDzyXGvhLmv8GNf",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2440521656662,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_burn\",\"data\":[{\"owner_id\":\"bobmwbnxwxd.test.near\",\"amount\":\"1000000000000000000000000\"}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125996791880006245700000002",
+          "block_hash": "HUNSAhUNVTmoGZdXdMBaDnA1HMMCJh1Ehc4tyb2UZFdy",
+          "block_height": 234,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442721
+        },
+        "ledger": {
+          "L": "100000000000000000000000000",
+          "T": "100000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125996791880006245700000002",
+          "account_balance": "125996791880006245700000002",
+          "storage_usage": 442721,
+          "storage_stake": "4427210000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125996791880006245700000002",
+          "block_hash": "5z3wHnpeugNzDjtddejxvb3fW2Xuq7dNuTFSsRBXFZcj",
+          "block_height": 240,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "802000000000000000000000",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125996791880006245700000002",
+          "account_balance": "125996791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 141
+    },
+    {
+      "name": "withdraw_redemption",
+      "method": "withdraw_claim",
+      "transaction_hash": "8xq6bgVqa3vw7cbn3cRH84PGUGdGeH7rWzUhYNHDj4gK",
+      "receipt_failures": [],
+      "gas_total": "5182164355606",
+      "receipts": [
+        {
+          "id": "52DAj6eyu6mYoPAH8EJCzH74iKoZhEMoB53npJNLa4LP",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2423105652803,
+          "status": {
+            "SuccessReceiptId": "pVUeny979Cc2pyCYa13oZsimEzUAidvmQasG96jHhkd"
+          },
+          "logs": []
+        },
+        {
+          "id": "DVGw81BJH3dJH9fjWUBcHJ5fSpaE8ndX81FxoG7BucQ1",
+          "executor": "bobmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "DCgnTgg1GsGUo2YXa3pSWEFz4tQCmbiv9kMKc7xtNYCi",
+          "executor": "bobmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "pVUeny979Cc2pyCYa13oZsimEzUAidvmQasG96jHhkd",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1780021003853,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3tNqLfuJChDDrXTY7jpndfcojnxEhfCG5eQZzmwgroSQ",
+          "executor": "bobmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125996791880006245700000002",
+          "block_hash": "5z3wHnpeugNzDjtddejxvb3fW2Xuq7dNuTFSsRBXFZcj",
+          "block_height": 240,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "802000000000000000000000",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125996791880006245700000002",
+          "account_balance": "125996791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "7cMKduH2xZPt7cXJM1Beb3DtpcZYDtdvpSsiVoXESCYb",
+          "block_height": 248,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "duplicate_withdraw",
+      "method": "withdraw_claim",
+      "transaction_hash": "7kFvqMS2pNzqCXHcdS2d1TanhtLy8cXaDAFHYjq4zuxF",
+      "receipt_failures": [
+        {
+          "id": "4tni9HKJvnu2Diy6gjjFyGVWcjxw5Vcu17ukvB3FN1Xs",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:606:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "1897673527301",
+      "receipts": [
+        {
+          "id": "4tni9HKJvnu2Diy6gjjFyGVWcjxw5Vcu17ukvB3FN1Xs",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1588183515851,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:606:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "7cMKduH2xZPt7cXJM1Beb3DtpcZYDtdvpSsiVoXESCYb",
+          "block_height": 248,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "21am5cmPKFxphmwBcAMS46oZh6QmD28rBfHYAmUmo71y",
+          "block_height": 254,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "fund",
+      "method": "fund_offer",
+      "transaction_hash": "E2J7Akt5yfoWQqGjEU1TmXooJKvbixHbn3Ssk9ydjTvt",
+      "receipt_failures": [],
+      "gas_total": "2462100742243",
+      "receipts": [
+        {
+          "id": "8T5fExK4cfEB9vcoReaWfZkKQ4acKKLciEPkAZ3fCax4",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2148223829013,
+          "status": {
+            "SuccessValue": "IjIi"
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "21am5cmPKFxphmwBcAMS46oZh6QmD28rBfHYAmUmo71y",
+          "block_height": 254,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 442862
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 442862,
+          "storage_stake": "4428620000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126194791880006245700000002",
+          "block_hash": "GJ1HrDUXfcVhk4r991VX3QiSx42M7mJZQsHrTdYRzazo",
+          "block_height": 260,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443160
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "1000000000000000000000000",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "126194791880006245700000002",
+          "account_balance": "126194791880006245700000002",
+          "storage_usage": 443160,
+          "storage_stake": "4431600000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 298
+    },
+    {
+      "name": "accept",
+      "method": "accept_offer",
+      "transaction_hash": "6Y8Ro5gkJuoz9gmwanS9dthe415ozHRuQqrTatNaHZtH",
+      "receipt_failures": [],
+      "gas_total": "3209502313032",
+      "receipts": [
+        {
+          "id": "5fbDq3AKXUwKTMrjWyZEHwyCZEgZ8gGyGDLksxMu3jXR",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2900155352727,
+          "status": {
+            "SuccessValue": "IjMi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"carolmwbnxwxd.test.near\",\"new_owner_id\":\"floormwbnxwxd.test.near\",\"amount\":\"2000000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_mint\",\"data\":[{\"owner_id\":\"carolmwbnxwxd.test.near\",\"token_ids\":[\"2\"]}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126194791880006245700000002",
+          "block_hash": "GJ1HrDUXfcVhk4r991VX3QiSx42M7mJZQsHrTdYRzazo",
+          "block_height": 260,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443160
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "1000000000000000000000000",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "126194791880006245700000002",
+          "account_balance": "126194791880006245700000002",
+          "storage_usage": 443160,
+          "storage_stake": "4431600000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126194791880006245700000002",
+          "block_hash": "GKKKnsNFJgwKyW8J2XFU3ZKKC2nnztmT9oUX8qfvwZEZ",
+          "block_height": 266,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "1000000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "126194791880006245700000002",
+          "account_balance": "126194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 63
+    },
+    {
+      "name": "withdraw_borrower",
+      "method": "withdraw_claim",
+      "transaction_hash": "BK85Ub6C9qVNG7u9L4pA7fDnVKnX51hTpVhWMGg4ZuxH",
+      "receipt_failures": [],
+      "gas_total": "5198043880238",
+      "receipts": [
+        {
+          "id": "2X5ntHaAmtcZZWPp1zrrkvPFVgMtohFDZn5XNrgzRDZE",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2431416943711,
+          "status": {
+            "SuccessReceiptId": "9gBkPFWQiYvbXcYwUCBg6gJxHJXVNkhy1GYZddMjgD9T"
+          },
+          "logs": []
+        },
+        {
+          "id": "F55nstUtnwwNowEJKqUodAMiUoZEWGPRCUZvGxagV7qw",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "6Euhvq4pNdfsnFrt5hrBhE6BtPfWc9vfm6QLhhPesWGT",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "9gBkPFWQiYvbXcYwUCBg6gJxHJXVNkhy1GYZddMjgD9T",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1787589237577,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "EnREQkMrGncbPS1dXFCaPXz8ztGFyaBhfJ4Uv8B6fVnU",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126194791880006245700000002",
+          "block_hash": "GKKKnsNFJgwKyW8J2XFU3ZKKC2nnztmT9oUX8qfvwZEZ",
+          "block_height": 266,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "1000000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "126194791880006245700000002",
+          "account_balance": "126194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "GwtVhYva3AHcLS3SMgRVobagfUrK9hEbtP28ckngU81a",
+          "block_height": 274,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "double_accept",
+      "method": "accept_offer",
+      "transaction_hash": "BzRmPhp945wPAvW3rrb5NnxPrwpRsQQ6xBJ47r8oBDoT",
+      "receipt_failures": [
+        {
+          "id": "McWPEGBy7XACe5o5n2o2hgNEpDd89FnooRJGFQrEEmm",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:470:9:\nassertion `left == right` failed\n  left: 1\n right: 0"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "1882046233415",
+      "receipts": [
+        {
+          "id": "McWPEGBy7XACe5o5n2o2hgNEpDd89FnooRJGFQrEEmm",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1572699273110,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:470:9:\nassertion `left == right` failed\n  left: 1\n right: 0"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "GwtVhYva3AHcLS3SMgRVobagfUrK9hEbtP28ckngU81a",
+          "block_height": 274,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "5AhwuUeAZc1p9wHyR4fzoJtXDcGPrL8WBLfn1jwv5mXu",
+          "block_height": 280,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "nft_transfer",
+      "method": "nft_transfer",
+      "transaction_hash": "7v8QSBRiG7vb6xc3d8QnqL9srNY4xUcBzaMopNnf7jm7",
+      "receipt_failures": [],
+      "gas_total": "2622329814623",
+      "receipts": [
+        {
+          "id": "7ECG5iM4yD5xR2UUSkL8rtu5NaUEPSny5sZ3ufmYgddN",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2309597310553,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_transfer\",\"data\":[{\"old_owner_id\":\"carolmwbnxwxd.test.near\",\"new_owner_id\":\"davemwbnxwxd.test.near\",\"token_ids\":[\"2\"]}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000002",
+          "block_hash": "5AhwuUeAZc1p9wHyR4fzoJtXDcGPrL8WBLfn1jwv5mXu",
+          "block_height": 280,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443223
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000002",
+          "inflight": "0",
+          "local_required": "125194791880006245700000002",
+          "account_balance": "125194791880006245700000002",
+          "storage_usage": 443223,
+          "storage_stake": "4432230000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "8RkP459uLKxwyf2Aj2Uu3Ks5zsyyKF3wvtSC7epmBTz3",
+          "block_height": 286,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443222
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443222,
+          "storage_stake": "4432220000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": -1
+    },
+    {
+      "name": "old_owner_repay",
+      "method": "repay",
+      "transaction_hash": "4T9VA5dH8pDjGQtrUyUPe1TJnxMLJZD15qQ2SFn8MikL",
+      "receipt_failures": [
+        {
+          "id": "4d7Qs5gdsdCqpkbM9o9oSDsuS74ndFP382wSzMNBjAjj",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:585:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwbnxwxd.test.near\")\n right: AccountId(\"davemwbnxwxd.test.near\")"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "2363294369046",
+      "receipts": [
+        {
+          "id": "4d7Qs5gdsdCqpkbM9o9oSDsuS74ndFP382wSzMNBjAjj",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1607916069746,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:585:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwbnxwxd.test.near\")\n right: AccountId(\"davemwbnxwxd.test.near\")"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "8DhukwD1VEK8gRgxBukTXUkyDjkWo8JFrX2wkQsddLkM",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CwGbUjwbR1avyNSzEfeaDsMi5RWVrYRg1wSa7d16ameK",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "8RkP459uLKxwyf2Aj2Uu3Ks5zsyyKF3wvtSC7epmBTz3",
+          "block_height": 286,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443222
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443222,
+          "storage_stake": "4432220000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "DohopKB25caN1XjhKLuactpihM7vuhzma342D27X2T3P",
+          "block_height": 293,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443222
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443222,
+          "storage_stake": "4432220000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "repay",
+      "method": "repay",
+      "transaction_hash": "4LdBVQU5hsgjkHxQeMkVcEimSBQJQviRaGdiaPE5v8Uj",
+      "receipt_failures": [],
+      "gas_total": "3375431987052",
+      "receipts": [
+        {
+          "id": "63ASdWN3nrSVEUpjRmgxhfuqSfNLLQVzGTT4jjyT6ECs",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3066418812752,
+          "status": {
+            "SuccessValue": "IjUi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"floormwbnxwxd.test.near\",\"new_owner_id\":\"davemwbnxwxd.test.near\",\"amount\":\"2000000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_burn\",\"data\":[{\"owner_id\":\"davemwbnxwxd.test.near\",\"token_ids\":[\"2\"]}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "DohopKB25caN1XjhKLuactpihM7vuhzma342D27X2T3P",
+          "block_height": 293,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443222
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "2000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443222,
+          "storage_stake": "4432220000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126294791880006245700000003",
+          "block_hash": "HJfTakw9CY9AojBC62gZGsn3DcfzPgs5vYjDoUMWfxbW",
+          "block_height": 299,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "1100000000000000000000000",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "126294791880006245700000003",
+          "account_balance": "126294791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 145
+    },
+    {
+      "name": "withdraw_lender",
+      "method": "withdraw_claim",
+      "transaction_hash": "HfJXo7Aowzwm7RBUMiLVrMh1eB9WtJQtCsBQcZxMuhs1",
+      "receipt_failures": [],
+      "gas_total": "5198019251816",
+      "receipts": [
+        {
+          "id": "EwvaM4beP3oM6C4nMeZRq7YeEnjfrNW1u8hRkCFLXYjq",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2431550284441,
+          "status": {
+            "SuccessReceiptId": "GcVnAyGeiUqo8C2qrHZdBUQjsZ48PVauSWe4DSEZ6zRs"
+          },
+          "logs": []
+        },
+        {
+          "id": "C4WsMCgkWAQvY3ZyJUhKqjoHF3W1chjGD77eMUTo1F82",
+          "executor": "lendermwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "3EJb9HquDtf9KXnfHG4qm2yeAJwSJuLxVARjx3aiPfMv",
+          "executor": "lendermwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "GcVnAyGeiUqo8C2qrHZdBUQjsZ48PVauSWe4DSEZ6zRs",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1787431268425,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "4jsAPEA89YPBtive6RrKW8PjJHxLn8PgDWza1rxsP1by",
+          "executor": "lendermwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126294791880006245700000003",
+          "block_hash": "HJfTakw9CY9AojBC62gZGsn3DcfzPgs5vYjDoUMWfxbW",
+          "block_height": 299,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "1100000000000000000000000",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "126294791880006245700000003",
+          "account_balance": "126294791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "FCdQCVqpJoH1gtMLG6Tk3bZpY7RjEcicsqDrRdJYkbBv",
+          "block_height": 307,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "double_repay",
+      "method": "repay",
+      "transaction_hash": "3uZNs9Eddmg1XRVGQHQ8o1MRyJaaYmTTZhTq6zt5ACka",
+      "receipt_failures": [
+        {
+          "id": "7NPpzU89cB7b4rZT9jxbtzw6DkQER1dyFBc37o8Ms1BH",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "2330513570994",
+      "receipts": [
+        {
+          "id": "7NPpzU89cB7b4rZT9jxbtzw6DkQER1dyFBc37o8Ms1BH",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1575135271694,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "FxbVwLYEDBASfPV5zqNWYbjpJeCDd6b4AE1Gzcdzj82t",
+          "executor": "davemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "52kTqwzsvZjFB3A8Nf2s2xjhkp4hT3qKYWUAMSEYT1RG",
+          "executor": "davemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "FCdQCVqpJoH1gtMLG6Tk3bZpY7RjEcicsqDrRdJYkbBv",
+          "block_height": 307,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "9UfwYERo23Vqh3KLBdRpoWbkhZKukrLnnvu4dJ2fkX6t",
+          "block_height": 314,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "default_after_repay",
+      "method": "default_loan",
+      "transaction_hash": "9425g6tN1t3N8V3gczAhNdJENYTtQDYSvDDwZStA1UuL",
+      "receipt_failures": [
+        {
+          "id": "F3brNNXxRp4VeLD72MbLfT9R5NRrEbbTXDg6kcgXkioj",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "1887405983373",
+      "receipts": [
+        {
+          "id": "F3brNNXxRp4VeLD72MbLfT9R5NRrEbbTXDg6kcgXkioj",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1578059023068,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "9UfwYERo23Vqh3KLBdRpoWbkhZKukrLnnvu4dJ2fkX6t",
+          "block_height": 314,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "9BHpWUXpqRPdMDK8C2yU7m6erVEfZMJ1SDkiuYaFyvLk",
+          "block_height": 320,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "fund_default",
+      "method": "fund_offer",
+      "transaction_hash": "EkqZrduEKrfLXEtd4bfVRyGHHdyZ48oBgu6z4fDP8kMZ",
+      "receipt_failures": [],
+      "gas_total": "2464017564451",
+      "receipts": [
+        {
+          "id": "CDpJeR98RXHsS7qe6rr45CiEwUfW3GdgWWcbRVXbFwWn",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2150331386081,
+          "status": {
+            "SuccessValue": "Ijci"
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125194791880006245700000003",
+          "block_hash": "9BHpWUXpqRPdMDK8C2yU7m6erVEfZMJ1SDkiuYaFyvLk",
+          "block_height": 320,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443367
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125194791880006245700000003",
+          "account_balance": "125194791880006245700000003",
+          "storage_usage": 443367,
+          "storage_stake": "4433670000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "B644EU7rtnUakiynU88V9hz2NabK6nCZXnP21jsb3HUu",
+          "block_height": 326,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443665
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "500000000000000000000000",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443665,
+          "storage_stake": "4436650000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 298
+    },
+    {
+      "name": "accept_default",
+      "method": "accept_offer",
+      "transaction_hash": "8LbMsTpRJW4ZyAHiFPFyFp34G5M4DtcRcpWGazmdUtwi",
+      "receipt_failures": [],
+      "gas_total": "3216342313032",
+      "receipts": [
+        {
+          "id": "GZZTdzHsU4N6mDF2Vr93kPVLn9ZdtjmwsaDRSwfxpzmX",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2906995352727,
+          "status": {
+            "SuccessValue": "Ijgi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"carolmwbnxwxd.test.near\",\"new_owner_id\":\"floormwbnxwxd.test.near\",\"amount\":\"1000000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_mint\",\"data\":[{\"owner_id\":\"carolmwbnxwxd.test.near\",\"token_ids\":[\"7\"]}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "B644EU7rtnUakiynU88V9hz2NabK6nCZXnP21jsb3HUu",
+          "block_height": 326,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443665
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "500000000000000000000000",
+          "borrower_claims": "0",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443665,
+          "storage_stake": "4436650000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "9APX2cxvgJT7Nx9x38bqQb8x2nT2KiiUFL1x5kK6o2FL",
+          "block_height": 332,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "1000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 63
+    },
+    {
+      "name": "default",
+      "method": "default_loan",
+      "transaction_hash": "ErTBFNs53rJ3TDd11mdnaFdTSSTJefTpJeBxMWHatL2V",
+      "receipt_failures": [],
+      "gas_total": "2793780847427",
+      "receipts": [
+        {
+          "id": "EuL2ytw78tQuKEx7UihwZEy6QG3Dt5t7FUvitJP8UQGW",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2484433887122,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"floormwbnxwxd.test.near\",\"new_owner_id\":\"lendermwbnxwxd.test.near\",\"amount\":\"1000000000000000000000000\"}]}",
+            "EVENT_JSON:{\"standard\":\"nep171\",\"version\":\"1.2.0\",\"event\":\"nft_burn\",\"data\":[{\"owner_id\":\"carolmwbnxwxd.test.near\",\"token_ids\":[\"7\"]}]}"
+          ]
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "6mbnB4vy2sDd1T8w7vah71KGSxG2rpommdRpD52wQC8G",
+          "block_height": 342,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "1000000000000000000000000",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "7fetRtA2tGQxaj7sPoTp1qC9ttoAvYcKuD4xxrebpAAK",
+          "block_height": 348,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "repay_after_default",
+      "method": "repay",
+      "transaction_hash": "EBZz4SjiSDXcCe51Uzz2vQmRToHLgGBaSPx2ZygnXPsa",
+      "receipt_failures": [
+        {
+          "id": "G8k1AL4w3tVSgcThdL8mCFVp9tQF8TdRpn63A4KUuTp6",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "2330573525744",
+      "receipts": [
+        {
+          "id": "G8k1AL4w3tVSgcThdL8mCFVp9tQF8TdRpn63A4KUuTp6",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1575195226444,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "9Qii2MVxQzm5vZmvCnqHeddnikGcwHno4jZwgUvdYTaQ",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CeoWFBudEgR4MLHn3RrehaZbRRodqYgd39nywySxQSTL",
+          "executor": "carolmwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "7fetRtA2tGQxaj7sPoTp1qC9ttoAvYcKuD4xxrebpAAK",
+          "block_height": 348,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "716atJ5gJEPdaxx4BxLuW814qV8Vs4bhSE9Am3dDWndd",
+          "block_height": 355,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "double_default",
+      "method": "default_loan",
+      "transaction_hash": "7TnSMMm5nQenWZZnTuN2iizXgVCYEW1nQhkdAYicXtXW",
+      "receipt_failures": [
+        {
+          "id": "7FjojyaDMFeAWsds1x37M8wUwcURcYAcMyhQmaQs4wW3",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "1887465938123",
+      "receipts": [
+        {
+          "id": "7FjojyaDMFeAWsds1x37M8wUwcURcYAcMyhQmaQs4wW3",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1578118977818,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:843:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "716atJ5gJEPdaxx4BxLuW814qV8Vs4bhSE9Am3dDWndd",
+          "block_height": 355,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "5YPNZ8oy2kzAwC4PRgqqfp4SFBQEGumS94b4cdvR2pEb",
+          "block_height": 361,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "donate",
+      "method": "act",
+      "transaction_hash": "BiEaz2fnLK8CVpEG2Sf7nD3DBGJSJp8WFbEPdH6djzQ9",
+      "receipt_failures": [],
+      "gas_total": "3863611749476",
+      "receipts": [
+        {
+          "id": "A4y5HsyEYWfGRLhAhwKKPUVrPbKFtiXkeoLPrAGETJnP",
+          "executor": "daomwbnxwxd.test.near",
+          "gas": 1636770842718,
+          "status": {
+            "SuccessReceiptId": "6STob1kgJ3KSpiYVqNNVNnRWmRQdr1DSDqBm8PMVMsAp"
+          },
+          "logs": []
+        },
+        {
+          "id": "6STob1kgJ3KSpiYVqNNVNnRWmRQdr1DSDqBm8PMVMsAp",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1690449003038,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"floorline\",\"version\":\"1.0.0\",\"event\":\"contribute\",\"data\":[{\"donor\":\"daomwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\",\"L\":\"99298000000000000000000000\",\"T\":\"99000000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "4MHNNmuTJh7wGXBczEPtx4eWRD5Vg13WGbCM6GXiY1iW",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125694791880006245700000003",
+          "block_hash": "4cFN7RJprRDAfPuVqMNw1sAbaZoQosZY7CfwkjYjnj4k",
+          "block_height": 367,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99198000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125694791880006245700000003",
+          "account_balance": "125694791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "ASjCi9jpPdzNQGqh7U8Jt5u8YXUeLaXfjKwVT6yqAeh1",
+          "block_height": 374,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "dilutive",
+      "method": "issue",
+      "transaction_hash": "6BpWiKZm2WFPFGjecWLHn853T1mMMGYiemP5Rz695ZLW",
+      "receipt_failures": [
+        {
+          "id": "E3hjME5sJZWVtd2FDg6h22Azqc8ermF2Nbbv4A7Zs4PR",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:323:9:\ndilutive issuance"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "2257018298666",
+      "receipts": [
+        {
+          "id": "E3hjME5sJZWVtd2FDg6h22Azqc8ermF2Nbbv4A7Zs4PR",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1501496948221,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:323:9:\ndilutive issuance"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "6ekddMz7MAaZNzq29E5WTLiNVonSuBkHtaoSif2Fo3T9",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "Bmvcz1WyYPF7WezwBnr7jQncc1pq4vExoj1BpeVnCgLJ",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "ASjCi9jpPdzNQGqh7U8Jt5u8YXUeLaXfjKwVT6yqAeh1",
+          "block_height": 374,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "AVosVsu6PmdbG75C1xxHjwdEey1nUk4AXmA9yjhEkjL3",
+          "block_height": 381,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "unexpected_deposit",
+      "method": "redeem",
+      "transaction_hash": "ByeAmZ8iLuj9UA12jSNmmKEChtmJo69Y5avwvhUu6o2e",
+      "receipt_failures": [
+        {
+          "id": "6Hq1BddqyAkUzrjyAEqpNSLc1cRKxLuJcmVS3mbde6jN",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: Method redeem doesn't accept deposit"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "2145941891512",
+      "receipts": [
+        {
+          "id": "6Hq1BddqyAkUzrjyAEqpNSLc1cRKxLuJcmVS3mbde6jN",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1388751611042,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: Method redeem doesn't accept deposit"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "opAyPcAZNWcbggNsQvxA2vv4eT3MhGU2CMGgSxSxC7A",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "HHGuAVdt6tHzfMhDmvTnZwWkqXzrLAa4AP8VZeWF1mvR",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "AVosVsu6PmdbG75C1xxHjwdEey1nUk4AXmA9yjhEkjL3",
+          "block_height": 381,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "ur95jaYjqx9WhCceqShoqYJYycsXPzNfQsa3PYmsDHh",
+          "block_height": 388,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "register_receiver",
+      "method": "storage_deposit",
+      "transaction_hash": "Bx75jMLN8WAun4f9cyPLZ9KJhYRrUAtAJtwuxFZed1zf",
+      "receipt_failures": [],
+      "gas_total": "2300691197185",
+      "receipts": [
+        {
+          "id": "4yaPRiUge7TVRqQWZEC4G5YTRbbxkzHhtgs8zXZtKF8t",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 1988626265125,
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "125794791880006245700000003",
+          "block_hash": "FFaeZbFDuwc13E2ZUgSpmTRuJy5XmD6cXuGtD3A7tKVo",
+          "block_height": 396,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443728
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "6000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "125794791880006245700000003",
+          "account_balance": "125794791880006245700000003",
+          "storage_usage": 443728,
+          "storage_stake": "4437280000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000003",
+          "block_hash": "2aXDt4Q74SsVyM96AaAG8QVSihQF5CvC8haUuh8uui9Y",
+          "block_height": 402,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "126794791880006245700000003",
+          "account_balance": "126794791880006245700000003",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 168
+    },
+    {
+      "name": "ft_call_accept",
+      "method": "ft_transfer_call",
+      "transaction_hash": "G9XJwQ3CWNh5ESM6T5ZbUYGbZKJZjgpN6gh33Eq8CNtd",
+      "receipt_failures": [],
+      "gas_total": "7984269437741",
+      "receipts": [
+        {
+          "id": "A4T5i376gNZZ1sYg2tm5KPpebZ5XZYBVg2TRNy6Yxo6v",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3514127853427,
+          "status": {
+            "SuccessReceiptId": "EyvPnikD9gwWJN3PPbCW87JSjp1sutzdNjATrfGuHvu7"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"receivermwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "atwo8omLTuf37UzZ8G3bAEaGzpVXQNtqPU3nBTzazdC",
+          "executor": "receivermwbnxwxd.test.near",
+          "gas": 1319673979950,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": []
+        },
+        {
+          "id": "HToirYzq3JmZTZkvDSYzr7Gt4aMeUsssNuJ47ZxujaZ",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "EyvPnikD9gwWJN3PPbCW87JSjp1sutzdNjATrfGuHvu7",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2387841380384,
+          "status": {
+            "SuccessValue": "IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "FZjLMFHprzt9ZpPXKVDgtpRYV9cVYFmw7KMYiL1pDZff",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126794791880006245700000003",
+          "block_hash": "2aXDt4Q74SsVyM96AaAG8QVSihQF5CvC8haUuh8uui9Y",
+          "block_height": 402,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000003",
+          "inflight": "0",
+          "local_required": "126794791880006245700000003",
+          "account_balance": "126794791880006245700000003",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000004",
+          "block_hash": "GPusWBTgS1QBB3LuPFuwoMYUihQ6ais6vL9MwNBn1N52",
+          "block_height": 410,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000004",
+          "inflight": "0",
+          "local_required": "126794791880006245700000004",
+          "account_balance": "126794791880006245700000004",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_call_reject",
+      "method": "ft_transfer_call",
+      "transaction_hash": "BrvCq898GHRUG9k5bzmoz3KkxgMhMBMmaXQEgyqEscLr",
+      "receipt_failures": [],
+      "gas_total": "8433888927721",
+      "receipts": [
+        {
+          "id": "2CQS6pHPVNATTimUKqCFpkJuQ1Z4zkanJam8PgNwyinw",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3514162687154,
+          "status": {
+            "SuccessReceiptId": "5YJQqPEJuT5dYQbHa3CdFTcZKCbBe2uBC5DAZwtmEAkk"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"receivermwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "E3HJ19yucr1REhih1PPbn8XRGDj3kiALibY1Q8fWFzzR",
+          "executor": "receivermwbnxwxd.test.near",
+          "gas": 1338823035208,
+          "status": {
+            "SuccessValue": "IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCI="
+          },
+          "logs": []
+        },
+        {
+          "id": "83A6vWe2k5CWo17URpezEEpZTkXhnkAEePkaQjU2QcYw",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "5YJQqPEJuT5dYQbHa3CdFTcZKCbBe2uBC5DAZwtmEAkk",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2818276981379,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"receivermwbnxwxd.test.near\",\"new_owner_id\":\"alicemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "GEbP2YY4UrPU7D9vyBeqgzbop1Egu4GPXRokK6AdWTv8",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126794791880006245700000004",
+          "block_hash": "GPusWBTgS1QBB3LuPFuwoMYUihQ6ais6vL9MwNBn1N52",
+          "block_height": 410,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000004",
+          "inflight": "0",
+          "local_required": "126794791880006245700000004",
+          "account_balance": "126794791880006245700000004",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000005",
+          "block_hash": "76TCQozPR2XDBC5G6FSpS2T33vyQUMr6MNKLNwNkpJ57",
+          "block_height": 418,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000005",
+          "inflight": "0",
+          "local_required": "126794791880006245700000005",
+          "account_balance": "126794791880006245700000005",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_call_malformed",
+      "method": "ft_transfer_call",
+      "transaction_hash": "8kbsWVmUo6fdEzWESBx9gjToNbgGkrGPE2cz9UeQ2eZV",
+      "receipt_failures": [],
+      "gas_total": "8433635117676",
+      "receipts": [
+        {
+          "id": "8LyQgGMCHCRqbvKjnTo1vsKoqPaG4W1AUkt5Qz8f19UE",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3514333139858,
+          "status": {
+            "SuccessReceiptId": "EtR3GCLKC3coNnyjhCN4U7WZuGJqrv8NQuPV2QHGaBCE"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"receivermwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "7t4A7rEA2qzSM6ugqjbgaVNABDtxym8uWQMiM2fErkHo",
+          "executor": "receivermwbnxwxd.test.near",
+          "gas": 1338189098466,
+          "status": {
+            "SuccessValue": "eyJiYWQiOnRydWV9"
+          },
+          "logs": []
+        },
+        {
+          "id": "Bbz98kTEnYNoosHBynHgFFWCsUqEfbhyVMKqqvySeWe5",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "EtR3GCLKC3coNnyjhCN4U7WZuGJqrv8NQuPV2QHGaBCE",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2818343604227,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"receivermwbnxwxd.test.near\",\"new_owner_id\":\"alicemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "AcMc5wQ2XqKLJ9eHBnqCLfKB5gyrr7tMdVSmfX8jQPAw",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126794791880006245700000005",
+          "block_hash": "76TCQozPR2XDBC5G6FSpS2T33vyQUMr6MNKLNwNkpJ57",
+          "block_height": 418,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000005",
+          "inflight": "0",
+          "local_required": "126794791880006245700000005",
+          "account_balance": "126794791880006245700000005",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000006",
+          "block_hash": "ENfTS7ycmMpEsa8JqCeFAHqJYNmzq3ZfVCeckUHozQuf",
+          "block_height": 426,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000006",
+          "inflight": "0",
+          "local_required": "126794791880006245700000006",
+          "account_balance": "126794791880006245700000006",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_call_panic",
+      "method": "ft_transfer_call",
+      "transaction_hash": "Dnu2yxyCfCsraPLLXjyorsWSKYk3ZvGmuHwUN5bpvsdX",
+      "receipt_failures": [
+        {
+          "id": "CsNTN6234jLAs3hqEzR8UF3DszWhdpRyL7N4GpN8aV8d",
+          "Failure": {
+            "ActionError": {
+              "index": 0,
+              "kind": {
+                "FunctionCallError": {
+                  "ExecutionError": "Smart contract panicked: panicked at src\\lib.rs:14:169:\nreceiver panic"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "gas_total": "8350437291165",
+      "receipts": [
+        {
+          "id": "7xcu1nQBAvjeRc9gP43NU1mFeZBfHfpyCkMhSpNgCMH2",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3514032918554,
+          "status": {
+            "SuccessReceiptId": "EnZEEwGcgMJXvN35nrCxMZf5X5VTrUP9bEJHtMD1CHBJ"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"receivermwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "CsNTN6234jLAs3hqEzR8UF3DszWhdpRyL7N4GpN8aV8d",
+          "executor": "receivermwbnxwxd.test.near",
+          "gas": 1268001160118,
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\lib.rs:14:169:\nreceiver panic"
+                  }
+                }
+              }
+            }
+          },
+          "logs": []
+        },
+        {
+          "id": "BVcSMdSRjnDb4MBJsLjhjMy2ETRv23Xu8SwWUVbFAANn",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "EnZEEwGcgMJXvN35nrCxMZf5X5VTrUP9bEJHtMD1CHBJ",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2805824672228,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"receivermwbnxwxd.test.near\",\"new_owner_id\":\"alicemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "2QoTYVn6cTAEQZG97YBwjvMNpVQaEuTquD8iao66kZ2v",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126794791880006245700000006",
+          "block_hash": "ENfTS7ycmMpEsa8JqCeFAHqJYNmzq3ZfVCeckUHozQuf",
+          "block_height": 426,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000006",
+          "inflight": "0",
+          "local_required": "126794791880006245700000006",
+          "account_balance": "126794791880006245700000006",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000007",
+          "block_hash": "DmBmLWGr1QrjtkgV1Aykr884oM9niBN4mCbDVGZMKUNt",
+          "block_height": 434,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000007",
+          "inflight": "0",
+          "local_required": "126794791880006245700000007",
+          "account_balance": "126794791880006245700000007",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    },
+    {
+      "name": "ft_call_forward",
+      "method": "ft_transfer_call",
+      "transaction_hash": "B4SFyGH6bMSrKY2cjXMyMNpsjhv3QEhCJka7cj38JZCD",
+      "receipt_failures": [],
+      "gas_total": "11085144498765",
+      "receipts": [
+        {
+          "id": "7UWkF1tmykidK18pJVtVb5af715oD2Qm6pmSgxWNFcAU",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 3514094994314,
+          "status": {
+            "SuccessReceiptId": "CrLm4K3Y3FkJxjhf3GuEdUrJwXRYNTK8VPNANfno9i53"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"alicemwbnxwxd.test.near\",\"new_owner_id\":\"receivermwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "C6X4YVKqQx3vooFRgKPE3oTjuQTmsUsCHFXZj2YDSKNN",
+          "executor": "receivermwbnxwxd.test.near",
+          "gas": 1690953299625,
+          "status": {
+            "SuccessReceiptId": "nQSvQDqjEEAptUvpbXJfHEUohDa94uFNRd4HXsn82Zs"
+          },
+          "logs": []
+        },
+        {
+          "id": "nQSvQDqjEEAptUvpbXJfHEUohDa94uFNRd4HXsn82Zs",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2079128050984,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"receivermwbnxwxd.test.near\",\"new_owner_id\":\"davemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "HGHMhhou873z8CDLFQiyDGwKF9LwHdrdXqPYYeW1XhPK",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CbCBoq9mwWLWjvzAJoTbb1Wf2xCQCb62zyxhGGhaoNbx",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        },
+        {
+          "id": "CrLm4K3Y3FkJxjhf3GuEdUrJwXRYNTK8VPNANfno9i53",
+          "executor": "floormwbnxwxd.test.near",
+          "gas": 2815111683647,
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "logs": [
+            "EVENT_JSON:{\"standard\":\"nep141\",\"version\":\"1.0.0\",\"event\":\"ft_transfer\",\"data\":[{\"old_owner_id\":\"receivermwbnxwxd.test.near\",\"new_owner_id\":\"alicemwbnxwxd.test.near\",\"amount\":\"100000000000000000000000\"}]}"
+          ]
+        },
+        {
+          "id": "GN9hWEGWxQgEo6R9xYRv6skzcwrkkXhvktJ2RPgZryz5",
+          "executor": "alicemwbnxwxd.test.near",
+          "gas": 223182562500,
+          "status": {
+            "SuccessValue": ""
+          },
+          "logs": []
+        }
+      ],
+      "before": {
+        "account": {
+          "amount": "126794791880006245700000007",
+          "block_hash": "DmBmLWGr1QrjtkgV1Aykr884oM9niBN4mCbDVGZMKUNt",
+          "block_height": 434,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000007",
+          "inflight": "0",
+          "local_required": "126794791880006245700000007",
+          "account_balance": "126794791880006245700000007",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "after": {
+        "account": {
+          "amount": "126794791880006245700000009",
+          "block_hash": "CEqbnzRQtmyMtxkVzcA3RszuSw9ndTeUGae6vmsdm86q",
+          "block_height": 443,
+          "code_hash": "5qTMD2Z4tQiBzt3rcAmEJxBfYLCLQBr2ffDHwPxV21LB",
+          "locked": "0",
+          "storage_paid_at": 0,
+          "storage_usage": 443896
+        },
+        "ledger": {
+          "L": "99298000000000000000000000",
+          "T": "99000000000000000000000000",
+          "locked": "0",
+          "unused_lender": "0",
+          "borrower_claims": "500000000000000000000000",
+          "lender_claims": "0",
+          "redemption_claims": "0",
+          "cancellation_claims": "0",
+          "storage_refund_claims": "0",
+          "storage_total": "7000000000000000000000000",
+          "operational": "19996791880006245700000009",
+          "inflight": "0",
+          "local_required": "126794791880006245700000009",
+          "account_balance": "126794791880006245700000009",
+          "storage_usage": 443896,
+          "storage_stake": "4438960000000000000000000",
+          "tax_bps": 2000
+        }
+      },
+      "storage_delta": 0
+    }
+  ]
+}

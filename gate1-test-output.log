@@ -1,0 +1,46 @@
+   Compiling floorline-kill-test v0.1.0 (E:\near-2)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\E:\near-2\target\debug\incremental\floorline_kill_test-2x8a6nx56vd27\s-ho18ilmd2z-16ub22r-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\E:\near-2\target\debug\incremental\floorline_kill_test-1yq2343dzx33s\s-ho18ilmg9e-1arg0qu-working`
+
+warning: `floorline-kill-test` (lib test) generated 1 warning
+warning: `floorline-kill-test` (lib) generated 1 warning
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\E:\near-2\target\debug\incremental\gate1-1ociivlyxmly2\s-ho18imwxbg-1wxpk4a-working`
+
+warning: `floorline-kill-test` (test "gate1") generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.66s
+     Running unittests src\lib.rs (target\debug\deps\floorline_kill_test-44ce5e76330425f0.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\gate1.rs (target\debug\deps\gate1-f9cece9c70719502.exe)
+
+running 16 tests
+test issuance_after_increase_has_no_bypass ... ok
+test dispatch_failure_refund_retry_and_double_withdrawal ... ok
+test storage_refunds_and_operational_funds_are_segregated ... ok
+test carol_to_dave_repayment ... ok
+test configuration_authority_and_timestamp_overflow ... ok
+test exact_curve_rounds_once_and_maximum_values ... ok
+test bootstrap_and_full_exit ... ok
+test cancellation_and_acceptance_are_exclusive ... ok
+test overlapping_redemptions_and_payouts_do_not_reuse_backing ... ok
+test locked_tokens_and_default_boundary ... ok
+test storage_exhaustion_rolls_back_every_cash_and_token_move ... ok
+test unresolved_nft_call_freezes_settlement_and_stale_callbacks ... ok
+test zero_tokens_dust_and_minimum_outputs ... ok
+test zero_supply_nonzero_backing_unreachable ... ok
+test wide_curve_against_independent_bigint_10000_cases ... ok
+NEW_GATE1 seeds=10001..20000 sequences=10000 steps=128 operations=1280000 rejected=673403 accepted_by_kind=[4910, 63881, 63874, 63849, 18911, 12366, 6419, 4960, 2004, 3014, 1285, 63783, 37521, 3771, 391, 63951, 63617, 64196, 63894, 0] invariant_failures=0
+test redesigned_10000_sequences ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 35.91s
+
+   Doc-tests floorline_kill_test
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

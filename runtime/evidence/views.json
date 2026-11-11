@@ -1,0 +1,48 @@
+{
+  "account_id": "floormwbokuni.test.near",
+  "ft_metadata": {
+    "spec": "ft-1.0.0",
+    "name": "Floorline",
+    "symbol": "FLOOR",
+    "decimals": 24,
+    "icon": null,
+    "reference": null,
+    "reference_hash": null
+  },
+  "nft_metadata": {
+    "spec": "nft-1.0.0",
+    "name": "Floorline Loan Rights",
+    "symbol": "FLLOAN",
+    "icon": null,
+    "base_uri": null,
+    "reference": null,
+    "reference_hash": null
+  },
+  "total_supply": "98800000000000000000000000",
+  "bounds": {
+    "min": "2060000000000000000000",
+    "max": null
+  },
+  "accounting": {
+    "L": "99137461623327637581398651",
+    "T": "98800000000000000000000000",
+    "locked": "100000000000000000000000",
+    "unused_lender": "4000",
+    "borrower_claims": "600000000000000000000000",
+    "lender_claims": "88000000000000000000000",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "9200000000000000000000000",
+    "operational": "4578910000000000000000041",
+    "inflight": "0",
+    "local_required": "113604371623327637581402692",
+    "operational_base": "4478910000000000000000000",
+    "refund_storage": "0",
+    "unallocated_or_inflight": "15417495536253432600000000",
+    "account_balance": "129021867159581070181402692",
+    "storage_usage": 471018,
+    "storage_stake": "4710180000000000000000000",
+    "tax_bps": 2000
+  }
+}

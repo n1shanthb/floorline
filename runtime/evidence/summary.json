@@ -1,0 +1,312 @@
+{
+  "network": "LOCAL_SANDBOX_ONLY",
+  "tests": 31,
+  "failures": [],
+  "measurement_rows": 234,
+  "recorded_receipts": 455,
+  "normal_wasm": {
+    "sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+    "code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+    "bytes": 443613
+  },
+  "fault_wasm_sha256": "4e1f731200d4555fbed310580ad7c4c1477cc4839163d02d805d9a4c2460cf31",
+  "fixture_wasm_sha256": "88463aed8f0f4b9302635fbc203276463fbe36717a01fb4862d87d70098819bb",
+  "source_sha256": {
+    "Cargo.toml": "2dd203d2ccd7b9021812d9ee91e973b1c8adc362d97e225f2fd259557d148d30",
+    "Cargo.lock": "764607eab099a93c33f25ae7f47bd2fd773e181c7a98a3f08b4df2a6d2f05f66",
+    "src/contract.rs": "7abe793b22da9759dc4d39cddd79307d6a3d6e1c3135315cdffe1a338286c7eb",
+    "src/math.rs": "198d5bf4ad7c217d3d3c9557a6271ade8cd9aaf183a7f91a5ba82701af1b7f50",
+    "src/engine.rs": "6d955ace77d2e573d525f3abbdfdc7c326c4977b78bbb023d34779034066755f",
+    "fixtures/src/lib.rs": "d663c9e6e83a19918d2bc53bb77def60f1d591914cfada9a63e025efdbddfb61"
+  },
+  "gas_and_storage": {
+    "storage_deposit": {
+      "count": 23,
+      "min_gas_tgas": 2.279860767863,
+      "max_gas_tgas": 5.453897370321,
+      "min_storage_delta": 0,
+      "max_storage_delta": 168
+    },
+    "issue": {
+      "count": 1,
+      "min_gas_tgas": 2.205328969215,
+      "max_gas_tgas": 2.205328969215,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "ft_transfer": {
+      "count": 15,
+      "min_gas_tgas": 2.428183633528,
+      "max_gas_tgas": 2.440249244092,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "redeem": {
+      "count": 3,
+      "min_gas_tgas": 2.808672800016,
+      "max_gas_tgas": 2.817281923161,
+      "min_storage_delta": 141,
+      "max_storage_delta": 145
+    },
+    "withdraw_claim": {
+      "count": 24,
+      "min_gas_tgas": 5.212706666175,
+      "max_gas_tgas": 5.27722236003,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "fund_offer": {
+      "count": 66,
+      "min_gas_tgas": 2.517939275998,
+      "max_gas_tgas": 2.528111745715,
+      "min_storage_delta": 298,
+      "max_storage_delta": 298
+    },
+    "accept_offer": {
+      "count": 23,
+      "min_gas_tgas": 3.282193210494,
+      "max_gas_tgas": 3.292658102106,
+      "min_storage_delta": 63,
+      "max_storage_delta": 67
+    },
+    "nft_transfer": {
+      "count": 7,
+      "min_gas_tgas": 2.698322812871,
+      "max_gas_tgas": 2.708386779407,
+      "min_storage_delta": -2,
+      "max_storage_delta": -1
+    },
+    "repay": {
+      "count": 15,
+      "min_gas_tgas": 3.468542508282,
+      "max_gas_tgas": 3.479889519638,
+      "min_storage_delta": 145,
+      "max_storage_delta": 146
+    },
+    "default_loan": {
+      "count": 9,
+      "min_gas_tgas": 2.864573213219,
+      "max_gas_tgas": 2.875919121246,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "act": {
+      "count": 5,
+      "min_gas_tgas": 3.894035089417,
+      "max_gas_tgas": 7.168417059976,
+      "min_storage_delta": -3,
+      "max_storage_delta": 67
+    },
+    "ft_transfer_call": {
+      "count": 6,
+      "min_gas_tgas": 8.113162832529,
+      "max_gas_tgas": 12.71212470994,
+      "min_storage_delta": 0,
+      "max_storage_delta": 75
+    },
+    "nft_transfer_call": {
+      "count": 8,
+      "min_gas_tgas": 8.739389823531,
+      "max_gas_tgas": 58.93704821157,
+      "min_storage_delta": -1,
+      "max_storage_delta": 3
+    },
+    "storage_withdraw": {
+      "count": 1,
+      "min_gas_tgas": 5.580626369046,
+      "max_gas_tgas": 5.580626369046,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "storage_unregister": {
+      "count": 1,
+      "min_gas_tgas": 5.481905341571,
+      "max_gas_tgas": 5.481905341571,
+      "min_storage_delta": -164,
+      "max_storage_delta": -164
+    },
+    "cancel_offer": {
+      "count": 1,
+      "min_gas_tgas": 2.935646480534,
+      "max_gas_tgas": 2.935646480534,
+      "min_storage_delta": 147,
+      "max_storage_delta": 147
+    },
+    "cleanup_loan": {
+      "count": 1,
+      "min_gas_tgas": 2.295685798163,
+      "max_gas_tgas": 2.295685798163,
+      "min_storage_delta": -298,
+      "max_storage_delta": -298
+    },
+    "cleanup_claim": {
+      "count": 1,
+      "min_gas_tgas": 2.442702404113,
+      "max_gas_tgas": 2.442702404113,
+      "min_storage_delta": -147,
+      "max_storage_delta": -147
+    },
+    "withdraw_and_disappear": {
+      "count": 1,
+      "min_gas_tgas": 8.380488784743,
+      "max_gas_tgas": 8.380488784743,
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    }
+  },
+  "samples": {
+    "issue": {
+      "gas_tgas": 2.205328969215,
+      "storage_delta": 0
+    },
+    "redeem": {
+      "gas_tgas": 2.808672800016,
+      "storage_delta": 141
+    },
+    "fund": {
+      "gas_tgas": 2.519452235563,
+      "storage_delta": 298
+    },
+    "accept": {
+      "gas_tgas": 3.28504279548,
+      "storage_delta": 63
+    },
+    "nft_transfer": {
+      "gas_tgas": 2.698322812871,
+      "storage_delta": -1
+    },
+    "repay": {
+      "gas_tgas": 3.4692124695,
+      "storage_delta": 145
+    },
+    "default": {
+      "gas_tgas": 2.869322975387,
+      "storage_delta": 0
+    },
+    "withdraw_redemption": {
+      "gas_tgas": 5.260379937442,
+      "storage_delta": 0
+    },
+    "cleanup_closed_loan": {
+      "gas_tgas": 2.295685798163,
+      "storage_delta": -298
+    },
+    "cleanup_paid_claim": {
+      "gas_tgas": 2.442702404113,
+      "storage_delta": -147
+    },
+    "nft_call_exhaust": {
+      "gas_tgas": 58.93704821157,
+      "storage_delta": 0
+    }
+  },
+  "growth": [
+    {
+      "name": "growth_summary",
+      "measurements": [
+        {
+          "i": 0,
+          "gas": "2517939275998",
+          "delta": 298
+        },
+        {
+          "i": 19,
+          "gas": "2520219275998",
+          "delta": 298
+        },
+        {
+          "i": 39,
+          "gas": "2520248582767",
+          "delta": 298
+        }
+      ]
+    },
+    {
+      "name": "growth_users_loans_claims",
+      "measurements": [
+        {
+          "i": 0,
+          "accept_gas": "3282193210494",
+          "records_so_far": 160
+        },
+        {
+          "i": 1,
+          "accept_gas": "3289033210494",
+          "records_so_far": 166
+        },
+        {
+          "i": 2,
+          "accept_gas": "3284473210494",
+          "records_so_far": 174
+        },
+        {
+          "i": 3,
+          "accept_gas": "3289033210494",
+          "records_so_far": 180
+        },
+        {
+          "i": 4,
+          "accept_gas": "3289033210494",
+          "records_so_far": 188
+        },
+        {
+          "i": 5,
+          "accept_gas": "3289033210494",
+          "records_so_far": 194
+        },
+        {
+          "i": 6,
+          "accept_gas": "3284473210494",
+          "records_so_far": 202
+        },
+        {
+          "i": 7,
+          "accept_gas": "3289033210494",
+          "records_so_far": 208
+        },
+        {
+          "i": 8,
+          "accept_gas": "3289033210494",
+          "records_so_far": 216
+        },
+        {
+          "i": 9,
+          "accept_gas": "3289033210494",
+          "records_so_far": 222
+        },
+        {
+          "i": 10,
+          "accept_gas": "3283538102106",
+          "records_so_far": 230
+        },
+        {
+          "i": 11,
+          "accept_gas": "3292658102106",
+          "records_so_far": 236
+        }
+      ]
+    }
+  ],
+  "final_accounting": {
+    "L": "99137461623327637581398651",
+    "T": "98800000000000000000000000",
+    "locked": "100000000000000000000000",
+    "unused_lender": "4000",
+    "borrower_claims": "600000000000000000000000",
+    "lender_claims": "88000000000000000000000",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "9200000000000000000000000",
+    "operational": "4578910000000000000000041",
+    "inflight": "0",
+    "local_required": "113604371623327637581402692",
+    "operational_base": "4478910000000000000000000",
+    "refund_storage": "0",
+    "unallocated_or_inflight": "15417495536253432600000000",
+    "account_balance": "129021867159581070181402692",
+    "storage_usage": 471018,
+    "storage_stake": "4710180000000000000000000",
+    "tax_bps": 2000
+  }
+}

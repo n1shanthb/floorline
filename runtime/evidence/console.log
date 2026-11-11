@@ -1,0 +1,65 @@
+PASS A: native issuance matches reference
+PASS FT transfers and locked-supply setup
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:615:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"}}}}
+PASS B: redemption and actual native payout
+PASS D: lender funding is not backing
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:480:9:\nassertion `left == right` failed\n  left: 1\n right: 0"}}}}
+PASS E: Carol locks FLOOR, receives funded claim and NFT
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:594:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwbokuni.test.near\")\n right: AccountId(\"davemwbokuni.test.near\")"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:857:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:857:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+PASS F/G: actual NFT transfer then Dave repays
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:857:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:857:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"}}}}
+PASS H: separate default credits lender once
+PASS I: DAO-style contract contribution changes real backing
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:333:9:\ndilutive issuance"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method redeem doesn't accept deposit"}}}}
+PASS C: dilutive issuance rejected; unexpected deposits rejected
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:794:9:\nassertion `left != right` failed: use loan acceptance\n  left: AccountId(\"floormwbokuni.test.near\")\n right: AccountId(\"floormwbokuni.test.near\")"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:605:9:\nnot expired"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:102:22:\ninsufficient balance"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:793:9:\nassertion `left != right` failed: escrow protected\n  left: AccountId(\"floormwbokuni.test.near\")\n right: AccountId(\"floormwbokuni.test.near\")"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:732:9:\nattach at least 110 Tgas"}}}}
+PASS One-yocto protection, escrow custody, canonical NFTs and expiry guards
+PASS J: FT receiver accept
+PASS J: FT receiver reject
+PASS J: FT receiver malformed
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:42:24:\nreceiver panic"}}}}
+PASS J: FT receiver panic
+PASS J: FT receiver forward
+PASS J: FT refund never takes collateral locked inside receiver
+PASS J: NFT receiver accept
+PASS J: NFT receiver reject
+PASS J: NFT receiver malformed
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:79:24:\nreceiver panic"}}}}
+PASS J: NFT receiver panic
+PASS J: NFT receiver forward
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:858:9:\nassertion `left == right` failed: NFT transfer pending\n  left: 1\n right: 0"}}}}
+PASS J: NFT receiver repay
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+PASS J: NFT receiver exhaust
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:858:9:\nassertion `left == right` failed: NFT transfer pending\n  left: 1\n right: 0"}}}}
+PASS NFT default is blocked while transfer resolution is pending
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method ft_resolve_transfer is private"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method nft_resolve_transfer is private"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method claim_result is private"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:631:9:\nassertion `left == right` failed\n  left: 0\n right: 1"}}}}
+PASS Private resolvers reject forged, duplicate and stale direct calls
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:745:9:\ninsufficient prepaid storage"}}}}
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:284:9:\nlive funds or rights; force cannot destroy them"}}}}
+PASS Measured storage shortage, refunds, unregister and cleanup
+	Failure [floormwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:614:9:\nassertion `left == right` failed: not claim owner\n  left: AccountId(\"davemwbokuni.test.near\")\n right: AccountId(\"bobmwbokuni.test.near\")"}}}}
+PASS Concurrent funded claims and wrong owner cannot redirect payout
+	Failure [vanishmwbokuni.test.near]: Error: Can't complete the action because account vanishmwbokuni.test.near doesn't exist
+PASS Failed native payout remains funded and safely retries after real failure
+	Failure [faultmwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:646:9:\nassertion `left == right` failed: not a confirmed transfer failure\n  left: 1\n right: 2"}}}}
+	Failure [faultmwbokuni.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:615:9:\nassertion `left == right` failed: claim not available\n  left: 1\n right: 0"}}}}
+PASS Callback gas failure never unlocks an unknown native payout
+PASS Ordinary gas stays bounded after growing persistent history
+PASS Growing users, active/closed loans and native claims stay bounded
+{"tests":31,"failed":0,"financialReceipts":237}

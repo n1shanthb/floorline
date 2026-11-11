@@ -1,0 +1,6 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const evidence=JSON.parse(fs.readFileSync('E:/near-2/runtime/evidence/runtime.json'));
+const id=evidence.accounts.find(x=>/^floor[^.]*\.test\.near$/.test(x));assert(id);
+async function view(method_name,args={}){const response=await fetch('http://127.0.0.1:3031',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'query',params:{request_type:'call_function',account_id:id,method_name,args_base64:Buffer.from(JSON.stringify(args)).toString('base64'),finality:'optimistic'}})});const x=await response.json();assert(!x.error,JSON.stringify(x.error));return JSON.parse(Buffer.from(x.result.result));}
+const data={account_id:id,ft_metadata:await view('ft_metadata'),nft_metadata:await view('nft_metadata'),total_supply:await view('ft_total_supply'),bounds:await view('storage_balance_bounds'),accounting:await view('accounting')};
+assert.equal(data.ft_metadata.spec,'ft-1.0.0');assert.equal(data.ft_metadata.decimals,24);assert.equal(data.nft_metadata.spec,'nft-1.0.0');assert.equal(data.total_supply,data.accounting.T);assert(BigInt(data.bounds.min)>0n);fs.writeFileSync('E:/near-2/runtime/evidence/views.json',JSON.stringify(data,null,2));console.log('PASS supplemental real-WASM metadata/supply/storage views');
