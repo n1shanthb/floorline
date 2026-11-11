@@ -1,0 +1,131 @@
+Retrying transaction ownermwccehia.test.near:59hXaXNQ9VunqfyCjiX1jjwU6XzscZgC1PPjhJVb7pc5 with new nonce.
+Receipt: 7irRUGP9VpMJpsMLzShqYGqas1qVW1rBYUCCAHGVCqdn
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"ownermwccehia.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"ownermwccehia.test.near"}]}
+Retrying transaction bobmwccehia.test.near:6ARLGb12tZuN8h8Jd7tWtQudtbdX94BCEnF6vfagQh7u with new nonce.
+Retrying transaction receivermwccehia.test.near:GdF9ZEVzrWWWcuWfZEUJ6JqfVkNHXV5wqWnXhac1XRLu with new nonce.
+Receipts: HMJF7uqgnyiXZXJHWDgHJgPJhix6qruLHJirnytrZDTP, 49vPAdQfBkPnGtkRj8bYfFLjUJoBPHAtoLi3jeffiwjL
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: The contract has already been initialized"}}}}
+PASS bootstrap and immutable initialization
+Retrying transaction coinmwccehia.test.near:27AMRQuZhWRFLWGNqDPy8Z4y66Fh1p2XEqedxu4Bfmg8 with new nonce.
+Retrying transaction coinmwccehia.test.near:7KXncbKmgU4f8FoXvp5wWhVxmHiinWyErQPwW8hbSye8 with new nonce.
+Retrying transaction absentmwccehia.test.near:8Qx5z47BJtNe4sLymq8dYiwRUqtJZkHfziYc6AAMMTvx with new nonce.
+Retrying transaction coinmwccehia.test.near:9Nt8qzZtBWqQbpjTy4YyBARgMNq8V2BLFQHj25jDw1tN with new nonce.
+Receipts: FtBh1hc6fGpUe3cJCG68qe4yVyDSEeEX3G9bGqmQcvct, F2EaPBpAzMezHDc9eTv7xtgPwR4wPi9gcXEvuh6A9NEw
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:499:13:\nstorage minimum"}}}}
+PASS NEP145 sponsor registration and empty unregister adapter cases
+Retrying transaction coinmwccehia.test.near:2qpeeoe9FEKaAn4L1uyrPrku9uTmfJKatvV8WRwWwCGT with new nonce.
+Receipt: HTuodYT9p6zuC2JgjNqUfg6E64iXscAKBZTguczvjTgk
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"ownermwccehia.test.near","amount":"942857142857142857142857"}]}
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"ownermwccehia.test.near","deposit":"1000000000000000000000000","net":"990000000000000000000000","fee":"10000000000000000000000","tokens":"942857142857142857142857"}]}
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"10000000000000000000000"}]}
+Retrying transaction coinmwccehia.test.near:8424BKKfZzi4yY692Z6Fc9n6RoFonVpbpLZeaZGQoY4p with new nonce.
+Receipts: 8QdD5eyzKxgCC6UZzD7ivoa7DodRLyaSPoCkRZBoSpEq, 42MWHRjmLHQt9oxFq5123jteHsC4v6rJ12W4nNgaQTzv
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:328:9:\nmint slippage"}}}}
+Retrying transaction coinmwccehia.test.near:E1o3j2SNdbpi72KyWkJ8YdvTU9dXQcAHFMqPPqJKJJcf with new nonce.
+Receipts: HZumMwKCsWoqQLqFAqEaiZMq9kg1DpezMsxGjoD4cHM1, 9Bf54TthrZZduqavbdkhnPrRmNNeXamEAcvcihxcJw4v
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:683:9:\nexpired quote"}}}}
+Retrying transaction coinmwccehia.test.near:C9hW54UwfzbMQ7BDhzc3hKaDn9557HbyyBo49HYnXQ6i with new nonce.
+Receipts: H1g6G3bAB7YkjAheg3Dj4ZMaQhQmL2TBasnuvCKhjyYX, 47GrigwijGtjLiHEbN76jmJXK7TQCE25xXry6zBDFDUi
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:327:69:\ninvalid mint: Dust"}}}}
+PASS mint exact after-fee accounting, slippage and deadline rejection
+Retrying transaction coinmwccehia.test.near:3h3m3DD8jzGQV1ogYi8YH89WVRQ1owR8Kd8gFogaGgaE with new nonce.
+Receipt: AYsuchXgXKUH4yxkeisahaQ9zhrEp9ar4NEAJ7kEyvro
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"ownermwccehia.test.near","amount":"1000000000000000000000000"}]}
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"ownermwccehia.test.near","amount":"821801975608259651371268"}]}
+Receipts: gcPKJdErerrJwuVGNYtCvpm5DuDn6gPgfJwyu11mfUG, 2vJk2fCCTM8DnBe7XuPeYUujtxV2nNuBiyfCKNyqHP7U
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:402:9:\nassertion `left == right` failed: claim owner\n  left: AccountId(\"ownermwccehia.test.near\")\n right: AccountId(\"bobmwccehia.test.near\")"}}}}
+Retrying transaction coinmwccehia.test.near:2pKf8fFHhvSpy87qP82kw2eaRXqUpG2GKxobXHoo9HH6 with new nonce.
+Receipts: 6vVPVsNDshMFjq3vhAeCELaGsBKpYmtNbWaH5mM79k6n, CXTbbXQqtXphHJNfDTbVgyjW9wHE7ZGif3nMFfzNcrNR, 3PPYGB5GmhUcYL2zwavRgAmm9URBh5fGiaLCK74tASHB
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"ownermwccehia.test.near","amount":"821801975608259651371268"}]}
+Receipt: 9M84KZ12khhc71mTPf7RomwqAQmwzxTczwBL3481Qj6x
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"0","attempt_id":"1","state":"paid"}]}
+Retrying transaction coinmwccehia.test.near:FcLPrTL77j9FDSrrA9QCa9e3NutE99QwDLPocM9FV43H with new nonce.
+Receipts: 7ieXmGqd5iovL3LbEeeQNgceKgQxrxk8rbJqpnqs1u4h, D4dSDaoHunMR3U9mA4ihzs521T4iKVJWrbr6VJAwJu8k
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:807:9:\nassertion `left == right` failed: claim unavailable\n  left: 3\n right: 0"}}}}
+Retrying transaction coinmwccehia.test.near:9FQrkDbCKc2gh2nBk1NRWFrqtB2ZKmmjTb7ftRcsei4L with new nonce.
+Receipts: GLSHh42PS2JJLrBRSGT6q4TsRKbMWw6tzxFFj2mZisL6, D8YrUqH1NvAJaQ36u62KTVzR5Vd9zsskdDz1X4EgRZdC
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:433:9:\nknown failed owner only"}}}}
+Retrying transaction coinmwccehia.test.near:GsNUFwYc9cH29AoRZooWzWA1dEGrxWWzbbMFFMbmGJas with new nonce.
+PASS redemption replaces backing with funded claim then actual payment
+Retrying transaction coinmwccehia.test.near:FWAmn4gzsP5R7ea6GptdNQM6nMKY1TXcozSPzMqavUWy with new nonce.
+Retrying transaction coinmwccehia.test.near:Frb6E9X7SZrE5bBznpTuwBQ8g55ayC8hNRQmdAfaaujg with new nonce.
+Receipts: 64m4VTTuMbfAUyChbrxc5hJi159H77SH8W2mXzUbcpPX, Gu3JQW8LYoW5CsMd4JbxPc2MV3hCnT73dZPj669DoC6F, 9dH8Ko71GHeUavFihh3s52FmxvZu39mk5n4nVsj2b8py
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"2","attempt_id":"3","owner":"ownermwccehia.test.near","amount":"10000000000000000000000"}]}
+Receipt: 5wdZmGKTTkExMDYr2sVNQfSRQL81op8nfQCna2Np44dx
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"2","attempt_id":"3","state":"paid"}]}
+Retrying transaction coinmwccehia.test.near:GHZtwNg6PbKGt6PbUHGCMV7tg9XCktZtai51Z7FLSnkZ with new nonce.
+Receipts: 5XcaHmdxAehqY9cJeQMhjY4UbmntutbxAVQsqcoMDPbq, DtgAst1YVqsp9EryS8wEQZNSyYakggaVbhnB9jwhsXyb
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:392:9:\nearned fees only"}}}}
+Retrying transaction coinmwccehia.test.near:J8AJzvpwQcBb4GhMWH2ea7DMMUPk2Qh5dHRME6oTa37e with new nonce.
+PASS creator earned fees segregated from backing
+Retrying transaction coinmwccehia.test.near:5YFSgKQobs4sxpRrBxvYXKqFt3wEdFKgPGxua9TdrAwQ with new nonce.
+Receipt: 5HXJe3XaBASNaJSAAJMsM9v4g6reno3xjaCMVq3ZmUou
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"bobmwccehia.test.near","amount":"100000000000000000000000"}]}
+Retrying transaction coinmwccehia.test.near:7pFZr7QGVDJzGZ6TFFe1kAVDeTEjb7zWtrr7kYZKZpEy with new nonce.
+PASS contribution grows backing without minting; direct cash stays unassigned
+Retrying transaction coinmwccehia.test.near:Hxz8WsGopF3Rsrmjwvbu39DCsTEGwQ2gx3EYHGEhG4Bd with new nonce.
+Receipt: J61WrRVeotuyufD82SFmzJvkuQ133XJwbuAgsGeTwdB5
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"bobmwccehia.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction coinmwccehia.test.near:74HEX8ajStTJwRkBBWU4Sph94in9nMW1J2fig19feGkg with new nonce.
+Receipt: BNa85sXX2jfi43VuHUaxpjF3naxdjv187fyW1bPfdpL3
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+Retrying transaction coinmwccehia.test.near:7pHE3BXEdsgWZ7JdYnEDuVBHeKMjf1Fvqd2AAfV7jBjp with new nonce.
+Receipts: 9Fhi9d3WgQMQt8bdwHQksPdZ5ZoXmAL7JVvEnhStnuEt, 4xk6YuhoEpcVuv2yzJMk2MEW4SjnoqpH5atvd5pc1NHX
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:548:9:\nlive rights remain; force burning unsupported"}}}}
+Retrying transaction coinmwccehia.test.near:8sdRVNnFMWR9CSLchth8Gayu6y44bbnBgPiLx4hjBhQe with new nonce.
+Receipt: 7KARbVwiEt8jW7mPNKNjT5AsUHE98m4NQEwpFvJEpqUv
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method on_native_result is private"}}}}
+Retrying transaction coinmwccehia.test.near:C1WLfTwLWbHs6CVkNHXKV6Gz3D9Gd8E5UdghqZ4st1s7 with new nonce.
+Receipt: H7JzNSWAgBoRPrgiNnfroS1JwDGowfPxb23yUNo6YvGG
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method ft_resolve_transfer is private"}}}}
+PASS FT transfers, force guard and authentication
+Retrying transaction coinmwccehia.test.near:EXcNTL6499U2tg4Bpn3pMX4wPCVePe8kvBHq6LKc9tWy with new nonce.
+Receipts: FBFhJZMHVexGWWjUnjHqxnzYSaUrbkcyUXe7W35rfxA, CzuZRL4EfJFu9SJLq6fEMfLQuz1yhp3CefNhXJ8rzK4D, Vagqfi3XBZeZ5WJtXg1uFL1oWv1DzygFV9WqUuHEwH9
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+PASS actual FT receiver accept
+Retrying transaction coinmwccehia.test.near:Em7Mu8h4LoSPYdA1DcQS9yCAnN7fKVj5s62i16UiEVVQ with new nonce.
+Receipts: GAeF5XnxGX65eZgfX9w7NW4yFXYHbgdC6LgwuGUnE13M, 7ENckoz6utJZuDMrdFmys4UeoxyAAuhDQt7ZbYWs8iSr, 5vu5HPQSpijuGW9CEcYTGVxeKDjFojaEbYtMN53jLmbD
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: 6JC6WVsV7VxXE3bvD8NvX9GYrsmC1o46wCHzEuonau6K
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"ownermwccehia.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver reject
+Retrying transaction coinmwccehia.test.near:HnQbH88ZaSTC5jmgpVuR1Nqdhva3WbFi9niHcbiQj7bH with new nonce.
+Receipts: 9m2oGRL99WQmoJ5zNEUKvQGRr4ZRMiQpAH7Gs5UWiVgn, 8VHbSreAXe411nrUcimKHKZaK7835Ky3Y1SXvDYdVxM3, ABHJLwjofikgL3Nc2hwQKY9RDaNBZX2v7XftUMxyvGFn
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: HPFQwQmK9tuJ4WjGkBYBWxPA1uKFMnCpAKQdHWF9v3BQ
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"ownermwccehia.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver malformed
+Retrying transaction coinmwccehia.test.near:ALWA4Frzp2QaPuBqaE6R8KDQEHfcRrE7S3FKdqenQyNH with new nonce.
+Receipts: CgNRuC34sALfG4znMDjfJ4fcywoT65gExuBnGriwcext, 6JEpbcu1r9NjHfDh5jcneKaT965aRTkNzFg6HWcHVcjd, DCVUXMyBJhoL6h1xjpSf81JpUDrM2hTTuhuAw3RPb5E7
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: DbrpiT98Gv16gMB9pBYKeYTwZZx65tMnGb8oNEWZcZN
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:18:22:\nintentional receiver failure"}}}}
+Receipt: A1fbrDjvnsb2r4EGh8GKpS9fcRf5HXiB6xA9sy9PBuuh
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"ownermwccehia.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver panic
+Retrying transaction coinmwccehia.test.near:BGPy6ep2t8caKxA8KhHH6jRXTQXwJCm4DogzXzPx8zyp with new nonce.
+Receipts: EBpcBBqxmz3kjwiXwhzuxj26yfrUiXq1aGiptZUVgWZk, 4LxD9ypzzEM3ADyKXfhc9P4oeQwqY1UBt7ffB2Z3Nmgj, DEB9KnUXgnyxg8XYzGNEFyDN7rjrXwZcqM9drxMG7R3i
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: 3D7SsK2KbLkKTKP72QjwVqKqMZuyWdz7Sshgw5NmMFzE
+	Failure [coinmwccehia.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipt: CPbr752wFJEsgjXDqqmhkLLT8aprNeTwKsXsmMtqGM7H
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"ownermwccehia.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver exhaust
+Retrying transaction coinmwccehia.test.near:Dinhit9fxbW7d84cmbYCS1x77puzQjWo89W7MazdHLae with new nonce.
+Receipts: 4pY3jtRSdjUpy2zYmSNEM5fjqz3rAcgzzjLtijdVHTji, AwUb3B3weegR2EkANZ8hvoVwgRZCUac14oW24PSfkSfz, 3HyDJvnLyhNdP7c8jJsXbzxZao6RjrUFmx7zDEcV4qD1
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"ownermwccehia.test.near","new_owner_id":"receivermwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: ANhWjRZgGYPzUKbmK2hZnoctTSzN5y7dBUqXqLnUgj5G
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"bobmwccehia.test.near","amount":"100000000000000000000000"}]}
+Receipt: CFJGLjGMbeadfyFk6YJTWqkAMFZfy8BZyaNZYYjxuBR2
+	Log [coinmwccehia.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receivermwccehia.test.near","new_owner_id":"ownermwccehia.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 0n
+- 100000000000000000000000n
+
+    at file:///E:/near-2/floorkit/contract/tools/runtime.mjs:130:85
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async test (file:///E:/near-2/floorkit/contract/tools/runtime.mjs:62:30)
+    at async file:///E:/near-2/floorkit/contract/tools/runtime.mjs:125:92

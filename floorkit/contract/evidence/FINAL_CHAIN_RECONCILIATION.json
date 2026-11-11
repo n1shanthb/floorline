@@ -1,0 +1,752 @@
+{
+  "status": "PASS",
+  "network": "LOCAL_SANDBOX_ONLY",
+  "instances": [
+    {
+      "account_id": "coin0mwccw8v4.test.near",
+      "accounting": {
+        "R": "9336507523221488615148851",
+        "T": "8842857142857142857139857",
+        "F": "0",
+        "C": "82825416502568631585727",
+        "claim_categories": [
+          "82825416502568631585727",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "4972240000000000000000000",
+        "K": "35940000000000000000000",
+        "O": "5000000000000000000000033",
+        "I": "0",
+        "P": "19427512939724057246734611",
+        "A": "33524460963147078846734611",
+        "storage_bytes": 387179,
+        "storage_stake": "3871790000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "9336507523221488615148851",
+          "denominator": "8842857142857142857139857"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 1
+      },
+      "state": {
+        "amount": "33524460963147078846734611",
+        "block_hash": "5unWNXhBWsPyZG4XQGESYg4pZ8cR6nMpgoEmjDfryAws",
+        "block_height": 10573,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 387179
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner1mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "5unWNXhBWsPyZG4XQGESYg4pZ8cR6nMpgoEmjDfryAws",
+        "block_height": 10573,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 6945000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:CptLamGk2rkNgA8sAjX2osuTyyrS9UDgzpeDd97SA2VR"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "7742857142857142857138857",
+        "bob2mwccw8v4.test.near": "1100000000000000000001000",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "differential7mwccw8v4.test.near",
+      "accounting": {
+        "R": "10000000000000000000059739",
+        "T": "9999999999999999999937764",
+        "F": "1443",
+        "C": "159392",
+        "claim_categories": [
+          "159392",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "836310000000000000000000",
+        "K": "163690000000000000000000",
+        "O": "5000000000000000000000070",
+        "I": "0",
+        "P": "16000000000000000000220644",
+        "A": "29996952545460490000220644",
+        "storage_bytes": 395803,
+        "storage_stake": "3958030000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "10000000000000000000059739",
+          "denominator": "9999999999999999999937764"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "29996952545460490000220644",
+        "block_hash": "5unWNXhBWsPyZG4XQGESYg4pZ8cR6nMpgoEmjDfryAws",
+        "block_height": 10573,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 395803
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner8mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "5unWNXhBWsPyZG4XQGESYg4pZ8cR6nMpgoEmjDfryAws",
+        "block_height": 10573,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7228000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:2Spzx1qDmMXgudiH9hc2MUik6EVDr5mHd4v25M966r4y"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "9999999999999999999937764",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "terminal10mwccw8v4.test.near",
+      "accounting": {
+        "R": "0",
+        "T": "0",
+        "F": "10000000000000000000000",
+        "C": "0",
+        "claim_categories": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "993630000000000000000000",
+        "K": "6370000000000000000000",
+        "O": "5000000000000000000000002",
+        "I": "0",
+        "P": "6010000000000000000000002",
+        "A": "20006952485868182400000002",
+        "storage_bytes": 385595,
+        "storage_stake": "3855950000000000000000000",
+        "closed": true,
+        "backing": null,
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "20006952485868182400000002",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 385595
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner11mwccw8v4.test.near",
+        "closed": true,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7625000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:FE32DjJWgvspDBjA2EVi7e9fajFMmh5p6ezq29UxSyyU"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "fault12mwccw8v4.test.near",
+      "accounting": {
+        "R": "9180000000000000000000000",
+        "T": "9000000000000000000000000",
+        "F": "0",
+        "C": "0",
+        "claim_categories": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "993630000000000000000000",
+        "K": "6370000000000000000000",
+        "O": "5000000000000000000000002",
+        "I": "820000000000000000000000",
+        "P": "15180000000000000000000002",
+        "A": "29176952511729817800000002",
+        "storage_bytes": 385593,
+        "storage_stake": "3855930000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "9180000000000000000000000",
+          "denominator": "9000000000000000000000000"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "29176952511729817800000002",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "9anvBYiHyMb8hi9ChBPp7uLdpHFooZx3Dp2A4GW9RB8c",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 385593
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner13mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7658000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:FzrLVPe3JWXZqN861sxDoX7SZ6Dxi8GSgfw3aNN688Fr"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "9000000000000000000000000",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "poolfault14mwccw8v4.test.near",
+      "accounting": {
+        "R": "10000000000000000000000000",
+        "T": "10000000000000000000000000",
+        "F": "0",
+        "C": "0",
+        "claim_categories": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "995910000000000000000000",
+        "K": "8180000000000000000000",
+        "O": "5000000000000000000000000",
+        "I": "8000",
+        "P": "16004090000000000000000000",
+        "A": "30001042494599753000000000",
+        "storage_bytes": 386788,
+        "storage_stake": "3867880000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "10000000000000000000000000",
+          "denominator": "10000000000000000000000000"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 8
+      },
+      "state": {
+        "amount": "30001042494599753000000000",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "9anvBYiHyMb8hi9ChBPp7uLdpHFooZx3Dp2A4GW9RB8c",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 386788
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner15mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7689000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:6Jw7xCvZBSGFd6nPPVGBsVGpD84NyPg4fA13Py3Wew22"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "10000000000000000000000000",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "guardfault16mwccw8v4.test.near",
+      "accounting": {
+        "R": "10098000000000000000000000",
+        "T": "9000000000000000000000000",
+        "F": "0",
+        "C": "0",
+        "claim_categories": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "1987260000000000000000000",
+        "K": "12740000000000000000000",
+        "O": "5000000000000000000000007",
+        "I": "9000000000000000000000000",
+        "P": "17098000000000000000000007",
+        "A": "31092148092043158200000007",
+        "storage_bytes": 385899,
+        "storage_stake": "3858990000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "10098000000000000000000000",
+          "denominator": "9000000000000000000000000"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "31092148092043158200000007",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 385899
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner17mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7749000002,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:7zCjysC8GURBnQ5N5cDGSaXNdcfi1y7RLRBAx33Tr79H"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "9000000000000000000000000",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "wide19mwccw8v4.test.near",
+      "accounting": {
+        "R": "55000000000000",
+        "T": "50000000000000000000000000000000000000",
+        "F": "0",
+        "C": "45000000000000",
+        "claim_categories": [
+          "45000000000000",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "993630000000000000000000",
+        "K": "6370000000000000000000",
+        "O": "5000000000000000000000001",
+        "I": "0",
+        "P": "6000000000100000000000001",
+        "A": "29996953932561975700000001",
+        "storage_bytes": 385595,
+        "storage_stake": "3855950000000000000000000",
+        "closed": false,
+        "backing": {
+          "numerator": "55000000000000",
+          "denominator": "50000000000000000000000000000000000000"
+        },
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "29996953932561975700000001",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 385595
+      },
+      "config": {
+        "initial_price": "1",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "owner20mwccw8v4.test.near",
+        "closed": false,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 7830000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:4MDvaZ6r1jhYCuC9aEJRsVoLeB38zpCC6wAS9HCM5N8h"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "50000000000000000000000000000000000000",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    },
+    {
+      "account_id": "pendingclosemwcd364z.test.near",
+      "accounting": {
+        "R": "0",
+        "T": "0",
+        "F": "0",
+        "C": "0",
+        "claim_categories": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "H": "1989540000000000000000000",
+        "K": "10460000000000000000000",
+        "O": "5000000000000000000000003",
+        "I": "0",
+        "P": "7000000000000000000000003",
+        "A": "106997195603206882200000003",
+        "storage_bytes": 385774,
+        "storage_stake": "3857740000000000000000000",
+        "closed": true,
+        "backing": null,
+        "base_storage": "4090000000000000000000",
+        "claim_storage": "2280000000000000000000",
+        "ft_call_storage": "2170000000000000000000",
+        "refund_pool_used": 0
+      },
+      "state": {
+        "amount": "106997195603206882200000003",
+        "block_hash": "Bb2d8nmumotmt1nZH3hzn9Gjb56NdZjMouDnF9yWKZe8",
+        "block_height": 10574,
+        "code_hash": "CEnqqiPTY2Fyj3k6jVLw4jDGZzEPazZTQNabfgXJk474",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 385774
+      },
+      "config": {
+        "initial_price": "1000000000000000000000000",
+        "markup_bps": 500,
+        "redemption_tax_bps": 2000,
+        "creator_fee_bps": 100,
+        "creator_id": "pendingownermwcd364z.test.near",
+        "closed": true,
+        "refund_pool_capacity": 8
+      },
+      "public_access_keys": {
+        "block_hash": "HsXuE5N3Hiitmu3igz5rRo81SVypYhYuTELY6XKJtWon",
+        "block_height": 10575,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 8979000001,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:5dTpb3ZKhFuXUuYyJT6Rfyc1swUWkVRGsnfG9zvGnwqF"
+          }
+        ]
+      },
+      "token_balances": {
+        "coin0mwccw8v4.test.near": "0",
+        "owner1mwccw8v4.test.near": "0",
+        "bob2mwccw8v4.test.near": "0",
+        "receiver3mwccw8v4.test.near": "0",
+        "absent4mwccw8v4.test.near": "0",
+        "pendingreceiver5mwccw8v4.test.near": "0",
+        "empty6mwccw8v4.test.near": "0",
+        "zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near": "0",
+        "differential7mwccw8v4.test.near": "0",
+        "owner8mwccw8v4.test.near": "0",
+        "deleted9mwccw8v4.test.near": "0",
+        "terminal10mwccw8v4.test.near": "0",
+        "owner11mwccw8v4.test.near": "0",
+        "fault12mwccw8v4.test.near": "0",
+        "owner13mwccw8v4.test.near": "0",
+        "poolfault14mwccw8v4.test.near": "0",
+        "owner15mwccw8v4.test.near": "0",
+        "guardfault16mwccw8v4.test.near": "0",
+        "owner17mwccw8v4.test.near": "0",
+        "guarddead18mwccw8v4.test.near": "0",
+        "wide19mwccw8v4.test.near": "0",
+        "owner20mwccw8v4.test.near": "0",
+        "pendingownermwcd364z.test.near": "0",
+        "test.near": "0",
+        "poolvictimmwcd364z.test.near": "0"
+      },
+      "supply_partition": "PASS",
+      "parameters_unchanged": "PASS",
+      "actual_immutability": "NO: disposable full-access key retained"
+    }
+  ]
+}

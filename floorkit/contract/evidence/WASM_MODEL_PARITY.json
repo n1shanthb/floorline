@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "64 actual WASM randomized economic operations, R/T/F/C only",
+  "operations": 64,
+  "failing_seeds": [],
+  "generator_seed": "0x464c4f4f",
+  "trace_sha256": "9b5afccdfdca17dbb676388b35685aea07d5ce4b1fb8c0b7674b9fead938dbbe",
+  "wasm_sha256": "a6f8f0c47f73a3eb7e5c85cc10b2a3b8773af4023ddf598d9d6fc15d91a19f13",
+  "reference_model_sha256": "6724091faaf0936b67cc457a5ff33a42933b903a120d9bc0d18ae26852a1b738",
+  "full_storage_transport_state_parity": "NOT CLAIMED: byte costs and environment-observed cash differ"
+}

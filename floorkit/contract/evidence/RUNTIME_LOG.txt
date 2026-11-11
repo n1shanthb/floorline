@@ -1,0 +1,669 @@
+Retrying transaction owner1mwccw8v4.test.near:H8saG9yLSfDFGJdn5K4rJ4tpmGiwzGHdWZzzEg4cS1j2 with new nonce.
+Receipt: DHKGFUG2NHR6d55GvWAzBgwRfWkEPXpZjioUW38tF1nt
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner1mwccw8v4.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"owner1mwccw8v4.test.near"}]}
+Retrying transaction bob2mwccw8v4.test.near:9vPa1j91d44EaQURTMcfNnZxPuqeCpU8FLg3f4Q1MVVE with new nonce.
+Retrying transaction receiver3mwccw8v4.test.near:3np1n3hvZXFdcwPuoeB7iFbyqk99XuGMs5oyEevYQ75e with new nonce.
+Receipts: F1S3MvRLBzBALVWUPTttU9KiTJR7JKsMNvTsCG7yiLSK, 5JPeKWXbrBZrCcXMi1EiufuHAQktWkAM3VCMD3hadAFt
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: The contract has already been initialized"}}}}
+PASS bootstrap and immutable initialization
+Retrying transaction absent4mwccw8v4.test.near:5xZD5CjmAGuvuHmHdrp4vFg2V2nBd3V6WAHw4QtNegvc with new nonce.
+Receipts: DM6DZUhUwNd6xtb3ACgpJ8W19TdeGww6GJ2Nixg9by6X, 3zBzyXSsGBKvTTNQWNUP5s6tRY3LuZT8dWYEMHn4DgDh
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:535:13:\nstorage minimum"}}}}
+PASS NEP145 sponsor registration and empty unregister adapter cases
+Receipt: ETSAZjPMzRgRMYtxozVvaG9mnvm3S1MKhL4Do8AmyLN5
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner1mwccw8v4.test.near","amount":"942857142857142857142857"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner1mwccw8v4.test.near","deposit":"1000000000000000000000000","net":"990000000000000000000000","fee":"10000000000000000000000","tokens":"942857142857142857142857"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"10000000000000000000000"}]}
+Receipts: 5zYmacAbtZZGYLNPiypwMgbUsgn15SQU3S8Ne7oyBR6Y, 2kUrNywDqp4Dt3PRcgiZRux3q2sxzBtpmBrcDkkShDwJ
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:360:9:\nmint slippage"}}}}
+Receipts: 9wD84YeVpCEaM589kB6DURkVWt6oCVjsa93HYddVsCic, 6XqFTswcYqLMywNjwWdtPzf92NjnPSnsb8Bj2WTSuiNX
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:717:9:\nexpired quote"}}}}
+Receipts: 93NoKXEjjy91k8FoJL3AbfdhJRkvQiQh7om2iJmGh3ZV, 3ugVwFxpysqeTWRPBZ4mPsAGKbpWqq8YnU37aquHSLQz
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:359:69:\ninvalid mint: Dust"}}}}
+Receipts: B6dCWm71SggBJ8LsKEKtEP7QRxWgkKUCVZXQ5nsExLa4, EQUcxYFLRhKjZkT5vZLireMmVFiEQCdQbNieK7nQKpGH
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Failed to deserialize input from JSON. Error: `noncanonical decimal string at line 1 column 14`"}}}}
+Receipts: EP8SpRZLhcgv2U1QSaUJ5tdMBjWUn8yadFRwng5ZGXdP, CWWxzrtGveBiiMnhCz1kxxBRmAfh9Xj5Jq8wbthRESP5
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Failed to deserialize input from JSON. Error: `noncanonical decimal string at line 1 column 14`"}}}}
+Receipts: 6uXZ7PYvDKiUBEPch79HkeHnaFV4JCRcHLP4nLo1sWRS, 9Ht5GWtNMhbRtsU3hH5D9EP2WbxAJxMQCg8udfgkeay3
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Failed to deserialize input from JSON. Error: `invalid digit found in string at line 1 column 15`"}}}}
+Receipts: CvHoESYrpmXA2xHfVZCTpY98KgjyJihhbFhyBTrMf7zm, 9dUu9gHgA2DJRmgC8XXD2XkHdLPVVXPXCtqvcK6DSGKz
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Failed to deserialize input from JSON. Error: `invalid digit found in string at line 1 column 14`"}}}}
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Failed to deserialize input from JSON. Error: `number too large to fit in target type at line 1 column 51`"}}}}
+Receipts: 78m6fpptGV5jK3rUWCitU5AtTHZsfj1P3oag5SrNFXgo, AoQhW6NNiJ8PvUwVd3oY7Xf4pedSij19MiPzSRiLwDES
+PASS mint exact after-fee accounting, slippage and deadline rejection
+Receipt: 8oWVeQDuR7dhntVnwr26iPAVNiijPioKy7PkikNzyhcK
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner1mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner1mwccw8v4.test.near","amount":"821801975608259651371268"}]}
+Receipts: Hjg3zVX9U8pQ1BxB6mDAKzQDm7boWLjyvksKZWehAzV2, GinEV5oreewU1EphhhrLkYQsfmaGgAYnA9ao6bKjJhoq
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:434:9:\nassertion `left == right` failed: claim owner\n  left: AccountId(\"owner1mwccw8v4.test.near\")\n right: AccountId(\"bob2mwccw8v4.test.near\")"}}}}
+Receipts: 727vPeuP74RsQiQs33S9hHkQgepF5zHTCgviyg4DAEjH, 4L1GebYYnMJ1asnLTFxYAziQUNCoPxViyAh3dNZzjkm8, Egei6UhLuSbaRTenmEzLcoFMoWXzcUCZyrLJBB8nWnaV
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"owner1mwccw8v4.test.near","amount":"821801975608259651371268"}]}
+Receipt: 2Gj3VqbS5WVJJvg1mRF8pBkGsKuhsPEQagG7aR1ZHNf1
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"0","attempt_id":"1","state":"paid"}]}
+Receipts: 8hhDPqqVAbsHnFLbcZAEFG8BTYJk7FSRsFqQvFTV4AtX, 2aFzCvCGAjZxfA5Eiuicrgg2KsznQ68XNUXnuxDHGAAx
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:841:9:\nassertion `left == right` failed: claim unavailable\n  left: 3\n right: 0"}}}}
+Receipts: BGCzgvtzXCR1wADb9nm5XoNJXCbL2ZbmVvuuSzczQqH9, 6eZfJbw4nMYnER9UuGhVUhcsDCBQsdgaukEiJsEmNrow
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:469:9:\nknown failed owner only"}}}}
+PASS redemption replaces backing with funded claim then actual payment
+Receipts: C3oWg5K4w7HMxC59TuMk3VdwBNm92CGCguFzuyuW5r7y, 6hbqaBULheu5pdStcxWvptRRtJwXLn618bpAqJjexpiD, 3RQ5bH2A54BYFUGwh3tu3SxfrfkYv1kyb7JVU3eHzFgF
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"2","attempt_id":"3","owner":"owner1mwccw8v4.test.near","amount":"10000000000000000000000"}]}
+Receipt: 3neZordMRzJecR7jekk1naWC5voBPUA1anh42QihkvBd
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"2","attempt_id":"3","state":"paid"}]}
+Receipts: 5Aq3xaddNNE3F6doegdF67cP2xJt3UhMcdWEKKiRkVPe, 6uS4Jr4Eq9Lckb9KQoKhdDzpa6R3VzMzPcvU7utBs7Jg
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:424:9:\nearned fees only"}}}}
+PASS creator earned fees segregated from backing
+Receipt: F9RaESyUik9Ew26sNjubnp2eARLg5Tx2JJsz8sumZkCt
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"bob2mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Retrying transaction coin0mwccw8v4.test.near:4Vuo4cP3FLbYaZTCoGKuapYbdhTCeUw1yQNiTDKks5B7 with new nonce.
+PASS contribution grows backing without minting; direct cash stays unassigned
+Receipt: EV95P8aburgSGa9kXTyxFHJ13YJUo5pe7JvPSFfuCdTe
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"bob2mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+Receipt: 5iXyZt9y5WpoHzizaFdw8oynmLziLJUzJYRrWZ4JAco7
+Receipts: SiouWhP19FMwkjvvZF9B1JT3yEGQkTmc6BVthV5j78p, 3Vvv3W7QKNPLoQYrLdbGaZLGF1vB95Mobbdo8c9saHjc
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:584:9:\nlive rights remain; force burning unsupported"}}}}
+Receipt: 9GAPo4QRtwYGu24vSy7Sr9LitWKumnw7X5g9M7QAq7Cp
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method on_native_result is private"}}}}
+Receipt: FssQKZgK4xtcEC4roh9EBJvteLsCUYcPqTVjUdxqbqad
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method ft_resolve_transfer is private"}}}}
+PASS FT transfers, force guard and authentication
+Receipts: G1Pwvt582DSNNbPmtRnk8GED3PJrZaGhepJgsMXHueEV, 8gxatDd5JTcGZ8hhq7SZzpSw6JZbvGuN7gvRYF4jpqo3, FCBrrWsvo2vYdUSdEFzYVG48tZgxyEj9LePMjniuuNZP
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+PASS actual FT receiver accept
+Receipts: 4eHybap45yJPUzXViy3NZ6Pcr1QFJ3S1tMLDXY1XMRSu, DgYeCBihfNVEn9dMwDcvknt9zngSm8g5PUW5M3p6qGxe, 73Qipp6nyiFhpK9AteA2RNCQgJiqtACuFxvfwE26DVLj
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: PmN6Neh13RcoiXtwymH94byNqGn8LQ7FrzFVDTfni9y
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver reject
+Receipts: 7sKQaNQS3sSxBHcPhG6scNZvjaq2P17PsgCYhsMFEtug, 3MSuReFA162jABcYso5xWS1gZGNXfz2pQGBd8PZ2Jgdc, 5FUiFj3egmwHcHNd7JyxwHTL25NmPSjyxPJHXo9ny9Lk
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: 57XpFs1LoLRMRnDMPJxuUCnnniujMUmF4LHDbogA39Kn
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver malformed
+Receipts: BRUbQLRHNTnq16RtGoxtqzhH74P255sZ6JRMVEADE9ds, AX1NRFn3a8LFpGH5LidTZGwFNLZBhXjUpCv5EYJFBzcf, 2dmuHwr8Lb1sL8jzUbpamB6xhyR9VVEAWbMHW5PsTWRS
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: Gjpn5JgVDbwVAvV6XUDb2JnLMwzwxwBMEaoNKRRL7Gnr
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver oversize
+Receipts: 55a5bKfj32JgwjUHjDXz2C8wcQ8bNF96f6DviKVgLkTt, DdxGvgvs1N9eAtXMmiQY2GSu5dSU9V1Vb91Epp4WgCtA, 9y1eynkinZdKM14zHJ7WtRJZHakGczuZEysBv8vL3h3C
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: 8uRqNjNM6Cs62wEE7D17wNwRdp1JCCjqQrmTfyrQKNAb
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:36:22:\nintentional receiver failure"}}}}
+Receipt: Cv9RVuf23VmES64ec1qA8TF2nyjaxyTcR5DvxgtXEUYx
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver panic
+Receipts: 8yFtgBS1C64DXRJP2z4zepqygMoPCToYmBVBWMb88oXo, 2N7BAbzCQJ14p1tbWRw8fprddutMQdpNCUkjhBvcuKfE, GBvF4HNAd8HLv3JCcMB9FpFocUwCNATShH6Rpwp8DKpd
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: BZ2PQ6qZzs1mw6RMUdKKtTmZRxcJMfUUda6RtGVUKxmt
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipt: 7ipmPWPAmysCjjLodKCpaUwYeYXYFDfv41j2VW4XivZK
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver exhaust
+Receipts: FSFZU8hDKa7ovcMzmfd4r2Y7kAuLo4pFDnN5sJLe6WsP, 6L8cNJCkR1SpU52BNwfNKg8LsAHixHzBVs8M1MK6CqSH, 3rpESbZ2S3hLFwmx2Qjfo16xbBMnTvWsFLLyPk7kZ7ZK
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: 6VHvb496Jn3CzS9jMhfvzGpkMH1E2aiFjfXh9UHcqkfm
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"bob2mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: 8FjzFWJUo5n8T44ENhxk6anMLd36ZwXpqNrfc8WskwvU
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"receiver3mwccw8v4.test.near","new_owner_id":"owner1mwccw8v4.test.near","amount":"100000000000000000000000","memo":"refund"}]}
+PASS actual FT receiver forward
+Receipts: 8tqktPsQHKdR4YUKZh3uKZ5UV8rfePwpFb2KcwxaAMRh, HSaeepfNPAvLgwhKnNdKe338ewkViPqcNTH4JWzKDDvr, 2qKRC9PxGepGLhkReYJGXaTDAQ4YY3xz7ycWnns9sUXD
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+Receipt: 6UB69rYrLorF1XAw9Rc19n7Nrggugg7hLuv5mGWxynrV
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"receiver3mwccw8v4.test.near","amount":"100000000000000000000000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"12","owner":"receiver3mwccw8v4.test.near","amount":"82825416502568631585727"}]}
+PASS actual FT receiver redeem
+Retrying transaction pendingreceiver5mwccw8v4.test.near:VgCgzeNxyDqT5FTnHC4CigESTYtYs9Na4Y1yk8SvBD7 with new nonce.
+Receipts: raXxVGdjmuqMLETVnR4qj2tL5r15andht4QTb4pCkyu, ATVkjqqHHeiDU93YMw12Kh1GheYhA7DD8f2N4oJmrJmP, 5t2D11JnndovcGQvQLHZX9Z1Wiw9bgaEr8FWxjEnv7wj
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"pendingreceiver5mwccw8v4.test.near","amount":"1000"}]}
+Receipt: JVSqeKy2hr5rBLw814MNCvh3fUtKDxaSYj1mNZw4wtx
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"pendingreceiver5mwccw8v4.test.near","new_owner_id":"bob2mwccw8v4.test.near","amount":"1000"}]}
+Receipts: B1ZByizCLYS25ck8gSXgSurPFBpP52MNdEzCgG7MkW5b, Ee5fcMUkHgTNmptZ1CRiQAf4pLESXCAh77jtZH4Dfxeg
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:584:9:\nlive rights remain; force burning unsupported"}}}}
+PASS pending FT participants cannot force unregister after forwarding
+Receipts: CBH4Z5D3wGhuk3AyPzrgvAqAabQMUs1X9yN8vGv7oyJP, ErUf4Sb58Xn8gtyHrdRbyMiFMuwKZtgui8fGGsgMVRUA, He7wmEw76Kmj42xesBe1sDDHWv2AmWUZ14A3BHvWMUD
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"14","attempt_id":"15","owner":"bob2mwccw8v4.test.near","amount":"1000"}]}
+Receipt: C1HJCyWXdPx49scx6JNdAZ3dkkXn78wowBJhp7Q8wVtr
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"14","attempt_id":"15","state":"paid"}]}
+Receipts: 5RqMFWbvHPbKYFdt8n8sVWmSSChdng4bePKfQXhaLsKk, 45o9RbpG9qwtxCeXh1xmiaHgKWDR8SbGJXzfXZ46Ftby, EvBt6Ky5ZRvAk2ZeUHAXKkbvTCbrQqD83UTfwHoZoKHi
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"16","attempt_id":"17","owner":"bob2mwccw8v4.test.near","amount":"995909999999999999999000"}]}
+Receipt: ARK4q56RxuqXQdrLCuZNj3Hs2NPqXNfAAtkyA4fAXEQV
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"16","attempt_id":"17","state":"paid"}]}
+Receipts: H7XMi5jvzXNfefhzSvT2GDyExRN67edjLRmrHpdpTE62, jPp1BtRiGe6BpqniSzEhRxFmEz7QKmv9vVX9M9ZA837
+	Failure [coin0mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:119:15:\ninsufficient balance: InvalidAmount"}}}}
+Receipts: 4m5cxVBcYrDUygJ82fDazADSa6U6aK8jq2XshUKmjUfD, BXfMkPRtVA3DGoPoTEZ19Y3R8aTa6gQnWDSAw7kjTEJ2, 3cjgwpBJmTkiFG7ffFBJEo6nbHkDMCueKFrx7acV1bAP
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"18","attempt_id":"19","owner":"owner1mwccw8v4.test.near","amount":"1000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"18","amount":"1000"}]}
+Receipt: GDDChikpwX98M6fWiVuzYua6QCGazdttardWcaejXiGn
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"18","attempt_id":"19","state":"paid"}]}
+Retrying transaction empty6mwccw8v4.test.near:3ECrevfX3ip8siMDt3BJJscTdG4gkxRKUhZup8UgjffF with new nonce.
+Receipts: BzW7eeJJEw5JosjyEnTfZJQPcphGwcXrtK9bL36c3a2o, 58G75DTdaaT7ZSr6PFfv7QaTUY6aoM4MipQ88kdFxpYt, CEUqcsQps9W9VfXGF4bAhAftUjoWRHTm96CoVNqA8im1
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"20","attempt_id":"21","owner":"empty6mwccw8v4.test.near","amount":"4090000000000000000000"}]}
+Receipt: AaqSErRJGhkJSY1QeD7MEX8LezBfmZcTJLgtCY8NF8Lg
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"20","attempt_id":"21","state":"paid"}]}
+PASS storage automatic payouts, partial/all, excess and unregister
+Receipt: CmoLNTkLZExnbrgBPgfqwUri7haazF9jEKgXFrspTenm
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner1mwccw8v4.test.near","amount":"1000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"22","owner":"owner1mwccw8v4.test.near","amount":"827"}]}
+Receipt: 4aXjXcbRRM6gKLEYmMP9yYxgdWq1UGnVdKfuoedHFncw
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner1mwccw8v4.test.near","amount":"1000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"23","owner":"owner1mwccw8v4.test.near","amount":"827"}]}
+Receipts: JCcsMkGHrZRZZutt9AY4yvSMo6ecTbcxHBeRbDdQTeWE, 2TX5P9z8wRtqDB45xQLQ1nhX9B5RmE2SsDgQ1WRmjYJm, Hi71p4Knqz3yT8qRTtwzHx8nmUoQm5snxZcVWsFjr61c, GotyLdjsegPfcfmPK1TbwHa1CaDqFhPNuYindwkJJU2Y, Fu3wbSnnqATpWuAGff2ubi9ZwbzS63Pskq8sMbSuXhLn
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"22","attempt_id":"24","owner":"owner1mwccw8v4.test.near","amount":"827"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"23","attempt_id":"25","owner":"owner1mwccw8v4.test.near","amount":"827"}]}
+Receipt: BfxkyfNd9Aup96DL5tGUB6NQkrL6bGXk96FSSG4YmcQc
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"22","attempt_id":"24","state":"paid"}]}
+Receipt: FFHcngcaeAiVFufBU7wz4Ubkn9ZsA1iwF4qCM2iGzkN7
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"23","attempt_id":"25","state":"paid"}]}
+PASS overlapping native withdrawals settle once each
+Receipt: 51kpYPK8FZcM1JeiF95yGNU5dy4DG2rFWiUZc3a5MEEk
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near","amount":"1000"}]}
+Receipt: FeYvw3NZkpnU77RpvRu41Ss4kDs2UHYrF4u3QZkVyEw6
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near","amount":"1000"}]}
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"26","owner":"zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near","amount":"827"}]}
+Receipts: DR8zEVZgEq7egQ8g47fFqt2cUVUq6VQdNGfGiYqJwvKs, 4AaCBZnMwxnfnUMWg9u4yebZdGyM4JVL81sW1zSfuK7Y, 2CkRb9xdaSjxSuEAdi9ybT4eiFuUY6K47jMJhzidyw5d
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"26","attempt_id":"27","owner":"zmwccw8v4zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz.test.near","amount":"827"}]}
+Receipt: Go68NduJub2k537hBTbnSZ2bJYxdk2Ms4pEaN1RgtEeS
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"26","attempt_id":"27","state":"paid"}]}
+PASS maximum account length is prepaid
+Retrying transaction differential7mwccw8v4.test.near:H4q4UPWvTR4H9q43MFdbJgLpTSTfPMkoytTjip63yVnx with new nonce.
+Retrying transaction owner8mwccw8v4.test.near:8HAo7GL938c2f1XCbA3EUAkD1MnB3upuDkvHMzkRY2Cb with new nonce.
+Receipt: GUVL5FeVUi7bBuTyDaXfC2peVuFESn3wJ263aghFae1a
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"owner8mwccw8v4.test.near"}]}
+Receipts: 9XKLgchUDSA8r7iXfR77nP2cHHFFieDSYqQFGFwWhQ8n, BGy1aqrjtBJScEiJrQ5iCKbVSqgSMZXX9JzugVdyRJoz
+	Failure [differential7mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:717:9:\nexpired quote"}}}}
+Receipt: ALtYcA64MTF3kVtxqj7hDAjVkG2HQvuARQi9ss2JQSXT
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9982"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"10587","net":"10482","fee":"105","tokens":"9982"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"105"}]}
+Receipt: mKEwXJDjVYQskmsuomUEztjsyZZHRzYpLEkSofhiV6F
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9893"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner8mwccw8v4.test.near","amount":"7914"}]}
+Receipt: FtN6Qvh8V2hwAJrYdCGLYp7kKFuq4jwqn1ayk1V3ULJE
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"4932"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"5231","net":"5179","fee":"52","tokens":"4932"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"52"}]}
+Receipt: ChRPTYvwKsn5Zi4c81GzdjNXAXiN4FKVJfVxUA1GZSmn
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"4262"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"4521","net":"4476","fee":"45","tokens":"4262"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"45"}]}
+Receipt: D1D49ZofwiPYRjvQoPZ8ovpucgPuMw5NT8cvy6h4Cuuj
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6419"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"1","owner":"owner8mwccw8v4.test.near","amount":"5135"}]}
+Receipt: 8xLax6Bb2yG8DZXR8vhu8Xg19AuYukjg8J6Bcxst1ECP
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9094"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"9645","net":"9549","fee":"96","tokens":"9094"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"96"}]}
+Receipt: Cb6faf35XekTB5t5EN5uQ6pvetpiQ5GTjqmpbuj6BKXa
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9525"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"10103","net":"10002","fee":"101","tokens":"9525"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"101"}]}
+Receipt: AcNArojNqXDCn3mMp8Cg4asjXXjqhKHktNkvRTdRf1Uf
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"5401"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"5729","net":"5672","fee":"57","tokens":"5401"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"57"}]}
+Receipt: 5yTEfji4YgAS7bjy9KQwjzTnGFRSybfbibWPsrbZu56K
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"2299"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"2","owner":"owner8mwccw8v4.test.near","amount":"1839"}]}
+Receipt: 6HUcc7zPSoitNNwQT5RZnvrczmAivCMbS1MMhyod9JFp
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9333"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"3","owner":"owner8mwccw8v4.test.near","amount":"7466"}]}
+Receipt: Cs6eD2EgZS1ZJjFdnoaSMegTF3CxS1uYns1a99NZQiZQ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"3999"}]}
+Receipt: 4ZYSw5HyBwvZSS1cnpdDJoJMeMTxkz91U13zoKywuh1c
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"1321"}]}
+Receipt: D71XNFGSs3ucWSgiHjTuGpo1zVShnCpdXiyJQ3arawV8
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6852"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"7267","net":"7195","fee":"72","tokens":"6852"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"72"}]}
+Receipt: 8vnCA2ByrwBNZdk8vtgJjZn96s2WWm1sLrzUfzGzsoSX
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1234"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"1309","net":"1296","fee":"13","tokens":"1234"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"13"}]}
+Receipt: BfSS3R4VpEW1R42dt2WqUTSu4dVqZUULRD7oy6hQiPBX
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"5735"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"4","owner":"owner8mwccw8v4.test.near","amount":"4588"}]}
+Receipt: AhXt5p45DAzjHFkvQ5TwCo8Phxbm1DVsnrCZdSEwrvSM
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1736"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"1841","net":"1823","fee":"18","tokens":"1736"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"18"}]}
+Receipt: CezkNzdvZTr7qPWYgA1QDzbkrWJFG4nm3ncXn1bRbLxc
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9291"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"5","owner":"owner8mwccw8v4.test.near","amount":"7432"}]}
+Receipt: AqJKgBoDzRFJ4BQYLspnFoQRCa38nmh2JXmAEoJGrX1A
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"5477"}]}
+Receipt: 7jjkDse73A6PNzom1ncdLHqQYS7MKKh1G8ALCoJS85CC
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"2143"}]}
+Receipt: GbyTgdEDSf9P83x6ZDNLMGrXm24F75krsbnDyuhSruEp
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6505"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"6","owner":"owner8mwccw8v4.test.near","amount":"5204"}]}
+Receipt: 7d7sC2eKs4BNoMEXd7ADK4rDT4MGCfpqnFHJvSFPzs9W
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"7331"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"7","owner":"owner8mwccw8v4.test.near","amount":"5864"}]}
+Receipts: HHPN8bKmZVP1BUMZKiB3Wh25qshoduMieSF7E2asq3N4, HEjzs876ByXUJ7D3TTVZcVPRZkaJi75CSRMCZKLzYK65
+	Failure [differential7mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:717:9:\nexpired quote"}}}}
+Receipt: 4qhyaRGKiUoFsQL38ubmrBdJcHwNguESzVZMH2WzFv2t
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"2586"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"2743","net":"2716","fee":"27","tokens":"2586"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"27"}]}
+Receipt: DCU2WSK1HdiGGbYV2UXFgbWduXYzbqM3bVf1m58ddJZC
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"4179"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"4433","net":"4389","fee":"44","tokens":"4179"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"44"}]}
+Receipt: HfLTshx7im3yYyvGY7Jd9F3VuPAEHhmBGydtBxyAv1KG
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"7547"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"8","owner":"owner8mwccw8v4.test.near","amount":"6037"}]}
+Receipt: D1BgvY6MEb9KPmK7xrUx88H1eDf4bkggeWVet1Yismwo
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"4533"}]}
+Receipt: 4RE1rtK9CKmr22dxpGVnzQCV6v7VyjnmRym4x4yoQntL
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9647"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"9","owner":"owner8mwccw8v4.test.near","amount":"7717"}]}
+Receipt: 4dYVUaCaCnRhYAaycqrZca1Gu8wT5SXrLABdTVbCGLVr
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"8939"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"9481","net":"9387","fee":"94","tokens":"8939"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"94"}]}
+Receipt: 845jBcXGDDLGkGzJCnMtifz9ANebmWb5of7bx6ovokYs
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9598"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"10179","net":"10078","fee":"101","tokens":"9598"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"101"}]}
+Receipt: AeUr3V2yWtD1er7Vb4zX5SUa1LwuXdEeEqy3J1DiV81U
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9133"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"10","owner":"owner8mwccw8v4.test.near","amount":"7306"}]}
+Receipt: GtcMHY87c2RfsUXX9PL7P3ztrwD2168n4DQi6BT9py4P
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1111"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"11","owner":"owner8mwccw8v4.test.near","amount":"888"}]}
+Receipt: CPyw8fYxhzPAB2wU9G3Pm9UTEgtUsBtQ5R5hYJxqXctL
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"10209"}]}
+Receipt: G9jbYQAKnq87WRVWdJHkbA675Z9jJXQ5kNgrVs3YRNDo
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"4363"}]}
+Receipt: 43mMcoxa1E8Yey17LUQ3hXCGRA4PsinjSq7wXcij8bfx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9605"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"12","owner":"owner8mwccw8v4.test.near","amount":"7684"}]}
+Receipt: 5K2QbeNBVUhGPyViNArborGt99wyMbgUvAjVZJx8Mjpq
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"3589"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"3807","net":"3769","fee":"38","tokens":"3589"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"38"}]}
+Receipt: 5JYnmQewmgfUEqhhzEFQ9ZD6jYj76RsjdHUzWuVdBycV
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"943"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"1001","net":"991","fee":"10","tokens":"943"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"10"}]}
+Receipt: 9NiTEmTdcoz7ZmveuCXxHXzEDR9ZiCqUFwYEY8qjB8tW
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"4166"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"4419","net":"4375","fee":"44","tokens":"4166"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"44"}]}
+Receipt: J74Go1wygEtQAJBCZ1Xhr11qwgS2xL3DpCEXkYuJxQAj
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1261"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"13","owner":"owner8mwccw8v4.test.near","amount":"1008"}]}
+Receipt: AkzKXUdrEwnPkqUGPw4EeRHuMMAeU3h1aTBa3dEHYxAu
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9948"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"10551","net":"10446","fee":"105","tokens":"9948"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"105"}]}
+Receipt: FcVdAx8VmBRmg351SUoAn9oQmLM5xejmKkaMfJ17NFmZ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"3089"}]}
+Receipt: 64FRWF84yPRGBFoFHJJoLA5R3QfmzavFEmi3douSmybx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"2843"}]}
+Receipt: Dasud3d6HEd4DqTWmHXd8f1Ps817Hcr8gurDphkgS7xQ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1157"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"14","owner":"owner8mwccw8v4.test.near","amount":"925"}]}
+Receipt: DZPeB6FoQySiPcbvjEHC2rAkvnESaftrApmXDhN1WUUp
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"5807"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"6159","net":"6098","fee":"61","tokens":"5807"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"61"}]}
+Receipts: 2ocArGQbjpgbbMU7qx91sHLQFttRJsH8tiNsoiFiyS6h, 89msTYc23MTaY8UKGB4JVTrA2o8zXfXdfgTSoWaCpkjS
+	Failure [differential7mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:717:9:\nexpired quote"}}}}
+Receipt: GYXVimz6Cm48ezFz1E3RY5n4U4nztUp4KNF96GJTqi4p
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"3548"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"3763","net":"3726","fee":"37","tokens":"3548"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"37"}]}
+Receipt: 72jmcErXWtS62TMYXiDUkYUdnxtjQ2aajzwimutF5CgZ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"8093"}]}
+Receipt: EnBMnzUwTN4ZJJG8kpn7Mh3mAuv8uHazK7fwS1pLiewW
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"5769"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"6119","net":"6058","fee":"61","tokens":"5769"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"61"}]}
+Receipt: 3nkn8YuDAoYCzamvRsqHnGXBfY6N35GEMLzfTm45RHrb
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"8497"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"15","owner":"owner8mwccw8v4.test.near","amount":"6797"}]}
+Receipt: DW3ztgYasstKe1PbKyGq4VLJHDj3DazquYKiBaXwXcoy
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"8651"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"16","owner":"owner8mwccw8v4.test.near","amount":"6920"}]}
+Receipt: juD7rT27EVqtBTo9w4stqN4VqjbY7fg8K2tckfufcNQ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"1733"}]}
+Receipt: 8aWfeNmUcWVeJYRk7yDy4EwGvRELDSsnrQJeCvkYQDJf
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6652"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"7055","net":"6985","fee":"70","tokens":"6652"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"70"}]}
+Receipt: hCrwgdaTcNoYubKoDt27BdUmRWTocdS3ZyFueXKJ93L
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"9769"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"17","owner":"owner8mwccw8v4.test.near","amount":"7815"}]}
+Receipt: FdrEq5i7uRrusuYuVfEHV4veDkg7ab12Gw1ypYJ2uCfx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"10277"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"10899","net":"10791","fee":"108","tokens":"10277"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"108"}]}
+Receipt: EdsML5pHd4skeqzsNGxXVPHayiy2qdpto5Y3eSt47xyx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"8893"}]}
+Receipts: 3T3xFt8487TCBDMzMjqaEQUVKN63LZnyL4VKEj4Lmfwh, Dx2AHoHGuBjuwPapMB6LtJH33VtfMxqvwkqAbJBso3L9
+	Failure [differential7mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:717:9:\nexpired quote"}}}}
+Receipt: BnSFGzBrHyqF4NjsLSpFFuizVbYgeQNcbtgqcFVHMnPh
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"8529"}]}
+Receipt: GqgVNS4pQXTF2iBoNqPGwEBi6G2UM8NtrU6G1FrsaJ6G
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6715"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"18","owner":"owner8mwccw8v4.test.near","amount":"5372"}]}
+Receipt: HriN5VR4XyvfiTxQuekJ6qXeBChXBhcBqA1AuebjzwrS
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"6325"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"6709","net":"6642","fee":"67","tokens":"6325"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"67"}]}
+Receipt: 4zdqMGJCNzVabZfnUyGj14V4fo2EkSHhfi9JuYRMqA45
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"5951"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"19","owner":"owner8mwccw8v4.test.near","amount":"4760"}]}
+Receipt: C52mAt3dE6kuD2XdoHhMS697YL1jejwnZuD8ArNCmusg
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"contribution","data":[{"sender":"owner8mwccw8v4.test.near","amount":"10025"}]}
+Receipt: 4NEMRzDybkjnCLyLdUQuScbErJic1c6B4uY3CgPYu3FD
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"7075"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"20","owner":"owner8mwccw8v4.test.near","amount":"5660"}]}
+Receipt: B7ndLQD1Y8wRMXUhjbjtZfWXhyv43aBgXXBQmDFpsJmq
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1672"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner8mwccw8v4.test.near","deposit":"1773","net":"1756","fee":"17","tokens":"1672"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"17"}]}
+Receipt: Aw6b5nPLHR2HZE5Zros34EeatxzPyAGM78BPANoqFyJx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"8327"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"21","owner":"owner8mwccw8v4.test.near","amount":"6661"}]}
+Receipt: 3ieRuF2t6auc3vCPiG78sRknACHtYjVVpauYhWJ9F51g
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"22","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 4XaPQ1cBWgQkKKgGZZQJpBhsAVJQVmVKW3LxTg5G8c3G
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"23","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: E2Gea9rBipHKPnbgghkMts4nxamGAiVDvt6EaAQjeorH
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"24","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 9NqHQysCatX5bAvfvwaRk2LZF7bzMFeKVJvNLA14hPgT
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"25","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 86gyvjT1XwqucnunRHBuqy2N5c6498GAGdmFsm5bZum8
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"26","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: C8Mj97wLsHR4Xg2V5zkA9Ye7n2MRyJsTm85WhdBjUhjL
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"27","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: FYaWf9oBiPgeoEXeLtyRV11EU26DuzYDmAs9kRn3yiTe
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"28","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 3L5vp73Nx6wWkz5qVUS8UUgDzAezsFsjBrscARsSVEXW
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"29","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 82C1sVQz7odyWTePgFPKxY4KiBMVw4n3yTZbJzJDx4ui
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"30","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: yefB3Yj6kk6VSeDYjHoZVjiWbw9UpDZm3ibdeboNEdD
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"31","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 21RbfPjk1sXybEPngQBFhqWqzUjvyPeB7grwYyETc6Ay
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"32","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: J6U9G3Ya4wU3ThcnVCRPr6sVhtCTRaoC3a756pwrQUXY
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"33","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: J9Z9Zn1sTUASkPWWALbytpjYXgTDJ1bkyhJwwZf1gEPe
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"34","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: D7aYFSWpUh4Hihc8dF9rfHPF5CWkTN7dDWGqamW3fvb3
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"35","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: EQ9YJJ3H5yrhGVgGwNpG5bFRZ6tJtVX31nCWh8J4xEfC
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"36","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: Hnm4tgK2Ci3Wypm1sGuPvqciSTSyt2rGF9HYZ1VCSXYs
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"37","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: GnonmHTbB5HjKWM385Lr7TSnEe8xg9TbgxJSmXzA99eJ
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"38","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: AKFg5ej2V3fZJ399Yh6ju4wggPbuQthcBMLmWkhUVQiU
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"39","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: HZi5v7CgsrLuPnR7MfGAMcthYDPfbnZGSPzkUQkeyGaT
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"40","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 7nkX296LsjrpbhzoL6u9Sf6RQ4c59VhgLYm1rhm7y9QN
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"41","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 2bJWEujDQCiCTuo67djgaMspgAhxCUeWWECUwFWers7h
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"42","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: EUsB5YC4BBCcos5rLJRamLtmrcH6aF2ZigLDkUafNweB
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"43","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 4Nf8dtCRLmizNTSkWhDwD2vQdFQEspsvYekLZ6e5rp9U
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"44","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: HzsfpeWe78K1UuiP4Dhkww742rpnbzEBuD5fMgxmk8n5
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"45","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 37apXPn7QWvGDA8FWShccsnbcneRyaLbh8LE6fPtvJF2
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"46","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 6Q66TNvWoTh1tHDcYJ9MZhuShjoxq8FD5di7JirVmh3o
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"47","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 82o2qZ2Snn24dTNrjXQyQvkuJbSWJqaqpZ5NUwmZSrpi
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"48","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: GDFs8VumonQAzorqC38jqwJ63eqVnREaNZqEXbffHqFw
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"49","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: EGYLb3Ei29bim3BwcR4Gz42CzQKzu9uPM5rrTr84S8dH
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"50","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: A616WN4BwCWvS5vAAiEQNf5k5fSHsxBD3438pzEWTHff
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"51","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 3zw2TFt67i4V1CpLbtadr6ssMzhnqCQwUzgu575mrbyM
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"52","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 6CYtmT4TWeqC7pv6nWwiZTbtnt9rLo3Fv7WbLdAJQmt8
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"53","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 6HeM1Dw2jYNtvngYdvcf8KoQSmUqfh7qYaLoSkvjLj16
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"54","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 7imBjrHzvomrJBmD3Nok7t1qURjG8oy2DXuAebc3bMqL
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"55","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: VQtVpM9Ap9UdjqECgHofQomdGYR7x7n8L1ytfcDsWa8
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"56","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 4zaDESrS5LVEN333eBQJD3p5TbpjhLmV6wju119qpeJB
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"57","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 5dRmakhXo8oCQ2hDHU6SPsigq2LF9XhAiPU7hncQsacW
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"58","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: HKuSfYr9GTJXa1dNMeKAPRrucAFr2ZFrACcr1XC21ejh
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"59","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 97r2RCArPNmvgVLzdRsBca8y7CsZbt7mBmzDF1Z93hcW
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"60","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: D2J5iisBUYCfSqhYMDnJnzTibfBzLmM5SAmxFu1hhkwb
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"61","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: BwqaQDFGzyhwbZzrhWP3AKtAgHy23fKz38yseuBDqUmo
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"62","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 9YS8q83YnDBwpjG1FvaqQeDKepC7FM2hs4oisgpbzMkk
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"63","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: CPMX2Vd6rV2MspxiJxm6ZRMXGtS5Srwj7vf8iMB2o9xt
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"64","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 5BxADcfSsnGn9yc6AodaB3NubC3SDzhHaMahqcQXMzxa
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"65","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: ZsTFYRohfCZr3CVRRshFKqZvqdC6NEMTpC4w4Egf6EN
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"66","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 2JP1d1y31Hj5LmBhDL2XLwqS1HcFbMVtex2TzCBtpoJx
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"67","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 8RTcvx6iveNDMBikfWwKCo6Rwm48hSL75wwfn3j4eFeC
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"68","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+Receipt: 6LnWxNMtWmfWyvgHYR47EmuWzrRuxeTd6p4Jp5yy57Tf
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner8mwccw8v4.test.near","amount":"1000"}]}
+	Log [differential7mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"69","owner":"owner8mwccw8v4.test.near","amount":"800"}]}
+PASS randomized executed WASM economic sequences
+Retrying transaction deleted9mwccw8v4.test.near:274PMwZYx1DbvLXcTuF9RrEzRkHoagwyVkwRQzT2DtT5 with new nonce.
+Receipt: B39hyHvVXxu9cAi7ZhEzsPXAzXkEf7irKTgARWKF6JZk
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner1mwccw8v4.test.near","new_owner_id":"deleted9mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+Receipt: E7JfxqDstkLpMhqYrX2yRx6dMPVSAfYTguktB3aA4F4k
+	Log [deleted9mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"deleted9mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+	Log [deleted9mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"28","owner":"deleted9mwccw8v4.test.near","amount":"848865084667683101891673"}]}
+Receipts: 7VZLbNZqtGH6jTXEVuqTuUG9YLQdEJ9A2svLhBEPxzLM, GSEM3o3Y21mFtAcnFQemUcBhNfxnbsQQKvuVvmGPsNTd, DubqaZxs5Ae64xEbuLuppQyLynkxi2XNMEjZKAKkt26Q
+	Failure [deleted9mwccw8v4.test.near]: Error: Can't complete the action because account deleted9mwccw8v4.test.near doesn't exist
+	Log [deleted9mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"28","attempt_id":"29","owner":"deleted9mwccw8v4.test.near","amount":"848865084667683101891673"}]}
+Receipts: CziVerKTR9UAKXynALZ8XmHqf8YkDwZNqeLJCcs2iBh6, DhqS3qeFuFna2DepudLKsnXaQYqNDqCt61ZZrhbHYCAs
+Receipt: FGGeNy8swudK4NnnAYvdo31CNvuBbm1th4p8MHPry5fC
+	Log [deleted9mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"28","attempt_id":"29","state":"refund_pending"}]}
+Retrying transaction deleted9mwccw8v4.test.near:4sDefvhaLime2bzajoPknsMpQYF6nqAwDekRoma7b2sv with new nonce.
+Receipt: HvHQZhg2jhGDWAG3ost1HR8nrJ6MgLrVY5UwindVubbs
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_restored","data":[{"claim_id":"28"}]}
+Receipts: FYUUp6h3g6zTqcgtQrdJWheYjnnd6zxhbiHt99brahBS, Cq1VEKEksqjxDfSmdoBL4Rck3ves2mUpDAYvBszvT9i6, 2S4tjFnjSRGApgktXXCpXyHci9X1HJeqZaZxo75bcJ7Z
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"28","attempt_id":"30","owner":"deleted9mwccw8v4.test.near","amount":"848865084667683101891673"}]}
+Receipt: DoRzsfWsjRKgMhueSeBq2qWB6dki97jeP1QePzhj6C7w
+	Log [coin0mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"28","attempt_id":"30","state":"paid"}]}
+PASS real failed native transfer and funded restoration
+Retrying transaction terminal10mwccw8v4.test.near:25SsXs2ueQ5yT1XgeP2PYmuL4UYeScbKkPZNUAEKJaCc with new nonce.
+Retrying transaction owner11mwccw8v4.test.near:HNeSTXFGpRkGm8ZXqHEgurjcFWbehZM65cbkmmHv1GaZ with new nonce.
+Receipt: DeLULNSKkbe9se2CNqLsCaJbN46j5f5g9jFczGbCVtTo
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner11mwccw8v4.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"owner11mwccw8v4.test.near"}]}
+Receipt: 5h1DuGiG7ZmtCagGz7VMLhrMYu8AzFASryT2c7bEHzeS
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner11mwccw8v4.test.near","amount":"942857142857142857142857"}]}
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"mint_quote_execution","data":[{"owner":"owner11mwccw8v4.test.near","deposit":"1000000000000000000000000","net":"990000000000000000000000","fee":"10000000000000000000000","tokens":"942857142857142857142857"}]}
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"creator_fee_accrued","data":[{"amount":"10000000000000000000000"}]}
+Receipt: CWLi6y5niRtHynpUASMttx5zn3dMC1sFbxEhhG2ubKxD
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"terminal_closed","data":[{"final_claim":"0"}]}
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner11mwccw8v4.test.near","amount":"10942857142857142857142857"}]}
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner11mwccw8v4.test.near","amount":"10990000000000000000000000"}]}
+Receipts: A1irKb3GoBeewdEW9Y7VjBjrfEPYDoBJXe7CX644xb4V, 3rBr7kMWvrzbtYUWz7JbQh91EtZMUJSit9LbgMLuvfTx
+	Failure [terminal10mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:711:9:\npermanently closed"}}}}
+Receipts: 8ePiuKaqvNPMsWtraF6nrCMvL9SLhpxPGdJpHVSGRzSF, kPENz96ieXvfdJmLpbSBTmerHjJ8JGpMPW5TfXQmUte
+	Failure [terminal10mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:711:9:\npermanently closed"}}}}
+Receipts: ywSzjnjECoEWC8YmHMcHBVtgk3feHkTKyni2umVniwF, 3ZvcjMS7CDzvEBx1of5nHhktHSkD9RPerL65L3Qazcor, 2Q293cXXswt2zf3Hie98Yb4sYFyyXVAwfDFvV7it3GPH
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"owner11mwccw8v4.test.near","amount":"10990000000000000000000000"}]}
+Receipt: CfeTFZp7hBnfp5cbmEdjmfiGpDy3M51Lzc9XEvwS6SXo
+	Log [terminal10mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"0","attempt_id":"1","state":"paid"}]}
+PASS full exit irrevocably closes while other liabilities remain
+Retrying transaction fault12mwccw8v4.test.near:8jsADF5TPd7ziqiN5oMZrGc8uqfYinqr3AUyUfVP5PG9 with new nonce.
+Retrying transaction owner13mwccw8v4.test.near:A3s5RzDgi1wRig3drWAHvzrFRXj6eRaq9pXZ8bNGbfTt with new nonce.
+Receipt: AspDnymeSVFkD7jB7ehkhKL4in7nbojQP3t71CgM7Sih
+	Log [fault12mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner13mwccw8v4.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [fault12mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"owner13mwccw8v4.test.near"}]}
+Receipt: CSwo9DRGhnZsKrj55YnCNc61eZLc5gDBgzqXave2VtcB
+	Log [fault12mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner13mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+	Log [fault12mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner13mwccw8v4.test.near","amount":"820000000000000000000000"}]}
+Receipts: 3tRmwDs5tDWJrQsCBR2Tjx7ZPb4rwusGF18tR9picD4j, AqK64pzUaHsTwWurfrkUGpYAaWJiAFoYuc55Ud2Adz8E, 87WHFiQnFWzCaEH72sBBWa2au54TY9r9WduAPfb9izw4
+	Log [fault12mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"owner13mwccw8v4.test.near","amount":"820000000000000000000000"}]}
+Receipt: 6Yq9mXEv8PBS41Hzb9VzVhvehZcgWLM6sTTD9skSmR4K
+	Failure [fault12mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: 4vs1L1zTieS7gGtBEnnb1DG3eCJsuvJc6u23kw82JBxj, 5k7xKCdbiSUBwNk1eFkjM6ayFqqQLUrb2tznpazPn192
+	Failure [fault12mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:469:9:\nknown failed owner only"}}}}
+Receipts: DgZKi3woKTR5hawrENvpvQQYdxW3JqTVbrfvaZ3VTsnW, 9HDHvxahPZahVQecmQEFa8RvaQSwyuiHrm5PNMY6Xnwi
+	Failure [fault12mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:841:9:\nassertion `left == right` failed: claim unavailable\n  left: 1\n right: 0"}}}}
+PASS unknown callback outcome never authorizes a second payout
+Retrying transaction poolfault14mwccw8v4.test.near:AGZLuNRZnPxCTdEJBjJpovjy3sVGYSp39NhJRajyxZNg with new nonce.
+Retrying transaction owner15mwccw8v4.test.near:FiZQsb2FKxkRu2dijgHzhsKQ5a4XfkCJWWUx4Yr9PZk3 with new nonce.
+Receipt: Ad9aJcyevPXi37JPZApkxnAaq2R6brWp5Zbt5JRqH6QC
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner15mwccw8v4.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"owner15mwccw8v4.test.near"}]}
+Receipts: 6aEkDfsMLPGMeJjoRc8pQqa2nXzjWTcwtBvq4KqUJ9NT, 6Gvm42fZzHVyvDSe4zr9mwCGr3GQiGWGhjLqjmts5vZL, HyUcHrLtwJJgqxxYnY6bNkC8W9HtPmEAJkfemrzJzAD4
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"0","amount":"1000"}]}
+Receipt: 43rCbmaaD9q3xe44Miqcjg9j2tGJ7BPvazcCec8wBpsZ
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: 9Hp2reYftDTTKwcaRSK4w5vJXGJgPy8PDS7sF5ZgpaKM, EQNaRqiApwTheyaMV6M3DimgUCYVDiUYuBKPjV73rWQP, v1YwUSHbSLemyBPE49W6QHDmM1SZpcD7MeysBYkfLqS
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"2","attempt_id":"3","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"2","amount":"1000"}]}
+Receipt: FztzdCgrSPYHykdVEz97oXVEnV4Q3Prqc1Rz1i2WeS4N
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: HBojVZFM5pDw23CEKndDmzP1pxjrzxkYYVVmET6bhx6D, A9QNh5vsguYH91tEdvyn8FuZTcMKseCoaZHKG6vujTm3, 87GzW1VcCJgvrgc1e2VAqSUsv9fKtHhDn1AZuPPPxnyP
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"4","attempt_id":"5","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"4","amount":"1000"}]}
+Receipt: 63z3H7MnboEPNFFsXzMTXoYih2ioUzKGM5noDJ97huob
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: EkyL9ckRQpdNUHzrC7eU5GUwjZUVed6wTURDtYcBsUzP, CZDC8HzYZLATuQo1xmCmhhTN3Jj3MyrV1kXrSjG7Niy5, EtPjzAZe5VpLJc2BaQDrf5N1pVnf8FwrfEge8s22s4WZ
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"6","attempt_id":"7","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"6","amount":"1000"}]}
+Receipt: H1yeQFh8yzVWasiyrnMP6E3bnfLpQab8hXde2scoJdBd
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: 94b1H1ZLx5E5Aa4jNXDcFS9oEhdiLERH3UrRMR6Ly22X, 7HehK7LTCKCZfnd9WRqHAJXq98MmZHXjKBCJWJEyghX9, 45N1h4rmRJ9JAhe3bBkofpaxter2oeb1jmqRv3F28DfK
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"8","attempt_id":"9","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"8","amount":"1000"}]}
+Receipt: Coe1dQz1K2huWhFAHswYBR1NeAoQ8pWr9ZcfYTMafXjj
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: 3ygtRCsvqRa5E8LA9KtqTptUeaev1KL4RNarjJDSN3PF, GH6LiG9iWkChgzTwfyd3jT1Cnu3D98H8bPaKwpmS4wXK, 85ZXXL4TCZXw27pQW92uVW3VP5Rj3mDmdekGkqU5B4AL
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"10","attempt_id":"11","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"10","amount":"1000"}]}
+Receipt: SjakzeMkWR4a6nHGoNgXfUGQsGR2igBjdqX2x58KmQj
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: HoWjCYsZ96mXKMC43wmzvF1QqGwH2AD3HkK3Lw4JnjsT, 7HEN3oEAwUB4qk9b1oRGjvQuzLsvTYBUAAdU4jr6wahA, 3orBYR9tuqruRucMn4JmQufVLUw3LPGxKFVqrc1FpPQi
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"12","attempt_id":"13","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"12","amount":"1000"}]}
+Receipt: 7HmKuHPdT1crZ8fC1UhFgfK6XZDXSuiutsKfNHMQeT3S
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: FH8CcgMdYzBKUgC9ddxnHftXwfV2T9m2VL9NVZZcxp6w, G581Ru8tcCJTWHimPdBhEnfNs6ftjYJV8BtXk6Byf32u, G8vxZ8WmZx7v4UBM7qw9masnobDPuTWzUUQpfwSQkZiH
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"14","attempt_id":"15","owner":"owner15mwccw8v4.test.near","amount":"1000"}]}
+	Log [poolfault14mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"storage_refund","data":[{"claim_id":"14","amount":"1000"}]}
+Receipt: 9SM9hTuEAWYSqWmaHyS1GZnpqiuH9FLc6k3awQC3MaYP
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Receipts: 73XEXrrPvM4TWj5CKAsn2sn3Mt29s7VKczRzU3eRTS3D, Bu6YTuRktWQVQnx9XeFeBbqmsRu46xJFDHrd2jefLT2i
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:806:22:\noperational refund pool full"}}}}
+PASS bounded refund pool exhaustion rejects atomically under lost callbacks
+Retrying transaction guardfault16mwccw8v4.test.near:BBKvAYqpDexpHN5pjJhs8hrE9h8kePYVo5bR8Xv8GchN with new nonce.
+Retrying transaction owner17mwccw8v4.test.near:J67rgS44mYV1d77DZ55L9KvGwbWr3CL7ukFAKK3t9ABN with new nonce.
+Receipt: 9sZQzy3x2MqvVsNXgeFKp7rBn1H6PBA47F8V9meR1Y62
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner17mwccw8v4.test.near","amount":"20000000000000000000000000","memo":"bootstrap"}]}
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"20000000000000000000000000","supply":"20000000000000000000000000","recipient":"owner17mwccw8v4.test.near"}]}
+Receipt: 43GDdhW9N5BAZgBmnzrVd3Cu2NwuVSJ15319BbM3ma8p
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner17mwccw8v4.test.near","amount":"10000000000000000000000000"}]}
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner17mwccw8v4.test.near","amount":"9000000000000000000000000"}]}
+Receipts: HyprdoRLg9duA8Z7iVT4h1gfD2Brf7hn8x4WVrmtyPqS, BhZxPp8pSSGfUhMwMQUAhDoDUTAXPCVa2DXUJXjzJfi5, 37DNv5kzUtNbfiaV5VE8Suy6hArsRWdtmZ1dG6CMymCQ
+	Failure [guardfault16mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"0","attempt_id":"1","owner":"owner17mwccw8v4.test.near","amount":"9000000000000000000000000"}]}
+Receipt: 5zUXYm74vawat98KYXzYfGZrKxev1bPtTx9ojUjiGu6S
+Retrying transaction guardfault16mwccw8v4.test.near:4Z9PUVs1C7Pd8FKtGfyqbtFzWHGd7c4FyvB4Qut1NFqF with new nonce.
+Retrying transaction guarddead18mwccw8v4.test.near:AKfdav6vXyBUGBZdXYHN27BkUUqoCT7mv7pQpuBNoAjv with new nonce.
+Receipt: 3qbBWYGvGRf3BDwsSkq4iNdBe6hxbHG7our6dLsPT3Ev
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"owner17mwccw8v4.test.near","new_owner_id":"guarddead18mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+Receipt: 5Dajrvb2BaNsJZLbeP2EMF3jjumCTWd6uicDcHEjjEC3
+	Log [guarddead18mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"guarddead18mwccw8v4.test.near","amount":"1000000000000000000000000"}]}
+	Log [guarddead18mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"2","owner":"guarddead18mwccw8v4.test.near","amount":"902000000000000000000000"}]}
+Receipts: AusdZ2XxFsjxuQfBWB22bkjKH1GtDQj1ucZNHSehsndG, BECHZp7CoCDYkHtaW2RBvDfxWji6H3R4UZ6tV1zSHNMY, FkA3GAADaWRGRSycQ3p4VwwuCNd3jdZ3i6M3P9aZkNWB
+	Log [guarddead18mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"2","attempt_id":"3","owner":"guarddead18mwccw8v4.test.near","amount":"902000000000000000000000"}]}
+Receipts: B8PCCDpBng24S7jxQqSEDLcBLthL86gzThQSn6uuArHv, GeDLYz7wtoNiebRoktF1Kn36wnFdbNPuKUVo8gsSqKJ8
+	Failure [guarddead18mwccw8v4.test.near]: Error: Can't complete the action because account guarddead18mwccw8v4.test.near doesn't exist
+Receipt: 36xfxqLPJ54YLcGtLsZBvqZDP4SogagJSfoYf238xJGn
+	Log [guarddead18mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"2","attempt_id":"3","state":"refund_pending"}]}
+Retrying transaction guarddead18mwccw8v4.test.near:FsAhMf5kPaL7jegaB1pHPn7oX5h9VUoxFVhpxSWCR5K6 with new nonce.
+Receipts: 14kWw9nqy5Lt7z1J2MCaKPxdqguZ2UnU5xpv58g1zyQ3, 24xJFZtCqyusVV2oq5W2gy9xcfRAhM1UtDexvfm5GD6u
+	Failure [guardfault16mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:473:9:\nrefund/cushion unavailable"}}}}
+Retrying transaction guardfault16mwccw8v4.test.near:HhvGm66m5RnW52RKWgqrSWbXEKQtxrkfyFPyWWpNxCe1 with new nonce.
+Receipt: 9WsPtSbSNF9PS9q6utcgNh9RbRJRak3MZPEzg8WrWgNi
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_restored","data":[{"claim_id":"2"}]}
+Receipts: 3bzR5pkDMs3vyoBgtc1GicdqSc4CM2yhdhoiWotkGQd4, 5T2Pph5ktz3nMmpCkeaqJ3TS21x4xDFdwFrrVciAwERh, FMfYPm43aJNpGD2tjYAkYzsTiNfPiWbhPJEckGvVf4ar
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"2","attempt_id":"4","owner":"guarddead18mwccw8v4.test.near","amount":"902000000000000000000000"}]}
+Receipt: kjw3hHK6oVuQA5bFwFNzkwffeUjM5kMhsUZ7oJw8q4p
+	Log [guardfault16mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"2","attempt_id":"4","state":"paid"}]}
+PASS real refund cannot bypass conservative unresolved-I cushion
+Retrying transaction wide19mwccw8v4.test.near:AqJKy8NBPtpKcB3SkZ3Rd3ffNj6GUtrhi4U9ghsZ75Ph with new nonce.
+Retrying transaction owner20mwccw8v4.test.near:5enteGmR5hrSApHkAhuhjrSTpwMvyHSgS1ojQ5zutfi4 with new nonce.
+Receipt: 6VpnNHt1iYNsKT6ofoZSwsvjCPU7zqUNw9zktLXPBjVp
+	Log [wide19mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"owner20mwccw8v4.test.near","amount":"100000000000000000000000000000000000000","memo":"bootstrap"}]}
+	Log [wide19mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"100000000000000","supply":"100000000000000000000000000000000000000","recipient":"owner20mwccw8v4.test.near"}]}
+Receipt: 2vhWpXiZMnCsFdZdRytMF3D34NiDEf4FgzzhCSTcFRDh
+	Log [wide19mwccw8v4.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"owner20mwccw8v4.test.near","amount":"50000000000000000000000000000000000000"}]}
+	Log [wide19mwccw8v4.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"0","owner":"owner20mwccw8v4.test.near","amount":"45000000000000"}]}
+PASS actual WASM near-U128 supply uses wide intermediate arithmetic
+{"tests":26,"receipts":213,"status":"PASS"}

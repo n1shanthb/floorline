@@ -1,0 +1,171 @@
+warning: trailing semicolon in macro used in expression position
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: macro invocations at the end of a block are treated as expressions
+  = note: to ignore the value produced by the macro, add a semicolon after the invocation of `uint_full_mul_reg`
+  = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+  = note: for more information, see issue #79813 <https://github.com/rust-lang/rust/issues/79813>
+  = note: `#[warn(semicolon_in_expressions_from_non_local_macros)]` (part of `#[warn(future_incompatible)]`) on by default
+  = note: this warning originates in the macro `$crate::uint_full_mul_reg` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated constant `std::isize::MAX`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(deprecated)]` on by default
+  = note: this warning originates in the macro `$crate::uint_overflowing_binop` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated constant `std::isize::MAX`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::uint_overflowing_binop` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u64>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::construct_uint` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::construct_uint` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::construct_uint` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u8>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u16>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl u64>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl i8>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl i16>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl i32>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl isize>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl i64>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `$crate::impl_try_from_for_primitive` which comes from the expansion of the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl i128>::max_value`: replaced by the `MAX` associated constant on this type
+ --> src\lib.rs:8:1
+  |
+8 | construct_uint! { pub struct U512(8); }
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: this warning originates in the macro `construct_uint` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `floorkit-core` (lib) generated 18 warnings (1 duplicate)
+warning: `floorkit-core` (lib test) generated 18 warnings (18 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.12s
+     Running unittests src\lib.rs (floorkit\contract\target\debug\deps\floorkit_core-beebe57eb7ab5b0e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\economics.rs (floorkit\contract\target\debug\deps\economics-ac7c62dbd23a541e.exe)
+
+running 8 tests
+test bootstrap_rounding_and_limits ... ok
+test net_fee_pricing_preserves_backing ... ok
+test backing_does_not_imply_fixed_quote_monotonicity ... ok
+test closure_is_irreversible_and_rejection_atomic ... ok
+test parameter_boundaries_are_exact ... ok
+test size_dependent_curve_and_full_exit ... ok
+test stale_quotes_dust_and_supply_overflow_are_atomic ... ok
+test immediate_creator_buyer_round_trip_cannot_profit ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests floorkit_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

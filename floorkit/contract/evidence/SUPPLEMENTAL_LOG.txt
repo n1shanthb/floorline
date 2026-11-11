@@ -1,0 +1,18 @@
+Receipt: 7a2EtPNH6iyabex7Jwfd51KGioNC3k574yh4tuZdWFU1
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"pendingownermwcd364z.test.near","amount":"10000000000000000000000000","memo":"bootstrap"}]}
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"bootstrap","data":[{"reserve":"10000000000000000000000000","supply":"10000000000000000000000000","recipient":"pendingownermwcd364z.test.near"}]}
+Receipts: HHjXrLkXwMYpK5zwppiT1DsxYDeU5CV7rtuGYYgtieCz, tnjATKoYT3EaGgxC1wGZVSNCxdQP53hmKkRChssJRFB, TeUSe3YiPSYtNNrcZdG6fF6Xiad8hmPawpdZWvsWgew
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"pendingownermwcd364z.test.near","new_owner_id":"pendingreceivermwcd364z.test.near","amount":"10000000000000000000000000"}]}
+Receipt: E8JgQzjgDrTyJB8fqxWmv9rhCbGv1TUsoCz1yzoPfmB4
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"terminal_closed","data":[{"final_claim":"1"}]}
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"pendingreceivermwcd364z.test.near","amount":"10000000000000000000000000"}]}
+	Log [pendingclosemwcd364z.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"redemption_claim","data":[{"claim_id":"1","owner":"pendingreceivermwcd364z.test.near","amount":"10000000000000000000000000"}]}
+Receipts: HZbkaCuXok2jm1asaM8myEAcrzXn3LCgC3LmLVnu67tS, DFbyQK12gFDsBE2XEN27hWbWVZW8wtsY6cK12YKfzNPm, 6kNTqmhCZ52GdJwtjnvWS27oZmuP8RBnko3bjtJD6kkp
+	Log [pendingreceivermwcd364z.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_dispatched","data":[{"claim_id":"1","attempt_id":"2","owner":"pendingreceivermwcd364z.test.near","amount":"10000000000000000000000000"}]}
+Receipt: 7mLStQ6Bepf8Crwme1RSYZBHreXuK2k49U6TJDi1pyEd
+	Log [pendingreceivermwcd364z.test.near]: EVENT_JSON:{"standard":"floorkit","version":"1.0.0","event":"claim_result","data":[{"claim_id":"1","attempt_id":"2","state":"paid"}]}
+Receipts: FzacUQ3H4LrD5hDumdBB3LV4LVYBMD4HT2PYVQS4MTY2, 7L7S4bi1iQdvgbvv8wRuYL1hHRqBVt6MHaqjAcW5Q3AT
+	Failure [pendingclosemwcd364z.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:711:9:\npermanently closed"}}}}
+Receipts: 7W4Q5EUy9gVsLKtdrn1s34S6ENLASLZYYUatfgssPv2z, 4ZH7zeJ7HixRzxpiQMvq1bQVWjjyH6koeRiU3kPPfiFr
+	Failure [poolfault14mwccw8v4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:806:22:\noperational refund pool full"}}}}
+{"status":"PASS","scenarios":2,"records":9}

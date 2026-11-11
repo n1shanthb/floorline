@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "native Rust economic core only, not WASM or full state parity",
+  "sequences": 10000,
+  "steps_per_sequence": 64,
+  "operations": 640000,
+  "accepted": 292295,
+  "rejected": 347705,
+  "full_width_quote_cases": 10000,
+  "failing_seeds": [],
+  "trace_sha256": "c25e64894f6255ed1c18d75d4fabae5e59c5a9c43cc7fe355a6d4d11e9823dc3",
+  "protected_preexisting_files": 215,
+  "source_sha256": {
+    "floorkit\\research\\model.py": "6724091faaf0936b67cc457a5ff33a42933b903a120d9bc0d18ae26852a1b738",
+    "floorkit\\contract\\src\\lib.rs": "a9fadbe41da4db60eb10693e50bb49850947a96c61205b9026eb99d76e389a53",
+    "floorkit\\contract\\examples\\parity.rs": "348d07b57c6851c9cbdf64c7233bbb1145b73cb04d5afc2e378c7d43f0ba11a4",
+    "floorkit\\contract\\tools\\parity.py": "f23eece7bced4087202dbd9376cf490f130d714f779e3697a929a9b589d6ec93"
+  }
+}
