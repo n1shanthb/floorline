@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const root=path.resolve(import.meta.dirname,'..'),file=path.join(root,'TESTNET_EVIDENCE.json'),d=JSON.parse(fs.readFileSync(file));
+assert.equal(d.status,'CORE_TESTNET_PASSED_DAO_PAUSED');assert.equal(d.transactions.length,35);assert(d.transactions.every(t=>t.explorer_index_verified));
+d.gate3_status='INCOMPLETE_GENUINE_GOVERNANCE_PAUSED';d.frontend_decision='NO_GO_UNTIL_REAL_INDEPENDENT_MAJORITY_DAO_DEMONSTRATION';
+d.operational_policy='User clarified: unadvertised designated-account testnet demo; no on-chain allowlist, payable methods publicly callable, no claim of private or permissioned deployment.';
+d.dao={...d.dao,council_ids:[],operator_account_available:d.actual_accounts.controller,independent_signers_confirmed:0,creation_transaction:null,contribution_transaction:null,required:'Three real public council IDs and their owners participation; two keys independently controlled; genuine 2-of-3 policy/vote.',source_preflight:'testnet/evidence/source-preflight.json'};
+d.source_sha256=Object.fromEntries(['src/contract.rs','src/engine.rs','src/math.rs','Cargo.toml','Cargo.lock'].map(p=>[p,createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex')]));
+d.explorer_verification_summary={rpc_finalized:35,exact_indexer_matches:35,canonical_html_rendering_verified:0,note:'Current v3 transaction-data URLs are verified; canonical HTML requests returned 403.'};
+d.known_limits=['No independent DAO creation/proposal/votes/contribution yet.','No on-chain deposit allowlist; no outside deposits solicited.','Keys retained; mutable deployment.','Unknown-callback fail-closed behavior was tested locally, not fault-injected publicly.','No frontend, audit, mainnet use or real-value funds.'];
+fs.writeFileSync(file,JSON.stringify(d,null,2));console.log('Evidence finalized: 35 RPC-finalized/index-matched testnet transactions; genuine governance and frontend remain NO-GO.');

@@ -1,0 +1,6 @@
+// Generate only designated demo-role keys; never council identities.
+import fs from 'node:fs';import path from 'node:path';import nearAPI from 'near-api-js';
+const ROOT=path.resolve(import.meta.dirname,'..'),plan=JSON.parse(fs.readFileSync(path.join(ROOT,'testnet/planned-accounts.json')));
+const directory=path.join(ROOT,'.testnet-credentials/testnet');fs.mkdirSync(directory,{recursive:true});const publicKeys={};
+for(const id of [plan.controller,...Object.values(plan.roles)]){const file=path.join(directory,id+'.json');if(fs.existsSync(file)){const data=JSON.parse(fs.readFileSync(file));publicKeys[id]=data.public_key;continue;}const key=nearAPI.KeyPair.fromRandom('ed25519');const data={account_id:id,public_key:key.getPublicKey().toString(),private_key:key.toString()};fs.writeFileSync(file,JSON.stringify(data,null,2),{flag:'wx',mode:0o600});publicKeys[id]=data.public_key;}
+fs.writeFileSync(path.join(ROOT,'testnet/public-keys.json'),JSON.stringify({network:'testnet',status:'KEYS_GENERATED_ACCOUNTS_NOT_CREATED',public_keys:publicKeys},null,2));console.log('Generated/reused designated demo-role keys in protected E: credential storage. No council keys generated. No secret material printed.');
