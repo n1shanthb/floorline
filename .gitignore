@@ -6,3 +6,10 @@
 /runtime/artifacts/
 /fixtures/target/
 /.testnet-credentials/
+/frontend/node_modules/
+/frontend/dist/
+/frontend/test-results/
+/frontend/playwright-report/
+/frontend/.env*
+!/frontend/.env.example
+/frontend/*.tsbuildinfo
