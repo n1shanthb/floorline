@@ -1,0 +1,16 @@
+{
+  "proposal": {
+    "description": "Floorline testnet treasury contribution: verify receipt and treasury delta",
+    "kind": {
+      "FunctionCall": {
+        "receiver_id": "REPLACE_WITH_DEPLOYED_ACCOUNT.testnet",
+        "actions": [{
+          "method_name": "contribute",
+          "args": "e30=",
+          "deposit": "100000000000000000000000",
+          "gas": "30000000000000"
+        }]
+      }
+    }
+  }
+}
