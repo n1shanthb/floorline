@@ -1,4 +1,12 @@
-# Floorline — local Gate 2
+# Floorline — NEAR testnet
+
+The six-route Soft Electric frontend is implemented under `frontend/`. Start it with `.\frontend\run.ps1 dev` and open http://127.0.0.1:5173. See [FRONTEND_IMPLEMENTATION_REPORT.md](FRONTEND_IMPLEMENTATION_REPORT.md) for integrations, QA and limitations, and [frontend/README.md](frontend/README.md) for build/test commands.
+
+The technical five-step public-testnet demonstration is complete. Governance used an **operator-controlled simulated council**, not independent humans. [GATE3_RESULTS.md](GATE3_RESULTS.md) and [DAO_DEMONSTRATION.md](DAO_DEMONSTRATION.md) contain the actual receipts. The frontend reads current state from testnet RPC and explicitly labels historical replay. No contract or DAO changes were made for the frontend.
+
+## Historical Gate 2 notes
+
+The following describes the earlier local-only milestone; its statements about public deployment are historical, superseded by Gate 3.
 
 Current implementation: a NEAR Rust adapter for the externally funded economic engine, with persistent token/loan/claim records and real local sandbox receipts. **Not publicly deployed, audited, ownerless or production-approved.** Treasury-funded lending remains rejected.
 
