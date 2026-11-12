@@ -11,8 +11,14 @@ async function mockedRpc(
     callbackUnknown?: boolean;
     activeNft?: boolean;
     claimState?: number;
+    walletReject?: boolean;
+    transactionFailure?: boolean;
+    poor?: boolean;
+    stateful?: boolean;
   } = {},
 ) {
+  let reconciled = false;
+  let lastMethod = "";
   await page.route("https://test.rpc.fastnear.com", async (route) => {
     if (options.offline) {
       await route.abort("failed");
@@ -35,8 +41,17 @@ async function mockedRpc(
     else if (body.method === "tx") {
       const intent = await page.evaluate(() =>
         (
-          (window as unknown as { __testSubmissions: Array<{ args: unknown }> })
-            .__testSubmissions || []
+          (
+            window as unknown as {
+              __testSubmissions: Array<{
+                args: unknown;
+                method: string;
+                gas: string;
+                deposit: string;
+                receiver?: string;
+              }>;
+            }
+          ).__testSubmissions || []
         ).at(-1),
       );
       result = {
@@ -44,11 +59,11 @@ async function mockedRpc(
         transaction: {
           hash: "UI_TEST_TRANSACTION",
           signer_id: "ui-test.testnet",
-          receiver_id: contract,
+          receiver_id: intent?.receiver || contract,
           actions: [
             {
               FunctionCall: {
-                method_name: "redeem",
+                method_name: intent?.method || "redeem",
                 args: Buffer.from(
                   JSON.stringify(
                     intent?.args || {
@@ -57,12 +72,15 @@ async function mockedRpc(
                     },
                   ),
                 ).toString("base64"),
-                deposit: "0",
+                deposit: intent?.deposit || "0",
+                gas: intent?.gas || "30000000000000",
               },
             },
           ],
         },
-        status: { SuccessValue: Buffer.from('"99"').toString("base64") },
+        status: options.transactionFailure
+          ? { Failure: "test-only root rejection" }
+          : { SuccessValue: Buffer.from('"99"').toString("base64") },
         receipts_outcome: [
           {
             id: "test-only-receipt",
@@ -76,13 +94,27 @@ async function mockedRpc(
           },
         ],
       };
+      if (
+        options.stateful &&
+        !options.transactionFailure &&
+        !options.callbackUnknown
+      ) {
+        reconciled = true;
+        lastMethod = intent?.method || "";
+      }
     } else if (p.request_type === "view_account")
       result = {
         ...evidence.snapshot.account,
+        code_hash:
+          p.account_id === evidence.dao
+            ? "AA4nA45vauiac3jdVwJTzSdUP3oj2r1fDaPAb2mHdgcH"
+            : evidence.snapshot.account.code_hash,
         amount:
           p.account_id === contract
             ? evidence.snapshot.account.amount
-            : "10000000000000000000000000",
+            : options.poor
+              ? "1"
+              : "10000000000000000000000000",
       };
     else if (p.request_type === "call_function") {
       const args = JSON.parse(Buffer.from(p.args_base64, "base64").toString());
@@ -92,7 +124,10 @@ async function mockedRpc(
           value = evidence.snapshot.ledger;
           break;
         case "ft_balance_of":
-          value = "200000000000000000000000";
+          value =
+            options.stateful && reconciled
+              ? "100000000000000000000000"
+              : "200000000000000000000000";
           break;
         case "storage_balance_of":
           value = {
@@ -120,7 +155,10 @@ async function mockedRpc(
                 ? {
                     ...evidence.loans.repaid,
                     state: 1,
-                    owner: "ui-test.testnet",
+                    owner:
+                      reconciled && lastMethod === "nft_transfer"
+                        ? "test-recipient.testnet"
+                        : "ui-test.testnet",
                   }
                 : evidence.loans.repaid
               : args.loan_id === "7"
@@ -140,11 +178,20 @@ async function mockedRpc(
           break;
         case "nft_token":
           value = options.activeNft
-            ? { token_id: "2", owner_id: "ui-test.testnet" }
+            ? {
+                token_id: "2",
+                owner_id:
+                  reconciled && lastMethod === "nft_transfer"
+                    ? "test-recipient.testnet"
+                    : "ui-test.testnet",
+              }
             : null;
           break;
         case "get_policy":
           value = evidence.policy;
+          break;
+        case "get_last_proposal_id":
+          value = 1;
           break;
         case "get_proposal":
           value = evidence.proposal;
@@ -170,10 +217,11 @@ async function mockedRpc(
         contentType: "application/javascript",
         body: `
  window.__testSubmissions=[];
+ export function receiverFor(request){return request.receiver||'${contract}';}
  const accounts=[{accountId:'ui-test.testnet',active:true}];
  export async function getSelector(){return {options:{network:{networkId:'testnet'}},store:{getState:()=>({accounts}),observable:{subscribe:()=>({unsubscribe(){}})}}};}
  export async function connectWallet(){} export async function disconnectWallet(){}
- export async function signRequest(request){window.__testSubmissions.push(request);return {transaction:{hash:'UI_TEST_TRANSACTION'}};}
+ export async function signRequest(request){window.__testSubmissions.push(request);${options.walletReject ? "throw new Error('User rejected wallet approval');" : "return {transaction:{hash:'UI_TEST_TRANSACTION'}};"}}
  `,
       }),
     );
@@ -250,7 +298,7 @@ test("RPC failure and wrong network never display historical figures as live", a
   await page.reload();
   await expect(page.getByRole("alert")).toContainText("Wrong network");
 });
-test("activity filters select exact receipt and copy hash; governance is honestly read only", async ({
+test("activity filters preserve historical proof and disconnected governance has no vote control", async ({
   page,
   context,
 }) => {
@@ -416,4 +464,266 @@ test("overview reads partial tracked claim totals and active NFT ownership", asy
       exact: false,
     }),
   ).toBeVisible();
+});
+
+test("mocked final confirmation refreshes position and records browser activity", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true, stateful: true });
+  await page.goto("/app/treasury");
+  await page
+    .getByRole("button", { name: "Review redemption", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Approve in wallet" }).click();
+  await expect(page.getByRole("dialog")).toContainText("Confirmed on testnet");
+  await page.getByRole("button", { name: "Close dialog" }).click();
+  await expect(page.getByText(/Available: 0.1 FLOOR/)).toBeVisible();
+  await page.goto("/app/activity");
+  await expect(
+    page.getByRole("region", { name: "This browser transaction history" }),
+  ).toContainText("redeem · last check: confirmed");
+});
+test("wallet rejection clears the pending intent without claiming success", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true, walletReject: true });
+  await page.goto("/app/treasury");
+  await page
+    .getByRole("button", { name: "Review redemption", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Approve in wallet" }).click();
+  await expect(page.getByRole("dialog")).toContainText(
+    "User rejected wallet approval",
+  );
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("floorline:pending")),
+  ).toBeNull();
+  await expect(page.getByRole("dialog")).not.toContainText(
+    "Confirmed on testnet",
+  );
+});
+test("failed native withdrawal remains a known failure, not an unknown payout", async ({
+  page,
+}) => {
+  await mockedRpc(page, {
+    connected: true,
+    claimState: 0,
+    transactionFailure: true,
+  });
+  await page.goto("/app/treasury?tab=Claims");
+  await page.getByRole("button", { name: "Review withdrawal" }).first().click();
+  await page.getByRole("button", { name: "Approve in wallet" }).click();
+  await expect(page.getByRole("dialog")).toContainText(
+    "transaction failed on chain",
+  );
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("floorline:pending")),
+  ).toBeNull();
+});
+test("insufficient native balance blocks review before any wallet request", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true, poor: true });
+  await page.goto("/app/treasury");
+  await page
+    .getByRole("button", { name: "Review redemption", exact: true })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText(
+    "Insufficient spendable testnet NEAR",
+  );
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { __testSubmissions: unknown[] })
+          .__testSubmissions.length,
+    ),
+  ).toBe(0);
+});
+test("new transfer and DAO proposal reviews show the real receiver and exact bond", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true });
+  await page.goto("/app/treasury");
+  await page.getByLabel("FLOOR recipient account").fill("recipient.testnet");
+  await page.getByRole("button", { name: "Review FLOOR transfer" }).click();
+  await expect(page.getByRole("dialog")).toContainText("ft_transfer");
+  await expect(page.getByRole("dialog")).toContainText(
+    "0.000000000000000000000001 NEAR",
+  );
+  await page.getByRole("button", { name: "Close dialog" }).click();
+  await page.goto("/app/governance");
+  await page
+    .getByRole("button", { name: "Review new 0.10 NEAR proposal" })
+    .click();
+  await expect(page.getByRole("dialog")).toContainText(evidence.dao);
+  await expect(page.getByRole("dialog")).toContainText("1 NEAR");
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { __testSubmissions: unknown[] })
+          .__testSubmissions.length,
+    ),
+  ).toBe(0);
+});
+test("NFT ownership display refreshes after a mocked final transfer receipt", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true, activeNft: true, stateful: true });
+  await page.goto("/app/loans?tab=My%20NFTs");
+  await page
+    .getByRole("button", { name: "Transfer NFT recovery right" })
+    .click();
+  await page
+    .getByLabel("Registered recipient account")
+    .fill("test-recipient.testnet");
+  await page.getByRole("checkbox").check();
+  await page.getByRole("button", { name: "Review NFT transfer" }).click();
+  await page.getByRole("button", { name: "Approve in wallet" }).click();
+  await expect(page.getByRole("dialog")).toContainText("Confirmed on testnet");
+  await page.getByRole("button", { name: "Close dialog" }).click();
+  await expect(
+    page.getByText("No matching tracked rights", { exact: true }),
+  ).toBeVisible();
+});
+test("known failed payout permits a separately reviewed guarded restoration", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true, claimState: 2 });
+  await page.addInitScript(() =>
+    sessionStorage.setItem(
+      "floorline:pending",
+      JSON.stringify({
+        signer: "ui-test.testnet",
+        createdAt: Date.now(),
+        hash: "UI_TEST_TRANSACTION",
+        request: {
+          title: "Native withdrawal",
+          method: "withdraw_claim",
+          args: { claim_id: "0" },
+          deposit: "0",
+          gas: "110000000000000",
+          details: [],
+        },
+      }),
+    ),
+  );
+  await page.route("https://test.rpc.fastnear.com", async (route) => {
+    const b = route.request().postDataJSON();
+    if (b.method !== "tx") {
+      await route.fallback();
+      return;
+    }
+    await route.fulfill({
+      json: {
+        jsonrpc: "2.0",
+        id: b.id,
+        result: {
+          final_execution_status: "FINAL",
+          transaction: {
+            hash: "UI_TEST_TRANSACTION",
+            signer_id: "ui-test.testnet",
+            receiver_id: contract,
+            actions: [
+              {
+                FunctionCall: {
+                  method_name: "withdraw_claim",
+                  args: Buffer.from(JSON.stringify({ claim_id: "0" })).toString(
+                    "base64",
+                  ),
+                  gas: "110000000000000",
+                  deposit: "0",
+                },
+              },
+            ],
+          },
+          status: { SuccessValue: "" },
+          receipts_outcome: [
+            {
+              id: "test-only-native-failure",
+              outcome: {
+                executor_id: "ui-test.testnet",
+                logs: [],
+                status: { Failure: "native transfer failed" },
+              },
+            },
+          ],
+        },
+      },
+    });
+  });
+  await page.goto("/app/treasury?tab=Claims");
+  await expect(page.getByRole("dialog")).toContainText("known failure");
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("floorline:pending")),
+  ).toBeNull();
+  await page.getByRole("button", { name: "Close dialog" }).click();
+  await page
+    .getByRole("button", { name: "Review known-failure recovery" })
+    .first()
+    .click();
+  await expect(page.getByRole("dialog")).toContainText("Approve in wallet");
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { __testSubmissions: unknown[] })
+          .__testSubmissions.length,
+    ),
+  ).toBe(0);
+});
+test("callback URL errors cannot discard an unresolved intent", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true });
+  await page.addInitScript(() =>
+    sessionStorage.setItem(
+      "floorline:pending",
+      JSON.stringify({
+        signer: "ui-test.testnet",
+        createdAt: Date.now(),
+        request: {
+          title: "Earlier redemption",
+          method: "redeem",
+          args: { amount: "1", min_out: "1" },
+          deposit: "0",
+          gas: "30000000000000",
+          details: [],
+        },
+      }),
+    ),
+  );
+  await page.goto(
+    "/app/treasury?errorCode=USER_REJECTED&errorMessage=User%20rejected",
+  );
+  await expect(page.getByRole("dialog")).toContainText(
+    "URL parameters alone do not prove cancellation",
+  );
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("floorline:pending")),
+  ).not.toBeNull();
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { __testSubmissions: unknown[] })
+          .__testSubmissions.length,
+    ),
+  ).toBe(0);
+});
+test("lender funding supports explicit short expiry terms without a transaction", async ({
+  page,
+}) => {
+  await mockedRpc(page, { connected: true });
+  await page.goto("/app/loans");
+  await page.getByRole("button", { name: "Create offer", exact: true }).click();
+  await page.getByLabel("Term · whole number").fill("120");
+  await page.getByLabel("Term unit", { exact: true }).selectOption("seconds");
+  await page.getByRole("button", { name: "Review offer funding" }).click();
+  await expect(page.getByRole("dialog")).toContainText("Term 120 seconds");
+  await expect(page.getByRole("dialog")).toContainText("fund_offer");
+  expect(
+    await page.evaluate(
+      () =>
+        (window as unknown as { __testSubmissions: unknown[] })
+          .__testSubmissions.length,
+    ),
+  ).toBe(0);
 });

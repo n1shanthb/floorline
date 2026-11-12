@@ -20,7 +20,7 @@ export default function Claims() {
       return;
     }
     setBusy(true);
-    void Promise.all(a.tracked.claims.map(claimById))
+    void Promise.all(a.tracked.claims.map((id) => claimById(id)))
       .then((c) => {
         if (live) {
           setClaims(

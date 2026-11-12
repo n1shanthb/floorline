@@ -285,6 +285,25 @@ a.button:active {
   letter-spacing: 0;
   font-family: Arial, sans-serif;
 }
+.financial-tools,
+.governance-actions,
+.recent-transactions {
+  padding: clamp(20px, 3vw, 32px);
+  margin-block: 24px;
+}
+.financial-tools h3,
+.governance-actions h3,
+.recent-transactions h3 {
+  margin-bottom: 16px;
+}
+.financial-tools .button,
+.governance-actions > .button {
+  margin-top: 12px;
+}
+.financial-tools .field-label,
+.governance-actions .field-label {
+  margin-top: 16px;
+}
 .card {
   background: var(--white);
   border: 1px solid var(--border);

@@ -1,6 +1,6 @@
 import type { WalletSelector } from "@near-wallet-selector/core";
 import type { RpcOutcome } from "./rpc";
-import { CONTRACT, RPC } from "./config";
+import { CONTRACT, DAO, RPC } from "./config";
 let selectorPromise: Promise<WalletSelector> | undefined;
 export function getSelector() {
   selectorPromise ??= Promise.all([
@@ -24,6 +24,7 @@ export function getSelector() {
   return selectorPromise;
 }
 export interface ActionRequest {
+  receiver?: string;
   title: string;
   method: string;
   args: Record<string, unknown>;
@@ -31,6 +32,12 @@ export interface ActionRequest {
   gas: string;
   details: string[];
   warning?: string;
+}
+export function receiverFor(request: ActionRequest): string {
+  const receiver = request.receiver ?? CONTRACT;
+  if (receiver !== CONTRACT && receiver !== DAO)
+    throw new Error("Unapproved transaction receiver");
+  return receiver;
 }
 export async function connectWallet() {
   const s = await getSelector();
@@ -71,7 +78,7 @@ export async function signRequest(
     transactions: [
       {
         signerId: signer,
-        receiverId: CONTRACT,
+        receiverId: receiverFor(request),
         actions: [
           actionCreators.functionCall(
             request.method,

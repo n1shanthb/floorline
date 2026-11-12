@@ -8,6 +8,7 @@ import { ratio, units } from "../lib/math";
 import { useApp } from "../lib/app-context";
 import evidence from "../data/evidence.json";
 import { policiesEqual } from "../lib/policy";
+import GovernanceActions from "../components/GovernanceActions";
 export default function Governance() {
   const app = useApp(),
     [data, setData] = useState<Awaited<ReturnType<typeof daoState>> | null>(
@@ -24,8 +25,10 @@ export default function Governance() {
         }
       })
       .catch((e) => {
-        if (live)
+        if (live) {
+          setData(null);
           setError(e instanceof Error ? e.message : "DAO RPC unavailable");
+        }
       });
     return () => {
       live = false;
@@ -114,6 +117,7 @@ export default function Governance() {
         </section>
       </div>
       <Replay kind="dao" />
+      <GovernanceActions policy={data?.policy} verified={!!exactPolicy} />
       <section className="card dao-inspection">
         <div className="section-head">
           <h3>Inspect the actual policy</h3>
@@ -138,7 +142,7 @@ export default function Governance() {
             <Row label="Wallet voting eligibility">
               {app.account
                 ? members.includes(app.account)
-                  ? "Council member under fetched policy · actions read-only"
+                  ? "Council member under fetched policy · eligible proposals checked separately"
                   : "Not a listed council member"
                 : "Connect to inspect membership"}
             </Row>
@@ -159,10 +163,10 @@ export default function Governance() {
           </p>
         )}
         <p className="footnote">
-          <ExternalLink size={12} /> Governance controls are deliberately
-          read-only. No visitor is given a fake vote button. Historical B
-          approval left the proposal in progress; C approval reached the
-          threshold and the contribution receipt actually succeeded.
+          <ExternalLink size={12} /> Historical evidence stays read-only. Live
+          controls require explicit wallet review and current policy validation.
+          Historical B approval left the proposal in progress; C approval
+          reached the threshold and the contribution receipt actually succeeded.
         </p>
       </section>
     </>

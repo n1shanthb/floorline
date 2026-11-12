@@ -34,14 +34,19 @@ import {
   position as readPosition,
   rpc,
   classifyOutcome,
+  classifyWithdrawal,
   claimById,
 } from "./lib/rpc";
 import type { Position, RpcOutcome, Snapshot } from "./lib/rpc";
-import { CONTRACT, FRESH_MS, txLink } from "./lib/config";
+import { FRESH_MS, txLink } from "./lib/config";
 import { exact, canonicalId } from "./lib/math";
 import { validateRequest } from "./lib/actions";
 import type { ActionRequest } from "./lib/wallet";
+import { receiverFor } from "./lib/wallet";
+import { verifyIntent } from "./lib/receipt";
+import { recordTransaction } from "./lib/journal";
 import type { TxPhase } from "./lib/transaction";
+import { isExplicitWalletRejection } from "./lib/transaction";
 import { Brand, External, Modal, Row, Testnet } from "./components/ui";
 import evidence from "./data/evidence.json";
 import Landing from "./pages/Landing";
@@ -195,7 +200,11 @@ export default function App() {
         ...previous,
         [kind]: [...new Set([...previous[kind], id])],
       };
-      localStorage.setItem("floorline:tracked", JSON.stringify(next));
+      try {
+        localStorage.setItem("floorline:tracked", JSON.stringify(next));
+      } catch {
+        /* Keep this session's confirmed IDs even when browser storage is full. */
+      }
       return next;
     });
   }, []);
@@ -218,45 +227,26 @@ export default function App() {
           sender_account_id: pending.signer,
           wait_until: "FINAL",
         });
-        if (
-          result.transaction?.hash !== pending.hash ||
-          result.transaction?.signer_id !== pending.signer ||
-          result.transaction?.receiver_id !== CONTRACT
-        )
-          throw new Error(
-            "Returned transaction identity does not match the reviewed signer and contract.",
-          );
-        const actions = result.transaction.actions,
-          call = actions?.[0]?.FunctionCall;
-        const canonical = (value: unknown): string =>
-          JSON.stringify(
-            value && typeof value === "object" && !Array.isArray(value)
-              ? Object.fromEntries(
-                  Object.entries(value).sort(([a], [b]) => a.localeCompare(b)),
-                )
-              : value,
-          );
-        if (
-          actions?.length !== 1 ||
-          !call ||
-          call.method_name !== pending.request.method ||
-          call.deposit !== pending.request.deposit ||
-          canonical(JSON.parse(atob(call.args))) !==
-            canonical(pending.request.args)
-        )
-          throw new Error(
-            "Transaction action does not match the reviewed method, arguments and deposit. No success is assumed.",
-          );
+        verifyIntent(result, pending);
         let status = classifyOutcome(result);
-        if (pending.request.method === "withdraw_claim") {
+        if (
+          status !== "failed" &&
+          pending.request.method === "withdraw_claim"
+        ) {
           const c = await claimById(String(pending.request.args.claim_id));
-          if (!c || c.state !== 3) status = "unknown";
+          status = classifyWithdrawal(result, c);
         }
+        recordTransaction(
+          pending.hash,
+          pending.signer,
+          pending.request,
+          status,
+        );
         if (status === "failed") {
           setPhase("failed");
           sessionStorage.removeItem("floorline:pending");
           setTxError(
-            "The transaction failed on chain. Inspect its receipts before trying again.",
+            "The transaction failed on chain or its native payout is recorded as a known failure. Inspect its receipts before trying again; restoration is a separate guarded action.",
           );
         } else if (status === "unknown") {
           setPhase("unknown");
@@ -318,12 +308,13 @@ export default function App() {
       const pending = JSON.parse(saved) as Pending;
       const params = new URLSearchParams(location.search);
       const returned = params.get("transactionHashes")?.split(",")[0];
-      if (params.get("errorCode")) {
+      if (!returned && !pending.hash && params.get("errorCode")) {
         setAction(pending.request);
-        setPhase("rejected");
-        setTxError("Wallet declined the request. No success is assumed.");
+        setPhase("unknown");
+        setTxError(
+          "The wallet callback reported an error without a verifiable hash. Inspect wallet activity before resubmitting; URL parameters alone do not prove cancellation.",
+        );
         setTxOpen(true);
-        sessionStorage.removeItem("floorline:pending");
       } else if (returned || pending.hash) {
         pending.hash = returned || pending.hash;
         sessionStorage.setItem("floorline:pending", JSON.stringify(pending));
@@ -346,7 +337,18 @@ export default function App() {
       return;
     }
     if (signing.current) return;
-    if (sessionStorage.getItem("floorline:pending")) {
+    let unresolved: string | null;
+    try {
+      unresolved = sessionStorage.getItem("floorline:pending");
+    } catch {
+      setTxOpen(true);
+      setPhase("rejected");
+      setTxError(
+        "Session storage is unavailable. Enable it before requesting a wallet transaction so pending intents can be recovered safely.",
+      );
+      return;
+    }
+    if (unresolved) {
       setTxOpen(true);
       setPhase("unknown");
       setTxError(
@@ -398,7 +400,7 @@ export default function App() {
     } catch (e) {
       const message =
         e instanceof Error ? e.message : "Wallet response unavailable";
-      if (/reject|cancel|denied|declin/i.test(message)) {
+      if (isExplicitWalletRejection(e)) {
         setPhase("rejected");
         sessionStorage.removeItem("floorline:pending");
       } else
@@ -564,7 +566,7 @@ export default function App() {
           {action && (
             <>
               <Row label="Contract">
-                <span className="break">{CONTRACT}</span>
+                <span className="break">{receiverFor(action)}</span>
               </Row>
               <Row label="Signer">
                 <span className="break">

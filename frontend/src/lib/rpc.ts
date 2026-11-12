@@ -148,6 +148,31 @@ export async function snapshot(): Promise<Snapshot> {
     throw new Error(
       "Contract code hash changed. Transactions are blocked pending review.",
     );
+  const buckets = [
+    "L",
+    "unused_lender",
+    "borrower_claims",
+    "lender_claims",
+    "redemption_claims",
+    "cancellation_claims",
+    "storage_refund_claims",
+    "storage_total",
+    "operational",
+  ];
+  if (
+    buckets.some(
+      (key) =>
+        typeof ledger[key] !== "string" ||
+        !/^(0|[1-9]\d*)$/.test(String(ledger[key])),
+    ) ||
+    buckets.reduce((sum, key) => sum + BigInt(ledger[key]), 0n) !==
+      BigInt(ledger.local_required) ||
+    ledger.account_balance !== account.amount ||
+    BigInt(ledger.locked) > BigInt(ledger.T)
+  )
+    throw new Error(
+      "Inconsistent finalized treasury accounting. Transactions are blocked.",
+    );
   return {
     ledger,
     account,
@@ -158,34 +183,55 @@ export async function snapshot(): Promise<Snapshot> {
     chainId: "testnet",
   };
 }
-export async function position(id: string): Promise<Position> {
+export async function position(id: string, block?: string): Promise<Position> {
   const [balance, storage, native] = await Promise.all([
-    view<string>("ft_balance_of", { account_id: id }),
-    view<StorageBalance | null>("storage_balance_of", { account_id: id }),
+    view<string>("ft_balance_of", { account_id: id }, CONTRACT, block),
+    view<StorageBalance | null>(
+      "storage_balance_of",
+      { account_id: id },
+      CONTRACT,
+      block,
+    ),
     rpc<AccountView>("query", {
       request_type: "view_account",
       account_id: id,
-      finality: "final",
+      ...(block ? { block_id: block } : { finality: "final" }),
     }),
   ]);
   return { balance, storage, native };
 }
-export const loanById = async (id: string): Promise<Loan | null> => {
-  const l = await view<Omit<Loan, "id"> | null>("get_loan", { loan_id: id });
+export const loanById = async (
+  id: string,
+  block?: string,
+): Promise<Loan | null> => {
+  const l = await view<Omit<Loan, "id"> | null>(
+    "get_loan",
+    { loan_id: id },
+    CONTRACT,
+    block,
+  );
   return l ? { ...l, id } : null;
 };
-export const claimById = async (id: string): Promise<Claim | null> => {
-  const c = await view<Omit<Claim, "id"> | null>("get_claim", { claim_id: id });
+export const claimById = async (
+  id: string,
+  block?: string,
+): Promise<Claim | null> => {
+  const c = await view<Omit<Claim, "id"> | null>(
+    "get_claim",
+    { claim_id: id },
+    CONTRACT,
+    block,
+  );
   return c ? { ...c, id } : null;
 };
-export async function daoState() {
+export async function daoState(proposalId = 0, block?: string) {
   const [policy, proposal, account] = await Promise.all([
-    view<DaoPolicy>("get_policy", {}, DAO),
-    view<DaoProposal>("get_proposal", { id: 0 }, DAO),
+    view<DaoPolicy>("get_policy", {}, DAO, block),
+    view<DaoProposal>("get_proposal", { id: proposalId }, DAO, block),
     rpc<AccountView>("query", {
       request_type: "view_account",
       account_id: DAO,
-      finality: "final",
+      ...(block ? { block_id: block } : { finality: "final" }),
     }),
   ]);
   if (
@@ -213,6 +259,7 @@ export interface DaoPolicy {
     weight_kind: string;
   };
   proposal_bond: string;
+  proposal_period?: string;
 }
 export interface DaoProposal {
   id: number;
@@ -221,12 +268,14 @@ export interface DaoProposal {
   description: string;
   votes: Record<string, string>;
   kind: unknown;
+  submission_time?: string;
 }
 export function classifyOutcome(
   outcome: RpcOutcome,
 ): "confirmed" | "failed" | "unknown" {
-  if (outcome.status?.Failure) return "failed";
   if (outcome.final_execution_status !== "FINAL") return "unknown";
+  if (outcome.status?.Failure) return "failed";
+  if (outcome.transaction_outcome?.outcome.status.Failure) return "unknown";
   if (outcome.receipts_outcome?.some((r) => r.outcome.status.Failure))
     return "unknown";
   if (
@@ -235,4 +284,16 @@ export function classifyOutcome(
   )
     return "unknown";
   return "confirmed";
+}
+export function classifyWithdrawal(
+  outcome: RpcOutcome,
+  claim: Pick<Claim, "state"> | null,
+): "confirmed" | "failed" | "unknown" {
+  const status = classifyOutcome(outcome);
+  if (status === "failed") return status;
+  if (outcome.final_execution_status !== "FINAL") return "unknown";
+  // The deployed private callback records known failure without crediting a
+  // claim. Permit a separately reviewed, balance-guarded restoration next.
+  if (claim?.state === 2) return "failed";
+  return status === "confirmed" && claim?.state === 3 ? "confirmed" : "unknown";
 }

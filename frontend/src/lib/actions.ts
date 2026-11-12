@@ -1,4 +1,4 @@
-import { CONTRACT, RECORD_HEADROOM } from "./config";
+import { CONTRACT, DAO, RECORD_HEADROOM } from "./config";
 import {
   canonicalId,
   canRepay,
@@ -11,6 +11,8 @@ import {
 import { claimById, loanById, position, rpc, snapshot, view } from "./rpc";
 import type { Snapshot, StorageBalance } from "./rpc";
 import type { ActionRequest } from "./wallet";
+import { receiverFor } from "./wallet";
+import { validateGovernance } from "./governance-actions";
 import { savedProof, verifyOfferProof } from "./offer-proof";
 export const request = (
   title: string,
@@ -24,7 +26,9 @@ export const request = (
   method,
   args,
   deposit,
-  gas: method === "withdraw_claim" ? "110000000000000" : "30000000000000",
+  gas: ["withdraw_claim", "storage_withdraw"].includes(method)
+    ? "110000000000000"
+    : "30000000000000",
   details,
   warning,
 });
@@ -42,7 +46,7 @@ export async function validateRequest(
   if (!validAccount(signer)) throw new Error("Connect a valid testnet wallet.");
   const state = await snapshot(),
     l = state.ledger,
-    p = await position(signer),
+    p = await position(signer, state.blockHash),
     a = action.args;
   if (
     BigInt(state.account.amount) < BigInt(l.local_required) ||
@@ -63,12 +67,69 @@ export async function validateRequest(
     "default_loan",
     "withdraw_claim",
     "retry_failed_claim",
+    "storage_withdraw",
   ];
-  if (!allowed.includes(action.method))
+  const receiver = receiverFor(action);
+  if (
+    receiver === CONTRACT &&
+    ![...allowed, "ft_transfer", "contribute"].includes(action.method)
+  )
     throw new Error("Unsupported contract action.");
   const deposit = BigInt(action.deposit);
-  if (deposit < 0n || deposit > U128_MAX)
+  if (
+    !/^(0|[1-9]\d*)$/.test(action.deposit) ||
+    deposit < 0n ||
+    deposit > U128_MAX
+  )
     throw new Error("Invalid attached deposit");
+  for (const key of [
+    "amount",
+    "min_out",
+    "min_tokens",
+    "repayment",
+    "collateral",
+  ]) {
+    if (
+      action.method === "storage_withdraw" &&
+      key === "amount" &&
+      a[key] === null
+    )
+      continue;
+    if (
+      key in a &&
+      (typeof a[key] !== "string" ||
+        !/^(0|[1-9]\d*)$/.test(a[key] as string) ||
+        BigInt(a[key] as string) > U128_MAX)
+    )
+      throw new Error(`Invalid canonical U128 ${key}`);
+  }
+  if (
+    receiver === CONTRACT &&
+    action.gas !==
+      (["withdraw_claim", "storage_withdraw"].includes(action.method)
+        ? "110000000000000"
+        : "30000000000000")
+  )
+    throw new Error("Unexpected gas budget");
+  if (receiver === CONTRACT) {
+    const expected = [
+      "ft_transfer",
+      "nft_transfer",
+      "storage_withdraw",
+    ].includes(action.method)
+      ? 1n
+      : [
+            "storage_deposit",
+            "issue",
+            "fund_offer",
+            "repay",
+            "contribute",
+          ].includes(action.method)
+        ? null
+        : 0n;
+    if (expected !== null && deposit !== expected)
+      throw new Error("Wrong attached deposit for this method");
+  }
   const gasPrice = await rpc<{ gas_price: string }>("gas_price", [null]);
   // Wallets reserve gas before execution. This is a conservative UI cushion, not a fee quote.
   const byteCost = BigInt(l.storage_stake) / BigInt(l.storage_usage);
@@ -81,6 +142,15 @@ export async function validateRequest(
     throw new Error(
       "Insufficient spendable testnet NEAR after account storage for deposit plus conservative upfront gas headroom. Keep extra NEAR for wallet gas reservation.",
     );
+  if (receiver === DAO) {
+    await validateGovernance(action, signer, state);
+    return state;
+  }
+  if (action.method === "contribute") {
+    if (deposit <= 0n || BigInt(l.T) === 0n || BigInt(l.L) + deposit > U128_MAX)
+      throw new Error("Positive contribution to live supply required");
+    return state; // Deployed contribute does not require donor storage registration.
+  }
   if (action.method === "storage_deposit") {
     const bounds = await view<{ min: string }>("storage_balance_bounds");
     if (!p.storage && deposit < BigInt(bounds.min))
@@ -91,6 +161,23 @@ export async function validateRequest(
   }
   if (!p.storage && action.method !== "default_loan")
     throw new Error("Register storage before this action.");
+  if (action.method === "storage_withdraw") {
+    const n =
+      a.amount === null
+        ? BigInt(p.storage!.available)
+        : BigInt(String(a.amount));
+    if (n <= 0n || n > BigInt(p.storage!.available))
+      throw new Error("Positive unused storage credit required");
+    if (
+      BigInt(l.operational) -
+        BigInt(l.operational_base) -
+        BigInt(l.refund_storage) <
+      RECORD_HEADROOM
+    )
+      throw new Error(
+        "Operational refund headroom too low for this UI's conservative cushion",
+      );
+  }
   if (
     needsRecord.has(action.method) &&
     BigInt(p.storage?.available || "0") < RECORD_HEADROOM
@@ -124,11 +211,45 @@ export async function validateRequest(
     if (!issued.allowed || issued.minted < BigInt(String(a.min_tokens)))
       throw new Error("Issuance would dilute backing or fail minimum output.");
   }
+  if (action.method === "ft_transfer") {
+    const receiver = String(a.receiver_id),
+      amount = BigInt(String(a.amount));
+    if (
+      !/^[1-9]\d*$/.test(String(a.amount)) ||
+      amount > BigInt(p.balance) ||
+      amount > U128_MAX ||
+      !validAccount(receiver) ||
+      receiver === signer ||
+      receiver === CONTRACT ||
+      (a.memo !== null &&
+        (typeof a.memo !== "string" ||
+          new TextEncoder().encode(a.memo).length > 256))
+    )
+      throw new Error(
+        "Available FLOOR, a distinct registered recipient and bounded memo required",
+      );
+    const registered = await view<StorageBalance | null>(
+      "storage_balance_of",
+      { account_id: receiver },
+      CONTRACT,
+      state.blockHash,
+    );
+    if (!registered)
+      throw new Error(
+        "Recipient must register Floorline storage before transfer.",
+      );
+    await rpc("query", {
+      request_type: "view_account",
+      account_id: receiver,
+      block_id: state.blockHash,
+    });
+  }
   if (action.method === "fund_offer") {
     if (
       deposit <= 0n ||
       BigInt(String(a.repayment)) < deposit ||
       BigInt(String(a.collateral)) <= 0n ||
+      typeof a.duration_ns !== "string" ||
       !canonicalId(String(a.duration_ns)) ||
       BigInt(String(a.duration_ns)) === 0n
     )
@@ -144,8 +265,9 @@ export async function validateRequest(
     ].includes(action.method)
   ) {
     const id = String(a.loan_id ?? a.token_id);
-    if (!canonicalId(id)) throw new Error("Invalid loan ID");
-    const loan = await loanById(id);
+    if (typeof (a.loan_id ?? a.token_id) !== "string" || !canonicalId(id))
+      throw new Error("Invalid loan ID");
+    const loan = await loanById(id, state.blockHash);
     if (!loan) throw new Error("Loan record not found.");
     if (
       action.method === "cancel_offer" &&
@@ -168,11 +290,21 @@ export async function validateRequest(
       const actual = await verifyOfferProof(loan, proof.hash);
       if (actual.durationNs !== proof.durationNs)
         throw new Error("Offer term cache changed. Reverify funding proof.");
+      if (
+        BigInt(state.timestampNs) + BigInt(actual.durationNs) >
+        (1n << 64n) - 1n
+      )
+        throw new Error("Loan expiry would overflow the contract clock.");
     }
     if (["repay", "nft_transfer"].includes(action.method)) {
-      const nft = await view<{ owner_id: string } | null>("nft_token", {
-        token_id: id,
-      });
+      const nft = await view<{ owner_id: string } | null>(
+        "nft_token",
+        {
+          token_id: id,
+        },
+        CONTRACT,
+        state.blockHash,
+      );
       if (!nft || nft.owner_id !== signer)
         throw new Error(
           "Current on-chain NFT ownership does not match the signer.",
@@ -203,7 +335,9 @@ export async function validateRequest(
         !validAccount(receiver) ||
         receiver === signer ||
         receiver === CONTRACT ||
-        deposit !== 1n
+        deposit !== 1n ||
+        a.approval_id !== null ||
+        a.memo !== null
       )
         throw new Error(
           "Current owner, distinct registered receiver and 1 yocto required.",
@@ -211,6 +345,8 @@ export async function validateRequest(
       const registered = await view<StorageBalance | null>(
         "storage_balance_of",
         { account_id: receiver },
+        CONTRACT,
+        state.blockHash,
       );
       if (!registered)
         throw new Error(
@@ -219,13 +355,13 @@ export async function validateRequest(
       await rpc("query", {
         request_type: "view_account",
         account_id: receiver,
-        finality: "final",
+        block_id: state.blockHash,
       });
     }
   }
   if (["withdraw_claim", "retry_failed_claim"].includes(action.method)) {
     if (!canonicalId(String(a.claim_id))) throw new Error("Invalid claim ID");
-    const claim = await claimById(String(a.claim_id));
+    const claim = await claimById(String(a.claim_id), state.blockHash);
     if (!claim || claim.owner !== signer)
       throw new Error("Claim belongs to another account or does not exist.");
     if (action.method === "withdraw_claim" && claim.state !== 0)

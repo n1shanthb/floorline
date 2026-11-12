@@ -7,6 +7,7 @@ import { useApp } from "../lib/app-context";
 import { exact, issuance, parseAmount, quote, ratio, units } from "../lib/math";
 import { request, storageRequest } from "../lib/actions";
 import { RECORD_HEADROOM } from "../lib/config";
+import FinancialTools from "../components/FinancialTools";
 const tabs = ["Issue", "Redeem", "Claims"] as const;
 export default function Treasury() {
   const a = useApp(),
@@ -42,7 +43,10 @@ export default function Treasury() {
   const needsStorage =
     !!a.account &&
     (!a.position?.storage ||
-      BigInt(a.position.storage.available) < RECORD_HEADROOM);
+      (tab === "Redeem" &&
+        BigInt(a.position.storage.available) < RECORD_HEADROOM));
+  const insufficientFloor =
+    tab === "Redeem" && !!a.position && n > BigInt(a.position.balance);
   const action = () => {
     if (!l) return;
     if (tab === "Issue")
@@ -205,7 +209,13 @@ export default function Treasury() {
                   NEAR
                 </p>
               )}
-              {needsStorage ? (
+              {insufficientFloor && (
+                <p className="form-error" role="alert">
+                  Insufficient available FLOOR for this redemption. Locked
+                  collateral is excluded.
+                </p>
+              )}
+              {needsStorage && allowed ? (
                 <>
                   <div className="notice">
                     Register or top up storage before creating a payout record.
@@ -223,7 +233,12 @@ export default function Treasury() {
                 <button
                   className="button primary full"
                   disabled={
-                    !!a.account && (!allowed || !!inputError || !l || !!a.error)
+                    !!a.account &&
+                    (!allowed ||
+                      insufficientFloor ||
+                      !!inputError ||
+                      !l ||
+                      !!a.error)
                   }
                   onClick={a.account ? action : a.openWallet}
                 >
@@ -239,6 +254,7 @@ export default function Treasury() {
           )}
         </section>
       </div>
+      <FinancialTools />
       <section className="card solvency">
         <div className="section-head">
           <h3>Native balance vs local reserves</h3>

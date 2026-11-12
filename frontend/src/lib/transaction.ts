@@ -8,6 +8,14 @@ export type TxPhase =
   | "rejected"
   | "failed"
   | "unknown";
+export function isExplicitWalletRejection(error: unknown): boolean {
+  return (
+    error instanceof Error &&
+    /^User (rejected|cancelled|canceled|declined)( (the )?(wallet )?(approval|request|transaction))?[.!]?$/i.test(
+      error.message,
+    )
+  );
+}
 const allowed: Record<TxPhase, TxPhase[]> = {
   idle: ["validating"],
   validating: ["review", "rejected", "unknown"],

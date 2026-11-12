@@ -12,8 +12,8 @@ import {
   units,
   validAccount,
 } from "../src/lib/math";
-import { classifyOutcome } from "../src/lib/rpc";
-import { transition } from "../src/lib/transaction";
+import { classifyOutcome, classifyWithdrawal } from "../src/lib/rpc";
+import { transition, isExplicitWalletRejection } from "../src/lib/transaction";
 import evidence from "../src/data/evidence.json";
 describe("exact amount boundaries", () => {
   it.each([
@@ -145,6 +145,49 @@ describe("identity, permissions and evidence labels", () => {
   });
 });
 describe("wallet receipt states", () => {
+  it("distinguishes a known failed payout from a lost callback", () => {
+    const result = {
+      final_execution_status: "FINAL",
+      status: { SuccessValue: "" },
+      receipts_outcome: [
+        {
+          id: "test-only",
+          outcome: {
+            executor_id: "test.testnet",
+            logs: [],
+            status: { Failure: "native transfer failed" },
+          },
+        },
+      ],
+    };
+    expect(classifyWithdrawal(result, { state: 2 })).toBe("failed");
+    expect(classifyWithdrawal(result, { state: 1 })).toBe("unknown");
+    expect(
+      classifyWithdrawal(
+        { ...result, final_execution_status: "EXECUTED_OPTIMISTIC" },
+        { state: 2 },
+      ),
+    ).toBe("unknown");
+  });
+  it("does not mistake RPC denial for an explicit wallet cancellation", () => {
+    expect(
+      isExplicitWalletRejection(new Error("User rejected wallet approval")),
+    ).toBe(true);
+    for (const message of [
+      "RPC request denied",
+      "transaction rejected by node",
+      "Connection cancelled after submission",
+    ])
+      expect(isExplicitWalletRejection(new Error(message))).toBe(false);
+  });
+  it("keeps a nonfinal root failure unresolved", () => {
+    expect(
+      classifyOutcome({
+        final_execution_status: "EXECUTED_OPTIMISTIC",
+        status: { Failure: "not final" },
+      }),
+    ).toBe("unknown");
+  });
   const base = {
     final_execution_status: "FINAL",
     status: { SuccessValue: "" },

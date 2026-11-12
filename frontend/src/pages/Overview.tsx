@@ -21,8 +21,8 @@ export default function Overview() {
     let live = true;
     if (a.account)
       void Promise.all([
-        Promise.all(a.tracked.claims.map(claimById)),
-        Promise.all(a.tracked.loans.map(loanById)),
+        Promise.all(a.tracked.claims.map((id) => claimById(id))),
+        Promise.all(a.tracked.loans.map((id) => loanById(id))),
       ])
         .then(async ([claims, loans]) => {
           const nftReads = await Promise.all(

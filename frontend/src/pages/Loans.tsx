@@ -47,6 +47,7 @@ export default function Loans() {
     [debt, setDebt] = useState("0.11"),
     [collateral, setCollateral] = useState("0.2"),
     [hours, setHours] = useState("24"),
+    [termUnit, setTermUnit] = useState("hours"),
     [recipient, setRecipient] = useState(""),
     [transfer, setTransfer] = useState<Loan | null>(null),
     [ack, setAck] = useState(false),
@@ -58,7 +59,7 @@ export default function Loans() {
     let live = true;
     void proofNonce;
     setBusy(true);
-    void Promise.all(a.tracked.loans.map(loanById))
+    void Promise.all(a.tracked.loans.map((id) => loanById(id)))
       .then((rows) => {
         if (live) {
           setLoans(rows.filter((v): v is Loan => v !== null));
@@ -106,8 +107,14 @@ export default function Loans() {
         r = parseAmount(debt),
         c = parseAmount(collateral);
       if (!/^\d+$/.test(hours) || BigInt(hours) === 0n)
-        throw new Error("Enter a positive whole number of hours.");
-      const ns = BigInt(hours) * 3600000000000n;
+        throw new Error("Enter a positive whole-number term.");
+      const ns =
+        BigInt(hours) *
+        (termUnit === "seconds"
+          ? 1000000000n
+          : termUnit === "minutes"
+            ? 60000000000n
+            : 3600000000000n);
       if (ns > U64_MAX) throw new Error("Term exceeds U64 nanoseconds.");
       if (p <= 0n || r < p || c <= 0n)
         throw new Error(
@@ -127,7 +134,7 @@ export default function Loans() {
           [
             `Escrow ${exact(p)} NEAR separately from treasury backing.`,
             `Fixed debt ${exact(r)} NEAR; collateral ${exact(c)} FLOOR.`,
-            `Term ${hours} hours, starting when an offer is accepted.`,
+            `Term ${hours} ${termUnit}, starting when an offer is accepted.`,
           ],
           "On default you receive FLOOR collateral, not a guaranteed NEAR repayment.",
         ),
@@ -534,7 +541,7 @@ export default function Loans() {
             ["Principal · NEAR", principal, setPrincipal],
             ["Fixed repayment · NEAR", debt, setDebt],
             ["Collateral · FLOOR", collateral, setCollateral],
-            ["Term · whole hours", hours, setHours],
+            ["Term · whole number", hours, setHours],
           ].map(([label, value, setter]) => (
             <label key={String(label)} className="field-label">
               {String(label)}
@@ -548,6 +555,24 @@ export default function Loans() {
             </label>
           ))}
         </div>
+        <label className="field-label" htmlFor="loan-term-unit">
+          Term unit
+        </label>
+        <select
+          id="loan-term-unit"
+          value={termUnit}
+          onChange={(e) => setTermUnit(e.target.value)}
+        >
+          <option value="hours">Hours</option>
+          <option value="minutes">Minutes</option>
+          <option value="seconds">Seconds · controlled expiry tests</option>
+        </select>
+        {termUnit === "seconds" && (
+          <p className="notice">
+            Short terms can expire during wallet approval. Use only for
+            controlled expiry/default tests; time starts at offer acceptance.
+          </p>
+        )}
         {error && (
           <p className="form-error" role="alert">
             {error}

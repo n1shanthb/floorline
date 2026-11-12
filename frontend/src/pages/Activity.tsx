@@ -15,6 +15,7 @@ import { ratio, units } from "../lib/math";
 import { classifyOutcome, rpc } from "../lib/rpc";
 import type { RpcOutcome } from "../lib/rpc";
 import evidence from "../data/evidence.json";
+import RecentTransactions from "../components/RecentTransactions";
 const filters = [
   "All activity",
   "Treasury",
@@ -92,6 +93,7 @@ export default function Activity() {
           Public evidence
         </a>
       </div>
+      <RecentTransactions />
       <div className="activity-grid">
         <section
           className="card event-list activity-feed"
