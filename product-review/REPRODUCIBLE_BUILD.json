@@ -1,0 +1,8 @@
+{
+  "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "approved_before": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "approved_after": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "rebuilt_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "approved_artifact_unchanged": true,
+  "byte_for_byte_match": true
+}
