@@ -1,0 +1,28 @@
+[WebServer] (node:26812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:22592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 19 tests using 1 worker
+
+  ok  1 tests\browser\app.spec.ts:229:1 › all six routes render, use real components, and have no overflow at 360, 390 and 1440 (12.0s)
+  ok  2 tests\browser\app.spec.ts:263:1 › mobile bottom navigation works and treasury blocks dilutive issuance (1.1s)
+  ok  3 tests\browser\app.spec.ts:285:1 › RPC failure and wrong network never display historical figures as live (1.9s)
+  ok  4 tests\browser\app.spec.ts:301:1 › activity filters preserve historical proof and disconnected governance has no vote control (1.5s)
+  ok  5 tests\browser\app.spec.ts:328:1 › wallet dialog traps focus and closes with Escape; no wallet opens automatically (1.1s)
+  ok  6 tests\browser\app.spec.ts:346:1 › replays are user-triggered and reduced-motion friendly (1.5s)
+  ok  7 tests\browser\app.spec.ts:358:1 › connected mocked wallet requires review then explicit approval; no auto-submit (1.5s)
+  ok  8 tests\browser\app.spec.ts:401:1 › NFT transfer requires a valid recipient and explicit loss-of-rights acknowledgement (1.5s)
+  ok  9 tests\browser\app.spec.ts:432:1 › repayment review uses current NFT owner and exact debt; native claim review reserves callback gas (2.3s)
+  ok 10 tests\browser\app.spec.ts:453:1 › overview reads partial tracked claim totals and active NFT ownership (1.0s)
+  ok 11 tests\browser\app.spec.ts:469:1 › mocked final confirmation refreshes position and records browser activity (2.1s)
+  ok 12 tests\browser\app.spec.ts:486:1 › wallet rejection clears the pending intent without claiming success (1.7s)
+  ok 13 tests\browser\app.spec.ts:505:1 › failed native withdrawal remains a known failure, not an unknown payout (1.6s)
+  ok 14 tests\browser\app.spec.ts:523:1 › insufficient native balance blocks review before any wallet request (1.1s)
+  ok 15 tests\browser\app.spec.ts:542:1 › new transfer and DAO proposal reviews show the real receiver and exact bond (2.9s)
+  ok 16 tests\browser\app.spec.ts:568:1 › NFT ownership display refreshes after a mocked final transfer receipt (2.2s)
+  ok 17 tests\browser\app.spec.ts:588:1 › known failed payout permits a separately reviewed guarded restoration (1.4s)
+  ok 18 tests\browser\app.spec.ts:673:1 › callback URL errors cannot discard an unresolved intent (1.0s)
+  ok 19 tests\browser\app.spec.ts:711:1 › lender funding supports explicit short expiry terms without a transaction (1.5s)
+
+  19 passed (46.1s)

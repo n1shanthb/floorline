@@ -1,0 +1,70 @@
+
+Running 15 tests using 1 worker
+
+  ok  1 tests\browser\app.spec.ts:192:1 › all six routes render, use real components, and have no overflow at 360, 390 and 1440 (11.0s)
+  ok  2 tests\browser\app.spec.ts:226:1 › mobile bottom navigation works and treasury blocks dilutive issuance (1.2s)
+  ok  3 tests\browser\app.spec.ts:248:1 › RPC failure and wrong network never display historical figures as live (1.7s)
+  ok  4 tests\browser\app.spec.ts:264:1 › activity filters select exact receipt and copy hash; governance is honestly read only (1.4s)
+  ok  5 tests\browser\app.spec.ts:291:1 › wallet dialog traps focus and closes with Escape; no wallet opens automatically (1.1s)
+  ok  6 tests\browser\app.spec.ts:309:1 › replays are user-triggered and reduced-motion friendly (1.3s)
+  ok  7 tests\browser\app.spec.ts:321:1 › connected mocked wallet requires review then explicit approval; no auto-submit (1.4s)
+  ok  8 tests\browser\app.spec.ts:364:1 › NFT transfer requires a valid recipient and explicit loss-of-rights acknowledgement (1.4s)
+  ok  9 tests\browser\app.spec.ts:395:1 › repayment review uses current NFT owner and exact debt; native claim review reserves callback gas (2.0s)
+  ok 10 tests\browser\app.spec.ts:416:1 › overview reads partial tracked claim totals and active NFT ownership (816ms)
+  ok 11 tests\browser\app.spec.ts:432:1 › mocked final confirmation refreshes position and records browser activity (2.0s)
+  ok 12 tests\browser\app.spec.ts:439:1 › wallet rejection clears the pending intent without claiming success (1.4s)
+  ok 13 tests\browser\app.spec.ts:444:1 › failed native withdrawal remains a known failure, not an unknown payout (1.7s)
+  ok 14 tests\browser\app.spec.ts:448:1 › insufficient native balance blocks review before any wallet request (948ms)
+  x  15 tests\browser\app.spec.ts:451:1 › new transfer and DAO proposal reviews show the real receiver and exact bond (45.3s)
+
+
+  1) tests\browser\app.spec.ts:451:1 › new transfer and DAO proposal reviews show the real receiver and exact bond 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.click: Test timeout of 45000ms exceeded.
+    Browser logs:
+
+    <launching> C:/Program Files/Google/Chrome/Application/chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,HttpsUpgrades,HttpsFirstBalancedModeAutoEnable,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,AvoidCorsURLLoaderRestartOnRedirect,TcpPortRandomizationWin,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,PreconnectToSearch,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface,SkipListAccountsWithoutGaiaCookies --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --enable-unsafe-swiftshader --edge-skip-compat-layer-relaunch --disable-stack-profiler --disable-infobars --disable-sync --do-not-de-elevate --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=E:\near-2\.tmp\playwright_chromiumdev_profile-VmU1Rl --remote-debugging-pipe --no-startup-window
+    <launched> pid=4636
+    [pid=4636] <gracefully close start>
+    Call log:
+      - waiting for getByRole('button', { name: 'Review new 0.10 NEAR proposal' })
+        - locator resolved to <button disabled class="button secondary">Review new 0.10 NEAR proposal</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not enabled
+        - retrying click action
+          - waiting 100ms
+        82 × waiting for element to be visible, enabled and stable
+           - element is not enabled
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      451 | test("new transfer and DAO proposal reviews show the real receiver and exact bond",async({page})=>{
+      452 |  await mockedRpc(page,{connected:true});await page.goto("/app/treasury");await page.getByLabel("FLOOR recipient account").fill("recipient.testnet");await page.getByRole("button",{name:"Review FLOOR transfer"}).click();await expect(page.getByRole("dialog")).toContainText("ft_transfer");await expect(page.getByRole("dialog")).toContainText("0.000000000000000000000001 NEAR");await page.getByRole("button",{name:"Close dialog"}).click();
+    > 453 |  await page.goto("/app/governance");await page.getByRole("button",{name:"Review new 0.10 NEAR proposal"}).click();await expect(page.getByRole("dialog")).toContainText(evidence.dao);await expect(page.getByRole("dialog")).toContainText("1 NEAR");expect(await page.evaluate(()=>(window as unknown as {__testSubmissions:unknown[]}).__testSubmissions.length)).toBe(0);
+          |                                                                                                           ^
+      454 | });
+      455 |
+        at E:\near-2\frontend\tests\browser\app.spec.ts:453:107
+
+    Error Context: qa\product-completion\test-results\app-new-transfer-and-DAO-p-a2e9e-eal-receiver-and-exact-bond\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    qa\product-completion\test-results\app-new-transfer-and-DAO-p-a2e9e-eal-receiver-and-exact-bond\trace.zip
+    Usage:
+
+        npx playwright show-trace qa\product-completion\test-results\app-new-transfer-and-DAO-p-a2e9e-eal-receiver-and-exact-bond\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests\browser\app.spec.ts:451:1 › new transfer and DAO proposal reviews show the real receiver and exact bond 
+  14 passed (1.3m)

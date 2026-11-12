@@ -1,0 +1,20 @@
+src/App.tsx 251ms
+src/lib/actions.ts 68ms
+src/lib/rpc.ts 32ms
+src/lib/wallet.ts 14ms
+src/lib/receipt.ts 5ms
+src/lib/journal.ts 5ms
+src/lib/governance-actions.ts 13ms
+src/components/FinancialTools.tsx 13ms
+src/components/GovernanceActions.tsx 15ms
+src/components/RecentTransactions.tsx 15ms
+src/components/Claims.tsx 19ms
+src/pages/Activity.tsx 21ms (unchanged)
+src/pages/Governance.tsx 12ms
+src/pages/Loans.tsx 55ms
+src/pages/Overview.tsx 24ms
+src/pages/Treasury.tsx 26ms
+tests/acceptance.test.ts 25ms
+tests/math.test.ts 27ms
+tests/browser/app.spec.ts 65ms
+product-playwright.config.ts 2ms

@@ -1,0 +1,126 @@
+{
+  "scope": "Built frontend, live read-only RPC, disconnected wallets, desktop/mobile; no signing",
+  "transactions_submitted": 0,
+  "results": [
+    {
+      "name": "landing",
+      "device": "desktop",
+      "route": "/",
+      "screenshot": "qa/product-completion/landing-desktop.png",
+      "heading": "Money with\nmechanics.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "overview",
+      "device": "desktop",
+      "route": "/app",
+      "screenshot": "qa/product-completion/overview-desktop.png",
+      "heading": "Your financial playground.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "treasury",
+      "device": "desktop",
+      "route": "/app/treasury",
+      "screenshot": "qa/product-completion/treasury-desktop.png",
+      "heading": "The treasury.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "loans",
+      "device": "desktop",
+      "route": "/app/loans",
+      "screenshot": "qa/product-completion/loans-desktop.png",
+      "heading": "Loans with a twist.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "governance",
+      "device": "desktop",
+      "route": "/app/governance",
+      "screenshot": "qa/product-completion/governance-desktop.png",
+      "heading": "Decisions that move value.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "activity",
+      "device": "desktop",
+      "route": "/app/activity",
+      "screenshot": "qa/product-completion/activity-desktop.png",
+      "heading": "Receipts, not promises.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "landing",
+      "device": "mobile",
+      "route": "/",
+      "screenshot": "qa/product-completion/landing-mobile.png",
+      "heading": "Money with\nmechanics.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "overview",
+      "device": "mobile",
+      "route": "/app",
+      "screenshot": "qa/product-completion/overview-mobile.png",
+      "heading": "Your financial playground.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "treasury",
+      "device": "mobile",
+      "route": "/app/treasury",
+      "screenshot": "qa/product-completion/treasury-mobile.png",
+      "heading": "The treasury.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "loans",
+      "device": "mobile",
+      "route": "/app/loans",
+      "screenshot": "qa/product-completion/loans-mobile.png",
+      "heading": "Loans with a twist.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "governance",
+      "device": "mobile",
+      "route": "/app/governance",
+      "screenshot": "qa/product-completion/governance-mobile.png",
+      "heading": "Decisions that move value.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    },
+    {
+      "name": "activity",
+      "device": "mobile",
+      "route": "/app/activity",
+      "screenshot": "qa/product-completion/activity-mobile.png",
+      "heading": "Receipts, not promises.",
+      "overflow": false,
+      "runtime_errors": [],
+      "live_error_banners": []
+    }
+  ]
+}
