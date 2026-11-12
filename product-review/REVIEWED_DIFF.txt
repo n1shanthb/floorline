@@ -1,0 +1,582 @@
+diff --git a/frontend/src/App.tsx b/frontend/src/App.tsx
+index 42254a0..0df417d 100644
+--- a/frontend/src/App.tsx
++++ b/frontend/src/App.tsx
+@@ -37,11 +37,15 @@ import {
+   claimById,
+ } from "./lib/rpc";
+ import type { Position, RpcOutcome, Snapshot } from "./lib/rpc";
+-import { CONTRACT, FRESH_MS, txLink } from "./lib/config";
++import { FRESH_MS, txLink } from "./lib/config";
+ import { exact, canonicalId } from "./lib/math";
+ import { validateRequest } from "./lib/actions";
+ import type { ActionRequest } from "./lib/wallet";
++import { receiverFor } from "./lib/wallet";
++import { verifyIntent } from "./lib/receipt";
++import { recordTransaction } from "./lib/journal";
+ import type { TxPhase } from "./lib/transaction";
++import { isExplicitWalletRejection } from "./lib/transaction";
+ import { Brand, External, Modal, Row, Testnet } from "./components/ui";
+ import evidence from "./data/evidence.json";
+ import Landing from "./pages/Landing";
+@@ -195,7 +199,11 @@ export default function App() {
+         ...previous,
+         [kind]: [...new Set([...previous[kind], id])],
+       };
+-      localStorage.setItem("floorline:tracked", JSON.stringify(next));
++      try {
++        localStorage.setItem("floorline:tracked", JSON.stringify(next));
++      } catch {
++        /* Keep this session's confirmed IDs even when browser storage is full. */
++      }
+       return next;
+     });
+   }, []);
+@@ -218,40 +226,21 @@ export default function App() {
+           sender_account_id: pending.signer,
+           wait_until: "FINAL",
+         });
+-        if (
+-          result.transaction?.hash !== pending.hash ||
+-          result.transaction?.signer_id !== pending.signer ||
+-          result.transaction?.receiver_id !== CONTRACT
+-        )
+-          throw new Error(
+-            "Returned transaction identity does not match the reviewed signer and contract.",
+-          );
+-        const actions = result.transaction.actions,
+-          call = actions?.[0]?.FunctionCall;
+-        const canonical = (value: unknown): string =>
+-          JSON.stringify(
+-            value && typeof value === "object" && !Array.isArray(value)
+-              ? Object.fromEntries(
+-                  Object.entries(value).sort(([a], [b]) => a.localeCompare(b)),
+-                )
+-              : value,
+-          );
+-        if (
+-          actions?.length !== 1 ||
+-          !call ||
+-          call.method_name !== pending.request.method ||
+-          call.deposit !== pending.request.deposit ||
+-          canonical(JSON.parse(atob(call.args))) !==
+-            canonical(pending.request.args)
+-        )
+-          throw new Error(
+-            "Transaction action does not match the reviewed method, arguments and deposit. No success is assumed.",
+-          );
++        verifyIntent(result, pending);
+         let status = classifyOutcome(result);
+-        if (pending.request.method === "withdraw_claim") {
++        if (
++          status !== "failed" &&
++          pending.request.method === "withdraw_claim"
++        ) {
+           const c = await claimById(String(pending.request.args.claim_id));
+           if (!c || c.state !== 3) status = "unknown";
+         }
++        recordTransaction(
++          pending.hash,
++          pending.signer,
++          pending.request,
++          status,
++        );
+         if (status === "failed") {
+           setPhase("failed");
+           sessionStorage.removeItem("floorline:pending");
+@@ -318,12 +307,13 @@ export default function App() {
+       const pending = JSON.parse(saved) as Pending;
+       const params = new URLSearchParams(location.search);
+       const returned = params.get("transactionHashes")?.split(",")[0];
+-      if (params.get("errorCode")) {
++      if (!returned && !pending.hash && params.get("errorCode")) {
+         setAction(pending.request);
+-        setPhase("rejected");
+-        setTxError("Wallet declined the request. No success is assumed.");
++        setPhase("unknown");
++        setTxError(
++          "The wallet callback reported an error without a verifiable hash. Inspect wallet activity before resubmitting; URL parameters alone do not prove cancellation.",
++        );
+         setTxOpen(true);
+-        sessionStorage.removeItem("floorline:pending");
+       } else if (returned || pending.hash) {
+         pending.hash = returned || pending.hash;
+         sessionStorage.setItem("floorline:pending", JSON.stringify(pending));
+@@ -346,7 +336,18 @@ export default function App() {
+       return;
+     }
+     if (signing.current) return;
+-    if (sessionStorage.getItem("floorline:pending")) {
++    let unresolved: string | null;
++    try {
++      unresolved = sessionStorage.getItem("floorline:pending");
++    } catch {
++      setTxOpen(true);
++      setPhase("rejected");
++      setTxError(
++        "Session storage is unavailable. Enable it before requesting a wallet transaction so pending intents can be recovered safely.",
++      );
++      return;
++    }
++    if (unresolved) {
+       setTxOpen(true);
+       setPhase("unknown");
+       setTxError(
+@@ -398,7 +399,7 @@ export default function App() {
+     } catch (e) {
+       const message =
+         e instanceof Error ? e.message : "Wallet response unavailable";
+-      if (/reject|cancel|denied|declin/i.test(message)) {
++      if (isExplicitWalletRejection(e)) {
+         setPhase("rejected");
+         sessionStorage.removeItem("floorline:pending");
+       } else
+@@ -564,7 +565,7 @@ export default function App() {
+           {action && (
+             <>
+               <Row label="Contract">
+-                <span className="break">{CONTRACT}</span>
++                <span className="break">{receiverFor(action)}</span>
+               </Row>
+               <Row label="Signer">
+                 <span className="break">
+diff --git a/frontend/src/lib/actions.ts b/frontend/src/lib/actions.ts
+index 3be5407..d1f4c41 100644
+--- a/frontend/src/lib/actions.ts
++++ b/frontend/src/lib/actions.ts
+@@ -1,4 +1,4 @@
+-import { CONTRACT, RECORD_HEADROOM } from "./config";
++import { CONTRACT, DAO, RECORD_HEADROOM } from "./config";
+ import {
+   canonicalId,
+   canRepay,
+@@ -11,6 +11,8 @@ import {
+ import { claimById, loanById, position, rpc, snapshot, view } from "./rpc";
+ import type { Snapshot, StorageBalance } from "./rpc";
+ import type { ActionRequest } from "./wallet";
++import { receiverFor } from "./wallet";
++import { validateGovernance } from "./governance-actions";
+ import { savedProof, verifyOfferProof } from "./offer-proof";
+ export const request = (
+   title: string,
+@@ -24,7 +26,9 @@ export const request = (
+   method,
+   args,
+   deposit,
+-  gas: method === "withdraw_claim" ? "110000000000000" : "30000000000000",
++  gas: ["withdraw_claim", "storage_withdraw"].includes(method)
++    ? "110000000000000"
++    : "30000000000000",
+   details,
+   warning,
+ });
+@@ -42,7 +46,7 @@ export async function validateRequest(
+   if (!validAccount(signer)) throw new Error("Connect a valid testnet wallet.");
+   const state = await snapshot(),
+     l = state.ledger,
+-    p = await position(signer),
++    p = await position(signer, state.blockHash),
+     a = action.args;
+   if (
+     BigInt(state.account.amount) < BigInt(l.local_required) ||
+@@ -63,12 +67,69 @@ export async function validateRequest(
+     "default_loan",
+     "withdraw_claim",
+     "retry_failed_claim",
++    "storage_withdraw",
+   ];
+-  if (!allowed.includes(action.method))
++  const receiver = receiverFor(action);
++  if (
++    receiver === CONTRACT &&
++    ![...allowed, "ft_transfer", "contribute"].includes(action.method)
++  )
+     throw new Error("Unsupported contract action.");
+   const deposit = BigInt(action.deposit);
+-  if (deposit < 0n || deposit > U128_MAX)
++  if (
++    !/^(0|[1-9]\d*)$/.test(action.deposit) ||
++    deposit < 0n ||
++    deposit > U128_MAX
++  )
+     throw new Error("Invalid attached deposit");
++  for (const key of [
++    "amount",
++    "min_out",
++    "min_tokens",
++    "repayment",
++    "collateral",
++  ]) {
++    if (
++      action.method === "storage_withdraw" &&
++      key === "amount" &&
++      a[key] === null
++    )
++      continue;
++    if (
++      key in a &&
++      (typeof a[key] !== "string" ||
++        !/^(0|[1-9]\d*)$/.test(a[key] as string) ||
++        BigInt(a[key] as string) > U128_MAX)
++    )
++      throw new Error(`Invalid canonical U128 ${key}`);
++  }
++  if (
++    receiver === CONTRACT &&
++    action.gas !==
++      (["withdraw_claim", "storage_withdraw"].includes(action.method)
++        ? "110000000000000"
++        : "30000000000000")
++  )
++    throw new Error("Unexpected gas budget");
++  if (receiver === CONTRACT) {
++    const expected = [
++      "ft_transfer",
++      "nft_transfer",
++      "storage_withdraw",
++    ].includes(action.method)
++      ? 1n
++      : [
++            "storage_deposit",
++            "issue",
++            "fund_offer",
++            "repay",
++            "contribute",
++          ].includes(action.method)
++        ? null
++        : 0n;
++    if (expected !== null && deposit !== expected)
++      throw new Error("Wrong attached deposit for this method");
++  }
+   const gasPrice = await rpc<{ gas_price: string }>("gas_price", [null]);
+   // Wallets reserve gas before execution. This is a conservative UI cushion, not a fee quote.
+   const byteCost = BigInt(l.storage_stake) / BigInt(l.storage_usage);
+@@ -81,6 +142,15 @@ export async function validateRequest(
+     throw new Error(
+       "Insufficient spendable testnet NEAR after account storage for deposit plus conservative upfront gas headroom. Keep extra NEAR for wallet gas reservation.",
+     );
++  if (receiver === DAO) {
++    await validateGovernance(action, signer, state);
++    return state;
++  }
++  if (action.method === "contribute") {
++    if (deposit <= 0n || BigInt(l.T) === 0n || BigInt(l.L) + deposit > U128_MAX)
++      throw new Error("Positive contribution to live supply required");
++    return state; // Deployed contribute does not require donor storage registration.
++  }
+   if (action.method === "storage_deposit") {
+     const bounds = await view<{ min: string }>("storage_balance_bounds");
+     if (!p.storage && deposit < BigInt(bounds.min))
+@@ -91,6 +161,23 @@ export async function validateRequest(
+   }
+   if (!p.storage && action.method !== "default_loan")
+     throw new Error("Register storage before this action.");
++  if (action.method === "storage_withdraw") {
++    const n =
++      a.amount === null
++        ? BigInt(p.storage!.available)
++        : BigInt(String(a.amount));
++    if (n <= 0n || n > BigInt(p.storage!.available))
++      throw new Error("Positive unused storage credit required");
++    if (
++      BigInt(l.operational) -
++        BigInt(l.operational_base) -
++        BigInt(l.refund_storage) <
++      RECORD_HEADROOM
++    )
++      throw new Error(
++        "Operational refund headroom too low for this UI's conservative cushion",
++      );
++  }
+   if (
+     needsRecord.has(action.method) &&
+     BigInt(p.storage?.available || "0") < RECORD_HEADROOM
+@@ -124,11 +211,45 @@ export async function validateRequest(
+     if (!issued.allowed || issued.minted < BigInt(String(a.min_tokens)))
+       throw new Error("Issuance would dilute backing or fail minimum output.");
+   }
++  if (action.method === "ft_transfer") {
++    const receiver = String(a.receiver_id),
++      amount = BigInt(String(a.amount));
++    if (
++      !/^[1-9]\d*$/.test(String(a.amount)) ||
++      amount > BigInt(p.balance) ||
++      amount > U128_MAX ||
++      !validAccount(receiver) ||
++      receiver === signer ||
++      receiver === CONTRACT ||
++      (a.memo !== null &&
++        (typeof a.memo !== "string" ||
++          new TextEncoder().encode(a.memo).length > 256))
++    )
++      throw new Error(
++        "Available FLOOR, a distinct registered recipient and bounded memo required",
++      );
++    const registered = await view<StorageBalance | null>(
++      "storage_balance_of",
++      { account_id: receiver },
++      CONTRACT,
++      state.blockHash,
++    );
++    if (!registered)
++      throw new Error(
++        "Recipient must register Floorline storage before transfer.",
++      );
++    await rpc("query", {
++      request_type: "view_account",
++      account_id: receiver,
++      block_id: state.blockHash,
++    });
++  }
+   if (action.method === "fund_offer") {
+     if (
+       deposit <= 0n ||
+       BigInt(String(a.repayment)) < deposit ||
+       BigInt(String(a.collateral)) <= 0n ||
++      typeof a.duration_ns !== "string" ||
+       !canonicalId(String(a.duration_ns)) ||
+       BigInt(String(a.duration_ns)) === 0n
+     )
+@@ -144,8 +265,9 @@ export async function validateRequest(
+     ].includes(action.method)
+   ) {
+     const id = String(a.loan_id ?? a.token_id);
+-    if (!canonicalId(id)) throw new Error("Invalid loan ID");
+-    const loan = await loanById(id);
++    if (typeof (a.loan_id ?? a.token_id) !== "string" || !canonicalId(id))
++      throw new Error("Invalid loan ID");
++    const loan = await loanById(id, state.blockHash);
+     if (!loan) throw new Error("Loan record not found.");
+     if (
+       action.method === "cancel_offer" &&
+@@ -168,11 +290,21 @@ export async function validateRequest(
+       const actual = await verifyOfferProof(loan, proof.hash);
+       if (actual.durationNs !== proof.durationNs)
+         throw new Error("Offer term cache changed. Reverify funding proof.");
++      if (
++        BigInt(state.timestampNs) + BigInt(actual.durationNs) >
++        (1n << 64n) - 1n
++      )
++        throw new Error("Loan expiry would overflow the contract clock.");
+     }
+     if (["repay", "nft_transfer"].includes(action.method)) {
+-      const nft = await view<{ owner_id: string } | null>("nft_token", {
+-        token_id: id,
+-      });
++      const nft = await view<{ owner_id: string } | null>(
++        "nft_token",
++        {
++          token_id: id,
++        },
++        CONTRACT,
++        state.blockHash,
++      );
+       if (!nft || nft.owner_id !== signer)
+         throw new Error(
+           "Current on-chain NFT ownership does not match the signer.",
+@@ -203,7 +335,9 @@ export async function validateRequest(
+         !validAccount(receiver) ||
+         receiver === signer ||
+         receiver === CONTRACT ||
+-        deposit !== 1n
++        deposit !== 1n ||
++        a.approval_id !== null ||
++        a.memo !== null
+       )
+         throw new Error(
+           "Current owner, distinct registered receiver and 1 yocto required.",
+@@ -211,6 +345,8 @@ export async function validateRequest(
+       const registered = await view<StorageBalance | null>(
+         "storage_balance_of",
+         { account_id: receiver },
++        CONTRACT,
++        state.blockHash,
+       );
+       if (!registered)
+         throw new Error(
+@@ -219,13 +355,13 @@ export async function validateRequest(
+       await rpc("query", {
+         request_type: "view_account",
+         account_id: receiver,
+-        finality: "final",
++        block_id: state.blockHash,
+       });
+     }
+   }
+   if (["withdraw_claim", "retry_failed_claim"].includes(action.method)) {
+     if (!canonicalId(String(a.claim_id))) throw new Error("Invalid claim ID");
+-    const claim = await claimById(String(a.claim_id));
++    const claim = await claimById(String(a.claim_id), state.blockHash);
+     if (!claim || claim.owner !== signer)
+       throw new Error("Claim belongs to another account or does not exist.");
+     if (action.method === "withdraw_claim" && claim.state !== 0)
+diff --git a/frontend/src/lib/rpc.ts b/frontend/src/lib/rpc.ts
+index e8e8829..8d55ed9 100644
+--- a/frontend/src/lib/rpc.ts
++++ b/frontend/src/lib/rpc.ts
+@@ -148,6 +148,31 @@ export async function snapshot(): Promise<Snapshot> {
+     throw new Error(
+       "Contract code hash changed. Transactions are blocked pending review.",
+     );
++  const buckets = [
++    "L",
++    "unused_lender",
++    "borrower_claims",
++    "lender_claims",
++    "redemption_claims",
++    "cancellation_claims",
++    "storage_refund_claims",
++    "storage_total",
++    "operational",
++  ];
++  if (
++    buckets.some(
++      (key) =>
++        typeof ledger[key] !== "string" ||
++        !/^(0|[1-9]\d*)$/.test(String(ledger[key])),
++    ) ||
++    buckets.reduce((sum, key) => sum + BigInt(ledger[key]), 0n) !==
++      BigInt(ledger.local_required) ||
++    ledger.account_balance !== account.amount ||
++    BigInt(ledger.locked) > BigInt(ledger.T)
++  )
++    throw new Error(
++      "Inconsistent finalized treasury accounting. Transactions are blocked.",
++    );
+   return {
+     ledger,
+     account,
+@@ -158,34 +183,55 @@ export async function snapshot(): Promise<Snapshot> {
+     chainId: "testnet",
+   };
+ }
+-export async function position(id: string): Promise<Position> {
++export async function position(id: string, block?: string): Promise<Position> {
+   const [balance, storage, native] = await Promise.all([
+-    view<string>("ft_balance_of", { account_id: id }),
+-    view<StorageBalance | null>("storage_balance_of", { account_id: id }),
++    view<string>("ft_balance_of", { account_id: id }, CONTRACT, block),
++    view<StorageBalance | null>(
++      "storage_balance_of",
++      { account_id: id },
++      CONTRACT,
++      block,
++    ),
+     rpc<AccountView>("query", {
+       request_type: "view_account",
+       account_id: id,
+-      finality: "final",
++      ...(block ? { block_id: block } : { finality: "final" }),
+     }),
+   ]);
+   return { balance, storage, native };
+ }
+-export const loanById = async (id: string): Promise<Loan | null> => {
+-  const l = await view<Omit<Loan, "id"> | null>("get_loan", { loan_id: id });
++export const loanById = async (
++  id: string,
++  block?: string,
++): Promise<Loan | null> => {
++  const l = await view<Omit<Loan, "id"> | null>(
++    "get_loan",
++    { loan_id: id },
++    CONTRACT,
++    block,
++  );
+   return l ? { ...l, id } : null;
+ };
+-export const claimById = async (id: string): Promise<Claim | null> => {
+-  const c = await view<Omit<Claim, "id"> | null>("get_claim", { claim_id: id });
++export const claimById = async (
++  id: string,
++  block?: string,
++): Promise<Claim | null> => {
++  const c = await view<Omit<Claim, "id"> | null>(
++    "get_claim",
++    { claim_id: id },
++    CONTRACT,
++    block,
++  );
+   return c ? { ...c, id } : null;
+ };
+-export async function daoState() {
++export async function daoState(proposalId = 0, block?: string) {
+   const [policy, proposal, account] = await Promise.all([
+-    view<DaoPolicy>("get_policy", {}, DAO),
+-    view<DaoProposal>("get_proposal", { id: 0 }, DAO),
++    view<DaoPolicy>("get_policy", {}, DAO, block),
++    view<DaoProposal>("get_proposal", { id: proposalId }, DAO, block),
+     rpc<AccountView>("query", {
+       request_type: "view_account",
+       account_id: DAO,
+-      finality: "final",
++      ...(block ? { block_id: block } : { finality: "final" }),
+     }),
+   ]);
+   if (
+@@ -213,6 +259,7 @@ export interface DaoPolicy {
+     weight_kind: string;
+   };
+   proposal_bond: string;
++  proposal_period?: string;
+ }
+ export interface DaoProposal {
+   id: number;
+@@ -221,12 +268,14 @@ export interface DaoProposal {
+   description: string;
+   votes: Record<string, string>;
+   kind: unknown;
++  submission_time?: string;
+ }
+ export function classifyOutcome(
+   outcome: RpcOutcome,
+ ): "confirmed" | "failed" | "unknown" {
+-  if (outcome.status?.Failure) return "failed";
+   if (outcome.final_execution_status !== "FINAL") return "unknown";
++  if (outcome.status?.Failure) return "failed";
++  if (outcome.transaction_outcome?.outcome.status.Failure) return "unknown";
+   if (outcome.receipts_outcome?.some((r) => r.outcome.status.Failure))
+     return "unknown";
+   if (
+diff --git a/frontend/src/lib/wallet.ts b/frontend/src/lib/wallet.ts
+index 2e42ae0..a439520 100644
+--- a/frontend/src/lib/wallet.ts
++++ b/frontend/src/lib/wallet.ts
+@@ -1,6 +1,6 @@
+ import type { WalletSelector } from "@near-wallet-selector/core";
+ import type { RpcOutcome } from "./rpc";
+-import { CONTRACT, RPC } from "./config";
++import { CONTRACT, DAO, RPC } from "./config";
+ let selectorPromise: Promise<WalletSelector> | undefined;
+ export function getSelector() {
+   selectorPromise ??= Promise.all([
+@@ -24,6 +24,7 @@ export function getSelector() {
+   return selectorPromise;
+ }
+ export interface ActionRequest {
++  receiver?: string;
+   title: string;
+   method: string;
+   args: Record<string, unknown>;
+@@ -32,6 +33,12 @@ export interface ActionRequest {
+   details: string[];
+   warning?: string;
+ }
++export function receiverFor(request: ActionRequest): string {
++  const receiver = request.receiver ?? CONTRACT;
++  if (receiver !== CONTRACT && receiver !== DAO)
++    throw new Error("Unapproved transaction receiver");
++  return receiver;
++}
+ export async function connectWallet() {
+   const s = await getSelector();
+   if (s.options.network.networkId !== "testnet")
+@@ -71,7 +78,7 @@ export async function signRequest(
+     transactions: [
+       {
+         signerId: signer,
+-        receiverId: CONTRACT,
++        receiverId: receiverFor(request),
+         actions: [
+           actionCreators.functionCall(
+             request.method,

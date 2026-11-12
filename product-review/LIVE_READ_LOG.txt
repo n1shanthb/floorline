@@ -1,0 +1,27 @@
+{
+  "result": "READ-ONLY CHECKS PASSED; frontend live-signature acceptance remains unverified",
+  "errors": [],
+  "verified_historical_transactions": 7,
+  "ledger": {
+    "L": "2019000000000000000000000",
+    "T": "1900000000000000000000000",
+    "locked": "0",
+    "unused_lender": "0",
+    "borrower_claims": "0",
+    "lender_claims": "0",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "250000000000000000000000",
+    "operational": "4578910000000000000000003",
+    "inflight": "0",
+    "local_required": "6847910000000000000000003",
+    "operational_base": "4478910000000000000000000",
+    "refund_storage": "0",
+    "unallocated_or_inflight": "1421090000000000000000000",
+    "account_balance": "8269000000000000000000003",
+    "storage_usage": 446338,
+    "storage_stake": "4463380000000000000000000",
+    "tax_bps": 2000
+  }
+}

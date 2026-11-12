@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "baseline_head": "b31b7dc6055727e8549417d92cb4bb96a57a8176",
+  "protected_tracked_files": 262,
+  "changed_protected_files": [],
+  "approved_floor_wasm_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "floorkit_ignored_artifacts_unchanged": {
+    "floorkit.wasm": true,
+    "floorkit-fault.wasm": true,
+    "receiver.wasm": true
+  },
+  "existing_contract_source_evidence_frontend_history_and_floorkit_unchanged": true
+}

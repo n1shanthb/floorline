@@ -1,0 +1,29 @@
+{
+  "typecheck": "PASS",
+  "lint": "PASS",
+  "production_build": "PASS",
+  "unit_tests_passed": 60,
+  "unit_tests_failed": 0,
+  "browser_scenarios_passed": 19,
+  "browser_scenarios_failed": 0,
+  "production_captures": 12,
+  "production_overflow": 0,
+  "production_runtime_errors": 0,
+  "fresh_historical_receipts_verified": 7,
+  "new_signed_testnet_transactions": 0,
+  "private_keys_accessed": false,
+  "mainnet_transactions": 0,
+  "public_deployments": 0,
+  "approved_artifact_byte_reproducible": true,
+  "testnet_verdict": "NOT READY: new wallet-signed acceptance pending",
+  "mainnet_verdict": "NOT READY: independent security and release gates outstanding",
+  "floorkit_deployment_status": "BLOCKED",
+  "dependency_advisories": {
+    "info": 0,
+    "low": 10,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 10
+  }
+}
