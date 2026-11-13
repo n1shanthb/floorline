@@ -1,0 +1,114 @@
+{
+  "status": "PASS_CURRENT_STOP_STATE_NOT_COMPLETE_ACCEPTANCE",
+  "checked_at": "2026-11-13T04:20:06.283Z",
+  "transactions": 9,
+  "final_receipt_success": 8,
+  "failed": 0,
+  "unknown": 1,
+  "checks": [
+    {
+      "name": "alice_transfer",
+      "hash": "DKGqYuW2CyL5HcP691Z69tfnArzchgcj6XocVDVr6veA",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.062631578947368421",
+      "after_ratio": "1.062631578947368421",
+      "native_solvent": true
+    },
+    {
+      "name": "alice_redeem",
+      "hash": "EBLjjvDzMwNVD7u7SdZVxeogMFmcFvUnB8YE6st3VyoZ",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.062631578947368421",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "alice_redemption_withdraw",
+      "hash": "Dwp9LMPTKYm18BZxCf5moTpu9yZ2iwCrFbf81vu3gVMa",
+      "status": "PASS",
+      "child_receipts": 6,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "bob_cancel_offer_fund",
+      "hash": "7Zg8XhKwTe6H4YehKa2nxyJHvvYRwF5NMnAQNwKVKqF8",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "bob_cancel_offer",
+      "hash": "48ZoHn5GY9jgiWqJwXCt43rXMepH1dm4G3mRg59THVAh",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "bob_cancel_withdraw",
+      "hash": "23LP2VQGDZoaX6KK7XUadmDyw3xBFnZZbE9zYYUGY6ZQ",
+      "status": "PASS",
+      "child_receipts": 6,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "bob_repayment_offer",
+      "hash": "7F2QRR8wrS7GBztajeAYcM4wCScfv5QDQfgmwGSPjLpn",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    },
+    {
+      "name": "carol_accept_repayment",
+      "hash": "HBndHyrPwmFDqQ5fnU2hacoYSkz66menqrQXMZB4NJWk",
+      "status": "PASS",
+      "child_receipts": 2,
+      "all_children_success": true,
+      "signer_native_delta_exact": true,
+      "before_ratio": "1.068224376731301939",
+      "after_ratio": "1.068224376731301939",
+      "native_solvent": true
+    }
+  ],
+  "initial_backing": {
+    "L": "2019000000000000000000000",
+    "T": "1900000000000000000000000",
+    "ratio": "1.062631578947368421"
+  },
+  "final_backing": {
+    "L": "1976215096952908587257618",
+    "T": "1850000000000000000000000",
+    "ratio": "1.068224376731301939"
+  },
+  "final_native_surplus_yocto": "1421090000000000000000000",
+  "protected_file_count": 344,
+  "protected_files_changed": [],
+  "private_key_material_exported": false,
+  "CLI_only": true,
+  "browser_signing_verified": false
+}

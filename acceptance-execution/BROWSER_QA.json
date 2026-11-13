@@ -1,0 +1,168 @@
+{
+  "scope": "Actual production frontend + real RPC; clean unauthenticated browser; no wallet signing, no mock data, no journal injection",
+  "checked_at": "2026-11-13T04:17:15.551Z",
+  "baseURL": "http://127.0.0.1:4181",
+  "pages": [
+    {
+      "mode": "desktop",
+      "route": "/",
+      "heading": "Money with\nmechanics.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-0.png",
+      "live_ledger": null
+    },
+    {
+      "mode": "desktop",
+      "route": "/app",
+      "heading": "Your financial playground.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-1.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "desktop",
+      "route": "/app/treasury",
+      "heading": "The treasury.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-2.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "desktop",
+      "route": "/app/loans",
+      "heading": "Loans with a twist.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-3.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "desktop",
+      "route": "/app/governance",
+      "heading": "Decisions that move value.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-4.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "desktop",
+      "route": "/app/activity",
+      "heading": "Receipts, not promises.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/desktop-5.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "mobile",
+      "route": "/",
+      "heading": "Money with\nmechanics.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-0.png",
+      "live_ledger": null
+    },
+    {
+      "mode": "mobile",
+      "route": "/app",
+      "heading": "Your financial playground.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-1.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "mobile",
+      "route": "/app/treasury",
+      "heading": "The treasury.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-2.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "mobile",
+      "route": "/app/loans",
+      "heading": "Loans with a twist.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-3.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "mobile",
+      "route": "/app/governance",
+      "heading": "Decisions that move value.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-4.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    },
+    {
+      "mode": "mobile",
+      "route": "/app/activity",
+      "heading": "Receipts, not promises.",
+      "overflow": false,
+      "screenshot": "acceptance-execution/screenshots/mobile-5.png",
+      "live_ledger": {
+        "L": "1976215096952908587257618",
+        "T": "1850000000000000000000000"
+      }
+    }
+  ],
+  "errors": [],
+  "transactions_submitted": 0,
+  "browser_signing": "BLOCKED_NO_AUTHENTICATED_TESTNET_WALLET",
+  "activity_imported_from_CLI": false,
+  "desktop_treasury": {
+    "L": "1976215096952908587257618",
+    "T": "1850000000000000000000000",
+    "exact_rpc_matches_final": true
+  },
+  "desktop_proposal": {
+    "id": 0,
+    "status": "Approved",
+    "historical": true,
+    "read_through_actual_UI": true
+  },
+  "desktop_activity": "CLI transactions correctly absent from this clean browser journal; historical replay remains separate",
+  "desktop_wallet_dialog": "PASS_DISCONNECTED_CONNECT_DIALOG",
+  "wallet_handoff": {
+    "status": "BLOCKED",
+    "reason": "page.waitForURL: Timeout 25000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"https://testnet.mynearwallet.com/**\" until \"load\"\n============================================================"
+  },
+  "mobile_treasury": {
+    "L": "1976215096952908587257618",
+    "T": "1850000000000000000000000",
+    "exact_rpc_matches_final": true
+  },
+  "mobile_proposal": {
+    "id": 0,
+    "status": "Approved",
+    "historical": true,
+    "read_through_actual_UI": true
+  },
+  "mobile_activity": "CLI transactions correctly absent from this clean browser journal; historical replay remains separate",
+  "mobile_wallet_dialog": "PASS_DISCONNECTED_CONNECT_DIALOG",
+  "result": "PASS_READ_ONLY_UI_ONLY"
+}

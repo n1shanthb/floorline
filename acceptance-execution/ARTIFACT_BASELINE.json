@@ -1,0 +1,6 @@
+{
+  "runtime/artifacts/floorline.wasm": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "floorkit/contract/artifacts/floorkit-fault.wasm": "7f85949eb42def9792bfeaac26ecdb56e64474ebcff206910f941fc9c18650c1",
+  "floorkit/contract/artifacts/floorkit.wasm": "a6f8f0c47f73a3eb7e5c85cc10b2a3b8773af4023ddf598d9d6fc15d91a19f13",
+  "floorkit/contract/artifacts/receiver.wasm": "d56561ca8674f96956eeceee6a610eb2cdd815103945bc15d77d09495d55088b"
+}

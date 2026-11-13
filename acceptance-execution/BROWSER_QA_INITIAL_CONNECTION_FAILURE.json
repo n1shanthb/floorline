@@ -1,0 +1,8 @@
+{
+  "scope": "Initial read-only production QA attempt",
+  "baseURL": "http://127.0.0.1:4176",
+  "result": "BLOCKED_LOCAL_CONNECTION",
+  "observed_error": "page.goto: net::ERR_CONNECTION_TIMED_OUT",
+  "transactions_submitted": 0,
+  "recovered_by": "Fresh local-only production preview on 4181; actual final results in BROWSER_QA.json"
+}

@@ -1,0 +1,212 @@
+{
+  "scope": "Additional gross authorization; refunded capital never resets gross usage. Operator-controlled simulated council.",
+  "checked_at": "2026-11-13T04:20:06.190Z",
+  "additional_cap_yocto": "2100000000000000000000000",
+  "line_items": {
+    "bond": {
+      "used_yocto": "0",
+      "cap_yocto": "1000000000000000000000000"
+    },
+    "principal": {
+      "used_yocto": "70000000000000000000000",
+      "cap_yocto": "90000000000000000000000"
+    },
+    "repayment": {
+      "used_yocto": "0",
+      "cap_yocto": "55000000000000000000000"
+    },
+    "storage": {
+      "used_yocto": "0",
+      "cap_yocto": "150000000000000000000000"
+    },
+    "direct": {
+      "used_yocto": "0",
+      "cap_yocto": "10000000000000000000000"
+    },
+    "dao": {
+      "used_yocto": "0",
+      "cap_yocto": "100000000000000000000000"
+    },
+    "auth": {
+      "used_yocto": "1",
+      "cap_yocto": "100"
+    },
+    "gas": {
+      "used_yocto": "2672387902466700000000",
+      "cap_yocto": "600000000000000000000000"
+    }
+  },
+  "gross_attached_yocto": "70000000000000000000001",
+  "nested_DAO_contribution_yocto": "0",
+  "actual_gas_fee_yocto": "2672387902466700000000",
+  "actual_gas_burnt": "29402069774667",
+  "gross_consumed_yocto": "72672387902466700000001",
+  "gross_consumed_NEAR": "0.072672387902466700000001",
+  "remaining_gross_budget_yocto": "2027327612097533299999999",
+  "remaining_gross_budget_NEAR": "2.027327612097533299999999",
+  "refunded_deposits": {
+    "proposal_bond_yocto": "0",
+    "unused_storage_credit_yocto": "0"
+  },
+  "native_claim_payouts": [
+    {
+      "name": "alice_redemption_withdraw",
+      "claim_id": "10",
+      "amount_yocto": "42784903047091412742382",
+      "owner": "alice.floorline-g3-20261111-6702ea.testnet",
+      "hash": "Dwp9LMPTKYm18BZxCf5moTpu9yZ2iwCrFbf81vu3gVMa"
+    },
+    {
+      "name": "bob_cancel_withdraw",
+      "claim_id": "13",
+      "amount_yocto": "20000000000000000000000",
+      "owner": "bob.floorline-g3-20261111-6702ea.testnet",
+      "hash": "23LP2VQGDZoaX6KK7XUadmDyw3xBFnZZbE9zYYUGY6ZQ"
+    }
+  ],
+  "before_account_balances_yocto": {
+    "alice": "148859621451264399999998",
+    "bob": "229123465856269600000000",
+    "carol": "297444032821613499999999",
+    "dave": "239216550826292900000000",
+    "lender": "308759227025806500000000",
+    "A": "2970430999935719700000000",
+    "B": "499735921191670800000000",
+    "C": "499214187931017500000000",
+    "floor": "8269000000000000000000003",
+    "dao": "5900000000000000000000000"
+  },
+  "final_account_balances_yocto": {
+    "alice": "190615862259132012742379",
+    "bob": "177818091998001400000000",
+    "carol": "297105681016638799999999",
+    "dave": "239216550826292900000000",
+    "lender": "308759227025806500000000",
+    "A": "2970430999935719700000000",
+    "B": "499735921191670800000000",
+    "C": "499214187931017500000000",
+    "floor": "8276215096952908587257622",
+    "dao": "5900000000000000000000000"
+  },
+  "account_deltas_yocto": {
+    "alice": "41756240807867612742381",
+    "bob": "-51305373858268200000000",
+    "carol": "-338351804974700000000",
+    "dave": "0",
+    "lender": "0",
+    "A": "0",
+    "B": "0",
+    "C": "0",
+    "floor": "7215096952908587257619",
+    "dao": "0"
+  },
+  "project_native_conservation": {
+    "before_yocto": "19361784007039654900000000",
+    "after_yocto": "19359111619137188200000000",
+    "net_expenditure_yocto": "2672387902466700000000",
+    "net_expenditure_NEAR": "0.002672387902466700000000",
+    "matches_actual_gas_fee": true,
+    "note": "Includes FLOOR and DAO: contributions and collateralized capital transfers are internal project movements, not burned expenses."
+  },
+  "cumulative_DAO": {
+    "historical": {
+      "gross_attached_yocto": "8000000000000000000000000",
+      "actual_fees_yocto": "30618890941592000000000",
+      "nested_contribution_yocto": "100000000000000000000000",
+      "gross_and_fees_yocto": "8130618890941592000000000",
+      "historical_budget": {
+        "ceiling_yocto": "10000000000000000000000000",
+        "funding_yocto": "10000000000000000000000000",
+        "remaining_council_and_dao_yocto": "9869381109058408000000000",
+        "contribution_yocto": "100000000000000000000000",
+        "fees_and_other_net_cost_yocto": "30618890941592000000000",
+        "council_A_net_outflow_yocto": "7029569000064280300000000",
+        "within_cap": true
+      }
+    },
+    "additional_bond_yocto": "0",
+    "additional_contribution_yocto": "0",
+    "additional_actual_fee_yocto": "0",
+    "conservative_gross_and_fee_total_yocto": "8130618890941592000000000",
+    "remaining_under_10_NEAR_yocto": "1869381109058408000000000",
+    "within_ceiling": true
+  },
+  "upfront_reservations": [
+    {
+      "hash": "DKGqYuW2CyL5HcP691Z69tfnArzchgcj6XocVDVr6veA",
+      "signer": "alice.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "1",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "148859621451264399999998"
+    },
+    {
+      "hash": "EBLjjvDzMwNVD7u7SdZVxeogMFmcFvUnB8YE6st3VyoZ",
+      "signer": "alice.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "148610155497201899999997"
+    },
+    {
+      "hash": "Dwp9LMPTKYm18BZxCf5moTpu9yZ2iwCrFbf81vu3gVMa",
+      "signer": "alice.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "142000000000000000000000",
+      "available_native_yocto": "148322173891794899999997"
+    },
+    {
+      "hash": "7Zg8XhKwTe6H4YehKa2nxyJHvvYRwF5NMnAQNwKVKqF8",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "20000000000000000000000",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "229123465856269600000000"
+    },
+    {
+      "hash": "48ZoHn5GY9jgiWqJwXCt43rXMepH1dm4G3mRg59THVAh",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "208866521680146100000000"
+    },
+    {
+      "hash": "23LP2VQGDZoaX6KK7XUadmDyw3xBFnZZbE9zYYUGY6ZQ",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "142000000000000000000000",
+      "available_native_yocto": "208566047776473900000000"
+    },
+    {
+      "hash": "7F2QRR8wrS7GBztajeAYcM4wCScfv5QDQfgmwGSPjLpn",
+      "signer": "bob.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "50000000000000000000000",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "228075050580914800000000"
+    },
+    {
+      "hash": "HBndHyrPwmFDqQ5fnU2hacoYSkz66menqrQXMZB4NJWk",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "46000000000000000000000",
+      "available_native_yocto": "297444032821613499999999"
+    },
+    {
+      "hash": "3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "attached_yocto": "0",
+      "reserved_headroom_yocto": "142000000000000000000000",
+      "available_native_yocto": "297105681016638799999999"
+    }
+  ],
+  "refunds_do_not_replenish_authorization": true,
+  "unresolved_transactions": [
+    {
+      "hash": "3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG",
+      "status": "UNKNOWN_BROADCAST_NOT_LOCATED",
+      "actual_fee_yocto": null,
+      "reserved_headroom_yocto": "142000000000000000000000"
+    }
+  ],
+  "unresolved_gas_reservation_yocto": "142000000000000000000000",
+  "remaining_after_unresolved_reservation_yocto": "1885327612097533299999999",
+  "final_costs_complete": false,
+  "cost_scope": "Observed finalized costs as of stop snapshot; unresolved hash cost unknown, conservatively reserved separately"
+}
