@@ -1,0 +1,11 @@
+// Positive controls for advertised archival RPCs; status-only, never broadcasts.
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const p='acceptance-execution/UNKNOWN_TX_RPC_EVIDENCE.json',e=JSON.parse(fs.readFileSync(p));
+const controls=[];
+await Promise.allSettled(['https://archival-rpc.testnet.near.org','https://archival-rpc.testnet.fastnear.com'].map(async endpoint=>{const row={endpoint,query_at:new Date().toISOString(),purpose:'Historical positive control, NOT the unresolved transaction',method:'EXPERIMENTAL_tx_status',params:{tx_hash:'6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy',sender_account_id:'alice.floorline-g3-20261111-6702ea.testnet',wait_until:'FINAL'}};controls.push(row);try{const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'phase2a-historical-control',method:row.method,params:row.params}),signal:AbortSignal.timeout(18000)});row.http_status=r.status;row.response=await r.json();const v=row.response.result;row.control_verified=!!v&&v.transaction.hash===row.params.tx_hash&&v.final_execution_status==='FINAL'&&!v.status.Failure&&v.receipts_outcome.every(x=>!x.outcome.status.Failure);}catch(x){row.transport_error={name:x.name,message:x.message};row.control_verified=false;}row.completed_at=new Date().toISOString();}));
+e.archival_positive_controls=controls;e.completed_at=new Date().toISOString();fs.writeFileSync(p,JSON.stringify(e,null,2)+'\n');
+const s=JSON.parse(fs.readFileSync('acceptance-execution/UNKNOWN_TX_STATE_RECONCILIATION.json'));assert.deepEqual(JSON.parse(Buffer.from(s.independent_confirmation.claim_raw.result)),s.claim16);assert.equal(String(s.independent_confirmation.access_key_raw.nonce),String(s.carol_access_key.nonce));
+s.assessment.same_finalized_block_independent_claim_and_nonce_match=true;s.archival_controls=controls.map(x=>({endpoint:x.endpoint,control_verified:x.control_verified}));
+assert(!e.queries.some(q=>q.params?.tx_hash===e.hash&&q.response?.result?.final_execution_status==='FINAL'),'Actual target final receipt found; manually reconcile before classification');
+fs.writeFileSync('acceptance-execution/UNKNOWN_TX_STATE_RECONCILIATION.json',JSON.stringify(s,null,2)+'\n');console.log(JSON.stringify(s.archival_controls));

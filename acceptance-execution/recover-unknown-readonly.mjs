@@ -1,0 +1,64 @@
+// Phase 2A: strictly public READ-ONLY RPC and offline unsigned-payload hashing.
+// No signer, keystore, wallet, secret file, signature generation or broadcast.
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {createRequire} from 'node:module';
+import {execFileSync} from 'node:child_process';
+const require=createRequire(path.resolve('runtime/package.json'));
+const {createTransaction,encodeTransaction,actionCreators}=require('@near-js/transactions');
+const {PublicKey}=require('@near-js/crypto');
+const {baseEncode,baseDecode}=require('@near-js/utils');
+const read=p=>JSON.parse(fs.readFileSync(p));
+const j=read('TESTNET_ACCEPTANCE_TRANSACTIONS.json'),budget=read('TESTNET_ACCEPTANCE_BUDGET.json'),t=j.transactions.at(-1);
+const HASH='3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG',F=t.receiver,C=t.signer,D='floorline-g3-20261111-6702ea.sputnikv2.testnet';
+assert.equal(t.hash,HASH);
+const tracked=execFileSync('git',['ls-files','-z'],{encoding:'utf8'}).split('\0').filter(Boolean);
+const sha=p=>createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+const baseline=Object.fromEntries(tracked.map(p=>[p,sha(p)]));
+const artifacts=read('acceptance-execution/ARTIFACT_BASELINE.json');
+const output='acceptance-execution/UNKNOWN_TX_RPC_EVIDENCE.json';
+const evidence={scope:'Phase 2A READ ONLY; zero signatures, broadcasts, secret-key access or financial transactions',started_at:new Date().toISOString(),hash:HASH,signer:C,queries:[],sources:['https://docs.near.org/api/rpc/transactions','https://docs.near.org/api/rpc/providers','https://nomicon.io/architecture/how/tx_routing.html']};
+const allowed=new Set(['status','block','query','tx','tx_status','EXPERIMENTAL_tx_status','EXPERIMENTAL_protocol_config','EXPERIMENTAL_genesis_config']);
+const save=()=>fs.writeFileSync(output,JSON.stringify(evidence,null,2)+'\n');
+async function rpc(endpoint,method,params,timeout=13000){assert(allowed.has(method),'Forbidden non-read RPC');const row={endpoint,query_at:new Date().toISOString(),method,params};evidence.queries.push(row);try{const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'phase2a-public-read-only',method,params}),signal:AbortSignal.timeout(timeout)});row.http_status=r.status;const body=await r.text();try{row.response=JSON.parse(body);}catch{row.raw_non_json_body=body;}row.completed_at=new Date().toISOString();save();return row.response?.result;}catch(e){row.transport_error={name:e.name,message:e.message};row.completed_at=new Date().toISOString();save();return null;}}
+const providers=[{name:'NEAR public',endpoint:'https://rpc.testnet.near.org',archive:false},{name:'FastNear public',endpoint:'https://test.rpc.fastnear.com',archive:false},{name:'dRPC independent public',endpoint:'https://near-testnet.drpc.org',archive:false},{name:'NEAR archival',endpoint:'https://archival-rpc.testnet.near.org',archive:true},{name:'FastNear archival',endpoint:'https://archival-rpc.testnet.fastnear.com',archive:true}];
+const originalPublicKey=j.preflight.roles.carol.signing_access.public_key;
+// Candidate nonce comes from last confirmed transaction by that exact public key.
+// A full hash match validates the reconstruction; this does not recreate a signature.
+const previous=j.transactions.find(x=>x.name==='carol_accept_repayment').outcome.transaction;
+const nonce=BigInt(previous.nonce)+1n;
+const unsigned=createTransaction(C,PublicKey.fromString(originalPublicKey),F,nonce,[actionCreators.functionCall(t.method,Buffer.from(JSON.stringify(t.args)),BigInt(t.gas_limit),BigInt(t.deposit))],baseDecode(t.before.block.hash));
+const unsignedBytes=encodeTransaction(unsigned),computed=baseEncode(createHash('sha256').update(unsignedBytes).digest());
+const local={raw_signed_payload_retained:false,signature_retained:false,signature_recreated:false,hash_derivation:'base58(SHA256(Borsh unsigned Transaction)); installed @near-js/transactions sign.js uses this before signing',unsigned_payload_bytes:unsignedBytes.length,unsigned_payload_base64:Buffer.from(unsignedBytes).toString('base64'),reconstructed_hash:computed,hash_matches:computed===HASH,public_key:originalPublicKey,nonce:nonce.toString(),nonce_source:'last confirmed Carol public-key nonce + 1; verified by full unsigned-payload hash match',reference_block_hash:t.before.block.hash,reference_block_height:t.before.block.height,reference_timestamp_ns:t.before.block.timestamp_nanosec,signer:C,receiver:F,method:t.method,args:t.args,deposit:t.deposit,gas:t.gas_limit,original_broadcast_error:t.broadcast_response,original_broadcast_timestamp:null,timestamp_limitation:'No exact broadcast timestamp was stored. Reference block time is not broadcast time.',raw_signature_limitations:['Cannot independently verify the original signature or exact signed wire bytes','Unsigned hash match binds public transaction fields, not a retained signature or RPC acceptance']};
+assert(local.hash_matches,'Public payload reconstruction did not match; do not infer nonce/reference');
+evidence.local=local;save();
+await Promise.allSettled(providers.map(async p=>{p.status=await rpc(p.endpoint,'status',[]);p.chain_id=p.status?.chain_id??null;if(p.chain_id!=='testnet'){p.limitation='Testnet status unavailable; no further queries to unverified network';return;}for(const [method,wait] of [['tx','NONE'],['EXPERIMENTAL_tx_status','FINAL'],['tx_status','FINAL']])await rpc(p.endpoint,method,{tx_hash:HASH,sender_account_id:C,wait_until:wait});}));
+evidence.providers=providers;save();
+console.log('Provider status checks complete; querying finalized state');
+const p=providers.find(p=>p.name==='dRPC independent public'&&p.chain_id==='testnet')??providers.find(p=>p.chain_id==='testnet');assert(p,'No verified testnet RPC available');
+const endpoint=p.endpoint,block=await rpc(endpoint,'block',{finality:'final'});assert(block?.header);
+const h=block.header.hash;
+async function query(account_id,request_type,extra={}){return rpc(endpoint,'query',{request_type,account_id,block_id:h,...extra});}
+async function view(account_id,method_name,args={}){const v=await query(account_id,'call_function',{method_name,args_base64:Buffer.from(JSON.stringify(args)).toString('base64')});assert(v?.result,`Missing ${method_name}`);return JSON.parse(Buffer.from(v.result));}
+const state={scope:'New authoritative Phase 2A recovery snapshot, original evidence preserved',captured_at:new Date().toISOString(),endpoint,block:block.header,local_evidence:local,account:await query(F,'view_account'),ledger:await view(F,'accounting'),claim16:await view(F,'get_claim',{claim_id:'16'}),loan15:await view(F,'get_loan',{loan_id:'15'}),nft15:await view(F,'nft_token',{token_id:'15'}),carol_native:await query(C,'view_account'),carol_access_key:await query(C,'view_access_key',{public_key:originalPublicKey}),floor_access_keys:await query(F,'view_access_key_list'),carol_access_keys:await query(C,'view_access_key_list'),dao_account:await query(D,'view_account'),dao_policy:await view(D,'get_policy'),dao_access_keys:await query(D,'view_access_key_list'),holder_balances:{}};
+for(const [role,old] of Object.entries(j.preflight.roles))state.holder_balances[role]=await view(F,'ft_balance_of',{account_id:old.account_id});
+state.protocol_config=await rpc(endpoint,'EXPERIMENTAL_protocol_config',{block_id:h});
+state.reference_block=await rpc(endpoint,'block',{block_id:local.reference_block_hash});
+state.reference_key_query=await rpc(endpoint,'query',{request_type:'view_access_key',account_id:C,public_key:originalPublicKey,block_id:local.reference_block_hash});
+// Independent state confirmation pinned to exactly the same finalized hash.
+const independent=providers.find(x=>x.chain_id==='testnet'&&x.endpoint!==endpoint&&!x.archive);assert(independent);
+state.independent_confirmation={endpoint:independent.endpoint,block_hash:h,claim_raw:await rpc(independent.endpoint,'query',{request_type:'call_function',account_id:F,method_name:'get_claim',args_base64:Buffer.from(JSON.stringify({claim_id:'16'})).toString('base64'),block_id:h}),access_key_raw:await rpc(independent.endpoint,'query',{request_type:'view_access_key',account_id:C,public_key:originalPublicKey,block_id:h})};
+const B=BigInt,l=state.ledger,sum=xs=>xs.reduce((a,v)=>a+B(v),0n),partition=sum(['L','unused_lender','borrower_claims','lender_claims','redemption_claims','cancellation_claims','storage_refund_claims','storage_total','operational'].map(k=>l[k]));
+assert.equal(state.account.code_hash,j.preflight.account.code_hash);assert.equal(state.dao_account.code_hash,j.preflight.daoAccount.code_hash);assert.deepEqual(state.dao_policy,j.preflight.policy);assert.equal(partition,B(l.local_required));assert(B(state.account.amount)>=partition);assert(B(l.storage_total)+B(l.operational)>=B(l.storage_stake));assert.equal(sum(Object.values(state.holder_balances))+B(l.locked),B(l.T));
+const period=state.protocol_config?.transaction_validity_period??null,delta=state.block.height-local.reference_block_height;
+state.assessment={classification:'STILL_UNKNOWN',fresh_withdrawal_safe_to_consider:'UNPROVEN',reason:'No finalized receipt chain yet established; negative node/indexer lookups cannot prove nonexecution.',original_nonce:local.nonce,finalized_nonce:String(state.carol_access_key?.nonce),nonce_currently_blocks_original:state.carol_access_key?B(state.carol_access_key.nonce)>=nonce:null,transaction_validity_period_blocks:period,reference_block_age_heights:delta,reference_expired_by_height:period===null?null:delta>period,reference_is_canonical:state.reference_block?.header.hash===local.reference_block_hash,claim_state_name:['Available','InFlight','KnownTransferFailure','Paid'][state.claim16.state]??'Unknown ABI value',claim_attempt:state.claim16.attempt,native_solvent:true,storage_covered:true,supply_partition_matches:true,local_surplus_yocto:(B(state.account.amount)-partition).toString(),floor_native_change_since_original_preflight_yocto:(B(state.account.amount)-B(t.before.account.amount)).toString(),carol_native_change_since_original_preflight_yocto:(B(state.carol_native.amount)-B(t.before.roles.carol.native.amount)).toString(),loan_before_expiry:B(state.block.timestamp_nanosec)<B(state.loan15.expiry),loan_state_name:['Funded','Active','Repaid','Defaulted','Cancelled'][state.loan15.state],repayment_available_by_state:state.loan15.state===1&&state.loan15.pending===0&&B(state.block.timestamp_nanosec)<B(state.loan15.expiry),remaining_before_expiry_ns:(B(state.loan15.expiry)-B(state.block.timestamp_nanosec)).toString(),expiry_ns:state.loan15.expiry};
+const confirmed=j.transactions.filter(t=>t.status==='PASS');const fees=sum(confirmed.flatMap(t=>[t.outcome.transaction_outcome,...t.outcome.receipts_outcome].map(r=>r.outcome.tokens_burnt))),attached=sum(confirmed.map(t=>t.deposit));
+assert.equal((fees+attached).toString(),budget.gross_consumed_yocto);
+state.budget={confirmed_receipts:confirmed.length,confirmed_gas_fee_yocto:fees.toString(),confirmed_attached_yocto:attached.toString(),observed_gross_yocto:(fees+attached).toString(),unknown_fee_yocto:null,reservation_retained_yocto:budget.unresolved_gas_reservation_yocto,remaining_after_reservation_yocto:budget.remaining_after_unresolved_reservation_yocto,adjustment_yocto:'0',cumulative_DAO:budget.cumulative_DAO,refunds_do_not_reset_gross:true};
+state.integrity={baseline_head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),tracked_files_checked:tracked.length,changed_original_files:tracked.filter(p=>sha(p)!==baseline[p]),approved_artifacts:Object.fromEntries(Object.entries(artifacts).map(([p,v])=>[p,{sha256:sha(p),unchanged:sha(p)===v}])),dao_policy_unchanged:true,network:'testnet',financial_transactions:0,signatures:0,key_material_accessed:false,contract_redeployments:0,keys_changed:0};
+assert.equal(state.integrity.changed_original_files.length,0);assert(Object.values(state.integrity.approved_artifacts).every(x=>x.unchanged));
+state.limitations=['No raw original signature/wire bytes retained; unsigned public fields cryptographically match the recorded hash','Exact original broadcast timestamp absent','No complete claim event index or full chain history scan; status queries record archival availability/limitations','Common-block pinned principal state; provider health, protocol/reference and status calls have their individual timestamps in RPC evidence','No cryptographic light-client proof of RPC responses; independent provider comparison is recorded'];
+evidence.completed_at=new Date().toISOString();save();fs.writeFileSync('acceptance-execution/UNKNOWN_TX_STATE_RECONCILIATION.json',JSON.stringify(state,null,2)+'\n');
+console.log(JSON.stringify({providers:providers.map(p=>({name:p.name,chain:p.chain_id})),local_hash_match:local.hash_matches,assessment:state.assessment,integrity:state.integrity},null,2));
