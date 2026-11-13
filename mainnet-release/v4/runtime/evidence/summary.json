@@ -1,0 +1,12 @@
+{
+  "network": "LOCAL_SANDBOX_ONLY",
+  "tests": 31,
+  "failures": [],
+  "evidence_entries": 237,
+  "normal_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "normal_code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+  "fault_sha256": "4e1f731200d4555fbed310580ad7c4c1477cc4839163d02d805d9a4c2460cf31",
+  "receipt_count": 455.0,
+  "source_base": "2e896ad",
+  "new_financial_candidate": false
+}
