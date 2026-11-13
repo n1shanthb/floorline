@@ -74,6 +74,7 @@ struct Refund {
 #[near(contract_state)]
 #[derive(PanicOnDefault)]
 pub struct Contract {
+    admission_count: u32,
     tax: u16,
     weight_num: u128,
     weight_den: u128,
@@ -139,6 +140,7 @@ impl Contract {
             "invalid config"
         );
         let mut s = Self {
+            admission_count: 0,
             tax: tax_bps,
             weight_num: issuance_numerator.0,
             weight_den: issuance_denominator.0,
@@ -148,7 +150,7 @@ impl Contract {
             unused: 0,
             claims_cash: [0; 5],
             storage_total: 0,
-            // Protect code/state and 0.1 NEAR temporary-refund headroom. Excess
+            // Protect code/state and 128 prepaid 512-byte exit slots. Excess
             // deployment cash is unallocated, not a fixed liability: a retained
             // full-access key can spend transaction gas from that excess.
             operational: plus(
@@ -157,7 +159,7 @@ impl Contract {
                         .checked_add(4096)
                         .expect("storage overflow"),
                 ),
-                100_000_000_000_000_000_000_000,
+                bytes_cost(128 * 512),
             ),
             operational_base: bytes_cost(
                 env::storage_usage()
@@ -187,6 +189,9 @@ impl Contract {
     }
     pub fn accounting(&self) -> Value {
         json!({"L":U128(self.l),"T":U128(self.t),"locked":U128(self.locked),"unused_lender":U128(self.unused),"borrower_claims":U128(self.claims_cash[0]),"lender_claims":U128(self.claims_cash[1]),"redemption_claims":U128(self.claims_cash[2]),"cancellation_claims":U128(self.claims_cash[3]),"storage_refund_claims":U128(self.claims_cash[4]),"storage_total":U128(self.storage_total),"operational":U128(self.operational),"inflight":U128(self.inflight),"local_required":U128(self.required()),"operational_base":U128(self.operational_base),"refund_storage":U128(self.refund_storage),"unallocated_or_inflight":U128(env::account_balance().as_yoctonear().saturating_sub(self.required())),"account_balance":env::account_balance().as_yoctonear().to_string(),"storage_usage":env::storage_usage(),"storage_stake":U128(bytes_cost(env::storage_usage())),"tax_bps":self.tax})
+    }
+    pub fn admission_status(&self) -> Value {
+        json!({"occupied":self.admission_count,"capacity":128,"exit_bytes_per_slot":512,"exit_reserve":U128(bytes_cost(128*512))})
     }
     pub fn user_state(&self, account_id: AccountId) -> Option<Value> {
         self.users.get(&account_id).map(|u|json!({"tokens":U128(u.tokens),"storage_total":U128(u.total),"storage_used":U128(u.used),"refs":u.refs,"refund":U128(u.refund),"refund_state":u.refund_state}))
@@ -230,13 +235,22 @@ impl Contract {
             let mut u = self.users.get(&id).unwrap_or_else(Self::empty_user);
             assert_ne!(u.refund_state, 3, "unregistration pending");
             if !exists {
+                assert!(self.admission_count < 128, "admission capacity exhausted");
+                self.admission_count = self
+                    .admission_count
+                    .checked_add(1)
+                    .expect("admission overflow");
                 assert!(
                     deposit >= self.min_storage,
                     "insufficient registration deposit"
                 );
                 let before = env::storage_usage();
                 self.users.insert(&id, &u);
-                u.base = plus(bytes_cost(env::storage_usage() - before), bytes_cost(256));
+                assert!(
+                    bytes_cost(env::storage_usage() - before) <= bytes_cost(256),
+                    "user exceeds reserved byte bound"
+                );
+                u.base = self.min_storage;
                 u.used = u.base;
             }
             let retained = if registration_only.unwrap_or(false) {
@@ -258,6 +272,7 @@ impl Contract {
     pub fn storage_balance_of(&self, account_id: AccountId) -> Option<Value> {
         self.users
             .get(&account_id)
+            .filter(|u| u.refund_state != 3)
             .map(|u| json!({"total":U128(u.total),"available":U128(minus(u.total,u.used))}))
     }
     #[payable]
@@ -284,6 +299,9 @@ impl Contract {
         let Some(u) = self.users.get(&who) else {
             return false;
         };
+        if u.refund_state == 3 {
+            return false;
+        }
         let _ = force;
         assert!(
             u.tokens == 0 && u.refs == 0 && u.used == u.base && u.refund_state == 0,
@@ -299,7 +317,9 @@ impl Contract {
     #[private]
     pub fn storage_refund_result(&mut self, refund_id: U64) {
         assert_eq!(env::promise_results_count(), 1);
-        let mut r = self.refunds.get(&refund_id.0).expect("stale refund");
+        let Some(mut r) = self.refunds.get(&refund_id.0) else {
+            return;
+        };
         if r.state != 1 {
             return;
         }
@@ -310,6 +330,10 @@ impl Contract {
             if let Some(mut u) = self.users.get(&r.receiver) {
                 if u.refund_state == 3 {
                     self.users.remove(&r.receiver);
+                    self.admission_count = self
+                        .admission_count
+                        .checked_sub(1)
+                        .expect("admission underflow");
                 } else {
                     u.refund = 0;
                     u.refund_state = 0;
@@ -698,10 +722,16 @@ impl Contract {
             return;
         };
         Self::gas();
-        let mut user = self
-            .users
-            .get(&receiver)
-            .expect("refund receiver must register first");
+        let mut user = self.users.get(&receiver).unwrap_or_else(|| {
+            assert!(self.admission_count < 128, "admission capacity exhausted");
+            self.admission_count = self
+                .admission_count
+                .checked_add(1)
+                .expect("admission overflow");
+            let mut u = Self::empty_user();
+            u.refund_state = 3;
+            u
+        });
         assert_eq!(user.refund, 0, "one pending refund per user");
         user.refund = n;
         if user.refund_state != 3 {
@@ -764,6 +794,13 @@ impl Contract {
         assert!(
             env::prepaid_gas().as_gas() >= Gas::from_tgas(110).as_gas(),
             "attach at least 110 Tgas"
+        );
+        assert!(
+            env::prepaid_gas()
+                .as_gas()
+                .saturating_sub(env::used_gas().as_gas())
+                >= Gas::from_tgas(100).as_gas(),
+            "insufficient remaining gas for receipt envelope"
         );
     }
     fn id(&mut self) -> u64 {

@@ -8,6 +8,8 @@ const print=console.log.bind(console);
 console.log=(...args)=>{if(typeof args[0]==='string'&&(args[0].startsWith('PASS')||args[0].startsWith('{')))print(...args);};
 console.warn=(...args)=>{if(!String(args[0]).startsWith('Retrying transaction'))print(...args);};
 const ROOT=path.resolve(import.meta.dirname,'..');
+const OUT=process.env.EVIDENCE_DIR??path.join(ROOT,'runtime/evidence');
+const NORMAL=process.env.NORMAL_WASM??path.join(ROOT,'runtime/artifacts/floorline.wasm');
 const N=10n**24n,GAS=300n*10n**12n;
 const evidence=[];let tests=0,failed=[];
 const store=new keyStores.InMemoryKeyStore();
@@ -34,9 +36,9 @@ async function measure(name,a,to,method,args={},deposit=0n,expectedFailure=false
  let timestamp=null;if(['repay','default_loan'].includes(method)){const exec=r.receipts_outcome.find(x=>x.outcome.executor_id===floor.accountId);if(exec){const block=await near.connection.provider.block({blockId:exec.block_hash});timestamp=block.header.timestamp_nanosec;if(!expectedFailure){if(method==='repay')assert(BigInt(timestamp)<BigInt(loan.expiry));else assert(BigInt(timestamp)>=BigInt(loan.expiry));}}}
  evidence.push({name,method,args,expected_failure:expectedFailure,final_status:r.status,execution_timestamp_ns:timestamp,transaction_hash:r.transaction.hash,receipt_failures:f,gas_total:gasUsed.toString(),receipts:r.receipts_outcome.map(x=>({id:x.id,block_hash:x.block_hash,executor:x.outcome.executor_id,gas:x.outcome.gas_burnt,status:x.outcome.status,logs:x.outcome.logs})),before:{account:before,ledger:ledgerBefore},after:{account:after,ledger,token_balances:balances,related_loan:loan},storage_delta:after.storage_usage-before.storage_usage});return {r,value:result(r),ledger,storage_delta:after.storage_usage-before.storage_usage};}
 async function test(name,fn){try{await fn();tests++;console.log(`PASS ${name}`);}catch(e){failed.push({name,error:e.stack});console.error(`FAIL ${name}: ${e.stack}`);throw e;}finally{save();}}
-function save(){fs.mkdirSync(path.join(ROOT,'runtime/evidence'),{recursive:true});const wasm=fs.readFileSync(path.join(ROOT,'runtime/artifacts/floorline.wasm'));fs.writeFileSync(path.join(ROOT,'runtime/evidence/runtime.json'),JSON.stringify({network:'LOCAL_SANDBOX_ONLY',sandbox:'2.14.0',production_wasm_sha256:createHash('sha256').update(wasm).digest('hex'),runTag,tests,failed,accounts:keys?Object.keys(keys):[],evidence},null,2));}
+function save(){fs.mkdirSync(OUT,{recursive:true});const wasm=fs.readFileSync(NORMAL);fs.writeFileSync(path.join(OUT,'runtime.json'),JSON.stringify({network:'LOCAL_SANDBOX_ONLY',sandbox:'2.14.0',production_wasm_sha256:createHash('sha256').update(wasm).digest('hex'),runTag,tests,failed,accounts:keys?Object.keys(keys):[],evidence},null,2));}
 const alice=await account('alice'),bob=await account('bob'),carol=await account('carol'),dave=await account('dave'),lender=await account('lender'),dao=await account('dao');
-floor=await account('floor',20n*N);await floor.deployContract(fs.readFileSync(path.join(ROOT,'runtime/artifacts/floorline.wasm')));
+floor=await account('floor',20n*N);await floor.deployContract(fs.readFileSync(NORMAL));
 let init=await tx(root,floor,'new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1'});assert(!init.status.Failure,JSON.stringify(init.status));
 const actors=[alice,bob,carol,dave,lender,dao];
 for(const a of actors)await measure('register_'+a.accountId,a,floor,'storage_deposit',{account_id:null,registration_only:false},N);

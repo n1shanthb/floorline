@@ -86,7 +86,7 @@ await test('Failed native payout remains funded and safely retries after real fa
  await measure('retry_real_failed_claim',alice,vanish,'act',act('retry_failed_claim',{claim_id:cid}));await measure('withdraw_retried_claim',alice,vanish,'act',act('withdraw_claim',{claim_id:cid}));assert.equal((await view(floor,'get_claim',{claim_id:cid})).state,3);
 });
 await test('Callback gas failure never unlocks an unknown native payout',async()=>{
- const fault=await account('fault',20n*N);await fault.deployContract(fs.readFileSync(path.join(ROOT,'runtime/artifacts/floorline-fault.wasm')));await tx(root,fault,'new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1'});
+ const fault=await account('fault',20n*N);await fault.deployContract(fs.readFileSync(process.env.FAULT_WASM??path.join(ROOT,'runtime/artifacts/floorline-fault.wasm')));await tx(root,fault,'new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1'});
  await tx(alice,fault,'storage_deposit',{account_id:null,registration_only:false},N);await tx(alice,fault,'issue',{min_tokens:'0'},N);
  const cid=result(await tx(alice,fault,'redeem',{amount:(N/10n).toString(),min_out:'1'}));const r=await tx(alice,fault,'withdraw_claim',{claim_id:cid});assert(failures(r).length>0);const c=await view(fault,'get_claim',{claim_id:cid});assert.equal(c.state,1);
  const retry=await tx(alice,fault,'retry_failed_claim',{claim_id:cid});assert(retry.status.Failure);assert((await tx(alice,fault,'withdraw_claim',{claim_id:cid})).status.Failure);
