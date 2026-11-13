@@ -1,0 +1,39 @@
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "chain_id": "test-chain-SabJV",
+    "genesis_hash": "AhbHf3DabqWeMC9N6uZz8h8nMr4c94ffhhYFB6TEyRsW",
+    "latest_protocol_version": 88,
+    "node_key": "ed25519:56XfMfTCPL2aVFUcxUfLgP5ckMqztH6pUi2A8nZwpXqi",
+    "node_public_key": "ed25519:HPX4tAzq9BL4SKw8hK94r7MiiG3x3KdLsN6f6aiqrwDy",
+    "protocol_version": 88,
+    "rpc_addr": "0.0.0.0:3030",
+    "sync_info": {
+      "earliest_block_hash": "4Z3Jk6wrfnKBt3KLtactddtSA1WDi3pwvVMVudcNhVdM",
+      "earliest_block_height": 60484,
+      "earliest_block_time": "2026-11-13T16:15:09.220891418Z",
+      "epoch_id": "81D2MVAaaFtx9BRtosh1FLTH8ZuFcr46U6e1yVCRBgCq",
+      "epoch_start_height": 60724,
+      "latest_block_hash": "BBtsDqFJtmmPF2sxdLuNHDjbrPV48ZkMfuiZCbMipVWa",
+      "latest_block_height": 60728,
+      "latest_block_time": "2026-11-13T16:15:47.210991865Z",
+      "latest_state_root": "DgKmFyDiqNqdTfRHEKb3zvZZdmQUgYKANDdihff461YJ",
+      "syncing": false
+    },
+    "uptime_sec": 1655,
+    "validator_account_id": "test.near",
+    "validator_public_key": "ed25519:56XfMfTCPL2aVFUcxUfLgP5ckMqztH6pUi2A8nZwpXqi",
+    "validators": [
+      {
+        "account_id": "test.near"
+      }
+    ],
+    "version": {
+      "build": "2.14.0",
+      "commit": "bc4e9e8cfb03d9e82f027883055624e18576993e",
+      "rustc_version": "1.95.0",
+      "version": "2.14.0"
+    }
+  },
+  "id": "readonly"
+}

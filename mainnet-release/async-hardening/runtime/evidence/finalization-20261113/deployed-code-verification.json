@@ -1,0 +1,40 @@
+[
+  {
+    "mode": "new",
+    "account": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacmwf5sc5p.test.near",
+    "expected_code_hash": "Ezf1VMLreU7LJxdjvKkB5JESK2TTt1f36pMVwktufARq",
+    "raw": {
+      "jsonrpc": "2.0",
+      "result": {
+        "amount": "10996745657608153200000129",
+        "block_hash": "2Zb1sEymuB6L9ndAgWnCFuTduoEM3Sm8hRoMBFsbe7YF",
+        "block_height": 61476,
+        "code_hash": "Ezf1VMLreU7LJxdjvKkB5JESK2TTt1f36pMVwktufARq",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 493782
+      },
+      "id": "readonly"
+    },
+    "match": true
+  },
+  {
+    "mode": "normal",
+    "account": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacmwf5vzo8.test.near",
+    "expected_code_hash": "C1r5oPTPu2uVjn8JfHamqohnhpezUQQezuJJZkp5qV1w",
+    "raw": {
+      "jsonrpc": "2.0",
+      "result": {
+        "amount": "10996745700439719000000129",
+        "block_hash": "8hEVvBDSbGrkyfDRW79TaLjoJGzgDYdPdqF6eacm9Pff",
+        "block_height": 61477,
+        "code_hash": "C1r5oPTPu2uVjn8JfHamqohnhpezUQQezuJJZkp5qV1w",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 448208
+      },
+      "id": "readonly"
+    },
+    "match": true
+  }
+]

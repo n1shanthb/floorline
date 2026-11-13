@@ -1,0 +1,36 @@
+   Compiling autocfg v1.5.1
+   Compiling crunchy v0.2.4
+   Compiling zmij v1.0.23
+   Compiling serde_core v1.0.229
+   Compiling byteorder v1.5.0
+   Compiling serde_json v1.0.154
+   Compiling hex v0.4.3
+   Compiling static_assertions v1.1.0
+   Compiling num-traits v0.2.19
+   Compiling num-bigint v0.3.3
+   Compiling uint v0.9.5
+   Compiling floorline-kill-test v0.1.0 (E:\near-2-mainnet-review\mainnet-release\async-hardening)
+   Compiling num-integer v0.1.47
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.98s
+     Running tests\economic_parity.rs (mainnet-release\async-hardening\target\debug\deps\economic_parity-1b111007dff3b055.exe)
+
+running 16 tests
+test issuance_after_increase_has_no_bypass ... ok
+test dispatch_failure_refund_retry_and_double_withdrawal ... ok
+test cancellation_and_acceptance_are_exclusive ... ok
+test carol_to_dave_repayment ... ok
+test configuration_authority_and_timestamp_overflow ... ok
+test storage_exhaustion_rolls_back_every_cash_and_token_move ... ok
+test bootstrap_and_full_exit ... ok
+test storage_refunds_and_operational_funds_are_segregated ... ok
+test exact_curve_rounds_once_and_maximum_values ... ok
+test overlapping_redemptions_and_payouts_do_not_reuse_backing ... ok
+test locked_tokens_and_default_boundary ... ok
+test unresolved_nft_call_freezes_settlement_and_stale_callbacks ... ok
+test zero_tokens_dust_and_minimum_outputs ... ok
+test zero_supply_nonzero_backing_unreachable ... ok
+test wide_curve_against_independent_bigint_10000_cases ... ok
+test redesigned_10000_sequences ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 42.12s
+

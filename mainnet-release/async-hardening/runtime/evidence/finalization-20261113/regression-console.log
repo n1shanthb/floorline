@@ -1,0 +1,85 @@
+PASS A: native issuance matches reference
+PASS FT transfers and locked-supply setup
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:657:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"}}}}
+PASS B: redemption and actual native payout
+PASS D: lender funding is not backing
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:522:9:\nassertion `left == right` failed\n  left: 1\n right: 0"}}}}
+PASS E: Carol locks FLOOR, receives funded claim and NFT
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:636:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwf5t1q4.test.near\")\n right: AccountId(\"davemwf5t1q4.test.near\")"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:926:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:926:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+PASS F/G: actual NFT transfer then Dave repays
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:926:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:926:9:\nassertion `left == right` failed: loan not active\n  left: 3\n right: 1"}}}}
+PASS H: separate default credits lender once
+PASS I: DAO-style contract contribution changes real backing
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:375:9:\ndilutive issuance"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method redeem doesn't accept deposit"}}}}
+PASS C: dilutive issuance rejected; unexpected deposits rejected
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:863:9:\nassertion `left != right` failed: use loan acceptance\n  left: AccountId(\"floormwf5t1q4.test.near\")\n right: AccountId(\"floormwf5t1q4.test.near\")"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Requires attached deposit of exactly 1 yoctoNEAR"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:647:9:\nnot expired"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:103:22:\ninsufficient balance"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:862:9:\nassertion `left != right` failed: escrow protected\n  left: AccountId(\"floormwf5t1q4.test.near\")\n right: AccountId(\"floormwf5t1q4.test.near\")"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:794:9:\nattach at least 110 Tgas"}}}}
+PASS One-yocto protection, escrow custody, canonical NFTs and expiry guards
+PASS J: FT receiver accept
+PASS J: FT receiver reject
+PASS J: FT receiver malformed
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:42:24:\nreceiver panic"}}}}
+PASS J: FT receiver panic
+PASS J: FT receiver forward
+PASS J: FT refund never takes collateral locked inside receiver
+PASS J: NFT receiver accept
+PASS J: NFT receiver reject
+PASS J: NFT receiver malformed
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\lib.rs:79:24:\nreceiver panic"}}}}
+PASS J: NFT receiver panic
+PASS J: NFT receiver forward
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:927:9:\nassertion `left == right` failed: NFT transfer pending\n  left: 1\n right: 0"}}}}
+PASS J: NFT receiver repay
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+PASS J: NFT receiver exhaust
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:927:9:\nassertion `left == right` failed: NFT transfer pending\n  left: 1\n right: 0"}}}}
+PASS NFT default is blocked while transfer resolution is pending
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method ft_resolve_transfer is private"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method nft_resolve_transfer is private"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: Method claim_result is private"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:673:9:\nassertion `left == right` failed\n  left: 0\n right: 1"}}}}
+PASS Private resolvers reject forged, duplicate and stale direct calls
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:814:9:\ninsufficient prepaid storage"}}}}
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:306:9:\nlive funds or rights; force cannot destroy them"}}}}
+PASS Measured storage shortage, refunds, unregister and cleanup
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:656:9:\nassertion `left == right` failed: not claim owner\n  left: AccountId(\"davemwf5t1q4.test.near\")\n right: AccountId(\"bobmwf5t1q4.test.near\")"}}}}
+PASS Concurrent funded claims and wrong owner cannot redirect payout
+	Failure [vanishmwf5t1q4.test.near]: Error: Can't complete the action because account vanishmwf5t1q4.test.near doesn't exist
+PASS Failed native payout remains funded and safely retries after real failure
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:690:9:\nassertion `left == right` failed: not a confirmed transfer failure\n  left: 1\n right: 2"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:657:9:\nassertion `left == right` failed: claim not available\n  left: 1\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+	Failure [faultmwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:735:9:\nassertion `left == right` failed: one pending refund per user\n  left: 10000000000000000000000\n right: 0"}}}}
+PASS Callback gas failure never unlocks an unknown native payout
+	Failure [floormwf5t1q4.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:794:9:\nattach at least 110 Tgas"}}}}
+PASS Minimum supported gas and preflight before payout dispatch
+PASS Ordinary gas stays bounded after growing persistent history
+PASS Growing users, active/closed loans and native claims stay bounded
+{"tests":32,"failed":0,"financialReceipts":240}

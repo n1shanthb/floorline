@@ -1,0 +1,22 @@
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:AWFL53zqXD9RH5hx2xVu3MJPxnMkhSsiyAFfmZuuzzT2 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near:DLQL3GZr4L9KegCwTsSE3dGKQSExfyBjPafvA4rmKcLd with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf5zrgy.test.near:9othCQndqL6UkQQkfrfi31p7PhmEctjcEwzj3TpKoxMu with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf5zrgy.test.near:6TLaBiddypmgpwTFAYYVNkGawzoHhqvt7uTNvDZxX2HA with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:Ej3WiDTQBRYKxv1w4CcskTVegmQPukDzU2N6ukSm9fe8 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:FuFf1mndARZcaqpggt1947E82aWzLPkxvtw9CRJvqdy6 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:9hRyJ2wZsfBJTih3SZARjhBvDvY6JeMnnvAekNVKEeEy with new nonce.
+Receipt: 92W5eZkXf1bn7D3nTb47T4vL74GiUbv43mBfbtSN3rFU
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:FsjjWHT7JTyxoYGHWngstkRu9BRHeGZ7uiLuNffit7G7 with new nonce.
+Receipts: 5qUCPU9kffZ5PiBDiGyEgd2Nh1xDLmpwrGUGi3B6Aarz, 4SfzRiCLeKHKL6YtM2YTLXuvaS24qS2DdhcZc2iR9e4X, 9kxZC73DpY6Ggd9ZQZ5vKNeFgXcd7C8vKCmSHjyo314D
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf5zrgy.test.near","amount":"1"}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:2FZZGFmSXocj4MEuDX7aL3Q5J2tuqo9LmM8vHqnE5H62 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:8qxeG4xpa1Akk5KjkzpPHLACLCDbUeMvSyjpBiPSscES with new nonce.
+Receipt: 5z7JfHVSmMY1Uq1FHiG5oUANZYMqSkjWLdxTXxjGC3Eg
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near","amount":"1"}]}
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_mint","data":[{"owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near","token_ids":["1"]}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:J5jkBCtoeH6TtgKNt2VYCThdsZaWetwgcxatHCqThF3c with new nonce.
+Receipts: GkaRe2kormaQv3tBKnG1nmiHtBarouW3cmPWARZmA2Gv, CdhhaDQrTpmXVvgY9CAJyirR7MwtQbicigfijDwVWp7Y, 2QxAV8J6FTjp9oV1guRhVvfPagW8raLeWMpauSfv6zqR
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf5zrgy.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf5zrgy.test.near","token_ids":["1"]}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf5zrgy.test.near:3pTeUh8b6YrCnpQ9kA2RH9khxDJJ9rpcq8ZemBGMUMP4 with new nonce.
+PASS 110 Tgas: maximum account/memo/msg FT and NFT resolver envelopes
