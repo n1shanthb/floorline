@@ -1,0 +1,30 @@
+{
+  "network": "LOCAL_ONLY",
+  "public_network_transactions": 0,
+  "source_commit": "6ee055e4afde448d0b05bc557a1036825827a6c6",
+  "rust": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "commands": [
+    "cargo test --offline --locked",
+    "cargo build --offline --locked --release --target wasm32-unknown-unknown --features contract"
+  ],
+  "host_tests": {
+    "gate1_passed": 16,
+    "runtime_reference_passed": 1,
+    "failed": 0,
+    "randomized_sequences": 10000
+  },
+  "wasm": {
+    "bytes": 443613,
+    "sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+    "near_code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+    "byte_for_byte_match": true
+  },
+  "historical_sandbox_evidence_reused_without_modification": {
+    "scenario_groups": 31,
+    "measured_invocations": 234,
+    "receipt_outcomes": 455,
+    "source": "runtime/evidence/summary.json"
+  },
+  "note": "The runtime-reference test generated a transient change to its tracked evidence file; that generated change was discarded so historical evidence remains byte-identical to HEAD."
+}
+

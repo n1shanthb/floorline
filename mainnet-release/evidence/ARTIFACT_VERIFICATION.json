@@ -1,0 +1,17 @@
+{
+  "generated_at_utc": "2026-11-13T07:20:14.3007408Z",
+  "source_commit": "6ee055e4afde448d0b05bc557a1036825827a6c6",
+  "rust": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo_lock_version": "4",
+  "near_sdk_version": "5.30.1",
+  "command": "cargo build --offline --locked --release --target wasm32-unknown-unknown --features contract (RUSTFLAGS=--cfg near)",
+  "approved_path": "E:\\near-2\\runtime\\artifacts\\floorline.wasm",
+  "approved_size": 443613,
+  "approved_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "rebuilt_size": 443613,
+  "rebuilt_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "expected_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "expected_near_code_hash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+  "byte_for_byte_match": true,
+  "release_check_passed": true
+}

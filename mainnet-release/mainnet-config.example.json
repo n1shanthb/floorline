@@ -1,0 +1,17 @@
+{
+  "networkId": "mainnet",
+  "rpcUrl": "https://rpc.mainnet.near.org",
+  "walletUrl": "https://wallet.near.org",
+  "explorerUrl": "https://nearblocks.io",
+  "contractAccountId": "REPLACE_WITH_NEW_MAINNET_ACCOUNT",
+  "expectedWasmSha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "expectedNearCodeHash": "6ZMSujAT2DTyxVNkGBqh4pcg8roYzNDeM8hHxXTXhgv9",
+  "initialization": {
+    "tax_bps": 2000,
+    "issuance_numerator": "1",
+    "issuance_denominator": "1"
+  },
+  "pilotExposureYoctoNear": "0",
+  "releaseDecision": "NO_GO"
+}
+
