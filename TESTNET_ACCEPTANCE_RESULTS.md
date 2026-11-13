@@ -1,147 +1,59 @@
-# Testnet acceptance results
+# Authorized testnet acceptance — stopped safely
 
-**TESTNET NOT READY for complete frontend-signed acceptance.**
-**MAINNET NOT READY.** Prepared acceptance cases remain unsigned.
+Checked 2026-11-13T04:20:06.362Z.
 
-## Completed work
+**TESTNET NOT READY. MAINNET NOT READY. FloorKit BLOCKED.**
 
-Audited existing frontend routes/components, deployed Rust adapter, engine/API
-boundaries, tests, wallet selector, RPC configuration, offer proofs, asynchronous
-claims, Sputnik policy and original evidence. Retained the current design.
-Added existing-method FLOOR transfer, explicit contribution, unused storage
-withdrawal and real reviewed Sputnik proposal/approval controls. Added a browser
-transaction log separate from historical replay and explicit short offer terms
-for controlled default tests. No new contract capability or factory was invented.
+Nine signed broadcast attempts: **8 actual on-chain final successes, 0 confirmed failures, 1 unresolved/unlocated attempt**. The ninth is NOT a confirmed on-chain transaction. Its broadcast response was JSON-RPC -429; two independent RPCs returned UNKNOWN_TRANSACTION. These are not execution receipts and do not prove the signed transaction can never execute. No re-sign/rebroadcast occurred. All financial execution stopped.
 
-Financial preflight pins account/loan/claim reads to one finalized block, validates
-deposits/canonical amounts/gas and exact receipts, checks reserve partition and
-eligibility, bounds expiry arithmetic and rejects changed DAO code/policy.
-Reconciliation refreshes balances/loan/NFT/proposal views; unknowns never auto-retry.
-Root withdrawal failure is preserved as failed; nonfinal failures stay unknown.
-Finalized known payout failure permits a separate, balance-guarded restoration;
-it is not trapped behind the lost-callback quarantine. No payout is retried
-automatically and no failure alone creates spendable credit.
-Generic RPC rejection and untrusted callback URL errors cannot discard pending
-intents. Explicit wallet cancellation remains separate from uncertain submission.
+## Planned cases
 
-## Checks actually executed
+- A: BLOCKED browser wallet connection/signing; CLI identity/access and eight actual final receipt chains verified. No authenticated browser session available. CLI is not browser acceptance.
+- B: SKIPPED unnecessary storage registration/top-ups; all financial actors already registered with sufficient credit. No registration write submitted.
+- C: PASS READ-ONLY issuance gate: L>T; no positive 1:1 issuance attempt, treasury reset or workaround.
+- D: PASS CLI Alice→Dave 0.01 FLOOR transfer; exact balances and unchanged L/T.
+- E: PASS CLI Alice redemption, 0.05 FLOOR burned. Quote 42784903047091412742382 yoctoNEAR; 50-bps minimum 42570978531855955678670. Claim 10 paid through actual native transfer and successful callback.
+- F: PASS CLI Bob funds 0.02 NEAR offer #12, cancels and withdraws claim #13; actual native return verified.
+- G: BLOCKED (funding/acceptance substeps PASS): Bob funded loan #15, 0.05 principal/0.055 debt/0.10 FLOOR collateral/24-hour term. Carol accepted and owns NFT #15 and borrower claim #16. Principal withdrawal broadcast unresolved. NFT transfer to Dave, repayment and Bob's lender withdrawal NOT submitted.
+- H: BLOCKED by stop-on-unknown: new 120-second default workflow NOT submitted.
+- I: BLOCKED by stop-on-unknown: new direct 0.01 NEAR contribution NOT submitted.
+- J: BLOCKED by stop-on-unknown: NO new Sputnik proposal, votes or contribution. Existing historical proposal #0 is not substituted for new acceptance. Council remains operator-controlled simulated council.
+- K: BLOCKED/SKIPPED: unused storage withdrawal must occur last; NOT submitted.
 
-- TypeScript, ESLint and production build: PASS.
-- Unit tests: **60 passed, 0 failed**. Includes the existing
-  10,000 integer curve cases, admission, DAO constraints and intent matching.
-- Browser tests: **19 passed, 0 failed** using isolated mocked
-  wallet/RPC adapters. All six routes at 360/390/1440 widths, keyboard modal,
-  disconnected/wrong-network/RPC errors, insufficient funds, exact repayment,
-  wallet rejection, unknown/failed outcomes, proposal/transfer review, short term
-  review, post-receipt balances/NFT updates and forged callback errors tested.
-  These synthetic receipts are NOT public-chain transactions.
-- Production browser: **12 live-read-only desktop/mobile captures**, no runtime
-  exceptions or horizontal overflow. Anonymous wallets; no authentication/signing.
-  Images in `frontend/qa/product-completion/`; layout padding was corrected after
-  visual inspection. This is Chromium responsive QA, not physical-device proof.
-- Public testnet recheck: finalized chain/network/code/accounting, quote parity,
-  known loans/claims/NFT state, complete DAO policy, public key listings and seven
-  original successful transactions verified. Fresh source data:
-  `product-review/LIVE_TESTNET_READS.json`.
-- Isolated offline Rust rebuild: byte-for-byte match to approved FLOOR WASM;
-  original artifact unchanged. No deployed contract was modified/redeployed.
-- Dependency audit: **10 low, 0 moderate/high/critical** current registry findings.
-  No dependency update or unsafe forced fix. Existing upstream direct-eval/browser
-  polyfill warnings remain in build logs; no audit/CSP certification is claimed.
+Known-invalid old-owner/double/expired writes were SKIPPED. No deposits were spent on known-invalid calls. Prior historical/mock negative evidence is separate from this run.
 
-Early browser runs failed because the test wallet mock lacked the new receiver
-helper and the mock returned FLOOR's code hash for the DAO. Logs were retained
-as `initial-mock-failure.txt` and `second-mock-failure.txt`; final fixtures were
-corrected and the full suite rerun. These are resolved test-fixture failures,
-not fabricated successful live acceptance.
+## Actual hashes
 
-## Actual public-chain transaction evidence
+- PASS: alice_transfer: [DKGqYuW2CyL5HcP691Z69tfnArzchgcj6XocVDVr6veA](https://testnet.nearblocks.io/txns/DKGqYuW2CyL5HcP691Z69tfnArzchgcj6XocVDVr6veA)
+- PASS: alice_redeem: [EBLjjvDzMwNVD7u7SdZVxeogMFmcFvUnB8YE6st3VyoZ](https://testnet.nearblocks.io/txns/EBLjjvDzMwNVD7u7SdZVxeogMFmcFvUnB8YE6st3VyoZ)
+- PASS: alice_redemption_withdraw: [Dwp9LMPTKYm18BZxCf5moTpu9yZ2iwCrFbf81vu3gVMa](https://testnet.nearblocks.io/txns/Dwp9LMPTKYm18BZxCf5moTpu9yZ2iwCrFbf81vu3gVMa)
+- PASS: bob_cancel_offer_fund: [7Zg8XhKwTe6H4YehKa2nxyJHvvYRwF5NMnAQNwKVKqF8](https://testnet.nearblocks.io/txns/7Zg8XhKwTe6H4YehKa2nxyJHvvYRwF5NMnAQNwKVKqF8)
+- PASS: bob_cancel_offer: [48ZoHn5GY9jgiWqJwXCt43rXMepH1dm4G3mRg59THVAh](https://testnet.nearblocks.io/txns/48ZoHn5GY9jgiWqJwXCt43rXMepH1dm4G3mRg59THVAh)
+- PASS: bob_cancel_withdraw: [23LP2VQGDZoaX6KK7XUadmDyw3xBFnZZbE9zYYUGY6ZQ](https://testnet.nearblocks.io/txns/23LP2VQGDZoaX6KK7XUadmDyw3xBFnZZbE9zYYUGY6ZQ)
+- PASS: bob_repayment_offer: [7F2QRR8wrS7GBztajeAYcM4wCScfv5QDQfgmwGSPjLpn](https://testnet.nearblocks.io/txns/7F2QRR8wrS7GBztajeAYcM4wCScfv5QDQfgmwGSPjLpn)
+- PASS: carol_accept_repayment: [HBndHyrPwmFDqQ5fnU2hacoYSkz66menqrQXMZB4NJWk](https://testnet.nearblocks.io/txns/HBndHyrPwmFDqQ5fnU2hacoYSkz66menqrQXMZB4NJWk)
+- UNKNOWN_BROADCAST_NOT_LOCATED: carol_repayment_principal: [3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG](https://testnet.nearblocks.io/txns/3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG)
 
-The following are **historical hashes freshly rechecked**, not newly submitted
-through this frontend. FINAL, signer/receiver identity and all receipts succeeded:
+Raw receipts, callbacks, exact intentions, gas/deposits, balances and before/after finalized accounting for the eight successes are in TESTNET_ACCEPTANCE_TRANSACTIONS.json. The unresolved attempt has a broadcast error, read-only recovery evidence and stop snapshot, not a fabricated receipt.
 
-- `issue-alice`: [6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy](https://testnet.nearblocks.io/txns/6TfeGDTc5YyPPXtKb1QbBd2XFsUHB2Wsx3eaTFaX8cHy) — VERIFIED FINAL SUCCESS.
-- `redeem-bob`: [2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ](https://testnet.nearblocks.io/txns/2YHTdYdgBtFfKuHXP1TAn2R7bpZ5fwkAiJdGNp2qQMLZ) — VERIFIED FINAL SUCCESS.
-- `nft-transfer`: [6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV](https://testnet.nearblocks.io/txns/6kqBcUHPeT5TSFqjxLjq3AihsziHAWqUyVHjQFCmA9NV) — VERIFIED FINAL SUCCESS.
-- `loan-repaid`: [5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M](https://testnet.nearblocks.io/txns/5j1o8NzzTkNHHtjNuXGGRLHH9khwdZjURijicyps811M) — VERIFIED FINAL SUCCESS.
-- `loan-default`: [5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD](https://testnet.nearblocks.io/txns/5FVQb4KG8eTubJd8p5FaFBoBfCqoRPefBcA3qHCm8jfD) — VERIFIED FINAL SUCCESS.
-- `dao-vote-b`: [EMbAnPE9AmweA8NvN2hn5pYS5kFuTE1RcxMPVwBb4Nmz](https://testnet.nearblocks.io/txns/EMbAnPE9AmweA8NvN2hn5pYS5kFuTE1RcxMPVwBb4Nmz) — VERIFIED FINAL SUCCESS.
-- `dao-vote-c`: [hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg](https://testnet.nearblocks.io/txns/hYYs7XFQATZyNF3DVE97dr7yVCdfJDFmjb5B3mRBicg) — VERIFIED FINAL SUCCESS.
+## Outstanding rights and recovery
 
-Explorer URLs are canonical transaction links. RPC evidence was verified; no
-claim that every explorer HTML page was independently rendered is made.
-New signed testnet transactions: **0**. Mainnet transactions: **0**.
+Carol currently owns NFT #15; **0.10 FLOOR remains locked**. Borrower claim #16 is Available for **0.05 NEAR** at finalized block 277459635; inflight is zero, and no principal debit is observed in that snapshot. The signer nonce is also unchanged from the pre-broadcast view. These observations do not authorize retrying an uncertain payout. Loan expiry **2026-11-14T04:04:11.656Z**, exact 1794629051656944385 ns. Bob remains the immutable lender; default transfers collateral under the existing rules. No automated repayment/default/follow-up was scheduled.
 
-At the recorded finalized block, L=`2019000000000000000000000`, T=`1900000000000000000000000`,
-A=`8269000000000000000000003`, required=`6847910000000000000000003` yocto units.
-Available claims, locked collateral and inflight amounts were zero. Native cash
-covers the reported partition; storage/operations cover recorded stake. Ratio
-2019/1900 is backing, not a guaranteed redemption price. Current positive fixed
-1:1 issuance is correctly blocked, not silently repriced or labeled completed.
+Resolve the SAME hash 3RXga1bVXnDbSmyABAZL7Lkekseg6ohnYvvLmXiZ8GDG read-only through healthy RPCs and inspect every child receipt. Check claim #16, Carol's nonce/native balance, NFT #15 owner and finalized expiry. Do not clear the journal, re-sign or resubmit merely because a node returns UNKNOWN_TRANSACTION. Require a definitive outcome/nonexecution assessment before deciding another action. If final success is found, verify Paid and exact native debit. If failure is found, distinguish rollback from failed native transfer or unresolved callback. Do not replay the whole plan.
 
-## Remaining acceptance and security limits
+## Exact accounting and costs
 
-No actual wallet authentication, user signature, new public receipt or physical
-device acceptance was performed. New transfer/contribution/storage and Sputnik
-controls remain IMPLEMENTED BUT UNVERIFIED with real signatures. Current proposal
-#0 is already Approved. Fresh borrowing needs existing-holder collateral because
-issuance is gated. Follow TESTNET_ACCEPTANCE_PLAN.md with actual role-wallet
-operators, the approved funding ceiling, fresh IDs and full receipt reconciliation.
+Initial L=2.019000000000000000000000, T=1.900000000000000000000000, backing ratio 1.062631578947368421. Current STOP snapshot L=1.976215096952908587257618, T=1.850000000000000000000000, ratio 1.068224376731301939 NEAR/FLOOR. Exact integer numerator/denominator amounts are authoritative. This is liquid treasury backing, not a market-price or untaxed redemption guarantee.
 
-Discovery is partial; no global live indexer, unregister/cleanup or generic
-transfer-call UI is claimed. Unknown native/storage outcomes can strand rights;
-no unsafe automatic recovery was added. Hosting/publication was not authorized
-or performed. Independent mainnet security, custody, exposure, monitoring and
-network release gates remain outstanding; FLOOR still has one full-access key.
-DAO council remains operator-controlled simulated council, not independent humans.
+All eight completed operations passed reserve partition, native solvency, storage coverage, known-holder/locked supply partition and nondecreasing positive-supply backing checks. Stop native balance 8.276215096952908587257622, required 6.855125096952908587257622, surplus 1.421090000000000000000000 NEAR. Borrower claims 0.05 NEAR and locked collateral 0.10 FLOOR remain accounted for. Inflight/refund storage/pending NFT callbacks are zero at stop.
 
-FloorKit remains BLOCKED. No FloorKit file or integration was changed. Its
-availability redesign requires separate independent economic/runtime gates.
+Observed gross authorization cost **0.072672387902466700000001 NEAR**: attachments 0.070000000000000000000001, actual final receipt fees 0.002672387902466700000000. Observed project-wide net expenditure, including FLOOR/DAO balances, **0.002672387902466700000000 NEAR**, exactly known fees; capital remains project balances. Unresolved attempt gas is unknown; reserve 0.142000000000000000000000 NEAR conservatively. Observed remaining 2.027327612097533299999999 NEAR; after unresolved reservation 1.885327612097533299999999 NEAR. Refunds never reset gross authorization. No new DAO spend: historical conservative gross+contribution+fees remains 8.130618890941592 NEAR under 10. Detailed per-account deltas, payouts and upfront reserves: TESTNET_ACCEPTANCE_BUDGET.json.
 
-## Files and integrity
+## Verification and integrity
 
-All **262 protected tracked files** retain baseline hashes, including original
-contract source/lockfiles, historical evidence, previous frontend QA/public replay
-and all tracked FloorKit files. Approved ignored FLOOR WASM and all three ignored
-FloorKit artifacts also match their recorded hashes. See INTEGRITY_RESULTS.json.
+Typecheck, lint, all 60 unit tests and production build PASS. Read-only production browser QA: PASS_READ_ONLY_UI_ONLY; see TESTNET_ACCEPTANCE_BROWSER_QA.md. Authenticated signing, wallet rejection/redirect recovery and intermediate role-specific receipt refresh remain unverified. No CLI hashes were injected into browser history.
 
-Approved FLOOR SHA-256: `529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6`.
+344 protected pre-existing tracked files match SHA-256. Approved FLOOR normal WASM and three FloorKit artifacts unchanged. No contract/DAO redeploy, policy change, new accounts/keys, key deletion, mainnet action, FloorKit modification or historical-evidence alteration. The authorized SDK consumed existing local testnet signing facilities; private keys were not manually inspected, exported or logged.
 
-Source/test/report changes (generated QA and read-only/build audit files are
-additionally enumerated in `product-review/FINAL_CHECKS.json`):
-
-- `frontend/src/App.tsx`
-- `frontend/src/components/Claims.tsx`
-- `frontend/src/components/FinancialTools.tsx`
-- `frontend/src/components/GovernanceActions.tsx`
-- `frontend/src/components/RecentTransactions.tsx`
-- `frontend/src/lib/actions.ts`
-- `frontend/src/lib/governance-actions.ts`
-- `frontend/src/lib/journal.ts`
-- `frontend/src/lib/receipt.ts`
-- `frontend/src/lib/rpc.ts`
-- `frontend/src/lib/transaction.ts`
-- `frontend/src/lib/wallet.ts`
-- `frontend/src/pages/Activity.tsx`
-- `frontend/src/pages/Governance.tsx`
-- `frontend/src/pages/Loans.tsx`
-- `frontend/src/pages/Overview.tsx`
-- `frontend/src/pages/Treasury.tsx`
-- `frontend/src/styles.css`
-- `frontend/tests/acceptance.test.ts`
-- `frontend/tests/browser/app.spec.ts`
-- `frontend/tests/math.test.ts`
-- `FRONTEND_FEATURE_MATRIX.md`
-- `MAINNET_READINESS.md`
-- `RELEASE_BLOCKERS.md`
-- `TESTNET_ACCEPTANCE_PLAN.md`
-- `TESTNET_ACCEPTANCE_RESULTS.md`
-- `frontend/product-playwright.config.ts`
-
-## Next actions
-
-Obtain explicit wallet-led acceptance authorization and owner participation;
-recheck balances/budget, run the plan's real cases and attach actual final hashes
-and UI refresh evidence. Resolve every skipped/unknown/failed case before marking
-TESTNET READY. Separately complete MAINNET_READINESS.md; do not deploy mainnet
-or change the approved contract to make a review pass.
+The exact prior acceptance result is archived in acceptance-execution/PREVIOUS_ACCEPTANCE_RESULTS.md. Earlier read-only reports remain historical; the authoritative current state for this run is TESTNET_ACCEPTANCE_TRANSACTIONS.json.final, explicitly a STOP snapshot, not completed acceptance.
