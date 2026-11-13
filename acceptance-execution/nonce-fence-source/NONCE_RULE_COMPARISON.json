@@ -1,0 +1,8 @@
+{
+  "testnet_commit": "0ad2bdb2630e85bbacecab2a3b77072c78b46bc6",
+  "sandbox_commit": "bc4e9e8cfb03d9e82f027883055624e18576993e",
+  "verify_nonce_identical": true,
+  "testnet_function_sha256": "60990d5e54029422e2c6ba0b52eee35b50b0c71fde121945008e626bd6289548",
+  "sandbox_function_sha256": "60990d5e54029422e2c6ba0b52eee35b50b0c71fde121945008e626bd6289548",
+  "runtime_races_executed": false
+}
