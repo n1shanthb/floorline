@@ -1,3 +1,62 @@
+# RC1 fresh-testnet unsigned preflight — authoritative current status
+
+November 14, 2026. This section supersedes current readiness statements below. Financial source and approved artifacts are frozen and unchanged. No signing, broadcasting, funding, key creation, credential access or deployment occurred. Public RPC queries only; actual spending is zero.
+
+## Required verdicts
+
+RC1 ARTIFACT: VERIFIED — normal SHA-256 `31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b`, code `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`, 453,798 bytes. Financial source `c182351`; hashes match the frozen source/lockfile manifest.
+
+TESTNET ACCOUNT PREFLIGHT: BLOCKED — public project account candidates exist, but owner selection/current signing control and the new contract FullAccess public key are unconfirmed. No credentials were opened.
+
+CAP COMPATIBILITY: PASS — unchanged 0.01 action/debt, 0.05 lifetime gross, 0.02 per-user storage credit, 128 admission slots. Four initial registrations occupy four slots and attach 0.02 each. Sandbox-measured maximum-account registration minimum is 0.00462; live bounds must be checked again. Planned admitted gross is exactly 0.016; exact repayment is 0.0022 and is separately funded. No storage top-ups are required in the revised plan. Existing loan/claim/storage exits do not consume new-risk gross. Direct transfers never become admitted backing automatically.
+
+13.24 TESTNET NEAR CEILING: SUFFICIENT at the refreshed protocol-88 quote and conservative reservation model, NOT funded or approved. Actual controller spendable balance is only 0.5501983820616849 NEAR at the snapshot. Additional funding needed to make the full proposed allocations available is 12.6898016179383151 NEAR. No faucet or funding request was made.
+
+ATOMIC DEPLOYMENT: BLOCKED — batch structure and bytes validated, public account/key selection, current funding and spending approval absent.
+
+ACCEPTANCE TRANSACTION GRAPH: BLOCKED for real execution — static dependencies, cap accounting, ownership/collateral and token conservation model pass; receipt IDs and fresh quotes remain intentionally unresolved. Expiry requires finalized chain time. No public receipts have been generated.
+
+STAGING WALLET: BLOCKED until approved fresh account configuration and verified deployed code exist. The isolated build is ready for that configuration, but authenticated signing is UNVERIFIED. Existing live v1 website is unchanged.
+
+INDEPENDENT AUDIT: PENDING. MAINNET: NOT AUTHORIZED.
+
+## Public owner-configuration candidates, not an approved selection
+
+Public historical project evidence and current finalized RPC state identify controller `floorline-g3-20261111-6702ea.testnet`; holder `alice.floorline-g3-20261111-6702ea.testnet`; borrower `carol.floorline-g3-20261111-6702ea.testnet`; NFT holder `dave.floorline-g3-20261111-6702ea.testnet`; lender `lender.floorline-g3-20261111-6702ea.testnet`. Each currently has a FullAccess public key. Candidate fresh receiver `rc1.floorline-g3-20261111-6702ea.testnet` returned UNKNOWN_ACCOUNT. This address is a proposal, not a created account; availability must be rechecked immediately before authorization. No v1 address is reused. Account balances and public key identities are recorded in `release/preflight-20261114/rpc.json` and `owner-candidate.json`. An on-chain public key does not establish present owner possession or browser-wallet access. These are operator-controlled test roles, not independent human governance.
+
+The controller would be initializer predecessor/guardian; the unsigned same-receiver batch is CreateAccount, Transfer 8 NEAR, AddKey owner-selected FullAccess key, DeployContract exact normal bytes, then `new` with tax_bps 2000, issuance numerator/denominator 1/1 and the unchanged limits above. Creation fails if the named child already exists; deployment/init are in one action receipt, so there is no separately finalized uninitialized interval. Action atomicity does not eliminate burnt fees on failure or authorize retry on uncertainty. Runtime distinguishes administrative actor authorization from the receipt predecessor used by the VM; verify guardian equals the approved controller after FINAL success. See pinned [nearcore runtime](https://github.com/near/nearcore/blob/2.14.0/runtime/runtime/src/lib.rs) and [transaction specification](https://near.github.io/nearcore/RuntimeSpec/Transactions.html). Exact receiver, key and chain-specific recent block/nonce remain unsigned blockers. No nonce or signed blob is generated here.
+
+## Acceptance graph correction and receipt checks
+
+The original deferred cleanup could strand the staging UI below its conservative 0.01-NEAR available-storage gate before a later offer, although contract credit itself remained sufficient. Nonfinancial tooling now schedules each paid claim and closed loan cleanup immediately after settlement. This preserves the same 39 transactions, amounts, economics, caps and stop-last rule. It releases storage before the next offer and releases borrower references before unregistration. `check-graph.mjs` passed symbolic receipt dependency, correct NFT holder repayment/collateral return, lender default collateral, exact repayment, cancellation, no live borrower rights at unregister, and total token conservation assertions. This is explicitly an offline model, not fabricated chain evidence.
+
+The repayment branch transfers the loan NFT to the NFT holder before repayment; the separate default branch waits for finalized expiry and releases collateral to the lender. Every returned loan/claim ID must come from its actual finalized earlier receipt; the fresh redemption min_out must be reviewed against a block-pinned quote. Every financial step requires exact ledger liability sum, cash coverage and storage-stake coverage, preserving separate inflight accounting. No automated retries exist.
+
+Receipt reconciliation was strengthened to reject extra actions, duplicate outcomes, missing receipt descendants, unknown/failed child outcomes and mismatched reviewed gas when supplied. Positive actual sandbox fixtures and negative wrong-receiver, non-FINAL and missing-child fixtures passed. New fixtures live only in the new preflight directory; frozen RC1 evidence is untouched. Independent RPC retrieval and provenance checks remain necessary: a local checker cannot authenticate arbitrary supplied JSON by itself.
+
+The irreversible stop remains transaction 39 and LAST. Consequently this specific public plan does not prove exits after stopping. Existing sandbox evidence does; claiming public post-stop acceptance would be false. To add that public demonstration, the owner must approve an additional transaction/budget review or a separately reviewed plan with existing exit rights deliberately left open. No new-risk action is scheduled after stop.
+
+## Refreshed integer funding reconciliation
+
+Official testnet RPC queried at `2026-11-14T03:46:18.364Z`: chain testnet, protocol 88, storage byte 10^19 yoctoNEAR, spot gas 10^8, minimum purchase price 10^9. The funding model reserves the higher gas price. `budget.json` includes current protocol fees for CreateAccount, AddKey, 453,798 deploy bytes, initialization, four funding transfers and stop: controller upper gas reservation 0.283633836038662 NEAR fits the 0.75 contingency. Actor reservations use 120 Tgas per call plus each attached amount, 0.1 buffer and upward rounding. Contract allocation 8, holder 1.94, borrower 1.21, NFT holder 0.37, lender 0.97, controller 0.75 sum exactly 13.24.
+
+The contract's conservative 527,526-byte storage upper bound costs 5.27526 NEAR, including the 128×512-byte protected exit reserve of 0.65536. Adding 2.5 operating liquidity leaves 0.22474 within 8. User storage total 0.08 and financial deposits are inside the actor allocations, not additional funding. Storage is locked coverage, not gas expenditure; principal, backing, user deposits and spare actor balances remain funds in their respective accounts. Gas figures reserve full prepaid budgets, not measured costs. No account balances were spent. The proposed receiver is new, while existing actor balances are retained and planned allocations are additional. Funding sufficiency is conditional on unchanged protocol quotes and receipt envelopes; refresh immediately before signing and stop if requirements exceed the ceiling.
+
+## Staging and audit handoff
+
+Staging pins the frozen code hash, testnet My NEAR Wallet, testnet RPC/network checks, 110-Tgas callback methods, live registration quote, immutable limit/stop state and isolated RC1 browser journal. Unknown outcomes warn and block resubmission. No VITE_CONTRACT_ID is selected: its disabled default remains correct. Static configuration cannot be claimed to match an approved fresh address until the owner actually selects it. Previous typecheck/lint/65 tests/build and disabled desktop/mobile evidence remain valid; browser signing has not been rerun or claimed. No frontend implementation changed in this preflight.
+
+An allowlisted auditor handoff is frozen under `release/preflight-20261114/auditor-handoff/` and its ZIP, with `AUDIT_INDEX.json` listing exact source/lockfile/artifact/evidence hashes, reproduction commands, native payout/storage callback transitions, 128-slot accounting, gross controls and FullAccess upgrade threats. Fault bytes are separately labeled test-only. The handoff excludes all credentials, node_modules and build caches. It retains the limitations: unknown outcomes remain InFlight; retries require known failure and sufficient local liquidity; infinite loss can exhaust finite admission; protocol changes and retained FullAccess keys invalidate simplistic safety claims. This prepares an independent auditor; it does not constitute an independent audit.
+
+## Minimum information and authorization for next execution
+
+Confirm or replace the six candidate public account IDs above; confirm present control of controller and four actor signing accounts; select the new contract's FullAccess **public** key and custody policy. Approve the exact normal artifact, atomic initialization, unchanged immutable caps, 39-transaction graph with stop last and the proposed 13.24-testnet-NEAR ceiling, including an authorized source of controller funding. Confirm whether public post-stop exits must be added before final execution approval. Do not send private keys. Existing testnet wallets must be configured through an authorized local/wallet workflow only after approval.
+
+Then rerun owner-specific read-only key/balance/account/protocol preflight, bind and review every unsigned intention, and obtain explicit authorization for the bounded public signing/funding/deployment execution. Nothing here grants it. Mainnet, v1, historical receipts, production keys and live routing remain untouched.
+
+---
+
+# Previous RC1 assessment — historical where superseded above
 # FLOOR release candidate RC1 — current release decision
 
 This section supersedes every earlier assessment below. Earlier sections are retained as historical evidence. No public transaction, deployment, key operation or live frontend switch was performed in this workstream.

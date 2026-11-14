@@ -1,0 +1,81 @@
+Retrying transaction disabled1794589543285.test.near:6MEz9VTUeVo5AnxAm4i8nJsKo44UCCBesVJiRd3qnntC with new nonce.
+Retrying transaction disabled1794589543285.test.near:9nsb5KPDjLSD2UyAvmB3WVpM7ntUxXYTARvYomKXcMav with new nonce.
+Receipts: 7dSMyoYq44dvPxANosP3FebUK7trK6XGuQKFVkWkuLtL, 31PuXNGszMqxo47LAtMt5rawscExLUZb8nH4wGeNuA6t
+	Failure [disabled1794589543285.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:755:9:\nnative action cap"}}}}
+Retrying transaction disabled1794589543285.test.near:41p1oUqvVFvbxCHvUYfLkPbmydRs1X816L4CTvzRQ4AT with new nonce.
+Receipts: D1XypL4n1GcweKfybgdaDePXgk4SSsB5bsLpMU6NDoVz, 4KzPN3fB4Dm1Pwc4Qo6NwGSfEZF2QtZSgPioALqFPyoZ
+	Failure [disabled1794589543285.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:256:9:\nstorage deposit cap"}}}}
+Retrying transaction limited1794589548688.test.near:2k57aJnfxCroCVbx3KdNr58TWbfEiaeEV1oX29nT6kro with new nonce.
+Retrying transaction limited1794589548688.test.near:3qaeau36fxnjv6uWuUkmoMHxtud9eeHeBFCGDrjtLzCD with new nonce.
+Retrying transaction borrower1794589551506.test.near:DPBjayTpPo8oRrhoGYZyKiNbV6UiW8kC45NrFnTJHviU with new nonce.
+Retrying transaction nftowner1794589552461.test.near:DVhsFvmAFaTeJ3pK2EfaUaEMgbyUtxaqABQKrQXin6zt with new nonce.
+Retrying transaction lender1794589553425.test.near:HdKAH8eWKGuhjW5CWBi9HVKkkEx3HLhczSyWqfwyHc5h with new nonce.
+Retrying transaction empty1794589554347.test.near:D5eYEbaQoxmAkPyf9VP8JaDp4T8k41DeGKWwwk4xyVLj with new nonce.
+Retrying transaction limited1794589548688.test.near:39Ky6P9wymAm6had9wLRAEKGSJVnyxmYxWAoThA8ihwU with new nonce.
+Receipts: 2gq91oRKJ3R9JU5gk776rorkc2oMrcYTY6JVigoRzeUN, 3vLxA4vD6Ts1W3mMNWCDjgSP3BE8dCvjqgwgNa2WHLDd
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:291:13:\nstorage credit cap"}}}}
+Retrying transaction limited1794589548688.test.near:4JFgqQEVRxRhgkeD5g3huxUPWTBgNqDDmifQCoqto96U with new nonce.
+Receipts: 4ixToZFi5bVsKAkNeR2nZTPPrpeSiYFqRjS4a1DAKGmY, 9bGThuLuzZ5ZK1cAnYwL1taD2fKkUaQHbGQkZUYCw8CM
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:755:9:\nnative action cap"}}}}
+Retrying transaction limited1794589548688.test.near:DRNZwxmXUKfw64cUKfcYgSZAc4VrhWykbaZF3xEQELaw with new nonce.
+Receipt: GV5JFMzAKPbo7g4B3QEkEtnm4kNhXkhvjiBe86bzScfL
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"borrower1794589551506.test.near","amount":"1000"}]}
+Retrying transaction limited1794589548688.test.near:EKPwGhvM3SmBgF5YKT9N55WcmuoNMQEWKPEzjJ7txTkx with new nonce.
+Receipt: CCnsjJeKUEWhTePihpUjwcSHJKvnC3PsT2bvLaARaUb4
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"borrower1794589551506.test.near","amount":"1000"}]}
+Retrying transaction limited1794589548688.test.near:76ZV2vcT1BStieuUMmjKVAe8MqowwbCFHkn4fiMjn6nC with new nonce.
+Retrying transaction limited1794589548688.test.near:Ha9fyxCxtGYztZ81PjKhH2LVpMb3s4dpRMY6SRxFyh2v with new nonce.
+Retrying transaction limited1794589548688.test.near:AETrca7DzS82wxPMmL27hxr5nLDnvvmNehQbRAc8Bgd9 with new nonce.
+Retrying transaction limited1794589548688.test.near:413q4mBDeHcbZ22u2MAT51cay8SXBdTkJDnMwN6sVpm7 with new nonce.
+Receipts: GVMCPLtfor14pPHTCwt3qppWw8yqBVkEr2d9J9CMhXzv, A3qbPU3QhU2wzykqjNJ3KFab9SQnyhX6iPa1QKo2ucvb
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:760:9:\ngross exposure cap"}}}}
+Retrying transaction limited1794589548688.test.near:CQzc4SzvNizQHgZB5f1AbGuK3xLxdSQ9VM3HB1vSegqf with new nonce.
+Receipts: BzxHGYtDBVdPLoDAuALi4dFY3rm597N8QLj936bAkJRx, 3kKCStbwZZcFb7x77Kf91tSTTSGf9FkMgn7MdyTPxxWY
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:760:9:\ngross exposure cap"}}}}
+Retrying transaction limited1794589548688.test.near:76knyKfQ49vJgVFKHX4jQVdAAZVgwKaqKah1GJ6gFB48 with new nonce.
+Receipt: XARMPBnS3E9iX2Fk3qdmmn6awRdsn94MdAyXCcjQrnU
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"borrower1794589551506.test.near","new_owner_id":"limited1794589548688.test.near","amount":"10"}]}
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_mint","data":[{"owner_id":"borrower1794589551506.test.near","token_ids":["0"]}]}
+Retrying transaction limited1794589548688.test.near:ZdntNVs4H638GH8f2kqV8nmBvycNP21eoXr3ikZRKze with new nonce.
+Receipt: 6zggNifKjre15vf65AKRqac7Zbc9sZgRTegxUkGkkVMK
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"borrower1794589551506.test.near","new_owner_id":"limited1794589548688.test.near","amount":"10"}]}
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_mint","data":[{"owner_id":"borrower1794589551506.test.near","token_ids":["1"]}]}
+Retrying transaction limited1794589548688.test.near:Fram4vL3ahqbDWC9rA4VHieeBQp9VLHDfbHp1muCVVdD with new nonce.
+Receipt: D9qkRaCiJgPL1oA3AMCHg47BnEYkNSQL7TEjHgDTvVDs
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_transfer","data":[{"old_owner_id":"borrower1794589551506.test.near","new_owner_id":"nftowner1794589552461.test.near","token_ids":["0"]}]}
+Retrying transaction limited1794589548688.test.near:E1GJGPPKTLDqhCYKMbD3LWs9MeWQmwtcX82XrQybvAje with new nonce.
+Receipt: GTBAnZCL7kRbCyJiXda6J8RJb7QbVKBcrdy4UxVGkGpa
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:220:9:\nassertion `left == right` failed: not guardian\n  left: AccountId(\"borrower1794589551506.test.near\")\n right: AccountId(\"test.near\")"}}}}
+Retrying transaction limited1794589548688.test.near:7FidYMLJ3te9d9AUjUbHa8pXKaNTqYTnYnhbLmLqsXwW with new nonce.
+Receipt: HebhWmAVBV5FaAFkERVSZtszapj5BKVNKDJg9asKEx4f
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"floorline","version":"1.0.0","event":"risk_stopped","data":[{"guardian":"test.near"}]}
+Retrying transaction limited1794589548688.test.near:3nasDp1uXCMeovmkQWqLqzQiZR4vk28dV6yi7B2faSVn with new nonce.
+Receipts: 69RXrjgudigNkAGGsa5QNXjSXsjC6f6t8Cv3FuXKjBJT, xRiWVjRMeRbakGLHH6iHfTLbfnSJjMEfvKu4gFk86Sf
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:754:9:\nnew risk stopped"}}}}
+Retrying transaction limited1794589548688.test.near:9ncXk7mb7shNmYn2mZiop4kA3GrbVjWL1gHDk4cbxBYx with new nonce.
+Receipts: DaE58X769vPSFD3nR199TkBFA5dsnrAaoDsg1fLH1sdN, 2uFtSH1mEFWoscky1G7zwb667Tb4HrcTijXNbNRFvoGa
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:754:9:\nnew risk stopped"}}}}
+Retrying transaction limited1794589548688.test.near:5B7WytALYsRz4rggoVWpGJjhheFZh7FRsd8SbKMyhzf2 with new nonce.
+Receipts: 7LTYAQPRBHg9NzpM1WiBgSZmqm43iUfcAbvrZ6D4Fb8o, jbZV5khx6sp2im1QB6UxNPPx29cRJSdsMuQdVcyU1h7
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:754:9:\nnew risk stopped"}}}}
+Retrying transaction limited1794589548688.test.near:BA338G8phxxctaK5GUbcK5RVUqdvArf3jkM3ZVDYQWVv with new nonce.
+	Failure [limited1794589548688.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:558:9:\nnew risk stopped"}}}}
+Receipt: FK3iATeYBpx65PyQFiLwpj15fsxp7XxJNiQDGBBuawGr
+Retrying transaction limited1794589548688.test.near:DaSZ9VLc1d9jN73bNpTHHuwFo8TCdP5SqQv7hZqm23VW with new nonce.
+Retrying transaction limited1794589548688.test.near:F4o5szybzn3Fmhe4zb81QjvDWKNRWNhpMxFm35PwDsud with new nonce.
+Receipt: CnsvjkHFD6tupiqDCnwg7MKp8tmFsBQvtDVVZ6Gvum6K
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"limited1794589548688.test.near","new_owner_id":"nftowner1794589552461.test.near","amount":"10"}]}
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_burn","data":[{"owner_id":"nftowner1794589552461.test.near","token_ids":["0"]}]}
+Retrying transaction limited1794589548688.test.near:4srFsg15JSpfDmg5oZtjnBhPE7wMgkSgs8tYzDDyn7Md with new nonce.
+Receipt: H3pA4SYR2T9WmaYyDbgnZ79EuYnzVLqxXjEZmg6F5omw
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"limited1794589548688.test.near","new_owner_id":"lender1794589553425.test.near","amount":"10"}]}
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_burn","data":[{"owner_id":"borrower1794589551506.test.near","token_ids":["1"]}]}
+Retrying transaction limited1794589548688.test.near:5KaC1zX6Ui4VqpYXhBE8amPuK7GWDUANuK7KRxGikrUW with new nonce.
+Retrying transaction limited1794589548688.test.near:45dRHJDUojMAUtTDUgbakpproiwZ822GDDMkg9JJ2xYr with new nonce.
+Retrying transaction limited1794589548688.test.near:4xX9gxjcHWkhAymNBkaEywvqnJrViMpXs6o8J4giKYGK with new nonce.
+Receipt: 82QgP9xQAkn9V27CRd9EvDDJHK9kqj9urULLaSYVoDci
+	Log [limited1794589548688.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"borrower1794589551506.test.near","amount":"100"}]}
+Retrying transaction limited1794589548688.test.near:4Q4wAQ9BhhAf6UvAPLgtKDEiL9HX9z3gfHt4uqV7DKk7 with new nonce.
+Retrying transaction limited1794589548688.test.near:8t8eAfoLrgh4GN4q9rrfbrjy2hhT3kr2atuqAUDpbbwC with new nonce.
+Retrying transaction limited1794589548688.test.near:2uWuf6UL21fgTGTq5rW1Ckp15Gv45i5GsQEZCK99cQEe with new nonce.
+PASS disabled defaults, action/gross/storage boundaries, irreversible stop and loan/default/redemption/storage exits
