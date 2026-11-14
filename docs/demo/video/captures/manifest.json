@@ -1,0 +1,101 @@
+[
+  {
+    "id": "01_landing",
+    "url": "https://floorline-delta.vercel.app/",
+    "wait": 2500,
+    "file": "01_landing.png",
+    "ok": true
+  },
+  {
+    "id": "02_overview",
+    "url": "https://floorline-delta.vercel.app/app",
+    "wait": 4000,
+    "file": "02_overview.png",
+    "ok": true
+  },
+  {
+    "id": "03_treasury",
+    "url": "https://floorline-delta.vercel.app/app/treasury",
+    "wait": 4000,
+    "file": "03_treasury.png",
+    "ok": true
+  },
+  {
+    "id": "04_loans",
+    "url": "https://floorline-delta.vercel.app/app/loans",
+    "wait": 4500,
+    "file": "04_loans.png",
+    "ok": true
+  },
+  {
+    "id": "05_redeem_tx",
+    "url": "https://testnet.nearblocks.io/txns/EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA",
+    "wait": 5500,
+    "file": "05_redeem_tx.png",
+    "ok": true
+  },
+  {
+    "id": "06_nft_transfer_tx",
+    "url": "https://testnet.nearblocks.io/txns/GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz",
+    "wait": 5500,
+    "file": "06_nft_transfer_tx.png",
+    "ok": true
+  },
+  {
+    "id": "07_repay_tx",
+    "url": "https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB",
+    "wait": 5500,
+    "file": "07_repay_tx.png",
+    "ok": true
+  },
+  {
+    "id": "08_default_tx",
+    "url": "https://testnet.nearblocks.io/txns/GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B",
+    "wait": 5500,
+    "file": "08_default_tx.png",
+    "ok": true
+  },
+  {
+    "id": "09_stop_tx",
+    "url": "https://testnet.nearblocks.io/txns/65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3",
+    "wait": 5500,
+    "file": "09_stop_tx.png",
+    "ok": true
+  },
+  {
+    "id": "10_unregister_tx",
+    "url": "https://testnet.nearblocks.io/txns/2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE",
+    "wait": 5500,
+    "file": "10_unregister_tx.png",
+    "ok": true
+  },
+  {
+    "id": "11_contract",
+    "url": "https://testnet.nearblocks.io/address/rc1.floorline-g3-20261111-6702ea.testnet",
+    "wait": 5500,
+    "file": "11_contract.png",
+    "ok": true
+  },
+  {
+    "id": "12_verify",
+    "url": "https://floorline-delta.vercel.app/verify",
+    "wait": 4500,
+    "scroll": 700,
+    "file": "12_verify.png",
+    "ok": true
+  },
+  {
+    "id": "13_judges",
+    "url": "https://floorline-delta.vercel.app/judges",
+    "wait": 3500,
+    "file": "13_judges.png",
+    "ok": true
+  },
+  {
+    "id": "14_governance",
+    "url": "https://floorline-delta.vercel.app/app/governance",
+    "wait": 4000,
+    "file": "14_governance.png",
+    "ok": true
+  }
+]

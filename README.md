@@ -13,6 +13,8 @@ Floorline lets users issue and redeem a NEAR-backed FLOOR token, then borrow aga
 | **Code hash** | `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az` |
 | **Acceptance** | **40/40 FINAL_VERIFIED** · `ACCEPTANCE_COMPLETE_BROWSER_UI_EVIDENCE_VERIFIED` |
 | **Network** | **NEAR TESTNET ONLY** — Floorline is **not** mainnet-deployed |
+| **Selected tracks** | **Unstoppable DeFi** · **NFTs That Do Something** · **AI Security & Defense** |
+| **Demo video** | [docs/demo/video/](docs/demo/video/) (narrated proof walkthrough for X) |
 
 ### 60-second judge path
 
@@ -28,6 +30,67 @@ Floorline lets users issue and redeem a NEAR-backed FLOOR token, then borrow aga
 - Demo: https://near-intent-one.vercel.app  
 - Verify: https://near-intent-one.vercel.app/verify  
 - Proofs: https://github.com/n1shanthb/near-intent-one/blob/master/docs/PROOF_INDEX.md  
+
+---
+
+## Why Floorline fits three NEAR Hackathon tracks
+
+Floorline is entered under **Unstoppable DeFi**, **NFTs That Do Something**, and **AI Security & Defense**. Each track maps to shipped, receipt-backed behavior on **NEAR testnet** — not a slide deck.
+
+### Unstoppable DeFi
+
+Floorline is native NEAR DeFi: a NEP-141 FLOOR reserve plus **lender-funded** borrowing against FLOOR collateral. Issuance and redemption move liquid NEAR backing `L` and supply `T` under programmed rules; a configured **20%** redemption tax (`tax_bps = 2000`) applies on the demonstrated curve. **`L/T` is an accounting ratio, not a market-price or redemption-price guarantee.**
+
+Financial state is public and reproducible: 40/40 acceptance receipts, live contract views, and the [/verify](https://floorline-delta.vercel.app/verify) catalog. Demonstrated paths include issuance/redemption, repayment, and default settlement. The RC1 contract is **permanently stopped for new-risk**; it is a completed testnet demonstration, not a live market.
+
+Floorline does **not** integrate NEAR Intents or cross-chain settlement. That belongs to the separate [NEAR Intent One](https://github.com/n1shanthb/near-intent-one) submission.
+
+Evidence:
+
+- Redemption claim withdraw: [`EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA`](https://testnet.nearblocks.io/txns/EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA)
+- NFT-holder repayment: [`CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB`](https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB)
+- Default / collateral release: [`GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B`](https://testnet.nearblocks.io/txns/GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B)
+
+### NFTs That Do Something
+
+Loan recovery and repayment rights are represented by a **NEP-171 NFT**. Ownership is functional: the current NFT holder may repay under contract rules and recover locked FLOOR collateral. The original borrower does not retain that right after transfer. This is a transferable financial entitlement, not a collectible badge or artwork.
+
+RC1 demonstrated a real transfer followed by repayment by the new holder:
+
+- NFT transfer: [`GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz`](https://testnet.nearblocks.io/txns/GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz)
+- Repayment by NFT rights holder: [`CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB`](https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB)
+
+### AI Security & Defense
+
+Floorline does **not** implement a dedicated AI-agent wallet or agent spending-policy engine. The track fit is **bounded financial-protocol safety** that AI judge agents can verify from public receipts:
+
+- Pilot exposure caps and a **128-slot** admission / storage accounting gate
+- Callback gas preflight and quarantine of unknown async results (no automatic duplicate payout retries)
+- Guardian **irreversible new-risk stop** after demonstration
+- Funded exit still verified **after** stop (storage unregister)
+- Open [/verify](https://floorline-delta.vercel.app/verify) catalog plus Claude Code / Codex **read-only** judge prompts
+
+Safety receipts:
+
+- Stop: [`65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3`](https://testnet.nearblocks.io/txns/65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3)
+- Post-stop unregister: [`2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE`](https://testnet.nearblocks.io/txns/2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE)
+
+---
+
+## How Floorline helps the NEAR ecosystem
+
+**Demonstrated on public testnet (what exists today):**
+
+1. **Better lending primitives** — Lender-funded NEAR credit with on-chain, transferable repayment/recovery rights, separate from treasury backing.
+2. **Functional NFTs** — NEP-171 tokens that change what the holder is allowed to do (repay / recover), not metadata-only collectibles.
+3. **Transparent reserve accounting** — NEP-141 FLOOR with separately tracked NEAR liquid backing `L`, supply `T`, claims, and storage; `L/T` labeled as accounting, not price.
+4. **Safer async money flows** — Claim/withdraw exits, callback protections, unknown-result quarantine, and admission/storage accounting exercised across multi-receipt transactions.
+5. **Governance compatibility (limited)** — A historical Sputnik DAO contribution demo shows a route for DAO FunctionCalls; it was **operator-controlled** and does **not** prove independent community governance.
+6. **Developer reproducibility** — Open Rust contract (`near-sdk 5.30.1`), 40-step receipt catalog, `npm run judge:verify`, public Vercel demo, and AI-readable judge prompts.
+
+**Potential adoption (not claimed as shipped):**
+
+Future builders could adapt these patterns for lending markets or credit products **after** their own audits, custody design, upgrades, and economic validation. Floorline itself is a **testnet** demonstration with **no** independent audit, **no** Floorline mainnet financial deployment, and **no** claim of production users.
 
 ---
 

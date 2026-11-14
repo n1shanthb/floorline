@@ -1,0 +1,44 @@
+[
+  {
+    "out": "05_redeem_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA",
+    "hash": "EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA"
+  },
+  {
+    "out": "06_nft_transfer_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz",
+    "hash": "GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz"
+  },
+  {
+    "out": "07_repay_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB",
+    "hash": "CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB"
+  },
+  {
+    "out": "08_default_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B",
+    "hash": "GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B"
+  },
+  {
+    "out": "09_stop_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3",
+    "hash": "65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3"
+  },
+  {
+    "out": "10_unregister_tx.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/txns/2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE",
+    "hash": "2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE"
+  },
+  {
+    "out": "11_contract.png",
+    "ok": true,
+    "url": "https://testnet.nearblocks.io/address/rc1.floorline-g3-20261111-6702ea.testnet",
+    "hash": "code hash 4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+  }
+]

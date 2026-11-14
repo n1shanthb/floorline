@@ -3,7 +3,7 @@
 **NEAR Hackathon November 2026**  
 **Submission Date:** 2026-11-14  
 **Project Name:** Floorline  
-**Category:** DeFi, NFTs, Security
+**Official tracks:** Unstoppable DeFi · NFTs That Do Something · AI Security & Defense
 
 ---
 
@@ -42,7 +42,7 @@
 ## Technical Architecture
 
 ### Smart Contract
-- **Language:** Rust + NEAR SDK 5.1.0
+- **Language:** Rust + NEAR SDK 5.30.1
 - **Standards:** NEP-141, NEP-145, NEP-171, NEP-177
 - **Patterns:** Async claims, storage management, external backing
 - **Deployment:** Fresh atomic deploy on testnet
