@@ -48,7 +48,7 @@ npm run dev
 **What to check:**
 1. **Landing page (`/`):** Project overview, no wallet connection needed
 2. **Verify route (`/verify`):** Live testnet state display
-   - Shows L=10.18, T=9.0, stopped=true
+   - Shows L=0.01018 NEAR, T=0.009 FLOOR, stopped=true
    - Displays admission count, storage total
    - No errors or "loading forever"
 3. **Judges route (`/judges`):** This documentation
