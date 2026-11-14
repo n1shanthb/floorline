@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpRight, Plus } from "lucide-react";
 import {
   Badge,
@@ -12,6 +12,7 @@ import {
 } from "../components/ui";
 import Replay from "../components/Replay";
 import Claims from "../components/Claims";
+import { Rc1ProofStrip } from "../components/Rc1Evidence";
 import { useApp } from "../lib/app-context";
 import {
   canRepay,
@@ -59,16 +60,31 @@ export default function Loans() {
     let live = true;
     void proofNonce;
     setBusy(true);
-    void Promise.all(a.tracked.loans.map((id) => loanById(id)))
+    if (!a.tracked.loans.length) {
+      setLoans([]);
+      setError("");
+      setBusy(false);
+      return () => {
+        live = false;
+      };
+    }
+    void Promise.allSettled(a.tracked.loans.map((id) => loanById(id)))
       .then((rows) => {
-        if (live) {
-          setLoans(rows.filter((v): v is Loan => v !== null));
-          setError("");
-        }
-      })
-      .catch((e) => {
-        if (live)
-          setError(e instanceof Error ? e.message : "Loan reads failed");
+        if (!live) return;
+        const ok = rows
+          .filter(
+            (r): r is PromiseFulfilledResult<Loan | null> =>
+              r.status === "fulfilled",
+          )
+          .map((r) => r.value)
+          .filter((v): v is Loan => v !== null);
+        const failed = rows.filter((r) => r.status === "rejected").length;
+        setLoans(ok);
+        setError(
+          failed
+            ? `${failed} tracked loan ID(s) could not be read from RC1. Closed RC1 acceptance loans are shown as verified receipts below.`
+            : "",
+        );
       })
       .finally(() => {
         if (live) setBusy(false);
@@ -148,7 +164,7 @@ export default function Loans() {
     <>
       <Heading
         title="Loans with a twist"
-        description="Borrow against FLOOR. Transfer the right to repay and recover collateral with an NFT."
+        description="RC1 acceptance closed the demonstrated loans and stopped new-risk. Verified repay, NFT transfer, default, and cancel receipts stay on this page."
       />
       <div className="page-actions">
         <Tabs
@@ -222,15 +238,18 @@ export default function Loans() {
             <Empty
               title={
                 tab === "Explore offers"
-                  ? "No open offers among tracked IDs"
+                  ? "No open RC1 offers"
                   : "No matching tracked rights"
               }
             >
               <p>
                 {tab === "Explore offers"
-                  ? "The demonstrated loans are closed. Look up a funded offer ID or create a lender-funded offer."
-                  : "Look up an ID from your receipts. No ownership or loan list is fabricated."}
+                  ? "RC1 acceptance loans are closed and new-risk is stopped. Verified repayment, NFT transfer, default, and cancel receipts are listed below — no fabricated open market."
+                  : "Look up an ID from your own receipts. No ownership list is invented."}
               </p>
+              <Link className="button secondary" to="/verify">
+                Browse RC1 loan proofs
+              </Link>
             </Empty>
           </div>
         ) : (
@@ -419,42 +438,81 @@ export default function Loans() {
           </div>
         )}
       </section>
+      <Rc1ProofStrip
+        surface="loans"
+        title="RC1 verified loan lifecycle"
+        description="Public-testnet acceptance receipts for lender-funded offer → borrow → NFT transfer → repay, plus default and cancel paths. These are finalized RC1 transactions, not live open offers."
+      />
       <div className="loans-showcase">
         <section className="card historical-loan">
           <div className="section-head">
-            <h3>Demo loan #2</h3>
-            <Badge>Historical · repaid</Badge>
+            <h3>RC1 repay path</h3>
+            <Badge tone="lime">Acceptance · closed</Badge>
           </div>
-          <span className="eyebrow">Principal funded by lender</span>
-          <div className="loan-value">
-            {units("100000000000000000000000")}
-            <small>NEAR</small>
-          </div>
+          <span className="eyebrow">Principal funded by lender · not treasury</span>
           <p className="muted small-copy">
-            The lender, not the treasury, funded this loan.
+            On RC1, the repay demonstration funded an offer, accepted it, withdrew
+            principal, transferred the NFT, repaid as the NFT holder, then settled
+            the lender claim — all FINAL on testnet.
           </p>
           <div className="terms-grid">
             <div>
-              Collateral<b>0.2 FLOOR</b>
+              Offer funding
+              <b>
+                <a
+                  href="https://testnet.nearblocks.io/txns/5o8nT2YxNe3XJNHkkq2eRSuSd6pBVcWP8LDQMrd6YkVm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  fund_offer
+                </a>
+              </b>
             </div>
             <div>
-              Debt repaid<b>0.11 NEAR</b>
+              NFT transfer
+              <b>
+                <a
+                  href="https://testnet.nearblocks.io/txns/GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  nft_transfer
+                </a>
+              </b>
             </div>
             <div>
-              NFT transferred to<b>Dave</b>
+              NFT-holder repay
+              <b>
+                <a
+                  href="https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  repay
+                </a>
+              </b>
             </div>
             <div>
-              Final status<b>Repaid · NFT burned</b>
+              Default path
+              <b>
+                <a
+                  href="https://testnet.nearblocks.io/txns/GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  default_loan
+                </a>
+              </b>
             </div>
           </div>
           <p className="footnote">
-            First demonstrated loan, actual contract ID 2. Second demo loan ID 7
-            defaulted. Neither is an open offer.
+            New-risk is stopped on this contract. Do not expect open offers; use
+            the receipt catalog for judging.
           </p>
-          <a className="text-link" href="#loan-replay">
-            Follow its story
+          <Link className="text-link" to="/verify">
+            Open full RC1 catalog
             <ArrowUpRight size={14} />
-          </a>
+          </Link>
         </section>
         <section className="nft-show">
           <span className="eyebrow">The right to recover</span>

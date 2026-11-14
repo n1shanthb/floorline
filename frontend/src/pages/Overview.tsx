@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 import { useApp } from "../lib/app-context";
 import { ratio, units } from "../lib/math";
 import { Badge, Chart, Heading, Row } from "../components/ui";
+import { Rc1ProofStrip } from "../components/Rc1Evidence";
 import { claimById, loanById, view } from "../lib/rpc";
 import { ActivityPreview } from "../components/activity";
 export default function Overview() {
   const a = useApp(),
     l = a.snapshot?.ledger;
+  const stopped = a.snapshot?.pilot?.stopped;
   const unavailable = l && BigInt(l.T) > 0n && BigInt(l.L) > BigInt(l.T);
   const [summary, setSummary] = useState<{
     account: string;
@@ -69,7 +71,11 @@ export default function Overview() {
     <>
       <Heading
         title="Your financial playground"
-        description="Treasury-backed mechanics. One place to make your next move."
+        description={
+          stopped
+            ? "RC1 acceptance finished 40/40. New-risk is permanently stopped — browse live accounting and verified receipts."
+            : "Treasury-backed mechanics on NEAR testnet. Live reads plus verified RC1 receipts."
+        }
       />
       <div className="overview-grid">
         <section className="backing-panel">
@@ -181,14 +187,18 @@ export default function Overview() {
           <strong className="text-metric">
             {!l
               ? "Reading state"
-              : unavailable
-                ? "Issue unavailable"
-                : "Check issue quote"}
+              : stopped
+                ? "New risk stopped"
+                : unavailable
+                  ? "Issue unavailable"
+                  : "Check issue quote"}
           </strong>
           <p>
-            {unavailable
-              ? "The invariant blocks positive 1:1 issuance."
-              : "Every action is checked against current state."}
+            {stopped
+              ? "Issuance, redeem, fund/accept offers and contribute are blocked on RC1."
+              : unavailable
+                ? "The invariant blocks positive 1:1 issuance."
+                : "Every action is checked against current state."}
           </p>
         </div>
       </div>
@@ -201,11 +211,20 @@ export default function Overview() {
               : "Reserve deficit — do not transact"
             : "Solvency awaiting RPC"}
         </Badge>
+        <Link className="text-link" to="/verify">
+          Open RC1 proof catalog
+          <ArrowUpRight size={13} />
+        </Link>
         <Link className="text-link" to="/app/treasury">
           Inspect treasury reserves
           <ArrowUpRight size={13} />
         </Link>
       </div>
+      <Rc1ProofStrip
+        surface="overview"
+        title="RC1 acceptance highlights"
+        description="Issue, redeem, contribute, irreversible stop, and post-stop exit — finalized on public testnet."
+      />
       <ActivityPreview />
     </>
   );
