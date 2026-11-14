@@ -55,6 +55,8 @@ const Treasury = lazy(() => import("./pages/Treasury"));
 const Loans = lazy(() => import("./pages/Loans"));
 const Governance = lazy(() => import("./pages/Governance"));
 const Activity = lazy(() => import("./pages/Activity"));
+const Verify = lazy(() => import("./pages/Verify"));
+const Judges = lazy(() => import("./pages/Judges"));
 interface Pending {
   request: ActionRequest;
   signer: string;
@@ -460,6 +462,8 @@ export default function App() {
         >
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/judges" element={<Judges />} />
             <Route path="/app" element={<Shell />}>
               <Route index element={<Overview />} />
               <Route path="treasury" element={<Treasury />} />
@@ -701,6 +705,12 @@ const nav = [
     label: "Activity & Proof",
     short: "Proof",
     icon: ChartNoAxesCombined,
+  },
+  {
+    path: "/verify",
+    label: "RC1 Verify",
+    short: "Verify",
+    icon: ShieldCheck,
   },
 ];
 function Shell() {

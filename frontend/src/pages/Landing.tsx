@@ -96,20 +96,14 @@ export default function Landing() {
         <Brand />
         <nav aria-label="Landing navigation">
           <a href="#mechanics">How it works</a>
+          <Link to="/verify">Proof</Link>
+          <Link to="/judges">Judges</Link>
           <Link to="/app/treasury">Protocol</Link>
-          <Link to="/app/activity">Activity</Link>
-          <a
-            href="/docs/ECONOMIC_INVARIANTS.md"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Docs ↗
-          </a>
         </nav>
         <div className="top-actions">
           <Testnet />
-          <Link className="button secondary small launch" to="/app">
-            Launch app
+          <Link className="button secondary small launch" to="/verify">
+            40/40 proofs
             <ArrowUpRight size={14} />
           </Link>
         </div>
@@ -141,25 +135,30 @@ export default function Landing() {
           }}
         >
           <div className="hero-copy">
-            <div className="eyebrow">On-chain finance, with a pulse. / 001</div>
+            <div className="eyebrow">
+              NEAR testnet · RC1 acceptance 40/40 · new risk permanently stopped
+            </div>
             <h1>
               <span>Money with</span>
               <br />
               <em>mechanics.</em>
             </h1>
             <p>
-              Issue. Redeem. Borrow. Own the right to recover your collateral.
-              One treasury-backed token, a lot more possibilities.
+              Floorline is a NEAR-backed FLOOR reserve with lender-funded,
+              NFT-collateralized borrowing. Public-testnet RC1 finished 40/40
+              FINAL_VERIFIED. Issuance and other new-risk actions on this
+              contract are stopped; verified exits and historical proofs remain
+              readable without a wallet.
             </p>
             <div className="hero-actions">
-              <Link className="button primary" to="/app">
-                Explore Floorline
+              <Link className="button primary" to="/verify">
+                Open proof explorer
                 <ArrowUpRight size={17} />
               </Link>
-              <a className="button secondary" href="#mechanics">
-                See how it works
+              <Link className="button secondary" to="/judges">
+                Judge quickstart
                 <ArrowDown size={16} />
-              </a>
+              </Link>
             </div>
             <div className="hero-micro">
               <div className="avatars" aria-hidden="true">
@@ -176,23 +175,23 @@ export default function Landing() {
         </section>
         <div className="section-wrap hero-metrics">
           <div className="metric">
-            <span className="eyebrow">Treasury backing · demo</span>
+            <span className="eyebrow">RC1 acceptance</span>
+            <strong>
+              40/40
+              <small>FINAL</small>
+            </strong>
+          </div>
+          <div className="metric lilac">
+            <span className="eyebrow">Historical v1 demo L (archived)</span>
             <strong>
               {units(evidence.snapshot.ledger.L)}
               <small>NEAR</small>
             </strong>
           </div>
-          <div className="metric lilac">
-            <span className="eyebrow">Backing per FLOOR · demo</span>
+          <Link className="metric lime metric-link" to="/verify">
+            <span className="eyebrow">Read-only proofs</span>
             <strong>
-              {ratio(evidence.snapshot.ledger.L, evidence.snapshot.ledger.T, 5)}
-              <small>NEAR</small>
-            </strong>
-          </div>
-          <Link className="metric lime metric-link" to="/app/treasury">
-            <span className="eyebrow">Your next move</span>
-            <strong>
-              Make it count
+              Verify now
               <ArrowUpRight />
             </strong>
           </Link>

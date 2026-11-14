@@ -55,6 +55,17 @@ export async function validateRequest(
     throw new Error(
       "Reserve or storage solvency check failed. Transactions are blocked.",
     );
+  const newRisk = new Set([
+    "issue",
+    "redeem",
+    "fund_offer",
+    "accept_offer",
+    "contribute",
+  ]);
+  if (state.pilot?.stopped && newRisk.has(action.method))
+    throw new Error(
+      "RC1 new-risk actions are permanently stopped on this contract. Browse /verify for completed proofs; do not attempt issuance.",
+    );
   const allowed = [
     "storage_deposit",
     "issue",
