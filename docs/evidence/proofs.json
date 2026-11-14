@@ -1,0 +1,2148 @@
+{
+  "schema": "floorline-proof-index/v1",
+  "project": "Floorline",
+  "network": "testnet",
+  "contract": "rc1.floorline-g3-20261111-6702ea.testnet",
+  "expected_code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az",
+  "acceptance_status": "ACCEPTANCE_COMPLETE_BROWSER_UI_EVIDENCE_VERIFIED",
+  "verified_rows": 40,
+  "total_rows": 40,
+  "final_state": {
+    "pilot": {
+      "guardian": "floorline-g3-20261111-6702ea.testnet",
+      "stopped": true,
+      "gross": "16000000000000000000000",
+      "limits": {
+        "max_action": "10000000000000000000000",
+        "max_gross": "50000000000000000000000",
+        "max_storage": "20000000000000000000000"
+      },
+      "version": "floor-async-rc1"
+    },
+    "ledger": {
+      "L": "10180000000000000000000",
+      "T": "9000000000000000000000",
+      "inflight": "0",
+      "refund_storage": "0",
+      "storage_total": "60000000000000000000000",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0"
+    },
+    "admission": {
+      "occupied": 3,
+      "capacity": 128,
+      "exit_bytes_per_slot": 512,
+      "exit_reserve": "655360000000000000000000"
+    },
+    "account_code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az",
+    "last_verified_at": {
+      "height": 277696567,
+      "hash": "DjuzgYPr565eWgE9DmHkJpxNpe3j46YLrKZNmAjxYYNi",
+      "timestamp_nanosec": "1794682415227119234"
+    }
+  },
+  "gas_amendments": [
+    {
+      "step_id": "collateral_to_borrower",
+      "planned_gas": "110000000000000",
+      "finalized_gas": "30000000000000",
+      "evidence": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/COLLATERAL_GAS_AMENDMENT.json"
+    },
+    {
+      "step_id": "contribute",
+      "planned_gas": "110000000000000",
+      "finalized_gas": "30000000000000",
+      "hash": "AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1",
+      "evidence": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/CONTRIBUTE_GAS_AMENDMENT.json"
+    }
+  ],
+  "related_submission_nio": {
+    "note": "Separate solo-author project. Not Floorline transactions.",
+    "repo": "https://github.com/n1shanthb/near-intent-one",
+    "demo": "https://near-intent-one.vercel.app",
+    "verify": "https://near-intent-one.vercel.app/verify",
+    "proof_index": "https://github.com/n1shanthb/near-intent-one/blob/master/docs/PROOF_INDEX.md"
+  },
+  "proofs": [
+    {
+      "id": "rc1-01-deploy",
+      "title": "Fresh RC1 atomic deployment",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "deploy",
+      "step_id": "deploy",
+      "explorer_url": "https://testnet.nearblocks.io/txns/3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c",
+      "transaction_hash": "3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "0",
+      "args": null,
+      "deposit": null,
+      "gas": null,
+      "demonstrates": "Fresh RC1 atomic deployment",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[0]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c",
+        "descendants": [
+          "DmdBphfMJ41cih2NrrWbt7qWkq2krY28Tn97UHFEt5oy",
+          "844nvA3jM5Noqfg8HLqsGyYgzmfUFNoprwbksLvnvSZx"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-02-fund_holder",
+      "title": "Fund holder actor",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "deploy",
+      "step_id": "fund_holder",
+      "explorer_url": "https://testnet.nearblocks.io/txns/FYi2rYm28nh49QLrktqw4L3ijo7w8R3UZqNSZCV1xoj9",
+      "transaction_hash": "FYi2rYm28nh49QLrktqw4L3ijo7w8R3UZqNSZCV1xoj9",
+      "contract_or_account": "alice.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "Transfer",
+      "args": null,
+      "deposit": "1940000000000000000000000",
+      "gas": null,
+      "demonstrates": "Fund holder actor",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[1]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "FYi2rYm28nh49QLrktqw4L3ijo7w8R3UZqNSZCV1xoj9",
+        "descendants": [
+          "EKdjGwPXtu2wcKt1DeQiti86U7D6NcEii5QuBnGYcpyN",
+          "GcsSfdFs8ZatmgRbx32Ajuj1jHDnvmezghhBf58sQcoG"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-03-fund_borrower",
+      "title": "Fund borrower actor",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "deploy",
+      "step_id": "fund_borrower",
+      "explorer_url": "https://testnet.nearblocks.io/txns/J8uzrmrdXh7hRiQBiseMeVV8fAagq5SzYmWqb6qTUCEn",
+      "transaction_hash": "J8uzrmrdXh7hRiQBiseMeVV8fAagq5SzYmWqb6qTUCEn",
+      "contract_or_account": "carol.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "Transfer",
+      "args": null,
+      "deposit": "1210000000000000000000000",
+      "gas": null,
+      "demonstrates": "Fund borrower actor",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[2]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "J8uzrmrdXh7hRiQBiseMeVV8fAagq5SzYmWqb6qTUCEn",
+        "descendants": [
+          "GpTH3QHJUzaLUpWpy57JvRpfBpqmJXEXhuBn2wPEFD9V",
+          "H5Gw4em12NQW8ysanwXknb14bfCK9SQkuA14AzXZycqt"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-04-fund_nft_holder",
+      "title": "Fund NFT-holder actor",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "deploy",
+      "step_id": "fund_nft_holder",
+      "explorer_url": "https://testnet.nearblocks.io/txns/9QeAqcsTTqnLpqpRZuijBU38sSmm5av71na8ydkyuFMe",
+      "transaction_hash": "9QeAqcsTTqnLpqpRZuijBU38sSmm5av71na8ydkyuFMe",
+      "contract_or_account": "dave.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "Transfer",
+      "args": null,
+      "deposit": "370000000000000000000000",
+      "gas": null,
+      "demonstrates": "Fund NFT-holder actor",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[3]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "9QeAqcsTTqnLpqpRZuijBU38sSmm5av71na8ydkyuFMe",
+        "descendants": [
+          "DjjYmYyoDNoCsCFz7nJkHVtRPiMQZ2uVdUD37iXPDJ91",
+          "2xAFfTDZkpg3ot55bwMTx9c6GDYp8s7m2gegwxcsjwfj"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-05-fund_lender",
+      "title": "Fund lender actor",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "deploy",
+      "step_id": "fund_lender",
+      "explorer_url": "https://testnet.nearblocks.io/txns/BtuWTZMFRChEtiMaqtc4ABTC7vmps1T1CQBjbd7rRysF",
+      "transaction_hash": "BtuWTZMFRChEtiMaqtc4ABTC7vmps1T1CQBjbd7rRysF",
+      "contract_or_account": "lender.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "Transfer",
+      "args": null,
+      "deposit": "970000000000000000000000",
+      "gas": null,
+      "demonstrates": "Fund lender actor",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[4]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "BtuWTZMFRChEtiMaqtc4ABTC7vmps1T1CQBjbd7rRysF",
+        "descendants": [
+          "5ZAV8MXzUMqEeh4w77V6q8bM95Bxpmti2Wg5mjNzpq9z",
+          "3GNQGXBAqTLcdJVX9CnUkWRXcC7fnsdS2Ru3FmZ9iiDg"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-06-register_holder",
+      "title": "Register holder storage",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "registration",
+      "step_id": "register_holder",
+      "explorer_url": "https://testnet.nearblocks.io/txns/EzJHtMiZoyrBmEJTdfKGLgwPoh73DS6mo83ack6rTswJ",
+      "transaction_hash": "EzJHtMiZoyrBmEJTdfKGLgwPoh73DS6mo83ack6rTswJ",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "alice.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Register holder storage",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[5]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277608981,
+      "expected_vs_actual": {
+        "before": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "0",
+          "stopped": false,
+          "admission_occupied": 0,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "20000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 1,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "EzJHtMiZoyrBmEJTdfKGLgwPoh73DS6mo83ack6rTswJ",
+        "descendants": [
+          "3mcdNXCAr31kqrMzfb2GBUnEkyTbAQG1kaWyxzUbHfuG",
+          "A1k9jTAAyhafsGmVAUHunHhbnm2E23uJBSQfiaiou76C"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-07-register_borrower",
+      "title": "Register borrower storage",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "registration",
+      "step_id": "register_borrower",
+      "explorer_url": "https://testnet.nearblocks.io/txns/Ad2WphneJHcSqYrR3kbZhzr7uQuc7WM4v849fnqCG9U",
+      "transaction_hash": "Ad2WphneJHcSqYrR3kbZhzr7uQuc7WM4v849fnqCG9U",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Register borrower storage",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[6]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277609094,
+      "expected_vs_actual": {
+        "before": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "20000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 1,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "40000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 2,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "Ad2WphneJHcSqYrR3kbZhzr7uQuc7WM4v849fnqCG9U",
+        "descendants": [
+          "BLXmNmRKVUsbSBdKVbFPnQe6vQxeBtVRQbkoB9pSJ3it",
+          "DzD88owsEBrr3wFX8ZydC1kNJ9WxJKos22oCgqyfYfFQ"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-08-register_nft_holder",
+      "title": "Register NFT-holder storage",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "registration",
+      "step_id": "register_nft_holder",
+      "explorer_url": "https://testnet.nearblocks.io/txns/Df26ChGeMjCnw4TgTssBCRa6rYX1iVN5vACsyp2EcGAN",
+      "transaction_hash": "Df26ChGeMjCnw4TgTssBCRa6rYX1iVN5vACsyp2EcGAN",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "dave.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Register NFT-holder storage",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[7]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277609211,
+      "expected_vs_actual": {
+        "before": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "40000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 2,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "60000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 3,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "Df26ChGeMjCnw4TgTssBCRa6rYX1iVN5vACsyp2EcGAN",
+        "descendants": [
+          "74HRcGpcYgaohxNRnK2unx7QPJUyfZrVESQpDrTyRixR",
+          "4ZFX1LznfootqY2DpSRHRKbbZBAtXEBRUk3hJSjvjyBi"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-09-register_lender",
+      "title": "Register lender storage",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "registration",
+      "step_id": "register_lender",
+      "explorer_url": "https://testnet.nearblocks.io/txns/38yG1tnUgk2Gu3XS8buwXr1mWuzs49zehZ23EV54uBh7",
+      "transaction_hash": "38yG1tnUgk2Gu3XS8buwXr1mWuzs49zehZ23EV54uBh7",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Register lender storage",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[8]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277609328,
+      "expected_vs_actual": {
+        "before": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "60000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 3,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "0",
+          "T": "0",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "38yG1tnUgk2Gu3XS8buwXr1mWuzs49zehZ23EV54uBh7",
+        "descendants": [
+          "F56Twe67tHNSJVTJYXbUGkbo7sAGst4WkhUm796UeGvT",
+          "J8QAk6vVS8RoH6QWVvNEG9TcGfuyx5N1rDt5NAXPa7xV"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-10-register_new_holder",
+      "title": "Register Funmask wallet holder",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "registration",
+      "step_id": "register_new_holder",
+      "explorer_url": "https://testnet.nearblocks.io/txns/SwTUrnrWmt7TrJdRExCndek5ndxXFsDNBypXGWgy6Cy",
+      "transaction_hash": "SwTUrnrWmt7TrJdRExCndek5ndxXFsDNBypXGWgy6Cy",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Register Funmask wallet holder",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[9]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "SwTUrnrWmt7TrJdRExCndek5ndxXFsDNBypXGWgy6Cy",
+        "descendants": [
+          "2eXBrD61xu44ssFEHUanBrbBt75TeTwwjCYV7rJttZSZ",
+          "9GPDrk71f8F8R73cKNvTk14RcJek6KRfahCAgPV3mEiB"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": true
+    },
+    {
+      "id": "rc1-11-issue",
+      "title": "FLOOR issuance",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "issue",
+      "explorer_url": "https://testnet.nearblocks.io/txns/63AaM37eN455GB8JinN6oUYDjzuZaMcEfcGG3ZwxcdVm",
+      "transaction_hash": "63AaM37eN455GB8JinN6oUYDjzuZaMcEfcGG3ZwxcdVm",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "issue",
+      "args": {
+        "min_tokens": "10000000000000000000000"
+      },
+      "deposit": "10000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "FLOOR issuance",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[10]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": null,
+      "expected_vs_actual": {
+        "before": null,
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "63AaM37eN455GB8JinN6oUYDjzuZaMcEfcGG3ZwxcdVm",
+        "descendants": [
+          "FSj9bEdghx5xncSrKtmEYtiBeAQXFAj2tdeodeUn4j8W",
+          "4siCGe6o7Ck2xJQR7NQvgNxvVJQ1UsWLZJYGn7Hv7XhD"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": true
+    },
+    {
+      "id": "rc1-12-collateral_to_borrower",
+      "title": "FLOOR transfer to borrower",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "collateral_to_borrower",
+      "explorer_url": "https://testnet.nearblocks.io/txns/8m2bHVobQsSpJjRzmuyQaQHiq7x3i1iCsqSJ2cYZxAiK",
+      "transaction_hash": "8m2bHVobQsSpJjRzmuyQaQHiq7x3i1iCsqSJ2cYZxAiK",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "ft_transfer",
+      "args": {
+        "receiver_id": "carol.floorline-g3-20261111-6702ea.testnet",
+        "amount": "3000000000000000000000",
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "30000000000000",
+      "demonstrates": "FLOOR transfer to borrower",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[11]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277661710,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10000000000000000000000",
+          "T": "10000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10000000000000000000000",
+          "T": "10000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "8m2bHVobQsSpJjRzmuyQaQHiq7x3i1iCsqSJ2cYZxAiK",
+        "descendants": [
+          "7aqPzkwzQpzWehFN9NrYikvRgk6HRLHht1CPTULVXQ9B",
+          "2F5oCCRThnPWXkLqaadk5FB4WmCBKdaWUAzVot6tU5bz"
+        ],
+        "count": 3
+      },
+      "caveats": [
+        "Evidence-only gas amendment: finalized at 30 Tgas vs planned 110 Tgas; amounts/args unchanged."
+      ],
+      "browser": true
+    },
+    {
+      "id": "rc1-13-redeem",
+      "title": "FLOOR redemption",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "redeem",
+      "explorer_url": "https://testnet.nearblocks.io/txns/4gj1BQFmB9wH2NqtZRnTBfdQErdbUDCAQULRTPqojYyd",
+      "transaction_hash": "4gj1BQFmB9wH2NqtZRnTBfdQErdbUDCAQULRTPqojYyd",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "redeem",
+      "args": {
+        "amount": "1000000000000000000000",
+        "min_out": "820000000000000000000"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "FLOOR redemption",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[12]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277666318,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "4gj1BQFmB9wH2NqtZRnTBfdQErdbUDCAQULRTPqojYyd",
+        "descendants": [
+          "2uk5FA1KxSAZiUE3Yzq7JGS6D1LqCSXiV9okqi2hipYP",
+          "EnKokauAHH62r4UXUz5pkqtrz17WHudBwhv7nthWU3BZ"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": true
+    },
+    {
+      "id": "rc1-14-withdraw_redemption",
+      "title": "Native redemption claim withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "withdraw_redemption",
+      "explorer_url": "https://testnet.nearblocks.io/txns/EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA",
+      "transaction_hash": "EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": "1"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Native redemption claim withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[13]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277670650,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "EyiBXwpRXnkJmxYCmYT58UpKZzpw57BYs3dkJ6n67ZbA",
+        "descendants": [
+          "FS2TJCPFxa4xBpiyR5HoCpP4qEe281smshi9PKHayg7U",
+          "6pbmysqYu29XJq6dUbWKHiBS34eFWtFqfHtzkPHTuiBx",
+          "4axRFYJhud8QiJ6GJDYFuCPzaHFvswNqPDRn1Tipmk9C",
+          "7NdjGQvGeJJZy2Lct5tFVtuUZLbyPCVhqDwohd65gBMC",
+          "8HdF9mL2vXn26enaUSywRvbTx8aAiMwHYTNe92J1KZJz",
+          "EF7b3radqgC4A8LCL61i8eGVgXSLMsCibJrqC6Cxd5tU"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": true
+    },
+    {
+      "id": "rc1-15-cleanup_redeem",
+      "title": "Redemption claim cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "cleanup_redeem",
+      "explorer_url": "https://testnet.nearblocks.io/txns/F3kutexpi1YY3RMYRadBoYLKbF2xxro3pMPPiX6jbtwV",
+      "transaction_hash": "F3kutexpi1YY3RMYRadBoYLKbF2xxro3pMPPiX6jbtwV",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": "1"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Redemption claim cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[14]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277671120,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "F3kutexpi1YY3RMYRadBoYLKbF2xxro3pMPPiX6jbtwV",
+        "descendants": [
+          "J1V6qAXA8d4AhhDHyJBBpS7z4WWkqgjsn6ZxjHBfM65B",
+          "CwzAPJ2QZBQsps8fSANJqnno4q2eGng3ZJPtcdvMSV1j"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-16-offer_repay",
+      "title": "Lender-funded repayment offer",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "offer_repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/5o8nT2YxNe3XJNHkkq2eRSuSd6pBVcWP8LDQMrd6YkVm",
+      "transaction_hash": "5o8nT2YxNe3XJNHkkq2eRSuSd6pBVcWP8LDQMrd6YkVm",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "2200000000000000000000",
+        "collateral": "1000000000000000000000",
+        "duration_ns": "86400000000000"
+      },
+      "deposit": "2000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Lender-funded repayment offer",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[15]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277671582,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "5o8nT2YxNe3XJNHkkq2eRSuSd6pBVcWP8LDQMrd6YkVm",
+        "descendants": [
+          "BhJYAZMiuX6Qsdk6S4iNSEZZGKqHCXeb7rWV8i54Ehea",
+          "Bm4XffDHyFNHiPKfNGMbmJ59mZNWwYNGmDXTHGfQ3Ge8"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-17-borrow_repay",
+      "title": "Loan acceptance (repay path)",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "borrow_repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/FhY98dpwD3FKj5JbY82FvcXEE5hfgN9G2SqeUnxNpLJD",
+      "transaction_hash": "FhY98dpwD3FKj5JbY82FvcXEE5hfgN9G2SqeUnxNpLJD",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "accept_offer",
+      "args": {
+        "loan_id": "3"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Loan acceptance (repay path)",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[16]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277672036,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "FhY98dpwD3FKj5JbY82FvcXEE5hfgN9G2SqeUnxNpLJD",
+        "descendants": [
+          "2eF7QnqLbTHbAQnDiMLvDum7jx9MiUoCM4r8wzLcyAru",
+          "6xt35XUwdXM5EB6FE2YpBKf2TYtTc4ztRa2Xv9tKfdQx"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-18-withdraw_principal",
+      "title": "Borrower principal claim withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "withdraw_principal",
+      "explorer_url": "https://testnet.nearblocks.io/txns/EbxKcJ51CbBtqBxn4PWcMmf2Mf7A2oRY9dpMn9waeV3U",
+      "transaction_hash": "EbxKcJ51CbBtqBxn4PWcMmf2Mf7A2oRY9dpMn9waeV3U",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": "4"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Borrower principal claim withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[17]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277672219,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": null
+      },
+      "receipt_proof": {
+        "root": "EbxKcJ51CbBtqBxn4PWcMmf2Mf7A2oRY9dpMn9waeV3U",
+        "descendants": [
+          "BCRVh3PSRpj9FkxSezt2HQWYLhYvsBm3GUuAoSCxkabZ",
+          "DVpJG3T4k88dswVDKjbzWoHPWDELiXQWVUp535pehxmY",
+          "GJ7n6Q9TQYJCQsq7aqPJZKGy6t6BPq9SKe6E1EibYbT1",
+          "CkWvHBq5Fgi5EfZK7BQ7ofVDnxH89kDYFjmSm7gCNJtH",
+          "2eRrmuKAyme3ihJ6NuDav5BrHdcpcMrCyySDPjP2tCZs",
+          "4XAdXUTQPa1G5SRqLiQA7JTAPuzmACbQ8spiUwpojj3X"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-19-cleanup_borrow_repay",
+      "title": "Borrow principal claim cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "cleanup_borrow_repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/7DVCz1zH2HTp8JdRoibBmyFXdM7Q5JoY1cUbniQJ3U1t",
+      "transaction_hash": "7DVCz1zH2HTp8JdRoibBmyFXdM7Q5JoY1cUbniQJ3U1t",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": "4"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Borrow principal claim cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[18]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277675031,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "7DVCz1zH2HTp8JdRoibBmyFXdM7Q5JoY1cUbniQJ3U1t",
+        "descendants": [
+          "2ASWExXR4LHFp9Yj6NBTDtNGvCV7YaMAGc531VFw2qBJ",
+          "6TctqmaWSbjA4HYRkY4GJHxAtGL5jJsRHJVkoYrGPdJ1"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-20-nft_transfer",
+      "title": "NEP-171 NFT ownership transfer",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "nft_transfer",
+      "explorer_url": "https://testnet.nearblocks.io/txns/GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz",
+      "transaction_hash": "GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "nft_transfer",
+      "args": {
+        "receiver_id": "dave.floorline-g3-20261111-6702ea.testnet",
+        "token_id": "3",
+        "approval_id": null,
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "110000000000000",
+      "demonstrates": "NEP-171 NFT ownership transfer",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[19]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277675860,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "GKuJWQRG7UXPy6SwtboqapKEsYwpAJbDrhUmXJnMMBmz",
+        "descendants": [
+          "4fCcrM9T4ujRFYXh5yccigq7TwwyReBb2CtAvxXyHHHz",
+          "2RD55W9t9jQvhXGDs7EF1BDLA8DvNwdTK5FFMxaYu3YU"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-21-repay",
+      "title": "NFT-holder repayment",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB",
+      "transaction_hash": "CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "dave.floorline-g3-20261111-6702ea.testnet",
+      "method": "repay",
+      "args": {
+        "loan_id": "3"
+      },
+      "deposit": "2200000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "NFT-holder repayment",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[20]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277676727,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "CzkQir6usnSAkph3ksZvjBLTrZfDLERnCCKPNDfWEHGB",
+        "descendants": [
+          "3iUp1yXYCuMeGDbeTCsR4VmSYM5iNqHKAanKXhLEQLmW",
+          "nofpSrn5BBot1C6hvmGuD8CHQcMxo6xGVciwSzWXsUR"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-22-withdraw_repayment",
+      "title": "Lender repayment claim withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "withdraw_repayment",
+      "explorer_url": "https://testnet.nearblocks.io/txns/7Ku8DTbiAMoTze144iCisTBiJkDNJwhwfd5TaCbV2rzm",
+      "transaction_hash": "7Ku8DTbiAMoTze144iCisTBiJkDNJwhwfd5TaCbV2rzm",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": "6"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Lender repayment claim withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[21]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277677576,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "7Ku8DTbiAMoTze144iCisTBiJkDNJwhwfd5TaCbV2rzm",
+        "descendants": [
+          "Hgc2Euh3KqMDLpWZd9wNHNezeW2jH35r181osdu7pNp",
+          "26ihFfBWEHmhr6fGiLLYqm6cURduV4quuAoZBviDkb4U",
+          "4QhoT65s8wLqqjSWVFNWPpqPz8KY1wWzmTRKev74pq9S",
+          "3iCAYQRxh514Km2MnCw8xDBm8YHPwfNaLhD6euuQLoP1",
+          "8W5C8D7jg4tXwEMuSZj1Q69g1WHEBLKM3tN9oA2pqKj3",
+          "EH2SmV63jctU6WCEuCmkF5dquRjhHGBT3CcwNeZHBtgE"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-23-cleanup_repay",
+      "title": "Repayment claim cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "cleanup_repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/HgeuhqJwD6pLDVTkoVUtonMRU6aZghFPUxJYTodPW7Kn",
+      "transaction_hash": "HgeuhqJwD6pLDVTkoVUtonMRU6aZghFPUxJYTodPW7Kn",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": "6"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Repayment claim cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[22]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277678412,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "HgeuhqJwD6pLDVTkoVUtonMRU6aZghFPUxJYTodPW7Kn",
+        "descendants": [
+          "eZZFPkmywCsZLW4mNoPGvXqpVRjfrbwfUdL7y2bbn8j",
+          "HReiFsrR7kQSnx3GeZEw8HGq1v5EDjcD7V5BBYyhD6Dh"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-24-cleanup_offer_repay",
+      "title": "Repay loan record cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_repay",
+      "step_id": "cleanup_offer_repay",
+      "explorer_url": "https://testnet.nearblocks.io/txns/DpXg5y12XsKASJtrchcig5YzVpNWwkUNZ9KFdu65Nrg1",
+      "transaction_hash": "DpXg5y12XsKASJtrchcig5YzVpNWwkUNZ9KFdu65Nrg1",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": "3"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Repay loan record cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[23]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277679231,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "DpXg5y12XsKASJtrchcig5YzVpNWwkUNZ9KFdu65Nrg1",
+        "descendants": [
+          "31P9NE1zkQn1cya59v6LgphniKy7PrdA8cKoRyvNSzML",
+          "2rMRd3TiMurvZf3PJBZnFgfWFPnQiCdcjwxTRUS7bRs4"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-25-offer_default",
+      "title": "Lender-funded default-path offer",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "offer_default",
+      "explorer_url": "https://testnet.nearblocks.io/txns/EfrgkbMgKTWFvY2gLSE7RqASKgqvernDmPJMP4kb9CfG",
+      "transaction_hash": "EfrgkbMgKTWFvY2gLSE7RqASKgqvernDmPJMP4kb9CfG",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "2200000000000000000000",
+        "collateral": "1000000000000000000000",
+        "duration_ns": "120000000000"
+      },
+      "deposit": "2000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Lender-funded default-path offer",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[24]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277680088,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "EfrgkbMgKTWFvY2gLSE7RqASKgqvernDmPJMP4kb9CfG",
+        "descendants": [
+          "BdX4um4F5XY9WAoWk1txDEdXjbWBBKuXrepnpBc2L2Af",
+          "57twUQGszjce7EeA1HgLqx9Qzq1hq1L4b1Lsy6ATKG99"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-26-borrow_default",
+      "title": "Loan acceptance (default path)",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "borrow_default",
+      "explorer_url": "https://testnet.nearblocks.io/txns/AK14sn8SGamoTHvo3hUdqfhjEieFUa7n1xxK9khYUwpu",
+      "transaction_hash": "AK14sn8SGamoTHvo3hUdqfhjEieFUa7n1xxK9khYUwpu",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "accept_offer",
+      "args": {
+        "loan_id": "8"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Loan acceptance (default path)",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[25]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277680916,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "AK14sn8SGamoTHvo3hUdqfhjEieFUa7n1xxK9khYUwpu",
+        "descendants": [
+          "2P4cTH6SiemQBR48KPHXrnACucPBQikwo1UZxQeCWe6i",
+          "FJat8wirZXBJArWUYuc2j1umJ1f5SPGUdsmTbpDcp4eR"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-27-withdraw_default_principal",
+      "title": "Default-path principal withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "withdraw_default_principal",
+      "explorer_url": "https://testnet.nearblocks.io/txns/AnRHtfjzt3iHKtz44MDTvaNwWLQURk8kvmE5XSYmg76n",
+      "transaction_hash": "AnRHtfjzt3iHKtz44MDTvaNwWLQURk8kvmE5XSYmg76n",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": "9"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Default-path principal withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[26]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277681740,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "AnRHtfjzt3iHKtz44MDTvaNwWLQURk8kvmE5XSYmg76n",
+        "descendants": [
+          "D8wUmdXXmA2Qq7GgWFY2U6Z3Ga23kha5Z7bizFHq4oZt",
+          "DS2yRWEyaMVaCTEDXGKfHD7juSXW93tyYqhTxb7KEFjm",
+          "6iHrNi1FWqx6aL8qfCLwkGMPqMNcScLztT994a4DanGT",
+          "GzPj6wFdsaLCUNDwp6AnVW27Vzm3cCZkB4eV6CNFydmi",
+          "FTyM69GuToQrw1gCQ5oyEdcrFZtKwghgAxmStKuYHaRK",
+          "GE8Bi8jMuVKK25n6FzRgTmrSnFsmBsNrfTt3f1AgusA4"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-28-cleanup_borrow_default",
+      "title": "Default-path claim cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "cleanup_borrow_default",
+      "explorer_url": "https://testnet.nearblocks.io/txns/E3PE1qPTDcNgzsphcCh6Bg8yigPR822FXC76pzR32FKs",
+      "transaction_hash": "E3PE1qPTDcNgzsphcCh6Bg8yigPR822FXC76pzR32FKs",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": "9"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Default-path claim cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[27]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277682581,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "E3PE1qPTDcNgzsphcCh6Bg8yigPR822FXC76pzR32FKs",
+        "descendants": [
+          "7mizafCJshdZ5DW7Y8JR5wbB8VnrY73YZn7F6z6SiNVr",
+          "5Le4JDsXJhDUgzMCzZhkchSTHd4tunDcrtjVzqvHsKTt"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-29-default",
+      "title": "Default transition / collateral release",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "default",
+      "explorer_url": "https://testnet.nearblocks.io/txns/GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B",
+      "transaction_hash": "GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "default_loan",
+      "args": {
+        "loan_id": "8"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Default transition / collateral release",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[28]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277683435,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "GFvtYszDR36rPXsKeR6udwuJgHoDe1feRTKXBTMDkh3B",
+        "descendants": [
+          "6pHXyw7TTr8VsuQrkFznhsapwkx88Vrc8Xd6Wc2HoNvw",
+          "5mCj4wfnSEyMBFiKTG3Rtx4A2gUYcKRxftVH8Ya2Avbg"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-30-cleanup_offer_default",
+      "title": "Default loan cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "lending_default",
+      "step_id": "cleanup_offer_default",
+      "explorer_url": "https://testnet.nearblocks.io/txns/7G8RQVsybpQmn4P2YWoMNeXgk4URGRKKs9KxCB9JfgHJ",
+      "transaction_hash": "7G8RQVsybpQmn4P2YWoMNeXgk4URGRKKs9KxCB9JfgHJ",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": "8"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Default loan cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[29]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277684253,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "7G8RQVsybpQmn4P2YWoMNeXgk4URGRKKs9KxCB9JfgHJ",
+        "descendants": [
+          "39MspTL5XK1Uzca6c8mhVtrDEP46LJVpH9enYutuJpK6",
+          "FxwBz85ryJkSqMgj1b6miukPD1rwk52dESa43rfSdkeV"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-31-offer_cancel",
+      "title": "Cancel-path offer funding",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "cancel",
+      "step_id": "offer_cancel",
+      "explorer_url": "https://testnet.nearblocks.io/txns/8SqHYjJ98SdrUFF4xc64rdmmwqifrg6o2CZyTSsaoz9N",
+      "transaction_hash": "8SqHYjJ98SdrUFF4xc64rdmmwqifrg6o2CZyTSsaoz9N",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "1000000000000000000000",
+        "collateral": "100000000000000000000",
+        "duration_ns": "600000000000"
+      },
+      "deposit": "1000000000000000000000",
+      "gas": "110000000000000",
+      "demonstrates": "Cancel-path offer funding",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[30]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277685075,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "8SqHYjJ98SdrUFF4xc64rdmmwqifrg6o2CZyTSsaoz9N",
+        "descendants": [
+          "8kpUABjuv7ckywpk2KN7Ue6PyFAcCM6p3HVKTqdvK1GP",
+          "CbvkFn3Zi5zaDedf6gGTKApWeT1fQPrXSu7TCsa853Lr"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-32-cancel",
+      "title": "Offer cancellation",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "cancel",
+      "step_id": "cancel",
+      "explorer_url": "https://testnet.nearblocks.io/txns/CswGb1eQgt8HHyWFKSmogHDu8ycj49nVPbMfcaR9cqac",
+      "transaction_hash": "CswGb1eQgt8HHyWFKSmogHDu8ycj49nVPbMfcaR9cqac",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "cancel_offer",
+      "args": {
+        "loan_id": "11"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Offer cancellation",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[31]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277685916,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "CswGb1eQgt8HHyWFKSmogHDu8ycj49nVPbMfcaR9cqac",
+        "descendants": [
+          "Ah3Yo6M7bHEYGZv3DyfQtnc2ivpgJE3uoVFaUvwkdmiR",
+          "7oUg9AiiWMx8cL2AgF29uVoLxa2ZiDUcXe9cuBpUPqsK"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-33-withdraw_cancel",
+      "title": "Cancellation claim withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "cancel",
+      "step_id": "withdraw_cancel",
+      "explorer_url": "https://testnet.nearblocks.io/txns/6oRi88caNa1tBBBb6xhvM7P2DrgxVF3WYPi57rywjm8A",
+      "transaction_hash": "6oRi88caNa1tBBBb6xhvM7P2DrgxVF3WYPi57rywjm8A",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "lender.floorline-g3-20261111-6702ea.testnet",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": "12"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Cancellation claim withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[32]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277686737,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "6oRi88caNa1tBBBb6xhvM7P2DrgxVF3WYPi57rywjm8A",
+        "descendants": [
+          "5WyGtCC9NGBMKSmXwBzRTMMivLDsh6voZZg9nbFP3TnC",
+          "EFPaReuwYGChLmUmj1Y1cGEK4QJ9zDsRjhF9sMjhBWws",
+          "276GTeFML8ctnjZBg2NvrGGGmv7omtyLuvL8KwZ874xP",
+          "GURSkFQ8qGAN2M2mxT1fgHrBkN7xfL4oXdWBnA2PGKsT",
+          "BKSBif1mZSHnQtd8GDPXoi9EDk43WxAHGgkwv57uMmkw",
+          "FbfcU8KYuFwQTEvMqsqBvVYEXZqjk9pLa6V4Bw5QJE94"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-34-cleanup_cancel",
+      "title": "Cancellation claim cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "cancel",
+      "step_id": "cleanup_cancel",
+      "explorer_url": "https://testnet.nearblocks.io/txns/a1gqKUUz9SkTJBqcoWHiDpXLis2EhCndnuWdGxSYXnP",
+      "transaction_hash": "a1gqKUUz9SkTJBqcoWHiDpXLis2EhCndnuWdGxSYXnP",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": "12"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Cancellation claim cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[33]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277687553,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "a1gqKUUz9SkTJBqcoWHiDpXLis2EhCndnuWdGxSYXnP",
+        "descendants": [
+          "9sp8uF28WDSgUfvnDpGWJxZW65joixB7wCSkCsVnPtjd",
+          "A1t6j4TkZ6PeDDh4bJHRPUTKrLQMnM8CkAGHLYCMfH28"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-35-cleanup_offer_cancel",
+      "title": "Cancelled offer cleanup",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "cancel",
+      "step_id": "cleanup_offer_cancel",
+      "explorer_url": "https://testnet.nearblocks.io/txns/G98mFJpPdtcUcKB2z8kmtf9GUcAtUMqg1vbLcbauZnqg",
+      "transaction_hash": "G98mFJpPdtcUcKB2z8kmtf9GUcAtUMqg1vbLcbauZnqg",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": "11"
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Cancelled offer cleanup",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[34]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277688382,
+      "expected_vs_actual": {
+        "before": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "9180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "G98mFJpPdtcUcKB2z8kmtf9GUcAtUMqg1vbLcbauZnqg",
+        "descendants": [
+          "8WssXizJ1UJJqNKbtvZP2rprDUQzvV5Hsfkrq7HPAbn2",
+          "D9R4TUHmFoE9JQepog1JRzKJ4MotaGDARBNvzeFFYGrK"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-36-contribute",
+      "title": "External contribution (backing only)",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "contribute",
+      "explorer_url": "https://testnet.nearblocks.io/txns/AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1",
+      "transaction_hash": "AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "funmask6175.testnet",
+      "method": "contribute",
+      "args": {},
+      "deposit": "1000000000000000000000",
+      "gas": "30000000000000",
+      "demonstrates": "External contribution (backing only)",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[35]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277690778,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1",
+        "descendants": [
+          "2vSHjpdQHvMosngtsTckvkv3uRxkRaYvkdTPtHDW2keW",
+          "AqoR86m8KJtgetRTKHfZia9ggXhAZR8GxbuUqZ8LYbfv"
+        ],
+        "count": 3
+      },
+      "caveats": [
+        "Evidence-only gas amendment: finalized at 30 Tgas vs planned 110 Tgas; amounts/args unchanged."
+      ],
+      "browser": true
+    },
+    {
+      "id": "rc1-37-return_free_tokens",
+      "title": "Return free FLOOR tokens",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "floor_lifecycle",
+      "step_id": "return_free_tokens",
+      "explorer_url": "https://testnet.nearblocks.io/txns/D7jJDKkRipujwi4xjCp1U8KcCFnkQsveduSPb42q6cgB",
+      "transaction_hash": "D7jJDKkRipujwi4xjCp1U8KcCFnkQsveduSPb42q6cgB",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "ft_transfer",
+      "args": {
+        "receiver_id": "funmask6175.testnet",
+        "amount": "1000000000000000000000",
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "110000000000000",
+      "demonstrates": "Return free FLOOR tokens",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[36]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277692088,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "D7jJDKkRipujwi4xjCp1U8KcCFnkQsveduSPb42q6cgB",
+        "descendants": [
+          "13vBjSeg39KWwqEJpunp1EzUvFz6gquKqL86LJYP4ovo",
+          "9mpRCi7sfzCBJt1uAC6Sj8s5uayqtahvqhkGNaNcTaWi"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-38-withdraw_storage",
+      "title": "Storage withdrawal",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "storage_stop",
+      "step_id": "withdraw_storage",
+      "explorer_url": "https://testnet.nearblocks.io/txns/JDWdcjQbBBvj6SMzh1abvujHduSdo9nD14ihPPLxnKhL",
+      "transaction_hash": "JDWdcjQbBBvj6SMzh1abvujHduSdo9nD14ihPPLxnKhL",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_withdraw",
+      "args": {
+        "amount": "1000000000000000000000"
+      },
+      "deposit": "1",
+      "gas": "110000000000000",
+      "demonstrates": "Storage withdrawal",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[37]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277692948,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "80000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "79000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "JDWdcjQbBBvj6SMzh1abvujHduSdo9nD14ihPPLxnKhL",
+        "descendants": [
+          "ASwev2PNBucZDch2sLULGzGyTpjU2Ta7M2YKVAm4FA6u",
+          "DB36g3FYqXC3Qg5ajimCq2d4Y1XsfkeTtUXAgofjrA2V",
+          "CiKquAEvf3gxwBaihug2ABKnGmfrnADq3VA2dPkxaDHf",
+          "9AbN7eDDADKZm2DVeh65DXDwVV2mqVd26FAhZC5z6JxY",
+          "AwV1ZaCPUjAE8qWCELWwGEtUW9PFmUZheTMsbEwEQjTM",
+          "6tMP6ahRLGPT76YyQ8y9x8JygM2msAkatydRBCyJ8gNd"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-39-stop",
+      "title": "Irreversible new-risk stop",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "storage_stop",
+      "step_id": "stop",
+      "explorer_url": "https://testnet.nearblocks.io/txns/65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3",
+      "transaction_hash": "65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "floorline-g3-20261111-6702ea.testnet",
+      "method": "stop_new_risk",
+      "args": {},
+      "deposit": "0",
+      "gas": "110000000000000",
+      "demonstrates": "Irreversible new-risk stop",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[38]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277695340,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "79000000000000000000000",
+          "stopped": false,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "79000000000000000000000",
+          "stopped": true,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "65mFsU6oiA9V8UDUbdfj782zVpMrN69VxNRZuPT12UX3",
+        "descendants": [
+          "2ynrNDRtj9ibXQD659kQhDwaBCgGWHozTc7WeFsWDrdp",
+          "5XL1cadWbBnyXM5AHUTMqvhjsHn47q528htB1hRgXkEt"
+        ],
+        "count": 3
+      },
+      "caveats": [],
+      "browser": false
+    },
+    {
+      "id": "rc1-40-unregister",
+      "title": "Post-stop funded storage unregister",
+      "project": "Floorline",
+      "network": "testnet",
+      "classification": "SUCCESSFUL_FINALIZED_TESTNET_RECEIPT",
+      "status": "FINAL_VERIFIED",
+      "group": "storage_stop",
+      "step_id": "unregister",
+      "explorer_url": "https://testnet.nearblocks.io/txns/2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE",
+      "transaction_hash": "2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE",
+      "contract_or_account": "rc1.floorline-g3-20261111-6702ea.testnet",
+      "signer": "carol.floorline-g3-20261111-6702ea.testnet",
+      "method": "storage_unregister",
+      "args": {
+        "force": false
+      },
+      "deposit": "1",
+      "gas": "110000000000000",
+      "demonstrates": "Post-stop funded storage unregister",
+      "raw_local_source_path": "mainnet-release/async-hardening/release/acceptance-preparation-20261114/ACCEPTANCE_EXECUTION.json#rows[39]",
+      "finality_verification": "Dual-provider FINAL receipt closure; root + all descendant receipts SuccessValue/SuccessReceiptId",
+      "block_height": 277696215,
+      "expected_vs_actual": {
+        "before": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "79000000000000000000000",
+          "stopped": true,
+          "admission_occupied": 4,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        },
+        "after": {
+          "L": "10180000000000000000000",
+          "T": "9000000000000000000000",
+          "inflight": "0",
+          "storage_total": "60000000000000000000000",
+          "stopped": true,
+          "admission_occupied": 3,
+          "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+        }
+      },
+      "receipt_proof": {
+        "root": "2oKARd2oGXcS8s5y1Xrqv7b5KP3CawWBjEBwPnRf6bHE",
+        "descendants": [
+          "7XRSpXrcAkD7udAVZi4RXhGw1TmRyMNCNT8LjoYwgfqh",
+          "53ZugCN3kL63zTKusAGLGcPtfR6TJ1ux2q3UoGeiHpPK",
+          "Cr8HqUKgMZA3cbwKJK5jVrj7CSLNdQ8NGPRGUSfUgzXF",
+          "L9eMyg5AyjB8XwvCFanMYk3GnRK9TuYZSboE7SzQKFv",
+          "6YajgwqFq8B2kA7W7bHgJy91Kz1zJye1uzjXGcnoozNp",
+          "An4snCEiShufXLTBSt54JpChfjua9VhV8ab8srDEG5CB"
+        ],
+        "count": 7
+      },
+      "caveats": [],
+      "browser": false
+    }
+  ]
+}

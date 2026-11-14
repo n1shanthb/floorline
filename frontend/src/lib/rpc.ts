@@ -25,9 +25,28 @@ export interface AccountView {
   block_hash: string;
   block_height: number;
 }
+export interface PilotStatus {
+  guardian: string;
+  stopped: boolean;
+  gross: string;
+  limits: {
+    max_action: string;
+    max_gross: string;
+    max_storage: string;
+  };
+  version: string;
+}
+export interface AdmissionStatus {
+  occupied: number;
+  capacity: number;
+  exit_bytes_per_slot: number;
+  exit_reserve: string;
+}
 export interface Snapshot {
   ledger: Ledger;
   account: AccountView;
+  pilot: PilotStatus | null;
+  admission: AdmissionStatus | null;
   blockHash: string;
   blockHeight: number;
   timestampNs: string;
@@ -136,13 +155,22 @@ export async function snapshot(): Promise<Snapshot> {
   const block = await rpc<{
     header: { hash: string; height: number; timestamp_nanosec: string };
   }>("block", { finality: "final" });
-  const [ledger, account] = await Promise.all([
+  const [ledger, account, pilot, admission] = await Promise.all([
     view<Ledger>("accounting", {}, CONTRACT, block.header.hash),
     rpc<AccountView>("query", {
       request_type: "view_account",
       account_id: CONTRACT,
       block_id: block.header.hash,
     }),
+    view<PilotStatus>("pilot_status", {}, CONTRACT, block.header.hash).catch(
+      () => null,
+    ),
+    view<AdmissionStatus>(
+      "admission_status",
+      {},
+      CONTRACT,
+      block.header.hash,
+    ).catch(() => null),
   ]);
   if (account.code_hash !== CODE_HASH)
     throw new Error(
@@ -176,6 +204,8 @@ export async function snapshot(): Promise<Snapshot> {
   return {
     ledger,
     account,
+    pilot,
+    admission,
     blockHash: block.header.hash,
     blockHeight: block.header.height,
     timestampNs: block.header.timestamp_nanosec,
