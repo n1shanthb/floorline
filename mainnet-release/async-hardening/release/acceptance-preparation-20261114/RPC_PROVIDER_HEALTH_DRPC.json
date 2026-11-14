@@ -1,0 +1,205 @@
+{
+  "checked_at": "2026-11-14T04:34:12.038Z",
+  "rows": [
+    {
+      "url": "https://test.rpc.fastnear.com",
+      "http_status": 200,
+      "body": {
+        "jsonrpc": "2.0",
+        "result": {
+          "chain_id": "testnet",
+          "genesis_hash": "FWJ9kR6KFWoyMoNjpLXXGHeuiy7tEY6GmoFeCA5yuc6b",
+          "latest_protocol_version": 88,
+          "node_key": null,
+          "node_public_key": "ed25519:GTdUhFKmrPAFSmRPh3xp5JoLA7HMdebAdxqNNddM6ehS",
+          "protocol_version": 88,
+          "rpc_addr": "0.0.0.0:3030",
+          "sync_info": {
+            "earliest_block_hash": "5N8A5VcZkQVqoYUUzat4BAXnpJEGh62zxKotXiTtsV9S",
+            "earliest_block_height": 277429255,
+            "earliest_block_time": "2026-11-12T23:13:30.323890175Z",
+            "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+            "epoch_start_height": 277602055,
+            "latest_block_hash": "4b78BhqrimtSmFAUaP7XUz4pLEHEYYf3atVtpfgwtjpi",
+            "latest_block_height": 277608623,
+            "latest_block_time": "2026-11-14T04:34:10.043114009Z",
+            "latest_state_root": "ADhjy8cnprBtePA7NPqDijhvveeYjvDth72hdLDiVcJq",
+            "syncing": false
+          },
+          "uptime_sec": 184908,
+          "validator_account_id": null,
+          "validator_public_key": null,
+          "validators": [
+            {
+              "account_id": "node0"
+            },
+            {
+              "account_id": "node1"
+            },
+            {
+              "account_id": "kiln.pool.f863973.m0"
+            },
+            {
+              "account_id": "node2"
+            },
+            {
+              "account_id": "node3"
+            },
+            {
+              "account_id": "aurora.pool.f863973.m0"
+            },
+            {
+              "account_id": "01node.pool.f863973.m0"
+            },
+            {
+              "account_id": "stakely_v2.pool.f863973.m0"
+            },
+            {
+              "account_id": "legends.pool.f863973.m0"
+            },
+            {
+              "account_id": "validator4.testnet"
+            },
+            {
+              "account_id": "validator5.testnet"
+            },
+            {
+              "account_id": "validator6.testnet"
+            },
+            {
+              "account_id": "validator7.testnet"
+            },
+            {
+              "account_id": "validator8.testnet"
+            },
+            {
+              "account_id": "validator9.testnet"
+            },
+            {
+              "account_id": "validator10.testnet"
+            },
+            {
+              "account_id": "validator11.testnet"
+            },
+            {
+              "account_id": "ni.pool.f863973.m0"
+            },
+            {
+              "account_id": "ts.pool.f863973.m0"
+            },
+            {
+              "account_id": "lunanova2.pool.f863973.m0"
+            }
+          ],
+          "version": {
+            "build": "2.14.1",
+            "commit": "0ad2bdb2630e85bbacecab2a3b77072c78b46bc6",
+            "rustc_version": "1.95.0",
+            "version": "2.14.1"
+          }
+        },
+        "id": "rc1-readonly-provider"
+      }
+    },
+    {
+      "url": "https://near-testnet.drpc.org",
+      "http_status": 200,
+      "body": {
+        "id": "rc1-readonly-provider",
+        "jsonrpc": "2.0",
+        "result": {
+          "chain_id": "testnet",
+          "genesis_hash": "FWJ9kR6KFWoyMoNjpLXXGHeuiy7tEY6GmoFeCA5yuc6b",
+          "latest_protocol_version": 88,
+          "node_key": null,
+          "node_public_key": "ed25519:4o1T2y1gBv3nQ5vkzXNPgCGc9fY3TkhoZd9d8ZEf4w7q",
+          "protocol_version": 88,
+          "rpc_addr": "0.0.0.0:3030",
+          "sync_info": {
+            "earliest_block_hash": "5N8A5VcZkQVqoYUUzat4BAXnpJEGh62zxKotXiTtsV9S",
+            "earliest_block_height": 277429255,
+            "earliest_block_time": "2026-11-12T23:13:30.323890175Z",
+            "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+            "epoch_start_height": 277602055,
+            "latest_block_hash": "GRySW6mGXeSgWCMfHhTtn1jFfVvc2YMGuCPkHyVCZ9ub",
+            "latest_block_height": 277608624,
+            "latest_block_time": "2026-11-14T04:34:10.641169604Z",
+            "latest_state_root": "AhxcYANkcKQ2XBMFrPyEfGiwvPTQL4cvjLDACCYhJFYZ",
+            "syncing": false
+          },
+          "uptime_sec": 149435,
+          "validator_account_id": null,
+          "validator_public_key": null,
+          "validators": [
+            {
+              "account_id": "node0"
+            },
+            {
+              "account_id": "node1"
+            },
+            {
+              "account_id": "kiln.pool.f863973.m0"
+            },
+            {
+              "account_id": "node2"
+            },
+            {
+              "account_id": "node3"
+            },
+            {
+              "account_id": "aurora.pool.f863973.m0"
+            },
+            {
+              "account_id": "01node.pool.f863973.m0"
+            },
+            {
+              "account_id": "stakely_v2.pool.f863973.m0"
+            },
+            {
+              "account_id": "legends.pool.f863973.m0"
+            },
+            {
+              "account_id": "validator4.testnet"
+            },
+            {
+              "account_id": "validator5.testnet"
+            },
+            {
+              "account_id": "validator6.testnet"
+            },
+            {
+              "account_id": "validator7.testnet"
+            },
+            {
+              "account_id": "validator8.testnet"
+            },
+            {
+              "account_id": "validator9.testnet"
+            },
+            {
+              "account_id": "validator10.testnet"
+            },
+            {
+              "account_id": "validator11.testnet"
+            },
+            {
+              "account_id": "ni.pool.f863973.m0"
+            },
+            {
+              "account_id": "ts.pool.f863973.m0"
+            },
+            {
+              "account_id": "lunanova2.pool.f863973.m0"
+            }
+          ],
+          "version": {
+            "build": "unknown",
+            "commit": "unknown",
+            "rustc_version": "1.95.0",
+            "version": "2.14.1"
+          }
+        }
+      }
+    }
+  ]
+}

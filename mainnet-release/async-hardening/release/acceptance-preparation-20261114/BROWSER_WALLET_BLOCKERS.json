@@ -1,0 +1,17 @@
+{
+  "mynearwallet": {
+    "observed": "MyNearWallet cannot connect to apps anymore; being retired",
+    "url": "https://testnet.mynearwallet.com/login/",
+    "reference": "https://www.mynearwallet.com/sunset"
+  },
+  "meteor_candidate": {
+    "adapter": "@near-wallet-selector/meteor-wallet@10.1.4",
+    "sdk": "@meteorwallet/sdk@1.0.24",
+    "rejected": true,
+    "enabled": false,
+    "observed_source": "requestSignIn generates KeyPair.fromRandom and console.log(accessKey), then stores it in browser keystore",
+    "keys_generated_or_logged_by_candidate": false
+  },
+  "browser_acceptance": "BLOCKED_NOT_PASSED",
+  "existing_account_keys_never_exported": true
+}

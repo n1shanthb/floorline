@@ -1,0 +1,160 @@
+{
+  "account": "floorline-rc1-fund-a-20261114.testnet",
+  "endpoint": "https://helper.nearprotocol.com/account",
+  "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ",
+  "availability": {
+    "jsonrpc": "2.0",
+    "error": {
+      "name": "HANDLER_ERROR",
+      "cause": {
+        "info": {
+          "block_hash": "H2Z92VEgKE3ibkywWyewfEjmJxMZBbQiqVx9LhtJc2CY",
+          "block_height": 277606549,
+          "requested_account_id": "floorline-rc1-fund-a-20261114.testnet"
+        },
+        "name": "UNKNOWN_ACCOUNT"
+      },
+      "code": -32000,
+      "message": "Server error",
+      "data": "account floorline-rc1-fund-a-20261114.testnet does not exist while viewing"
+    },
+    "id": "rc1-sponsor"
+  },
+  "started_at": "2026-11-14T04:13:30.305Z",
+  "status": "ACCOUNT_FINALIZED_TRANSFER_NOT_ATTEMPTED",
+  "http_status": 200,
+  "body": "{\"final_execution_status\":\"EXECUTED_OPTIMISTIC\",\"receipts_outcome\":[{\"block_hash\":\"EKJQTL38ktppajQLD4auNZePnhDxcvyN6LwVdmXASVGA\",\"id\":\"HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t\",\"outcome\":{\"executor_id\":\"floorline-rc1-fund-a-20261114.testnet\",\"gas_burnt\":7524947687500,\"logs\":[],\"metadata\":{\"contracts\":[null,null,null],\"gas_profile\":[],\"version\":4},\"receipt_ids\":[\"AgYo3x2jYA6eFjsJ6S6GP5D4NWVjcDQwNfL6frjCAyeo\"],\"status\":{\"SuccessValue\":\"\"},\"tokens_burnt\":\"7032494768750000000000\"},\"proof\":[{\"direction\":\"Left\",\"hash\":\"HkfRiabrSpCyLVGCfS3BjtD3pMprereYd7ucctyyv7j6\"},{\"direction\":\"Right\",\"hash\":\"F2mqF9kzAArd9NEVsWtMHJeZQZQ53pFji8JW5fhUEDTB\"}]}],\"status\":{\"SuccessValue\":\"\"},\"transaction\":{\"actions\":[\"CreateAccount\",{\"Transfer\":{\"deposit\":\"10000000000000000000000000\"}},{\"AddKey\":{\"access_key\":{\"nonce\":0,\"permission\":\"FullAccess\"},\"public_key\":\"ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ\"}}],\"hash\":\"4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP\",\"nonce\":51910588665389,\"priority_fee\":0,\"public_key\":\"ed25519:4XhhXfW316DeAYBTxQe7Z15WostJptFpnXdv57KtXVNC\",\"receiver_id\":\"floorline-rc1-fund-a-20261114.testnet\",\"signature\":\"ed25519:35tHY3UzyEYvgMSKN2DH5AYDhnMcxto7mfy7X5MJJPpKgenBzhpCXyTm9E1ft7JNv3SUHWYkKrus8T73t9oRAuev\",\"signer_id\":\"testnet\"},\"transaction_outcome\":{\"block_hash\":\"6AMYkBSY3Cdid1tWLyrCVqBQc1RqzU8gjYSKQ8J8GPhC\",\"id\":\"4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP\",\"outcome\":{\"executor_id\":\"testnet\",\"gas_burnt\":824947687500,\"logs\":[],\"metadata\":{\"gas_profile\":null,\"version\":1},\"receipt_ids\":[\"HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t\"],\"status\":{\"SuccessReceiptId\":\"HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t\"},\"tokens_burnt\":\"82494768750000000000\"},\"proof\":[{\"direction\":\"Left\",\"hash\":\"Gv2bhgrpjYhSFpGMac3VMUeXwDMKg82wL5QYK1WqKMQz\"},{\"direction\":\"Right\",\"hash\":\"CjuWeH7RGmAP7TjfqoGvqLWKi4ZoAGPKv6jceB3otoEt\"},{\"direction\":\"Right\",\"hash\":\"5aRFQMKS3DyfAWSiKPU7LThvWKKTNGWBS3CTr8dBKjNm\"}]}}",
+  "response": {
+    "final_execution_status": "EXECUTED_OPTIMISTIC",
+    "receipts_outcome": [
+      {
+        "block_hash": "EKJQTL38ktppajQLD4auNZePnhDxcvyN6LwVdmXASVGA",
+        "id": "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t",
+        "outcome": {
+          "executor_id": "floorline-rc1-fund-a-20261114.testnet",
+          "gas_burnt": 7524947687500,
+          "logs": [],
+          "metadata": {
+            "contracts": [
+              null,
+              null,
+              null
+            ],
+            "gas_profile": [],
+            "version": 4
+          },
+          "receipt_ids": [
+            "AgYo3x2jYA6eFjsJ6S6GP5D4NWVjcDQwNfL6frjCAyeo"
+          ],
+          "status": {
+            "SuccessValue": ""
+          },
+          "tokens_burnt": "7032494768750000000000"
+        },
+        "proof": [
+          {
+            "direction": "Left",
+            "hash": "HkfRiabrSpCyLVGCfS3BjtD3pMprereYd7ucctyyv7j6"
+          },
+          {
+            "direction": "Right",
+            "hash": "F2mqF9kzAArd9NEVsWtMHJeZQZQ53pFji8JW5fhUEDTB"
+          }
+        ]
+      }
+    ],
+    "status": {
+      "SuccessValue": ""
+    },
+    "transaction": {
+      "actions": [
+        "CreateAccount",
+        {
+          "Transfer": {
+            "deposit": "10000000000000000000000000"
+          }
+        },
+        {
+          "AddKey": {
+            "access_key": {
+              "nonce": 0,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+          }
+        }
+      ],
+      "hash": "4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP",
+      "nonce": 51910588665389,
+      "priority_fee": 0,
+      "public_key": "ed25519:4XhhXfW316DeAYBTxQe7Z15WostJptFpnXdv57KtXVNC",
+      "receiver_id": "floorline-rc1-fund-a-20261114.testnet",
+      "signature": "ed25519:35tHY3UzyEYvgMSKN2DH5AYDhnMcxto7mfy7X5MJJPpKgenBzhpCXyTm9E1ft7JNv3SUHWYkKrus8T73t9oRAuev",
+      "signer_id": "testnet"
+    },
+    "transaction_outcome": {
+      "block_hash": "6AMYkBSY3Cdid1tWLyrCVqBQc1RqzU8gjYSKQ8J8GPhC",
+      "id": "4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP",
+      "outcome": {
+        "executor_id": "testnet",
+        "gas_burnt": 824947687500,
+        "logs": [],
+        "metadata": {
+          "gas_profile": null,
+          "version": 1
+        },
+        "receipt_ids": [
+          "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t"
+        ],
+        "status": {
+          "SuccessReceiptId": "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t"
+        },
+        "tokens_burnt": "82494768750000000000"
+      },
+      "proof": [
+        {
+          "direction": "Left",
+          "hash": "Gv2bhgrpjYhSFpGMac3VMUeXwDMKg82wL5QYK1WqKMQz"
+        },
+        {
+          "direction": "Right",
+          "hash": "CjuWeH7RGmAP7TjfqoGvqLWKi4ZoAGPKv6jceB3otoEt"
+        },
+        {
+          "direction": "Right",
+          "hash": "5aRFQMKS3DyfAWSiKPU7LThvWKKTNGWBS3CTr8dBKjNm"
+        }
+      ]
+    }
+  },
+  "final_view": {
+    "jsonrpc": "2.0",
+    "result": {
+      "amount": "10000000000000000000000000",
+      "block_hash": "5gGZyvFVuAQxwVtnS7LpwAVvNcSE7dq1cdHGdwWjjvd2",
+      "block_height": 277606560,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "id": "rc1-sponsor"
+  },
+  "keys": {
+    "jsonrpc": "2.0",
+    "result": {
+      "block_hash": "99x71ptQwpFHGxSzP174MMmYr9fvUuJXU62i81SLRBoS",
+      "block_height": 277606565,
+      "keys": [
+        {
+          "access_key": {
+            "nonce": 277606556000000,
+            "permission": "FullAccess"
+          },
+          "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+        }
+      ]
+    },
+    "id": "rc1-sponsor"
+  }
+}

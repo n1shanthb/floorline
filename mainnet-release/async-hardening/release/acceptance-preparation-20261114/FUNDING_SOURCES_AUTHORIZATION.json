@@ -1,0 +1,15 @@
+{
+  "accounts": [
+    "floorline-rc1-fund-a-20261114.testnet",
+    "floorline-rc1-fund-b-20261114.testnet"
+  ],
+  "transfer_fees_in_existing_contingency": true,
+  "owner_answer": "Approve the two named funding sources and bounded transfers",
+  "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ",
+  "max_grants_NEAR": "20",
+  "approved_at_utc": "2026-11-14T04:12:38.5351714Z",
+  "key_policy": "Shared existing controller key; no new private keys",
+  "max_grants_per_account": 1,
+  "no_rate_limit_bypass": true,
+  "acceptance_ceiling_NEAR": "13.24"
+}
