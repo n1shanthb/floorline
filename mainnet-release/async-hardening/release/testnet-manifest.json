@@ -25,7 +25,8 @@
     "Confirm account does not exist using finalized view_account; only AccountDoesNotExist establishes availability",
     "Read network status/chain ID and protocol config; verify expected byte price",
     "Verify controller signing authority and every actor public key/owner; never request private keys in chat",
-    "Owner must approve limits, 13.24 NEAR ceiling, account IDs and retained-key policy"
+    "Owner must approve limits, calculated funding ceiling, account IDs and retained-key policy",
+    "Funding ceiling requiring owner approval: 13.24 NEAR; no signing authorization is implied."
   ],
   "funding": {
     "ceiling_yocto": "13240000000000000000000000",
@@ -240,6 +241,19 @@
       "gas": "110000000000000"
     },
     {
+      "id": "cleanup_redeem",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "redeem"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
       "id": "offer_repay",
       "signer_role": "lender",
       "receiver_role": "contract",
@@ -270,6 +284,19 @@
       "signer_role": "borrower",
       "receiver_role": "contract",
       "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_borrow_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
       "args": {
         "claim_id": {
           "$result": "borrow_repay"
@@ -323,6 +350,32 @@
       "gas": "110000000000000"
     },
     {
+      "id": "cleanup_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_offer_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
       "id": "offer_default",
       "signer_role": "lender",
       "receiver_role": "contract",
@@ -362,6 +415,19 @@
       "gas": "110000000000000"
     },
     {
+      "id": "cleanup_borrow_default",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
       "id": "default",
       "signer_role": "holder",
       "receiver_role": "contract",
@@ -374,6 +440,19 @@
       "deposit": "0",
       "gas": "110000000000000",
       "not_before": "get_loan.expiry finalized chain timestamp; no wall-clock assumption"
+    },
+    {
+      "id": "cleanup_offer_default",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
     },
     {
       "id": "offer_cancel",
@@ -415,67 +494,6 @@
       "gas": "110000000000000"
     },
     {
-      "id": "contribute",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "contribute",
-      "args": {},
-      "deposit": "1000000000000000000000",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_redeem",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_claim",
-      "args": {
-        "claim_id": {
-          "$result": "redeem"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_borrow_repay",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_claim",
-      "args": {
-        "claim_id": {
-          "$result": "borrow_repay"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_repay",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_claim",
-      "args": {
-        "claim_id": {
-          "$result": "repay"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_borrow_default",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_claim",
-      "args": {
-        "claim_id": {
-          "$result": "borrow_default"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
       "id": "cleanup_cancel",
       "signer_role": "holder",
       "receiver_role": "contract",
@@ -483,32 +501,6 @@
       "args": {
         "claim_id": {
           "$result": "cancel"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_offer_repay",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_loan",
-      "args": {
-        "loan_id": {
-          "$result": "offer_repay"
-        }
-      },
-      "deposit": "0",
-      "gas": "110000000000000"
-    },
-    {
-      "id": "cleanup_offer_default",
-      "signer_role": "holder",
-      "receiver_role": "contract",
-      "method": "cleanup_loan",
-      "args": {
-        "loan_id": {
-          "$result": "offer_default"
         }
       },
       "deposit": "0",
@@ -525,6 +517,15 @@
         }
       },
       "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "contribute",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "contribute",
+      "args": {},
+      "deposit": "1000000000000000000000",
       "gas": "110000000000000"
     },
     {

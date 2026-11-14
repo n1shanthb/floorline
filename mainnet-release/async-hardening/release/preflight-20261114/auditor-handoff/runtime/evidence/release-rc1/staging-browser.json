@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "scope": "Unconfigured staging build only; no signing, wallet session or deployed target",
+  "desktop": true,
+  "mobile": true,
+  "errors": [],
+  "rpc_requests": 0
+}
