@@ -57,8 +57,8 @@ npm run dev
    - "The guardian called `stop_new_risk` — irreversible, no new loans or issuance"
 
 3. **Liquidity & Tokens:**
-   - `L: 10.18 NEAR` (liquidity)
-   - `T: 9.0 FLOOR` (total tokens)
+   - `L: 0.01018 NEAR` (liquidity)
+   - `T: 0.009 FLOOR` (total tokens)
    - `L/T Ratio: 1.13`
    - "FLOOR is backed by real NEAR deposits, not minted from thin air"
 
@@ -179,8 +179,8 @@ npm run judge:verify
 ✓ Contract: rc1.floorline-g3-20261111-6702ea.testnet
 ✓ Code hash: 4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az
 ✓ Status: STOPPED
-✓ Liquidity: 10.18 NEAR
-✓ Tokens: 9.0 FLOOR
+✓ Liquidity: 0.01018 NEAR
+✓ Tokens: 0.009 FLOOR
 ✓ Inflight: 0
 ✓ 40/40 proofs verified
 ✓ All checks passed
@@ -311,7 +311,7 @@ npm run judge:verify
 > **See this:**
 > - Contract: rc1.floorline-g3-20261111-6702ea.testnet
 > - Status: STOPPED
-> - L: 10.18 NEAR, T: 9.0 FLOOR, Inflight: 0
+> - L: 0.01018 NEAR, T: 0.009 FLOOR, Inflight: 0
 > - ✅ 40/40 proofs verified
 >
 > Full testnet demo with async collateralized lending + NFT receipts.
@@ -349,7 +349,7 @@ npm run judge:verify
    - Run `npm run judge:verify` or check `docs/evidence/proofs.json`.
 
 4. **"What's the L/T ratio?"**
-   - 10.18 NEAR / 9.0 FLOOR = 1.13 (accounting, not guaranteed price).
+   - 0.01018 NEAR / 0.009 FLOOR = 1.13 (accounting, not guaranteed price).
 
 5. **"Can I try it live?"**
    - Contract is stopped (no new risk). You can read state via RPC.

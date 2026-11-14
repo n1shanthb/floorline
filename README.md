@@ -66,8 +66,8 @@ DeFi “backed” tokens often hide whether reserves, claims, and lending risk a
 
 Recorded final state (acceptance journal + live views agree when RPC is available):
 
-- Liquid backing **L**: 10.18 NEAR  
-- FLOOR supply **T**: 9.0 FLOOR  
+- Liquid backing **L**: 0.01018 NEAR  
+- FLOOR supply **T**: 0.009 FLOOR  
 - Claims / inflight: **0**  
 - Storage total: **0.060 NEAR**  
 - Admission: **3/128**  

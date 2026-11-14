@@ -16,7 +16,7 @@ All transactions below are finalized on NEAR testnet with dual-provider verifica
 - **Contract Code Hash:** `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`
 - **Final State Block:** 277696567
 - **Acceptance Status:** ACCEPTANCE_COMPLETE_BROWSER_UI_EVIDENCE_VERIFIED
-- **Final L/T:** 10.18 NEAR / 9.0 FLOOR
+- **Final L/T:** 0.01018 NEAR / 0.009 FLOOR
 - **Stopped:** true
 
 ---
