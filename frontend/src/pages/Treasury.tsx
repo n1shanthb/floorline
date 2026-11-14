@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Badge, ChartCard, Heading, Row, Tabs } from "../components/ui";
 import Claims from "../components/Claims";
+import { Rc1ProofStrip } from "../components/Rc1Evidence";
 import { useApp } from "../lib/app-context";
 import { exact, issuance, parseAmount, quote, ratio, units } from "../lib/math";
 import { request, storageRequest } from "../lib/actions";
@@ -13,7 +14,8 @@ export default function Treasury() {
   const a = useApp(),
     [params, setParams] = useSearchParams(),
     tab = tabs.find((t) => t === params.get("tab")) || "Redeem",
-    l = a.snapshot?.ledger;
+    l = a.snapshot?.ledger,
+    stopped = a.snapshot?.pilot?.stopped;
   const [amount, setAmount] = useState("0.1"),
     [slippage, setSlippage] = useState("50");
   let n = 0n,
@@ -88,7 +90,11 @@ export default function Treasury() {
     <>
       <Heading
         title="The treasury"
-        description="Every token has mechanics. See the backing, understand the quote, make your move."
+        description={
+          stopped
+            ? "RC1 acceptance finished. Live L/T accounting remains readable; new issue/redeem/contribute risk is permanently stopped."
+            : "Every token has mechanics. See the backing, understand the quote, make your move — with RC1 acceptance receipts beside live reads."
+        }
       />
       <div className="metrics-grid treasury-metrics">
         <div className="card metric">
@@ -331,10 +337,16 @@ export default function Treasury() {
         ) : (
           <p className="muted">
             Reserve accounting requires a successful chain read. No historical
-            values are presented as current.
+            values are presented as current. RC1 acceptance receipts below remain
+            independently verifiable.
           </p>
         )}
       </section>
+      <Rc1ProofStrip
+        surface="treasury"
+        title="RC1 treasury acceptance receipts"
+        description="Issue, redeem, claim withdraw, cleanup, contribute, and free-token return — finalized on public testnet."
+      />
     </>
   );
 }

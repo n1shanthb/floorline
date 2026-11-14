@@ -3664,3 +3664,66 @@ details p {
   .judge-page { padding: 16px 14px 64px; }
   .proof-card h3 { font-size: 16px; }
 }
+
+/* RC1 acceptance evidence on every app surface */
+.rc1-banner {
+  margin: 0 0 18px;
+  padding: 16px 18px;
+  display: grid;
+  gap: 12px;
+  border: 1px solid color-mix(in oklab, var(--lime, #b7f06e) 35%, transparent);
+  background: color-mix(in oklab, var(--lime, #b7f06e) 8%, var(--canvas));
+}
+.rc1-banner-copy {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  opacity: 0.88;
+}
+.rc1-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 16px;
+}
+.rc1-proof-strip {
+  display: grid;
+  gap: 12px;
+  margin: 20px 0 8px;
+}
+.rc1-proof-strip > .muted {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.rc1-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.rc1-proof-card {
+  display: grid;
+  gap: 8px;
+  padding: 14px 14px 12px;
+}
+.rc1-proof-card h4 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.3;
+}
+.rc1-proof-card .footnote {
+  margin: 0;
+  font-size: 12px;
+}
+.hash-inline {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+@media (max-width: 720px) {
+  .rc1-banner-grid {
+    grid-template-columns: 1fr;
+  }
+  .rc1-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}

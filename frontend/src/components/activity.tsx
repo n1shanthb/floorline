@@ -7,7 +7,9 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import evidence from "../data/evidence.json";
+import { proofHref, proofsFor } from "../lib/rc1-proofs";
 import { Badge } from "./ui";
+import { useRc1Manifest } from "./Rc1Evidence";
 export type DemoEvent = (typeof evidence.events)[number];
 export function EventIcon({ kind }: { kind: string }) {
   const Icon = kind.startsWith("dao")
@@ -26,34 +28,53 @@ export function EventIcon({ kind }: { kind: string }) {
   );
 }
 export function ActivityPreview() {
-  const events = [evidence.events[0], evidence.events[2], evidence.events[6]];
+  const { manifest } = useRc1Manifest();
+  const proofs = proofsFor(manifest, "activity").slice(0, 5);
   return (
     <section>
       <div className="section-head">
-        <h3>On-chain moments</h3>
+        <h3>RC1 on-chain moments</h3>
         <Link className="text-link" to="/app/activity">
           View all
           <ArrowUpRight size={13} />
         </Link>
       </div>
       <div className="card event-list">
-        {events.map((e) => (
-          <Link
-            className="event-row"
-            to={`/app/activity?event=${e.id}`}
-            key={e.id}
-          >
-            <EventIcon kind={e.kind} />
+        {proofs.length ? (
+          proofs.map((p) => (
+            <a
+              className="event-row"
+              href={proofHref(p)}
+              target="_blank"
+              rel="noreferrer"
+              key={p.id}
+            >
+              <EventIcon kind={p.method || p.step_id} />
+              <span className="event-body">
+                <strong>{p.title}</strong>
+                <small>
+                  {p.method || p.step_id} · FINAL_VERIFIED ·{" "}
+                  {p.transaction_hash.slice(0, 10)}…
+                </small>
+              </span>
+              <ArrowUpRight size={15} />
+            </a>
+          ))
+        ) : (
+          <Link className="event-row" to="/verify">
+            <EventIcon kind="issuance" />
             <span className="event-body">
-              <strong>
-                {e.id === "dao-vote-c" ? "DAO contributed 0.10 NEAR" : e.title}
-              </strong>
-              <small>Verified historical testnet evidence</small>
+              <strong>Loading RC1 acceptance receipts…</strong>
+              <small>Open /verify for the full 40-proof catalog</small>
             </span>
             <ArrowUpRight size={15} />
           </Link>
-        ))}
+        )}
       </div>
+      <Link className="text-link" to="/verify">
+        Browse full RC1 proof catalog
+        <ArrowUpRight size={13} />
+      </Link>
     </section>
   );
 }

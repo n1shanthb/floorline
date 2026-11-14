@@ -48,7 +48,7 @@ import { recordTransaction } from "./lib/journal";
 import type { TxPhase } from "./lib/transaction";
 import { isExplicitWalletRejection } from "./lib/transaction";
 import { Brand, External, Modal, Row, Testnet } from "./components/ui";
-import evidence from "./data/evidence.json";
+import { Rc1AcceptanceBanner } from "./components/Rc1Evidence";
 import Landing from "./pages/Landing";
 import Overview from "./pages/Overview";
 const Treasury = lazy(() => import("./pages/Treasury"));
@@ -63,33 +63,29 @@ interface Pending {
   hash?: string;
   createdAt: number;
 }
+/** RC1 uses a fresh tracked-ID namespace so historical v1 demo IDs (2/7, …) do not poison lookups. */
+const TRACKED_KEY = "floorline:tracked:rc1";
 function initialTracked() {
   try {
-    const v = JSON.parse(localStorage.getItem("floorline:tracked") || "{}");
+    const v = JSON.parse(localStorage.getItem(TRACKED_KEY) || "{}");
     return {
-      loans: [
-        ...new Set([
-          ...evidence.loanIds,
-          ...(Array.isArray(v.loans)
-            ? v.loans.filter(
-                (s: unknown) => typeof s === "string" && canonicalId(s),
-              )
-            : []),
-        ]),
-      ] as string[],
-      claims: [
-        ...new Set([
-          ...evidence.claimIds,
-          ...(Array.isArray(v.claims)
-            ? v.claims.filter(
-                (s: unknown) => typeof s === "string" && canonicalId(s),
-              )
-            : []),
-        ]),
-      ] as string[],
+      loans: (
+        Array.isArray(v.loans)
+          ? v.loans.filter(
+              (s: unknown) => typeof s === "string" && canonicalId(s),
+            )
+          : []
+      ) as string[],
+      claims: (
+        Array.isArray(v.claims)
+          ? v.claims.filter(
+              (s: unknown) => typeof s === "string" && canonicalId(s),
+            )
+          : []
+      ) as string[],
     };
   } catch {
-    return { loans: evidence.loanIds, claims: evidence.claimIds };
+    return { loans: [] as string[], claims: [] as string[] };
   }
 }
 export default function App() {
@@ -203,7 +199,7 @@ export default function App() {
         [kind]: [...new Set([...previous[kind], id])],
       };
       try {
-        localStorage.setItem("floorline:tracked", JSON.stringify(next));
+        localStorage.setItem(TRACKED_KEY, JSON.stringify(next));
       } catch {
         /* Keep this session's confirmed IDs even when browser storage is full. */
       }
@@ -738,13 +734,13 @@ function Shell() {
             A little mechanics.
             <br />A lot of possibility.
           </p>
-          <External href="/docs/ECONOMIC_INVARIANTS.md" className="text-link">
-            Read the mechanics
-          </External>
+          <Link className="text-link" to="/verify">
+            RC1 proof catalog
+          </Link>
           <span className="footnote">
-            Testnet · mutable deployment
+            Testnet · RC1 new-risk stopped
             <br />
-            No independent governance claim
+            40/40 FINAL_VERIFIED acceptance
           </span>
         </div>
       </aside>
@@ -757,6 +753,9 @@ function Shell() {
           </div>
           <div className="top-actions">
             <Testnet />
+            <Link className="button secondary small" to="/verify">
+              Proofs
+            </Link>
             <button
               className="button secondary wallet-button"
               aria-label={
@@ -778,6 +777,7 @@ function Shell() {
               {a.snapshot
                 ? `RPC snapshot · block ${a.snapshot.blockHeight.toLocaleString()} · ${new Date(a.snapshot.readAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}`
                 : "Reading NEAR testnet…"}
+              {a.snapshot?.pilot?.stopped ? " · NEW RISK STOPPED" : ""}
             </span>
             <button
               className="text-link"
@@ -788,26 +788,28 @@ function Shell() {
               Refresh
             </button>
           </div>
+          <Rc1AcceptanceBanner />
           {a.error && (
             <div className="notice" role="alert">
               {a.error}{" "}
               {a.snapshot
                 ? "Last successful read remains displayed; writes require a fresh verified snapshot."
-                : "Live data is unavailable. Historical replay remains separately labeled."}
+                : "Live data is unavailable. Use the RC1 proof catalog on this page and /verify."}
             </div>
           )}
           {a.snapshot && Date.now() - a.snapshot.readAt > FRESH_MS && (
             <div className="notice">
               This read is stale. Refresh before reviewing any transaction.
+              Recorded RC1 acceptance proofs remain valid.
             </div>
           )}
           <Outlet />
         </main>
         <footer className="app-footer">
           <ShieldCheck size={14} />
-          <span>Testnet, with receipts. No market-price guarantee.</span>
-          <Link to="/app/activity">
-            View proof
+          <span>RC1 testnet acceptance · no market-price guarantee.</span>
+          <Link to="/verify">
+            View proofs
             <ArrowUpRight size={12} />
           </Link>
         </footer>

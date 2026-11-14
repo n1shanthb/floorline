@@ -10,6 +10,7 @@ import {
   Tabs,
 } from "../components/ui";
 import { EventIcon } from "../components/activity";
+import { Rc1ProofStrip } from "../components/Rc1Evidence";
 import { txLink } from "../lib/config";
 import { ratio, units } from "../lib/math";
 import { classifyOutcome, rpc } from "../lib/rpc";
@@ -75,7 +76,12 @@ export default function Activity() {
     <>
       <Heading
         title="Receipts, not promises"
-        description="Every important protocol moment is verifiable on NEAR testnet."
+        description="RC1 acceptance finalized 40/40 on public testnet. Featured receipts below; earlier demo capture remains labeled historical."
+      />
+      <Rc1ProofStrip
+        surface="activity"
+        title="RC1 acceptance activity"
+        description="Issue, NFT transfer, repay, default, contribute, stop, and unregister — FINAL_VERIFIED on rc1.floorline-g3-20261111-6702ea.testnet."
       />
       <div className="activity-toolbar">
         <Tabs
@@ -86,11 +92,11 @@ export default function Activity() {
         />
         <a
           className="button secondary small"
-          href="/demo-evidence.json"
+          href="/evidence/proofs.json"
           download
         >
           <Download size={14} />
-          Public evidence
+          RC1 proofs.json
         </a>
       </div>
       <RecentTransactions />
@@ -100,7 +106,7 @@ export default function Activity() {
           aria-label="Historical testnet events"
         >
           <div className="feed-label">
-            <Badge tone="lime">Verified historical testnet evidence</Badge>
+            <Badge tone="lime">Earlier demo capture · historical</Badge>
           </div>
           {events.map((event) => (
             <button

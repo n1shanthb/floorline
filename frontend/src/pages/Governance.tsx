@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowDown, Check, ExternalLink } from "lucide-react";
 import { Badge, External, Heading, Row } from "../components/ui";
 import Replay from "../components/Replay";
+import { Rc1ProofStrip } from "../components/Rc1Evidence";
 import { daoState } from "../lib/rpc";
 import { DAO, DAO_HASH, accountLink, txLink } from "../lib/config";
 import { ratio, units } from "../lib/math";
@@ -11,6 +12,7 @@ import { policiesEqual } from "../lib/policy";
 import GovernanceActions from "../components/GovernanceActions";
 export default function Governance() {
   const app = useApp(),
+    stopped = app.snapshot?.pilot?.stopped,
     [data, setData] = useState<Awaited<ReturnType<typeof daoState>> | null>(
       null,
     ),
@@ -49,7 +51,16 @@ export default function Governance() {
     <>
       <Heading
         title="Decisions that move value"
-        description="Watch how a verified DAO contribution changed Floorline’s on-chain backing."
+        description={
+          stopped
+            ? "RC1 guardian stop is irreversible. Historical DAO contribution and the acceptance contribute/stop receipts are recorded below."
+            : "Watch verified contribution mechanics and RC1 guardian stop evidence on public testnet."
+        }
+      />
+      <Rc1ProofStrip
+        surface="governance"
+        title="RC1 governance-adjacent receipts"
+        description="Acceptance contribute and irreversible stop — not a claim of independent community governance."
       />
       {error && (
         <div className="notice" role="alert">
