@@ -1,3 +1,54 @@
+# FLOOR release candidate RC1 — current release decision
+
+This section supersedes every earlier assessment below. Earlier sections are retained as historical evidence. No public transaction, deployment, key operation or live frontend switch was performed in this workstream.
+
+Financial source commit: `c182351`. Normal WASM SHA-256: `31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b`; NEAR code hash: `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`; size 453,798 bytes. Fault-injection SHA-256: `f0f66d0674540addab608e8520a806603957a0287c5ba73099b50c675b0c895b`. Never deploy the fault artifact. Exact sources, compiler, byte-for-byte rebuild, runtime code checks and measurements are frozen in `runtime/evidence/release-rc1/RELEASE_MANIFEST.json`. This candidate requires a fresh account and initialization; no migration of v1 is authorized.
+
+## Exposure controls and safe exits
+
+Immutable initialization limits bound individual new native exposure, lifetime cumulative admitted exposure, and each attached/retained user storage credit. Omitted limits default to zero: issuance, contribution, loan funding and storage deposits are disabled. Gross exposure never resets after withdrawals or zero supply. Loan repayment is bounded at origination, then remains payable without consuming the new-risk gross budget. Storage is separately funded and capped; it does not consume that budget. Direct native transfers are unallocated cash, not automatically credited backing.
+
+The initializer predecessor is a guardian with an irreversible stop for issuance, contribution, offer funding and acceptance. There is no resume or cap setter. Existing redemption, repayment, default, offer cancellation, funded claims, storage refunds and cleanup remain available, subject to their normal conditions. The guardian cannot redirect or seize funds through this API. Retained FullAccess keys can replace code and bypass these properties: custody and upgrade policy remain external security requirements.
+
+Proposed owner-review caps, NOT approved: 0.01 NEAR per new action/debt, 0.05 NEAR cumulative new-risk inflow, 0.02 NEAR storage deposit/credit per user. Sandbox fixtures use explicitly different limits and do not authorize deployment values. An omitted or stopped configuration cannot later be enabled; a new deployment would be required.
+
+## Executed validation
+
+The new normal financial artifact passed 32 full runtime groups (240 evidence entries), 16 host economic tests, 10,000 randomized sequences (1,280,000 operations; seeds 10001–20000), wide arithmetic cases and strict WASM Clippy. No failing seeds were observed. The fault artifact admitted 128 lost-callback full-unregistration refunds; the 129th admission was rejected without consuming existing rights. Known failed receiver recovery, duplicate/stale attempts, overlapping payouts, maximum input envelopes, three 109/110-Tgas boundary cycles, cap boundaries, unauthorized stop, and repayment/default/redemption/storage exits after stopping passed. Raw receipts and console outputs are preserved in `runtime/evidence/release-rc1/`.
+
+These are bounded engineering tests, not an independent audit. Genuinely unknown native-transfer outcomes remain quarantined, not magically resolved. Conservative retry liquidity, finite 128-slot admission and protocol/storage-price assumptions remain explicit limitations. Cross-user availability is bounded by pre-funded admission and retry liquidity; indefinite unknown refunds can exhaust future admission. Existing rights remain funded under the stated accounting model.
+
+## Isolated staging
+
+`release/staging/` is a separate copy; the public frontend remains unchanged. It pins the new code hash, rejects the previous contract target, uses 110 Tgas for callback methods, isolates browser journals, checks live pilot/admission limits and stop state, quotes storage top-ups from current credit, and warns against resending unknown payouts. Historical activity remains verified replay. Without an approved fresh testnet account it renders a disabled staging screen and exposes no signing buttons. DAO signing is blocked without an explicitly configured DAO.
+
+Typecheck, lint, 65 tests and production build passed. Actual browser checks passed at desktop 1440×1000 and mobile 390×844 with no overflow, page errors or RPC calls on the disabled screen. Screenshots and `staging-browser.json` are in the RC1 evidence directory. Configured-chain browser flows and authenticated wallet signing are UNVERIFIED. SDK eval/browser-util and ineffective dynamic-import build warnings remain for audit/CSP review. This is staging readiness, not public acceptance.
+
+## Unsigned deployment and acceptance package
+
+Run `node release/prepare.mjs` from this directory to regenerate unsigned manifests. `release/owner-config.example.json` contains public placeholders only. With reviewed public configuration, the tool can read official RPC network/protocol state, verify account availability and public access keys; this owner-specific preflight has NOT run because accounts and approval are absent. No signer or broadcast implementation is included. `node release/check-package.mjs` passed integer funding conservation and positive/negative receipt reconciliation checks.
+
+The plan has 39 intended signed transactions: one atomic fresh-account CreateAccount/Transfer/AddKey/DeployContract/new batch, four actor funding transfers, and 34 financial/control calls. It includes registration, issue, FT transfer, redemption/withdrawal, externally funded loan/NFT transfer/repayment, expiry/default, offer cancellation, contribution, cleanup, storage exits and the irreversible stop last. `release/acceptance-plan.json` records exact deposits and dependencies. Receipt-derived IDs and fresh quote placeholders must be resolved and reviewed before signing; unresolved templates are not executable transactions. Actors are controlled test roles, not evidence of independent human governance.
+
+Stop on non-FINAL, unknown outcomes, RPC disagreement or failed child receipts. Never automatically resend. Reconciliation validates supplied finalized results against reviewed intent and solvency snapshots; it is not cryptographic authentication of arbitrary supplied JSON. Independently fetch receipts and account/code state before acceptance. Atomic deployment action/code/key verification is separately required.
+
+## Funding and custody gates
+
+The proposed ceiling is **13.24 NEAR per network**, superseding the preliminary 10.75 estimate. It is NOT approved and does not inherit the older 10-NEAR DAO-demo authorization. Allocation: contract 8; holder 1.94; borrower 1.21; NFT holder 0.37; lender 0.97; controller gas/contingency 0.75. Actor financial/storage deposits are already included, not added again. New-risk plan inflow is 0.016 NEAR; repayment 0.0022; initial user storage deposits total 0.08.
+
+Raw official testnet/mainnet protocol-88 quotes are in `testnet-costs.json` and `mainnet-costs.json`. Storage price is 10^19 yoctoNEAR/byte; spot gas 10^8 and minimum gas purchase price 10^9 yoctoNEAR/gas. Budget uses the larger price and 120 Tgas per planned call (110 plus scheduling allowance), actor buffers and upward rounding. Contract storage upper bound 527,526 bytes costs 5.27526 NEAR, including the 0.65536 admission reserve. Adding 2.5 operating liquidity fits 8 NEAR with 0.22474 margin. This is a conservative funding proposal, not a guaranteed fee or immutable future protocol price. Refresh all quotes and requirements immediately before any approval.
+
+Mainnet allocation is a draft comparison only: authorized real-money exposure is zero. Owner-controlled FullAccess retention during acceptance is disclosed, not ownerless immutability. Independent security review, custody/upgrade signoff, protocol-change response and operational monitoring are mandatory before mainnet. Monitor code/access-key changes, exact funded liability buckets versus cash/storage stake, cap/gross/stop/admission state, every payout callback, receipt-finality disagreement and unknown-outcome quarantine. No emergency response may assume an unknown transfer failed.
+
+## Current verdict and exact next approval
+
+RELEASE CANDIDATE: BUILT. EXPOSURE CONTROLS: PASS within the stated model. ECONOMIC AND RUNTIME REGRESSIONS: PASS. TESTNET DEPLOYMENT PREFLIGHT PACKAGE: READY FOR OWNER REVIEW; actual execution BLOCKED pending public account/key configuration and approval. FRONTEND STAGING: READY as a disabled isolated build; configured wallet acceptance UNVERIFIED. INDEPENDENT AUDIT: PENDING. MAINNET: NOT AUTHORIZED / NOT EXECUTED, NO-GO.
+
+Next approval must identify fresh contract/controller and four actor public account IDs and public keys, approve atomic initialization, immutable caps, retained-key policy and the new 13.24-NEAR testnet ceiling. Do not send private keys in chat. After read-only owner-specific preflight and approval, a separately authorized signing workflow must execute and reconcile every real testnet receipt before any public switch. Mainnet requires a separate audit and launch decision. v1 artifacts, deployment, historical evidence, FloorKit and live frontend remain unchanged.
+
+---
+
+# Historical assessments — superseded by RC1 above
 # FLOOR async-hardening — finalization for independent review
 
 ## Current decision (supersedes the historical assessment below)

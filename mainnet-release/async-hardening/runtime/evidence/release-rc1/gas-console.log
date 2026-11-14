@@ -1,0 +1,19 @@
+node:internal/deps/undici/undici:13484
+      Error.captureStackTrace(err);
+            ^
+
+TypeError: fetch failed
+    at node:internal/deps/undici/undici:13484:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async BackOff.request (E:\near-2\runtime\node_modules\@near-js\providers\lib\commonjs\fetch_json.cjs:45:21) {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:3032
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1634:16) {
+    errno: -4078,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3032
+  }
+}
+
+Node.js v22.13.0

@@ -1,0 +1,20 @@
+Retrying transaction refundreceiver1794625279068.test.near:GM9PN7AXsXkX5C1fpX1CBuKXEqjoDATHwmL7D4nA776H with new nonce.
+Retrying transaction refundfloor1794625278645.test.near:9nWnjZmbsjDKp4fm8cPnDnNpuaRqytHKUrXzPG5kbAqg with new nonce.
+Retrying transaction refundfloor1794625278645.test.near:9G6gCWQrgL2q4f3XnnS68SXPFMW1dGaYdqsRzrJN8QSQ with new nonce.
+Retrying transaction refundreceiver1794625279068.test.near:3GMnhCfvMUEHzAsS7XXNFn54j8Yf1f11ZLEnNKzkbUAQ with new nonce.
+Receipts: AKEb61nnR9jbmAE7iS1JPEWFXHibhZ4K3CMj54nfjNx2, Fstna3CvDQKR4W8nSGxiLUUtK4vMhzh1tnir4wCQwWpY
+	Failure [refundreceiver1794625279068.test.near]: Error: Can't complete the action because account refundreceiver1794625279068.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794625279068.test.near]: Error: Can't complete the action because account refundreceiver1794625279068.test.near doesn't exist
+Receipt: 
+Receipt: 
+	Failure [refundreceiver1794625279068.test.near]: Error: Can't complete the action because account refundreceiver1794625279068.test.near doesn't exist
+	Failure [refundreceiver1794625279068.test.near]: Error: Can't complete the action because account refundreceiver1794625279068.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794625279068.test.near]: Error: Can't complete the action because account refundreceiver1794625279068.test.near doesn't exist
+Retrying transaction refundreceiver1794625279068.test.near:7V61SDE76LXn2KqiXC342ydq6Y3CnxBSZTtW3JppBfX7 with new nonce.
+Retrying transaction refundfloor1794625278645.test.near:7sRWGh2eUwDPGEodhaxvJcBZZi31LC1o56iMX9Mzrr7Z with new nonce.
+Retrying transaction refundfloor1794625278645.test.near:4H26dbaRoN96CFcr91o1YE6x24dokZLEzXVvQzWirLDV with new nonce.
+Receipt: G3vJLw2iwhbjqZnjvNTA1aC4gBgSTQKRrPuZ9p7kwot6
+	Failure [refundfloor1794625278645.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:380:52:\nmissing refund"}}}}
+PASS actual failed unregister refund, same-identity recovery, slot release and duplicate retry rejection
