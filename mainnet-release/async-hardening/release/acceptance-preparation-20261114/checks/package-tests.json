@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Actual sandbox FINAL success/solvency fixture accepted",
+    "Missing child receipt rejected",
+    "Wrong reviewed receiver rejected",
+    "Nonfinal outcome rejected",
+    "Unsigned/unapproved/unconfigured release defaults verified",
+    "Exact funding conservation verified"
+  ],
+  "negative_fixtures": "Explicitly labeled synthetic metadata changes; not on-chain evidence"
+}

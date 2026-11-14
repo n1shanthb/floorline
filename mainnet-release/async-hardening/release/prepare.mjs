@@ -37,10 +37,10 @@ for(const id of ['offer_repay','offer_default','offer_cancel'])step('cleanup_'+i
 step('return_free_tokens','borrower','ft_transfer',{receiver_id:{$account:'holder'},amount:(N/1000n).toString(),memo:null},'1');
 step('withdraw_storage','borrower','storage_withdraw',{amount:(N/1000n).toString()},'1');
 step('unregister','borrower','storage_unregister',{force:false},'1');
-step('stop','controller','stop_new_risk',{},'0',{review:'Irreversible. Execute only after all approved new-risk actions finish.'});
+step('stop','controller','stop_new_risk',{},'0',{review:'Irreversible. Execute after all approved new-risk actions finish; the funded borrower storage unregister exit follows.'});
 // Release paid claim/closed loan storage before the next offer; avoids a UI-only
 // headroom failure without changing contract limits, deposits or transaction count.
-const order=['register_holder','register_borrower','register_nft_holder','register_lender','issue','collateral_to_borrower','redeem','withdraw_redemption','cleanup_redeem','offer_repay','borrow_repay','withdraw_principal','cleanup_borrow_repay','nft_transfer','repay','withdraw_repayment','cleanup_repay','cleanup_offer_repay','offer_default','borrow_default','withdraw_default_principal','cleanup_borrow_default','default','cleanup_offer_default','offer_cancel','cancel','withdraw_cancel','cleanup_cancel','cleanup_offer_cancel','contribute','return_free_tokens','withdraw_storage','unregister','stop'];
+const order=['register_holder','register_borrower','register_nft_holder','register_lender','issue','collateral_to_borrower','redeem','withdraw_redemption','cleanup_redeem','offer_repay','borrow_repay','withdraw_principal','cleanup_borrow_repay','nft_transfer','repay','withdraw_repayment','cleanup_repay','cleanup_offer_repay','offer_default','borrow_default','withdraw_default_principal','cleanup_borrow_default','default','cleanup_offer_default','offer_cancel','cancel','withdraw_cancel','cleanup_cancel','cleanup_offer_cancel','contribute','return_free_tokens','withdraw_storage','stop','unregister'];
 assert.equal(new Set(order).size,steps.length);steps.sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id));assert(steps.every((s,i)=>s.id===order[i]));
 const source=fs.readFileSync(path.join(base,'src/contract.rs'),'utf8');for(const x of steps)assert(source.includes('pub fn '+x.method+'('),'Unknown ABI method '+x.method);
 const json=(p,x)=>fs.writeFileSync(p,JSON.stringify(x,null,2));

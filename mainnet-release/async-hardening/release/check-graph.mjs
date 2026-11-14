@@ -1,6 +1,6 @@
 // Offline acceptance state/rights model; this is a proof check, not chain evidence.
 import fs from 'node:fs';import assert from 'node:assert/strict';import path from 'node:path';
-const dir=import.meta.dirname,out=dir+'/preflight-20261114',p=JSON.parse(fs.readFileSync(dir+'/acceptance-plan.json')),N=10n**24n;
+const dir=import.meta.dirname,out=dir+'/acceptance-preparation-20261114',p=JSON.parse(fs.readFileSync(dir+'/acceptance-plan.json')),N=10n**24n;
 const tokens={holder:0n,borrower:0n,nft_holder:0n,lender:0n},loans=new Map(),claims=new Map();let T=0n,L=0n,gross=0n,stopped=false;const trace=[];
 const ref=x=>x.$result;const paid=id=>{const c=claims.get(id);assert(c?.paid);claims.delete(id)};
 for(const s of p.steps){const a=s.args,d=BigInt(s.deposit);switch(s.method){
@@ -17,12 +17,12 @@ case 'cancel_offer':{const l=loans.get(ref(a.loan_id));assert(l.state==='offered
 case 'withdraw_claim':{const c=claims.get(ref(a.claim_id));assert(c&&!c.paid&&c.owner===s.signer_role);c.paid=true;break;}
 case 'cleanup_claim':paid(ref(a.claim_id));break;
 case 'cleanup_loan':{const id=ref(a.loan_id),l=loans.get(id);assert(['repaid','defaulted','cancelled'].includes(l.state));loans.delete(id);break;}
-case 'storage_unregister':assert(tokens[s.signer_role]===0n);assert(![...loans.values()].some(l=>l.owner===s.signer_role||l.lender===s.signer_role));assert(![...claims.values()].some(c=>c.owner===s.signer_role));break;
-case 'stop_new_risk':stopped=true;assert.equal(s,p.steps.at(-1));break;
+case 'storage_unregister':assert(stopped,'Post-stop funded exit required');assert(tokens[s.signer_role]===0n);assert(![...loans.values()].some(l=>l.owner===s.signer_role||l.lender===s.signer_role));assert(![...claims.values()].some(c=>c.owner===s.signer_role));break;
+case 'stop_new_risk':stopped=true;assert.equal(s,p.steps.at(-2));break;
 }
 const locked=[...loans.values()].filter(l=>l.state==='active').reduce((n,l)=>n+l.collateral,0n);assert.equal(Object.values(tokens).reduce((n,v)=>n+v,0n)+locked,T);assert(gross<=N/20n);trace.push({id:s.id,L:L.toString(),T:T.toString(),gross:gross.toString(),tokens:Object.fromEntries(Object.entries(tokens).map(([k,v])=>[k,v.toString()])),locked:locked.toString()});}
 assert.equal(loans.size,0);assert.equal(claims.size,0);assert(stopped);assert.equal(gross,16n*N/1000n);
-fs.writeFileSync(out+'/graph-model.json',JSON.stringify({passed:true,scope:'OFFLINE_SYMBOLIC_MODEL_NOT_CHAIN_RESULTS; IDs remain symbolic; expiry requires finalized chain-time check; storage/gas proven separately',transactions:39,trace},null,2));console.log('PASS receipt dependency, collateral rights, exact repayment, cleanup, token conservation and stop-last model');const rpc=JSON.parse(fs.readFileSync(out+'/rpc.json')),budget=JSON.parse(fs.readFileSync(out+'/budget.json')),m=JSON.parse(fs.readFileSync(dir+'/testnet-manifest.json'));
+fs.writeFileSync(out+'/graph-model.json',JSON.stringify({passed:true,scope:'OFFLINE_SYMBOLIC_MODEL_NOT_CHAIN_RESULTS; IDs remain symbolic; expiry requires finalized chain-time check; storage/gas proven separately',transactions:39,trace},null,2));console.log('PASS receipt dependency, collateral rights, exact repayment, cleanup, token conservation and post-stop funded exit model');const rpc=JSON.parse(fs.readFileSync(out+'/rpc.json')),budget=JSON.parse(fs.readFileSync(out+'/budget.json')),m=JSON.parse(fs.readFileSync(dir+'/testnet-manifest.json'));
 const tc=rpc.protocol.result.runtime_config.transaction_costs,ac=tc.action_creation_config,price=BigInt(budget.minimum_purchase_price)>BigInt(budget.spot_gas_price)?BigInt(budget.minimum_purchase_price):BigInt(budget.spot_gas_price),byte=BigInt(budget.byte_price);
 const fee=x=>BigInt(x.execution)+BigInt(x.send_not_sir)>BigInt(x.execution)+BigInt(x.send_sir)?BigInt(x.execution)+BigInt(x.send_not_sir):BigInt(x.execution)+BigInt(x.send_sir);
 const init=m.atomic_creation_deployment.actions.at(-1),fcbytes=x=>BigInt(Buffer.byteLength(x.method_name)+Buffer.byteLength(JSON.stringify(x.args)));

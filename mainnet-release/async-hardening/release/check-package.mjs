@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {spawnSync} from 'node:child_process';
-const dir=import.meta.dirname,out=path.resolve(dir,'preflight-20261114/checks');fs.mkdirSync(out,{recursive:true});
+const dir=import.meta.dirname,out=path.resolve(dir,'acceptance-preparation-20261114/checks');fs.mkdirSync(out,{recursive:true});
 const controls=JSON.parse(fs.readFileSync(path.resolve(dir,'../runtime/evidence/release-rc1/controls.json')));
 const selected=controls.rows.filter(x=>!x.expected_failure);
 const input={transactions:selected.map(x=>({result:x.result,intent:{signer:x.result.transaction.signer_id,receiver:x.result.transaction.receiver_id,method:x.method,args:x.args,deposit:x.deposit}})),snapshots:selected.map(x=>({ledger:x.ledger}))};

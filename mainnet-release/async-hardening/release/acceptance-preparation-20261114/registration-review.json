@@ -1,0 +1,6 @@
+{
+  "frozen_sandbox_minimum": "4620000000000000000000",
+  "proposed_credit": "20000000000000000000000",
+  "live_bound_read_required": true,
+  "cleanup_order": "Each paid claim and closed loan is cleaned before the next offer; no cap increase."
+}

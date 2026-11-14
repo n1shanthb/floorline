@@ -1,0 +1,65 @@
+{
+  "network": "testnet",
+  "rpc": "https://rpc.testnet.near.org",
+  "secondary_read_rpc": "https://test.rpc.fastnear.com",
+  "accounts": {
+    "controller": "floorline-g3-20261111-6702ea.testnet",
+    "contract": "rc1.floorline-g3-20261111-6702ea.testnet",
+    "holder": "alice.floorline-g3-20261111-6702ea.testnet",
+    "borrower": "carol.floorline-g3-20261111-6702ea.testnet",
+    "nft_holder": "dave.floorline-g3-20261111-6702ea.testnet",
+    "lender": "lender.floorline-g3-20261111-6702ea.testnet"
+  },
+  "controller_public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ",
+  "contract_public_key": null,
+  "actor_public_keys": {
+    "holder": "ed25519:GtyU6hQZ6iZRm4HS57Hmhd1TyAYvbZRuMBru7s2ZYWHz",
+    "borrower": "ed25519:4nik1MeQiwgiBQyTR37GWhe5T5rAtEwEFtLhF4pygrMs",
+    "nft_holder": "ed25519:7Reat8hHe4hacwEECSBR1pGZmqsHvbrkGm847EnkENju",
+    "lender": "ed25519:7wrhmWQBiZsMeTQetFAxcrwmkCRW9C4ztNTY39cu7dNA"
+  },
+  "public_key_candidates": {
+    "controller": [
+      "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+    ],
+    "holder": [
+      "ed25519:GtyU6hQZ6iZRm4HS57Hmhd1TyAYvbZRuMBru7s2ZYWHz"
+    ],
+    "borrower": [
+      "ed25519:4nik1MeQiwgiBQyTR37GWhe5T5rAtEwEFtLhF4pygrMs"
+    ],
+    "nft_holder": [
+      "ed25519:7Reat8hHe4hacwEECSBR1pGZmqsHvbrkGm847EnkENju"
+    ],
+    "lender": [
+      "ed25519:7wrhmWQBiZsMeTQetFAxcrwmkCRW9C4ztNTY39cu7dNA"
+    ]
+  },
+  "owner_control_confirmed": false,
+  "selected_contract_key_approved": false,
+  "account_selection_approved": false,
+  "budget_approved": false,
+  "limits_approved": false,
+  "key_policy_approved": false,
+  "initialization": {
+    "type": "FunctionCall",
+    "method_name": "new",
+    "args": {
+      "tax_bps": 2000,
+      "issuance_numerator": "1",
+      "issuance_denominator": "1",
+      "pilot_limits": {
+        "max_action": "10000000000000000000000",
+        "max_gross": "50000000000000000000000",
+        "max_storage": "20000000000000000000000"
+      }
+    },
+    "deposit": "0",
+    "gas": "110000000000000"
+  },
+  "expected_code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az",
+  "expected_sha256": "31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b",
+  "availability_established_at_snapshot": true,
+  "status": "PUBLIC_ACCOUNT_CANDIDATES_FOUND_OWNER_SELECTION_REQUIRED",
+  "note": "Historical project role mapping only; public keys do not prove current signing control. No credentials accessed. New deployment key must be selected/approved by owner; none generated."
+}

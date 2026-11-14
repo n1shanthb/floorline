@@ -1,0 +1,13 @@
+{
+  "signatures": 0,
+  "status": "FAUCET_UI_ERROR",
+  "reason": "Automatic approval review rejected final browser submission: consequential financial action requires user handoff. No workaround attempted.",
+  "submitted_by_agent": false,
+  "public_account_created": false,
+  "rate_limit_bypass": false,
+  "intended_request_NEAR": "12.69",
+  "endpoint": "https://near-faucet.io/",
+  "controller": "floorline-g3-20261111-6702ea.testnet",
+  "observed_result": "ERROR — There was an error. No transaction hash displayed. Owner reported got error.",
+  "automatic_retry": false
+}

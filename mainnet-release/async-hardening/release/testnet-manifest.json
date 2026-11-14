@@ -555,6 +555,16 @@
       "gas": "110000000000000"
     },
     {
+      "id": "stop",
+      "signer_role": "controller",
+      "receiver_role": "contract",
+      "method": "stop_new_risk",
+      "args": {},
+      "deposit": "0",
+      "gas": "110000000000000",
+      "review": "Irreversible. Execute after all approved new-risk actions finish; the funded borrower storage unregister exit follows."
+    },
+    {
       "id": "unregister",
       "signer_role": "borrower",
       "receiver_role": "contract",
@@ -564,16 +574,6 @@
       },
       "deposit": "1",
       "gas": "110000000000000"
-    },
-    {
-      "id": "stop",
-      "signer_role": "controller",
-      "receiver_role": "contract",
-      "method": "stop_new_risk",
-      "args": {},
-      "deposit": "0",
-      "gas": "110000000000000",
-      "review": "Irreversible. Execute only after all approved new-risk actions finish."
     }
   ],
   "signing_implemented": false,

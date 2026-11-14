@@ -1,3 +1,36 @@
+# RC1 acceptance authorization and post-stop exit — current status
+
+November 14, 2026. This section supersedes earlier status statements. The owner explicitly confirmed all six candidate IDs, present signing control of the existing five signing accounts, the controller public key for new-contract FullAccess/shared operator custody, initialization/caps, the revised graph and allocations, and the 13.24-testnet-NEAR ceiling. The exact authorization and graph digest are in `release/acceptance-preparation-20261114/OWNER_AUTHORIZATION.json`. This approval permits bounded testnet execution after sufficient finalized funding; it grants no mainnet authority.
+
+## Revised acceptance and confirmed scope
+
+The graph still contains 39 transactions. Transaction 38 is controller `stop_new_risk`; transaction 39 is borrower `storage_unregister({force:false})` with one yoctoNEAR. After cleaning claims/loans, returning all borrower tokens and withdrawing 0.001 unused storage before stopping, the remaining funded storage refund is expected to be 0.019 NEAR. It must be re-read from finalized storage credit before signing. Verify the stop is active, complete refund transfer AND callback, native refund credit after fees, null borrower storage, admission count 4 to 3 and solvency. No new-risk action follows the stop. Unknown/nonfinal outcomes, failed children, RPC disagreement and accounting mismatch stop execution without automatic resubmission.
+
+Exact normal artifact remains SHA-256 `31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b`, code `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`, 453,798 bytes; financial source `c182351` is unchanged. Revised graph SHA-256 is `0ded3648e33d9e166fc855e94bbc4970174a455cf48bb77f2b93acb77680a9f5`.
+
+Approved controller `floorline-g3-20261111-6702ea.testnet`; fresh receiver `rc1.floorline-g3-20261111-6702ea.testnet`; holder `alice.floorline-g3-20261111-6702ea.testnet`; borrower `carol.floorline-g3-20261111-6702ea.testnet`; NFT holder `dave.floorline-g3-20261111-6702ea.testnet`; lender `lender.floorline-g3-20261111-6702ea.testnet`. Approved new contract public key: `ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ`, shared with the controller. No new private key is necessary for that policy; retention allows arbitrary upgrades and is not ownerless immutability.
+
+Initialization remains tax 2000 bps, issuance 1:1, immutable 0.01 action/debt / 0.05 lifetime admitted gross / 0.02 user storage caps, 128 admission slots. Atomic CreateAccount/Transfer/AddKey/DeployContract/new remains mandatory; verify code, exact keys, guardian and initialized accounting after FINAL before financial continuation. Browser wallet acceptance is planned for the holder's existing issue transaction, not an additional mint. The CLI must not also execute it. Browser signing requires owner participation and real finalized receipts; it is currently UNVERIFIED.
+
+## Budget, funding and actual execution
+
+Refreshed official testnet quote `2026-11-14T04:00:22.269Z` remains protocol 88, storage byte 10^19 yoctoNEAR, spot gas 10^8 and minimum purchase price 10^9. Reordering stop/unregister adds no calls or deposits. Integer graph/cap/ownership/storage-headroom checks and receipt checker positive/negative fixtures pass. The required proposed allocations remain exactly 13.24 NEAR: contract 8, holder 1.94, borrower 1.21, NFT holder 0.37, lender 0.97, controller 0.75. Financial and storage deposits are included. Raw evidence is separate from previous preflight snapshots under `release/acceptance-preparation-20261114/`.
+
+A finalized same-block check through official NEAR RPC and FastNEAR agreed on controller spendable 0.5501983820616849 NEAR; shortfall is 12.6898016179383151. `funding-gate.json` preserves both replies and protocol state. Funding is INSUFFICIENT. No deployment or financial acceptance transaction has been attempted. Actual newly allocated/spent acceptance NEAR: 0/0; unspent authorized allocation: 13.24, which is an authorization ceiling, not available cash. Existing balances remain unchanged at the checked snapshot.
+
+The browser faucet request required user handoff: automatic approval review rejected the agent's final submit click as a consequential browser financial action. The owner then reported an error; the visible site showed ERROR / There was an error, without a hash. No successful grant is claimed and no blind retry occurred. `FUNDING_HANDOFF.json` records this result. Funding and browser acceptance blockers must not be mistaken for a failed RC1 contract runtime test.
+
+The owner proposed CLI faucet-funded accounts as an alternative. Official [CLI documentation](https://github.com/near/near-cli-rs/blob/main/docs/GUIDE.en.md) supports sponsor-by-faucet-service; [helper source](https://github.com/near/near-contract-helper/blob/master/app.js) shows a configured account-creation IP rate limit and its [sample environment](https://github.com/near/near-contract-helper/blob/master/.env.sample) a 10-NEAR default grant. These are source defaults, not a promise of current live funding. No rate-limit bypass is authorized. Proposed added funding-only source IDs and custody were submitted for explicit owner confirmation because the user required all source IDs before signatures. No such accounts have been created in this workstream. A CLI download attempt was stopped while stalled at zero bytes; no binary was installed or run, and downloads remained on E:.
+
+## Current execution gate and next action
+
+RC1 ARTIFACT VERIFIED; CAP COMPATIBILITY PASS; revised 13.24 ceiling SUFFICIENT at quoted model; OWNER RC1 AUTHORIZATION CONFIRMED; FINALIZED FUNDING INSUFFICIENT; ATOMIC DEPLOYMENT NOT EXECUTED; ACCEPTANCE TRANSACTIONS NOT EXECUTED; BROWSER WALLET UNVERIFIED; INDEPENDENT AUDIT PENDING; MAINNET NOT AUTHORIZED.
+
+Exact deployed account: NONE for RC1; target is the fresh approved receiver above. Actual deployed RC1 code hash and transaction hashes: NONE. Expected hash is not presented as a deployed hash. No private keys were accessed. v1, FloorKit/Cosign, old receipts, financial source/artifact and live website are unchanged. Continue execution once the additional funding-source identity/custody scope is confirmed and sufficient funds are finalized; never substitute a weaker budget check or fabricate completion.
+
+---
+
+# Previous preflight assessments — historical where superseded above
 # RC1 fresh-testnet unsigned preflight — authoritative current status
 
 November 14, 2026. This section supersedes current readiness statements below. Financial source and approved artifacts are frozen and unchanged. No signing, broadcasting, funding, key creation, credential access or deployment occurred. Public RPC queries only; actual spending is zero.
