@@ -1,0 +1,19 @@
+{
+  "network": "testnet",
+  "contract": "rc1.floorline-g3-20261111-6702ea.testnet",
+  "authorization": "Owner explicitly authorized replacing Alice with funmask6175.testnet and moving the existing holder allocation on 2026-11-14.",
+  "original_graph_sha256": "0ded3648e33d9e166fc855e94bbc4970174a455cf48bb77f2b93acb77680a9f5",
+  "original_transaction_count": 39,
+  "amended_total_transaction_count": 42,
+  "current_holder": "funmask6175.testnet",
+  "current_holder_public_key": "ed25519:B8mDgWgSh8yhvWbYWJnoSdJuWMbV874Jhk1ewee9zJ94",
+  "added_transactions": [
+    {"id":"unregister_old_holder","hash":"7hTGy4jKTw4Xo89C3MUFVLzqJqYqxoguyjDkE9oX67Mn"},
+    {"id":"fund_new_holder","hash":"E8HtNMLLMbP3HXxagmGbc9Jb5dZh6XEoBQN1egZpWZW7"},
+    {"id":"register_new_holder","hash":"SwTUrnrWmt7TrJdRExCndek5ndxXFsDNBypXGWgy6Cy"}
+  ],
+  "wallet_holder_steps": ["issue","collateral_to_borrower","redeem","withdraw_redemption","contribute"],
+  "controller_permissionless_steps": ["cleanup_redeem","cleanup_borrow_repay","cleanup_repay","cleanup_offer_repay","cleanup_borrow_default","default","cleanup_offer_default","cleanup_cancel","cleanup_offer_cancel"],
+  "unchanged": ["contract","wasm_sha256","methods","arguments","attached_deposits","gas_budgets","caps","13.24_NEAR_ceiling"],
+  "note": "Permissionless cleanup/default calls are re-signed by the existing controller only to avoid exporting or probing the Meteor-held Funmask key. Holder-only value-moving calls remain wallet-signed by Funmask."
+}

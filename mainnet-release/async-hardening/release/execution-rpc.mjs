@@ -1,6 +1,6 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';
 export const out=import.meta.dirname+'/acceptance-preparation-20261114';
-export const urls=['https://test.rpc.fastnear.com','https://near-testnet.drpc.org'];
+export const urls=['https://near-testnet.drpc.org','https://rpc.testnet.near.org'];
 export const save=(n,v)=>fs.writeFileSync(out+'/'+n,JSON.stringify(v,null,2));
 const gates=new Map();
 export async function rpc(url,method,params){const previous=gates.get(url)??Promise.resolve();const gate=previous.then(()=>new Promise(r=>setTimeout(r,1800)));gates.set(url,gate);await gate;const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'rc1-acceptance',method,params}),signal:AbortSignal.timeout(30000)});assert(r.ok,'RPC HTTP '+r.status+' '+url+' '+method);const d=await r.json();assert(!d.error,JSON.stringify(d.error));return d.result;}
