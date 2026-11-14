@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const {connect,keyStores,KeyPair,transactions}=createRequire('file:///E:/near-2/runtime/package.json')('near-api-js');
-const base=import.meta.dirname,out=base+'/runtime/evidence/finalization-20261113',mode=process.argv[2];
+const base=import.meta.dirname,out=process.env.RELEASE_DIR??base+'/runtime/evidence/finalization-20261113',mode=process.argv[2];
 assert(['old','new','normal'].includes(mode));
 const vk=JSON.parse(fs.readFileSync(base+'/.sandbox/node/validator_key.json'));
 const store=new keyStores.InMemoryKeyStore();await store.setKey('sandbox',vk.account_id,KeyPair.fromString(vk.secret_key));
@@ -14,7 +14,7 @@ const artifact=mode==='old'?out+'/artifacts/floorline-fault.wasm':out+(mode==='n
 await c.deployContract(fs.readFileSync(artifact));
 async function view(m,args={}){const r=await near.connection.provider.query({request_type:'call_function',account_id:c.accountId,method_name:m,args_base64:Buffer.from(JSON.stringify(args)).toString('base64'),finality:'final'});return JSON.parse(Buffer.from(r.result))}
 async function call(a,m,args={},d=0n){const sent=await a.signAndSendTransaction({receiverId:c.accountId,actions:[transactions.functionCall(m,Buffer.from(JSON.stringify(args)),110n*10n**12n,d)],returnError:true});const r=await near.connection.provider.sendJsonRpc('tx',{tx_hash:sent.transaction.hash,sender_account_id:a.accountId,wait_until:'FINAL'});const ledger=await view('accounting');assert(BigInt(ledger.account_balance)>=BigInt(ledger.local_required));assert(BigInt(ledger.storage_total)+BigInt(ledger.operational)>=BigInt(ledger.storage_stake));const row={method:m,signer:a.accountId,result:r,ledger};rows.push(row);fs.writeFileSync(out+'/'+mode+'-tx-'+tag+'-'+rows.length+'.json',JSON.stringify({mode,contract:c.accountId,...row},null,2));return r}
-await call(root,'new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1'});
+await call(root,'new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1',...(process.env.SANDBOX_PILOT_LIMITS?{pilot_limits:JSON.parse(process.env.SANDBOX_PILOT_LIMITS)}:{})});
 const count=mode==='old'?64:128;
 const users=[];for(let i=0;i<count;i++){const a=await create('u'+i);users.push(a);const r=await call(a,'storage_deposit',{account_id:null,registration_only:false},N/100n);assert(!r.status.Failure);if((i+1)%32===0)console.log(mode+' registered '+(i+1))}
 if(mode!=='old'){const r=await call(root,'storage_deposit',{account_id:null,registration_only:false},N/100n);assert(r.status.Failure);assert.equal((await view('admission_status')).occupied,128)}

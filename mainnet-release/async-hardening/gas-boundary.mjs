@@ -11,7 +11,7 @@ const id='gas'+Date.now()+'.'+root.accountId,k=KeyPair.fromRandom('ed25519');awa
 const rows=[];
 async function call(m,args={},d=0n,gas=110n*10n**12n){const r=await root.signAndSendTransaction({receiverId:id,actions:[transactions.functionCall(m,Buffer.from(JSON.stringify(args)),gas,d)],returnError:true});rows.push({method:m,gas:gas.toString(),result:r});return r}
 function failure(r){return !!r.status.Failure||r.receipts_outcome.some(x=>x.outcome.status.Failure)}
-await call('new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1'});
+await call('new',{tax_bps:2000,issuance_numerator:'1',issuance_denominator:'1',...(process.env.SANDBOX_PILOT_LIMITS?{pilot_limits:JSON.parse(process.env.SANDBOX_PILOT_LIMITS)}:{})});
 assert(failure(await call('storage_deposit',{account_id:null,registration_only:false},N,109n*10n**12n)));
 for(let i=0;i<3;i++){
  assert(!failure(await call('storage_deposit',{account_id:null,registration_only:false},N)));

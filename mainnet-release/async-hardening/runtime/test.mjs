@@ -25,7 +25,7 @@ async function view(a,method,args={}){const r=await near.connection.provider.que
 async function state(a){return near.connection.provider.query({request_type:'view_account',account_id:a.accountId??a,finality:'optimistic'});}
 function result(r){return r.status.SuccessValue?JSON.parse(Buffer.from(r.status.SuccessValue,'base64').toString()):null;}
 function failures(r){return [r.transaction_outcome,...r.receipts_outcome].filter(x=>x.outcome.status.Failure).map(x=>({id:x.id,...x.outcome.status}));}
-async function tx(a,to,method,args={},deposit=0n,gas=GAS){return a.signAndSendTransaction({receiverId:to.accountId??to,actions:[transactions.functionCall(method,Buffer.from(JSON.stringify(args)),gas,deposit)],returnError:true});}
+async function tx(a,to,method,args={},deposit=0n,gas=GAS){if(method==='new'&&process.env.SANDBOX_PILOT_LIMITS)args={pilot_limits:JSON.parse(process.env.SANDBOX_PILOT_LIMITS),...args};return a.signAndSendTransaction({receiverId:to.accountId??to,actions:[transactions.functionCall(method,Buffer.from(JSON.stringify(args)),gas,deposit)],returnError:true});}
 let floor;
 async function measure(name,a,to,method,args={},deposit=0n,expectedFailure=false){const before=await state(floor);const ledgerBefore=await view(floor,'accounting');const r=await tx(a,to,method,args,deposit);const after=await state(floor);const ledger=await view(floor,'accounting');
  const f=failures(r);assert.equal(Boolean(r.status.Failure),expectedFailure,`${name}: ${JSON.stringify(r.status)}`);

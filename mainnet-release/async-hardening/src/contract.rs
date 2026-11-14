@@ -15,6 +15,13 @@ const GAS_CB: u64 = 30;
 const GAS_CB: u64 = 1;
 const GAS_RECEIVER: u64 = 50;
 const MAX_MEMO: usize = 256;
+#[near(serializers=[borsh, json])]
+#[derive(Clone, Default)]
+pub struct PilotLimits {
+    pub max_action: U128,
+    pub max_gross: U128,
+    pub max_storage: U128,
+}
 #[near(serializers=[borsh])]
 #[derive(Clone)]
 struct User {
@@ -74,6 +81,10 @@ struct Refund {
 #[near(contract_state)]
 #[derive(PanicOnDefault)]
 pub struct Contract {
+    guardian: AccountId,
+    stopped: bool,
+    limits: PilotLimits,
+    gross: u128,
     admission_count: u32,
     tax: u16,
     weight_num: u128,
@@ -134,12 +145,21 @@ fn memo_ok(memo: &Option<String>) {
 #[near]
 impl Contract {
     #[init]
-    pub fn new(tax_bps: u16, issuance_numerator: U128, issuance_denominator: U128) -> Self {
+    pub fn new(
+        tax_bps: u16,
+        issuance_numerator: U128,
+        issuance_denominator: U128,
+        pilot_limits: Option<PilotLimits>,
+    ) -> Self {
         assert!(
             tax_bps < 10000 && issuance_numerator.0 > 0 && issuance_denominator.0 > 0,
             "invalid config"
         );
         let mut s = Self {
+            guardian: caller(),
+            stopped: false,
+            limits: pilot_limits.unwrap_or_default(),
+            gross: 0,
             admission_count: 0,
             tax: tax_bps,
             weight_num: issuance_numerator.0,
@@ -193,6 +213,14 @@ impl Contract {
     pub fn admission_status(&self) -> Value {
         json!({"occupied":self.admission_count,"capacity":128,"exit_bytes_per_slot":512,"exit_reserve":U128(bytes_cost(128*512))})
     }
+    pub fn pilot_status(&self) -> Value {
+        json!({"guardian":self.guardian,"stopped":self.stopped,"gross":U128(self.gross),"limits":self.limits,"version":"floor-async-rc1"})
+    }
+    pub fn stop_new_risk(&mut self) {
+        assert_eq!(caller(), self.guardian, "not guardian");
+        self.stopped = true;
+        floor_event("risk_stopped", json!({"guardian":self.guardian}));
+    }
     pub fn user_state(&self, account_id: AccountId) -> Option<Value> {
         self.users.get(&account_id).map(|u|json!({"tokens":U128(u.tokens),"storage_total":U128(u.total),"storage_used":U128(u.used),"refs":u.refs,"refund":U128(u.refund),"refund_state":u.refund_state}))
     }
@@ -225,6 +253,7 @@ impl Contract {
         registration_only: Option<bool>,
     ) -> Value {
         Self::gas();
+        assert!(amount() <= self.limits.max_storage.0, "storage deposit cap");
         let id = account_id.unwrap_or_else(caller);
         assert_ne!(id, env::current_account_id(), "escrow cannot register");
         let deposit = amount();
@@ -259,6 +288,7 @@ impl Contract {
                 deposit
             };
             u.total = plus(u.total, retained);
+            assert!(u.total <= self.limits.max_storage.0, "storage credit cap");
             assert!(u.total >= u.used);
             self.storage_total = plus(self.storage_total, retained);
             self.users.insert(&id, &u);
@@ -366,6 +396,7 @@ impl Contract {
     }
     #[payable]
     pub fn issue(&mut self, min_tokens: U128) -> U128 {
+        self.new_risk();
         let who = caller();
         let d = amount();
         assert!(d > 0);
@@ -389,6 +420,7 @@ impl Contract {
     }
     #[payable]
     pub fn contribute(&mut self) {
+        self.new_risk();
         let d = amount();
         assert!(
             d > 0 && self.t > 0,
@@ -478,6 +510,11 @@ impl Contract {
     }
     #[payable]
     pub fn fund_offer(&mut self, repayment: U128, collateral: U128, duration_ns: U64) -> U64 {
+        self.new_risk();
+        assert!(
+            repayment.0 <= self.limits.max_action.0,
+            "debt admission cap"
+        );
         let who = caller();
         let p = amount();
         assert!(p > 0 && repayment.0 >= p && collateral.0 > 0 && duration_ns.0 > 0);
@@ -518,6 +555,7 @@ impl Contract {
         U64(claim)
     }
     pub fn accept_offer(&mut self, loan_id: U64) -> U64 {
+        assert!(!self.stopped, "new risk stopped");
         let mut l = self.loans.get(&loan_id.0).expect("missing offer");
         assert_eq!(l.state, 0);
         let who = caller();
@@ -712,6 +750,15 @@ impl Contract {
     }
 }
 impl Contract {
+    fn new_risk(&mut self) {
+        assert!(!self.stopped, "new risk stopped");
+        assert!(
+            amount() > 0 && amount() <= self.limits.max_action.0,
+            "native action cap"
+        );
+        self.gross = plus(self.gross, amount());
+        assert!(self.gross <= self.limits.max_gross.0, "gross exposure cap");
+    }
     fn token_key(token_id: &str) -> u64 {
         let n = token_id.parse::<u64>().expect("bad token id");
         assert_eq!(n.to_string(), token_id, "noncanonical token id");
