@@ -13,3 +13,6 @@
 /frontend/.env*
 !/frontend/.env.example
 /frontend/*.tsbuildinfo
+# Demo video intermediates
+docs/demo/video/work/
+docs/demo/video/captures/*.html

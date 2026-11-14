@@ -1,0 +1,104 @@
+1
+00:00:00,100 --> 00:00:06,510
+What if a token's reserves, loan rights, and repayment history were verifiable directly on near?
+
+2
+00:00:06,460 --> 00:00:13,276
+Floorline is a near testnet protocol that combines a reserve-backed fungible token with lender-funded borrowing.
+
+3
+00:00:13,276 --> 00:00:17,881
+The backing, liabilities, and loan ownership rules live on chain.
+
+4
+00:00:17,881 --> 00:00:23,263
+Floor is a N E P one forty one token with separately accounted near backing.
+
+5
+00:00:23,263 --> 00:00:28,065
+L over T is an accounting ratio, not a market-price guarantee.
+
+6
+00:00:28,065 --> 00:00:33,223
+Redemption uses a programmed curve with a twenty percent configured tax.
+
+7
+00:00:33,223 --> 00:00:37,302
+A redemption burns floor and creates a native near claim.
+
+8
+00:00:37,302 --> 00:00:40,539
+This is not just a simulated button.
+
+9
+00:00:40,539 --> 00:00:46,368
+Here is the finalized withdrawal transaction and its receipt evidence on public testnet.
+
+10
+00:00:46,368 --> 00:00:49,315
+A lender supplies the loan funds.
+
+11
+00:00:49,315 --> 00:00:51,842
+The borrower locks floor.
+
+12
+00:00:51,842 --> 00:00:57,052
+The right to repay and reclaim collateral becomes a transferable N F T.
+
+13
+00:00:57,052 --> 00:01:02,184
+Here the N F T changes hands, and its new owner completes repayment.
+
+14
+00:01:02,184 --> 00:01:05,881
+This is a financial entitlement, not artwork.
+
+15
+00:01:05,881 --> 00:01:13,894
+If the deadline passes without repayment, the contract settles the default and allocates collateral to the lender according to its rules.
+
+16
+00:01:13,894 --> 00:01:18,763
+After finishing the test, we permanently stopped new financial risk.
+
+17
+00:01:18,763 --> 00:01:22,802
+Then we verified an existing user could still exit.
+
+18
+00:01:22,802 --> 00:01:26,460
+Both actions have finalized public receipts.
+
+19
+00:01:26,460 --> 00:01:28,605
+New risk stopped.
+
+20
+00:01:28,605 --> 00:01:31,289
+Post-stop exit verified.
+
+21
+00:01:31,289 --> 00:01:37,447
+Forty public-testnet acceptance steps were independently reconciled across the receipt tree.
+
+22
+00:01:37,447 --> 00:01:42,407
+Judges can inspect the evidence and run our read-only verification scripts.
+
+23
+00:01:42,407 --> 00:01:50,289
+Floorline demonstrates verifiable lending, N F Ts that carry enforceable financial rights, and bounded safety controls.
+
+24
+00:01:50,289 --> 00:01:55,342
+Its open implementation shows how these primitives can be composed on near.
+
+25
+00:01:55,342 --> 00:01:59,881
+The code, evidence, and verification instructions are public.
+
+26
+00:01:59,881 --> 00:02:04,947
+Floorline: programmable money with verifiable rights, built on near.
+

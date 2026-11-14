@@ -61,8 +61,10 @@ All mandatory requirements from the official hackathon rules are met. Floorline 
 - **Status:** ✅ COMPLIANT (human action required)
 - **Evidence:**
   - Demo script: `docs/submission/DEMO_SCRIPT.md`
-  - Live demo URL: (recorded in `docs/submission/SUBMISSION.md` after deploy)
-  - X post: NEED HUMAN — author must post demo link on X/Twitter
+  - Live demo URL: https://floorline-delta.vercel.app
+  - Narrated proof video: `docs/demo/video/FLOORLINE_DEMO.mp4` (~125s / ~10 MB)
+  - X post draft: `docs/submission/X_VIDEO_POST.md`
+  - X post: NEED HUMAN — draft ready; author must post on X/Twitter (not marked completed here)
 
 ### 7. README Documentation
 - **Rule:** README must include "Do X, see Y" instructions
@@ -73,11 +75,13 @@ All mandatory requirements from the official hackathon rules are met. Floorline 
   - Verification path: `/verify` route with automated checks
 
 ### 8. Track Relevance
-- **Rule:** Project must fit at least one track (DeFi, NFTs, Security, Social)
+- **Rule:** Project must fit selected official tracks
 - **Status:** ✅ COMPLIANT
 - **Evidence:**
-  - **DeFi:** Collateralized lending with FLOOR token (NEP-141)
-  - **NFTs:** NEP-171 loan receipts with metadata
+  - **Unstoppable DeFi:** Lender-funded NEAR borrowing + NEP-141 FLOOR reserve
+  - **NFTs That Do Something:** NEP-171 transferable repayment/recovery rights
+  - **AI Security & Defense:** bounded admission, async claim quarantine, irreversible stop + AI-readable verify path
+  - Historical short labels (DeFi / NFTs / Security) map to the three official names above
   - **Security:** Stopped RC1 for NEW RISK; async claim pattern
   - Tracks: 3 primary (DeFi, NFTs, Security)
 

@@ -1,8 +1,10 @@
 # Floorline Demo Script
 
-**Duration:** 5-10 minutes  
+**Duration:** 5-10 minutes live · ~125s narrated proof video for X  
 **Format:** Live walkthrough or recorded screencast  
-**Audience:** Hackathon judges or interested developers
+**Audience:** Hackathon judges or interested developers  
+**Tracks:** Unstoppable DeFi · NFTs That Do Something · AI Security & Defense  
+**Narrated MP4:** [docs/demo/video/FLOORLINE_DEMO.mp4](../demo/video/FLOORLINE_DEMO.mp4) · post draft [X_VIDEO_POST.md](X_VIDEO_POST.md)
 
 ---
 
