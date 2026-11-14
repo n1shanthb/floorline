@@ -1,0 +1,14 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import { out, save } from "./execution-rpc.mjs";
+const j=JSON.parse(fs.readFileSync(`${out}/ACCEPTANCE_EXECUTION.json`));
+assert.equal(j.status,"STOPPED_NO_RETRY"); assert.equal(j.rows.length,36);
+const r=j.rows.at(-1), before=j.pre_browser, after=r.after;
+assert.equal(r.id,"contribute"); assert.equal(r.hash,"AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1"); assert.equal(r.status,"FINAL_VERIFIED");
+assert.equal(BigInt(after.pilot.gross)-BigInt(before.pilot.gross),1000000000000000000000n);
+assert.equal(after.ledger.T,before.ledger.T);
+assert.equal(BigInt(after.ledger.L)-BigInt(before.ledger.L),1000000000000000000000n);
+assert(BigInt(after.ledger.L)*BigInt(before.ledger.T)>=BigInt(before.ledger.L)*BigInt(after.ledger.T));
+save("CONTRIBUTE_POSTSTATE_RECOVERY.json",{hash:r.hash,before,after,classification:"PASS_PRESERVED_PRE_BROWSER_SNAPSHOT"});
+j.status="RUNNING"; j.contribute_poststate_recovery="CONTRIBUTE_POSTSTATE_RECOVERY.json"; delete j.error; save("ACCEPTANCE_EXECUTION.json",j);
+console.log("PASS contribution delta, supply constancy, backing monotonicity and solvency snapshot");

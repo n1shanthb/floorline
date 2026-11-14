@@ -11,7 +11,7 @@ export default defineConfig({
     fs: { strict: true },
     proxy: {
       "/rpc": {
-        target: "https://near-testnet.drpc.org",
+        target: "https://rpc.testnet.near.org",
         changeOrigin: true,
         rewrite: () => "/",
       },
@@ -23,7 +23,7 @@ export default defineConfig({
     port: 4173,
     proxy: {
       "/rpc": {
-        target: "https://near-testnet.drpc.org",
+        target: "https://rpc.testnet.near.org",
         changeOrigin: true,
         rewrite: () => "/",
       },

@@ -1,0 +1,50 @@
+{
+  "conclusion": "SAFE_TO_RETRY_PRE_SIGNING_WALLET_CLOSURE",
+  "reason": "Both alternate providers agree that the signer nonce did not advance beyond the finalized redemption and claim #1 remains Available with no payout attempt.",
+  "finalized_block": {
+    "height": 277667607,
+    "hash": "BS9vrDnWNVPFgDfUwWTcDTUryb6gvvtJUYwAZ7V286AG"
+  },
+  "prior_finalized_transaction": {
+    "hash": "4gj1BQFmB9wH2NqtZRnTBfdQErdbUDCAQULRTPqojYyd",
+    "nonce": "277610782000004"
+  },
+  "observations": [
+    {
+      "provider": "https://near-testnet.drpc.org",
+      "access_key": {
+        "block_hash": "BS9vrDnWNVPFgDfUwWTcDTUryb6gvvtJUYwAZ7V286AG",
+        "block_height": 277667607,
+        "nonce": 277610782000004,
+        "permission": "FullAccess"
+      },
+      "claim": {
+        "owner": "funmask6175.testnet",
+        "amount": "820000000000000000000",
+        "kind": 2,
+        "state": 0,
+        "attempt": "0",
+        "storage_cost": "1370000000000000000000"
+      }
+    },
+    {
+      "provider": "https://test.rpc.fastnear.com",
+      "access_key": {
+        "block_hash": "BS9vrDnWNVPFgDfUwWTcDTUryb6gvvtJUYwAZ7V286AG",
+        "block_height": 277667607,
+        "nonce": 277610782000004,
+        "permission": "FullAccess"
+      },
+      "claim": {
+        "owner": "funmask6175.testnet",
+        "amount": "820000000000000000000",
+        "kind": 2,
+        "state": 0,
+        "attempt": "0",
+        "storage_cost": "1370000000000000000000"
+      }
+    }
+  ],
+  "unknown_transactions": 0,
+  "retried_transactions_before_fence": 0
+}

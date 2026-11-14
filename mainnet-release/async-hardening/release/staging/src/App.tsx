@@ -42,7 +42,7 @@ import { FRESH_MS, txLink } from "./lib/config";
 import { exact, canonicalId } from "./lib/math";
 import { validateRequest } from "./lib/actions";
 import type { ActionRequest } from "./lib/wallet";
-import { receiverFor } from "./lib/wallet";
+import { claimWalletPopup, receiverFor, signRequest } from "./lib/wallet";
 import { verifyIntent } from "./lib/receipt";
 import { recordTransaction } from "./lib/journal";
 import type { TxPhase } from "./lib/transaction";
@@ -371,6 +371,14 @@ export default function App() {
   };
   const sign = async () => {
     if (!action || phase !== "review" || !account || signing.current) return;
+    const walletWindow = claimWalletPopup();
+    if (!walletWindow) {
+      setPhase("rejected");
+      setTxError(
+        "The browser blocked Meteor's wallet window. Allow popups for this local staging page, then review again.",
+      );
+      return;
+    }
     signing.current = true;
     setPhase("validating");
     try {
@@ -382,8 +390,7 @@ export default function App() {
         createdAt: Date.now(),
       };
       sessionStorage.setItem("floorline-rc1:pending", JSON.stringify(pending));
-      const { signRequest } = await import("./lib/wallet");
-      const out = await signRequest(action, account);
+      const out = await signRequest(action, account, walletWindow);
       const txHash = out?.transaction?.hash;
       if (txHash) {
         pending.hash = txHash;
@@ -396,6 +403,7 @@ export default function App() {
         );
       }
     } catch (e) {
+      if (!sessionStorage.getItem("floorline-rc1:pending")) walletWindow.close();
       const message =
         e instanceof Error ? e.message : "Wallet response unavailable";
       if (isExplicitWalletRejection(e)) {

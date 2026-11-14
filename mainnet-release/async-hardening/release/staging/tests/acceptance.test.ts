@@ -44,6 +44,9 @@ const signer = "acceptance.testnet",
   other = "receiver.testnet",
   N = 10n ** 24n;
 describe("RC1 staging limits (mocked reads)", () => {
+  it("uses the approved 110 Tgas budget for redemption", () => {
+    expect(request("redeem", "redeem", { amount: "1", min_out: "1" }).gas).toBe("110000000000000");
+  });
   it("quotes a storage top-up from live credit and immutable cap", async () => {
     f.view.mockImplementation(async method=>method==="storage_balance_bounds"?{min:"10"}:method==="storage_balance_of"?{total:(N/2n).toString()}:null);
     const r=await storageRequest(signer);

@@ -1,0 +1,18 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import { final, out, receipts, save } from "./execution-rpc.mjs";
+const hash="AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1";
+const signer="funmask6175.testnet";
+const receiver="rc1.floorline-g3-20261111-6702ea.testnet";
+const j=JSON.parse(fs.readFileSync(`${out}/ACCEPTANCE_EXECUTION.json`));
+assert.equal(j.status,"AWAITING_BROWSER_CONTRIBUTE");
+assert(!j.rows.some(r=>r.id==="contribute"));
+const r=await final(hash,signer), call=r.transaction.actions[0].FunctionCall;
+assert.equal(r.transaction.hash,hash); assert.equal(r.transaction.signer_id,signer); assert.equal(r.transaction.receiver_id,receiver);
+assert.equal(r.transaction.actions.length,1); assert.equal(call.method_name,"contribute");
+assert.deepEqual(JSON.parse(Buffer.from(call.args,"base64")),{}); assert.equal(call.deposit,"1000000000000000000000");
+assert.equal(call.gas.toString(),"30000000000000"); receipts(r);
+const evidence={classification:"FINAL_SUCCESS_GAS_MISMATCH",hash,signer,receiver,method:"contribute",args:{},deposit:call.deposit,observed_gas:call.gas.toString(),approved_gas:"110000000000000",root_and_all_descendants:"FINAL_VERIFIED",outcome:r,checkpoint_advanced:false,rebroadcasts:0};
+save("CONTRIBUTE_30_TGAS_MISMATCH_STOP.json",evidence);
+j.status="STOPPED_CONTRIBUTE_GAS_MISMATCH_REVIEW_REQUIRED"; j.contribute_gas_mismatch=evidence; save("ACCEPTANCE_EXECUTION.json",j);
+console.log(JSON.stringify({...evidence,outcome:undefined}));

@@ -1,31 +1,606 @@
 // Authorized RC1 public-testnet executor. One broadcast per persisted hash. Never auto-retry.
-import fs from 'node:fs';import assert from 'node:assert/strict';import {createRequire} from 'node:module';import {createHash} from 'node:crypto';import {out,urls,rpc,save,block,query,final,receipts} from './execution-rpc.mjs';
-const dir=import.meta.dirname,base=dir+'/..',auth=JSON.parse(fs.readFileSync(out+'/OWNER_AUTHORIZATION.json')),amend=JSON.parse(fs.readFileSync(out+'/HOLDER_AMENDMENT.json')),m=JSON.parse(fs.readFileSync(dir+'/testnet-manifest.json')),plan=JSON.parse(fs.readFileSync(dir+'/acceptance-plan.json')),F=auth.accounts.contract,N=10n**24n;
-const sha=b=>createHash('sha256').update(b).digest('hex'),wasm=fs.readFileSync(base+'/runtime/evidence/release-rc1/new-normal.wasm');assert(auth.owner_confirmed);assert.equal(sha(wasm),auth.normal_sha256);assert.equal(sha(fs.readFileSync(dir+'/acceptance-plan.json')),auth.transaction_graph_sha256);assert.equal(amend.original_graph_sha256,auth.transaction_graph_sha256);assert.equal(amend.current_holder,'funmask6175.testnet');assert.equal(amend.amended_total_transaction_count,42);assert.equal(plan.transactions,39);assert.equal(plan.steps.at(-2).id,'stop');assert.equal(plan.steps.at(-1).id,'unregister');assert(F.endsWith('.'+auth.accounts.controller));assert.notEqual(F,'floor.floorline-g3-20261111-6702ea.testnet');
-if(process.argv.includes('--validate-only')){console.log('PASS artifact, authorized graph and network/receiver binding; no credentials loaded');process.exit(0);}
-const funding=JSON.parse(fs.readFileSync(out+'/FUNDING_TRANSFERS.json'));assert.equal(funding.status,'FUNDED_FINAL');assert(BigInt(funding.total_fees)<=N/100n);
-const require=createRequire('E:/near-2/runtime/package.json'),api=require('near-api-js');
-const file=out+'/ACCEPTANCE_EXECUTION.json',j=fs.existsSync(file)?JSON.parse(fs.readFileSync(file)):{network:'testnet',contract:F,expected_code_hash:auth.code_hash,expected_sha256:auth.normal_sha256,graph:auth.transaction_graph_sha256,status:'PREFLIGHT',rows:[],values:{},source_transfer_fees:funding.total_fees};
-assert(!j.status.startsWith('STOP'),'STOP journal requires manual reconciliation, not a rerun');assert(j.rows.every(r=>r.status==='FINAL_VERIFIED'),'Unresolved journal row: STOP');
-const account=role=>role==='holder'?amend.current_holder:auth.accounts[role];
-const persist=()=>save('ACCEPTANCE_EXECUTION.json',j),sum=a=>a.reduce((n,x)=>n+BigInt(x),0n),publicKey=role=>role==='controller'?auth.controller_public_key:auth.actor_public_keys[role];
-const store=new api.keyStores.UnencryptedFileSystemKeyStore('E:/near-2/.testnet-credentials'),near=await api.connect({networkId:'testnet',nodeUrl:urls[0],keyStore:store});
-async function view(method,args,b){const r=await query({request_type:'call_function',account_id:F,method_name:method,args_base64:Buffer.from(JSON.stringify(args)).toString('base64')},b);return JSON.parse(Buffer.from(r.result).toString());}
-async function snapshot(){const b=await block(),contractAccount=await query({request_type:'view_account',account_id:F},b);assert.equal(contractAccount.code_hash,auth.code_hash);const ledger=await view('accounting',{},b),pilot=await view('pilot_status',{},b),admission=await view('admission_status',{},b);assert.deepEqual(pilot.limits,auth.initialization.pilot_limits);assert.equal(pilot.guardian,auth.accounts.controller);assert.equal(admission.capacity,128);const fields=['L','unused_lender','storage_total','operational','borrower_claims','lender_claims','redemption_claims','cancellation_claims','storage_refund_claims'];assert.equal(sum(fields.map(k=>ledger[k])),BigInt(ledger.local_required));assert(BigInt(contractAccount.amount)>=BigInt(ledger.local_required));assert(BigInt(ledger.storage_total)+BigInt(ledger.operational)>=BigInt(ledger.storage_stake));assert.equal(ledger.inflight,'0','Unresolved payout');assert.equal(ledger.refund_storage,'0','Unresolved refund record');assert(BigInt(pilot.gross)<=BigInt(pilot.limits.max_gross));const balances={};for(const role of ['holder','borrower','nft_holder','lender'])balances[role]=await view('ft_balance_of',{account_id:account(role)},b);assert.equal(sum(Object.values(balances))+BigInt(ledger.locked),BigInt(ledger.T),'Token conservation / unexpected external holder');return {block:b,account:contractAccount,ledger,pilot,admission,balances};}
-function budget(){const fundingAllocated=sum(m.actor_funding.map(x=>x.actions[0].deposit))+8n*N;const fees=sum(j.rows.map(r=>r.fee??'0'))+BigInt(funding.total_fees);assert(fees<=75n*N/100n,'Operator/actor fee total guard');const perRole={};for(const role of ['holder','borrower','nft_holder','lender']){const spent=sum(j.rows.filter(r=>r.role===role).map(r=>BigInt(r.deposit??'0')+BigInt(r.fee??'0')));assert(spent<=BigInt(m.funding.actor_allocations_yocto[role]));perRole[role]=spent.toString();}const controllerFees=sum(j.rows.filter(r=>r.role==='controller').map(r=>r.fee??'0'))+BigInt(funding.total_fees);assert(controllerFees<=75n*N/100n);j.budget={funding_allocations:fundingAllocated.toString(),total_actual_fees:fees.toString(),controller_and_source_fees:controllerFees.toString(),actor_deposit_and_fee_use:perRole,ceiling:m.funding.ceiling_yocto};}
-async function submit(id,role,receiver,actions,extra={}){assert.notEqual(role,'holder','Meteor-held Funmask key must never be probed or used by the local signer');assert(!j.rows.some(r=>r.id===id));const b=await block(),signerId=auth.accounts[role],pk=await near.connection.signer.getPublicKey(signerId,'testnet');assert.equal(pk?.toString(),publicKey(role));const access=await query({request_type:'view_access_key',account_id:signerId,public_key:pk.toString()},b);assert.equal(access.permission,'FullAccess');const state=await query({request_type:'view_account',account_id:signerId},b);const price=BigInt((await rpc(urls[0],'gas_price',{block_id:b.hash})).gas_price);assert(price<=10n**9n);const deposits=sum(actions.map(x=>x.transfer?.deposit??x.functionCall?.deposit??'0'));assert(BigInt(state.amount)>deposits+N/5n,'Inadequate upfront gas reserve');const [h,signed]=await api.transactions.signTransaction(receiver,BigInt(access.nonce)+1n,actions,api.utils.serialize.base_decode(b.hash),near.connection.signer,signerId,'testnet');const hash=api.utils.serialize.base_encode(h),row={id,role,signer:signerId,receiver,hash,nonce:(BigInt(access.nonce)+1n).toString(),status:'SIGNED_NOT_BROADCAST',signed_tx_base64:Buffer.from(signed.encode()).toString('base64'),...extra};j.rows.push(row);persist();row.status='BROADCAST_ATTEMPTED';persist();row.broadcast=await rpc(urls[0],'send_tx',{signed_tx_base64:row.signed_tx_base64,wait_until:'NONE'});persist();row.outcome=await final(hash,signerId);row.fee=receipts(row.outcome).toString();assert.equal(row.outcome.transaction.hash,hash);assert.equal(row.outcome.transaction.signer_id,signerId);assert.equal(row.outcome.transaction.receiver_id,receiver);row.value=JSON.parse(Buffer.from(row.outcome.status.SuccessValue,'base64').toString()||'null');row.status='FINAL_VERIFIED';budget();persist();console.log('FINAL '+id+' '+hash);return row;}
-function resolve(x){if(Array.isArray(x))return x.map(resolve);if(x&&typeof x==='object'){if(x.$result){assert(j.values[x.$result]!==undefined);return j.values[x.$result]}if(x.$account)return account(x.$account);if(x.$fresh_quote)return x;return Object.fromEntries(Object.entries(x).map(([k,v])=>[k,resolve(v)]));}return x;}
-try{
- if(!j.rows.some(r=>r.id==='deploy')){const b=await block();for(const url of urls){const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'new-account',method:'query',params:{request_type:'view_account',account_id:F,block_id:b.hash}}),signal:AbortSignal.timeout(30000)});const d=await r.json();assert.equal(d.error?.cause?.name,'UNKNOWN_ACCOUNT','Fresh receiver availability not established');}const c=await query({request_type:'view_account',account_id:auth.accounts.controller},b);assert(BigInt(c.amount)-BigInt(c.storage_usage)*10n**19n>=1323n*N/100n,'Finalized funding below reduced controller allocation plus source fee reserve');j.initial_controller=c;const actions=[api.transactions.createAccount(),api.transactions.transfer(8n*N),api.transactions.addKey(api.utils.PublicKey.fromString(auth.proposed_contract_public_key),api.transactions.fullAccessKey()),api.transactions.deployContract(wasm),api.transactions.functionCall('new',Buffer.from(JSON.stringify(auth.initialization)),110000000000000n,0n)];const r=await submit('deploy','controller',F,actions);const d=r.outcome.transaction.actions;assert.deepEqual(d.map(x=>typeof x==='string'?x:Object.keys(x)[0]),['CreateAccount','Transfer','AddKey','DeployContract','FunctionCall']);assert.equal(Buffer.from(d[3].DeployContract.code,'base64').toString('hex'),auth.normal_sha256);}
- let state=await snapshot();const liveCode=await query({request_type:'view_code',account_id:F},state.block);assert.equal(sha(Buffer.from(liveCode.code_base64,'base64')),auth.normal_sha256);assert.equal(Buffer.from(liveCode.code_base64,'base64').length,wasm.length);const keys=await query({request_type:'view_access_key_list',account_id:F},state.block);assert.deepEqual(keys.keys.map(k=>({public_key:k.public_key,permission:k.access_key.permission})),[{public_key:auth.proposed_contract_public_key,permission:'FullAccess'}]);j.deployment_verified={code_hash:state.account.code_hash,keys,initialized_state:state};persist();
- for(const f of m.actor_funding){const id='fund_'+f.receiver_role;if(j.rows.some(r=>r.id===id))continue;const amount=BigInt(f.actions[0].deposit),before=await query({request_type:'view_account',account_id:auth.accounts[f.receiver_role]},await block());const r=await submit(id,'controller',auth.accounts[f.receiver_role],[api.transactions.transfer(amount)]);r.actor_before=before;r.actor_after=await query({request_type:'view_account',account_id:auth.accounts[f.receiver_role]},await block());assert.equal(BigInt(r.actor_after.amount)-BigInt(before.amount),amount);persist();}
- for(const step of plan.steps){if(j.rows.some(r=>r.id===step.id))continue;state=await snapshot();
- const args=resolve(step.args);if(step.id==='redeem')args.min_out=await view('quote',{amount:args.amount},state.block);
- if(amend.wallet_holder_steps.includes(step.id)){const browserStep=process.argv.includes('--browser-step')?process.argv[process.argv.indexOf('--browser-step')+1]:null;if(browserStep!==step.id||!process.argv.includes('--browser-hash')){j.status='AWAITING_BROWSER_'+step.id.toUpperCase();j.next={...step,args};j.pre_browser=state;persist();console.log('PAUSED: Meteor-held Funmask must sign '+step.id+' exactly once; resume only with its verified hash.');break;}const hash=process.argv[process.argv.indexOf('--browser-hash')+1],r=await final(hash,amend.current_holder),call=r.transaction.actions[0].FunctionCall;assert.equal(r.transaction.actions.length,1);assert.equal(r.transaction.signer_id,amend.current_holder);assert.equal(r.transaction.receiver_id,F);assert.equal(call.method_name,step.method);assert.equal(call.deposit,step.deposit);assert.deepEqual(JSON.parse(Buffer.from(call.args,'base64')),args);assert.equal(call.gas,step.gas);const value=JSON.parse(Buffer.from(r.status.SuccessValue,'base64').toString()||'null'),row={id:step.id,role:'holder',hash,signer:amend.current_holder,receiver:F,method:step.method,args,deposit:step.deposit,gas:step.gas,status:'FINAL_VERIFIED',outcome:r,value,fee:receipts(r).toString(),browser:true,before:state};j.rows.push(row);j.values[step.id]=value;row.after=await snapshot();if(['issue','contribute'].includes(step.method))assert.equal(BigInt(row.after.pilot.gross)-BigInt(state.pilot.gross),BigInt(step.deposit));else assert.equal(row.after.pilot.gross,state.pilot.gross);if(BigInt(state.ledger.T)>0n&&BigInt(row.after.ledger.T)>0n)assert(BigInt(row.after.ledger.L)*BigInt(state.ledger.T)>=BigInt(state.ledger.L)*BigInt(row.after.ledger.T),'Backing ratio decreased');j.status='RUNNING';budget();persist();continue;}
- if(step.id==='default'){const l=await view('get_loan',{loan_id:args.loan_id},state.block);if(BigInt(state.block.timestamp_nanosec)<BigInt(l.expiry)){j.status='AWAITING_FINAL_CHAIN_EXPIRY';j.next=step;persist();console.log('PAUSED until finalized expiry '+l.expiry);break;}}
- if(step.id==='repay'){const l=await view('get_loan',{loan_id:args.loan_id},state.block);assert.equal(l.owner,auth.accounts.nft_holder);assert.equal(l.repayment,step.deposit);assert(BigInt(state.block.timestamp_nanosec)<BigInt(l.expiry));}
- if(step.id==='unregister'){assert(state.pilot.stopped);const u=await view('user_state',{account_id:auth.accounts.borrower},state.block),s=await view('storage_balance_of',{account_id:auth.accounts.borrower},state.block);assert.equal(u.tokens,'0');assert.equal(u.refs,0);assert.equal(u.refund_state,0);assert.equal(s.total,'19000000000000000000000');}
- const signerRole=step.signer_role==='holder'?(assert(amend.controller_permissionless_steps.includes(step.id)), 'controller'):step.signer_role;const row=await submit(step.id,signerRole,F,[api.transactions.functionCall(step.method,Buffer.from(JSON.stringify(args)),BigInt(step.gas),BigInt(step.deposit))],{method:step.method,args,deposit:step.deposit,before:state,planned_role:step.signer_role});const call=row.outcome.transaction.actions[0].FunctionCall;assert.equal(call.method_name,step.method);assert.equal(call.deposit,step.deposit);assert.deepEqual(JSON.parse(Buffer.from(call.args,'base64')),args);j.values[step.id]=row.value;row.after=await snapshot();if(['issue','contribute','fund_offer'].includes(step.method))assert.equal(BigInt(row.after.pilot.gross)-BigInt(state.pilot.gross),BigInt(step.deposit));else assert.equal(row.after.pilot.gross,state.pilot.gross);if(BigInt(state.ledger.T)>0n&&BigInt(row.after.ledger.T)>0n)assert(BigInt(row.after.ledger.L)*BigInt(state.ledger.T)>=BigInt(state.ledger.L)*BigInt(row.after.ledger.T),'Backing ratio decreased');if(step.id==='stop')assert(row.after.pilot.stopped);if(step.id==='unregister'){assert.equal(await view('storage_balance_of',{account_id:auth.accounts.borrower},row.after.block),null);assert.equal(row.after.admission.occupied,3);}persist();
- }
- if(j.rows.length===40){j.final=await snapshot();j.status='ACCEPTANCE_COMPLETE_BROWSER_UI_EVIDENCE_VERIFIED';budget();persist();}console.log('STATUS '+j.status);
-}catch(e){j.status='STOPPED_NO_RETRY';j.error=e.message;persist();console.error('STOP '+e.message);process.exitCode=1;}
+import fs from "node:fs";
+import assert from "node:assert/strict";
+import { createRequire } from "node:module";
+import { createHash } from "node:crypto";
+import {
+  out,
+  urls,
+  rpc,
+  save,
+  block,
+  query,
+  final,
+  receipts,
+} from "./execution-rpc.mjs";
+const dir = import.meta.dirname,
+  base = dir + "/..",
+  auth = JSON.parse(fs.readFileSync(out + "/OWNER_AUTHORIZATION.json")),
+  amend = JSON.parse(fs.readFileSync(out + "/HOLDER_AMENDMENT.json")),
+  gasAmend = JSON.parse(
+    fs.readFileSync(out + "/COLLATERAL_GAS_AMENDMENT.json"),
+  ),
+  contributeGasAmend = JSON.parse(
+    fs.readFileSync(out + "/CONTRIBUTE_GAS_AMENDMENT.json"),
+  ),
+  m = JSON.parse(fs.readFileSync(dir + "/testnet-manifest.json")),
+  plan = JSON.parse(fs.readFileSync(dir + "/acceptance-plan.json")),
+  F = auth.accounts.contract,
+  N = 10n ** 24n;
+const sha = (b) => createHash("sha256").update(b).digest("hex"),
+  wasm = fs.readFileSync(
+    base + "/runtime/evidence/release-rc1/new-normal.wasm",
+  );
+assert(auth.owner_confirmed);
+assert.equal(sha(wasm), auth.normal_sha256);
+assert.equal(
+  sha(fs.readFileSync(dir + "/acceptance-plan.json")),
+  auth.transaction_graph_sha256,
+);
+assert.equal(amend.original_graph_sha256, auth.transaction_graph_sha256);
+assert.equal(gasAmend.original_graph_sha256, auth.transaction_graph_sha256);
+assert.equal(gasAmend.step_id, "collateral_to_borrower");
+assert.equal(gasAmend.original_gas, "110000000000000");
+assert.equal(gasAmend.finalized_gas, 30000000000000);
+assert.equal(contributeGasAmend.original_graph_sha256, auth.transaction_graph_sha256);
+assert.equal(contributeGasAmend.step_id, "contribute");
+assert.equal(contributeGasAmend.transaction_hash, "AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1");
+assert.equal(amend.current_holder, "funmask6175.testnet");
+assert.equal(amend.amended_total_transaction_count, 42);
+assert.equal(plan.transactions, 39);
+assert.equal(plan.steps.at(-2).id, "stop");
+assert.equal(plan.steps.at(-1).id, "unregister");
+assert(F.endsWith("." + auth.accounts.controller));
+assert.notEqual(F, "floor.floorline-g3-20261111-6702ea.testnet");
+if (process.argv.includes("--validate-only")) {
+  console.log(
+    "PASS artifact, authorized graph and network/receiver binding; no credentials loaded",
+  );
+  process.exit(0);
+}
+const funding = JSON.parse(fs.readFileSync(out + "/FUNDING_TRANSFERS.json"));
+assert.equal(funding.status, "FUNDED_FINAL");
+assert(BigInt(funding.total_fees) <= N / 100n);
+const require = createRequire("E:/near-2/runtime/package.json"),
+  api = require("near-api-js");
+const file = out + "/ACCEPTANCE_EXECUTION.json",
+  j = fs.existsSync(file)
+    ? JSON.parse(fs.readFileSync(file))
+    : {
+        network: "testnet",
+        contract: F,
+        expected_code_hash: auth.code_hash,
+        expected_sha256: auth.normal_sha256,
+        graph: auth.transaction_graph_sha256,
+        status: "PREFLIGHT",
+        rows: [],
+        values: {},
+        source_transfer_fees: funding.total_fees,
+      };
+assert(
+  !j.status.startsWith("STOP"),
+  "STOP journal requires manual reconciliation, not a rerun",
+);
+assert(
+  j.rows.every((r) => r.status === "FINAL_VERIFIED"),
+  "Unresolved journal row: STOP",
+);
+const account = (role) =>
+  role === "holder" ? amend.current_holder : auth.accounts[role];
+const persist = () => save("ACCEPTANCE_EXECUTION.json", j),
+  sum = (a) => a.reduce((n, x) => n + BigInt(x), 0n),
+  publicKey = (role) =>
+    role === "controller"
+      ? auth.controller_public_key
+      : auth.actor_public_keys[role];
+const store = new api.keyStores.UnencryptedFileSystemKeyStore(
+    "E:/near-2/.testnet-credentials",
+  ),
+  near = await api.connect({
+    networkId: "testnet",
+    nodeUrl: urls[0],
+    keyStore: store,
+  });
+async function view(method, args, b) {
+  const r = await query(
+    {
+      request_type: "call_function",
+      account_id: F,
+      method_name: method,
+      args_base64: Buffer.from(JSON.stringify(args)).toString("base64"),
+    },
+    b,
+  );
+  return JSON.parse(Buffer.from(r.result).toString());
+}
+async function snapshot() {
+  const b = await block(),
+    contractAccount = await query(
+      { request_type: "view_account", account_id: F },
+      b,
+    );
+  assert.equal(contractAccount.code_hash, auth.code_hash);
+  const ledger = await view("accounting", {}, b),
+    pilot = await view("pilot_status", {}, b),
+    admission = await view("admission_status", {}, b);
+  assert.deepEqual(pilot.limits, auth.initialization.pilot_limits);
+  assert.equal(pilot.guardian, auth.accounts.controller);
+  assert.equal(admission.capacity, 128);
+  const fields = [
+    "L",
+    "unused_lender",
+    "storage_total",
+    "operational",
+    "borrower_claims",
+    "lender_claims",
+    "redemption_claims",
+    "cancellation_claims",
+    "storage_refund_claims",
+  ];
+  assert.equal(
+    sum(fields.map((k) => ledger[k])),
+    BigInt(ledger.local_required),
+  );
+  assert(BigInt(contractAccount.amount) >= BigInt(ledger.local_required));
+  assert(
+    BigInt(ledger.storage_total) + BigInt(ledger.operational) >=
+      BigInt(ledger.storage_stake),
+  );
+  assert.equal(ledger.inflight, "0", "Unresolved payout");
+  assert.equal(ledger.refund_storage, "0", "Unresolved refund record");
+  assert(BigInt(pilot.gross) <= BigInt(pilot.limits.max_gross));
+  const balances = {};
+  for (const role of ["holder", "borrower", "nft_holder", "lender"])
+    balances[role] = await view(
+      "ft_balance_of",
+      { account_id: account(role) },
+      b,
+    );
+  assert.equal(
+    sum(Object.values(balances)) + BigInt(ledger.locked),
+    BigInt(ledger.T),
+    "Token conservation / unexpected external holder",
+  );
+  return {
+    block: b,
+    account: contractAccount,
+    ledger,
+    pilot,
+    admission,
+    balances,
+  };
+}
+function budget() {
+  const fundingAllocated =
+    sum(m.actor_funding.map((x) => x.actions[0].deposit)) + 8n * N;
+  const fees =
+    sum(j.rows.map((r) => r.fee ?? "0")) + BigInt(funding.total_fees);
+  assert(fees <= (75n * N) / 100n, "Operator/actor fee total guard");
+  const perRole = {};
+  for (const role of ["holder", "borrower", "nft_holder", "lender"]) {
+    const spent = sum(
+      j.rows
+        .filter((r) => r.role === role)
+        .map((r) => BigInt(r.deposit ?? "0") + BigInt(r.fee ?? "0")),
+    );
+    assert(spent <= BigInt(m.funding.actor_allocations_yocto[role]));
+    perRole[role] = spent.toString();
+  }
+  const controllerFees =
+    sum(
+      j.rows.filter((r) => r.role === "controller").map((r) => r.fee ?? "0"),
+    ) + BigInt(funding.total_fees);
+  assert(controllerFees <= (75n * N) / 100n);
+  j.budget = {
+    funding_allocations: fundingAllocated.toString(),
+    total_actual_fees: fees.toString(),
+    controller_and_source_fees: controllerFees.toString(),
+    actor_deposit_and_fee_use: perRole,
+    ceiling: m.funding.ceiling_yocto,
+  };
+}
+async function submit(id, role, receiver, actions, extra = {}) {
+  assert.notEqual(
+    role,
+    "holder",
+    "Meteor-held Funmask key must never be probed or used by the local signer",
+  );
+  assert(!j.rows.some((r) => r.id === id));
+  const b = await block(),
+    signerId = auth.accounts[role],
+    pk = await near.connection.signer.getPublicKey(signerId, "testnet");
+  assert.equal(pk?.toString(), publicKey(role));
+  const access = await query(
+    {
+      request_type: "view_access_key",
+      account_id: signerId,
+      public_key: pk.toString(),
+    },
+    b,
+  );
+  assert.equal(access.permission, "FullAccess");
+  const state = await query(
+    { request_type: "view_account", account_id: signerId },
+    b,
+  );
+  const price = BigInt(
+    (await rpc(urls[0], "gas_price", { block_id: b.hash })).gas_price,
+  );
+  assert(price <= 10n ** 9n);
+  const deposits = sum(
+    actions.map((x) => x.transfer?.deposit ?? x.functionCall?.deposit ?? "0"),
+  );
+  assert(
+    BigInt(state.amount) > deposits + N / 5n,
+    "Inadequate upfront gas reserve",
+  );
+  const [h, signed] = await api.transactions.signTransaction(
+    receiver,
+    BigInt(access.nonce) + 1n,
+    actions,
+    api.utils.serialize.base_decode(b.hash),
+    near.connection.signer,
+    signerId,
+    "testnet",
+  );
+  const hash = api.utils.serialize.base_encode(h),
+    row = {
+      id,
+      role,
+      signer: signerId,
+      receiver,
+      hash,
+      nonce: (BigInt(access.nonce) + 1n).toString(),
+      status: "SIGNED_NOT_BROADCAST",
+      signed_tx_base64: Buffer.from(signed.encode()).toString("base64"),
+      ...extra,
+    };
+  j.rows.push(row);
+  persist();
+  row.status = "BROADCAST_ATTEMPTED";
+  persist();
+  row.broadcast = await rpc(urls[0], "send_tx", {
+    signed_tx_base64: row.signed_tx_base64,
+    wait_until: "NONE",
+  });
+  persist();
+  row.outcome = await final(hash, signerId);
+  row.fee = receipts(row.outcome).toString();
+  assert.equal(row.outcome.transaction.hash, hash);
+  assert.equal(row.outcome.transaction.signer_id, signerId);
+  assert.equal(row.outcome.transaction.receiver_id, receiver);
+  row.value = JSON.parse(
+    Buffer.from(row.outcome.status.SuccessValue, "base64").toString() || "null",
+  );
+  row.status = "FINAL_VERIFIED";
+  budget();
+  persist();
+  console.log("FINAL " + id + " " + hash);
+  return row;
+}
+function resolve(x) {
+  if (Array.isArray(x)) return x.map(resolve);
+  if (x && typeof x === "object") {
+    if (x.$result) {
+      assert(j.values[x.$result] !== undefined);
+      return j.values[x.$result];
+    }
+    if (x.$account) return account(x.$account);
+    if (x.$fresh_quote) return x;
+    return Object.fromEntries(
+      Object.entries(x).map(([k, v]) => [k, resolve(v)]),
+    );
+  }
+  return x;
+}
+try {
+  if (!j.rows.some((r) => r.id === "deploy")) {
+    const b = await block();
+    for (const url of urls) {
+      const r = await fetch(url, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          jsonrpc: "2.0",
+          id: "new-account",
+          method: "query",
+          params: {
+            request_type: "view_account",
+            account_id: F,
+            block_id: b.hash,
+          },
+        }),
+        signal: AbortSignal.timeout(30000),
+      });
+      const d = await r.json();
+      assert.equal(
+        d.error?.cause?.name,
+        "UNKNOWN_ACCOUNT",
+        "Fresh receiver availability not established",
+      );
+    }
+    const c = await query(
+      { request_type: "view_account", account_id: auth.accounts.controller },
+      b,
+    );
+    assert(
+      BigInt(c.amount) - BigInt(c.storage_usage) * 10n ** 19n >=
+        (1323n * N) / 100n,
+      "Finalized funding below reduced controller allocation plus source fee reserve",
+    );
+    j.initial_controller = c;
+    const actions = [
+      api.transactions.createAccount(),
+      api.transactions.transfer(8n * N),
+      api.transactions.addKey(
+        api.utils.PublicKey.fromString(auth.proposed_contract_public_key),
+        api.transactions.fullAccessKey(),
+      ),
+      api.transactions.deployContract(wasm),
+      api.transactions.functionCall(
+        "new",
+        Buffer.from(JSON.stringify(auth.initialization)),
+        110000000000000n,
+        0n,
+      ),
+    ];
+    const r = await submit("deploy", "controller", F, actions);
+    const d = r.outcome.transaction.actions;
+    assert.deepEqual(
+      d.map((x) => (typeof x === "string" ? x : Object.keys(x)[0])),
+      ["CreateAccount", "Transfer", "AddKey", "DeployContract", "FunctionCall"],
+    );
+    assert.equal(
+      Buffer.from(d[3].DeployContract.code, "base64").toString("hex"),
+      auth.normal_sha256,
+    );
+  }
+  let state = await snapshot();
+  const liveCode = await query(
+    { request_type: "view_code", account_id: F },
+    state.block,
+  );
+  assert.equal(
+    sha(Buffer.from(liveCode.code_base64, "base64")),
+    auth.normal_sha256,
+  );
+  assert.equal(Buffer.from(liveCode.code_base64, "base64").length, wasm.length);
+  const keys = await query(
+    { request_type: "view_access_key_list", account_id: F },
+    state.block,
+  );
+  assert.deepEqual(
+    keys.keys.map((k) => ({
+      public_key: k.public_key,
+      permission: k.access_key.permission,
+    })),
+    [
+      {
+        public_key: auth.proposed_contract_public_key,
+        permission: "FullAccess",
+      },
+    ],
+  );
+  j.deployment_verified = {
+    code_hash: state.account.code_hash,
+    keys,
+    initialized_state: state,
+  };
+  persist();
+  for (const f of m.actor_funding) {
+    const id = "fund_" + f.receiver_role;
+    if (j.rows.some((r) => r.id === id)) continue;
+    const amount = BigInt(f.actions[0].deposit),
+      before = await query(
+        {
+          request_type: "view_account",
+          account_id: auth.accounts[f.receiver_role],
+        },
+        await block(),
+      );
+    const r = await submit(id, "controller", auth.accounts[f.receiver_role], [
+      api.transactions.transfer(amount),
+    ]);
+    r.actor_before = before;
+    r.actor_after = await query(
+      {
+        request_type: "view_account",
+        account_id: auth.accounts[f.receiver_role],
+      },
+      await block(),
+    );
+    assert.equal(BigInt(r.actor_after.amount) - BigInt(before.amount), amount);
+    persist();
+  }
+  for (const step of plan.steps) {
+    if (j.rows.some((r) => r.id === step.id)) continue;
+    state = await snapshot();
+    const args = resolve(step.args);
+    if (step.id === "redeem") {
+      const reconcilingFinalizedBrowserHash =
+        process.argv.includes("--browser-hash") && j.next?.id === "redeem";
+      args.min_out = reconcilingFinalizedBrowserHash
+        ? j.next.args.min_out
+        : await view("quote", { amount: args.amount }, state.block);
+    }
+    if (amend.wallet_holder_steps.includes(step.id)) {
+      const browserStep = process.argv.includes("--browser-step")
+        ? process.argv[process.argv.indexOf("--browser-step") + 1]
+        : null;
+      if (browserStep !== step.id || !process.argv.includes("--browser-hash")) {
+        j.status = "AWAITING_BROWSER_" + step.id.toUpperCase();
+        j.next = { ...step, args };
+        j.pre_browser = state;
+        persist();
+        console.log(
+          "PAUSED: Meteor-held Funmask must sign " +
+            step.id +
+            " exactly once; resume only with its verified hash.",
+        );
+        break;
+      }
+      const hash = process.argv[process.argv.indexOf("--browser-hash") + 1],
+        r = await final(hash, amend.current_holder),
+        call = r.transaction.actions[0].FunctionCall,
+        effectiveGas = step.id === gasAmend.step_id
+          ? gasAmend.finalized_gas
+          : step.id === contributeGasAmend.step_id && hash === contributeGasAmend.transaction_hash
+            ? contributeGasAmend.finalized_gas
+            : step.gas;
+      assert.equal(r.transaction.actions.length, 1);
+      assert.equal(r.transaction.signer_id, amend.current_holder);
+      assert.equal(r.transaction.receiver_id, F);
+      assert.equal(call.method_name, step.method);
+      assert.equal(call.deposit, step.deposit);
+      assert.deepEqual(JSON.parse(Buffer.from(call.args, "base64")), args);
+      assert.equal(BigInt(call.gas), BigInt(effectiveGas));
+      const value = JSON.parse(
+          Buffer.from(r.status.SuccessValue, "base64").toString() || "null",
+        ),
+        row = {
+          id: step.id,
+          role: "holder",
+          hash,
+          signer: amend.current_holder,
+          receiver: F,
+          method: step.method,
+          args,
+          deposit: step.deposit,
+          gas: String(effectiveGas),
+          original_planned_gas: step.gas,
+          gas_amendment: step.id === gasAmend.step_id
+            ? "COLLATERAL_GAS_AMENDMENT.json"
+            : step.id === contributeGasAmend.step_id
+              ? "CONTRIBUTE_GAS_AMENDMENT.json"
+              : null,
+          status: "FINAL_VERIFIED",
+          outcome: r,
+          value,
+          fee: receipts(r).toString(),
+          browser: true,
+          before: state,
+        };
+      j.rows.push(row);
+      j.values[step.id] = value;
+      row.after = await snapshot();
+      if (["issue", "contribute"].includes(step.method))
+        assert.equal(
+          BigInt(row.after.pilot.gross) - BigInt(state.pilot.gross),
+          BigInt(step.deposit),
+        );
+      else assert.equal(row.after.pilot.gross, state.pilot.gross);
+      if (BigInt(state.ledger.T) > 0n && BigInt(row.after.ledger.T) > 0n)
+        assert(
+          BigInt(row.after.ledger.L) * BigInt(state.ledger.T) >=
+            BigInt(state.ledger.L) * BigInt(row.after.ledger.T),
+          "Backing ratio decreased",
+        );
+      j.status = "RUNNING";
+      budget();
+      persist();
+      continue;
+    }
+    if (step.id === "default") {
+      const l = await view("get_loan", { loan_id: args.loan_id }, state.block);
+      if (BigInt(state.block.timestamp_nanosec) < BigInt(l.expiry)) {
+        j.status = "AWAITING_FINAL_CHAIN_EXPIRY";
+        j.next = step;
+        persist();
+        console.log("PAUSED until finalized expiry " + l.expiry);
+        break;
+      }
+    }
+    if (step.id === "repay") {
+      const l = await view("get_loan", { loan_id: args.loan_id }, state.block);
+      assert.equal(l.owner, auth.accounts.nft_holder);
+      assert.equal(l.repayment, step.deposit);
+      assert(BigInt(state.block.timestamp_nanosec) < BigInt(l.expiry));
+    }
+    if (step.id === "unregister") {
+      assert(state.pilot.stopped);
+      const u = await view(
+          "user_state",
+          { account_id: auth.accounts.borrower },
+          state.block,
+        ),
+        s = await view(
+          "storage_balance_of",
+          { account_id: auth.accounts.borrower },
+          state.block,
+        );
+      assert.equal(u.tokens, "0");
+      assert.equal(u.refs, 0);
+      assert.equal(u.refund_state, 0);
+      assert.equal(s.total, "19000000000000000000000");
+    }
+    const signerRole =
+      step.signer_role === "holder"
+        ? (assert(amend.controller_permissionless_steps.includes(step.id)),
+          "controller")
+        : step.signer_role;
+    const row = await submit(
+      step.id,
+      signerRole,
+      F,
+      [
+        api.transactions.functionCall(
+          step.method,
+          Buffer.from(JSON.stringify(args)),
+          BigInt(step.gas),
+          BigInt(step.deposit),
+        ),
+      ],
+      {
+        method: step.method,
+        args,
+        deposit: step.deposit,
+        before: state,
+        planned_role: step.signer_role,
+      },
+    );
+    const call = row.outcome.transaction.actions[0].FunctionCall;
+    assert.equal(call.method_name, step.method);
+    assert.equal(call.deposit, step.deposit);
+    assert.deepEqual(JSON.parse(Buffer.from(call.args, "base64")), args);
+    j.values[step.id] = row.value;
+    row.after = await snapshot();
+    if (["issue", "contribute", "fund_offer"].includes(step.method))
+      assert.equal(
+        BigInt(row.after.pilot.gross) - BigInt(state.pilot.gross),
+        BigInt(step.deposit),
+      );
+    else assert.equal(row.after.pilot.gross, state.pilot.gross);
+    if (BigInt(state.ledger.T) > 0n && BigInt(row.after.ledger.T) > 0n)
+      assert(
+        BigInt(row.after.ledger.L) * BigInt(state.ledger.T) >=
+          BigInt(state.ledger.L) * BigInt(row.after.ledger.T),
+        "Backing ratio decreased",
+      );
+    if (step.id === "stop") assert(row.after.pilot.stopped);
+    if (step.id === "unregister") {
+      assert.equal(
+        await view(
+          "storage_balance_of",
+          { account_id: auth.accounts.borrower },
+          row.after.block,
+        ),
+        null,
+      );
+      assert.equal(row.after.admission.occupied, 3);
+    }
+    persist();
+  }
+  if (j.rows.length === 40) {
+    j.final = await snapshot();
+    j.status = "ACCEPTANCE_COMPLETE_BROWSER_UI_EVIDENCE_VERIFIED";
+    budget();
+    persist();
+  }
+  console.log("STATUS " + j.status);
+} catch (e) {
+  j.status = "STOPPED_NO_RETRY";
+  j.error = e.message;
+  persist();
+  console.error("STOP " + e.message);
+  process.exitCode = 1;
+}

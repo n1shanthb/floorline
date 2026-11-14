@@ -1,0 +1,13 @@
+{
+  "authorized": true,
+  "authorized_by": "owner in Codex conversation",
+  "authorized_date": "2026-11-14",
+  "scope": "Verifier-only amendment for the already-finalized collateral_to_borrower browser transaction",
+  "step_id": "collateral_to_borrower",
+  "transaction_hash": "8m2bHVobQsSpJjRzmuyQaQHiq7x3i1iCsqSJ2cYZxAiK",
+  "original_graph_sha256": "0ded3648e33d9e166fc855e94bbc4970174a455cf48bb77f2b93acb77680a9f5",
+  "original_gas": "110000000000000",
+  "finalized_gas": 30000000000000,
+  "unchanged_fields": ["signer", "receiver", "method", "arguments", "attached_deposit", "amount"],
+  "reason": "The successful wallet transaction finalized with a 30 Tgas budget. Resubmission would duplicate the token transfer."
+}

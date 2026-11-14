@@ -16,6 +16,7 @@ import type { ActionRequest } from "./wallet";
 import { receiverFor } from "./wallet";
 import { validateGovernance } from "./governance-actions";
 import { savedProof, verifyOfferProof } from "./offer-proof";
+const HIGH_GAS_METHODS = [...CALLBACK_METHODS, "redeem", "contribute"];
 export const request = (
   title: string,
   method: string,
@@ -28,7 +29,7 @@ export const request = (
   method,
   args,
   deposit,
-  gas: CALLBACK_METHODS.includes(method)
+  gas: HIGH_GAS_METHODS.includes(method)
     ? "110000000000000"
     : "30000000000000",
   details,
@@ -126,7 +127,7 @@ export async function validateRequest(
   if (
     receiver === CONTRACT &&
     action.gas !==
-      (CALLBACK_METHODS.includes(action.method)
+      (HIGH_GAS_METHODS.includes(action.method)
         ? "110000000000000"
         : "30000000000000")
   )

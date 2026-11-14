@@ -20,4 +20,14 @@ describe("Meteor wallet-only signing", () => {
     const m=await import("../src/lib/wallet"),s=await m.getSelector(),listener=vi.fn();s.store.observable.subscribe(listener);await m.disconnectWallet();expect(f.create.mock.calls[0][0].id).toBe("near::sign_out");expect(listener).toHaveBeenCalled();expect(s.store.getState().accounts).toEqual([]);
   });
   it("rejects unapproved receiver before a signing prompt", async()=>{const m=await import("../src/lib/wallet");await expect(m.signRequest({title:"Test",receiver:"unapproved.testnet",method:"issue",args:{},deposit:"1",gas:"1",details:[]},"test-only.testnet")).rejects.toThrow("Unapproved transaction receiver");expect(f.create).not.toHaveBeenCalled();});
+  it("claims a popup synchronously and lets Meteor navigate that exact window", async()=>{
+    const popup={closed:false,location:{href:"about:blank"},focus:vi.fn(),document:{title:"",body:{textContent:""}}} as unknown as Window;
+    const open=vi.fn().mockReturnValue(popup);vi.stubGlobal("window",{open});
+    const m=await import("../src/lib/wallet"),claimed=m.claimWalletPopup();
+    expect(claimed).toBe(popup);expect(open).toHaveBeenCalledWith("about:blank","_blank",expect.stringContaining("popup=1"));
+    f.create.mockResolvedValueOnce({promptForExecution:async()=>{window.open("https://wallet.meteorwallet.app/connect/testnet/sign");return [{transaction:{hash:"popup-hash"}}];}});
+    const out=await m.signRequest({title:"Test",method:"ft_transfer",args:{receiver_id:"carol.testnet",amount:"1",memo:null},deposit:"1",gas:"30000000000000",details:[]},"test-only.testnet",popup);
+    expect(popup.location.href).toContain("wallet.meteorwallet.app/connect/testnet/sign");expect(out?.transaction?.hash).toBe("popup-hash");expect(popup.focus).toHaveBeenCalled();
+    vi.unstubAllGlobals();
+  });
 });

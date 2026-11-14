@@ -1,0 +1,11 @@
+{
+  "status": "OWNER_AUTHORIZED_EXACT_FINALIZED_STEP_ONLY",
+  "authorized_at": "2026-11-14",
+  "original_graph_sha256": "0ded3648e33d9e166fc855e94bbc4970174a455cf48bb77f2b93acb77680a9f5",
+  "step_id": "contribute",
+  "transaction_hash": "AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1",
+  "original_gas": "110000000000000",
+  "finalized_gas": "30000000000000",
+  "deposit": "1000000000000000000000",
+  "scope": "Evidence-only verifier amendment for this exact already-finalized contribution; no other step or transaction."
+}

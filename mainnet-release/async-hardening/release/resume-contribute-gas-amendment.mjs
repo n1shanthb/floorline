@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import { out, save } from "./execution-rpc.mjs";
+const j=JSON.parse(fs.readFileSync(`${out}/ACCEPTANCE_EXECUTION.json`));
+assert.equal(j.status,"STOPPED_CONTRIBUTE_GAS_MISMATCH_REVIEW_REQUIRED");
+assert.equal(j.contribute_gas_mismatch.hash,"AhQWF5zGbWoQ4VzhXMs5uenTXZQaJ6UpnntHuhH8ZUW1");
+assert.equal(j.contribute_gas_mismatch.checkpoint_advanced,false);
+assert.equal(j.rows.length,35);
+j.status="AWAITING_BROWSER_CONTRIBUTE";
+j.contribute_gas_mismatch.owner_authorized_exact_hash=true;
+j.contribute_gas_mismatch.amendment="CONTRIBUTE_GAS_AMENDMENT.json";
+save("ACCEPTANCE_EXECUTION.json",j);
+console.log("READY exact finalized contribution reconciliation");

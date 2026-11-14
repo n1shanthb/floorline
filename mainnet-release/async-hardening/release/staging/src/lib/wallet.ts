@@ -40,6 +40,25 @@ export interface ActionRequest {
   receiver?: string; title: string; method: string; args: Record<string, unknown>;
   deposit: string; gas: string; details: string[]; warning?: string;
 }
+export function claimWalletPopup(): Window | null {
+  try {
+    const popup = window.open(
+      "about:blank",
+      "_blank",
+      "popup=1,width=420,height=700",
+    );
+    if (!popup) return null;
+    try {
+      popup.document.title = "Meteor Wallet";
+      popup.document.body.textContent = "Validating fresh Floorline state before opening Meteor…";
+    } catch {
+      /* The placeholder may already be cross-origin; the handle is still usable. */
+    }
+    return popup;
+  } catch {
+    return null;
+  }
+}
 export function receiverFor(request: ActionRequest): string {
   const receiver = request.receiver ?? CONTRACT;
   if (receiver !== CONTRACT && receiver !== DAO) throw new Error("Unapproved transaction receiver");
@@ -56,7 +75,7 @@ export async function disconnectWallet() {
   if (account) { const action = await connect.createAction({ id: "near::sign_out", input: { target: account.identifier } }); await action.promptForExecution(); }
   current = undefined; notify();
 }
-export async function signRequest(request: ActionRequest, signer: string): Promise<RpcOutcome | undefined> {
+export async function signRequest(request: ActionRequest, signer: string, popup?: Window | null): Promise<RpcOutcome | undefined> {
   const connect = await sdk(), account = check(await connect.getAccount(target));
   if (!account || account.identifier.accountId !== signer) throw new Error("Wallet account changed. Review again.");
   const { actionCreators } = await import("@near-js/transactions");
@@ -68,6 +87,19 @@ export async function signRequest(request: ActionRequest, signer: string): Promi
       transactions: [{ receiverId: receiverFor(request), actions: [actionCreators.functionCall(request.method, request.args, BigInt(request.gas), BigInt(request.deposit))] }],
     },
   });
-  const outcomes = await action.promptForExecution();
-  return outcomes[0] as unknown as RpcOutcome | undefined;
+  const originalOpen = popup ? window.open : undefined;
+  if (popup) {
+    window.open = ((url?: string | URL) => {
+      if (popup.closed) return null;
+      if (url) popup.location.href = String(url);
+      popup.focus();
+      return popup;
+    }) as typeof window.open;
+  }
+  try {
+    const outcomes = await action.promptForExecution();
+    return outcomes[0] as unknown as RpcOutcome | undefined;
+  } finally {
+    if (originalOpen) window.open = originalOpen;
+  }
 }
