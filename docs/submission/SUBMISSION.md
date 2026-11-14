@@ -19,7 +19,7 @@
 
 1. **Externally Backed Token (FLOOR)**
    - Not minted from thin air — backed by deposited NEAR
-   - L/T ratio visible on-chain (10.18 NEAR / 9.0 FLOOR at submission)
+   - L/T ratio visible on-chain (0.01018 NEAR / 0.009 FLOOR at submission)
    - Redemption creates async claims (tested with 40 finalized transactions)
 
 2. **NFT Loan Receipts**
@@ -114,8 +114,8 @@ npm run dev
 - **Code Hash:** `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`
 - **Network:** NEAR Testnet (NOT mainnet)
 - **Block Height:** 277696567 (final state snapshot)
-- **Liquidity (L):** 10.18 NEAR
-- **Tokens (T):** 9.0 FLOOR
+- **Liquidity (L):** 0.01018 NEAR
+- **Tokens (T):** 0.009 FLOOR
 - **Inflight:** 0 (all claims settled)
 - **Stopped:** true (irreversible)
 

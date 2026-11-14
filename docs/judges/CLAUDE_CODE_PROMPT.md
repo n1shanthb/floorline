@@ -57,8 +57,8 @@ near view rc1.floorline-g3-20261111-6702ea.testnet get_state
 
 **Expected fields:**
 - `pilot.stopped`: `true`
-- `ledger.L`: `"10180000000000000000000"` (10.18 NEAR)
-- `ledger.T`: `"9000000000000000000000"` (9.0 FLOOR)
+- `ledger.L`: `"10180000000000000000000"` (0.01018 NEAR)
+- `ledger.T`: `"9000000000000000000000"` (0.009 FLOOR)
 - `ledger.inflight`: `"0"`
 
 **If RPC unavailable:** Trust the evidence file (frontend verification script passed).

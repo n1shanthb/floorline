@@ -247,8 +247,8 @@ npm run judge:verify
 ✓ Contract: rc1.floorline-g3-20261111-6702ea.testnet
 ✓ Code hash: 4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az
 ✓ Stopped: true
-✓ Liquidity: 10.18 NEAR
-✓ Tokens: 9.0 FLOOR
+✓ Liquidity: 0.01018 NEAR
+✓ Tokens: 0.009 FLOOR
 ✓ Inflight: 0
 ✓ 40/40 proofs verified
 ```

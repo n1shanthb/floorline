@@ -26,8 +26,8 @@ npm run judge:verify
 ✓ Contract exists: rc1.floorline-g3-20261111-6702ea.testnet
 ✓ Code hash matches: 4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az
 ✓ Status: STOPPED (no new risk)
-✓ Liquidity: 10.18 NEAR
-✓ Tokens: 9.0 FLOOR
+✓ Liquidity: 0.01018 NEAR
+✓ Tokens: 0.009 FLOOR
 ✓ Inflight: 0 (all claims settled)
 ✓ Storage: 0.06 NEAR
 ✓ Admission: 3/128
