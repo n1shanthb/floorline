@@ -1,3 +1,48 @@
+# RC1 public-testnet execution — current checkpoint
+
+November 14, 2026. Owner explicitly authorized the RC1 account/key/custody, immutable initialization, 39-step acceptance graph, 13.24-testnet-NEAR ceiling, and two named faucet funding sources. This is actual public-testnet execution, not a simulated deployment. Mainnet remains NOT AUTHORIZED; independent audit PENDING.
+
+## Deployment and exact artifact
+
+Deployed account: `rc1.floorline-g3-20261111-6702ea.testnet`. Atomic CreateAccount/Transfer/AddKey/DeployContract/new finalized in [3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c](https://testnet.nearblocks.io/txns/3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c). Actual view_code from independent RPCs contains 453,798 bytes with SHA-256 `31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b` and code hash `4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az`. The exact confirmed FullAccess key, guardian=controller, 2000-bps tax, 1:1 issuance and 0.01/0.05/0.02 immutable limits were verified before continuation. Financial source c182351 is unchanged. No redeployment or replacement was performed.
+
+## Funding and actual fees
+
+Both approved funding sources received one real standard 10-NEAR helper grant: A [4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP](https://testnet.nearblocks.io/txns/4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP), B [HQUFud8aH3mNjkRDkUPHR3yBmcCMH2SfHgbfhBvNaf82](https://testnet.nearblocks.io/txns/HQUFud8aH3mNjkRDkUPHR3yBmcCMH2SfHgbfhBvNaf82). Full finalized receipt trees, balances and exact approved shared public keys were reconciled through independent providers. The documented CLI helper API was used because Windows CLI configuration points its credential metadata to C:. The official CLI download was checksum-verified/extracted on E: but not run. No new private key was generated, and no faucet rate limit was bypassed.
+
+Source A transferred 9.5 NEAR in [G7mSpQDRboVhCPXfqgXE1iqM635ytWZM1MrCbmJBm68A](https://testnet.nearblocks.io/txns/G7mSpQDRboVhCPXfqgXE1iqM635ytWZM1MrCbmJBm68A); B transferred 3.1798016179383151 in [A2jeoWcaJ4ytJ7EiMEAPQWSwsdpk5uVYFNii1HpufFkh](https://testnet.nearblocks.io/txns/A2jeoWcaJ4ytJ7EiMEAPQWSwsdpk5uVYFNii1HpufFkh). Their combined fee is 0.000089273025 NEAR. 7.3201091090366849 NEAR remains in the two funding accounts at the post-transfer snapshot. Incoming grants of 20 NEAR are distinguished from the unchanged maximum RC1 allocation of 13.24; unused grants are not silently counted as RC1 spending.
+
+The controller was funded to 13.23 spendable, reserving 0.01 of its approved 0.75 contingency for source-transfer fees; no ceiling increase. Contract allocation is 8 and actor allocations total 4.49, leaving funded controller contingency 0.74 plus the separate 0.01 fee reserve. Actual finalized fees for source transfers and completed acceptance transactions are **0.0136450772615385 NEAR** (13645077261538500000000 yoctoNEAR). The unspent authorized ceiling after those fees is 13.2263549227384615 NEAR; this is a budget measure, not freely spendable cash. Native transfers retain funds in accounts; storage and protocol liabilities are locked coverage, not burned fees. Exact per-account finalized balances and liabilities are in CHECKPOINT_POST_FUNDING.json and subsequent transaction after-snapshots. Helper sponsor fees are separately borne by the faucet.
+
+## Actual acceptance progress
+
+9/39 acceptance transactions are FINAL_VERIFIED. Executor status: **AWAITING_BROWSER_ISSUE**.
+
+- deploy: [3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c](https://testnet.nearblocks.io/txns/3Gf1RnQWWyXx6a7CyqDS4BYiWMosTdaiSfSuNbgcJG9c)
+- fund_holder: [FYi2rYm28nh49QLrktqw4L3ijo7w8R3UZqNSZCV1xoj9](https://testnet.nearblocks.io/txns/FYi2rYm28nh49QLrktqw4L3ijo7w8R3UZqNSZCV1xoj9)
+- fund_borrower: [J8uzrmrdXh7hRiQBiseMeVV8fAagq5SzYmWqb6qTUCEn](https://testnet.nearblocks.io/txns/J8uzrmrdXh7hRiQBiseMeVV8fAagq5SzYmWqb6qTUCEn)
+- fund_nft_holder: [9QeAqcsTTqnLpqpRZuijBU38sSmm5av71na8ydkyuFMe](https://testnet.nearblocks.io/txns/9QeAqcsTTqnLpqpRZuijBU38sSmm5av71na8ydkyuFMe)
+- fund_lender: [BtuWTZMFRChEtiMaqtc4ABTC7vmps1T1CQBjbd7rRysF](https://testnet.nearblocks.io/txns/BtuWTZMFRChEtiMaqtc4ABTC7vmps1T1CQBjbd7rRysF)
+- register_holder: [EzJHtMiZoyrBmEJTdfKGLgwPoh73DS6mo83ack6rTswJ](https://testnet.nearblocks.io/txns/EzJHtMiZoyrBmEJTdfKGLgwPoh73DS6mo83ack6rTswJ)
+- register_borrower: [Ad2WphneJHcSqYrR3kbZhzr7uQuc7WM4v849fnqCG9U](https://testnet.nearblocks.io/txns/Ad2WphneJHcSqYrR3kbZhzr7uQuc7WM4v849fnqCG9U)
+- register_nft_holder: [Df26ChGeMjCnw4TgTssBCRa6rYX1iVN5vACsyp2EcGAN](https://testnet.nearblocks.io/txns/Df26ChGeMjCnw4TgTssBCRa6rYX1iVN5vACsyp2EcGAN)
+- register_lender: [38yG1tnUgk2Gu3XS8buwXr1mWuzs49zehZ23EV54uBh7](https://testnet.nearblocks.io/txns/38yG1tnUgk2Gu3XS8buwXr1mWuzs49zehZ23EV54uBh7)
+
+Latest verified accounting: L=0, T=0, inflight=0, funded storage=80000000000000000000000 yoctoNEAR; occupied admission slots=4. Every completed financial step checks sum of funded liability buckets=local_required, cash>=required, funded storage+operational reserve>=storage stake, zero unresolved payouts/refund records and known token partition+locked collateral=T. Backing per FLOOR is undefined at T=0; it is not advertised as a price or guaranteed redeemable floor.
+
+Remaining graph includes browser-signed holder issue, token/redemption flows, real externally funded loans, NFT transfer and current-holder repayment, distinct expiry/default and cancellation, contribution, cleanup, then irreversible stop at transaction 38 and funded borrower storage-unregister exit at transaction 39. Actual returned IDs must come from finalized receipts. These steps are not claimed complete before execution.
+
+## Real blockers and recovery evidence
+
+The initial deployment checker incorrectly hashed the transaction view's 32-byte DeployContract.code digest a second time. Execution stopped before actor funding; independent view_code confirmed exact approved bytes and nearcore 2.14 ActionView source confirmed the field semantics. The original stopped journal is preserved in DEPLOY_CHECKER_STOP_ORIGINAL.json; corrected checks resumed without deployment rebroadcast. A subsequent official RPC HTTP 429 read-limit stop was preserved in RPC_429_STOP_ORIGINAL.json. All existing transactions were FINAL, no financial transaction was retried, and a finalized all-account checkpoint was reconciled using healthy independent FastNEAR/dRPC before new steps resumed. Reads are throttled; a failed or unknown child, outcome, accounting check or provider disagreement still stops writes. Lava's published old endpoint returned 410 and was not used for execution.
+
+MyNearWallet's actual login refused app connections due to retirement. The inspected old selector Meteor SDK 1.0.24 generated/logged an app-held key, so that unused candidate was removed without being enabled. At the owner's request, isolated staging now uses pinned Meteor SDK 3.24.1 with account-only testnet sign-in (no addFunctionCallKey), namespaced public session storage, SDK logging disabled and useFunctionCallKey=false for every transaction. Browser Buffer/global dependencies were fixed after real browser checks. Typecheck, lint, 66 tests and production build pass; existing SDK bundle-size/dynamic-import warnings remain. No live website or v1 frontend dependency tree was changed. Initial npm audit reported four high advisories via nanoid and URI decoding; pinned transitive overrides removed all high/critical findings. The patched audit still reports 12 low findings, which remain for review. No unsafe SDK downgrade or forced audit fix was applied.
+
+Meteor's correct testnet login now opens successfully. It reports no connected wallet account in this browser and is waiting at Create a Password. The approved holder credential file was located without reading its contents; owner password entry and local import are required by the browser credential-handoff rule. **Owner local import/unlock of the approved holder is required; browser signing is NOT YET PASSED.** No private credentials may be sent in chat or handled by app code. Existing local testnet credentials are consumed only by the authorized SDK signer for CLI transactions; they are not printed, copied into frontend code or exported to a wallet by the agent. The owner chose Meteor instead of the offered CLI-only issuance fallback, so the executor must pause before issuance and must not mint twice.
+
+All new raw public evidence, public signed transaction blobs, receipt trees, owner authorizations, stopped journals and test logs are under release/acceptance-preparation-20261114/. Earlier evidence is unchanged. Next action: finish registrations, connect approved Alice locally in Meteor, review exactly issue({min_tokens:10000000000000000000000}) with 0.01 NEAR and 110 Tgas, sign once in the wallet, reconcile that actual hash, then resume remaining authorized steps. v1, FloorKit/Cosign, financial source and live routing remain unchanged. No mainnet operation occurred.
+
+# Earlier reports — historical where superseded
 # RC1 acceptance authorization and post-stop exit — current status
 
 November 14, 2026. This section supersedes earlier status statements. The owner explicitly confirmed all six candidate IDs, present signing control of the existing five signing accounts, the controller public key for new-contract FullAccess/shared operator custody, initialization/caps, the revised graph and allocations, and the 13.24-testnet-NEAR ceiling. The exact authorization and graph digest are in `release/acceptance-preparation-20261114/OWNER_AUTHORIZATION.json`. This approval permits bounded testnet execution after sufficient finalized funding; it grants no mainnet authority.
