@@ -1,3 +1,4 @@
+import "./lib/browser-polyfills";
 import { createRoot } from "react-dom/client";
 import "@fontsource/space-grotesk/latin-500.css";
 import "@fontsource/space-grotesk/latin-600.css";

@@ -515,7 +515,7 @@ export default function App() {
               <div className="wallet-choice">
                 <span className="wallet-logo">N</span>
                 <div>
-                  <strong>My NEAR Wallet</strong>
+                  <strong>Meteor Wallet</strong>
                   <small>NEAR testnet · opens your wallet</small>
                 </div>
               </div>
@@ -538,7 +538,7 @@ export default function App() {
                     .finally(() => setWalletBusy(false));
                 }}
               >
-                {walletBusy ? "Opening wallet…" : "Connect My NEAR Wallet"}
+                {walletBusy ? "Opening wallet…" : "Connect Meteor Wallet"}
                 <ArrowUpRight size={16} />
               </button>
             </>
@@ -550,7 +550,7 @@ export default function App() {
           )}
           <p className="footnote">
             Test tokens only. No function-call access key is requested by this
-            app. Wallet login and signing happen on testnet.mynearwallet.com.
+            app. Wallet login and signing happen on wallet.meteorwallet.app (testnet).
           </p>
         </Modal>
         <Modal
