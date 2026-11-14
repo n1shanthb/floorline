@@ -9,7 +9,24 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     fs: { strict: true },
+    proxy: {
+      "/rpc": {
+        target: "https://near-testnet.drpc.org",
+        changeOrigin: true,
+        rewrite: () => "/",
+      },
+    },
   },
   build: { target: "es2022", chunkSizeWarningLimit: 650 },
-  preview: { host: "127.0.0.1", port: 4173 },
+  preview: {
+    host: "127.0.0.1",
+    port: 4173,
+    proxy: {
+      "/rpc": {
+        target: "https://near-testnet.drpc.org",
+        changeOrigin: true,
+        rewrite: () => "/",
+      },
+    },
+  },
 });

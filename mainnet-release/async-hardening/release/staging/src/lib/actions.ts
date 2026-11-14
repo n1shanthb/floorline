@@ -150,7 +150,9 @@ export async function validateRequest(
     if (expected !== null && deposit !== expected)
       throw new Error("Wrong attached deposit for this method");
   }
-  const gasPrice = await rpc<{ gas_price: string }>("gas_price", [null]);
+  const gasPrice = await rpc<{ gas_price: string }>("gas_price", {
+    block_id: state.blockHash,
+  });
   // Wallets reserve gas before execution. This is a conservative UI cushion, not a fee quote.
   const byteCost = BigInt(l.storage_stake) / BigInt(l.storage_usage);
   const spendable =
