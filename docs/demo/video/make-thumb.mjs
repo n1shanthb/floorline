@@ -1,0 +1,196 @@
+/**
+ * Render a clean X/YouTube-style poster thumbnail (1920×1080).
+ */
+import { chromium } from "playwright";
+import { writeFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const htmlPath = path.join(__dirname, "thumb-source.html");
+const outJpg = path.join(__dirname, "FLOORLINE_DEMO_THUMB.jpg");
+const outPng = path.join(__dirname, "FLOORLINE_DEMO_THUMB.png");
+
+const html = `<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Space Grotesk";
+    src: local("Space Grotesk"), local("Segoe UI");
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    color: #16140f;
+    background:
+      radial-gradient(1200px 700px at 85% 20%, rgba(124, 92, 255, 0.22), transparent 60%),
+      radial-gradient(900px 600px at 10% 90%, rgba(183, 240, 110, 0.28), transparent 55%),
+      linear-gradient(160deg, #f4efe6 0%, #ebe4d8 45%, #e4dcf4 100%);
+  }
+  .frame {
+    width: 1920px;
+    height: 1080px;
+    padding: 72px 88px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  .star {
+    width: 44px;
+    height: 44px;
+    background: #c8f26a;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .pills { display: flex; gap: 14px; }
+  .pill {
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .pill.violet { background: #7c5cff; color: #fff; }
+  .pill.lime { background: #c8f26a; color: #1f3b00; }
+  .pill.ink { background: rgba(22,20,15,0.08); color: #16140f; }
+  .hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    padding: 24px 0 12px;
+  }
+  h1 {
+    margin: 0 0 22px;
+    font-size: 96px;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    font-weight: 800;
+  }
+  h1 span { color: #6b47e0; }
+  .sub {
+    margin: 0;
+    max-width: 820px;
+    font-size: 30px;
+    line-height: 1.35;
+    color: #4a463e;
+    font-weight: 500;
+  }
+  .proof-card {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid rgba(22,20,15,0.1);
+    border-radius: 28px;
+    padding: 36px 40px;
+    box-shadow: 0 18px 50px rgba(40, 20, 80, 0.12);
+  }
+  .proof-card .label {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6b655c;
+    margin-bottom: 14px;
+  }
+  .proof-card .big {
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .proof-card .meta {
+    font-size: 24px;
+    color: #4a463e;
+    line-height: 1.45;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px;
+  }
+  .tracks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .track {
+    background: #fff;
+    border: 1px solid rgba(22,20,15,0.12);
+    border-radius: 999px;
+    padding: 14px 20px;
+    font-size: 20px;
+    font-weight: 650;
+  }
+  .url {
+    font-family: ui-monospace, Consolas, monospace;
+    font-size: 22px;
+    color: #3b1d73;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="top">
+      <div class="brand"><div class="star"></div>floorline.</div>
+      <div class="pills">
+        <div class="pill violet">NEAR TESTNET</div>
+        <div class="pill lime">40/40 FINAL_VERIFIED</div>
+      </div>
+    </div>
+    <div class="hero">
+      <div>
+        <h1>Programmable money.<br/><span>Verifiable rights.</span></h1>
+        <p class="sub">Reserve-backed FLOOR · NFT loan rights · public testnet receipts — not a price guarantee.</p>
+      </div>
+      <div class="proof-card">
+        <div class="label">RC1 acceptance</div>
+        <div class="big">40 / 40</div>
+        <div class="meta">FINAL_VERIFIED<br/>New risk stopped<br/>Post-stop exit proven</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="tracks">
+        <div class="track">Unstoppable DeFi</div>
+        <div class="track">NFTs That Do Something</div>
+        <div class="track">AI Security &amp; Defense</div>
+      </div>
+      <div class="url">floorline-delta.vercel.app/verify</div>
+    </div>
+  </div>
+</body>
+</html>`;
+
+await writeFile(htmlPath, html);
+
+const browser = await chromium.launch({ headless: true });
+const page = await browser.newPage({
+  viewport: { width: 1920, height: 1080 },
+  deviceScaleFactor: 1,
+});
+await page.goto("file://" + htmlPath.replace(/\\/g, "/"));
+await page.waitForTimeout(300);
+await page.screenshot({ path: outPng, type: "png" });
+await page.screenshot({ path: outJpg, type: "jpeg", quality: 92 });
+await browser.close();
+console.log("Wrote", outJpg);
+console.log("Wrote", outPng);
