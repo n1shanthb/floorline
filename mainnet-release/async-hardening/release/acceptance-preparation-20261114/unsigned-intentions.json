@@ -1,0 +1,1469 @@
+{
+  "status": "UNSIGNED_NOT_BROADCASTABLE",
+  "atomic": {
+    "receiver_role": "contract",
+    "actions": [
+      {
+        "type": "CreateAccount"
+      },
+      {
+        "type": "Transfer",
+        "deposit": "8000000000000000000000000"
+      },
+      {
+        "type": "AddKey",
+        "public_key": null,
+        "permission": "FullAccess"
+      },
+      {
+        "type": "DeployContract",
+        "normal_wasm_file": "E:\\near-2-mainnet-review\\mainnet-release\\async-hardening\\runtime\\evidence\\release-rc1\\new-normal.wasm",
+        "sha256": "31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b"
+      },
+      {
+        "type": "FunctionCall",
+        "method_name": "new",
+        "args": {
+          "tax_bps": 2000,
+          "issuance_numerator": "1",
+          "issuance_denominator": "1",
+          "pilot_limits": {
+            "max_action": "10000000000000000000000",
+            "max_gross": "50000000000000000000000",
+            "max_storage": "20000000000000000000000"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      }
+    ],
+    "signer_id": "floorline-g3-20261111-6702ea.testnet",
+    "receiver_id": "rc1.floorline-g3-20261111-6702ea.testnet",
+    "blockers": [
+      "Owner-approved fresh receiver and FullAccess public key absent",
+      "No nonce, recent block hash or signature assigned",
+      "Availability and balances must be refreshed before signing"
+    ]
+  },
+  "actor_funding": [
+    {
+      "signer_role": "controller",
+      "receiver_role": "holder",
+      "actions": [
+        {
+          "type": "Transfer",
+          "deposit": "1940000000000000000000000"
+        }
+      ],
+      "requires": "Existing owner-controlled actor account with verified public key; creating actors requires separately specified public-key actions and approval."
+    },
+    {
+      "signer_role": "controller",
+      "receiver_role": "borrower",
+      "actions": [
+        {
+          "type": "Transfer",
+          "deposit": "1210000000000000000000000"
+        }
+      ],
+      "requires": "Existing owner-controlled actor account with verified public key; creating actors requires separately specified public-key actions and approval."
+    },
+    {
+      "signer_role": "controller",
+      "receiver_role": "nft_holder",
+      "actions": [
+        {
+          "type": "Transfer",
+          "deposit": "370000000000000000000000"
+        }
+      ],
+      "requires": "Existing owner-controlled actor account with verified public key; creating actors requires separately specified public-key actions and approval."
+    },
+    {
+      "signer_role": "controller",
+      "receiver_role": "lender",
+      "actions": [
+        {
+          "type": "Transfer",
+          "deposit": "970000000000000000000000"
+        }
+      ],
+      "requires": "Existing owner-controlled actor account with verified public key; creating actors requires separately specified public-key actions and approval."
+    }
+  ],
+  "steps": [
+    {
+      "id": "register_holder",
+      "prior_steps": [],
+      "intent": {
+        "id": "register_holder",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "storage_deposit",
+        "args": {
+          "account_id": null,
+          "registration_only": false
+        },
+        "deposit": "20000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "register_borrower",
+      "prior_steps": [
+        "register_holder"
+      ],
+      "intent": {
+        "id": "register_borrower",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "storage_deposit",
+        "args": {
+          "account_id": null,
+          "registration_only": false
+        },
+        "deposit": "20000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "register_nft_holder",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower"
+      ],
+      "intent": {
+        "id": "register_nft_holder",
+        "signer_role": "nft_holder",
+        "receiver_role": "contract",
+        "method": "storage_deposit",
+        "args": {
+          "account_id": null,
+          "registration_only": false
+        },
+        "deposit": "20000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "register_lender",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder"
+      ],
+      "intent": {
+        "id": "register_lender",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "storage_deposit",
+        "args": {
+          "account_id": null,
+          "registration_only": false
+        },
+        "deposit": "20000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "issue",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender"
+      ],
+      "intent": {
+        "id": "issue",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "issue",
+        "args": {
+          "min_tokens": "10000000000000000000000"
+        },
+        "deposit": "10000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "collateral_to_borrower",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue"
+      ],
+      "intent": {
+        "id": "collateral_to_borrower",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "ft_transfer",
+        "args": {
+          "receiver_id": {
+            "$account": "borrower"
+          },
+          "amount": "3000000000000000000000",
+          "memo": null
+        },
+        "deposit": "1",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "redeem",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower"
+      ],
+      "intent": {
+        "id": "redeem",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "redeem",
+        "args": {
+          "amount": "1000000000000000000000",
+          "min_out": {
+            "$fresh_quote": "redeem"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000",
+        "review": "Read fresh quote; set min_out to reviewed quote before signing."
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_redemption",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem"
+      ],
+      "intent": {
+        "id": "withdraw_redemption",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "withdraw_claim",
+        "args": {
+          "claim_id": {
+            "$result": "redeem"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_redeem",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption"
+      ],
+      "intent": {
+        "id": "cleanup_redeem",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_claim",
+        "args": {
+          "claim_id": {
+            "$result": "redeem"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "offer_repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem"
+      ],
+      "intent": {
+        "id": "offer_repay",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "fund_offer",
+        "args": {
+          "repayment": "2200000000000000000000",
+          "collateral": "1000000000000000000000",
+          "duration_ns": "86400000000000"
+        },
+        "deposit": "2000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "borrow_repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay"
+      ],
+      "intent": {
+        "id": "borrow_repay",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "accept_offer",
+        "args": {
+          "loan_id": {
+            "$result": "offer_repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_principal",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay"
+      ],
+      "intent": {
+        "id": "withdraw_principal",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "withdraw_claim",
+        "args": {
+          "claim_id": {
+            "$result": "borrow_repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_borrow_repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal"
+      ],
+      "intent": {
+        "id": "cleanup_borrow_repay",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_claim",
+        "args": {
+          "claim_id": {
+            "$result": "borrow_repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "nft_transfer",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay"
+      ],
+      "intent": {
+        "id": "nft_transfer",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "nft_transfer",
+        "args": {
+          "receiver_id": {
+            "$account": "nft_holder"
+          },
+          "token_id": {
+            "$result": "offer_repay"
+          },
+          "approval_id": null,
+          "memo": null
+        },
+        "deposit": "1",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer"
+      ],
+      "intent": {
+        "id": "repay",
+        "signer_role": "nft_holder",
+        "receiver_role": "contract",
+        "method": "repay",
+        "args": {
+          "loan_id": {
+            "$result": "offer_repay"
+          }
+        },
+        "deposit": "2200000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_repayment",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay"
+      ],
+      "intent": {
+        "id": "withdraw_repayment",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "withdraw_claim",
+        "args": {
+          "claim_id": {
+            "$result": "repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment"
+      ],
+      "intent": {
+        "id": "cleanup_repay",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_claim",
+        "args": {
+          "claim_id": {
+            "$result": "repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_offer_repay",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay"
+      ],
+      "intent": {
+        "id": "cleanup_offer_repay",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_loan",
+        "args": {
+          "loan_id": {
+            "$result": "offer_repay"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "offer_default",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay"
+      ],
+      "intent": {
+        "id": "offer_default",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "fund_offer",
+        "args": {
+          "repayment": "2200000000000000000000",
+          "collateral": "1000000000000000000000",
+          "duration_ns": "120000000000"
+        },
+        "deposit": "2000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "borrow_default",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default"
+      ],
+      "intent": {
+        "id": "borrow_default",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "accept_offer",
+        "args": {
+          "loan_id": {
+            "$result": "offer_default"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_default_principal",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default"
+      ],
+      "intent": {
+        "id": "withdraw_default_principal",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "withdraw_claim",
+        "args": {
+          "claim_id": {
+            "$result": "borrow_default"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_borrow_default",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal"
+      ],
+      "intent": {
+        "id": "cleanup_borrow_default",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_claim",
+        "args": {
+          "claim_id": {
+            "$result": "borrow_default"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "default",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default"
+      ],
+      "intent": {
+        "id": "default",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "default_loan",
+        "args": {
+          "loan_id": {
+            "$result": "offer_default"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000",
+        "not_before": "get_loan.expiry finalized chain timestamp; no wall-clock assumption"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_offer_default",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default"
+      ],
+      "intent": {
+        "id": "cleanup_offer_default",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_loan",
+        "args": {
+          "loan_id": {
+            "$result": "offer_default"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "offer_cancel",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default"
+      ],
+      "intent": {
+        "id": "offer_cancel",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "fund_offer",
+        "args": {
+          "repayment": "1000000000000000000000",
+          "collateral": "100000000000000000000",
+          "duration_ns": "600000000000"
+        },
+        "deposit": "1000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cancel",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel"
+      ],
+      "intent": {
+        "id": "cancel",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "cancel_offer",
+        "args": {
+          "loan_id": {
+            "$result": "offer_cancel"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_cancel",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel"
+      ],
+      "intent": {
+        "id": "withdraw_cancel",
+        "signer_role": "lender",
+        "receiver_role": "contract",
+        "method": "withdraw_claim",
+        "args": {
+          "claim_id": {
+            "$result": "cancel"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_cancel",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel"
+      ],
+      "intent": {
+        "id": "cleanup_cancel",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_claim",
+        "args": {
+          "claim_id": {
+            "$result": "cancel"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "cleanup_offer_cancel",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel"
+      ],
+      "intent": {
+        "id": "cleanup_offer_cancel",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "cleanup_loan",
+        "args": {
+          "loan_id": {
+            "$result": "offer_cancel"
+          }
+        },
+        "deposit": "0",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "contribute",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel",
+        "cleanup_offer_cancel"
+      ],
+      "intent": {
+        "id": "contribute",
+        "signer_role": "holder",
+        "receiver_role": "contract",
+        "method": "contribute",
+        "args": {},
+        "deposit": "1000000000000000000000",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "return_free_tokens",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel",
+        "cleanup_offer_cancel",
+        "contribute"
+      ],
+      "intent": {
+        "id": "return_free_tokens",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "ft_transfer",
+        "args": {
+          "receiver_id": {
+            "$account": "holder"
+          },
+          "amount": "1000000000000000000000",
+          "memo": null
+        },
+        "deposit": "1",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "withdraw_storage",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel",
+        "cleanup_offer_cancel",
+        "contribute",
+        "return_free_tokens"
+      ],
+      "intent": {
+        "id": "withdraw_storage",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "storage_withdraw",
+        "args": {
+          "amount": "1000000000000000000000"
+        },
+        "deposit": "1",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "stop",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel",
+        "cleanup_offer_cancel",
+        "contribute",
+        "return_free_tokens",
+        "withdraw_storage"
+      ],
+      "intent": {
+        "id": "stop",
+        "signer_role": "controller",
+        "receiver_role": "contract",
+        "method": "stop_new_risk",
+        "args": {},
+        "deposit": "0",
+        "gas": "110000000000000",
+        "review": "Irreversible. Execute after all approved new-risk actions finish; the funded borrower storage unregister exit follows."
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    },
+    {
+      "id": "unregister",
+      "prior_steps": [
+        "register_holder",
+        "register_borrower",
+        "register_nft_holder",
+        "register_lender",
+        "issue",
+        "collateral_to_borrower",
+        "redeem",
+        "withdraw_redemption",
+        "cleanup_redeem",
+        "offer_repay",
+        "borrow_repay",
+        "withdraw_principal",
+        "cleanup_borrow_repay",
+        "nft_transfer",
+        "repay",
+        "withdraw_repayment",
+        "cleanup_repay",
+        "cleanup_offer_repay",
+        "offer_default",
+        "borrow_default",
+        "withdraw_default_principal",
+        "cleanup_borrow_default",
+        "default",
+        "cleanup_offer_default",
+        "offer_cancel",
+        "cancel",
+        "withdraw_cancel",
+        "cleanup_cancel",
+        "cleanup_offer_cancel",
+        "contribute",
+        "return_free_tokens",
+        "withdraw_storage",
+        "stop"
+      ],
+      "intent": {
+        "id": "unregister",
+        "signer_role": "borrower",
+        "receiver_role": "contract",
+        "method": "storage_unregister",
+        "args": {
+          "force": false
+        },
+        "deposit": "1",
+        "gas": "110000000000000"
+      },
+      "postconditions": [
+        "FINAL root and every child receipt success",
+        "Resolve returned IDs only from verified SuccessValue",
+        "Block-pinned accounting: sum liabilities=local_required; cash>=required; storage_total+operational>=storage stake; preserve inflight separately",
+        "Refresh role token/NFT/claim/loan rights and gross; STOP on unknown, never resend"
+      ]
+    }
+  ],
+  "receipt_ids_unresolved": true,
+  "post_stop_public_exit_test": "Transaction 38 irreversible stop; transaction 39 borrower storage_unregister refunds remaining funded storage credit after all rights are cleaned. Require FINAL refund transfer AND callback, zero borrower storage/admission release, native credit and solvency."
+}

@@ -1,0 +1,113 @@
+{
+  "checked_at": "2026-11-14T04:32:07.487Z",
+  "rows": [
+    {
+      "url": "https://test.rpc.fastnear.com",
+      "http_status": 200,
+      "body": {
+        "jsonrpc": "2.0",
+        "result": {
+          "chain_id": "testnet",
+          "genesis_hash": "FWJ9kR6KFWoyMoNjpLXXGHeuiy7tEY6GmoFeCA5yuc6b",
+          "latest_protocol_version": 88,
+          "node_key": null,
+          "node_public_key": "ed25519:B87Qq34LbWadFx2dq5bwUEtB5KBgr8ZhsoEpAiSP2qVX",
+          "protocol_version": 88,
+          "rpc_addr": "0.0.0.0:3030",
+          "sync_info": {
+            "earliest_block_hash": "5N8A5VcZkQVqoYUUzat4BAXnpJEGh62zxKotXiTtsV9S",
+            "earliest_block_height": 277429255,
+            "earliest_block_time": "2026-11-12T23:13:30.323890175Z",
+            "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+            "epoch_start_height": 277602055,
+            "latest_block_hash": "H53fg25GG9c8Vtr3Sp3pnp42ixoRPJxemWknhc414Sux",
+            "latest_block_height": 277608417,
+            "latest_block_time": "2026-11-14T04:32:05.249336703Z",
+            "latest_state_root": "A3QS147dCayi9PqCUWeRubSd2DjqvsUp9FBpHauvhMLv",
+            "syncing": false
+          },
+          "uptime_sec": 183891,
+          "validator_account_id": null,
+          "validator_public_key": null,
+          "validators": [
+            {
+              "account_id": "node0"
+            },
+            {
+              "account_id": "node1"
+            },
+            {
+              "account_id": "kiln.pool.f863973.m0"
+            },
+            {
+              "account_id": "node2"
+            },
+            {
+              "account_id": "node3"
+            },
+            {
+              "account_id": "aurora.pool.f863973.m0"
+            },
+            {
+              "account_id": "01node.pool.f863973.m0"
+            },
+            {
+              "account_id": "stakely_v2.pool.f863973.m0"
+            },
+            {
+              "account_id": "legends.pool.f863973.m0"
+            },
+            {
+              "account_id": "validator4.testnet"
+            },
+            {
+              "account_id": "validator5.testnet"
+            },
+            {
+              "account_id": "validator6.testnet"
+            },
+            {
+              "account_id": "validator7.testnet"
+            },
+            {
+              "account_id": "validator8.testnet"
+            },
+            {
+              "account_id": "validator9.testnet"
+            },
+            {
+              "account_id": "validator10.testnet"
+            },
+            {
+              "account_id": "validator11.testnet"
+            },
+            {
+              "account_id": "ni.pool.f863973.m0"
+            },
+            {
+              "account_id": "ts.pool.f863973.m0"
+            },
+            {
+              "account_id": "lunanova2.pool.f863973.m0"
+            }
+          ],
+          "version": {
+            "build": "2.14.1",
+            "commit": "0ad2bdb2630e85bbacecab2a3b77072c78b46bc6",
+            "rustc_version": "1.95.0",
+            "version": "2.14.1"
+          }
+        },
+        "id": "rc1-readonly-provider"
+      }
+    },
+    {
+      "url": "https://neart.lava.build",
+      "http_status": 410,
+      "body": {
+        "error": "This endpoint has been discontinued.",
+        "message": "For an up to date list of available endpoints, visit https://gateway.lavanet.xyz"
+      }
+    }
+  ]
+}

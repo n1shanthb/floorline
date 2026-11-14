@@ -1,0 +1,13 @@
+import "./lib/browser-polyfills";
+import { createRoot } from "react-dom/client";
+import "@fontsource/space-grotesk/latin-500.css";
+import "@fontsource/space-grotesk/latin-600.css";
+import "@fontsource/space-grotesk/latin-700.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-700.css";
+import App from "./App";
+import "./styles.css";
+import { STAGING_CONFIGURED } from "./lib/config";
+createRoot(document.getElementById("root")!).render(STAGING_CONFIGURED ? <App /> : <main className="notice"><h1>Floorline RC1 staging</h1><p>Disabled until the approved fresh testnet account is configured.</p><p>The existing public testnet application is unchanged. No wallet signing is available in this unconfigured build.</p></main>);

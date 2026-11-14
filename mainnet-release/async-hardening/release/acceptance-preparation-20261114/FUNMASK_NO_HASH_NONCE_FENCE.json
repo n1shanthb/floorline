@@ -1,0 +1,32 @@
+{
+  "network": "testnet",
+  "account": "funmask6175.testnet",
+  "public_key": "ed25519:B8mDgWgSh8yhvWbYWJnoSdJuWMbV874Jhk1ewee9zJ94",
+  "unknown_intent": {
+    "method": "ft_transfer",
+    "receiver_id": "carol.floorline-g3-20261111-6702ea.testnet",
+    "amount": "3000000000000000000000",
+    "memo": null,
+    "deposit": "1",
+    "gas": "30000000000000"
+  },
+  "wallet_result": "NO_TRANSACTION_HASH",
+  "meteor_history_observation": "No ft_transfer entry; latest app transactions are issue 63AaM37eN455GB8JinN6oUYDjzuZaMcEfcGG3ZwxcdVm and storage_deposit SwTUrnrWmt7TrJdRExCndek5ndxXFsDNBypXGWgy6Cy.",
+  "finalized_block": {
+    "height": 277632759,
+    "hash": "2WrF9798EsHJkFAwHcDQsXSVpyuCtBtk8SaobQTCx9Vf"
+  },
+  "issuance_nonce": "277610782000002",
+  "current_access_key_nonce": "277610782000002",
+  "balances": {
+    "funmask_floor": "10000000000000000000000",
+    "carol_floor": "0"
+  },
+  "providers": [
+    "https://near-testnet.drpc.org",
+    "https://rpc.testnet.near.org"
+  ],
+  "providers_agreed_at_same_block": true,
+  "accepted_transfer_found": false,
+  "retry_safety": "A retry signed from the unchanged current nonce uses the same next nonce as any delayed first attempt, so at most one transaction can be accepted. Recheck exact intent and finalized state after the retry; never issue a third attempt on an unknown result."
+}

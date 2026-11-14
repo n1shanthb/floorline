@@ -1,0 +1,446 @@
+{
+  "transactions": 39,
+  "breakdown": "1 atomic contract creation/deploy/init; 4 actor funding transfers; 34 financial/control methods",
+  "planned_new_risk_gross_yocto": "16000000000000000000000",
+  "planned_repayment_yocto": "2200000000000000000000",
+  "planned_initial_storage_yocto": "80000000000000000000000",
+  "steps": [
+    {
+      "id": "register_holder",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "register_borrower",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "register_nft_holder",
+      "signer_role": "nft_holder",
+      "receiver_role": "contract",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "register_lender",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "storage_deposit",
+      "args": {
+        "account_id": null,
+        "registration_only": false
+      },
+      "deposit": "20000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "issue",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "issue",
+      "args": {
+        "min_tokens": "10000000000000000000000"
+      },
+      "deposit": "10000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "collateral_to_borrower",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "ft_transfer",
+      "args": {
+        "receiver_id": {
+          "$account": "borrower"
+        },
+        "amount": "3000000000000000000000",
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "redeem",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "redeem",
+      "args": {
+        "amount": "1000000000000000000000",
+        "min_out": {
+          "$fresh_quote": "redeem"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "review": "Read fresh quote; set min_out to reviewed quote before signing."
+    },
+    {
+      "id": "withdraw_redemption",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "redeem"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_redeem",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "redeem"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "offer_repay",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "2200000000000000000000",
+        "collateral": "1000000000000000000000",
+        "duration_ns": "86400000000000"
+      },
+      "deposit": "2000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "borrow_repay",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "accept_offer",
+      "args": {
+        "loan_id": {
+          "$result": "offer_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "withdraw_principal",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_borrow_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "nft_transfer",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "nft_transfer",
+      "args": {
+        "receiver_id": {
+          "$account": "nft_holder"
+        },
+        "token_id": {
+          "$result": "offer_repay"
+        },
+        "approval_id": null,
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "repay",
+      "signer_role": "nft_holder",
+      "receiver_role": "contract",
+      "method": "repay",
+      "args": {
+        "loan_id": {
+          "$result": "offer_repay"
+        }
+      },
+      "deposit": "2200000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "withdraw_repayment",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_offer_repay",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_repay"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "offer_default",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "2200000000000000000000",
+        "collateral": "1000000000000000000000",
+        "duration_ns": "120000000000"
+      },
+      "deposit": "2000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "borrow_default",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "accept_offer",
+      "args": {
+        "loan_id": {
+          "$result": "offer_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "withdraw_default_principal",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_borrow_default",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "borrow_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "default",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "default_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000",
+      "not_before": "get_loan.expiry finalized chain timestamp; no wall-clock assumption"
+    },
+    {
+      "id": "cleanup_offer_default",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_default"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "offer_cancel",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "fund_offer",
+      "args": {
+        "repayment": "1000000000000000000000",
+        "collateral": "100000000000000000000",
+        "duration_ns": "600000000000"
+      },
+      "deposit": "1000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cancel",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "cancel_offer",
+      "args": {
+        "loan_id": {
+          "$result": "offer_cancel"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "withdraw_cancel",
+      "signer_role": "lender",
+      "receiver_role": "contract",
+      "method": "withdraw_claim",
+      "args": {
+        "claim_id": {
+          "$result": "cancel"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_cancel",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_claim",
+      "args": {
+        "claim_id": {
+          "$result": "cancel"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "cleanup_offer_cancel",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "cleanup_loan",
+      "args": {
+        "loan_id": {
+          "$result": "offer_cancel"
+        }
+      },
+      "deposit": "0",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "contribute",
+      "signer_role": "holder",
+      "receiver_role": "contract",
+      "method": "contribute",
+      "args": {},
+      "deposit": "1000000000000000000000",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "return_free_tokens",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "ft_transfer",
+      "args": {
+        "receiver_id": {
+          "$account": "holder"
+        },
+        "amount": "1000000000000000000000",
+        "memo": null
+      },
+      "deposit": "1",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "withdraw_storage",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "storage_withdraw",
+      "args": {
+        "amount": "1000000000000000000000"
+      },
+      "deposit": "1",
+      "gas": "110000000000000"
+    },
+    {
+      "id": "stop",
+      "signer_role": "controller",
+      "receiver_role": "contract",
+      "method": "stop_new_risk",
+      "args": {},
+      "deposit": "0",
+      "gas": "110000000000000",
+      "review": "Irreversible. Execute after all approved new-risk actions finish; the funded borrower storage unregister exit follows."
+    },
+    {
+      "id": "unregister",
+      "signer_role": "borrower",
+      "receiver_role": "contract",
+      "method": "storage_unregister",
+      "args": {
+        "force": false
+      },
+      "deposit": "1",
+      "gas": "110000000000000"
+    }
+  ]
+}

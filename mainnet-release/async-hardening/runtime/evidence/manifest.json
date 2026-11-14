@@ -1,0 +1,182 @@
+{
+  "base_commit": "0c5b9a2",
+  "compiler": "rustc 1.99.1",
+  "near_sdk": "5.30.1",
+  "rustflags": "--cfg near",
+  "normal": {
+    "sha256": "815f59864e55c69c5a5367a64354b6a22d2a470a4e4869ed23c32ac68661b5ce",
+    "code_hash": "9i1vQV6VYBT16DwhLAm4RCtKsYXgiScemNxCCvhh3EZj",
+    "bytes": 444627
+  },
+  "fault": {
+    "sha256": "1946be9f2e2cd37b8e02ae40ac6ff6391546f77af4a8de36c7a35f1c6a38fb1c",
+    "code_hash": "2hfm3RczLu5ZrF7zxdL2Gcn3CB8jgnDvmV6Bvm85Pocf",
+    "bytes": 444633
+  },
+  "byte_for_byte_rebuild": true,
+  "source_sha256": {
+    "Cargo.toml": "89cf2cba63260a615efd9c248c4777ba39d9c7fe61396a74d7e406405c53ea7a",
+    "Cargo.lock": "f9b7fea36d13687ce8bb58d5d75aa6171c6297e3395cce2445419dd5e93c0b40",
+    "src/contract.rs": "32acfe14d8ec6ee9f8c3e05ebccce63e40dcf79822082718a04a39ab27ce28f9",
+    "src/math.rs": "abef6d3008f77fee730451bc049b4c7dd0ef5207019930342ee7fe99d085ad2c",
+    "src/engine.rs": "0a75c8f2c5ae8089245c4e83991a4fca4278a54b49fc140a83e07c361bb37e48"
+  },
+  "tests": 32,
+  "failures": [],
+  "gas_storage": {
+    "storage_deposit": {
+      "count": 23,
+      "max_gas": "5849138111087",
+      "min_gas": "2276443000448",
+      "min_storage_delta": 0,
+      "max_storage_delta": 168
+    },
+    "issue": {
+      "count": 2,
+      "max_gas": "2260752691604",
+      "min_gas": "2201873514345",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "ft_transfer": {
+      "count": 19,
+      "max_gas": "2434513789222",
+      "min_gas": "1797428183864",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "redeem": {
+      "count": 6,
+      "max_gas": "2811546468291",
+      "min_gas": "1902369553524",
+      "min_storage_delta": 0,
+      "max_storage_delta": 145
+    },
+    "withdraw_claim": {
+      "count": 26,
+      "max_gas": "5270312273046",
+      "min_gas": "1901408742995",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "fund_offer": {
+      "count": 67,
+      "max_gas": "2522376290845",
+      "min_gas": "2462063400996",
+      "min_storage_delta": 0,
+      "max_storage_delta": 298
+    },
+    "accept_offer": {
+      "count": 24,
+      "max_gas": "3284642647236",
+      "min_gas": "1885781449109",
+      "min_storage_delta": 0,
+      "max_storage_delta": 67
+    },
+    "nft_transfer": {
+      "count": 8,
+      "max_gas": "2700371324537",
+      "min_gas": "1799057209943",
+      "min_storage_delta": -2,
+      "max_storage_delta": 0
+    },
+    "repay": {
+      "count": 18,
+      "max_gas": "3469594064768",
+      "min_gas": "2334248786688",
+      "min_storage_delta": 0,
+      "max_storage_delta": 146
+    },
+    "default_loan": {
+      "count": 12,
+      "max_gas": "2867903666376",
+      "min_gas": "1870935794552",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "act": {
+      "count": 5,
+      "max_gas": "7166066972992",
+      "min_gas": "3890579634547",
+      "min_storage_delta": -3,
+      "max_storage_delta": 67
+    },
+    "ft_transfer_call": {
+      "count": 6,
+      "max_gas": "12688078345330",
+      "min_gas": "8094851922789",
+      "min_storage_delta": 0,
+      "max_storage_delta": 75
+    },
+    "nft_transfer_call": {
+      "count": 8,
+      "max_gas": "58916457301830",
+      "min_gas": "8716518913791",
+      "min_storage_delta": -1,
+      "max_storage_delta": 3
+    },
+    "ft_resolve_transfer": {
+      "count": 1,
+      "max_gas": "1721141336890",
+      "min_gas": "1721141336890",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "nft_resolve_transfer": {
+      "count": 1,
+      "max_gas": "1721483347327",
+      "min_gas": "1721483347327",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "claim_result": {
+      "count": 2,
+      "max_gas": "1831643183108",
+      "min_gas": "1719273342802",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "storage_unregister": {
+      "count": 2,
+      "max_gas": "5836548725065",
+      "min_gas": "2333895722277",
+      "min_storage_delta": -164,
+      "max_storage_delta": 0
+    },
+    "storage_withdraw": {
+      "count": 1,
+      "max_gas": "5935216273400",
+      "min_gas": "5935216273400",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "cancel_offer": {
+      "count": 1,
+      "max_gas": "2927631025664",
+      "min_gas": "2927631025664",
+      "min_storage_delta": 147,
+      "max_storage_delta": 147
+    },
+    "cleanup_loan": {
+      "count": 1,
+      "max_gas": "2289950343293",
+      "min_gas": "2289950343293",
+      "min_storage_delta": -298,
+      "max_storage_delta": -298
+    },
+    "cleanup_claim": {
+      "count": 1,
+      "max_gas": "2436966949243",
+      "min_gas": "2436966949243",
+      "min_storage_delta": -147,
+      "max_storage_delta": -147
+    },
+    "withdraw_and_disappear": {
+      "count": 1,
+      "max_gas": "8378138697759",
+      "min_gas": "8378138697759",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    }
+  }
+}

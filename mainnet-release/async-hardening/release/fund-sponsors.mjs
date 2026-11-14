@@ -1,0 +1,14 @@
+// Same public helper protocol as near-cli sponsor-by-faucet-service. No signer or keys imported.
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const out=import.meta.dirname+'/acceptance-preparation-20261114',auth=JSON.parse(fs.readFileSync(out+'/FUNDING_SOURCES_AUTHORIZATION.json'));
+const endpoint='https://helper.nearprotocol.com/account',rpc='https://rpc.testnet.near.org';
+const query=async(method,params)=>{const r=await fetch(rpc,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'rc1-sponsor',method,params}),signal:AbortSignal.timeout(25000)});assert(r.ok);return r.json()};
+assert.equal((await query('status',[])).result?.chain_id,'testnet');
+for(const account of auth.accounts){
+ const file=out+'/sponsor-'+account+'.json';assert(!fs.existsSync(file),'Previously attempted: do not repeat request');
+ const availability=await query('query',{request_type:'view_account',account_id:account,finality:'final'});assert.equal(availability.error?.cause?.name,'UNKNOWN_ACCOUNT','Account availability not established');
+ const row={account,endpoint,public_key:auth.public_key,availability,started_at:new Date().toISOString(),status:'REQUEST_STARTED_NO_AUTORETRY'};fs.writeFileSync(file,JSON.stringify(row,null,2));
+ try{const r=await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({newAccountId:account,newAccountPublicKey:auth.public_key}),signal:AbortSignal.timeout(45000)});row.http_status=r.status;row.body=await r.text();row.status=r.ok?'RESPONSE_RECEIVED_REQUIRES_FINAL_RECONCILIATION':'STOP_HELPER_ERROR';fs.writeFileSync(file,JSON.stringify(row,null,2));assert(r.ok,'Helper returned '+r.status+'; no additional requests');const data=JSON.parse(row.body);row.response=data;
+ const view=await query('query',{request_type:'view_account',account_id:account,finality:'final'});row.final_view=view;fs.writeFileSync(file,JSON.stringify(row,null,2));assert(view.result,'Created account not finalized: STOP');const keys=await query('query',{request_type:'view_access_key_list',account_id:account,finality:'final'});row.keys=keys;assert.equal(keys.result.keys.length,1);assert.equal(keys.result.keys[0].public_key,auth.public_key);assert.equal(keys.result.keys[0].access_key.permission,'FullAccess');row.status='ACCOUNT_FINALIZED_TRANSFER_NOT_ATTEMPTED';fs.writeFileSync(file,JSON.stringify(row,null,2));console.log(JSON.stringify({account,status:row.status,amount:view.result.amount}));
+ }catch(e){row.status='STOPPED_NO_RETRY';row.error=e.message;fs.writeFileSync(file,JSON.stringify(row,null,2));console.error(JSON.stringify({account,status:row.status,error:e.message,http_status:row.http_status,body:row.body}));process.exitCode=1;break;}
+}

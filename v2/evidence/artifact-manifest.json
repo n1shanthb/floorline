@@ -1,0 +1,44 @@
+{
+  "generated_at_utc": "2026-11-13T13:32:19.2458618Z",
+  "source_base_commit": "6ee055e4afde448d0b05bc557a1036825827a6c6",
+  "rust": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo_lock_version": "4",
+  "near_sdk_version": "5.30.1",
+  "normal": {
+    "path": "v2\\artifacts\\floorline-v2.wasm",
+    "bytes": 457591,
+    "sha256": "2325abb1230509e4f9c96acc842f25fca8482682096910b3f5e8df0a3d3dc6fc",
+    "near_code_hash": "3NCaxojRRbuJLkGmpmAJnNiJd7SMqqPbrGee8t15eCYb",
+    "features": [
+      "contract"
+    ],
+    "quarantine_ns": "86400000000000",
+    "operational_headroom_yocto": "100000000000000000000000"
+  },
+  "fault_test_only": {
+    "path": "v2\\artifacts\\floorline-v2-fault-short.wasm",
+    "bytes": 457286,
+    "sha256": "e54ef95d98a7653812f44e5e68325be771c5abe179b09cdb334a5a3ecc77277b",
+    "near_code_hash": "GS8D4GXdpdjrRbvvyFUwvJnAMNxz1Zmdx7yxA7pes2bc",
+    "features": [
+      "contract",
+      "fault-injection",
+      "short-quarantine"
+    ],
+    "quarantine_ns": "5000000000",
+    "operational_headroom_yocto": "10000000000000000000000"
+  },
+  "source_sha256": {
+    "Cargo.toml": "48e60c058912bcc438ffde014b4800a445c64f00985a1bca842795b08070f42d",
+    "Cargo.lock": "47cc1f8e94bd1cd25a4a09896d1d9ae9c6c5663127240e1eff9eeca2b87aef31",
+    "src/contract.rs": "1105f2bacf0ba0dccf74cbb3e0a3738e998724f5479f6956a0b6c9e0db69c0f5",
+    "src/engine.rs": "0a75c8f2c5ae8089245c4e83991a4fca4278a54b49fc140a83e07c361bb37e48",
+    "src/math.rs": "abef6d3008f77fee730451bc049b4c7dd0ef5207019930342ee7fe99d085ad2c"
+  },
+  "v1_approved_sha256": "529423c2a8d7c8282af893b189e7b423fbfcc88373f5483ef70f1f62e57945e6",
+  "sandbox_result": {
+    "passed": 8,
+    "failed": 0,
+    "chain_id": "test-chain-SabJV"
+  }
+}

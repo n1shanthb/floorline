@@ -1,0 +1,11 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';
+export const out=import.meta.dirname+'/acceptance-preparation-20261114';
+export const urls=['https://near-testnet.drpc.org','https://rpc.testnet.near.org'];
+export const save=(n,v)=>fs.writeFileSync(out+'/'+n,JSON.stringify(v,null,2));
+let globalGate=Promise.resolve();
+const spacingMs=8100;
+export async function rpc(url,method,params){const gate=globalGate.then(()=>new Promise(r=>setTimeout(r,spacingMs)));globalGate=gate;await gate;const r=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'rc1-acceptance',method,params}),signal:AbortSignal.timeout(30000)});assert(r.ok,'RPC HTTP '+r.status+' '+url+' '+method);const d=await r.json();assert(!d.error,JSON.stringify(d.error));return d.result;}
+export function receipts(r){assert.equal(r.final_execution_status,'FINAL');assert(r.status.SuccessValue!==undefined);const rows=[r.transaction_outcome,...r.receipts_outcome],ids=new Set(rows.map(x=>x.id));assert.equal(ids.size,rows.length);for(const x of rows){assert(x.outcome.status.SuccessValue!==undefined||x.outcome.status.SuccessReceiptId!==undefined,'Failed/unknown receipt');for(const id of x.outcome.receipt_ids)assert(ids.has(id),'Missing descendant');if(x.outcome.status.SuccessReceiptId)assert(ids.has(x.outcome.status.SuccessReceiptId))}return rows.reduce((n,x)=>n+BigInt(x.outcome.tokens_burnt),0n);}
+export async function final(hash,signer){let a;for(let i=0;i<15;i++){a=await rpc(urls[0],'tx',{tx_hash:hash,sender_account_id:signer,wait_until:'FINAL'});if(a.final_execution_status==='FINAL')break;await new Promise(r=>setTimeout(r,1500));}receipts(a);const b=await rpc(urls[1],'tx',{tx_hash:hash,sender_account_id:signer,wait_until:'FINAL'});receipts(b);assert.deepEqual(a,b,'RPC transaction disagreement');return a;}
+export async function block(){for(const url of urls)assert.equal((await rpc(url,'status',[])).chain_id,'testnet');return (await rpc(urls[0],'block',{finality:'final'})).header;}
+export async function query(params,b){const all=[];for(const url of urls)all.push(await rpc(url,'query',{...params,block_id:b.hash}));assert.deepEqual(all[0],all[1],'RPC state disagreement');return all[0];}

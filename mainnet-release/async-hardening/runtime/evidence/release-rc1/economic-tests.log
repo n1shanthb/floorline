@@ -1,0 +1,23 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.90s
+     Running tests\economic_parity.rs (mainnet-release\async-hardening\target\debug\deps\economic_parity-1b111007dff3b055.exe)
+
+running 16 tests
+test configuration_authority_and_timestamp_overflow ... ok
+test issuance_after_increase_has_no_bypass ... ok
+test dispatch_failure_refund_retry_and_double_withdrawal ... ok
+test storage_refunds_and_operational_funds_are_segregated ... ok
+test storage_exhaustion_rolls_back_every_cash_and_token_move ... ok
+test bootstrap_and_full_exit ... ok
+test exact_curve_rounds_once_and_maximum_values ... ok
+test carol_to_dave_repayment ... ok
+test cancellation_and_acceptance_are_exclusive ... ok
+test locked_tokens_and_default_boundary ... ok
+test unresolved_nft_call_freezes_settlement_and_stale_callbacks ... ok
+test overlapping_redemptions_and_payouts_do_not_reuse_backing ... ok
+test zero_tokens_dust_and_minimum_outputs ... ok
+test zero_supply_nonzero_backing_unreachable ... ok
+test wide_curve_against_independent_bigint_10000_cases ... ok
+test redesigned_10000_sequences ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 40.30s
+

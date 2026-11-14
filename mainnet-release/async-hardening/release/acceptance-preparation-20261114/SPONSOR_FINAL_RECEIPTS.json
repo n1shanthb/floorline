@@ -1,0 +1,555 @@
+{
+  "network": "testnet",
+  "rows": [
+    {
+      "account": "floorline-rc1-fund-a-20261114.testnet",
+      "hash": "4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP",
+      "signer": "testnet",
+      "outcome": {
+        "final_execution_status": "FINAL",
+        "receipts_outcome": [
+          {
+            "block_hash": "EKJQTL38ktppajQLD4auNZePnhDxcvyN6LwVdmXASVGA",
+            "id": "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t",
+            "outcome": {
+              "executor_id": "floorline-rc1-fund-a-20261114.testnet",
+              "gas_burnt": 7524947687500,
+              "logs": [],
+              "metadata": {
+                "contracts": [
+                  null,
+                  null,
+                  null
+                ],
+                "gas_profile": [],
+                "version": 4
+              },
+              "receipt_ids": [
+                "AgYo3x2jYA6eFjsJ6S6GP5D4NWVjcDQwNfL6frjCAyeo"
+              ],
+              "status": {
+                "SuccessValue": ""
+              },
+              "tokens_burnt": "7032494768750000000000"
+            },
+            "proof": [
+              {
+                "direction": "Left",
+                "hash": "HkfRiabrSpCyLVGCfS3BjtD3pMprereYd7ucctyyv7j6"
+              },
+              {
+                "direction": "Right",
+                "hash": "F2mqF9kzAArd9NEVsWtMHJeZQZQ53pFji8JW5fhUEDTB"
+              }
+            ]
+          },
+          {
+            "block_hash": "6w7ZUp8G2bY1YVmUSYsCLna8nhprqoVF5YbYSievPR6W",
+            "id": "AgYo3x2jYA6eFjsJ6S6GP5D4NWVjcDQwNfL6frjCAyeo",
+            "outcome": {
+              "executor_id": "testnet",
+              "gas_burnt": 223182562500,
+              "logs": [],
+              "metadata": {
+                "contracts": [
+                  {
+                    "local": "AjT2jpkGZaWeopfaP4wj7aFDNUBLFvFmSNUaVdKZJBPf"
+                  }
+                ],
+                "gas_profile": [],
+                "version": 4
+              },
+              "receipt_ids": [],
+              "status": {
+                "SuccessValue": ""
+              },
+              "tokens_burnt": "0"
+            },
+            "proof": [
+              {
+                "direction": "Left",
+                "hash": "EWSyr68LMnbA9gkgkxdp6sYQySCM3iaoCeUZ6SR87kdD"
+              }
+            ]
+          }
+        ],
+        "status": {
+          "SuccessValue": ""
+        },
+        "transaction": {
+          "actions": [
+            "CreateAccount",
+            {
+              "Transfer": {
+                "deposit": "10000000000000000000000000"
+              }
+            },
+            {
+              "AddKey": {
+                "access_key": {
+                  "nonce": 0,
+                  "permission": "FullAccess"
+                },
+                "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+              }
+            }
+          ],
+          "hash": "4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP",
+          "nonce": 51910588665389,
+          "priority_fee": 0,
+          "public_key": "ed25519:4XhhXfW316DeAYBTxQe7Z15WostJptFpnXdv57KtXVNC",
+          "receiver_id": "floorline-rc1-fund-a-20261114.testnet",
+          "signature": "ed25519:35tHY3UzyEYvgMSKN2DH5AYDhnMcxto7mfy7X5MJJPpKgenBzhpCXyTm9E1ft7JNv3SUHWYkKrus8T73t9oRAuev",
+          "signer_id": "testnet"
+        },
+        "transaction_outcome": {
+          "block_hash": "6AMYkBSY3Cdid1tWLyrCVqBQc1RqzU8gjYSKQ8J8GPhC",
+          "id": "4KvHAdrspAcHqman7F435MueeNBXEGNsrYWLRMaQoRLP",
+          "outcome": {
+            "executor_id": "testnet",
+            "gas_burnt": 824947687500,
+            "logs": [],
+            "metadata": {
+              "gas_profile": null,
+              "version": 1
+            },
+            "receipt_ids": [
+              "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t"
+            ],
+            "status": {
+              "SuccessReceiptId": "HQXkjN6EwML6fLxrVkpmTx2fN1A59AeeRWwcAr76Wg7t"
+            },
+            "tokens_burnt": "82494768750000000000"
+          },
+          "proof": [
+            {
+              "direction": "Left",
+              "hash": "Gv2bhgrpjYhSFpGMac3VMUeXwDMKg82wL5QYK1WqKMQz"
+            },
+            {
+              "direction": "Right",
+              "hash": "CjuWeH7RGmAP7TjfqoGvqLWKi4ZoAGPKv6jceB3otoEt"
+            },
+            {
+              "direction": "Right",
+              "hash": "5aRFQMKS3DyfAWSiKPU7LThvWKKTNGWBS3CTr8dBKjNm"
+            }
+          ]
+        }
+      },
+      "fee": "7114989537500000000000",
+      "state": {
+        "amount": "10000000000000000000000000",
+        "block_hash": "7NcKtv8nbrPijhvSFMUiiXaJ4eyM3RGExK1iz9ztvndL",
+        "block_height": 277606718,
+        "code_hash": "11111111111111111111111111111111",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 182
+      },
+      "keys": {
+        "block_hash": "7NcKtv8nbrPijhvSFMUiiXaJ4eyM3RGExK1iz9ztvndL",
+        "block_height": 277606718,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 277606556000000,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+          }
+        ]
+      },
+      "block": {
+        "approvals": [
+          "ed25519:2mkNYG9KQFpYjmCxgr49ir9oxYxRDWxnkEByDbDX9kNBwQtPjdHBzmbbrWpMfYz4h33m8taAH2q8ipL5HDuqpF24",
+          "ed25519:5jQ4SfFqXNHmf3czQdsrivTU2poiRoqsQsUJrjsP1Scc9tGLzvByntKYWXjA8cajhXSERWnWYqLN5Jn8SAzd1rRK",
+          "ed25519:5B9vGTTsSYkAauVGnHRY75Yutg11BqnmF8kupPrijgvhBegrnFodkkxdpwZ12JdG82igviz7gfPTDpwArC1jPrHr",
+          "ed25519:54A9ukWstban1DN84gjMeQ4FfPv9qivJ15hwyqF6oQEekqWZUTmmeMW1VU9vwoapFTeyLFNhQPmTynGkRM4bPfKo",
+          "ed25519:5iQ4XFkFVKjBsAqJYCZp173YiuFL2kQC4ptoYdXJ2kbSkDBWrCLT8pK26hnpEqPP8jZJsJnY4E6zWLoF9HHed8r7",
+          "ed25519:WFWMthmsHATNFLTCirpdTkwTgR4KqfcTxCgi6nNYYpQrMecTUWE5QCemBnBcChHHkee2ECZSF3AFsD3zNqUsqTc",
+          "ed25519:WkAPiEdgLPmvjLYBZV1D4JNkkxBFnkYwFJm9WKYSVg6zcMzJPi1ife1MFoDPGRv3iNFh3re5RzdEtwwEEvDTs6j",
+          "ed25519:63hCaQBiATtmSynWWiqXvCo5AxTGk7MFNNh8id2JsobfQToLeLkRtE2oGtnzrxxPqkYY5KNMaqC8cu1mr31LKmbX",
+          "ed25519:2YvUFPvrB1kmXmPcHgRp4H9k5oPQRo3P5Skt2uHdpfbeA4JHiisvzsqC651XNTsfeX6UjsyANWb2ZLpKDcK3nqAM",
+          null,
+          "ed25519:58NRXYCrQgTwt1KcPfqhvY99tt3qWTuskQ4RAPreAZqEvY2sWBkpjZUbMhxBg69J74ESgGGUwoQMLBF3mP1tmg9t",
+          "ed25519:2kqZ768WwUinTzmJXJaVZT8sjCTrkfggFZvaDWWwWARhScN4ViFzNw6ZghbKVE2znfjd8fo4spziUUJ8SiD8VCGE",
+          "ed25519:3fHsH6628mjLgUtsqrtyKo3PBt4AiBpkdxNT3emR61A3Kfax5p31aFKuKSX8cma9BwQtSQU91mFvyJJwgtsNv2DL",
+          "ed25519:5bTdHCaZLFCVB63RRzJ7CQLnNzvZ4ugQw3wjvYLEwDgYsh3y1TVBJMFkJYYyg5p56AjJw4ymvbAi3mYExt7dFEk1",
+          "ed25519:4fkoaRsjHY9ZcpZveuJichx7UeyuqNbaqh4GoXjA5HWyrWwZuT6QaoA5zdiLMxfwv9eT7RAKmK54GEBXULaz9P6c",
+          "ed25519:HBWCZCAjAZxFTxW9zHBdWszBxi1k817h6Sj9pFYtxxp1NwadKaxfFYfZysg5FhzJhjYkLW3wEPFa2TvZuJBQDGT",
+          "ed25519:2UGzsXzo36GnzB2RCKW6twczPHL4Cov4mrwWZs7KZQmJxXrNnu64bDmT43QALaHbbLd1SpkLGdku2dt6FUf7rJmf",
+          null,
+          "ed25519:5sg1GSn4VVzd3yReqxp7fiR7v34rw2WoTFaH9kpeaFXFShu1B4Lc5GRGTG8sU2TEcsz2X5YasFpe9RjG86vJWa53",
+          "ed25519:4NDmLeLov6neWXZz1BL1darykEYvaZL6iuSBZd8Td52EakYhSGEnS2quLcrRU3raCpkmFxcHVqgvdN1ZSKEZ1SFz"
+        ],
+        "block_body_hash": "C4kSz2igQUy9wB2EERcAHPkmVsd6qRLXYjdgWSB5yWFZ",
+        "block_merkle_root": "dkU2B5zSrVEH9XPXK5GbXSkmGZXfNagRr3AhFC1mZcD",
+        "block_ordinal": 229598818,
+        "challenges_result": [],
+        "challenges_root": "11111111111111111111111111111111",
+        "chunk_endorsements": [
+          [
+            255,
+            127
+          ],
+          [
+            255,
+            255,
+            1
+          ],
+          [
+            255,
+            255,
+            3
+          ],
+          [
+            255,
+            255,
+            7
+          ],
+          [
+            255,
+            63
+          ],
+          [
+            255,
+            254,
+            15
+          ],
+          [
+            255,
+            255,
+            3
+          ],
+          [
+            255,
+            15
+          ],
+          [
+            255,
+            191
+          ],
+          [
+            255,
+            127
+          ]
+        ],
+        "chunk_headers_root": "3Pewpm5TiPPdx46Lv5qsp6jkxczHJAUJZns6Drgw47gT",
+        "chunk_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "chunk_receipts_root": "7SGqj8meuMcYErwNE9wRo158Jz7ccddfkyNSs9pcqSr6",
+        "chunk_tx_root": "CU82hTcdAZGusvstfzS9w6M1rL82dZwYQxUKxiUfNarm",
+        "chunks_included": 10,
+        "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+        "epoch_sync_data_hash": null,
+        "gas_price": "100000000",
+        "hash": "7NcKtv8nbrPijhvSFMUiiXaJ4eyM3RGExK1iz9ztvndL",
+        "height": 277606718,
+        "last_ds_final_block": "8amd3qtFDTmbGgN21qjn7a8cA8TSKqz2qfC84iLqRW1p",
+        "last_final_block": "CwtN3W5PQ4AqXNA6gzEkZrusCBxRWKCzJ8qNZgdhyev1",
+        "latest_protocol_version": 88,
+        "next_bp_hash": "5rwzGyV8ecJtp9upLoZCMvao6A8Pv9xMP11avWmL8U5d",
+        "next_epoch_id": "HyWfTcF8RZSWAm7du9mTwxGiT8cnzRdpLFbavVMgXtNi",
+        "outcome_root": "Gpk4t99cyRMo2765TxRX8b9CpnkSCbkC3e7TKMj7zagY",
+        "prev_hash": "8amd3qtFDTmbGgN21qjn7a8cA8TSKqz2qfC84iLqRW1p",
+        "prev_height": 277606717,
+        "prev_state_root": "E2pMgWdY8ZBbZt4B7diexempmo5UmtFn3anJT4S4eVGd",
+        "random_value": "ANbvCh6CTSoU55MYT8gZHcZmh7wwv2BUq7ZspouXCg4M",
+        "rent_paid": "0",
+        "shard_split": null,
+        "signature": "ed25519:3FWopNcYKxtuYfsCLAWE3UUtspQmc9SX1PsQuKSnSyvTmtGNWdnV1kQ1sCQANhWMzQZSm6kbMfAqrqb9o7FtEFom",
+        "timestamp": 1794629704666793000,
+        "timestamp_nanosec": "1794629704666792874",
+        "total_supply": "2680299266686188939328604151574392",
+        "validator_proposals": [],
+        "validator_reward": "0"
+      }
+    },
+    {
+      "account": "floorline-rc1-fund-b-20261114.testnet",
+      "hash": "HQUFud8aH3mNjkRDkUPHR3yBmcCMH2SfHgbfhBvNaf82",
+      "signer": "testnet",
+      "outcome": {
+        "final_execution_status": "FINAL",
+        "receipts_outcome": [
+          {
+            "block_hash": "4tSrhtKAsGqojDYN6TUHrJW4ioFBtiTpAnTrXqDidYXu",
+            "id": "GaJTmNcvYsCg9d8uHZmi9gXV4TdcY4CcV88h5KVeqvoM",
+            "outcome": {
+              "executor_id": "floorline-rc1-fund-b-20261114.testnet",
+              "gas_burnt": 7524947687500,
+              "logs": [],
+              "metadata": {
+                "contracts": [
+                  null,
+                  null,
+                  null
+                ],
+                "gas_profile": [],
+                "version": 4
+              },
+              "receipt_ids": [
+                "4LTF6qLsXKwGyiUMtqmdpr8ENT6BZaohPMuaZJuXq6sh"
+              ],
+              "status": {
+                "SuccessValue": ""
+              },
+              "tokens_burnt": "7032494768750000000000"
+            },
+            "proof": [
+              {
+                "direction": "Right",
+                "hash": "2fwYNxSJpbd8DLpYgBA2Q1XBHdoNgcKq98LeaDSszKUy"
+              }
+            ]
+          },
+          {
+            "block_hash": "8WDdnFjNVD3fLNZGNiSJacZJnLdDNfCTNCtPSYfxojmB",
+            "id": "4LTF6qLsXKwGyiUMtqmdpr8ENT6BZaohPMuaZJuXq6sh",
+            "outcome": {
+              "executor_id": "testnet",
+              "gas_burnt": 223182562500,
+              "logs": [],
+              "metadata": {
+                "contracts": [
+                  {
+                    "local": "AjT2jpkGZaWeopfaP4wj7aFDNUBLFvFmSNUaVdKZJBPf"
+                  }
+                ],
+                "gas_profile": [],
+                "version": 4
+              },
+              "receipt_ids": [],
+              "status": {
+                "SuccessValue": ""
+              },
+              "tokens_burnt": "0"
+            },
+            "proof": [
+              {
+                "direction": "Left",
+                "hash": "BuTjurngp9dBkhsJvwK3zodUbyTc7zX5w2ZimeqbN8UX"
+              }
+            ]
+          }
+        ],
+        "status": {
+          "SuccessValue": ""
+        },
+        "transaction": {
+          "actions": [
+            "CreateAccount",
+            {
+              "Transfer": {
+                "deposit": "10000000000000000000000000"
+              }
+            },
+            {
+              "AddKey": {
+                "access_key": {
+                  "nonce": 0,
+                  "permission": "FullAccess"
+                },
+                "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+              }
+            }
+          ],
+          "hash": "HQUFud8aH3mNjkRDkUPHR3yBmcCMH2SfHgbfhBvNaf82",
+          "nonce": 51910602665098,
+          "priority_fee": 0,
+          "public_key": "ed25519:EamnMmDARxYBJNxrZtpx9UqrqXgQpbzoVU1ZpYATymmV",
+          "receiver_id": "floorline-rc1-fund-b-20261114.testnet",
+          "signature": "ed25519:54xN7vygoaJjwMJVgAEq5hUnBUhsTciWNBqj5EvsZmz7zmJQgH5Ujv29TdV1gSWxRrYzDbxfGYcNMETjgzYWB5kt",
+          "signer_id": "testnet"
+        },
+        "transaction_outcome": {
+          "block_hash": "9meZ72xkDt55ER1nKab9PpRCSHRFXmuShTDoioKArYde",
+          "id": "HQUFud8aH3mNjkRDkUPHR3yBmcCMH2SfHgbfhBvNaf82",
+          "outcome": {
+            "executor_id": "testnet",
+            "gas_burnt": 824947687500,
+            "logs": [],
+            "metadata": {
+              "gas_profile": null,
+              "version": 1
+            },
+            "receipt_ids": [
+              "GaJTmNcvYsCg9d8uHZmi9gXV4TdcY4CcV88h5KVeqvoM"
+            ],
+            "status": {
+              "SuccessReceiptId": "GaJTmNcvYsCg9d8uHZmi9gXV4TdcY4CcV88h5KVeqvoM"
+            },
+            "tokens_burnt": "82494768750000000000"
+          },
+          "proof": [
+            {
+              "direction": "Right",
+              "hash": "8SP56XLvk9Xb8EHWddMf2bcehjxoxUgydXHcG8mYYz61"
+            },
+            {
+              "direction": "Right",
+              "hash": "EQPLSj7GUVzdoNcpmBUpPCkNQsP7NRp2zKTiZXmXziin"
+            },
+            {
+              "direction": "Right",
+              "hash": "AY2xBnYmfRGrPqV8AizK2dpbH1vKtS4mC2Ko9QgSoXr3"
+            }
+          ]
+        }
+      },
+      "fee": "7114989537500000000000",
+      "state": {
+        "amount": "10000000000000000000000000",
+        "block_hash": "BHFSNCijeoj2HWWxsKsznQ1m6AZrFSimXeDJB9G2dfq5",
+        "block_height": 277606745,
+        "code_hash": "11111111111111111111111111111111",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 182
+      },
+      "keys": {
+        "block_hash": "BHFSNCijeoj2HWWxsKsznQ1m6AZrFSimXeDJB9G2dfq5",
+        "block_height": 277606745,
+        "keys": [
+          {
+            "access_key": {
+              "nonce": 277606577000000,
+              "permission": "FullAccess"
+            },
+            "public_key": "ed25519:Dx36A6de2TcKMKvcAbnr4pyuzWwc15qxSrHLAUJt5VKZ"
+          }
+        ]
+      },
+      "block": {
+        "approvals": [
+          "ed25519:4FTyt5uc7rpJdoFqatKYqgLo4uVt3enRoJT3gYFLxMd46gvmUF1Nv8R96SkFnDLrbTVjfbTSz1M7vH5GwLxE6f5K",
+          null,
+          "ed25519:2Z1J3qxugywR4cyDRhJ7Zr98R696bvBfnvg3PuUAqzYemRy8h5ycLB1A4bueN9xTNh89Vw5Qbc3WBd3EFnWUt6wG",
+          null,
+          "ed25519:1kgMajCZ1We9d17QFRHuVYDXJDmA7qXBYznxV9EqZno56LXqxkCqURVLUjbWbeyUby7a5ecjArt6jj3vvJxfgN9",
+          "ed25519:4zmLszWw9e9RByPQJmThqoqURR8QQvRj8Kh8o9BgbJo4hdqsXsmmvbcnydjPF5ZFnmcbQBPLcEm8nLp1rAWLfv1",
+          "ed25519:QNaEYF7KWkKpjb5CW3XZEW58k9TEayiJhhY8pqDjaWMizfrZSvDm5gWmZtEXwrLhQ2Sv3Bpqioy8KV9f9mhykdP",
+          "ed25519:2Lj9k8PinCPREn7wgbWjxykyufomASc43QJzqTf7Rt8VAx4VEUK9nLLZ9rjGtsCdF4AWSRBPh1ZrYYfQZSQVvFQv",
+          "ed25519:32uxXehJKrBgJeCidAYVEvpFVMYNaQwBNyXknXhp9jYRSH5YJQykRkWbVn2HWxhDWbFPtDoVZBjDeUE4Z8AVx1L8",
+          "ed25519:4nPryrQvdEpgxc3hmbry87zXoR7M6EVu6iausNrsmDk4ooCM9kCidjFQAxzkAzWcSCbBsub4ddcJwyoKSnTzYDc1",
+          "ed25519:5cdunWAYBTQPc9ARTaevuuzxBPsvvNQQYPAjb4S374XHqWJJMiNcQCU5wEfpP7P6NQFFt59H9JownnYo7iGhNJQ6",
+          "ed25519:39dRbJLxdTFg6yofmCK9RGz9GMTXmujE4vDqKaYp6W8WT6UqQmyH1ULMdnbMorkeh6T51c9h1XY9STJbFCG3zcks",
+          "ed25519:43NGU7mKUQNzboMAzHHBB6HdUE19npKFmpeBR7kyfxBGo4s215oRHdu3s6EgQUFMCFTfQWWSqmA1HbwXaAKwYRGE",
+          "ed25519:5x1MmnJMmYZfhx7aEM7Viar8ZEWem9aCsWZiectLW1y6AbPVLLc7RBECSjMNUSMc2wXvqGEsEWuFWJTfEC6mGVaf",
+          "ed25519:3pVioJj4fD83QEVDcLrTWXYRchiViiVgyi6GppsUas1A871nhQXdxnCw4rsrTjW1mccMen5dKbWjLgM9nJRTGGdC",
+          "ed25519:4qLDZSWu7NKNfbkX7d1AvXThYr39bmTokfzZup28ECvywDwuaiHxqqgNGHMVTzVHHvNgqVYAET1KtTcJg85gYvaP",
+          "ed25519:4tfHgtBRSfo1AJYLiTA8hUGmmY1LE11BxxSTPoFg6G3sEERGWk9EGYP4KcfQSkPPB95F29RAKmv2j6pprFZxu2dj",
+          "ed25519:2WY5CJh3KNHDbN4CR9Uq8UfGEAum9H9WqQqjqBgU8XXPg9hHLXqEbTRFi7kq4qNeeNmc4BiQTGNyWnFQvFaSSgx5",
+          "ed25519:4GPeyWQE3hoMgkLXo5raeYJK6p2ezRYLgrVm4UC5G7cVBkwEwFxwm1FSJuAEW69qny3HugQpiWL6K7JioFPTptCn",
+          null
+        ],
+        "block_body_hash": "CKehBq22Y3fZnWbYMbb6eBd1jr8tbLcexxTcrG4CgWgb",
+        "block_merkle_root": "GZBX5xvEtrgGWfWnGw7BZ3k91Lm2BVHzddioQ78TTzRw",
+        "block_ordinal": 229598845,
+        "challenges_result": [],
+        "challenges_root": "11111111111111111111111111111111",
+        "chunk_endorsements": [
+          [
+            255,
+            63
+          ],
+          [
+            255,
+            255,
+            31
+          ],
+          [
+            255,
+            255
+          ],
+          [
+            255,
+            127
+          ],
+          [
+            255,
+            255,
+            1
+          ],
+          [
+            255,
+            255,
+            31
+          ],
+          [
+            255,
+            127,
+            1
+          ],
+          [
+            255,
+            255,
+            1
+          ],
+          [
+            255,
+            191,
+            1
+          ],
+          [
+            255,
+            255,
+            3
+          ]
+        ],
+        "chunk_headers_root": "FskopbpQ9eKtH1aLDJrfpxCH9Q6BnnjspNhF6iN1iGEG",
+        "chunk_mask": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "chunk_receipts_root": "FTq65kJUNCpYm62m7D68k6KBy14BhEqziAhcawpG21Zj",
+        "chunk_tx_root": "G5i2sd8R8xrjzUhdZ16WuGfset9AoGtsogzVp5M4qs7w",
+        "chunks_included": 10,
+        "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+        "epoch_sync_data_hash": null,
+        "gas_price": "100000000",
+        "hash": "BHFSNCijeoj2HWWxsKsznQ1m6AZrFSimXeDJB9G2dfq5",
+        "height": 277606745,
+        "last_ds_final_block": "ADK6uo4fW4PbDwydorvXNREcdVDQixiGBjKEcZax7wSx",
+        "last_final_block": "9ZtQwQ63wbgVWkk9V8JSM3XWxwg9kJBLjkUmfBswLML",
+        "latest_protocol_version": 88,
+        "next_bp_hash": "5rwzGyV8ecJtp9upLoZCMvao6A8Pv9xMP11avWmL8U5d",
+        "next_epoch_id": "HyWfTcF8RZSWAm7du9mTwxGiT8cnzRdpLFbavVMgXtNi",
+        "outcome_root": "DQ4ALE2JhaKMRFnaEeNTmBXMNcuvKdxg4LPMWs8Z6AHW",
+        "prev_hash": "ADK6uo4fW4PbDwydorvXNREcdVDQixiGBjKEcZax7wSx",
+        "prev_height": 277606744,
+        "prev_state_root": "BwfeJMRUJsSLdifCSJ1e7NZWzP6KRnxBTVoG6uAKfULX",
+        "random_value": "2EwgrSmKgJ1N7FesQoLgKbsqbeRiMEeoYgiygXcg5Wry",
+        "rent_paid": "0",
+        "shard_split": null,
+        "signature": "ed25519:5dvvCBWvjCD8nNqG5q5JAHhEgw8En22w54FtKnDeaD8iBmYVxZhDZu6H2daD3UwUEshrQGeCPLkBcTjuyiWuCRBE",
+        "timestamp": 1794629720999900700,
+        "timestamp_nanosec": "1794629720999900608",
+        "total_supply": "2680299266619797313184445551574392",
+        "validator_proposals": [],
+        "validator_reward": "0"
+      }
+    }
+  ],
+  "grants_finalized": true,
+  "total_granted": "20000000000000000000000000"
+}

@@ -1,0 +1,14 @@
+Retrying transaction gas1794585978108.test.near:qAwq4B8dHMDhT6EETq2SYWcQgeWeGn84MhD3VNfb3Qh with new nonce.
+Retrying transaction gas1794585978108.test.near:89cHpLitDUdAeAQTFWfnNRKCGwB2GXBxyu4rnR46aPKm with new nonce.
+Receipts: GaFCmVbVh5zeaneWUEHFd3QnSwFvEKrXtJ2pmT6J5cZJ, BXuSEskeTG6TWMY8DqZ5PCmTJgSKFFmqV71CcY5LYKh9
+	Failure [gas1794585978108.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:794:9:\nattach at least 110 Tgas"}}}}
+Retrying transaction gas1794585978108.test.near:Fy5rD1AfGnJsMjJr2gkbZk1GmQ8s17391eMSqSDbogWa with new nonce.
+Retrying transaction gas1794585978108.test.near:6o7YpyL9kx3AFDd8S3yurNLdGb8UTnAejUNpcAXyvRHa with new nonce.
+Retrying transaction gas1794585978108.test.near:8ei1wanhzYu5eZHxVGG6zwRXLWWUAZXkVBt8aFTaQCec with new nonce.
+Retrying transaction gas1794585978108.test.near:DCC4Qeuro8Mtf52XrHoqs5JQH7cZP7vT86hpMZSHnYve with new nonce.
+Retrying transaction gas1794585978108.test.near:3Sq8zPuDKFg5YcNyorhM9xTk6joUGRwctybn1gqnihQX with new nonce.
+Retrying transaction gas1794585978108.test.near:DKNAeVpG6mytiQjf2HiPNdcgx3oh3ncu2KPoYkGSLnTm with new nonce.
+Retrying transaction gas1794585978108.test.near:5b7tZo1uTr58mACeStim9EgJRfn6peKFD43EaE11MXTL with new nonce.
+Retrying transaction gas1794585978108.test.near:CEGdpQvKgwT3uzosZx3hDhmq8Q8FPB6cWGCSiWPWsKZa with new nonce.
+Retrying transaction gas1794585978108.test.near:2JADkkn7aHjBAQPMd6zkWva77T9MvuSCRMiVKbZNT3wK with new nonce.
+PASS storage boundary and 3 complete registration/refund/unregistration cycles

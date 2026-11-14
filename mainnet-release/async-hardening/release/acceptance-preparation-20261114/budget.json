@@ -1,0 +1,55 @@
+{
+  "quote_utc": "2026-11-14T04:00:22.269Z",
+  "protocol": 88,
+  "byte_price": "10000000000000000000",
+  "spot_gas_price": "100000000",
+  "minimum_purchase_price": "1000000000",
+  "allocations": {
+    "holder": {
+      "calls": 15,
+      "deposits": "31000000000000000000001",
+      "gas_reservation": "1800000000000000000000000",
+      "allocation": "1940000000000000000000000"
+    },
+    "borrower": {
+      "calls": 9,
+      "deposits": "20000000000000000000004",
+      "gas_reservation": "1080000000000000000000000",
+      "allocation": "1210000000000000000000000"
+    },
+    "nft_holder": {
+      "calls": 2,
+      "deposits": "22200000000000000000000",
+      "gas_reservation": "240000000000000000000000",
+      "allocation": "370000000000000000000000"
+    },
+    "lender": {
+      "calls": 7,
+      "deposits": "25000000000000000000000",
+      "gas_reservation": "840000000000000000000000",
+      "allocation": "970000000000000000000000"
+    }
+  },
+  "required_ceiling": "13240000000000000000000000",
+  "proposed_ceiling": "13240000000000000000000000",
+  "contract_storage_upper": "5275260000000000000000000",
+  "protected_exit_reserve_included": "655360000000000000000000",
+  "operating_reserve": "2500000000000000000000000",
+  "contract_margin": "224740000000000000000000",
+  "within_proposed": true,
+  "actual_spent": "0",
+  "note": "Transfers to contract/actors retain funds; storage is staked not burned. Gas reservations are conservative funding, not measured spend. Refresh quotes and controller funding availability before signature.",
+  "controller_detail": {
+    "atomic_prepaid_and_action_gas": "170651507743927",
+    "four_funding_action_gas": "1785460500000",
+    "stop_prepaid_and_action_gas": "111196867794735",
+    "upper_gas_reservation": "283633836038662000000000",
+    "allocated_contingency": "750000000000000000000000",
+    "current_amount": "552018382061684900000000",
+    "current_storage_stake": "1820000000000000000000",
+    "current_spendable": "550198382061684900000000",
+    "funding_ready": false,
+    "additional_controller_funding_for_full_proposed_allocations": "12689801617938315100000000",
+    "note": "Conservative quoted action fees plus full prepaid gas. Existing actor balances are retained; planned allocations are additional. No funding request or transfer executed."
+  }
+}

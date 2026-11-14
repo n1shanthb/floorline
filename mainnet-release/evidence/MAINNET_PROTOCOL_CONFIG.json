@@ -1,0 +1,13 @@
+{
+  "queried_at_utc": "2026-11-13T07:21:31.121542Z",
+  "endpoint": "https://rpc.mainnet.near.org",
+  "chain_id": "mainnet",
+  "protocol_version": 88,
+  "genesis_height": 9820210,
+  "storage_amount_per_byte": "10000000000000000000",
+  "min_gas_price": null,
+  "max_gas_price": null,
+  "max_total_prepaid_gas": 1000000000000000,
+  "max_gas_burnt": 1000000000000000,
+  "gas_price_yocto_per_gas": "100000000"
+}

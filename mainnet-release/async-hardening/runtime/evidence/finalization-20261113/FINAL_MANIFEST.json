@@ -1,0 +1,346 @@
+{
+  "source_commit": "0fd9e464aa7c4a753b593c006ac493f525521d1e",
+  "source_sha256": {
+    "Cargo.toml": "89cf2cba63260a615efd9c248c4777ba39d9c7fe61396a74d7e406405c53ea7a",
+    "Cargo.lock": "f9b7fea36d13687ce8bb58d5d75aa6171c6297e3395cce2445419dd5e93c0b40",
+    "src/contract.rs": "2734e22fb50e48fb4ccf3ebbdf4602659d1dfb4733018810237c4d6acc9250c3",
+    "src/math.rs": "abef6d3008f77fee730451bc049b4c7dd0ef5207019930342ee7fe99d085ad2c",
+    "src/engine.rs": "0a75c8f2c5ae8089245c4e83991a4fca4278a54b49fc140a83e07c361bb37e48"
+  },
+  "toolchain": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "near_sdk": "5.30.1",
+  "rustflags": "--cfg near",
+  "normal": {
+    "bytes": 447670,
+    "sha256": "a3a80de284f9e4ecf52744fced56c472b4df722aac4337afb52864d94a6e9406",
+    "code_hash": "C1r5oPTPu2uVjn8JfHamqohnhpezUQQezuJJZkp5qV1w"
+  },
+  "fault": {
+    "bytes": 447676,
+    "sha256": "cfed032e5a8cacfbd8dcd3e8050831cd473eb2bf8a5b0e9580a81db380403fb4",
+    "code_hash": "Ezf1VMLreU7LJxdjvKkB5JESK2TTt1f36pMVwktufARq"
+  },
+  "byte_for_byte_rebuild": true,
+  "old_failure": {
+    "mode": "old",
+    "accepted": 56,
+    "threshold": 56,
+    "admission": null,
+    "final": {
+      "L": "0",
+      "T": "0",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "80000000000000000000000",
+      "operational": "4589110000000000000000056",
+      "inflight": "560000000000000000000000",
+      "local_required": "4669110000000000000000056",
+      "operational_base": "4489110000000000000000000",
+      "refund_storage": "84000000000000000000000",
+      "unallocated_or_inflight": "6407657380350608100000000",
+      "account_balance": "11076767380350608100000056",
+      "storage_usage": 466751,
+      "storage_stake": "4667510000000000000000000",
+      "tax_bps": 2000
+    }
+  },
+  "new_unknown_exits": {
+    "mode": "new",
+    "accepted": 128,
+    "threshold": null,
+    "admission": {
+      "occupied": 128,
+      "capacity": 128,
+      "exit_bytes_per_slot": 512,
+      "exit_reserve": "655360000000000000000000"
+    },
+    "final": {
+      "L": "0",
+      "T": "0",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "0",
+      "operational": "5174900000000000000000129",
+      "inflight": "1280000000000000000000000",
+      "local_required": "5174900000000000000000129",
+      "operational_base": "4519540000000000000000000",
+      "refund_storage": "192000000000000000000000",
+      "unallocated_or_inflight": "5821845657608153200000000",
+      "account_balance": "10996745657608153200000129",
+      "storage_usage": 493782,
+      "storage_stake": "4937820000000000000000000",
+      "tax_bps": 2000
+    }
+  },
+  "normal_exits": {
+    "mode": "normal",
+    "accepted": 128,
+    "threshold": null,
+    "admission": {
+      "occupied": 0,
+      "capacity": 128,
+      "exit_bytes_per_slot": 512,
+      "exit_reserve": "655360000000000000000000"
+    },
+    "final": {
+      "L": "0",
+      "T": "0",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "0",
+      "operational": "5174840000000000000000129",
+      "inflight": "0",
+      "local_required": "5174840000000000000000129",
+      "operational_base": "4519480000000000000000000",
+      "refund_storage": "0",
+      "unallocated_or_inflight": "5821905700439719000000000",
+      "account_balance": "10996745700439719000000129",
+      "storage_usage": 448208,
+      "storage_stake": "4482080000000000000000000",
+      "tax_bps": 2000
+    }
+  },
+  "regression_groups": 32,
+  "finalized_capacity_checkpoints": 642,
+  "max_capacity_storage_bytes": 493782,
+  "min_capacity_storage_margin_yocto": "1600000000000000000056",
+  "distinct_auxiliary_transactions": 669,
+  "gas": {
+    "new": {
+      "count": 4,
+      "min_total_gas": "2026579282703",
+      "max_total_gas": "2258881845203",
+      "max_parent_gas": "1724254238938",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "storage_deposit": {
+      "count": 161,
+      "min_total_gas": "2247482872343",
+      "max_total_gas": "6275506161090",
+      "max_parent_gas": "3102322327801",
+      "max_other_receipt_gas": "1966624353774"
+    },
+    "storage_unregister": {
+      "count": 135,
+      "min_total_gas": "2337637695009",
+      "max_total_gas": "6107452283263",
+      "max_parent_gas": "2923212055525",
+      "max_other_receipt_gas": "1981876915143"
+    },
+    "storage_withdraw": {
+      "count": 5,
+      "min_total_gas": "5876407935257",
+      "max_total_gas": "6209863377876",
+      "max_parent_gas": "3005498058588",
+      "max_other_receipt_gas": "2001048332393"
+    },
+    "issue": {
+      "count": 3,
+      "min_total_gas": "2201085192522",
+      "max_total_gas": "2439311330817",
+      "max_parent_gas": "1906972542872",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "ft_transfer_call": {
+      "count": 7,
+      "min_total_gas": "8082072581262",
+      "max_total_gas": "12672215872372",
+      "max_parent_gas": "3715779124866",
+      "max_other_receipt_gas": "2453639610616"
+    },
+    "fund_offer": {
+      "count": 68,
+      "min_total_gas": "2463215354037",
+      "max_total_gas": "2736354359554",
+      "max_parent_gas": "2201583702144",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "accept_offer": {
+      "count": 25,
+      "min_total_gas": "1889213402150",
+      "max_total_gas": "3562714140056",
+      "max_parent_gas": "3030184617251",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "nft_transfer_call": {
+      "count": 9,
+      "min_total_gas": "8699242101720",
+      "max_total_gas": "58901460489759",
+      "max_parent_gas": "4220182297208",
+      "max_other_receipt_gas": "2603646010238"
+    },
+    "unregister_and_disappear": {
+      "count": 1,
+      "min_total_gas": "8968278848326",
+      "max_total_gas": "8968278848326",
+      "max_parent_gas": "1951703124952",
+      "max_other_receipt_gas": "2871907986771"
+    },
+    "retry_storage_refund": {
+      "count": 2,
+      "min_total_gas": "2084044262461",
+      "max_total_gas": "5613395726790",
+      "max_parent_gas": "2457669552845",
+      "max_other_receipt_gas": "1953172126490"
+    },
+    "ft_transfer": {
+      "count": 19,
+      "min_total_gas": "1800860136905",
+      "max_total_gas": "2431406797867",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "redeem": {
+      "count": 6,
+      "min_total_gas": "1905801506565",
+      "max_total_gas": "2808439476936",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "withdraw_claim": {
+      "count": 26,
+      "min_total_gas": "1905146601947",
+      "max_total_gas": "5268964196247",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "nft_transfer": {
+      "count": 8,
+      "min_total_gas": "1802489162984",
+      "max_total_gas": "2694984333182",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "repay": {
+      "count": 18,
+      "min_total_gas": "2337680739729",
+      "max_total_gas": "3461912263805",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "default_loan": {
+      "count": 12,
+      "min_total_gas": "1874367747593",
+      "max_total_gas": "2862516675021",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "act": {
+      "count": 5,
+      "min_total_gas": "3889752643192",
+      "max_total_gas": "7162438896193",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "ft_resolve_transfer": {
+      "count": 1,
+      "min_total_gas": "1724456061575",
+      "max_total_gas": "1724456061575",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "nft_resolve_transfer": {
+      "count": 1,
+      "min_total_gas": "1724798072012",
+      "max_total_gas": "1724798072012",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "claim_result": {
+      "count": 2,
+      "min_total_gas": "1722588067487",
+      "max_total_gas": "1835075136149",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "cancel_offer": {
+      "count": 1,
+      "min_total_gas": "2922244034309",
+      "max_total_gas": "2922244034309",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "cleanup_loan": {
+      "count": 1,
+      "min_total_gas": "2286843351938",
+      "max_total_gas": "2286843351938",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "cleanup_claim": {
+      "count": 1,
+      "min_total_gas": "2433859957888",
+      "max_total_gas": "2433859957888",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    },
+    "withdraw_and_disappear": {
+      "count": 1,
+      "min_total_gas": "8374510620960",
+      "max_total_gas": "8374510620960",
+      "max_parent_gas": "0",
+      "max_other_receipt_gas": "0"
+    }
+  },
+  "fault_gas": {
+    "new": {
+      "count": 1,
+      "min_total_gas": "2258888380973",
+      "max_total_gas": "2258888380973",
+      "max_parent_gas": "1724260774708",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "storage_deposit": {
+      "count": 130,
+      "min_total_gas": "2396422230210",
+      "max_total_gas": "2566259546428",
+      "max_parent_gas": "2032156461028",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "storage_unregister": {
+      "count": 129,
+      "min_total_gas": "2209618765956",
+      "max_total_gas": "5026128605316",
+      "max_parent_gas": "2934618591295",
+      "max_other_receipt_gas": "889148937360"
+    }
+  },
+  "old_reproduction_gas": {
+    "new": {
+      "count": 1,
+      "min_total_gas": "2246293807900",
+      "max_total_gas": "2246293807900",
+      "max_parent_gas": "1711666201635",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "storage_deposit": {
+      "count": 64,
+      "min_total_gas": "2536904500900",
+      "max_total_gas": "2561964754756",
+      "max_parent_gas": "2027861669356",
+      "max_other_receipt_gas": "223182562500"
+    },
+    "storage_unregister": {
+      "count": 57,
+      "min_total_gas": "2898636605797",
+      "max_total_gas": "5017222962093",
+      "max_parent_gas": "2925712948072",
+      "max_other_receipt_gas": "889146701426"
+    }
+  }
+}

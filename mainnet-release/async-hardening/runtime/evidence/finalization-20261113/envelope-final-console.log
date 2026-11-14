@@ -1,0 +1,25 @@
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:43aFqWQRBepHwS7to32ZtV9gFVoJxLt1CQo4XDx7r7F2 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near:5wQEJPaqtsKoz5F5PNkAkPbQCqjhuRyzdC7CZzTXUYKn with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf60tmb.test.near:DoC3xcCj1H6PWFvvhf4yjnThZk8VqzRTG5Wa1fkZxNqA with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf60tmb.test.near:E3USdpaUvkngJyYkqP6XQGqNfdaSKQzzGfzkiZXFGw8M with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:Fi1n1qh9ZLeeydUEsHMJYBaR1r1YNS2yaR3EvLcRYjiW with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:FaRrwwLPZw72wPbX5MPr8EhvAXrAg1Fk6AMWHJhxZqjo with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzminimalmwf60tmb.test.near:Aj3gTk1JPE2pJ58SDb6EEy4XKsC8sUgajrFwp2CEakp6 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:DHXP2yy86weHHCUxwdBfX4dVq9zmgdbPz5oVYefavHoL with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:6VeijEKEjYmt7LvVbCTaSwxqZe8g7J6gL443dGtVjffN with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:8XUJwJu1dx8dv9hsv86ET7Rtqfsmwh8hhfnnBtKTpEkX with new nonce.
+Receipt: DpZdnKGj1qggHcJrcSQc1yajzjw3P1voGrTeF51UKgc5
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:f7LGnNcyPYL3K6vG2wG8SeywQsH1V8G1KrVYxiVrGzC with new nonce.
+Receipts: HAp2oiguPwwMaqkzKHsaFJnh86iDZhzDhWhhvDNTjiU4, 3sraHTTHNm63UdcXNpykwhn6gApp2cdrYEH83ZBLfcr3, AG5hjkDJamBGA17KS8EPrjQhMW2HDQYqwQbBcHcgDHaG
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf60tmb.test.near","amount":"1"}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:EumfWuZRfY6124Ly3JweecDP9F7zPnyvJbQH4fXx9yC4 with new nonce.
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:5Vr3SQaoGbn9KcV5uTowEHtCLoYjhk8bua7E3pMhecHj with new nonce.
+Receipt: 3BAC3n8bhpU6QRbbxubrvAnrkkNCqSGtMTjrF3kk8K95
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near","amount":"1"}]}
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_mint","data":[{"owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near","token_ids":["3"]}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:86WF4hfiPipDksCz2dDkEkgL6ZtUohaVyHoQr3kqoAnt with new nonce.
+Receipts: Hjb3Wgys1tV74mEZqHGJsMhyuQDgz8vesyuYVhG9JTVo, D1jcZ4g4kAWJjcAQx1ESfVP6ryvhyXR5HPzsjF2BeiUx, 2oWMdAx3FK1HMhGr7g7brd9s4hkW8tUKDqxQCThd74E2
+	Log [zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_transfer","data":[{"old_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzactormwf60tmb.test.near","new_owner_id":"zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzreceivermwf60tmb.test.near","token_ids":["3"]}]}
+Retrying transaction zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzfloormwf60tmb.test.near:E1KmPyAkPFqy3QBUJ7LzkZSzotSvcrQx6KX4SBfDmNGB with new nonce.
+PASS 110 Tgas: maximum account/memo/msg FT and NFT resolver envelopes and sponsored minimum registration

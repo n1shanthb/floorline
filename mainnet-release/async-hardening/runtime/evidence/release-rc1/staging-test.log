@@ -1,0 +1,13 @@
+
+> floorline-frontend@0.1.0 test
+> vitest run
+
+
+ RUN  v5.1.0 E:/near-2-mainnet-review/mainnet-release/async-hardening/release/staging
+
+
+ Test Files  5 passed (5)
+      Tests  65 passed (65)
+   Start at  08:43:45
+   Duration  970ms (tests 62%, import 21%, transform 12%, worker 6%)
+

@@ -1,0 +1,33 @@
+{
+  "mode": "new",
+  "accepted": 128,
+  "threshold": null,
+  "admission": {
+    "occupied": 128,
+    "capacity": 128,
+    "exit_bytes_per_slot": 512,
+    "exit_reserve": "655360000000000000000000"
+  },
+  "final": {
+    "L": "0",
+    "T": "0",
+    "locked": "0",
+    "unused_lender": "0",
+    "borrower_claims": "0",
+    "lender_claims": "0",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "0",
+    "operational": "5174900000000000000000129",
+    "inflight": "1280000000000000000000000",
+    "local_required": "5174900000000000000000129",
+    "operational_base": "4519540000000000000000000",
+    "refund_storage": "192000000000000000000000",
+    "unallocated_or_inflight": "5821845657608153200000000",
+    "account_balance": "10996745657608153200000129",
+    "storage_usage": 493782,
+    "storage_stake": "4937820000000000000000000",
+    "tax_bps": 2000
+  }
+}

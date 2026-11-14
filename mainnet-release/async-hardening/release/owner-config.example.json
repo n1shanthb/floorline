@@ -1,0 +1,23 @@
+{
+  "network": "testnet",
+  "accounts": {
+    "controller": null,
+    "contract": null,
+    "holder": null,
+    "borrower": null,
+    "nft_holder": null,
+    "lender": null
+  },
+  "controller_public_key": null,
+  "contract_public_key": null,
+  "actor_public_keys": {
+    "holder": null,
+    "borrower": null,
+    "nft_holder": null,
+    "lender": null
+  },
+  "budget_approved": false,
+  "limits_approved": false,
+  "key_policy_approved": false,
+  "note": "Public IDs and public keys only. This is a disabled example. No signing or public write is implemented by prepare.mjs."
+}

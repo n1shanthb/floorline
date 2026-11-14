@@ -1,0 +1,239 @@
+{
+  "block": {
+    "approvals": [
+      null,
+      "ed25519:2MXSSSXLAvRkAg4qoje8MpMUVcyQ2z2NXJNMRfNWEQP2Rth8YcTZiGPthkE8XWbMeUc2wdLSwhnQXczeMUzq3oNT",
+      "ed25519:MifcExCXEuyP4wCGtzhq8xjfMvtaJAyvDfRo2tAVbZ7Koepq8cZxecm3dZhFJ27F7ZgAUhHnApUt2VfVxDM8Qn6",
+      "ed25519:H4npHrKD4e1vRFKVuLDn2tE1NEzmKEKmB8qjbcooyhrbEvoMwaU3zxRGraRiBdXWtUbxNSmfNKy7DgXfr8yFxqU",
+      "ed25519:2k6z6ti2Cxzw1R7AmzqMd72rsAdHQqbrktnNQTKVjVeNr8r7exgAAZF5uK5j5gL9A1FCFYrhhRkgTZD59iRWBvum",
+      "ed25519:3vWc3w4kvxxxsKhmGshHF18EdKY3yxTzCLhQuutJFAB3jxLDb7egtRyRqEZq9CkFsNufW4gKniMiRwNJFY1dPdee",
+      null,
+      "ed25519:2gs6cA6zr2WBeVszcWzxgR5MWGigj8MHpD8TScy3bKraaH9FatGzAMcL4jyuQXVUm2vKCoAXriAp2S5rSdvCHRbW",
+      "ed25519:2JFzrmhL7o8Yq9msPSqLiu6MN3yULACN4zMEA8tvCAaueTTf8M2ZSZPNiQ83Nwvrq4WxvknErbzLKuN98vk8Qf9r",
+      "ed25519:4zFuwLzPJHBnL6TgYQmnSYfeGFLK5tG6h7oXcDJbxS8wMNxA8qJSn1GcmcAW1WbX6CWG3oGVH8JRg77ZZq1XYxom",
+      "ed25519:3t4uKMmNks4sMQ4tkdExndoLuG5RjzmBK44rwZCLHrFnwkJmNd6mZqxcBLudDfWU68jiNkzxgW93TqYrDBgnhmXb",
+      "ed25519:4tADXAotBjWJ5A7f1LFZ9AgnhSUDVVBQzwnxHngyruoq7XsEbsydyUv6unnHeXXdzZSvkz2tobtMK3wS5Wd835Xe",
+      "ed25519:An6BPbtPbGF7mTWb1NaavNF1KgXYV3Cihe9p6yEunWSRvPes3f6hRtwcAWsiuMrfKcwLVgP27bkEYRkwXrB1JuS",
+      "ed25519:3TSj5T7i2ZcPJeNXixD8ghVSKc7sxrd7hF7McKxB7UQacLN5WfELMEMtCJmBr6cyaAGHzAdCaeWuhrFmcsFysFTZ",
+      "ed25519:sYqssDM34PbVevAtWysQyj7878Ji32x7jHd8Zuz68JyR4oU2yF61kiS8vqcv3J6jjh1fHRgBoxZWLoSbLHFhZxr",
+      "ed25519:2KKU5J7gHubM46zA5T4eT7CkMsFoHuRyf6otqiy7X6LYoTyQZEbTMMpnVoptrCJQYJp1E9SJN93ra7BWZSqZ93Ki",
+      "ed25519:527CELUr7e96vcDVVTSNpmBJHUHsuhxkTxuzHBpLJ6MhWdXYRmZYqzJVV2ZHuVWuGMn14Y1GTjDZrQFotCaRtbSw",
+      "ed25519:63ZquXfTTzmHVHqLGAstwbyvVSZC7hyqU7pCrSyMiKoH3vfvh5TEVUmuMGKkjSdU7ZpqrEWu2oWawvgnPPXgfrxN",
+      "ed25519:4uZ9dNTrWhc4vJDJ1BEDk6F53BSMwo19vfMVs9sNfixmqxvEqWBA3WHvtq41thFetGav2AqDKHPgAMtR2H66ozNY",
+      "ed25519:42k7h6oMD8V85Bxy7UnWZP273K6jD4RxCB9UpgEcU8cbV8med43cYPZCgpXFFLpErV25MVgrj37RCTqUSYgym2br"
+    ],
+    "block_body_hash": "H57gq5aYJMyiTM9z573EFcscruWhMyGD7Kh9Mb92Sz33",
+    "block_merkle_root": "2qYToRzMM1i5rcrRPoZFm44cVXoYQXDv8JmkZxHi7PkT",
+    "block_ordinal": 229600778,
+    "challenges_result": [],
+    "challenges_root": "11111111111111111111111111111111",
+    "chunk_endorsements": [
+      [
+        255,
+        63
+      ],
+      [
+        255,
+        47
+      ],
+      [
+        255,
+        255,
+        1
+      ],
+      [
+        255,
+        255
+      ],
+      [
+        255,
+        255,
+        7
+      ],
+      [
+        255,
+        255,
+        3
+      ],
+      [
+        255,
+        255
+      ],
+      [
+        255,
+        63
+      ],
+      [
+        255,
+        255,
+        7
+      ],
+      [
+        255,
+        239,
+        1
+      ]
+    ],
+    "chunk_headers_root": "2kZbDV18d3hwJf3mbJQhhB7aYknaZQm19afMRv3bTZaB",
+    "chunk_mask": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "chunk_receipts_root": "G5szrPMc4UH6gFhbjah1FRipyPbxGN69HNMSgQJK68p2",
+    "chunk_tx_root": "4smUT4Z8iHjsUWYR1fB1vz7ZDWmiw4X73PVzbdQEh7xx",
+    "chunks_included": 10,
+    "epoch_id": "HfZaZq5Jmabu5aWgdaxRkCXiR9YcQXNVaTthHwjp55RC",
+    "epoch_sync_data_hash": null,
+    "gas_price": "100000000",
+    "hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+    "height": 277608678,
+    "last_ds_final_block": "3ARHDGw9DJXMNP2mnguy6R1dsDzA3FD1AXRMAUDiRMnd",
+    "last_final_block": "3iSkB1HPtj1QrQb3FPCWXk7Qt2HQ1fXe3Rgy9kBJnxdh",
+    "latest_protocol_version": 88,
+    "next_bp_hash": "5rwzGyV8ecJtp9upLoZCMvao6A8Pv9xMP11avWmL8U5d",
+    "next_epoch_id": "HyWfTcF8RZSWAm7du9mTwxGiT8cnzRdpLFbavVMgXtNi",
+    "outcome_root": "5W7MC5wtkEH75NaGcRr7BnKbv7nv8oPW9uUWaoW1Aoc9",
+    "prev_hash": "3ARHDGw9DJXMNP2mnguy6R1dsDzA3FD1AXRMAUDiRMnd",
+    "prev_height": 277608677,
+    "prev_state_root": "7SmTmQx3bgpb2Egmy8QxocVUDJZQdgyEbMU2V98937J1",
+    "random_value": "EwFnh5D8qEkiM32UDvPk9XFLZ6uWWevdoYRnJ6pnyUdm",
+    "rent_paid": "0",
+    "shard_split": null,
+    "signature": "ed25519:37KjND9d3C91jygfijrC7NCDZEU3RArF3Lx5rC3WbeJ2e1w2Hx5M1pqRf22XoAKeedtwtUaFnLokbDdiMEgW1XLJ",
+    "timestamp": 1794630883360793300,
+    "timestamp_nanosec": "1794630883360793305",
+    "total_supply": "2680299262401766068674432651574392",
+    "validator_proposals": [],
+    "validator_reward": "0"
+  },
+  "accounts": {
+    "floorline-g3-20261111-6702ea.testnet": {
+      "amount": "729207434077728700000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "rc1.floorline-g3-20261111-6702ea.testnet": {
+      "amount": "8000000000000000000000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 454441
+    },
+    "alice.floorline-g3-20261111-6702ea.testnet": {
+      "amount": "2130615862259132012742379",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "carol.floorline-g3-20261111-6702ea.testnet": {
+      "amount": "1507105681016638799999999",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "dave.floorline-g3-20261111-6702ea.testnet": {
+      "amount": "609216550826292900000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "lender.floorline-g3-20261111-6702ea.testnet": {
+      "amount": "1278759227025806500000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "floorline-rc1-fund-a-20261114.testnet": {
+      "amount": "499955363487500000000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    },
+    "floorline-rc1-fund-b-20261114.testnet": {
+      "amount": "6820153745549184900000000",
+      "block_hash": "AVes8WEmgsooNkssdoiYQkKAGugeKM3RQeLA58Ap9Hir",
+      "block_height": 277608678,
+      "code_hash": "11111111111111111111111111111111",
+      "locked": "0",
+      "storage_paid_at": 0,
+      "storage_usage": 182
+    }
+  },
+  "ledger": {
+    "L": "0",
+    "T": "0",
+    "locked": "0",
+    "unused_lender": "0",
+    "borrower_claims": "0",
+    "lender_claims": "0",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "0",
+    "operational": "5236120000000000000000000",
+    "inflight": "0",
+    "local_required": "5236120000000000000000000",
+    "operational_base": "4580760000000000000000000",
+    "refund_storage": "0",
+    "unallocated_or_inflight": "2763880000000000000000000",
+    "account_balance": "8000000000000000000000000",
+    "storage_usage": 454441,
+    "storage_stake": "4544410000000000000000000",
+    "tax_bps": 2000
+  },
+  "pilot": {
+    "guardian": "floorline-g3-20261111-6702ea.testnet",
+    "stopped": false,
+    "gross": "0",
+    "limits": {
+      "max_action": "10000000000000000000000",
+      "max_gross": "50000000000000000000000",
+      "max_storage": "20000000000000000000000"
+    },
+    "version": "floor-async-rc1"
+  },
+  "admission": {
+    "occupied": 0,
+    "capacity": 128,
+    "exit_bytes_per_slot": 512,
+    "exit_reserve": "655360000000000000000000"
+  },
+  "completed_acceptance_transactions": 5,
+  "actual_acceptance_and_source_transfer_fees": "12701838947271300000000",
+  "ceiling": "13240000000000000000000000",
+  "ceiling_less_actual_fees": "13227298161052728700000000",
+  "faucet_grants_received": "20000000000000000000000000",
+  "unused_grants_remaining_in_source_accounts": "7320109109036684900000000",
+  "total_native_remaining_all_named_accounts": "21575013864242283812742378",
+  "funded_contract_and_actor_allocations": "12490000000000000000000000",
+  "note": "Native transfers are allocations, not burns. Contract balance includes storage stake/liabilities; balances are not all freely spendable. Fees include real source transfers and acceptance; helper sponsor fees are paid by the public service separately."
+}

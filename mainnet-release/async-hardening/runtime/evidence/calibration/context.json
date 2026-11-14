@@ -1,0 +1,5 @@
+{
+  "classification": "CALIBRATION_ONLY_NOT_FINAL_SOURCE_ACCEPTANCE",
+  "normal_deployed_sha256": "0d69dd71c98787ab238e3865bc616d9561c4cbff2e2ba1fb179ef62aec4e2285",
+  "warning": "The initial normal deployment preceded the final pending-unregistration guard. Artifact files were rebuilt while this calibration ran; its save-time production_wasm_sha256 is not reliable deployment provenance. Use the final parent-directory runtime.json for acceptance. Raw calibration bytes are retained unchanged."
+}

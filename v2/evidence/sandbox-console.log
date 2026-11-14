@@ -1,0 +1,162 @@
+Retrying transaction normalmwf0ixy2.test.near:GChAdqZRGyLWxQFRgyU7TLjjps9mfTxTuWPLqnMfp9uH with new nonce.
+Retrying transaction alicemwf0ixy2.test.near:54B6A9NyMA1QFbUihZNzn9MxpbFeQFUtaeLr8LYQxi12 with new nonce.
+Retrying transaction bobmwf0ixy2.test.near:F2DT4GoxSwWrXfgfaNC6BA64rPPtAGRqAL2HyQFkySFU with new nonce.
+Retrying transaction carolmwf0ixy2.test.near:2gDNQLsuWo4teFgKZU2PhPjmBc68f88KFa5Ge68CqgXY with new nonce.
+Retrying transaction davemwf0ixy2.test.near:DXExkpw4Wa52PV444KgHqAkLs167TQ635eXiVBDo6Uaf with new nonce.
+Retrying transaction lendermwf0ixy2.test.near:DjhB5B9YJRhXcmp7A93SoAL7X8HAUXgQABRCNYPgxKm5 with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:4rk5KiMG14uhKEp9YQpom6Wg2zt1QRe785fAgPk4Zt3b with new nonce.
+Receipt: EbJWPoAyypCuzDz8CECVrhkNkNw7FzKJ35H6LHGkf9b4
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"alicemwf0ixy2.test.near","amount":"10000000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:AbrvzKYh9ZajRDC88kdg9Je6BQ2MpPqgcNmwhPAhQvnU with new nonce.
+Receipt: DQQ12n6HFvA2Kk9q1FaLwCrwUsBrhPNgNwmRddaHeYn2
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"alicemwf0ixy2.test.near","new_owner_id":"bobmwf0ixy2.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:8Q8cWXxKHDG4uFNyJZqA1dZtoCwxuhmAErYJ46QxKjBz with new nonce.
+Receipt: DHmCDv12tNGMKy26oZDNzMX9raMxVQvDDVeAYwumDF1p
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"bobmwf0ixy2.test.near","amount":"500000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:Be1EPRn6B42iYEq4SxBMCyHNsrvPy5tFNwGN2ejEicAj with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:HZiHNWTTRh74h3hBmW6NkPpg29hwFZfKdyhmDuADfDYM with new nonce.
+Receipt: 7CY8pkHLjf1w1PrbR1gZCFoo1pPGfgFkCd8j3inFgLut
+	Failure [normalmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"}}}}
+PASS economic issuance redemption payout and duplicate rejection
+Retrying transaction normalmwf0ixy2.test.near:44ro7EikQb992X8qEPfw9Q2FJcqsmafkJixkeSja655n with new nonce.
+Receipt: BJdyqUoS1p2HpiSkYojazDwFPweCwtmdRqqGs9Xhx5so
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"alicemwf0ixy2.test.near","new_owner_id":"bobmwf0ixy2.test.near","amount":"2000000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:4P4rux1RRjEw3RcV8LRHkAPnh2gixXNmVKwWTE3F8Fko with new nonce.
+Receipt: J5u4t1sKx9kbkiQdz6YY2ZppDBhsLDX7mjf9CKoTiPv2
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"bobmwf0ixy2.test.near","amount":"250000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:ExpGVKKRYGt5qdxQ3RLWiyqXYxoF8N8vaFb7w5Mc3k7T with new nonce.
+Receipt: 6KYX2dmtNLH9pW9Dha9vfisBiB2BoszHfn12DJacYmQ8
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"bobmwf0ixy2.test.near","amount":"250000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:5sJQW7C4C8ELEHL3hN7eqXkXVUoVgwtGa9WwU9nJnUBi with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:GwViYTFyr1QSiPf9mhLL6uAgyadnK5dVwb6XMDfT9Ajn with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:2bj23F9SX9FRFpWyZy7zgUaKjFPftFaKVyX2z5VsRsZi with new nonce.
+PASS overlapping payouts preserve solvency
+Retrying transaction normalmwf0ixy2.test.near:5uRQUiKeAKdCqd4PhzrA7qL9Bkxwq4Nvm8Fb9Ab6gjpp with new nonce.
+Receipt: KvoNWxoA9mYksacKYkSwLphUgcXDsDn7ismKVDFHkEy
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"alicemwf0ixy2.test.near","new_owner_id":"carolmwf0ixy2.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction normalmwf0ixy2.test.near:5tws51LgRMZ5ofkqZ3vfS4LyVzTgGdwmjLT7htAVMSiQ with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:5wA6BQYGzjZGuTa4sJSga8mefv1jd1R5FLwwaxR8XAsJ with new nonce.
+Receipt: 2JJjpjYrxxQLLyhbYa4PPDZJY6t3pvxmxCeNJM9UzFB8
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"carolmwf0ixy2.test.near","new_owner_id":"normalmwf0ixy2.test.near","amount":"500000000000000000000000"}]}
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_mint","data":[{"owner_id":"carolmwf0ixy2.test.near","token_ids":["6"]}]}
+Retrying transaction normalmwf0ixy2.test.near:CvYdzMTK7ognMDCbK32ZsuNEuxb21WN6ArnqfnXZdhNK with new nonce.
+Receipt: HCUvND9rpHCUaFMpabsogpajcY5xe8JGFrwzu17JGEKF
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_transfer","data":[{"old_owner_id":"carolmwf0ixy2.test.near","new_owner_id":"davemwf0ixy2.test.near","token_ids":["6"]}]}
+Retrying transaction normalmwf0ixy2.test.near:4RvWP66ao5x4xfUKsjXQBvPzULPq6sTWB1kRk3dV9R5Q with new nonce.
+Receipts: C8erAMMwwKBuoatkaa48bnmH9JzZ2jMdZm7ibgFTQJGH, 3xRoMsajxQTqfDZ9tcTppYHpcc68P5xQLsf1Cq27GoxC
+	Failure [normalmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:608:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwf0ixy2.test.near\")\n right: AccountId(\"davemwf0ixy2.test.near\")"}}}}
+Retrying transaction normalmwf0ixy2.test.near:C4eB96B9CjjQj6dQTfuo2zu2mLBGu2GQJnLZHcCpEoBA with new nonce.
+Receipt: 57aSqoZ4PN1JreRi9MK3bEMpRabiG9m3vCesVGZq4ZJd
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"normalmwf0ixy2.test.near","new_owner_id":"davemwf0ixy2.test.near","amount":"500000000000000000000000"}]}
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep171","version":"1.2.0","event":"nft_burn","data":[{"owner_id":"davemwf0ixy2.test.near","token_ids":["6"]}]}
+Retrying transaction normalmwf0ixy2.test.near:51s9cM6YMy6uxuk6C2uKU3DXqnuvmew78egZT84VE1gw with new nonce.
+Receipts: ECKcYZTE88sybXSEbgnmTboAx4jz3VMabxtKht3v9C1t, 5LbKDfqtXKngF7pBRYxdiAHswWRTjG7fcQwr3htXGxgM
+	Failure [normalmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+Retrying transaction normalmwf0ixy2.test.near:FTkNHLiDL8fX4xzxjkdmoPqFv3so5BKP8gV8jakafgBm with new nonce.
+Receipt: EeG5cBwDFwFcqi1FSUEkwQd6UEKztG4jnqEQGrc8zCJD
+	Failure [normalmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"}}}}
+PASS loan NFT transfer repayment and terminal exclusivity
+Retrying transaction normalmwf0ixy2.test.near:FWYewjXjkXQGboEbKN4ev3iTeqbSgDtYJMkVVofdtbdA with new nonce.
+PASS storage refund success releases temporary record
+Retrying transaction disappearmwf0ixy2.test.near:CijwmafutXpqiEHhBiqVUgKCNZwzugssR58YiS6RyG4q with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:9RKHseudBkexg42EncetaHJQz9XQPJbUsKTNgPT72a1v with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:2J3XnK9zeUptykDcAJrRGmhAouqs9JTF68Zs1CgjELjG with new nonce.
+Receipt: 38qsCzhZapCBfE3F98DbeoXyXFqqMNdpNr8VwsgaYwpj
+	Log [normalmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"alicemwf0ixy2.test.near","new_owner_id":"disappearmwf0ixy2.test.near","amount":"500000000000000000000000"}]}
+Retrying transaction disappearmwf0ixy2.test.near:6pfeTcNQm8kDtMArtDnKxuktihxvKXrZf3BBdw7ENia5 with new nonce.
+Receipt: 684tFGMZwgctRRCDzGiYA4TU3a1uBz8diTJYMz16sQ9A
+	Log [disappearmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"disappearmwf0ixy2.test.near","amount":"250000000000000000000000"}]}
+Retrying transaction disappearmwf0ixy2.test.near:ChGXbjwVzDQPSqFRoyqwoaAh7ihiRLbv8aYYkrsSdb1i with new nonce.
+Receipts: 61WZMyGxhcH4TXNHaGzBfi3XnoucTp8MqhpC5Q5S6NCs, 9cPUT8wWA7heuVu7VjLz6K21rK3hntZRXCfUZmsxC35S
+	Failure [disappearmwf0ixy2.test.near]: Error: Can't complete the action because account disappearmwf0ixy2.test.near doesn't exist
+Receipt: 
+	Failure [disappearmwf0ixy2.test.near]: Error: Can't complete the action because account disappearmwf0ixy2.test.near doesn't exist
+Receipt: 
+	Failure [disappearmwf0ixy2.test.near]: Error: Can't complete the action because account disappearmwf0ixy2.test.near doesn't exist
+Receipt: 
+	Failure [disappearmwf0ixy2.test.near]: Error: Can't complete the action because account disappearmwf0ixy2.test.near doesn't exist
+Receipt: 
+	Failure [disappearmwf0ixy2.test.near]: Error: Can't complete the action because account disappearmwf0ixy2.test.near doesn't exist
+Retrying transaction disappearmwf0ixy2.test.near:FJ7B4LTChi2W55MsWJsmPsqgvz9bpdpAmptD1PdSkbbG with new nonce.
+Retrying transaction normalmwf0ixy2.test.near:HqDtaC12RLKoSb1YkuAVfmAZTsr4rWsXeLjQFTmJqLpg with new nonce.
+PASS known failed native transfer restores only its funded claim
+Retrying transaction faultmwf0ixy2.test.near:PvHEcFxMP8DwVrL7Gb4D2mF6WEsFrfbEiQuhtFRJhVK with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:46sXkPto6noDot3ZejygzJjT1nXo19Gj4NDhoCYsV1Uu with new nonce.
+Retrying transaction faultalicemwf0ixy2.test.near:nFmRwqyNwWWYCaEbTieK113Xor4tBy1ZNNmqLyDwGnv with new nonce.
+Retrying transaction faultbobmwf0ixy2.test.near:8ukxZdirf89kg3i7QF99YNhBWmQ53hfvQzWAHg9oZDGZ with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:6kueM94o2vPyRL7eCHez8VZFj7iUjKQfdqM5U83sbSCZ with new nonce.
+Receipt: BqVTuuR9tsSvANtyxj5HvoeeQFbU5bWbQh6vc8ojC4qT
+	Log [faultmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_mint","data":[{"owner_id":"faultalicemwf0ixy2.test.near","amount":"2000000000000000000000000"}]}
+Retrying transaction faultmwf0ixy2.test.near:GKvNU4HmqwtYyDTG97pE5SpJchFjcNAZzV5QekJctRKw with new nonce.
+Receipt: hXrASc1oxzWAjnojNDsoJQtB4x9DVJPmTC5UPLDfXk6
+	Log [faultmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_transfer","data":[{"old_owner_id":"faultalicemwf0ixy2.test.near","new_owner_id":"faultbobmwf0ixy2.test.near","amount":"1000000000000000000000000"}]}
+Retrying transaction faultmwf0ixy2.test.near:F2VADk6vAdsGJAp7whqX96LTC8nfXRtAz6UhGUs3Gonf with new nonce.
+Receipt: F9fHpf7wp1PCWQJ76NBFL1tbui2g3SNp4RxxihB4syo7
+	Log [faultmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"faultalicemwf0ixy2.test.near","amount":"500000000000000000000000"}]}
+Retrying transaction faultmwf0ixy2.test.near:HAxT3XnVsf7qxbr47LG8E36eRT3zm75KadgJa6VCMJUC with new nonce.
+Receipt: FiCrbCMs8FyiKVwEMpkqWwxVyHy9eYNEGRRhYxEG9Wui
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:HD7HDUE86mh9oiAz676Xe7E2htRDpz4w51ab2Fdzcoao with new nonce.
+Receipt: hagZXfwVf9U3bRMn8yyaKgu8hAsqoBetLQ4WYTHm28J
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 1\n right: 0"}}}}
+Retrying transaction faultmwf0ixy2.test.near:DokLS7hW4Nbf8vq2xvt1hKiDSzbuqTnwAiGXKScNPu4R with new nonce.
+Receipt: 9VdvaXoCfcP74gXfNHkePVa7ctrdFdQSgePhXyZUZVqK
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:675:9:\nassertion `left == right` failed: not claim owner\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"}}}}
+Retrying transaction faultmwf0ixy2.test.near:Andka6ELbczSBdYgj3zNTPJvzCRzxHdag7zjjUD5QUAf with new nonce.
+Receipt: GrDUVdzDjVe91QU3GpW6cHdd3p2cczHBaaf7Q8wMzeFM
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:681:9:\nclaim still quarantined"}}}}
+Retrying transaction faultmwf0ixy2.test.near:F4RiMJ6zV5ktW4ABdv9SJpN62SwAeQL91S8wEYSoeKWG with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:AZwJMAbpArbiDN2vJfFLFNBFgKKoPVkJQvkvj2WW2YR8 with new nonce.
+Receipt: 5ne9517PcnFngATXg3Dwocgyd8NjKWG4raizMbKsanZZ
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"}}}}
+PASS lost callback remains quarantined and cannot double withdraw
+Retrying transaction faultmwf0ixy2.test.near:9EnjKDJVmnsyRTmC9EYtXeeDnN6H3c2tfdgK2HvwCP9w with new nonce.
+Receipt: 89o2T5a6byGhk9eVa2kuHCPScHc3a5isWL6APqLnjG2d
+	Log [faultmwf0ixy2.test.near]: EVENT_JSON:{"standard":"nep141","version":"1.0.0","event":"ft_burn","data":[{"owner_id":"faultbobmwf0ixy2.test.near","amount":"250000000000000000000000"}]}
+Retrying transaction faultmwf0ixy2.test.near:9uC5yM5PfMsQwCMZyfYSPBPUgqeZqfXYMLHQH5Vp99mm with new nonce.
+Receipt: FBzHi9Vbdpw8umwQ4Htv7kU349xD3vdushKHnRSM3v1r
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+PASS unrelated user can create payout while another claim is unknown
+Retrying transaction faultmwf0ixy2.test.near:HGNYiYiw8jpBqfr4N2hdf8fFy9QgtWQEnmLm2SeXuDq1 with new nonce.
+Receipt: An9VT2v7u9niVv6Uyt9uAw46pmrC2hhjSozXmwzBH9ns
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:CJ9hYUNdHyWzXBxrPudy46ySAMczx7sUs4TNJyCehg6Y with new nonce.
+Receipt: 7vbAafJaf2DnpHFxH3KLwRufG9MSUskg4GtqQMfECfUR
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:8BrWbCebm7v657aTQAeCVDxH5sEpdJnooSs27Z3ymKCz with new nonce.
+Receipt: 9gjBUEaLJFMD45qLnUKKA1uLZecAWfe9z5Mj2rZZnnss
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:Cd1wCB8JJhqC6Q4GayCbNKzsDqVbMfwEeRTJqzhNPRJD with new nonce.
+Receipt: EnbjjhYpSTBZ1fWi9YKF6zibuLf1TnYeHyqoidyWH3Xn
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:7ehRfnHWXnsUiuDYDzCSNb72QGvBCQrPyr9oi5DAjozB with new nonce.
+Receipt: 88FC3sgCGiMpxw6vyFKLGtc3BNgyKDYznr8MwsGCsmK9
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:CeRpREd3dGonTfHUqFTxSiVfXHSQu8SURCPg9L69nK86 with new nonce.
+Receipt: CKkfgDx4xC5LRetVhjGE4gEuuexyDvVUhbnzVvrHWRBY
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:FW3fheDKuQiVvP19owZydhAd3TpAtdxzUE79U6pQoKDd with new nonce.
+Receipt: D984xcsuHd9mmXFj2yZ9c27Z77vYmtYBJBathHfDGRub
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:5UVw4VvpywpgPwF4z4FFEFXT1thSYobGFL5Gndv3NDmS with new nonce.
+Receipt: Fx5Y4M1GbdK7qR1ySVv6HiQ2jGDoeuXZyVVTw6xjWaLC
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+Retrying transaction faultmwf0ixy2.test.near:Ekat33b5hYWAXKaBfmrPAz356Tis3m5eU7BPR5bVLu24 with new nonce.
+Receipts: 9PbZ7bpZbJRGeh7oXn9pfEb7ojSa1hTxjT6fmAziCCHM, DWYxMntg3xtRmUAr7XPqcGFNjn8HP8HxYUMDDki2YXDF
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:742:9:\nprepaid operational storage exhausted"}}}}
+Retrying transaction faultmwf0ixy2.test.near:FqZWVdL5f12KcE4R9uiH27vBVcPeY6Ph3VjF1Udqg4rZ with new nonce.
+Receipt: 7VhMzWWFsopyyd49YPdtc5JvzNXLLy9gguS1A8dNGNYC
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:690:9:\nassertion `left == right` failed: not refund receiver\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"}}}}
+Retrying transaction faultmwf0ixy2.test.near:4NuPAVs2VfQ3TqUNkUwzRfV5t8Wf1T6LC5aDfq8SNyhf with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:HFPTCq1ZmjB28WSqxU7eUiw8wr6B2LTLwTmsMCv5bBN4 with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:9BRWhFu1YgyxFh9AD9aYPwnHmy8BgizCE3u4KYriAW3U with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:CKyV3zakJF97W2RhrYSHLMmTfa2oUkWuUABk3iaMYJCN with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:Dedheag2TpqVhinuNjx1xgCCzMg517iCsWvAqKmvnkJK with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:pdtdmYP2wvaRFWewQbSgCuyYM4rnJJsou5tuaZFsj6m with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:EkaPjyfWiTkD3L5Ev8n2YWMzfBs3HVJ3qL6cys7sBVTn with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:D7PWUH2yfwuo9TChm1tF1xQS3gtCDgyubpD4RFi2AR2M with new nonce.
+Retrying transaction faultmwf0ixy2.test.near:3FLPYfGqyPJSny2hhNpsai17omvcmNm9CJeqSvjbPqcE with new nonce.
+Receipt: 9LaPAfPmHUfTL2mB5cNWqHTnfEC3Yfxj2BhYgLqGjMnd
+	Failure [faultmwf0ixy2.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Exceeded the prepaid gas."}}}}
+PASS storage refund saturation is bounded and owner cleanup restores capacity
+{"passed":8,"failed":0,"normal_sha256":"2325abb1230509e4f9c96acc842f25fca8482682096910b3f5e8df0a3d3dc6fc","fault_sha256":"e54ef95d98a7653812f44e5e68325be771c5abe179b09cdb334a5a3ecc77277b"}

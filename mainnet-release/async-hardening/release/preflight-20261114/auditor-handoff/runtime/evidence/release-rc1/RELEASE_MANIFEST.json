@@ -1,0 +1,299 @@
+{
+  "source_commit": "c18235165a38dd29dc15c7f4730c5e3996366ab1",
+  "source_sha256": {
+    "Cargo.toml": "89cf2cba63260a615efd9c248c4777ba39d9c7fe61396a74d7e406405c53ea7a",
+    "Cargo.lock": "f9b7fea36d13687ce8bb58d5d75aa6171c6297e3395cce2445419dd5e93c0b40",
+    "src/contract.rs": "0b50a2585f6dd4fd1fdb2a247c2d2af2c27a8eb7ef7cc0c6eb96db24844a5b82",
+    "src/engine.rs": "0a75c8f2c5ae8089245c4e83991a4fca4278a54b49fc140a83e07c361bb37e48",
+    "src/math.rs": "abef6d3008f77fee730451bc049b4c7dd0ef5207019930342ee7fe99d085ad2c"
+  },
+  "compiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "near_sdk": "5.30.1",
+  "features_normal": [
+    "contract"
+  ],
+  "features_fault": [
+    "contract",
+    "fault-injection"
+  ],
+  "rustflags": "--cfg near",
+  "normal": {
+    "bytes": 453798,
+    "sha256": "31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b",
+    "code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az"
+  },
+  "fault": {
+    "bytes": 453798,
+    "sha256": "f0f66d0674540addab608e8520a806603957a0287c5ba73099b50c675b0c895b",
+    "code_hash": "HDcnh2RVWVHRtMSLp7qksKVYQoiQTUHk9GC2mTa36M3G"
+  },
+  "byte_for_byte_rebuild": true,
+  "regression": {
+    "groups": 32,
+    "failed": 0,
+    "entries": 240
+  },
+  "capacity": {
+    "mode": "new",
+    "accepted": 128,
+    "threshold": null,
+    "admission": {
+      "occupied": 128,
+      "capacity": 128,
+      "exit_bytes_per_slot": 512,
+      "exit_reserve": "655360000000000000000000"
+    },
+    "final": {
+      "L": "0",
+      "T": "0",
+      "locked": "0",
+      "unused_lender": "0",
+      "borrower_claims": "0",
+      "lender_claims": "0",
+      "redemption_claims": "0",
+      "cancellation_claims": "0",
+      "storage_refund_claims": "0",
+      "storage_total": "0",
+      "operational": "5236120000000000000000129",
+      "inflight": "1280000000000000000000000",
+      "local_required": "5236120000000000000000129",
+      "operational_base": "4580760000000000000000000",
+      "refund_storage": "192000000000000000000000",
+      "unallocated_or_inflight": "5760581955133848600000000",
+      "account_balance": "10996701955133848600000129",
+      "storage_usage": 499982,
+      "storage_stake": "4999820000000000000000000",
+      "tax_bps": 2000
+    }
+  },
+  "controls_passed": true,
+  "unknown_recovery": "QUARANTINED_UNSOLVED",
+  "economic": {
+    "tests": 16,
+    "sequences": 10000,
+    "operations": 1280000,
+    "seed_range": "10001..20000"
+  },
+  "gas_storage": {
+    "storage_deposit": {
+      "count": 23,
+      "min_gas": "2291297082322",
+      "max_gas": "5872865864871",
+      "min_storage_delta": 0,
+      "max_storage_delta": 168
+    },
+    "issue": {
+      "count": 2,
+      "min_gas": "2216101638224",
+      "max_gas": "2273476133881",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "ft_transfer": {
+      "count": 19,
+      "min_gas": "1809979670137",
+      "max_gas": "2446324512849",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "redeem": {
+      "count": 6,
+      "min_gas": "1914921039797",
+      "max_gas": "2823322636166",
+      "min_storage_delta": 0,
+      "max_storage_delta": 145
+    },
+    "withdraw_claim": {
+      "count": 26,
+      "min_gas": "1914331955659",
+      "max_gas": "5298865446691",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "fund_offer": {
+      "count": 67,
+      "min_gas": "2472584182337",
+      "max_gas": "2534377893864",
+      "min_storage_delta": 0,
+      "max_storage_delta": 298
+    },
+    "accept_offer": {
+      "count": 24,
+      "min_gas": "1898401224130",
+      "max_gas": "3294236723075",
+      "min_storage_delta": 0,
+      "max_storage_delta": 67
+    },
+    "nft_transfer": {
+      "count": 8,
+      "min_gas": "1811608696216",
+      "max_gas": "2709900402652",
+      "min_storage_delta": -2,
+      "max_storage_delta": 0
+    },
+    "repay": {
+      "count": 18,
+      "min_gas": "2346866093441",
+      "max_gas": "3476890862731",
+      "min_storage_delta": 0,
+      "max_storage_delta": 146
+    },
+    "default_loan": {
+      "count": 12,
+      "min_gas": "1883487280825",
+      "max_gas": "2877426162443",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "act": {
+      "count": 5,
+      "min_gas": "3913653961149",
+      "max_gas": "7196689701572",
+      "min_storage_delta": -3,
+      "max_storage_delta": 67
+    },
+    "ft_transfer_call": {
+      "count": 6,
+      "min_gas": "8120934397513",
+      "max_gas": "12730359768148",
+      "min_storage_delta": 0,
+      "max_storage_delta": 75
+    },
+    "nft_transfer_call": {
+      "count": 8,
+      "min_gas": "8738071830487",
+      "max_gas": "58931369145007",
+      "min_storage_delta": -1,
+      "max_storage_delta": 3
+    },
+    "ft_resolve_transfer": {
+      "count": 1,
+      "min_gas": "1731131261335",
+      "max_gas": "1731131261335",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "nft_resolve_transfer": {
+      "count": 1,
+      "min_gas": "1731473271772",
+      "max_gas": "1731473271772",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "claim_result": {
+      "count": 2,
+      "min_gas": "1729263267247",
+      "max_gas": "1844194669381",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "storage_unregister": {
+      "count": 2,
+      "min_gas": "2346757228241",
+      "max_gas": "5860819830917",
+      "min_storage_delta": -164,
+      "max_storage_delta": 0
+    },
+    "storage_withdraw": {
+      "count": 1,
+      "min_gas": "5959521935004",
+      "max_gas": "5959521935004",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    },
+    "cancel_offer": {
+      "count": 1,
+      "min_gas": "2937239088355",
+      "max_gas": "2937239088355",
+      "min_storage_delta": 147,
+      "max_storage_delta": 147
+    },
+    "cleanup_loan": {
+      "count": 1,
+      "min_gas": "2301770939992",
+      "max_gas": "2301770939992",
+      "min_storage_delta": -298,
+      "max_storage_delta": -298
+    },
+    "cleanup_claim": {
+      "count": 1,
+      "min_gas": "2448787545942",
+      "max_gas": "2448787545942",
+      "min_storage_delta": -147,
+      "max_storage_delta": -147
+    },
+    "withdraw_and_disappear": {
+      "count": 1,
+      "min_gas": "8408761426339",
+      "max_gas": "8408761426339",
+      "min_storage_delta": 0,
+      "max_storage_delta": 0
+    }
+  },
+  "staging": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "tests": 65,
+    "build": "PASS",
+    "browser": "PASS_UNCONFIGURED_DESKTOP_MOBILE_ONLY",
+    "wallet_signing": "UNVERIFIED",
+    "warnings": [
+      "Transitive SDK eval/browser util warning",
+      "Ineffective dynamic import warning"
+    ]
+  },
+  "public_signatures": 0,
+  "funding": {
+    "testnet": {
+      "ceiling_yocto": "13240000000000000000000000",
+      "contract_allocation_yocto": "8000000000000000000000000",
+      "actor_allocations_yocto": {
+        "holder": "1940000000000000000000000",
+        "borrower": "1210000000000000000000000",
+        "nft_holder": "370000000000000000000000",
+        "lender": "970000000000000000000000"
+      },
+      "controller_gas_contingency_yocto": "750000000000000000000000",
+      "storage_upper_bytes": 527526,
+      "operating_liquidity_yocto": "2500000000000000000000000",
+      "note": "All financial and storage deposits, auth yoctoNEAR and actor gas reservations come from these actor allocations; do not add them again.",
+      "pricing": {
+        "quote_utc": "2026-11-14T03:06:51.1816848Z",
+        "storage_byte_yocto": "10000000000000000000",
+        "spot_gas_price": "100000000",
+        "minimum_purchase_gas_price": "1000000000",
+        "reservation_price": "1000000000",
+        "gas_reservation_per_call": "120000000000000",
+        "gas_note": "110 Tgas function envelope plus 10 Tgas scheduling/action-fee allowance; each actor also receives 0.1 NEAR buffer, rounded upward to 0.01 NEAR."
+      },
+      "storage_upper_yocto": "5275260000000000000000000",
+      "contract_allocation_margin_yocto": "224740000000000000000000"
+    },
+    "mainnet": {
+      "ceiling_yocto": "13240000000000000000000000",
+      "contract_allocation_yocto": "8000000000000000000000000",
+      "actor_allocations_yocto": {
+        "holder": "1940000000000000000000000",
+        "borrower": "1210000000000000000000000",
+        "nft_holder": "370000000000000000000000",
+        "lender": "970000000000000000000000"
+      },
+      "controller_gas_contingency_yocto": "750000000000000000000000",
+      "storage_upper_bytes": 527526,
+      "operating_liquidity_yocto": "2500000000000000000000000",
+      "note": "All financial and storage deposits, auth yoctoNEAR and actor gas reservations come from these actor allocations; do not add them again.",
+      "pricing": {
+        "quote_utc": "2026-11-13T17:17:42.3613858Z",
+        "storage_byte_yocto": "10000000000000000000",
+        "spot_gas_price": "100000000",
+        "minimum_purchase_gas_price": "1000000000",
+        "reservation_price": "1000000000",
+        "gas_reservation_per_call": "120000000000000",
+        "gas_note": "110 Tgas function envelope plus 10 Tgas scheduling/action-fee allowance; each actor also receives 0.1 NEAR buffer, rounded upward to 0.01 NEAR."
+      },
+      "storage_upper_yocto": "5275260000000000000000000",
+      "contract_allocation_margin_yocto": "224740000000000000000000"
+    }
+  },
+  "staging_index_sha256": "757cb9bc1c6bc26adbfd5c8648bc3d509a7e6c6674911a7c2fc1a46e635d7189"
+}

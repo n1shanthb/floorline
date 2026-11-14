@@ -1,0 +1,28 @@
+{
+  "mode": "old",
+  "accepted": 56,
+  "threshold": 56,
+  "admission": null,
+  "final": {
+    "L": "0",
+    "T": "0",
+    "locked": "0",
+    "unused_lender": "0",
+    "borrower_claims": "0",
+    "lender_claims": "0",
+    "redemption_claims": "0",
+    "cancellation_claims": "0",
+    "storage_refund_claims": "0",
+    "storage_total": "80000000000000000000000",
+    "operational": "4589110000000000000000056",
+    "inflight": "560000000000000000000000",
+    "local_required": "4669110000000000000000056",
+    "operational_base": "4489110000000000000000000",
+    "refund_storage": "84000000000000000000000",
+    "unallocated_or_inflight": "6407657380350608100000000",
+    "account_balance": "11076767380350608100000056",
+    "storage_usage": 466751,
+    "storage_stake": "4667510000000000000000000",
+    "tax_bps": 2000
+  }
+}

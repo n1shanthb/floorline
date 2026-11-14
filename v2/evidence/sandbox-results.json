@@ -1,0 +1,2680 @@
+{
+  "network": "LOCAL_SANDBOX_ONLY",
+  "sandbox_version": "2.14.0",
+  "chain_id": "test-chain-SabJV",
+  "passed": 8,
+  "failed": 0,
+  "results": [
+    {
+      "name": "economic issuance redemption payout and duplicate rejection",
+      "status": "PASS",
+      "claim": "0",
+      "receipt_count": 5
+    },
+    {
+      "name": "overlapping payouts preserve solvency",
+      "status": "PASS",
+      "claims": [
+        "2",
+        "3"
+      ],
+      "accounting": {
+        "L": "9187235846372688477951637",
+        "T": "9000000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "5000000000000000000000000",
+        "operational": "4718690000000000000000002",
+        "inflight": "0",
+        "local_required": "18905925846372688477951639",
+        "operational_base": "4618690000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "15277779654327361600000000",
+        "account_balance": "34183705500700050077951639",
+        "storage_usage": 459395,
+        "storage_stake": "4593950000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "name": "loan NFT transfer repayment and terminal exclusivity",
+      "status": "PASS",
+      "loan": "6",
+      "principal_claim": "7",
+      "repayment_claim": "8"
+    },
+    {
+      "name": "storage refund success releases temporary record",
+      "status": "PASS",
+      "before_refund_storage": "0",
+      "after_refund_storage": "0"
+    },
+    {
+      "name": "known failed native transfer restores only its funded claim",
+      "status": "PASS",
+      "claim": "10",
+      "failed_transfer_receipts": [
+        "F14VtNrzCaiYA1ZN3NiXh54DC6ME8B9AwxzH4StfnNVq",
+        "9cPUT8wWA7heuVu7VjLz6K21rK3hntZRXCfUZmsxC35S",
+        "EHbhbsFjQeH5FL64YvLg4334Qs9o5nwnVUkCFFSxvHNv",
+        "BVcSmQffEQsZwx14tNX7vde12TjR1w2BKASGnat2oBWM",
+        "AfGhMVq7kcDfWqJb65AnuTxoSaUkkeKPR94Z2z3AyhVj"
+      ],
+      "retry_receipts": 5
+    },
+    {
+      "name": "lost callback remains quarantined and cannot double withdraw",
+      "status": "PASS",
+      "claim": "0",
+      "final": {
+        "owner": "faultalicemwf0ixy2.test.near",
+        "amount": "425000000000000000000000",
+        "kind": 2,
+        "state": 3,
+        "attempt": "1",
+        "dispatched_at": "1794576565526229319",
+        "quarantine_until": "1794576570526229319",
+        "storage_cost": "1630000000000000000000"
+      },
+      "failed_receipts": [
+        "E7kgRZEAjnF7oKUuPDdVr6cxMFk9yQTT14aKNigU1VL5"
+      ]
+    },
+    {
+      "name": "unrelated user can create payout while another claim is unknown",
+      "status": "PASS",
+      "claim": "2",
+      "accounting": {
+        "L": "1356250000000000000000000",
+        "T": "1250000000000000000000000",
+        "locked": "0",
+        "unused_lender": "0",
+        "borrower_claims": "0",
+        "lender_claims": "0",
+        "redemption_claims": "0",
+        "cancellation_claims": "0",
+        "storage_refund_claims": "0",
+        "storage_total": "2000000000000000000000000",
+        "operational": "4625640000000000000000001",
+        "inflight": "218750000000000000000000",
+        "local_required": "7981890000000000000000001",
+        "operational_base": "4615640000000000000000000",
+        "refund_storage": "0",
+        "unallocated_or_inflight": "15370831865891703400000000",
+        "account_balance": "23352721865891703400000001",
+        "storage_usage": 458480,
+        "storage_stake": "4584800000000000000000000",
+        "tax_bps": 2000
+      }
+    },
+    {
+      "name": "storage refund saturation is bounded and owner cleanup restores capacity",
+      "status": "PASS",
+      "bounded_records": 8,
+      "rejected_at": 8,
+      "refund_storage_after_cleanup": "0"
+    }
+  ],
+  "journal": [
+    {
+      "signer": "normalmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "new",
+      "deposit": "0",
+      "transaction_hash": "32g3SxGnERWeaojjdd63aqN3rTpwB1Sj2Bcow2oDuGBo",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2052241183071",
+      "receiver_storage_before": 457773,
+      "receiver_storage_after": 458125,
+      "receiver_storage_delta": 352,
+      "receipts": [
+        {
+          "id": "GbBXk7m24HHyJgJt6NNcVqGkPNzW34oGc8DXSv18aSDW",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1744022931757
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "CXmi4ZQ1hDYzkE572hLRNjx3xwHMvNvZVYiaArQgaa15",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2326567052879",
+      "receiver_storage_before": 458125,
+      "receiver_storage_after": 458290,
+      "receiver_storage_delta": 165,
+      "receipts": [
+        {
+          "id": "BjJtCuUDNqC6t5DqTQFYSqQrEbkyQeKBRd7Dd8mAmDmo",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2015646529979
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "G4vAae7FQM5f1iVum3zbiRDHZAZgJKuXYt2BL8UYceH7",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2335054604759",
+      "receiver_storage_before": 458290,
+      "receiver_storage_after": 458453,
+      "receiver_storage_delta": 163,
+      "receipts": [
+        {
+          "id": "6tDyNqPntiKsLGRMBcxeKqu7YZ8YEpzHiHgX4Nuj61Yc",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2024134081859
+        }
+      ]
+    },
+    {
+      "signer": "carolmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "2r1xj5LFTMLaG7an8zKknFkPYdGBrpX9FzCBc7xEhYfA",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2340247052879",
+      "receiver_storage_before": 458453,
+      "receiver_storage_after": 458618,
+      "receiver_storage_delta": 165,
+      "receipts": [
+        {
+          "id": "HaKvsxvQhj6CfEyy5ZJRQhGBCwLF7sMBzvDJBHvGs1Wd",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2029326529979
+        }
+      ]
+    },
+    {
+      "signer": "davemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "94aEVV8m6QQ3wZheRdpvnFLCoUmApuHyGKdFxFdqyELH",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2337650828819",
+      "receiver_storage_before": 458618,
+      "receiver_storage_after": 458782,
+      "receiver_storage_delta": 164,
+      "receipts": [
+        {
+          "id": "Hof6fhZmit82Wbg2F1h3S7tFDezZw2mFz5XjEAn5a2c7",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2026730305919
+        }
+      ]
+    },
+    {
+      "signer": "lendermwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "5Pm199iXBw3wbDzzoZLhtzetPdCWZ3pAdsy9aFqFn72Z",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNDAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2338233911579",
+      "receiver_storage_before": 458782,
+      "receiver_storage_after": 458948,
+      "receiver_storage_delta": 166,
+      "receipts": [
+        {
+          "id": "EvhYGC3R2c3MaopAhRwvF9CSaue3cfAo5ZsZtLancK3P",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzNDAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2027313388679
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "issue",
+      "deposit": "10000000000000000000000000",
+      "transaction_hash": "FxeRx5DeyzYebQUoY37TkY57UG2CfL9WSAVqHqDRq4Mo",
+      "final_status": {
+        "SuccessValue": "IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIg=="
+      },
+      "total_gas_burnt": "2215659715621",
+      "receiver_storage_before": 458948,
+      "receiver_storage_after": 458948,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "7hunurmWTP7PQsZw5LFXCD9dyBiMNVZg9EV8MDFzdDgY",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIg=="
+          },
+          "gas_burnt": 1906503490176
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "ft_transfer",
+      "deposit": "1",
+      "transaction_hash": "6cLkZF2ZYmcLu2QuTkNTK7mpJW2UhtBPTqS5mAXGrP4i",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2442528226274",
+      "receiver_storage_before": 458948,
+      "receiver_storage_after": 458948,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "2zg8JnjAhximQep23vpthoGJnVWD2c7VYVYKjVLiYZwW",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2129748038489
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "redeem",
+      "deposit": "0",
+      "transaction_hash": "3t7MzJLTjCDkdpgFhKTC46mXFqhxn45DX3sqZFZgZtgA",
+      "final_status": {
+        "SuccessValue": "IjAi"
+      },
+      "total_gas_burnt": "2813109180544",
+      "receiver_storage_before": 458948,
+      "receiver_storage_after": 459097,
+      "receiver_storage_delta": 149,
+      "receipts": [
+        {
+          "id": "6h265szA2GYB81zyNhmycPScA3e4EpNbrzBmfHGoeVXE",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "gas_burnt": 2502331708789
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "CM5qeCAwp9wocf2zFTWpYjYBHA6bZLrJbKxS3iReiQzC",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "5284181716511",
+      "receiver_storage_before": 459097,
+      "receiver_storage_after": 459097,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "3MYTPsijf1PfJQRg3BWQaBCHtt9JRrpyre1hxfKDjjVW",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "GZdMFkpjuFEvJ3858x59SgKfTHSqDXG6MphpbPZmLwzY"
+          },
+          "gas_burnt": 2474435936470
+        },
+        {
+          "id": "6LfdWsyod699jVJNwk7y1rfJUc1QRrtLnDEk72yoWt4v",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "4GJnfvtvKfj6KV7KVwSzJhihptN8k1ftaW3GPmkyjqDQ",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "GZdMFkpjuFEvJ3858x59SgKfTHSqDXG6MphpbPZmLwzY",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1830708081091
+        },
+        {
+          "id": "J9X8Z9jAYM19ZmAkFcgmeQdanSUyCf9SmzdEKb3ahxmv",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "8NEs7p89agatHJVcudGaDb9SWkkGnYMrkox5VLpvUzEU",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1915779629695",
+      "receiver_storage_before": 459097,
+      "receiver_storage_after": 459097,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "FmGZequrJsoXceh6hcGr4BPHJEQijAZQFSTG68Y3dU5z",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1606289618245
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "ft_transfer",
+      "deposit": "1",
+      "transaction_hash": "jn8vURfPFe5b5ktCmfvWa7BRJAS2xewp6cYhpNeU28v",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2442528226274",
+      "receiver_storage_before": 459097,
+      "receiver_storage_after": 459097,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "SLiTCp77avSHRy6oepHwqzUpwShwKMSoZSP2qyc3kLw",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2129748038489
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "redeem",
+      "deposit": "0",
+      "transaction_hash": "C7as8ws6aTUMDcSGrr27ZqrLoXgKeVmCbo7T1HGHVYZh",
+      "final_status": {
+        "SuccessValue": "IjIi"
+      },
+      "total_gas_burnt": "2815478038192",
+      "receiver_storage_before": 459097,
+      "receiver_storage_after": 459246,
+      "receiver_storage_delta": 149,
+      "receipts": [
+        {
+          "id": "BdsMVLuGENi1dDquFgKhQVnq3ZnBywkVs5PvBErbu4a4",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjIi"
+          },
+          "gas_burnt": 2504700566437
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "redeem",
+      "deposit": "0",
+      "transaction_hash": "CZefaMSxoGxeGmzDvyv5or1oKFqiXU3UfJYive5ym6ea",
+      "final_status": {
+        "SuccessValue": "IjMi"
+      },
+      "total_gas_burnt": "2817885565372",
+      "receiver_storage_before": 459246,
+      "receiver_storage_after": 459395,
+      "receiver_storage_delta": 149,
+      "receipts": [
+        {
+          "id": "25JXD1F9TBikHye8QHQ2GPvHP6gAWFSoGSqTxZmSBC9t",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjMi"
+          },
+          "gas_burnt": 2507108093617
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "DREHFmuEWfRydeDP4jvGosoTTJwWXqJUr3xie89kFFqg",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "5293304184779",
+      "receiver_storage_before": 459395,
+      "receiver_storage_after": 459395,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "2AM195Y4TBiP84AeVAkTuoiRR6TM6gteVxaVVJ7eE5Ti",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "H2boAGxa93A78G63BNBuff4BdKaST5WQVzeESXbu7zRb"
+          },
+          "gas_burnt": 2478998404738
+        },
+        {
+          "id": "C2Rw4nYb8AAoQ1heJZo6gemeJ7FGrDhg8zdStWUHnftY",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "3sYspVhLGEDAhXx4khNaFZw3BN15ndaiFAU3kvh8Quqn",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "H2boAGxa93A78G63BNBuff4BdKaST5WQVzeESXbu7zRb",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1835268081091
+        },
+        {
+          "id": "2bw1t814kugHgTg9fXTMQDjk19u8tKkXup3meZazycyy",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "7pJzN7yBo7s2aQYCEHAfcuYxj2fzq3CYNroFFNVkSUoA",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "5293304184779",
+      "receiver_storage_before": 459395,
+      "receiver_storage_after": 459395,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "3Nmnu2GkwAjfoL9gAv7jbQ1ufrahsZgg9DwXsjNKK8zc",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "EW3qZN6bT54KtsiNTQuXCUJRuz2hEGJq6zMPLehufP4F"
+          },
+          "gas_burnt": 2478998404738
+        },
+        {
+          "id": "9FzxRHU8Yqtm5nZ1d1A4qYN6qGKhNG2FJi4dSVd6Fhnz",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "9fmTGiYvVqUg4w7xPaH5f7r9eWgmKPM9xq4LZpj462uV",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "EW3qZN6bT54KtsiNTQuXCUJRuz2hEGJq6zMPLehufP4F",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1835268081091
+        },
+        {
+          "id": "ArFLCkeXTpg5Lwopv4i3yDCJnX1XHacjyPcuqvVXtZZN",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "ft_transfer",
+      "deposit": "1",
+      "transaction_hash": "8DAwVb3FG9L7QCewDoxdjLrp3uxFcuBr7J3hDq9f9eQT",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2448098059082",
+      "receiver_storage_before": 459395,
+      "receiver_storage_after": 459395,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "3KazorDopHprbnb8ACh831c136ZqThqHfS4nSpAPgEXf",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2135222503867
+        }
+      ]
+    },
+    {
+      "signer": "lendermwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "fund_offer",
+      "deposit": "100000000000000000000000",
+      "transaction_hash": "BfBpC1hq74nZkWmBWsQULcDvmnXppBtnRV28EQFqYnLY",
+      "final_status": {
+        "SuccessValue": "IjYi"
+      },
+      "total_gas_burnt": "2527434908237",
+      "receiver_storage_before": 459395,
+      "receiver_storage_after": 459693,
+      "receiver_storage_delta": 298,
+      "receipts": [
+        {
+          "id": "3sAooYmTYrCzNVz8zdGaBy4wh6we6RZP5AHDeysHRnDU",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjYi"
+          },
+          "gas_burnt": 2213748729867
+        }
+      ]
+    },
+    {
+      "signer": "carolmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "accept_offer",
+      "deposit": "0",
+      "transaction_hash": "GNptGrDEa9M7B96y8htu1ZhxdNP2hDvDdRWifsgVjz7D",
+      "final_status": {
+        "SuccessValue": "Ijci"
+      },
+      "total_gas_burnt": "3294473765728",
+      "receiver_storage_before": 459693,
+      "receiver_storage_after": 459764,
+      "receiver_storage_delta": 71,
+      "receipts": [
+        {
+          "id": "9busg1qH4D87bhHSqo24MYmV9UWPd4TvhEsMDS8AnbyL",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "Ijci"
+          },
+          "gas_burnt": 2985126805423
+        }
+      ]
+    },
+    {
+      "signer": "carolmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "nft_transfer",
+      "deposit": "1",
+      "transaction_hash": "CKyPiX1WLgiwDWP4DAKGGocgkfPasxwnXBbqsTeeJbHx",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2704471761693",
+      "receiver_storage_before": 459764,
+      "receiver_storage_after": 459763,
+      "receiver_storage_delta": -1,
+      "receipts": [
+        {
+          "id": "AqrKS4U7VaHTBm9BpWM77ApbAp6vmVGVDjZwQdqSLr6E",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2391739257623
+        }
+      ]
+    },
+    {
+      "signer": "carolmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "repay",
+      "deposit": "110000000000000000000000",
+      "transaction_hash": "B4VrBeDb7uhSVUpyTjbVcL4xyZURZSDq6MBJL6SmXCA4",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:608:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwf0ixy2.test.near\")\n right: AccountId(\"davemwf0ixy2.test.near\")"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "2381151205120",
+      "receiver_storage_before": 459763,
+      "receiver_storage_after": 459763,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "DtrXH6w9c4VSyUET7v6365oXTc6EdpQU8WBPLN6GJX9B",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:608:9:\nassertion `left == right` failed: not NFT owner\n  left: AccountId(\"carolmwf0ixy2.test.near\")\n right: AccountId(\"davemwf0ixy2.test.near\")"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1625772905820
+        },
+        {
+          "id": "C8erAMMwwKBuoatkaa48bnmH9JzZ2jMdZm7ibgFTQJGH",
+          "executor": "carolmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "3xRoMsajxQTqfDZ9tcTppYHpcc68P5xQLsf1Cq27GoxC",
+          "executor": "carolmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "davemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "repay",
+      "deposit": "110000000000000000000000",
+      "transaction_hash": "498ewoBT7dLEd5qsQdeaGtD5Lj97zGZyvxUGEmN1pFJH",
+      "final_status": {
+        "SuccessValue": "Ijgi"
+      },
+      "total_gas_burnt": "3474081794236",
+      "receiver_storage_before": 459763,
+      "receiver_storage_after": 459916,
+      "receiver_storage_delta": 153,
+      "receipts": [
+        {
+          "id": "BPYXT5SZvAafcFaKVruKKoneZoRFzPAY2Fe7AXUvkPF1",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "Ijgi"
+          },
+          "gas_burnt": 3165068619936
+        }
+      ]
+    },
+    {
+      "signer": "davemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "repay",
+      "deposit": "110000000000000000000000",
+      "transaction_hash": "7bSzdRQoTfgFomBMfBMBnPRqrhuYbjDPDXF7x1hDBuF5",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "2348370407068",
+      "receiver_storage_before": 459916,
+      "receiver_storage_after": 459916,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "9FWojrNNtFn9Qv8YEFUiYoR6BFouJtpvXav2kGBwm15s",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1592992107768
+        },
+        {
+          "id": "ECKcYZTE88sybXSEbgnmTboAx4jz3VMabxtKht3v9C1t",
+          "executor": "davemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "5LbKDfqtXKngF7pBRYxdiAHswWRTjG7fcQwr3htXGxgM",
+          "executor": "davemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "default_loan",
+      "deposit": "0",
+      "transaction_hash": "E3vY1D8jjzDnGpRucxJWBP4rrS6jxpHBxfrs2WREZ6x6",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1905262819447",
+      "receiver_storage_before": 459916,
+      "receiver_storage_after": 459916,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "72gV2iXcfUC8MgLua3JtC9dSGJG15hnpPQB6VMVhgNCY",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:904:9:\nassertion `left == right` failed: loan not active\n  left: 2\n right: 1"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1595915859142
+        }
+      ]
+    },
+    {
+      "signer": "bobmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_withdraw",
+      "deposit": "1",
+      "transaction_hash": "GTBpwSDchp1ss9vUVQ36kYxV4WwLAdDf1DBKYTMDB1pZ",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjUwMzA1MDAwMDAwMDAwMDAwMDAwMDAwMCIsImF2YWlsYWJsZSI6IjQ5Njk1MDAwMDAwMDAwMDAwMDAwMDAwMCJ9"
+      },
+      "total_gas_burnt": "5601621111814",
+      "receiver_storage_before": 459916,
+      "receiver_storage_after": 459916,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "Cjje9UeW9tRkepbPyMDo54ddoLh3ChhksXvdivKTxRHn",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjUwMzA1MDAwMDAwMDAwMDAwMDAwMDAwMCIsImF2YWlsYWJsZSI6IjQ5Njk1MDAwMDAwMDAwMDAwMDAwMDAwMCJ9"
+          },
+          "gas_burnt": 2813972265749
+        },
+        {
+          "id": "Cz4wQByc2qEVJniRMzy34FbKMwEXynJfZGV69X9oXVGE",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "G3kgkcQ8PLSwVUHaBnrcfxwZABf8if6Szp51c71jRFZq",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "EoBRn1rfRkFqh5G2oFgmFTBFum6K5SGNDaTEFVxXfXC3",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1807514421670
+        },
+        {
+          "id": "3zpG6hMsNRjt4wx4G2NSWtVPCaDwPV8tVg1MEAfJ1hm6",
+          "executor": "bobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "disappearmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "cYuAhJHREWYWPpEYEPePa2XmT2N4zAz5GB4JhoeMhNp",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2339150496275",
+      "receiver_storage_before": 459916,
+      "receiver_storage_after": 460085,
+      "receiver_storage_delta": 169,
+      "receipts": [
+        {
+          "id": "3UUiRetjXGycakLopfsXU6mYbSNCFSwH76VNC7qEc6TV",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMTAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2028229973375
+        }
+      ]
+    },
+    {
+      "signer": "alicemwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "ft_transfer",
+      "deposit": "1",
+      "transaction_hash": "7D9qCPAXjW93RTDbGqZiYK91wccfmFaQi86HHKV59i54",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2445165960140",
+      "receiver_storage_before": 460085,
+      "receiver_storage_after": 460085,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "5PhrSZCwnyEKjThqtwP3U1LPXtmahCjNJSkYZtcaJkav",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2132147353780
+        }
+      ]
+    },
+    {
+      "signer": "disappearmwf0ixy2.test.near",
+      "receiver": "disappearmwf0ixy2.test.near",
+      "method": "act",
+      "deposit": "0",
+      "transaction_hash": "9uavGrX7KWEGcL99M4fn6v57GX5Hi9YvSiG5Jmx3LD1w",
+      "final_status": {
+        "SuccessValue": "IjEwIg=="
+      },
+      "total_gas_burnt": "4695970232149",
+      "receiver_storage_before": 239017,
+      "receiver_storage_after": 239062,
+      "receiver_storage_delta": 45,
+      "receipts": [
+        {
+          "id": "EqPx8RVcUzkoVnn6Fw3GYhyF9qB9QX2R59A4QLNGsQrD",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "E1MTghP3yspwjB4Xu1DXHuWHPrauE2FHLJ7eGpDUSt5o"
+          },
+          "gas_burnt": 1649040256399
+        },
+        {
+          "id": "E1MTghP3yspwjB4Xu1DXHuWHPrauE2FHLJ7eGpDUSt5o",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjEwIg=="
+          },
+          "gas_burnt": 2515395005896
+        },
+        {
+          "id": "6v7XJzAiwJng7xhkBZRJUpKyoxM18PtfxMSM4Q8E14KU",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "disappearmwf0ixy2.test.near",
+      "receiver": "disappearmwf0ixy2.test.near",
+      "method": "withdraw_and_disappear",
+      "deposit": "0",
+      "transaction_hash": "4mkCPW2jV4VmFrbZvFHXakQtF8BHZfnx699L284CXTQs",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "8394349004864",
+      "receiver_storage_before": 239062,
+      "receiver_storage_after": null,
+      "receiver_storage_delta": null,
+      "receipts": [
+        {
+          "id": "H5dm41uHUdq4uEHcmPgFKvhCGdRHtewQiBHQudSRQ5bd",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "AmUh6TYDnrFeKukcuQhVzTj9BTK8AWxEpEkSq3fhjhrb"
+          },
+          "gas_burnt": 1952090863774
+        },
+        {
+          "id": "DSgPZS1gb7EZ5kQBq9jCXPKF2uaZzmsFoedGAj9i81VK",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "CzSi9msciAfyRGyy1PirG5D1F3LEAcYLJZit1XhbWBDK"
+          },
+          "gas_burnt": 2485413218104
+        },
+        {
+          "id": "F14VtNrzCaiYA1ZN3NiXh54DC6ME8B9AwxzH4StfnNVq",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "AccountDoesNotExist": {
+                    "account_id": "disappearmwf0ixy2.test.near"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "61WZMyGxhcH4TXNHaGzBfi3XnoucTp8MqhpC5Q5S6NCs",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "9cPUT8wWA7heuVu7VjLz6K21rK3hntZRXCfUZmsxC35S",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "AccountDoesNotExist": {
+                    "account_id": "disappearmwf0ixy2.test.near"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "CzSi9msciAfyRGyy1PirG5D1F3LEAcYLJZit1XhbWBDK",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1830733156152
+        },
+        {
+          "id": "EHbhbsFjQeH5FL64YvLg4334Qs9o5nwnVUkCFFSxvHNv",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "AccountDoesNotExist": {
+                    "account_id": "disappearmwf0ixy2.test.near"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "AmUh6TYDnrFeKukcuQhVzTj9BTK8AWxEpEkSq3fhjhrb",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 255548500000
+        },
+        {
+          "id": "A5GdW5EWDBNnDw3PtFxfDrwbcD31zitucEwYxDxVFQWk",
+          "executor": "test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "BVcSmQffEQsZwx14tNX7vde12TjR1w2BKASGnat2oBWM",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "AccountDoesNotExist": {
+                    "account_id": "disappearmwf0ixy2.test.near"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "AfGhMVq7kcDfWqJb65AnuTxoSaUkkeKPR94Z2z3AyhVj",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "AccountDoesNotExist": {
+                    "account_id": "disappearmwf0ixy2.test.near"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "disappearmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "retry_failed_claim",
+      "deposit": "0",
+      "transaction_hash": "5AKyRp5cBaY87WG3ksUsHB3t58NAirVHptyPZT2gTvRU",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2131263582691",
+      "receiver_storage_before": 460246,
+      "receiver_storage_after": 460246,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "2ATfEJ5DjEnWgiRzyHwHnDhWSszMrvs3JMT7b4p8vgpt",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1821535152666
+        }
+      ]
+    },
+    {
+      "signer": "disappearmwf0ixy2.test.near",
+      "receiver": "normalmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "njVknLWpgX6ipafAB9KfVknwis1c8hDQfFnkm7ZQ61w",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "5304009482376",
+      "receiver_storage_before": 460246,
+      "receiver_storage_after": 460246,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "Fvzxh8nKTsFxre5NZXDDCBquZsgfSPZukh1vB1zwjdp9",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "3dYRAfpEw8kSV7rPEfzpBHeNtryAZRnFWpVDWfNKiqXL"
+          },
+          "gas_burnt": 2485413218104
+        },
+        {
+          "id": "EpUh16A4zBBeMC1X33ym3MgB5idcG29MrexQcdNWfPoM",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "6F1uxUFXbxWF5Nkjd25a4xSc4tLnnBRGJuz1FGhBinDJ",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "3dYRAfpEw8kSV7rPEfzpBHeNtryAZRnFWpVDWfNKiqXL",
+          "executor": "normalmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1839510881607
+        },
+        {
+          "id": "AyKmuXYeQoTwTkBHCxyJFd7MWZe7gDs2GxaXESv9UdHb",
+          "executor": "disappearmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "new",
+      "deposit": "0",
+      "transaction_hash": "TzHt23oWPPz3DXZv7K6gyu3KxWVbbZ1enwW1ZtC6GQG",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2051898252268",
+      "receiver_storage_before": 457468,
+      "receiver_storage_after": 457820,
+      "receiver_storage_delta": 352,
+      "receipts": [
+        {
+          "id": "Cg7HnB6EEgFyQWprJndQRYAKnZy1qLXdpcqffeGo1bcP",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1743680000954
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "5HAvTKB3tVsAxVxjpmmXrdtqAZoJVutZMdUNudoYdcyD",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMDAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2327739380046",
+      "receiver_storage_before": 457820,
+      "receiver_storage_after": 457990,
+      "receiver_storage_delta": 170,
+      "receipts": [
+        {
+          "id": "CPAVnUYBJxove3DBA1BW7jKfD1VjA4iquQCDcLdQHvvq",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMDAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2016818857146
+        }
+      ]
+    },
+    {
+      "signer": "faultbobmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000000",
+      "transaction_hash": "CbH3NVRuBnvzGBR4VDgzp8Wwj292jkkjw5kkfE5TEzAR",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "2336226931926",
+      "receiver_storage_before": 457990,
+      "receiver_storage_after": 458158,
+      "receiver_storage_delta": 168,
+      "receipts": [
+        {
+          "id": "DAJkpF8nPoL7erEqixD3iyQ9NcKhRahpgPVifYZTybW6",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTgzMjAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2025306409026
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "issue",
+      "deposit": "2000000000000000000000000",
+      "transaction_hash": "HTYgqTkhKevaknn44VnhxZ8GN7JEaZDhDGbySb9inYa6",
+      "final_status": {
+        "SuccessValue": "IjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAi"
+      },
+      "total_gas_burnt": "2212747444793",
+      "receiver_storage_before": 458158,
+      "receiver_storage_after": 458158,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "GhXknTT4VXtbYHGKVJFg4QxGapzowe99o9wt2WM1f3e7",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAi"
+          },
+          "gas_burnt": 1903591219348
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "ft_transfer",
+      "deposit": "1",
+      "transaction_hash": "9ir7UmT2FJZf5be6Mn9YVy7PehemF3SRAJSkFbXaJg7c",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2442652807260",
+      "receiver_storage_before": 458158,
+      "receiver_storage_after": 458158,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "q4ERk12TDem6g4RB1nEaNLJvvrnCzYjNabA2Jz2DsbH",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 2129634200900
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "redeem",
+      "deposit": "0",
+      "transaction_hash": "9SnkYpic48NPKD4N6DZFZoK9d1D52HSEtoydv5KrZkzk",
+      "final_status": {
+        "SuccessValue": "IjAi"
+      },
+      "total_gas_burnt": "2818830566078",
+      "receiver_storage_before": 458158,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 163,
+      "receipts": [
+        {
+          "id": "DbhvkxyzoGfYKhXoKbRjVMERuipADoMtA5uD6D3oczqa",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjAi"
+          },
+          "gas_burnt": 2508053094323
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "Gwp8w94ZX9HcaoLTpzh5v2jx9afVGyDFTrvac8abVm3K",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Exceeded the prepaid gas."
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "4346742874103",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "A92Fnmu9LDTgTaHGGYqsY8m3bjYVedhGRZwLhpVzCudB",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "E7kgRZEAjnF7oKUuPDdVr6cxMFk9yQTT14aKNigU1VL5"
+          },
+          "gas_burnt": 2478551765925
+        },
+        {
+          "id": "8j91sHWdTwPmrykU1LCKMbSGATmwFMP1bZw8nqpRajTs",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "GvxJy6zjrNAA5rfC4ACJWa2MRRDbhqwejkMY8q6HZXT3",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "E7kgRZEAjnF7oKUuPDdVr6cxMFk9yQTT14aKNigU1VL5",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889153409228
+        },
+        {
+          "id": "EGG8wHpo9FLVYbBFQx8JTbkm35hUeust9qGQn8H6uohz",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "BRwTsSNX1zez6YJgvPBQEP9HzB1sVHCj24mCZKS6kRpi",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 1\n right: 0"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1916561031918",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "J4ogh57vpFRbC1SEy88jMLQ2hVzQgn2Q4Eq1jFvFhdJK",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 1\n right: 0"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1607071020468
+        }
+      ]
+    },
+    {
+      "signer": "faultbobmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_claim_as_paid",
+      "deposit": "0",
+      "transaction_hash": "3FMCtRPEGcCREHXuxyyow8cmAHvCsZmoyaef3WtmGk9Z",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:675:9:\nassertion `left == right` failed: not claim owner\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1940238293451",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "6fqhxj4Prf1o6ny3tserUZXCUc3jQfuhjUwKdoDFz9Jd",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:675:9:\nassertion `left == right` failed: not claim owner\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1629985342561
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_claim_as_paid",
+      "deposit": "0",
+      "transaction_hash": "4g4qBeUNxB3SY1cDgoi4uG8DokLwAcB64kLE19R4q3pc",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:681:9:\nclaim still quarantined"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1899232988466",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "F22yv9tsWwTEGEUVDciN4BG3tiHHLSkv4os7GESTL1Hu",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:681:9:\nclaim still quarantined"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1588980037576
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_claim_as_paid",
+      "deposit": "0",
+      "transaction_hash": "8oJhg5Nkxbdm5a8H85DHXpEo5UEvNPpkYKgZ3vRQFpTL",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2121933103656",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "CdNuYyAMFBvjQpnh2ZkvbDtomcf7i9rVVKUbfiC5RDSe",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1811680152766
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "8g5Pe6zXQtVyF7a5ysXh1ejeqMJuYywqd2W9hoXtxfKf",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1916561031918",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458321,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "DBwrBbFjbRdmVrBE9YibD2ciXtTJApAHJfAK8mxz93NZ",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:629:9:\nassertion `left == right` failed: claim not available\n  left: 3\n right: 0"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1607071020468
+        }
+      ]
+    },
+    {
+      "signer": "faultbobmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "redeem",
+      "deposit": "0",
+      "transaction_hash": "NjUJERGspLdvr43SBcvnBmyZQXjEFxbegxd2o2itXux",
+      "final_status": {
+        "SuccessValue": "IjIi"
+      },
+      "total_gas_burnt": "2818966643804",
+      "receiver_storage_before": 458321,
+      "receiver_storage_after": 458480,
+      "receiver_storage_delta": 159,
+      "receipts": [
+        {
+          "id": "8rrDHvMT6wowq9vFWZLdxT6TS9w7L1nmnoMbexpQ2CHY",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "IjIi"
+          },
+          "gas_burnt": 2508189172049
+        }
+      ]
+    },
+    {
+      "signer": "faultbobmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "withdraw_claim",
+      "deposit": "0",
+      "transaction_hash": "AZejtPEQ9mDQQxqWNqam24WtMo24LxnBXTD9qhFzEfnY",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Exceeded the prepaid gas."
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "4349836519731",
+      "receiver_storage_before": 458480,
+      "receiver_storage_after": 458480,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "3QWHZLu8yjNWFibx9wys1J6mkRQAzSaaQrEzUBnj4X5X",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessReceiptId": "7QEB9dAbJmw5q5oP6U9c44EKWAfNpWaqyhhsjaNRM1sZ"
+          },
+          "gas_burnt": 2481645411553
+        },
+        {
+          "id": "G3WT95cJYAmB6KqsWvyNihzrtQbNkV7TRMi3kKhf86Wr",
+          "executor": "faultbobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "QBqBWXno8vxvS4oCg3e6Dxv8ED5vRNvGniJcCsXXGAz",
+          "executor": "faultbobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "7QEB9dAbJmw5q5oP6U9c44EKWAfNpWaqyhhsjaNRM1sZ",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889153409228
+        },
+        {
+          "id": "CsePmx3AocXsnPRJp3p6qrd3sW4Np5xov1YRPF1X5C3r",
+          "executor": "faultbobmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "6gBYDaNm1osEWmP67DdK8sJDXqRiZu7o4yDbSAksQtBh",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4561744101424",
+      "receiver_storage_before": 458480,
+      "receiver_storage_after": 458602,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "Ed373LRod9VQLSnMDyM4Kywa7M6fPFsNLSgeYt1i5Wq5",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2692179109247
+        },
+        {
+          "id": "5R3M1bFXWCmRAApCWciBFhjnNQr8e8vKVtuoR4ADs52a",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "AyqSi8T7W2QWLGAuBnFF3iMJu7dwMP3rfGmniqgLvYpd",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "jSj8UTkFiyNAtNP7jkghJLdGiG1mZmMGwUj94okh9Lc",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "9B9f5AcRmmQkFdZotSXKeZXVsRarzQkVy227s81oE3LJ",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "2qQvdvaAS73t8txxrSvXJ4HFk9qGE8YinpW9YG6xx5Xf",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4564024101424",
+      "receiver_storage_before": 458602,
+      "receiver_storage_after": 458724,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "8UJRDDxMQS6jEByYo91kgbeSXsg331TSn3GystwY1uy8",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2694459109247
+        },
+        {
+          "id": "GoHmpGdLjdfpBDiWrcbb77TjPh9swFurFm2gFMoLABjh",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "GjnLG24J4Sxxbvsxkmgygq6TusDN1grnr9HNDvkCLnTH",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "H725JEDnnJtovjM61JXoGRJoMXbLPJ1rAgMZyeL3SVd8",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "Cd4anoYBUAyDdxJZWJV1GLBTLH6KGT5UDDKgRsKypRDx",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "5smJyQnN1QV1DiifPwgKAQyXLWhbUx64Fx2CjNtVBB3H",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566304101424",
+      "receiver_storage_before": 458724,
+      "receiver_storage_after": 458846,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "EM7w8qVLjSTaimRDigMdKZ9U8Z75nL4FXfvoUgVMoXHR",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696739109247
+        },
+        {
+          "id": "ChaZhnjVvxMRxadmfSWQQPEuG5JNWswdHGfqkxeb6TZ8",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "27F7GJoFswv6DkAJhbuQda626FHnW6oFM5kXxRPTPN6q",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "4f3MAx5poWDcWUcpSqi6bj6NVYdGxjDumhTWq6n6hivf",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "ELihqSk1qBhQ7kGgnegQQdKSYngkdxuQ3WzzX6Uoz2AB",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "EvHFiDTsnyM6PM8cyzMoxbPvspeErmuZsCfGuNvK4F6J",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566304101424",
+      "receiver_storage_before": 458846,
+      "receiver_storage_after": 458968,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "DBrgzmcgssCt9FyQC1yrnniyCXPcPNyujN6CJ55Dc4AH",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696739109247
+        },
+        {
+          "id": "EyB1DM8ad1g5R1reVphBK3TcvaRoXKgJL2MGe6R2YABC",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "3gr3dFULSNAA8X3EivWywKVZ111c49JGvGbM2RsG9YXe",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "AtWerhrXWb4s2Gi6ohaM2V3CMNjcDTKFfdgVV6NMp36U",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "7dX7yQUQf3gzPMUhyyNxdDEXeH4MyZQbhZGhoEdjQhLo",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "BtZeB29P7en8W4yd5e1Eniuzv3aES8aZXeJNEDuzL75U",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566304101424",
+      "receiver_storage_before": 458968,
+      "receiver_storage_after": 459090,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "EX42QSTW2DbcFxv8A4mCs8y5wxNnWBVM6hp8h1Z1Mj2Z",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696739109247
+        },
+        {
+          "id": "5HHTvLwRDFh6jxwEyfFcxjRK9XBcmu7o2QkWDrtiHgfL",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "HYzVVrogsDLYmRXVnnaG2P2ZLtNRcu3NUp841eNTL6hm",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "FCGafhRERoLncRSjKjQHeWKD9CRBNENMyLGdpJHaV2bZ",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "4KpCri4jvoVzqQCznNLQVnmN5jUUSem9c9de2yw1MW32",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "6vfDVTGDiKHqU1PGMVptahLzVuXy1EoLbe5QM898Eu4o",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566304101424",
+      "receiver_storage_before": 459090,
+      "receiver_storage_after": 459212,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "E9LcLahcq4pwCXbJVwvhVZyjCkt9gXXXQqL8BLsJmatV",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696739109247
+        },
+        {
+          "id": "AxXizkjyFYGX89f6yMwzexSbYdbXt1NYwo6xVF4GTcq1",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "GMAsoXG1uuwTzrcnNV26GG6en9MF3ohpy9A72mfap64o",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "Ga9ReJRmvtS3m6fieBeQD1tp8vCphGPxuThrwXxKaTMi",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889144465492
+        },
+        {
+          "id": "6heDpvoQP76AjaxbsTfrr8rDjD3VGik6pd9HiCX3fxDJ",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "DJJmuqfyAhRNANSapm9fDrF8rhV7U4R9TYtxfZhK3nAK",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566341171085",
+      "receiver_storage_before": 459212,
+      "receiver_storage_after": 459334,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "8DZkfBDcXU8iDsDQ7Xw2uq9xTYLDD1vaaVWzkDxLpH5V",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696773942974
+        },
+        {
+          "id": "5wsKeSPC3uRoS3hCqDrLZyp5beaB5Tgceq5FLwAaU8o2",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "8a99NKsyd7aWYQ3P2ctaFArRRLmzTWMS7RDsAhCzAYcD",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "CswUS1C3WZWvceuSooUYd4kUhjqF5SAexhazssQBz4Em",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889146701426
+        },
+        {
+          "id": "HUajfqBEBiu6oVHjZSKbmmsTAAwkfJN6ithStKy3PMdi",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "GqcFbAn6xTAM4GZrvzH31BztUnRdq7hdHY3LGjFszdYo",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4566341171085",
+      "receiver_storage_before": 459334,
+      "receiver_storage_after": 459456,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "ATZJSRotETxhhyQz7GhG5ZEARFCTzY17VZkUqqAa1XVj",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2696773942974
+        },
+        {
+          "id": "GAR5ePFuyLSyUQHpeQdJVoyn8S1SR4mDL6YFshYwe4rr",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "BDhq9gNYvxDj3xW4p32875Cvk8iKtv7Y2Bc57b1tTviM",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "68Wf2h6ZcuDqg95dsiCsSE5BWL6wETRJvRiF3xV8t6p",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889146701426
+        },
+        {
+          "id": "yMcUkqdv9MBr2SsMW1ZZsfNhDujNTuoMtb7YVcCEF5u",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "77dCP1eAbsJ5bWrbtaNZBDTBYefywARHNjxeT8ozD7pk",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:742:9:\nprepaid operational storage exhausted"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "2625807963720",
+      "receiver_storage_before": 459456,
+      "receiver_storage_after": 459456,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "KPs6tWuCpv3dPwiq2UWXP4rm1bJuysad2gfNTbtxoB1",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:742:9:\nprepaid operational storage exhausted"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1868569999535
+        },
+        {
+          "id": "9PbZ7bpZbJRGeh7oXn9pfEb7ojSa1hTxjT6fmAziCCHM",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "DWYxMntg3xtRmUAr7XPqcGFNjn8HP8HxYUMDDki2YXDF",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    },
+    {
+      "signer": "faultbobmwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "B3whKxsadR4BspnWLEUsZwPP5fuk6paFgEvzMzfLfr6M",
+      "final_status": {
+        "Failure": {
+          "ActionError": {
+            "index": 0,
+            "kind": {
+              "FunctionCallError": {
+                "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:690:9:\nassertion `left == right` failed: not refund receiver\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"
+              }
+            }
+          }
+        }
+      },
+      "total_gas_burnt": "1939223952245",
+      "receiver_storage_before": 459456,
+      "receiver_storage_after": 459456,
+      "receiver_storage_delta": 0,
+      "receipts": [
+        {
+          "id": "7VD4EwjQysPcoSfq5FTFX9fCorWX4pyX8xFFx9mbazNb",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Smart contract panicked: panicked at src\\contract.rs:690:9:\nassertion `left == right` failed: not refund receiver\n  left: AccountId(\"faultbobmwf0ixy2.test.near\")\n right: AccountId(\"faultalicemwf0ixy2.test.near\")"
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 1628875633925
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "2vxSh7q3mBXjBWCcamtweWa4YfuWQaSfpjk87sYTWup8",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 459456,
+      "receiver_storage_after": 459334,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "4T2WMXqVs5LzHNMWoCbgFdMuE9nwV9UenntuhAR4EtBu",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "FBR8NiG9dfvLHvqSrz8pnCHD1NxMGwPvkKoHk6bRgzhB",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 459334,
+      "receiver_storage_after": 459212,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "6du3xZsitzwwhfK6LdioR6wFmpS8nTyHzGWLjyuutMUM",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "A65SPLyRHtEE6rsXNpjCVYasRNzNe3WwgHcP6YV2Tpov",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 459212,
+      "receiver_storage_after": 459090,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "EXyeusZ7hptRHDKqfmpPxNFwWntAmiXoA9Mat1HttLU8",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "Bsg9ZbUDv8C16r2XVbRxJJPC8dZtFWKNzpNPn2QbEbK9",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 459090,
+      "receiver_storage_after": 458968,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "7jtCyDZUBM8gCKA1p4qe4iz3GUzRmUrBCCi691sd5Tzh",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "DX5e828okLRcgDi5nbr4g5K1bWxRaKRbCDiAgEC8QbVP",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 458968,
+      "receiver_storage_after": 458846,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "CUW3YQP8WTVz6XtmJmYyBK3e7cAXqjtj6RBoL6NkWryT",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "AjFNwf1a3ikQR2peNPLjFtG9A7cwdhWV5GpQaFKm3L88",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103310881191",
+      "receiver_storage_before": 458846,
+      "receiver_storage_after": 458724,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "xvcxgnMEa3z95PAEVe2uyrE3Z9FpMetaMY1drkhG3QC",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1792962562871
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "8pmuvJ89wnu6Hm8kCpYEmxmrMKPv4t4L2P5LBPgRSzfE",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2103424507118",
+      "receiver_storage_before": 458724,
+      "receiver_storage_after": 458602,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "3Tb5zktF5rEGHYEawTwgHXZQHzVWxkQARgFGspw7Umtj",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1793028505083
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "finalize_unknown_refund_as_paid",
+      "deposit": "0",
+      "transaction_hash": "9gvuzcyiuBUZoaU31ybnnEzHPdHVVuPSWTeVZ157wEe7",
+      "final_status": {
+        "SuccessValue": ""
+      },
+      "total_gas_burnt": "2098864507118",
+      "receiver_storage_before": 458602,
+      "receiver_storage_after": 458480,
+      "receiver_storage_delta": -122,
+      "receipts": [
+        {
+          "id": "7r1yvtBGBECY3ZDGkknyKfQw1g4KAftWMeTh9weG88JP",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 1788468505083
+        }
+      ]
+    },
+    {
+      "signer": "faultalicemwf0ixy2.test.near",
+      "receiver": "faultmwf0ixy2.test.near",
+      "method": "storage_deposit",
+      "deposit": "1000000000000000000000",
+      "transaction_hash": "F3Y8VNKJ7EF8Yin2mkR9xLhi3YTZm12j8iCEuyZiR55Y",
+      "final_status": {
+        "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+      },
+      "total_gas_burnt": "4561781171085",
+      "receiver_storage_before": 458480,
+      "receiver_storage_after": 458602,
+      "receiver_storage_delta": 122,
+      "receipts": [
+        {
+          "id": "DTNbodnxvNywVHTcUvg6HdyJQfDwE1WTvT4feek3ipkW",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": "eyJ0b3RhbCI6IjEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAiLCJhdmFpbGFibGUiOiI5OTY2NzAwMDAwMDAwMDAwMDAwMDAwMDAifQ=="
+          },
+          "gas_burnt": 2692213942974
+        },
+        {
+          "id": "4A7Gcc94zQpbKXWp8UfTbYEZWTq7szE1X6JKhUMf7LYs",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "4jJwirziZcrbHuiEmeayoKPCrxDpJTSHyhhCXbJzyRHD",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        },
+        {
+          "id": "GDBPLWu6JwCjNc4bcGgE8STQnARZR51NAKfwgX6defwW",
+          "executor": "faultmwf0ixy2.test.near",
+          "status": {
+            "Failure": {
+              "ActionError": {
+                "index": 0,
+                "kind": {
+                  "FunctionCallError": {
+                    "ExecutionError": "Exceeded the prepaid gas."
+                  }
+                }
+              }
+            }
+          },
+          "gas_burnt": 889146701426
+        },
+        {
+          "id": "6awVqxutADYaKMPZRpMzWn2CAtqW4tAMrtQcfDLcye6p",
+          "executor": "faultalicemwf0ixy2.test.near",
+          "status": {
+            "SuccessValue": ""
+          },
+          "gas_burnt": 223182562500
+        }
+      ]
+    }
+  ],
+  "artifacts": {
+    "normal": {
+      "bytes": 457591,
+      "sha256": "2325abb1230509e4f9c96acc842f25fca8482682096910b3f5e8df0a3d3dc6fc"
+    },
+    "fault_short_quarantine": {
+      "bytes": 457286,
+      "sha256": "e54ef95d98a7653812f44e5e68325be771c5abe179b09cdb334a5a3ecc77277b"
+    }
+  },
+  "accounts": {
+    "normalmwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "alicemwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "bobmwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "carolmwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "davemwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "lendermwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "faultmwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "faultalicemwf0ixy2.test.near": "disposable sandbox identity; key omitted",
+    "faultbobmwf0ixy2.test.near": "disposable sandbox identity; key omitted"
+  }
+}

@@ -1,0 +1,22 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+const dir=import.meta.dirname,base=path.resolve(dir,'..'),out=path.join(base,'runtime/evidence/release-rc1');
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const normal=fs.readFileSync(out+'/new-normal.wasm'),fault=fs.readFileSync(out+'/new-fault.wasm');
+assert.equal(sha(normal),'31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b');assert(!normal.equals(fault));assert(normal.equals(fs.readFileSync(base+'/target/wasm32-unknown-unknown/release/floorline_kill_test.wasm')));
+const read=n=>JSON.parse(fs.readFileSync(out+'/'+n));
+const regression=read('runtime.json'),capacity=read('new-summary.json'),controls=read('controls.json');assert.equal(regression.tests,32);assert.equal(regression.failed.length,0);assert.equal(capacity.accepted,128);assert(controls.passed);assert(read('refund-recovery.json').passed);assert(read('maximum-envelope-final.json').passed);assert.equal(read('gas-boundary.json').rounds,3);assert(read('package-tests.json').passed);assert(read('staging-browser.json').passed);
+assert(/16 passed; 0 failed/.test(fs.readFileSync(out+'/economic-tests.log','utf8')));assert(/Finished/.test(fs.readFileSync(out+'/clippy.log','utf8')));assert(!/error:/.test(fs.readFileSync(out+'/clippy.log','utf8')));
+const files=['Cargo.toml','Cargo.lock','src/contract.rs','src/engine.rs','src/math.rs'];
+const metrics={};for(const x of regression.evidence){if(!x.gas_total)continue;const g=metrics[x.method]??={count:0,min_gas:x.gas_total,max_gas:x.gas_total,min_storage_delta:x.storage_delta,max_storage_delta:x.storage_delta};g.count++;if(BigInt(x.gas_total)<BigInt(g.min_gas))g.min_gas=x.gas_total;if(BigInt(x.gas_total)>BigInt(g.max_gas))g.max_gas=x.gas_total;g.min_storage_delta=Math.min(g.min_storage_delta,x.storage_delta);g.max_storage_delta=Math.max(g.max_storage_delta,x.storage_delta)}
+const manifest={source_commit:execFileSync('git',['rev-parse','HEAD'],{cwd:base,encoding:'utf8'}).trim(),source_sha256:Object.fromEntries(files.map(f=>[f,sha(fs.readFileSync(path.join(base,f)))])),compiler:execFileSync('rustc',['--version'],{encoding:'utf8'}).trim(),near_sdk:'5.30.1',features_normal:['contract'],features_fault:['contract','fault-injection'],rustflags:'--cfg near',normal:{bytes:normal.length,sha256:sha(normal),code_hash:'4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az'},fault:{bytes:fault.length,sha256:sha(fault),code_hash:'HDcnh2RVWVHRtMSLp7qksKVYQoiQTUHk9GC2mTa36M3G'},byte_for_byte_rebuild:true,regression:{groups:32,failed:0,entries:regression.evidence.length},capacity,controls_passed:true,unknown_recovery:'QUARANTINED_UNSOLVED',economic:{tests:16,sequences:10000,operations:1280000,seed_range:'10001..20000'},gas_storage:metrics,staging:{typecheck:'PASS',lint:'PASS',tests:65,build:'PASS',browser:'PASS_UNCONFIGURED_DESKTOP_MOBILE_ONLY',wallet_signing:'UNVERIFIED',warnings:['Transitive SDK eval/browser util warning','Ineffective dynamic import warning']},public_signatures:0};
+const post=async(method,params)=>{const r=await fetch('http://127.0.0.1:3032',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:'freeze-readonly',method,params})});return r.json()};
+const live=[];for(const account of [controls.rows.at(-1).result.transaction.receiver_id,regression.accounts.find(a=>a.startsWith('floor'))]){const r=await post('query',{request_type:'view_account',account_id:account,finality:'final'});assert.equal(r.result?.code_hash,manifest.normal.code_hash);live.push({account,raw:r})}
+const status=await post('status',[]);assert(status.result.chain_id.startsWith('test-chain'));const protocol=await post('EXPERIMENTAL_protocol_config',{finality:'final'});
+fs.writeFileSync(out+'/sandbox-code-verification.json',JSON.stringify({status,protocol,accounts:live},null,2));
+manifest.funding={testnet:JSON.parse(fs.readFileSync(dir+'/testnet-manifest.json')).funding,mainnet:JSON.parse(fs.readFileSync(dir+'/mainnet-manifest.json')).funding};
+manifest.staging_index_sha256=sha(fs.readFileSync(dir+'/staging/dist/index.html'));
+fs.writeFileSync(out+'/RELEASE_MANIFEST.json',JSON.stringify(manifest,null,2));console.log(JSON.stringify({normal:manifest.normal,fault:manifest.fault,regressions:32,capacity:capacity.accepted,source_commit:manifest.source_commit,testnet_ceiling:manifest.funding.testnet.ceiling_yocto},null,2));

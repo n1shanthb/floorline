@@ -1,0 +1,138 @@
+[
+  {
+    "method": "accept_offer",
+    "count": 1,
+    "min_gas": "3294473765728",
+    "max_gas": "3294473765728",
+    "min_storage_delta": 71.0,
+    "max_storage_delta": 71.0
+  },
+  {
+    "method": "act",
+    "count": 1,
+    "min_gas": "4695970232149",
+    "max_gas": "4695970232149",
+    "min_storage_delta": 45.0,
+    "max_storage_delta": 45.0
+  },
+  {
+    "method": "default_loan",
+    "count": 1,
+    "min_gas": "1905262819447",
+    "max_gas": "1905262819447",
+    "min_storage_delta": null,
+    "max_storage_delta": null
+  },
+  {
+    "method": "finalize_unknown_claim_as_paid",
+    "count": 3,
+    "min_gas": "1899232988466",
+    "max_gas": "2121933103656",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 0.0
+  },
+  {
+    "method": "finalize_unknown_refund_as_paid",
+    "count": 9,
+    "min_gas": "1939223952245",
+    "max_gas": "2103424507118",
+    "min_storage_delta": -122.0,
+    "max_storage_delta": 0.0
+  },
+  {
+    "method": "ft_transfer",
+    "count": 5,
+    "min_gas": "2442528226274",
+    "max_gas": "2448098059082",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 0.0
+  },
+  {
+    "method": "fund_offer",
+    "count": 1,
+    "min_gas": "2527434908237",
+    "max_gas": "2527434908237",
+    "min_storage_delta": 298.0,
+    "max_storage_delta": 298.0
+  },
+  {
+    "method": "issue",
+    "count": 2,
+    "min_gas": "2212747444793",
+    "max_gas": "2215659715621",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 0.0
+  },
+  {
+    "method": "new",
+    "count": 2,
+    "min_gas": "2051898252268",
+    "max_gas": "2052241183071",
+    "min_storage_delta": 352.0,
+    "max_storage_delta": 352.0
+  },
+  {
+    "method": "nft_transfer",
+    "count": 1,
+    "min_gas": "2704471761693",
+    "max_gas": "2704471761693",
+    "min_storage_delta": -1.0,
+    "max_storage_delta": -1.0
+  },
+  {
+    "method": "redeem",
+    "count": 5,
+    "min_gas": "2813109180544",
+    "max_gas": "2818966643804",
+    "min_storage_delta": 149.0,
+    "max_storage_delta": 163.0
+  },
+  {
+    "method": "repay",
+    "count": 3,
+    "min_gas": "2348370407068",
+    "max_gas": "3474081794236",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 153.0
+  },
+  {
+    "method": "retry_failed_claim",
+    "count": 1,
+    "min_gas": "2131263582691",
+    "max_gas": "2131263582691",
+    "min_storage_delta": null,
+    "max_storage_delta": null
+  },
+  {
+    "method": "storage_deposit",
+    "count": 18,
+    "min_gas": "2326567052879",
+    "max_gas": "4566341171085",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 170.0
+  },
+  {
+    "method": "storage_withdraw",
+    "count": 1,
+    "min_gas": "5601621111814",
+    "max_gas": "5601621111814",
+    "min_storage_delta": null,
+    "max_storage_delta": null
+  },
+  {
+    "method": "withdraw_and_disappear",
+    "count": 1,
+    "min_gas": "8394349004864",
+    "max_gas": "8394349004864",
+    "min_storage_delta": null,
+    "max_storage_delta": null
+  },
+  {
+    "method": "withdraw_claim",
+    "count": 9,
+    "min_gas": "1915779629695",
+    "max_gas": "5304009482376",
+    "min_storage_delta": 0.0,
+    "max_storage_delta": 0.0
+  }
+]

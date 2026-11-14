@@ -1,0 +1,15 @@
+{
+  "artifact": "VERIFIED",
+  "account_preflight": "BLOCKED_OWNER_SELECTION_AND_KEY",
+  "caps": "PASS_STATIC_GRAPH",
+  "gross": "16000000000000000000000",
+  "budget": "SUFFICIENT_AT_QUOTED_MODEL",
+  "atomic": "BLOCKED_OWNER_CONFIGURATION",
+  "graph": "BLOCKED_RECEIPT_IDS_AND_CONFIGURATION",
+  "staging": "BLOCKED_FRESH_ACCOUNT_CONFIGURATION",
+  "audit": "PENDING",
+  "mainnet": "NOT_AUTHORIZED",
+  "public_signatures": 0,
+  "public_writes": 0,
+  "financial_source_unchanged": true
+}

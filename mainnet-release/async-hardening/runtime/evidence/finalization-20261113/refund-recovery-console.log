@@ -1,0 +1,22 @@
+Retrying transaction refundfloor1794585612900.test.near:J4rP1iqKF8RWD3GK7fArevv9Hdf7XjmrFyUApPyn2LHv with new nonce.
+Retrying transaction refundreceiver1794585613901.test.near:3hMoNFb1ye3YHtrRsDebE4bwYpwHNL5P3AYhz4JNWg92 with new nonce.
+Retrying transaction refundfloor1794585612900.test.near:cfM7pV6CY8p5oHgg2Yt5taSBEzmkTx6eocRXr4zrCW7 with new nonce.
+Retrying transaction refundfloor1794585612900.test.near:57amrXmbxujw9a6TYiaE8HtnV8HPU5vTCFusrQRs3ioi with new nonce.
+Retrying transaction refundfloor1794585612900.test.near:DKwg2GvpXiBp1SvH1bQ2gmhMgUdZBXDaw2UbfeMC8Yy with new nonce.
+Retrying transaction refundreceiver1794585613901.test.near:4YJDYeS32y3RJ9SnqKSbyS32Zn57wVzySgwEfTCKWEP3 with new nonce.
+Receipts: 5XqUwKLX94xb2WCZDVfAyAdzuVMKz2yGJQgSh3GwJXWD, 9bx3og1Kxx5q13ASsom41jGTg2eRg1aScBmk6ic1pm3h
+	Failure [refundreceiver1794585613901.test.near]: Error: Can't complete the action because account refundreceiver1794585613901.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794585613901.test.near]: Error: Can't complete the action because account refundreceiver1794585613901.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794585613901.test.near]: Error: Can't complete the action because account refundreceiver1794585613901.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794585613901.test.near]: Error: Can't complete the action because account refundreceiver1794585613901.test.near doesn't exist
+Receipt: 
+	Failure [refundreceiver1794585613901.test.near]: Error: Can't complete the action because account refundreceiver1794585613901.test.near doesn't exist
+Retrying transaction refundreceiver1794585613901.test.near:CAD3RQhN8e6VwiDano6gLHuHEfN8khdyAVU8U25r3YsS with new nonce.
+Retrying transaction refundfloor1794585612900.test.near:2UjJ3KCdkjoDsVmSWoZr3j1qNg56v5k1DKyEXymoUGVz with new nonce.
+Retrying transaction refundfloor1794585612900.test.near:EaNb2HfaEbfDeAfi2Q3va7nxkYsULd8tUqmWpfJhSDkh with new nonce.
+Receipt: sS3DYX8buiNb7CaQY2jekZpbwNWrLRbrEPHePWaTnbJ
+	Failure [refundfloor1794585612900.test.near]: Error: {"index":0,"kind":{"index":0,"kind":{"FunctionCallError":{"ExecutionError":"Smart contract panicked: panicked at src\\contract.rs:350:52:\nmissing refund"}}}}
+PASS actual failed unregister refund, same-identity recovery, slot release and duplicate retry rejection
