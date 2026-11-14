@@ -1,23 +1,23 @@
-# Floorline demo narration (≈120s)
+# Floorline demo narration
 
 TTS notes: NEAR = "near"; FLOOR = "floor"; NFT = "N F T"; RC1 = "R C one".
 
 ## Full transcript
 
-What if a token's reserves, loan rights, and repayment history were verifiable directly on near?
+This is Floorline.
 
-Floorline is a near testnet protocol that combines a reserve-backed fungible token with lender-funded borrowing. The backing, liabilities, and loan ownership rules live on chain. Floor is a N E P one forty one token with separately accounted near backing. L over T is an accounting ratio, not a market-price guarantee. Redemption uses a programmed curve with a twenty percent configured tax.
+Floorline is a money app on near testnet. People can hold a token called floor, borrow against it, and check the important moves with public receipts — no guesswork.
 
-A redemption burns floor and creates a native near claim. This is not just a simulated button. Here is the finalized withdrawal transaction and its receipt evidence on public testnet.
+Here is the simple picture. Floor has near backing you can inspect. Loans are funded by lenders, not by the treasury. And the right to repay a loan can move to someone else as an N F T.
 
-A lender supplies the loan funds. The borrower locks floor. The right to repay and reclaim collateral becomes a transferable N F T. Here the N F T changes hands, and its new owner completes repayment. This is a financial entitlement, not artwork.
+Now the proof. When floor is redeemed, the contract creates a near payout claim. This finalized testnet transaction shows that withdrawal.
 
-If the deadline passes without repayment, the contract settles the default and allocates collateral to the lender according to its rules.
+When someone borrows, a lender puts up the money and the borrower locks floor. Here the N F T changes hands, and the new owner completes repayment. That right is financial, not artwork.
 
-After finishing the test, we permanently stopped new financial risk. Then we verified an existing user could still exit. Both actions have finalized public receipts. New risk stopped. Post-stop exit verified.
+If nobody repays in time, the contract settles the default and allocates collateral to the lender.
 
-Forty public-testnet acceptance steps were independently reconciled across the receipt tree. Judges can inspect the evidence and run our read-only verification scripts.
+After the demo, we permanently stopped new financial risk. Then we verified an existing user could still exit. Both receipts are public.
 
-Floorline demonstrates verifiable lending, N F Ts that carry enforceable financial rights, and bounded safety controls. Its open implementation shows how these primitives can be composed on near.
+Forty acceptance steps were verified. Judges can open the proof page and run read-only checks.
 
-The code, evidence, and verification instructions are public. Floorline: programmable money with verifiable rights, built on near.
+Floorline: programmable money with verifiable rights, built on near.
