@@ -119,8 +119,8 @@ export default function Verify() {
         description="Read-only RC1 public-testnet acceptance catalog. No wallet required. No new financial transactions."
       />
 
-      <section className="card stack-gap">
-        <div className="section-head">
+      <section className="card stack-gap verify-status">
+        <div className="verify-status-badges">
           <Badge tone="lime">RC1 · {ACCEPTANCE.verifiedRows}/40 FINAL_VERIFIED</Badge>
           <Badge tone="violet">TESTNET ONLY</Badge>
           {live?.pilot?.stopped ? (
@@ -129,41 +129,79 @@ export default function Verify() {
             <Badge>Live stop status pending RPC</Badge>
           )}
         </div>
-        <Row label="Contract">
-          <External href={accountLink(CONTRACT)}>{CONTRACT}</External>
-        </Row>
-        <Row label="Expected code hash">{CODE_HASH}</Row>
-        <Row label="Live code hash">
-          {live?.account.code_hash || (app.loading ? "Loading…" : app.error || "Not verified")}
-        </Row>
-        <Row label="Guardian">{live?.pilot?.guardian || GUARDIAN}</Row>
-        <Row label="Acceptance status">
-          {manifest?.acceptance_status || ACCEPTANCE.status}
-        </Row>
-        <Row label="Recorded L / T">
-          {recorded?.ledger?.L && recorded?.ledger?.T
-            ? `${units(recorded.ledger.L)} NEAR / ${units(recorded.ledger.T)} FLOOR (ratio ${ratio(recorded.ledger.L, recorded.ledger.T)})`
-            : "See evidence JSON"}
-        </Row>
-        <Row label="Live L / T">
-          {live
-            ? `${units(live.ledger.L)} NEAR / ${units(live.ledger.T)} FLOOR (ratio ${ratio(live.ledger.L, live.ledger.T)}) · block ${live.blockHeight}`
-            : app.error || "Live RPC unavailable — use recorded evidence"}
-        </Row>
-        <Row label="Inflight / claims">
-          {live
-            ? `inflight ${live.ledger.inflight}; storage_total ${units(live.ledger.storage_total)} NEAR`
-            : recorded?.ledger
-              ? `recorded inflight ${recorded.ledger.inflight}; storage_total ${units(recorded.ledger.storage_total || "0")} NEAR`
-              : "Not verified"}
-        </Row>
-        <Row label="Admission">
-          {live?.admission
-            ? `${live.admission.occupied}/${live.admission.capacity}`
-            : recorded?.admission
-              ? `${recorded.admission.occupied}/${recorded.admission.capacity} (recorded)`
-              : "Not exposed / not verified"}
-        </Row>
+        <dl className="verify-meta">
+          <div>
+            <dt>Contract</dt>
+            <dd>
+              <External href={accountLink(CONTRACT)}>{CONTRACT}</External>
+            </dd>
+          </div>
+          <div>
+            <dt>Expected code hash</dt>
+            <dd>
+              <code className="mono break">{CODE_HASH}</code>
+            </dd>
+          </div>
+          <div>
+            <dt>Live code hash</dt>
+            <dd>
+              <code className="mono break">
+                {live?.account.code_hash ||
+                  (app.loading ? "Loading…" : app.error || "Not verified")}
+              </code>
+            </dd>
+          </div>
+          <div>
+            <dt>Guardian</dt>
+            <dd>
+              <code className="mono break">
+                {live?.pilot?.guardian || GUARDIAN}
+              </code>
+            </dd>
+          </div>
+          <div>
+            <dt>Acceptance status</dt>
+            <dd className="break">
+              {manifest?.acceptance_status || ACCEPTANCE.status}
+            </dd>
+          </div>
+          <div>
+            <dt>Recorded L / T</dt>
+            <dd>
+              {recorded?.ledger?.L && recorded?.ledger?.T
+                ? `${units(recorded.ledger.L)} NEAR / ${units(recorded.ledger.T)} FLOOR (ratio ${ratio(recorded.ledger.L, recorded.ledger.T)})`
+                : "See evidence JSON"}
+            </dd>
+          </div>
+          <div>
+            <dt>Live L / T</dt>
+            <dd>
+              {live
+                ? `${units(live.ledger.L)} NEAR / ${units(live.ledger.T)} FLOOR (ratio ${ratio(live.ledger.L, live.ledger.T)}) · block ${live.blockHeight}`
+                : app.error || "Live RPC unavailable — use recorded evidence"}
+            </dd>
+          </div>
+          <div>
+            <dt>Inflight / claims</dt>
+            <dd>
+              {live
+                ? `inflight ${live.ledger.inflight}; storage_total ${units(live.ledger.storage_total)} NEAR`
+                : recorded?.ledger
+                  ? `recorded inflight ${recorded.ledger.inflight}; storage_total ${units(recorded.ledger.storage_total || "0")} NEAR`
+                  : "Not verified"}
+            </dd>
+          </div>
+          <div>
+            <dt>Admission</dt>
+            <dd>
+              {live?.admission
+                ? `${live.admission.occupied}/${live.admission.capacity}`
+                : recorded?.admission
+                  ? `${recorded.admission.occupied}/${recorded.admission.capacity} (recorded)`
+                  : "Not exposed / not verified"}
+            </dd>
+          </div>
+        </dl>
         <p className="muted">
           L/T is an accounting ratio, not a guaranteed executable redemption
           price. RC1 is permanently stopped for new-risk actions; already-funded

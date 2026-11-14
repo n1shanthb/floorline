@@ -3674,6 +3674,14 @@ details p {
   border: 1px solid color-mix(in oklab, var(--lime, #b7f06e) 35%, transparent);
   background: color-mix(in oklab, var(--lime, #b7f06e) 8%, var(--canvas));
 }
+.rc1-banner-badges,
+.verify-status-badges,
+.rc1-proof-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
 .rc1-banner-copy {
   margin: 0;
   font-size: 14px;
@@ -3682,13 +3690,29 @@ details p {
 }
 .rc1-banner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 8px 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 16px;
+}
+.rc1-banner-grid .detail-row {
+  padding: 10px 0;
+}
+.rc1-banner-grid .detail-row > strong {
+  max-width: 70%;
 }
 .rc1-proof-strip {
   display: grid;
   gap: 12px;
   margin: 20px 0 8px;
+}
+.rc1-proof-strip-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.rc1-proof-strip-head h3 {
+  margin: 0;
 }
 .rc1-proof-strip > .muted {
   margin: 0;
@@ -3697,33 +3721,167 @@ details p {
 }
 .rc1-proof-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 14px;
+  align-items: stretch;
 }
 .rc1-proof-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  min-width: 0;
+  overflow: hidden;
+}
+.rc1-proof-card-top {
   display: grid;
-  gap: 8px;
-  padding: 14px 14px 12px;
+  gap: 10px;
+  min-width: 0;
 }
 .rc1-proof-card h4 {
   margin: 0;
   font-size: 15px;
-  line-height: 1.3;
+  line-height: 1.35;
+  min-height: 2.7em;
+}
+.rc1-proof-meta {
+  margin: 0;
+  display: grid;
+  gap: 0;
+  min-width: 0;
+}
+.rc1-proof-meta > div {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+.rc1-proof-meta dt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+.rc1-proof-meta dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.rc1-proof-meta code {
+  font: inherit;
 }
 .rc1-proof-card .footnote {
   margin: 0;
   font-size: 12px;
+  line-height: 1.45;
+  min-height: 2.9em;
+}
+.rc1-proof-caveat-spacer {
+  visibility: hidden;
 }
 .hash-inline {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
-  word-break: break-all;
 }
+
+/* Verify status card — consistent two-column meta */
+.verify-status {
+  overflow: hidden;
+}
+.verify-meta {
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+.verify-meta > div {
+  display: grid;
+  grid-template-columns: minmax(140px, 28%) minmax(0, 1fr);
+  gap: 12px 18px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.verify-meta dt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.verify-meta dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.verify-meta code {
+  font-size: 11px;
+}
+
+/* Judges command list — stacked, no clipped Row layout */
+.judge-cmd-list {
+  display: grid;
+  gap: 14px;
+}
+.judge-cmd {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+.judge-cmd .eyebrow {
+  margin: 0;
+}
+.judge-cmd code,
+.judge-cmd p {
+  margin: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.judge-cmd p {
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--ink);
+}
+
 @media (max-width: 720px) {
   .rc1-banner-grid {
     grid-template-columns: 1fr;
   }
   .rc1-proof-grid {
     grid-template-columns: 1fr;
+  }
+  .verify-meta > div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .rc1-proof-card h4,
+  .rc1-proof-card .footnote {
+    min-height: 0;
+  }
+  .rc1-proof-caveat-spacer {
+    display: none;
   }
 }

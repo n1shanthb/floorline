@@ -44,6 +44,11 @@ export function useRc1Manifest() {
   return { manifest, error };
 }
 
+function shortId(value: string, head = 10, tail = 8) {
+  if (value.length <= head + tail + 1) return value;
+  return `${value.slice(0, head)}…${value.slice(-tail)}`;
+}
+
 /** Persistent strip on every authenticated app page. */
 export function Rc1AcceptanceBanner() {
   const app = useApp();
@@ -55,7 +60,7 @@ export function Rc1AcceptanceBanner() {
 
   return (
     <section className="rc1-banner card" aria-label="RC1 acceptance status">
-      <div className="section-head">
+      <div className="rc1-banner-badges">
         <Badge tone="lime">{RC1_COPY.badge}</Badge>
         <Badge tone="violet">TESTNET ONLY</Badge>
         {stopped ? <Badge>{RC1_COPY.stopped}</Badge> : null}
@@ -68,8 +73,8 @@ export function Rc1AcceptanceBanner() {
           </External>
         </Row>
         <Row label="Code hash">
-          <code className="hash-inline">
-            {(live?.account.code_hash || CODE_HASH).slice(0, 12)}…
+          <code className="hash-inline" title={live?.account.code_hash || CODE_HASH}>
+            {shortId(live?.account.code_hash || CODE_HASH, 12, 8)}
           </code>
         </Row>
         <Row label="L / T">
@@ -121,7 +126,7 @@ export function Rc1ProofStrip({
 
   return (
     <section className="rc1-proof-strip" aria-label={title}>
-      <div className="section-head">
+      <div className="rc1-proof-strip-head">
         <h3>{title}</h3>
         <Badge tone="lime">
           <ShieldCheck size={12} />
@@ -149,25 +154,41 @@ export function Rc1ProofStrip({
 }
 
 export function Rc1ProofCard({ proof }: { proof: Rc1Proof }) {
+  const method = proof.method || proof.step_id;
   return (
     <article className="card rc1-proof-card">
-      <div className="section-head">
-        <Badge tone="white">{proof.method || proof.step_id}</Badge>
-        <Badge tone="lime">{proof.status}</Badge>
+      <div className="rc1-proof-card-top">
+        <div className="rc1-proof-badges">
+          <Badge tone="white">{method}</Badge>
+          <Badge tone="lime">{proof.status}</Badge>
+        </div>
+        <h4>{proof.title}</h4>
+        <dl className="rc1-proof-meta">
+          <div>
+            <dt>Signer</dt>
+            <dd title={proof.signer}>{shortId(proof.signer, 14, 10)}</dd>
+          </div>
+          <div>
+            <dt>Hash</dt>
+            <dd title={proof.transaction_hash}>
+              <code>{shortId(proof.transaction_hash, 12, 8)}</code>
+            </dd>
+          </div>
+          {proof.receipt_proof?.count != null ? (
+            <div>
+              <dt>Receipts</dt>
+              <dd>{proof.receipt_proof.count}</dd>
+            </div>
+          ) : null}
+        </dl>
+        {proof.caveats?.length ? (
+          <p className="footnote">Caveat: {proof.caveats.join(" ")}</p>
+        ) : (
+          <p className="footnote rc1-proof-caveat-spacer" aria-hidden="true">
+            &nbsp;
+          </p>
+        )}
       </div>
-      <h4>{proof.title}</h4>
-      <Row label="Signer">
-        <span className="break">{proof.signer}</span>
-      </Row>
-      <Row label="Hash">
-        <code className="hash-inline">{proof.transaction_hash.slice(0, 16)}…</code>
-      </Row>
-      {proof.receipt_proof?.count != null ? (
-        <Row label="Receipts">{proof.receipt_proof.count}</Row>
-      ) : null}
-      {proof.caveats?.length ? (
-        <p className="footnote">Caveat: {proof.caveats.join(" ")}</p>
-      ) : null}
       <a
         className="button secondary small full"
         href={proofHref(proof)}

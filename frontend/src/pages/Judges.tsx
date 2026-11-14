@@ -7,7 +7,7 @@ import {
   accountLink,
   txLink,
 } from "../lib/config";
-import { Badge, Brand, External, Heading, Row, Testnet } from "../components/ui";
+import { Badge, Brand, External, Heading, Testnet } from "../components/ui";
 
 export default function Judges() {
   return (
@@ -59,26 +59,36 @@ export default function Judges() {
 
       <section className="card stack-gap">
         <Badge tone="violet">Full path · 5–10 minutes</Badge>
-        <Row label="Clone">
-          <code>git clone https://github.com/n1shanthb/floorline.git && cd floorline</code>
-        </Row>
-        <Row label="Install">
-          <code>cd frontend && npm ci</code>
-        </Row>
-        <Row label="Verify (offline + optional live)">
-          <code>npm run judge:verify</code>
-        </Row>
-        <Row label="Live read-only only">
-          <code>npm run judge:verify -- --live</code>
-        </Row>
-        <Row label="Offline only">
-          <code>npm run judge:verify -- --offline</code>
-        </Row>
-        <Row label="Expected">
-          Typecheck, unit tests, build, evidence validation PASS; live RPC checks
-          PASS or UNAVAILABLE (never silent FAIL-as-PASS). Exit code 0 only when
-          required offline checks pass.
-        </Row>
+        <div className="judge-cmd-list">
+          <div className="judge-cmd">
+            <span className="eyebrow">Clone</span>
+            <code>git clone https://github.com/n1shanthb/floorline.git && cd floorline</code>
+          </div>
+          <div className="judge-cmd">
+            <span className="eyebrow">Install</span>
+            <code>cd frontend && npm ci</code>
+          </div>
+          <div className="judge-cmd">
+            <span className="eyebrow">Verify (offline + optional live)</span>
+            <code>npm run judge:verify</code>
+          </div>
+          <div className="judge-cmd">
+            <span className="eyebrow">Live read-only only</span>
+            <code>npm run judge:verify -- --live</code>
+          </div>
+          <div className="judge-cmd">
+            <span className="eyebrow">Offline only</span>
+            <code>npm run judge:verify -- --offline</code>
+          </div>
+          <div className="judge-cmd">
+            <span className="eyebrow">Expected</span>
+            <p>
+              Typecheck, unit tests, build, evidence validation PASS; live RPC
+              checks PASS or UNAVAILABLE (never silent FAIL-as-PASS). Exit code 0
+              only when required offline checks pass.
+            </p>
+          </div>
+        </div>
         <p className="muted">
           Never create accounts, transfer funds, deploy WASM, call change
           methods, or open wallet signing dialogs.
