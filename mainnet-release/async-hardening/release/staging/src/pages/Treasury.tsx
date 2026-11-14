@@ -226,7 +226,7 @@ export default function Treasury() {
                     className="button secondary full"
                     onClick={() => { void storageRequest(a.account).then(a.review).catch(e=>a.notify(e instanceof Error?e.message:"Storage quote failed")); }}
                   >
-                    Review storage top-up · 0.05 NEAR
+                    Review storage top-up · up to 0.02 NEAR
                   </button>
                 </>
               ) : (
