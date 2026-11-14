@@ -1,21 +1,10 @@
-{
+﻿{
   "path": "E:\\near-2-mainnet-review\\docs\\demo\\video\\FLOORLINE_DEMO.mp4",
-  "duration_sec": 125.0,
-  "size_bytes": 10796228,
-  "size_mb": 10.3,
+  "duration_sec": 81.7,
+  "size_mb": 5.56,
   "under_140s": true,
   "under_512mb": true,
-  "video": {
-    "codec": "h264",
-    "width": 1920,
-    "height": 1080,
-    "fps": "30/1"
-  },
-  "audio": {
-    "codec": "aac",
-    "channels": "mono",
-    "sample_rate_hz": 24000
-  },
-  "container": "mp4",
-  "notes": "Silent video duration matched narration with -shortest; captions burned from FLOORLINE_DEMO.srt"
+  "video": {"codec":"h264","width":1920,"height":1080,"fps":"30/1"},
+  "audio": {"codec":"aac"},
+  "captions": "FontSize=15, Alignment=2 bottom, MarginV=22, outline style"
 }

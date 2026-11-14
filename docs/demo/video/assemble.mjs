@@ -51,23 +51,26 @@ if (!existsSync(audio)) throw new Error("Missing narration.mp3");
 const total = durationOf(audio);
 console.log("Narration duration:", total.toFixed(3), "s");
 
-// Scene → image mapping timed to narration beats (seconds)
+// Scene → image mapping (intro first, then proofs). Ends clamped to narration length.
 const timeline = [
-  { file: "01_landing.png", start: 0.0, end: 6.5, title: "FLOORLINE" },
-  { file: "02_overview.png", start: 6.5, end: 17.8, title: "On-chain reserves + credit" },
-  { file: "03_treasury.png", start: 17.8, end: 33.2, title: "NEP-141 / L over T accounting / 20 percent tax" },
-  { file: "05_redeem_tx.png", start: 33.2, end: 46.3, title: "Proof · native NEAR payout" },
-  { file: "04_loans.png", start: 46.3, end: 51.8, title: "Lender-funded loans · NFT rights" },
-  { file: "06_nft_transfer_tx.png", start: 51.8, end: 57.0, title: "Proof · NFT transfer" },
-  { file: "07_repay_tx.png", start: 57.0, end: 65.8, title: "Proof · NFT-holder repayment" },
-  { file: "08_default_tx.png", start: 65.8, end: 73.8, title: "Proof · default settlement" },
-  { file: "09_stop_tx.png", start: 73.8, end: 82.8, title: "NEW RISK STOPPED" },
-  { file: "10_unregister_tx.png", start: 82.8, end: 91.2, title: "POST-STOP EXIT VERIFIED" },
-  { file: "12_verify.png", start: 91.2, end: 100.0, title: "40/40 FINAL_VERIFIED" },
-  { file: "13_judges.png", start: 100.0, end: 106.0, title: "AI-readable judge prompts" },
-  { file: "14_governance.png", start: 106.0, end: 116.0, title: "Unstoppable DeFi / NFTs That Do Something / AI Security and Defense" },
-  { file: "11_contract.png", start: 116.0, end: total, title: "floorline-delta.vercel.app/verify" },
-];
+  { file: "01_landing.png", start: 0.0, end: 8.0, title: "" },
+  { file: "02_overview.png", start: 8.0, end: 22.0, title: "" },
+  { file: "03_treasury.png", start: 22.0, end: 36.0, title: "" },
+  { file: "05_redeem_tx.png", start: 36.0, end: 48.0, title: "" },
+  { file: "04_loans.png", start: 48.0, end: 54.0, title: "" },
+  { file: "06_nft_transfer_tx.png", start: 54.0, end: 62.0, title: "" },
+  { file: "07_repay_tx.png", start: 62.0, end: 72.0, title: "" },
+  { file: "08_default_tx.png", start: 72.0, end: 82.0, title: "" },
+  { file: "09_stop_tx.png", start: 82.0, end: 92.0, title: "" },
+  { file: "10_unregister_tx.png", start: 92.0, end: 100.0, title: "" },
+  { file: "12_verify.png", start: 100.0, end: 110.0, title: "" },
+  { file: "13_judges.png", start: 110.0, end: 118.0, title: "" },
+  { file: "11_contract.png", start: 118.0, end: total, title: "" },
+].map((t) => ({
+  ...t,
+  start: Math.min(t.start, total),
+  end: Math.min(t.end, total),
+})).filter((t) => t.end > t.start + 0.4);
 
 const available = new Set(readdirSync(captures).filter((f) => f.endsWith(".png")));
 const used = timeline.map((t) => {
@@ -85,21 +88,12 @@ used.forEach((scene, i) => {
   const dur = Math.max(0.8, scene.end - scene.start);
   const src = path.join(captures, scene.file);
   const clip = path.join(work, `clip_${String(i).padStart(2, "0")}.mp4`);
-  const title = scene.title
-    .replace(/\\/g, "")
-    .replace(/:/g, "\\:")
-    .replace(/'/g, "")
-    .replace(/%/g, " percent")
-    .replace(/&/g, "and");
-  const font = "C\\\\:/Windows/Fonts/arial.ttf";
-  // scale to 1920x1080 cover, soft zoom, bottom caption bar
+  // Keep UI readable: soft zoom only — no large title bar fighting captions.
   const frames = Math.max(30, Math.round(dur * 30));
   const vf = [
     "scale=1920:1080:force_original_aspect_ratio=increase",
     "crop=1920:1080",
-    `zoompan=z='min(1.06,1+0.0012*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=1920x1080:fps=30`,
-    `drawbox=x=0:y=980:w=1920:h=100:color=black@0.55:t=fill`,
-    `drawtext=fontfile=${font}:text='${title}':fontcolor=white:fontsize=34:x=40:y=1012`,
+    `zoompan=z='min(1.04,1+0.0008*on)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=${frames}:s=1920x1080:fps=30`,
   ].join(",");
   run(ff, [
     "-y",
@@ -152,7 +146,8 @@ run(ff, [
   "-i",
   audio,
   "-vf",
-  `subtitles=${srtName}:force_style='FontName=Arial,FontSize=22,PrimaryColour=&H00FFFFFF,OutlineColour=&H80000000,BorderStyle=3,Outline=1,Shadow=0,MarginV=48'`,
+  // Small bottom captions: Alignment=2 bottom-center, low MarginV, outline (not huge opaque box)
+  `subtitles=${srtName}:force_style='FontName=Arial,FontSize=15,PrimaryColour=&H00FFFFFF,OutlineColour=&H90000000,BorderStyle=1,Outline=2,Shadow=0,Alignment=2,MarginL=120,MarginR=120,MarginV=22'`,
   "-c:v",
   "libx264",
   "-preset",
@@ -173,20 +168,22 @@ run(ff, [
   outMp4,
 ]);
 
-// Thumbnail from verify scene
-const verifyShot = path.join(captures, "12_verify.png");
-const thumbSrc = existsSync(verifyShot) ? verifyShot : path.join(captures, used[0].file);
-const font = "C\\\\:/Windows/Fonts/arialbd.ttf";
-run(ff, [
-  "-y",
-  "-i",
-  thumbSrc,
-  "-vf",
-  `scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,drawbox=x=0:y=0:w=1920:h=220:color=black@0.45:t=fill,drawtext=fontfile=${font}:text='FLOORLINE · 40/40 FINAL_VERIFIED':fontcolor=white:fontsize=58:x=(w-text_w)/2:y=84`,
-  "-frames:v",
-  "1",
-  thumb,
-]);
+// Keep existing branded poster if present; otherwise skip regenerating from verify shot
+if (!existsSync(path.join(__dirname, "FLOORLINE_DEMO_THUMB.png"))) {
+  const verifyShot = path.join(captures, "12_verify.png");
+  const thumbSrc = existsSync(verifyShot) ? verifyShot : path.join(captures, used[0].file);
+  const font = "C\\\\:/Windows/Fonts/arialbd.ttf";
+  run(ff, [
+    "-y",
+    "-i",
+    thumbSrc,
+    "-vf",
+    `scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,drawbox=x=0:y=0:w=1920:h=220:color=black@0.45:t=fill,drawtext=fontfile=${font}:text='FLOORLINE 40/40 FINAL_VERIFIED':fontcolor=white:fontsize=58:x=(w-text_w)/2:y=84`,
+    "-frames:v",
+    "1",
+    thumb,
+  ]);
+}
 
 // Short GIF preview (~4s from start)
 run(ff, [
