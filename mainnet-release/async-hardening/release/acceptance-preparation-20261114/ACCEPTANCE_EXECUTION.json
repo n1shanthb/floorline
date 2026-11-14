@@ -4,7 +4,10 @@
   "expected_code_hash": "4N4dvutiEhBVHMZvLupafQQM5ACyXWAQWkuUmvD6K7az",
   "expected_sha256": "31f85eac588646f65b07c8b90566457f797f71b479b4d6c9a78b892912ba326b",
   "graph": "0ded3648e33d9e166fc855e94bbc4970174a455cf48bb77f2b93acb77680a9f5",
-  "status": "AWAITING_BROWSER_ISSUE",
+  "status": "HOLDER_REPLACED_AWAITING_NEW_HOLDER_REGISTRATION",
+  "current_holder": "funmask6175.testnet",
+  "holder_replacement_evidence": "HOLDER_REPLACEMENT.json",
+  "pre_browser_snapshot_status": "HISTORICAL_BEFORE_HOLDER_REPLACEMENT",
   "rows": [
     {
       "id": "deploy",
